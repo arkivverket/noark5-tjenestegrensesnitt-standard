@@ -1,11 +1,25 @@
 #!/bin/sh
+#
+# Transform docx to Github style markdown.
 
 set -e
 
-pandoc --extract-media=. \
+pandoc --extract-media=./hele/ -t gfm \
   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_1.1.docx \
   -o NOARK5v4_tjenestegrensesnitt_1.1.md
   
-pandoc --extract-media=. \
+pandoc --extract-media=./kap6/ -t gfm \
   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_Kapittel-6.docx \
   -o NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
+
+for f in hele/media/*; do
+    mv $f media/
+done
+sed -i s%hele/media/%media/% NOARK5v4_tjenestegrensesnitt_1.1.md
+rmdir hele/media hele
+
+for f in kap6/media/*; do
+    mv $f media/kap-$(basename $f)
+done
+sed -i s%kap6/media/%media/kap6% NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
+rmdir kap6/media kap6
