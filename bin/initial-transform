@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+pandoc --extract-media=. \
+  arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_1.1.docx \
+  -o NOARK5v4_tjenestegrensesnitt_1.1.md
+  
+pandoc --extract-media=. \
+  arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_Kapittel-6.docx \
+  -o NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
