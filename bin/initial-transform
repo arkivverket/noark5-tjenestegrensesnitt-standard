@@ -23,3 +23,8 @@ for f in kap6/media/*; do
 done
 sed -i s%kap6/media/%media/kap6-% NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
 rmdir kap6/media kap6
+
+# Prefer PNG over EMF, to make PDF processor happy
+sed -i s/.emf/.png/ \
+    NOARK5v4_tjenestegrensesnitt_1.1.md \
+    NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
