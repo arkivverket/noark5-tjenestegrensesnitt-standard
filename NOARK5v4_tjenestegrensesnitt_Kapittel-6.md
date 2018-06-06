@@ -24,7 +24,7 @@ Dette gjøres med ressurslenker og relasjonslenker som inneholder
 beskrivelse av ressursen med eksempler på forespørsler, resultat og
 statuskoder.
 
-![](./media/kap6-image1.emf)
+![](./media/kap6-image1.png)
 
 Under følger eksempler fra tjenestene.
 
