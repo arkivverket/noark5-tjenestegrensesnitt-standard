@@ -19,6 +19,8 @@ $(PDF):
 .md.pdf:
 	pandoc -f gfm -t latex $^ -o $@
 
+images: $(IMG_PNG)
+
 .SUFFIXES: .md .pdf .docx .emf .png
 
 .emf.png:
