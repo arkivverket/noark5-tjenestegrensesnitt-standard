@@ -21,13 +21,9 @@ særskilt.
 Konformitetsnivåer er:
 
   - Nivå 0 – Basiskrav
-
   - Nivå 1 – Arkivstruktur - obligatoriske krav
-
   - Nivå 1.1 – Arkivstruktur - valgfrie krav
-
   - Nivå 2a – Sakarkiv – obligatoriske krav
-
   - Nivå 2.1a – Sakarkiv - valgfrie krav
 
 For å være konform med standarden på aktuelle nivå må implementasjonen
