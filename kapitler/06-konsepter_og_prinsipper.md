@@ -24,7 +24,7 @@ Dette gjøres med ressurslenker og relasjonslenker som inneholder
 beskrivelse av ressursen med eksempler på forespørsler, resultat og
 statuskoder.
 
-![](./media/image3.png)
+![](./media/uml-klasse-http-metoder.png)
 
 Under følger eksempler fra tjenestene.
 
@@ -46,7 +46,7 @@ Accept: application/vnd.noark5-v4+json
 
 Content-Type: application/vnd.noark5-v4+json
 
-![](./media/image4-json.png)
+![](./media/json-arkivstruktur-toppnivaa.png)
 
 Eksempelet viser at denne arkivkjernen støtter arkivstruktur
 (http://rel.kxml.no/noark5/v4/api/arkivstruktur) og sakarkiv
@@ -124,7 +124,7 @@ Accept: application/vnd.noark5-v4+xml
 
 Content-Type: application/vnd.noark5-v4+xml
 
-![](./media/image5-json.png)
+![](./media/xml-arkivstruktur-toppnivaa.png)
 
 ­­­«href» kan være hva som helst og trenger ikke følge noe fast mønster
 for oppbygning av url. Mens «rel»(relasjonsnøkkelen) har faste verdier
@@ -165,7 +165,7 @@ For filter skal syntaks fra oData standarden
 «href». Typiske parametre er $filter, $top, $skip og $orderby. Alle
 lister med data bør støtte søk og filtrering.
 
-![](./media/image6-json.png)
+![](./media/json-arkivstruktur-toppnivaa-med-odata-syntaks.png)
 
 Figur anonsering av templated link for søk etter arkiv
 
@@ -349,7 +349,7 @@ Denne kan brukes til både GET og POST forespørsel.
 GET forespørselen forhåndsutfyller en lovlig objektstruktur og gir
 relasjonslenker til aktuelle kodelister.
 
-![](./media/image7-json.png)
+![](./media/json-arkivstruktur-mal-create-mappe-etter-GET-forespoersel.png)
 
 Klienten sender en POST forespørsel med en lovlig objektstruktur til
 gitt url. Responsen gir statuskode 201 Created om objektet ble opprettet
@@ -361,7 +361,7 @@ POST til
 
 Content-Type: application/vnd.noark5-v4+json
 
-![](./media/image8-json.png)
+![](./media/json-nyttelast-opprett-mappe.png)
 
 **Resultat**
 
@@ -372,7 +372,7 @@ Location
 
 http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
-![](./media/image9-json.png)
+![](./media/json-innhold-resultat-av-opprett-mappe.png)
 
 Figur respons fra opprett mappe (eksempel avkortet for liste over links)
 
@@ -460,7 +460,7 @@ så kan arkivkjerne preutfylle og foreslå vanlige data for et objekt
 basert på pålogget bruker samt annonsere hvor diverse lovlige koder kan
 hentes fra slik som mappetype og dokumentmedium.
 
-![](./media/image7-json.png)
+![](./media/json-arkivstruktur-mal-create-mappe-etter-GET-forespoersel.png)
 
 #### Oppdatere objekter (Update)
 
@@ -478,7 +478,7 @@ PUT til
 
 Content-Type: application/vnd.noark5-v4+json
 
-![](./media/image10-json.png)
+![](./media/json-nyttelast-oppdater-mappe.png)
 
 **Resultat**
 
@@ -489,7 +489,7 @@ Location
 
 http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
-![](./media/image11-json.png)
+![](./media/json-innhold-resultat-av-oppdater-mappe.png)
 
 Figur respons fra oppdatering av mappe med graderingsinformasjon
 (eksempel avkortet ved links liste)
@@ -708,7 +708,7 @@ De som ikke har sletting datatype, hvordan skal de merkes/fjernes?Krav
 om logging nok?Skal ikke være mulig å slette uansett hvor mye
 rettigheter en bruker har? – Arkivverket må avklare dette
 
-![](./media/image12-json.png)
+![](./media/json-nyttelast-oppdater-arkivdel-for-sletting.png)
 
 Resultatkoder ved sletting av objekt
 
@@ -814,7 +814,7 @@ http://rel.kxml.no/noark5/v4/arkivstruktur/fil
 GET
 [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785)
 
-![](./media/image13-json.png)
+![](./media/json-innhold-resultat-av-hent-dokumentbeskrivelse.png)
 
 GET
 [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil)

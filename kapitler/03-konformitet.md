@@ -14,7 +14,7 @@ om hvilke nivå de krever for å kunne operere på aktuell kjerne.
 De grunnleggende krav er lagt i basiskrav og arkivstruktur og må støttes
 av alle kjerner. Utvidelser skjer med egne moduler som er delt mellom
 obligatoriske og valgfrie krav. Valgfrie krav må spesifiseres
-særskilt.![](./media/logo.png)
+særskilt.![](./media/logo-noark5-kjerne.png)
 
 Konformitetsnivåer er:
 

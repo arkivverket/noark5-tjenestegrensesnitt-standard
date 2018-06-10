@@ -1,4 +1,4 @@
-![](./media/logofront.png)
+![](./media/logo-noark5-kjerne2.png)
 
 # Innhold
 
@@ -457,7 +457,7 @@ om hvilke nivå de krever for å kunne operere på aktuell kjerne.
 De grunnleggende krav er lagt i basiskrav og arkivstruktur og må støttes
 av alle kjerner. Utvidelser skjer med egne moduler som er delt mellom
 obligatoriske og valgfrie krav. Valgfrie krav må spesifiseres
-særskilt.![](./media/logo.png)
+særskilt.![](./media/logo-noark5-kjerne.png)
 
 Konformitetsnivåer er:
 
@@ -542,7 +542,7 @@ Dette gjøres med ressurslenker og relasjonslenker som inneholder
 beskrivelse av ressursen med eksempler på forespørsler, resultat og
 statuskoder.
 
-![](./media/image3.png)
+![](./media/uml-klasse-http-metoder.png)
 
 Under følger eksempler fra tjenestene.
 
@@ -563,7 +563,7 @@ Accept: application/vnd.noark5-v4+json
 
 Content-Type: application/vnd.noark5-v4+json
 
-![](./media/image4-json.png)
+![](./media/json-arkivstruktur-toppnivaa.png)
 
 Eksempelet viser at denne arkivkjernen støtter arkivstruktur
 (http://rel.kxml.no/noark5/v4/api/arkivstruktur) og sakarkiv
@@ -640,7 +640,7 @@ Accept: application/vnd.noark5-v4+xml
 
 Content-Type: application/vnd.noark5-v4+xml
 
-![](./media/image5-json.png)
+![](./media/xml-arkivstruktur-toppnivaa.png)
 
 ­­­«href» kan være hva som helst og trenger ikke følge noe fast mønster
 for oppbygning av url. Mens «rel»(relasjonsnøkkelen) har faste verdier
@@ -681,7 +681,7 @@ For filter skal syntaks fra oData standarden
 «href». Typiske parametre er $filter, $top, $skip og $orderby. Alle
 lister med data bør støtte søk og filtrering.
 
-![](./media/image6-json.png)
+![](./media/json-arkivstruktur-toppnivaa-med-odata-syntaks.png)
 
 Figur 1 anonsering av templated link for søk etter arkiv
 
@@ -865,7 +865,7 @@ kan brukes til både GET og POST forespørsel.
 GET forespørselen forhåndsutfyller en lovlig objektstruktur og gir
 relasjonslenker til aktuelle kodelister.
 
-![](./media/image7-json.png)
+![](./media/json-arkivstruktur-mal-create-mappe-etter-GET-forespoersel.png)
 
 Klienten sender en POST forespørsel med en lovlig objektstruktur til
 gitt url. Responsen gir statuskode 201 Created om objektet ble opprettet
@@ -877,7 +877,7 @@ POST til
 
 Content-Type: application/vnd.noark5-v4+json
 
-![](./media/image8-json.png)
+![](./media/json-nyttelast-opprett-mappe.png)
 
 **Resultat**
 
@@ -888,7 +888,7 @@ Location
 
 http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
-![](./media/image9-json.png)
+![](./media/json-innhold-resultat-av-opprett-mappe.png)
 
 Figur 2 respons fra opprett mappe (eksempel avkortet for liste over
 links)
@@ -977,7 +977,7 @@ arkivkjerne preutfylle og foreslå vanlige data for et objekt basert på
 pålogget bruker samt annonsere hvor diverse lovlige koder kan hentes
 fra slik som mappetype og dokumentmedium.
 
-![](./media/image7-json.png)
+![](./media/json-arkivstruktur-mal-create-mappe-etter-GET-forespoersel.png)
 
 #### Oppdatere objekter (Update)
 
@@ -995,7 +995,7 @@ http://n5test.kxml.no/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89
 
 Content-Type: application/vnd.noark5-v4+json
 
-![](./media/image10-json.png)
+![](./media/json-nyttelast-oppdater-mappe.png)
 
 **Resultat**
 
@@ -1006,7 +1006,7 @@ Location
 
 http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
-![](./media/image11-json.png)
+![](./media/json-innhold-resultat-av-oppdater-mappe.png)
 
 Figur 3 respons fra oppdatering av mappe med graderingsinformasjon
 (eksempel avkortet ved links liste)
@@ -1225,7 +1225,7 @@ De som ikke har sletting datatype, hvordan skal de merkes/fjernes?Krav
 om logging nok?Skal ikke være mulig å slette uansett hvor mye
 rettigheter en bruker har? – Arkivverket må avklare dette
 
-![](./media/image12-json.png)
+![](./media/json-nyttelast-oppdater-arkivdel-for-sletting.png)
 
 Resultatkoder ved sletting av objekt
 
@@ -1330,7 +1330,7 @@ http://rel.kxml.no/noark5/v4/arkivstruktur/fil
 GET
 <http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785>
 
-![](./media/image13-json.png)
+![](./media/json-innhold-resultat-av-hent-dokumentbeskrivelse.png)
 
 GET
 <http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil>
@@ -1546,7 +1546,7 @@ som tilbyr søk i virksomhetsspesifikke data
 
 ## Om UML og notasjon som er benyttet
 
-![](./media/image14.png)***Klassediagram*** brukes for å vise
+![](./media/uml-forklaring-om-notasjon-som-er-brukt.png)***Klassediagram*** brukes for å vise
 utvalgte klasser i en UML-modell. Klassediagram ***trenger ikke være
 fullstendige***, hverken mhp hvilke klasser som vises eller hvilke
 assosiasjoner som vises. For kompliserte modeller (som NOARK-modellen)
@@ -1555,14 +1555,14 @@ trengs flere klassediagram for å vise hele modellen.
 <table>
 <thead>
 <tr class="header">
-<th><embed src="./media/image15.png" style="width:1.54404in;height:1.39497in" /></th>
+<th><embed src="./media/uml-klasse-konspetet-bruker-registrering-som-eksempel.png" style="width:1.54404in;height:1.39497in" /></th>
 <th><p>I et <em><strong>klassediagram</strong></em> vises en klasse som en firkantet boks. <em><strong>Klassenavnet</strong></em> står i øverste «etasje», og er i eksempelet Registrering. <em><strong>Klasseattributtene</strong></em> karakteriserer klassen, og listes opp en i nest øverste etasje (i eksempelet i alt 7, den første/øverste har navnet arkivertDato).</p>
 <p>Firkanten kan også ha flere frivillige etasjer for å vise mer informasjon. I klassen Registrering vises en «etasje» med notes (ofte brukt for <em><strong>klassedefinisjon</strong></em>)</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><embed src="./media/image16.png" style="width:1.45355in;height:1.96778in" /></td>
+<td><embed src="./media/uml-klasse-konseptet-og-bruken-av-stereotyper.png" style="width:1.45355in;height:1.96778in" /></td>
 <td><p>Klassene kan tilpasses (<em><strong>stereotypes</strong></em>) til ulik bruk. I eksempelet vises klassen Gradering som er stereotypet som <em><strong>datatype</strong> (dataType)</em>, og klassen Graderingskode som er stereotypet som <em><strong>kodeliste</strong></em> (codeList)</p>
 <p>Klasser med stereotypen <em><strong>dataType</strong></em> brukes til å gruppere sammen attributter som logisk hører sammen.</p>
 <p>Klasser med stereotype codeList brukes til å angi lister med kodeverdier.</p>
@@ -1572,29 +1572,29 @@ trengs flere klassediagram for å vise hele modellen.
 <p><strong>Kodeliste</strong>(codeList) brukes her for å angi en åpen kodeliste som kan utvides med flere verdier og tilpasses organisasjonen som skal bruke disse.</p></td>
 </tr>
 <tr class="even">
-<td><embed src="./media/image17.png" style="width:1.51913in;height:1.82642in" /></td>
+<td><embed src="./media/uml-assosiasjoner-brukt-med-klasser.png" style="width:1.51913in;height:1.82642in" /></td>
 <td><p>Klasser kan knyttes sammen med <em><strong>assosiasjoner</strong></em>. Assosiasjoner vises som streker mellom to klasser. En assosiasjon der begge ender er knytta til samme klasse kalles <em><strong>selv-assosiasjon</strong></em>. Eksempel: Mappe kan ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like klasser.</p>
 <p>En assosiasjon kan være <em><strong>aggregering</strong></em>. Symbolet er en strek mellom to klasser med åpen diamant i ene enden. Eksempel: Ei Mappe <em><strong>har</strong></em> Registrering(er). En registrering er en selvstendig enhet, som «overlever» selv om Mappa blir sletta.</p></td>
 </tr>
 <tr class="odd">
-<td><embed src="./media/image18.png" style="width:1.83607in;height:0.96302in" /></td>
+<td><embed src="./media/uml-generalisering-brukt-med-klasser.png" style="width:1.83607in;height:0.96302in" /></td>
 <td><p>Assosiasjoner kan være <em><strong>generalisering/spesialisering</strong></em>. Symbolet er en strek med en trekant i ene enden. Eksempel er Basisregistrering som er en generalisering av Journalpost og Møteregistrering. En kan også si at Journalpost er en spesialisering av basisregistrering. I Basisregistrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost og Møteregistrering.</p>
 <p>Dette leses som Journalpost <em><strong>er en</strong></em> Basisregistrering.</p>
 <p>Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Basisregistrering er en spesialisering av Registrering, selv om klassen Registrering ikke finnes i diagrammet.</p></td>
 </tr>
 <tr class="even">
-<td><embed src="./media/image19.png" style="width:1.51366in;height:1.92903in" /></td>
+<td><embed src="./media/uml-komposisjon-brukt-med-klasser.png" style="width:1.51366in;height:1.92903in" /></td>
 <td><p>En assosiasjon kan også være <em><strong>komposisjon</strong></em>. Symbolet er en strek mellom to klasser med lukka diamant i den ene enden. En Basisregistrering <em><strong>har</strong></em> Korrespondansepart(er). En Korrespondansepart kan ikke eksistere uten at den er knytta til en mappe. Slettes («dør») basisregistreringen vil også korrespondanseparten bli sletta («vil dø»).</p>
 <p>Assosiasjonene forteller også hvilken vei de er <em><strong>navigerbare</strong></em>. Symbolet for dette er piler i endene på streken. Eksempel: En basisregistrering «vet» hvilke korrespondansepart(er) som tilhører basisregistreringen, mens korrespondanseparten ikke vet hvilken basisregistrering den tilhører.</p></td>
 </tr>
 <tr class="odd">
-<td><embed src="./media/image20.png" style="width:1.6612in;height:2.5598in" /></td>
+<td><embed src="./media/uml-multiplisitet-brukt-med-klasser.png" style="width:1.6612in;height:2.5598in" /></td>
 <td><p><em><strong>Multiplisiteten</strong></em> forteller hvor mange forekomster som kan inngå. Multiplisitet kan brukes i forbindelse med assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to prikker mellom (0..1). Det første tallet angir minimums-multiplisitet (så mange det minst må være), det andre tallet er maksimumsmultiplisitet (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..*) Mapper(er). Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).</p>
 <p>En klasseattributt har angitt multiplisitet med klammeparenteser ([0..1]). Klasseattributten nøkkelord kan forekomme ingen eller en gang.</p>
 <p>Når det ikke er angitt multiplisitet, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en klasseID, og kan bare ha en.</p></td>
 </tr>
 <tr class="even">
-<td><embed src="./media/image21.png" style="width:1.90164in;height:0.87285in" /></td>
+<td><embed src="./media/uml-simple-datatyper-eller-primitiver.png" style="width:1.90164in;height:0.87285in" /></td>
 <td><p>Datatypene kan også være <em><strong>simple datatyper</strong></em> eller <em><strong>primitiver</strong></em>. Disse brukes for å gi mulighet for restriksjoner også på primitivene. Epostadresse kan være modellert som en slik primitiv. Epost er en tekst-streng, men som i tillegg til å være tekst-streng også må oppfylle visse regler knytta til det å være gyldig epostadresse (bl.a. inneholde en og bare en forekomst av tegnet @). I eksempelet i figuren er SystemID en tekststreng (string) som i tillegg må oppfylle tilleggskrav.</p>
 <p>I store modeller kan det være hensiktsmessig å plassere ulike modell-elementer i ulike pakker. Da kan det også bli lettere for leseren å forstå modellen når han får vite hvilken pakke de ulike klassene er plassert i. Modellpakker kalles ofte <em><strong>navnerom</strong></em> (namespace) Dette kan angis foran klassenavnet, skilt fra klassenavnet med kolon (:).</p>
 <p>I eksempelet hører klassen SystemID til pakken/navnerommet Metadata og klassen string tilhører pakken/navnerommet BasicTypes.</p></td>
@@ -2967,7 +2967,7 @@ trengs flere klassediagram for å vise hele modellen.
 
 Diagrammet viser pakkene som inngår i arkivstruktur kjernen
 
-![](./media/image22.png)
+![](./media/uml-pakker-som-inngaar-i-loesninger-geointegrasjon-eksempel.png)
 
 Figur: 1
 
@@ -2976,7 +2976,7 @@ Figur: 1
 
 Diagrammet viser oversikt over spesialiseringen sakarkiv
 
-![](./media/image23.png)
+![](./media/uml-pakker-som-inngaar-i-loesninger-sakarkiv-eksempel.png)
 
 Figur: 2
 
@@ -2984,7 +2984,7 @@ Figur: 2
 
 Diagrammet viser oversikt over pakker som kan inngå i en noark kjerne.
 
-![](./media/image24.png)
+![](./media/uml-pakker-som-inngaar-i-loesninger-noark5-kjerne.png)
 
 Figur: 3
 
@@ -2992,7 +2992,7 @@ Figur: 3
 
 Diagrammet viser oversikt over alle klasser og hvor de er definert
 
-![](./media/image25.png)
+![](./media/uml-pakker-og-tilhoerende-klasser.png)
 
 Figur: 4
 
@@ -3002,49 +3002,49 @@ Basis skjema for arkivstruktur og indre kjerne
 
 **<span class="underline">Arkivenheter</span>** - *(diagram) *
 
-![](./media/image26.png)
+![](./media/uml-arkivstruktur-arkivenhet-som-basis-klasse.png)
 
 Figur: 5
 
 **<span class="underline">BevaringOgKassasjon</span>** - *(diagram) *
 
-![](./media/image27.png)
+![](./media/uml-arkivenheter-som-har-noe-med-bevaring-og-kassasjon-aa-gjoere.png)
 
 Figur: 6
 
 **<span class="underline">Hovedmodell</span>** - *(diagram) *
 
-![](./media/image28.png)
+![](./media/uml-arkivstruktur-forklart-som-hovedmodell.png)
 
 Figur: 7
 
 **<span class="underline">Forenklet struktur</span>** - *(diagram) *
 
-![](./media/image29.png)
+![](./media/uml-arkivstruktur-forenklet-modell.png)
 
 Figur: 8
 
 **<span class="underline">Arkiv og arkivdel</span>** - *(diagram) *
 
-![](./media/image30.png)
+![](./media/uml-arkivstruktur-arkiv-og-arkivdel.png)
 
 Figur: 9
 
 **<span class="underline">Mappestrukturen</span>** - *(diagram) *
 
-![](./media/image31.png)
+![](./media/uml-arkivstruktur-mappe-til-saksmappe.png)
 
 Figur: 10
 
 **<span class="underline">Mappe</span>** - *(diagram) *
 
-![](./media/image32.png)
+![](./media/uml-arkivstruktur-mappe.png)
 
 Figur: 11
 
 **<span class="underline">Klassifikasjonssystem</span>** - *(diagram) *
 
-![](./media/image33.png)
+![](./media/uml-arkivstruktur-klassifikasjon.png)
 
 Figur: 12
 
@@ -3091,32 +3091,32 @@ implementert noen funksjon for
 
 "arkivering uten journalføring".
 
-![](./media/image34.png)
+![](./media/uml-arkivstruktur-registrering-til-basisregistrering-til-journalpost.png)
 
 Figur: 13
 
 **<span class="underline">Merknad</span>** - *(diagram) *
 
-![](./media/image35.png)
+![](./media/uml-arkivstruktur-merknad.png)
 
 Figur: 14
 
 **<span class="underline">Dokumentbeskrivelse</span>** - *(diagram) *
 
-![](./media/image36.png)
+![](./media/uml-arkivstruktur-dokumentbeskrivelse-og-dokumentobjekt.png)
 
 Figur: 15
 
 **<span class="underline">Arkivstruktur med attributter</span>** -
 *(diagram) *
 
-![](./media/image37.png)
+![](./media/uml-arkivstruktur-attributter.png)
 
 Figur: 16
 
 **<span class="underline">Kryssreferanse</span>** - *(diagram) *
 
-![](./media/image38.png)
+![](./media/uml-arkivstruktur-kryssreferanse.png)
 
 Figur: 17
 
@@ -3124,13 +3124,13 @@ Figur: 17
 
 henter korrespondansepart objekt
 
-![](./media/image39.png)
+![](./media/uml-arkivstruktur-omfattende-forklart.png)
 
 Figur: 18
 
 **<span class="underline">Skjerming</span>** - *(diagram) *
 
-![](./media/image40.png)
+![](./media/uml-arkivstruktur-skjerming.png)
 
 Figur: 19
 
@@ -7420,7 +7420,7 @@ arkivdel er kassert, skal metadata grupperes inn i arkivdel.
 **<span class="underline">Nasjonale identifikatorer</span>** -
 *(diagram) *
 
-![](./media/image41.png)
+![](./media/uml-bruken-av-nasjonalidentifikator.png)
 
 Figur: 20
 
@@ -7810,13 +7810,13 @@ Felles skjema for alle kodelister og felles typer
 
 **<span class="underline">Kodelister</span>** - *(diagram) *
 
-![](./media/image42.png)
+![](./media/uml-kodelister-entiter.png)
 
 Figur: 21
 
 **<span class="underline">Metadata</span>** - *(diagram) *
 
-![](./media/image43.png)
+![](./media/uml-metadata-entitet.png)
 
 Figur: 22
 
@@ -8900,56 +8900,56 @@ Utvidelse for sakarkiv metadata
 
 **<span class="underline">Sakarkiv</span>** - *(diagram) *
 
-![](./media/image44.png)
+![](./media/uml-sakarkiv-entiteter.png)
 
 Figur: 23
 
 **<span class="underline">Sakarkiv kun</span>** - *(diagram) *
 
-![](./media/image45.png)
+![](./media/uml-sakarkiv-entiteter-forenklet.png)
 
 Figur: 24
 
 **<span class="underline">Saksbehandling</span>** - *(diagram) *
 
-![](./media/image46.png)
+![](./media/uml-klasse-saksbehandling.png)
 
 Figur: 25
 
 **<span class="underline">Avskrivning</span>** - *(diagram) *
 
-![](./media/image47.png)
+![](./media/uml-klasse-avskrivning.png)
 
 Figur: 26
 
 **<span class="underline">Person og organisasjonsdata</span>** -
 *(diagram) *
 
-![](./media/image48.png)
+![](./media/uml-klasse-person-og-organisasjonsdata.png)
 
 Figur: 27
 
 **<span class="underline">Hovedmodell</span>** - *(diagram) *
 
-![](./media/image49.png)
+![](./media/uml-hovedmodell-saksbehandling.png)
 
 Figur: 28
 
 **<span class="underline">Saksmappe</span>** - *(diagram) *
 
-![](./media/image50.png)
+![](./media/uml-saksmappe.png)
 
 Figur: 29
 
 **<span class="underline">Journalpost</span>** - *(diagram) *
 
-![](./media/image51.png)
+![](./media/uml-journalpost.png)
 
 Figur: 30
 
 **<span class="underline">Elektronisk signatur</span>** - *(diagram) *
 
-![](./media/image52.png)
+![](./media/uml-elektronisk-signatur.png)
 
 Figur: 31
 
@@ -10906,7 +10906,7 @@ konvertering skal skje.
 
 **<span class="underline">Admin</span>** - *(diagram) *
 
-![](./media/image53.png)
+![](./media/uml-administrasjon.png)
 
 Figur: 32
 
@@ -11267,7 +11267,7 @@ Skjema for logging og sporing
 
 **<span class="underline">LoggingOgSporing</span>** - *(diagram) *
 
-![](./media/image54.png)
+![](./media/uml-endringslogg.png)
 
 Figur: 33
 
