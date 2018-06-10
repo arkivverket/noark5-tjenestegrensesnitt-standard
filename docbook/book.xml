@@ -20,8 +20,8 @@
   <xi:include href="03-konformitet.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
   <xi:include href="04-teknologi.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
   <xi:include href="05-definisjoner.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-  <!--
   <xi:include href="06-konsepter_og_prinsipper.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <!--
   <xi:include href="07-tjenester_og_informasjonsmodell.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
   -->
   <xi:include href="08-vedlegg_1_-_konformitetskrav.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
