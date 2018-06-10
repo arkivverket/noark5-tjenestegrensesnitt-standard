@@ -10,7 +10,7 @@ transform_1_0_beta() {
 	   --reference-location=block \
 	   arkiv/2016-10-17-NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.docx \
 	   -o NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md
-    
+    (cd hele/media; md5sum *) > image-1.0beta.md5
     for f in hele/media/*; do
 	mv $f media/
     done
@@ -95,6 +95,7 @@ transform_1_1() {
 	   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_1.1.docx \
 	   -o NOARK5v4_tjenestegrensesnitt_1.1.md
 
+    (cd hele/media; md5sum *) > image-1.1.md5
     for f in hele/media/*; do
 	mv $f media/
     done
@@ -115,47 +116,47 @@ image10.png:image10-json.png
 image11.png:image11-json.png
 image12.png:image12-json.png
 image13.png:image13-json.png
-image17.emf
-image18.emf
-image19.emf
-image20.emf
-image21.emf
-image22.emf
-image23.emf
-image24.emf
-image52.emf
-image53.emf
-image54.emf
-image55.emf
-image56.emf
-image57.emf
-image58.emf
-image59.emf
-image60.emf
-image61.emf
-image62.emf
-image63.emf
-image64.emf
-image65.emf
-image66.emf
-image67.emf
-image68.emf
-image69.emf
-image70.emf
-image71.emf
-image72.emf
-image73.emf
-image74.emf
-image75.emf
-image76.emf
-image77.emf
-image78.emf
-image79.emf
-image80.emf
-image81.emf
-image82.emf
-image83.emf
-image84.emf
+image17.emf:image14.emf
+image18.emf:image15.emf
+image19.emf:image16.emf
+image20.emf:image17.emf
+image21.emf:image18.emf
+image22.emf:image19.emf
+image23.emf:image20.emf
+image24.emf:image21.emf
+image52.emf:image22.emf
+image53.emf:image23.emf
+image54.emf:image24.emf
+image55.emf:image25.emf
+image56.emf:image26.emf
+image57.emf:image27.emf
+image58.emf:image28.emf
+image59.emf:image29.emf
+image60.emf:image30.emf
+image61.emf:image31.emf
+image62.emf:image32.emf
+image63.emf:image33.emf
+image64.emf:image34.emf
+image65.emf:image35.emf
+image66.emf:image36.emf
+image67.emf:image37.emf
+image68.emf:image38.emf
+image69.emf:image39.emf
+image70.emf:image40.emf
+image71.emf:image41.emf
+image72.emf:image42.emf
+image73.emf:image43.emf
+image74.emf:image44.emf
+image75.emf:image45.emf
+image76.emf:image46.emf
+image77.emf:image47.emf
+image78.emf:image48.emf
+image79.emf:image49.emf
+image80.emf:image50.emf
+image81.emf:image51.emf
+image82.emf:image52.emf
+image83.emf:image53.emf
+image84.emf:image54.emf
 "
 
     for m in $imgmap; do
@@ -180,6 +181,7 @@ transform_1_1_kap6() {
 	   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_Kapittel-6.docx \
 	   -o NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
 
+    (cd kap6/media; md5sum *) > image-1.1-kap6.md5
     for f in kap6/media/*; do
 	mv $f media/kap6-$(basename $f)
     done
@@ -187,17 +189,17 @@ transform_1_1_kap6() {
     rmdir kap6/media kap6
 
     imgmap="
-kap6-image1.emf
-kap6-image2.png:kap6-image2-json.png
-kap6-image3.png:kap6-image3-json.png
-kap6-image4.png:kap6-image4-json.png
-kap6-image5.png:kap6-image5-json.png
-kap6-image6.png:kap6-image6-json.png
-kap6-image7.png:kap6-image7-json.png
-kap6-image8.png:kap6-image8-json.png
-kap6-image9.png:kap6-image9-json.png
-kap6-image10.png:kap6-image10-json.png
-kap6-image11.png:kap6-image11-json.png
+kap6-image1.emf:image3.emf
+kap6-image2.png:image4-json.png
+kap6-image3.png:image5-json.png
+kap6-image4.png:image6-json.png
+kap6-image5.png:image7-json.png
+kap6-image6.png:image8-json.png
+kap6-image7.png:image9-json.png
+kap6-image8.png:image10-json.png
+kap6-image9.png:image11-json.png
+kap6-image10.png:image12-json.png
+kap6-image11.png:image13-json.png
 "
 
     for m in $imgmap; do
@@ -206,7 +208,7 @@ kap6-image11.png:kap6-image11-json.png
 	if [ "$dst" != "$src" ] ; then
 	    mv media/$src media/$dst
 	    sed -i s%media/$src%media/$dst% \
-		NOARK5v4_tjenestegrensesnitt_1.1.md
+		NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
 	fi
     done
 
