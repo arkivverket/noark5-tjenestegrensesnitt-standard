@@ -1,0 +1,18 @@
+# Definisjoner
+
+NOARK – Norsk Arkivstandard
+
+UML – Unified Modeling Language
+
+REST – Representational State Transfer
+
+SAML – Security Assertion Markup Language
+
+oData - Open Data Protocol
+
+CRUD – forkortelse for Create, Read, Update, Delete
+
+eTag – entity tag
+
+HATEOAS – Hypermedia as the Engine of Application State
+
