@@ -1,0 +1,70 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+"""
+Split markdown document into one file per chapter, split on '^# '
+and start with chapter number given using -s #.  The chapter numbers
+are two digits with leading zero.
+"""
+
+# Copyright (C) 2018 Petter Reinholdtsen <pere@hungry.com>
+#
+# Licensed under the GNU General Public License Version 2
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+__author__ = "Petter Reinholdtsen <pere@hungry.com>"
+
+import optparse
+import io
+import sys
+
+sys.stdout = open(sys.stdout.fileno(), mode='w', encoding='utf8', buffering=1)
+
+def mdsplit(input, startnum=None):
+    print(input)
+    title='Unknown'
+    lasttitle = None
+    outfilename = "00-Unknown.md"
+    outfile = None
+    with io.open(input, 'r', encoding="utf-8") as f:
+        for l in f.readlines():
+            if 0 == l.find('# '):
+                title=l.partition(' ')[2].strip().replace(' ', '_').replace('–', '-')
+                outfilename = "%02d-%s.md" % (startnum, title.lower())
+                print(outfilename)
+            if title != lasttitle:
+                startnum = startnum + 1
+                if outfile:
+                    outfile.close()
+                outfile = io.open(outfilename, 'wt', encoding="utf-8")
+                lasttitle = title
+            outfile.write(l)
+    if outfile:
+        outfile.close()
+
+def main():
+    parser = optparse.OptionParser()
+    parser.add_option('-s',
+                      action="store",
+                      dest="startnum",
+                      type="int",
+                      default=0)
+
+    (opts, args) = parser.parse_args()
+    mdsplit(args[0], startnum=opts.startnum)
+
+if __name__ == '__main__':
+    main()
