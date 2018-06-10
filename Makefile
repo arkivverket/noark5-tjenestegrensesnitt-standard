@@ -30,3 +30,13 @@ images: $(IMG_PNG)
 
 clean:
 	$(RM) $(IMG_PNG)
+
+# Draft Docbook based PDF building
+book:
+	for m in kapitler/*.md; do \
+	    pandoc \
+		--top-level-division=chapter -f gfm \
+		-t docbook4 $$m \
+		-o docbook/$$(basename $$m .md).xml; \
+	done
+	xmlto --with-fop pdf docbook/book.xml

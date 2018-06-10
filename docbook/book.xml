@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<?xml-stylesheet href="docbook-css-0.4/driver.css" type="text/css"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+ "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" []>
+
+<book id="index" lang="nb">
+  <bookinfo>
+  <title>Noark 5 Tjenestegrensesnitt</title>
+    <legalnotice>
+      <para>Denne spesifikasjonen faller inn under unntakene i
+      åndsverkslovens § 9, og er ikke opphavsrettslig vernet.</para>
+
+      <para>Videredistribusjon og bruk i kildeformat (XML Docbook) og
+      kompilert form (XML, HTML, PDF, PostScript, RTf og så videre) er
+      tillatt både med og uten endringer.</para>
+    </legalnotice>
+  </bookinfo>
+  <xi:include href="01-orientering_og_introduksjon.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="02-normative_referanser.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="03-konformitet.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="04-teknologi.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="05-definisjoner.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <!--
+  <xi:include href="06-konsepter_og_prinsipper.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="07-tjenester_og_informasjonsmodell.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  -->
+  <xi:include href="08-vedlegg_1_-_konformitetskrav.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="09-vedlegg_2_-_objektkatalog.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="10-vedlegg_3_-_ressurser_til_rest_api.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+</book>
