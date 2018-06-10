@@ -4,12 +4,23 @@
 
 set -e
 
-transform_1_0_beta() {
-    pandoc --extract-media=./hele -t gfm \
+docx2md() {
+    from="$1"
+    to="$2"
+    tofmt="$3"
+
+    pandoc --extract-media=./hele -t $tofmt \
 	   --reference-links \
 	   --reference-location=block \
-	   arkiv/2016-10-17-NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.docx \
-	   -o NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md
+	   $from \
+	   -o $to
+}
+
+transform_1_0_beta() {
+    docx2md \
+	arkiv/2016-10-17-NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.docx \
+	NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md gfm
+
     (cd hele/media; md5sum *) > image-1.0beta.md5
     for f in hele/media/*; do
 	mv $f media/
@@ -89,11 +100,9 @@ image54.emf
 }
 
 transform_1_1() {
-    pandoc --extract-media=./hele -t gfm \
-	   --reference-links \
-	   --reference-location=block \
-	   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_1.1.docx \
-	   -o NOARK5v4_tjenestegrensesnitt_1.1.md
+    docx2md \
+	arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_1.1.docx \
+	NOARK5v4_tjenestegrensesnitt_1.1.md gfm
 
     (cd hele/media; md5sum *) > image-1.1.md5
     for f in hele/media/*; do
@@ -175,18 +184,16 @@ image84.emf:image54.emf
 }
 
 transform_1_1_kap6() {
-    pandoc --extract-media=./kap6 -t gfm \
-	   --reference-links \
-	   --reference-location=block \
-	   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_Kapittel-6.docx \
-	   -o NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
+    docx2md \
+	arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_Kapittel-6.docx \
+	NOARK5v4_tjenestegrensesnitt_Kapittel-6.md gfm
 
-    (cd kap6/media; md5sum *) > image-1.1-kap6.md5
-    for f in kap6/media/*; do
+    (cd hele/media; md5sum *) > image-1.1-kap6.md5
+    for f in hele/media/*; do
 	mv $f media/kap6-$(basename $f)
     done
-    sed -i s%kap6/media/%media/kap6-% NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
-    rmdir kap6/media kap6
+    sed -i s%hele/media/%media/kap6-% NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
+    rmdir hele/media hele
 
     imgmap="
 kap6-image1.emf:image3.emf
