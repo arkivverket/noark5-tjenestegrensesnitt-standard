@@ -339,7 +339,7 @@ Documaster - Christian Lundvang / Dimitar Ouzounov, Norconsult - Tor
 Olav Almås, Oppad - Thor Arne Johnsen, Software Innovation - Bjørn Tore
 Eriksen, Visma - Harry Myrene
 
-Trondheim kommune: Jean-Philippe Caquet 
+Trondheim kommune: Jean-Philippe Caquet
 
 ## Endringslogg
 
@@ -430,16 +430,16 @@ referansene under.
 
 Norsk Arkivstandard(NOARK) 5 versjon
 3.1  
-<https://arkivverket.no/arkivverket/Offentleg-forvalting/Noark/Noark-5/Standarden>
+[<span class="underline">https://arkivverket.no/arkivverket/Offentleg-forvalting/Noark/Noark-5/Standarden</span>](https://arkivverket.no/arkivverket/Offentleg-forvalting/Noark/Noark-5/Standarden)
 
 Unified Modeling Language(UML) versjon 2 -  er en industristandard for
 datarelatert modellering, forvaltet av et internasjonalt konsortium
 [Object Management
 Group](http://no.wikipedia.org/wiki/Object_Management_Group) (OMG) -
-<http://www.omg.org/spec/UML/> 
+[<span class="underline">http://www.omg.org/spec/UML/</span>](http://www.omg.org/spec/UML/)
 
 Webtjenester med REST/HATEOAS -
-<https://tools.ietf.org/html/draft-kelly-json-hal-07>
+[<span class="underline">https://tools.ietf.org/html/draft-kelly-json-hal-07</span>](https://tools.ietf.org/html/draft-kelly-json-hal-07)
 
 # Konformitet
 
@@ -474,8 +474,9 @@ Konformitetsnivåer er:
 For å være konform med standarden på aktuelle nivå må implementasjonen
 støtte alle obligatoriske krav som er angitt for nivået.
 
-Se [Vedlegg 1](#vedlegg-1-konformitetskrav) for liste over tester og
-krav som gjelder for de ulike nivåene.
+Se [<span class="underline">Vedlegg
+1</span>](#vedlegg-1-konformitetskrav) for liste over tester og krav som
+gjelder for de ulike nivåene.
 
 # Teknologi
 
@@ -555,7 +556,8 @@ til.
 
 **Request**
 
-GET <http://localhost:49708/api>
+GET
+[<span class="underline">http://localhost:49708/api</span>](http://localhost:49708/api)
 
 Accept: application/vnd.noark5-v4+json
 
@@ -567,9 +569,9 @@ Content-Type: application/vnd.noark5-v4+json
 
 Eksempelet viser at denne arkivkjernen støtter arkivstruktur
 (http://rel.kxml.no/noark5/v4/api/arkivstruktur) og sakarkiv
-(<http://rel.kxml.no/noark5/v4/api/sakarkiv>). Ved å følge Href til
-disse relasjonsnøkler vil tilgjengelige ressurser innen disse områder
-annonseres på samme måte.
+([<span class="underline">http://rel.kxml.no/noark5/v4/api/sakarkiv</span>](http://rel.kxml.no/noark5/v4/api/sakarkiv)).
+Ved å følge Href til disse relasjonsnøkler vil tilgjengelige ressurser
+innen disse områder annonseres på samme måte.
 
 **Resultatkoder**
 
@@ -632,7 +634,8 @@ Alternativt som XML
 
 **Request**
 
-GET <http://localhost:49708/api>
+GET
+[<span class="underline">http://localhost:49708/api</span>](http://localhost:49708/api)
 
 Accept: application/vnd.noark5-v4+xml
 
@@ -651,21 +654,21 @@ relevant for denne relasjonsnøkkelen.
 **Relasjonsnøkler på
 rotnivå**
 
-| Relasjonsnøkkel (rel)                          | Beskrivelse                                            |
-| ---------------------------------------------- | ------------------------------------------------------ |
-| http://rel.kxml.no/noark5/v4/api/arkivstruktur | Arkivkjerne støtter konformitetsnivå 1 arkivstruktur   |
-| http://rel.kxml.no/noark5/v4/api/sakarkiv      | Arkivkjerne støtter konformitetsnivå for sakarkiv (2a) |
+| Relasjonsnøkkel (rel)                                                                                                           | Beskrivelse                                            |
+| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| [<span class="underline">http://rel.kxml.no/noark5/v4/api/arkivstruktur</span>](http://rel.kxml.no/noark5/v4/api/arkivstruktur) | Arkivkjerne støtter konformitetsnivå 1 arkivstruktur   |
+| [<span class="underline">http://rel.kxml.no/noark5/v4/api/sakarkiv</span>](http://rel.kxml.no/noark5/v4/api/sakarkiv)           | Arkivkjerne støtter konformitetsnivå for sakarkiv (2a) |
 
 Relasjonsnøkler under de forskjellige konformitetsnivå listes ut i
 kapittel 7 sammen med beskrivelse av klasser.
 
-**Spesielle**
-**relasjonsnøkler**
+**Spesielle
+relasjonsnøkler**
 
-| Relasjonsnøkkel (rel) | Beskrivelse                                                                      |
-| --------------------- | -------------------------------------------------------------------------------- |
-| self                  | Brukes for å identifisere en ressurs, og kan brukes til oppdatering og sletting. |
-| next                  | Brukes for å angi neste side ved serverstyrt resultatoppdeling                   |
+| Relasjonsnøkkel (rel)                                                                 | Beskrivelse                                                                      |
+| ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [<span class="underline">self</span>](http://rel.kxml.no/noark5/v4/api/arkivstruktur) | Brukes for å identifisere en ressurs, og kan brukes til oppdatering og sletting. |
+| next                                                                                  | Brukes for å angi neste side ved serverstyrt resultatoppdeling                   |
 
 Ressurser bør kun gjøres tilgjengelig i API når pålogget bruker har
 tilgang til disse. Hvis en bruker ikke har tilgang til å avslutte en
@@ -675,7 +678,7 @@ det lettere å navigere til aktuelle funksjoner.
 #### Finne objekter (Read)
 
 For filter skal syntaks fra oData standarden
-(<http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html#_Toc372793790>
+([<span class="underline">http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html\#\_Toc372793790</span>](http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html#_Toc372793790)
 ) benyttes. De ressurser som støtter filter skal annonserer dette under
 \_links med «templated=true» og parametre som kan brukes til dette i
 «href». Typiske parametre er $filter, $top, $skip og $orderby. Alle
@@ -683,7 +686,7 @@ lister med data bør støtte søk og filtrering.
 
 ![](./media/image6-json.png)
 
-Figur 1 anonsering av templated link for søk etter arkiv
+Figur anonsering av templated link for søk etter arkiv
 
 Filter parametre som skal støttes er:
 
@@ -717,7 +720,7 @@ parameter.
 
 | Operasjon            | Syntaks                       | Eksempel                                                                                                                                                                        |
 | -------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Begynner med         | startsWith(feltnavn, ‘tekst’) | [.../mapper?$filter=startsWitth(tittel, 'test'](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/1235/mappe?$top=2&$filter=tittel%20eq%20%E2%80%98testmappe%E2%80%99))          |
+| Begynner med         | startsWith(feltnavn, ‘tekst’) | [.../mapper?$filter=startsWith(tittel, 'test'](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/1235/mappe?$top=2&$filter=tittel%20eq%20%E2%80%98testmappe%E2%80%99))           |
 | Er lik               | Feltnavn eq verdi             | .../arkiv?$filter=systemID eq '123456789'                                                                                                                                       |
 | Inneholder           | contains(feltnavn, ‘tekst’)   | [../arkivdel/1235/mappe?$filter=contains(tittel, ‘test’)](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/1235/mappe?$top=2&$filter=tittel%20eq%20%E2%80%98testmappe%E2%80%99) |
 | Større enn           | Feltnavn gt verdi             | ../arkivstruktur/registrering/?$filter=year(oppdatertDato) gt 2012                                                                                                              |
@@ -856,11 +859,11 @@ relasjonsnøkkel.
 
 For eksempel kan en opprette mapper på arkivdel, og da vil \_Links under
 en arkivdel inneholde relasjonsnøkkelen
-rel=»<http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/>» om
-bruker har lov til å opprette mapper på denne arkivdelen. Den aktuelle
-ressurslenke kan være
-<http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe>. Denne
-kan brukes til både GET og POST forespørsel.
+rel=»<span class="underline"><http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/>»</span>
+om bruker har lov til å opprette mapper på denne arkivdelen. Den
+aktuelle ressurslenke kan være
+[<span class="underline">http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe</span>](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe).
+Denne kan brukes til både GET og POST forespørsel.
 
 GET forespørselen forhåndsutfyller en lovlig objektstruktur og gir
 relasjonslenker til aktuelle kodelister.
@@ -873,7 +876,7 @@ korrekt og komplett objekt samt location header for lese eller endre
 url.
 
 POST til
-<http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe>
+[<span class="underline">http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe</span>](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe)
 
 Content-Type: application/vnd.noark5-v4+json
 
@@ -890,8 +893,7 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
 
 ![](./media/image9-json.png)
 
-Figur 2 respons fra opprett mappe (eksempel avkortet for liste over
-links)
+Figur respons fra opprett mappe (eksempel avkortet for liste over links)
 
 Resultatkoder ved oppretting av objekt
 
@@ -972,10 +974,10 @@ mappe kan registreres sammen med registreringen av mappe.
 #### Preutfylling av objekt
 
 Ved å bruke GET på for eksempel ny-mappe
-(<http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/>) så kan
-arkivkjerne preutfylle og foreslå vanlige data for et objekt basert på
-pålogget bruker samt annonsere hvor diverse lovlige koder kan hentes
-fra slik som mappetype og dokumentmedium.
+(<span class="underline"><http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/>)</span>
+så kan arkivkjerne preutfylle og foreslå vanlige data for et objekt
+basert på pålogget bruker samt annonsere hvor diverse lovlige koder kan
+hentes fra slik som mappetype og dokumentmedium.
 
 ![](./media/image7-json.png)
 
@@ -991,7 +993,7 @@ oppdatering av et objekt. Underobjekter må oppdateres separat med sine
 resurslenker.
 
 PUT til
-http://n5test.kxml.no/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
+[<span class="underline">http://n5test.kxml.no/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8</span>](http://n5test.kxml.no/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8)
 
 Content-Type: application/vnd.noark5-v4+json
 
@@ -1008,7 +1010,7 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
 
 ![](./media/image11-json.png)
 
-Figur 3 respons fra oppdatering av mappe med graderingsinformasjon
+Figur respons fra oppdatering av mappe med graderingsinformasjon
 (eksempel avkortet ved links liste)
 
 Resultatkoder ved oppdatering av objekt
@@ -1317,9 +1319,10 @@ Innholdstyper(Content-Type) som skal brukes:
 Overføringsformat skal være i henhold til følgende skjema for begge
 innholdstyper:
 
-  - http://skjema.kxml.no/arkivverket/noark5/v4.0/
+  - [<span class="underline">http://skjema.kxml.no/arkivverket/noark5/v4.0/</span>](http://skjema.kxml.no/arkivverket/noark5/v4.0/)
 
-Datoformat skal være angitt ihht <http://www.w3.org/TR/NOTE-datetime>
+Datoformat skal være angitt ihht
+[<span class="underline">http://www.w3.org/TR/NOTE-datetime</span>](http://www.w3.org/TR/NOTE-datetime)
 
 #### Hente og overføre filer
 
@@ -1328,12 +1331,12 @@ følge referanseDokumentfil eller href til relasjonsnøkkel
 http://rel.kxml.no/noark5/v4/arkivstruktur/fil
 
 GET
-<http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785>
+[<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785)
 
 ![](./media/image13-json.png)
 
 GET
-<http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil>
+[<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil)
 
 Gir Content-type=filens mime type feks “application/pdf” og filen
 streames til klient
@@ -1343,7 +1346,7 @@ rel=http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil med header for
 content-type og content-length.
 
 > POST
-> <http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil>  
+> [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil)  
 > Content-Type: application/pdf  
 > Content-Length:111111
 > 
@@ -1359,7 +1362,7 @@ X-Upload-Content-Length kan brukes i POST for å angi mimetype og total
 størrelse på fila som skal overføres.
 
 > POST
-> <http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil>  
+> [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil)  
 > Content-Length:0  
 > X-Upload-Content-Type: image/jpeg  
 > X-Upload-Content-Length: 2000000
@@ -1367,12 +1370,12 @@ størrelse på fila som skal overføres.
 Respons: 200 OK
 
 > Location:
-> <http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567>
+> [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567)
 
 Neste punkt er å overføre første bolk av filen.
 
 > PUT
-> <http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567>  
+> [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567)  
 > Content-Length: 524288  
 > Content-Type: image/jpeg  
 > Content-Range: bytes 0-524287/2000000
@@ -1380,7 +1383,7 @@ Neste punkt er å overføre første bolk av filen.
 > Respons: 200 OK
 > 
 > Location:
-> <http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567>  
+> [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567)  
 > Range: bytes=0-524287
 
 Ved neste bolk av filen så brukes øvre verdi av Range header for å
@@ -1483,22 +1486,6 @@ Resultatkoder for opplasting av filer
 
 ####   
 
-### 
-
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-#### 
-
-#### 
-
-#### 
-
-#### 
-
 ## Validering av data
 
 For de fleste objekter i NOARK5 så er det knyttet forskjellige krav til
@@ -1513,11 +1500,12 @@ registreringer på denne (jfr krav 5.4.7).
 
 For å hindre at data blir oppdatert samtidig av forskjellige brukere og
 overskrevet med gamle data så må kjernen sjekke innkomne objekt og
-lagret objekt. ETag (http://en.wikipedia.org/wiki/HTTP\_ETag ) skal
-benyttes for å støtte «optimistic concurrency control». Om det oppstår
-konflikt så kan resultatkode 409 benyttes. Da må klient hente opp ny
-versjon fra arkivkjerne og gjøre fletting av data mellom server og
-klient.
+lagret objekt. ETag
+([<span class="underline">http://en.wikipedia.org/wiki/HTTP\_ETag</span>](http://en.wikipedia.org/wiki/HTTP_ETag)
+) skal benyttes for å støtte «optimistic concurrency control». Om det
+oppstår konflikt så kan resultatkode 409 benyttes. Da må klient hente
+opp ny versjon fra arkivkjerne og gjøre fletting av data mellom server
+og klient.
 
 | Statuskode | Beskrivelse                                  |  |
 | ---------- | -------------------------------------------- |  |
@@ -1531,7 +1519,7 @@ SystemID tildeles av kjernen og skal være konsistente over tid.
 Arkivkjernen må sørge for at dette blir en unik og persistent
 identifikator på tvers av andre system. Den skal kunne brukes til å
 identifisere og referere til objekter liggende i andre filer eller
-databaser. 
+databaser.
 
 ## Utvidelsesmuligheter
 
@@ -1601,1364 +1589,6 @@ trengs flere klassediagram for å vise hele modellen.
 </tr>
 </tbody>
 </table>
-
-## 
-
-### 
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-### 
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-#### 
-
-#### 
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-### 
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-### 
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-### 
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-### 
-
-### 
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### 
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-### 
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-### 
-
-#### 
-
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-#### 
-
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-#### 
-
-#### 
-
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-#### 
-
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-#### 
-
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
 
 ## Noark5v4 
 
@@ -11329,153 +9959,16 @@ det enklere å dokumentere løsning og anskaffe med korrekte krav. En del
 av testene har referanse i parentes til krav i Noark5 v3.1.
 
 Foreløpig liste over nivåer er lagt ut på
-http://rel.kxml.no/noark5/konformitetsniva/
-
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
-|  |
+[<span class="underline">http://rel.kxml.no/noark5/konformitetsniva/</span>](http://rel.kxml.no/noark5/konformitetsniva/)
 
 # Vedlegg 2 – Objektkatalog
 
-Se <http://arkivverket.metakat.no/> for søk og innsyn i
-informasjonsmodellen/metadata
+Se
+[<span class="underline">http://arkivverket.metakat.no/</span>](http://arkivverket.metakat.no/)
+for søk og innsyn i informasjonsmodellen/metadata
 
 # Vedlegg 3 – Ressurser til REST API
 
-Se <http://rel.kxml.no/noark5/> for relasjonslenker og eksempler
-
-# 
-
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  -
+Se
+[<span class="underline">http://rel.kxml.no/noark5/</span>](http://rel.kxml.no/noark5/)
+for relasjonslenker og eksempler
