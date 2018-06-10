@@ -1139,7 +1139,7 @@ den hierarkiske arkivstrukturen, men arv herfra blir overstyrt.
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 En arkivenhet (se NOARK 5 v3.1 krav 5.1.2 og 5.1.3) skal kunne
 
@@ -2051,7 +2051,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Dokumentobjekt er det laveste metadatanivået i arkivstrukturen. Et
 dokumentobjekt skal
@@ -2381,8 +2381,7 @@ dokumentet.
 
 *Type:* **<span class="underline">Class «dataType»</span>**
 
-*Arver:* <span class="underline">
-</span>
+*Arver:*
 
 *<span class="underline">Relasjonsnøkler</span>*
 
@@ -2464,13 +2463,11 @@ dokumentet.
 | M622 verifisertDato: kan ikke endres | verifisertDato: kan ikke endres |
 | M623 verifisertAv: Kan ikke endres   |                                 |
 
-<span class="underline"> </span>
-
 #### Gradering
 
 *Type:* **<span class="underline">Class «dataType»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Metadata for gradering skal grupperes inn i metadata for mappe,
 registrering og
@@ -2613,13 +2610,11 @@ dokumentbeskrivelse. Gradering er valgfritt, og kan forekomme en gang
 | **beskrivelse**  |             | \[0..1\]     |          | string       |
 | **hendelseDato** |             | \[1..1\]     |          | datetime     |
 
-<span class="underline"> </span>
-
 #### Kassasjon
 
 *Type:* **<span class="underline">Class «dataType»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Kassasjon vil si at elektroniske dokumenter fjernes fra arkivstrukturen.
 Dersom dokumentet
@@ -3191,7 +3186,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Alle arkivdokumenter som skal avleveres må være i arkivformat.
 Konvertering til arkivformat
@@ -3334,7 +3329,7 @@ deponering/avlevering.
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Dette er en referanse på tvers av hierarkiet i arkivstrukturen.
 Referansen kan gå fra en mappe
@@ -3871,7 +3866,7 @@ innenfor året, f.eks. 2011/3869.
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 En eller flere merknader skal kunne knyttes til en mappe,
 basisregistrering eller en
@@ -4257,7 +4252,7 @@ registrering.
 
 *Type:* **<span class="underline">Class «dataType»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Skjerming benyttes til å skjerme registrerte opplysninger eller
 enkeltdokumenter. Skjermingen
@@ -4347,7 +4342,7 @@ dokument. (Se NOARK 5 v3.1 eget kapittel: 6.6.1 Skjerming)
 
 *Type:* **<span class="underline">Class «dataType»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Et viktig krav i Noark 5 er at arkiverte elektroniske dokumenter ikke
 skal kunne slettes.
@@ -4453,7 +4448,7 @@ arkivuttrekk.
 
 *Type:* **<span class="underline">Class «dataType»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Metadata for utført kassasjon er obligatorisk når kassasjon er utført
 før arkivuttrekket
@@ -4564,8 +4559,6 @@ Figur: 20
 | --------------------- | ----------- | ------------ | -------- | --------- |
 | **byggidentifikator** |             | \[1..1\]     |          | ByggIdent |
 
-<span class="underline"> </span>
-
 ##### **Enhetsidentifikator**
 
 *Type:* **<span class="underline">Class </span>**
@@ -4599,8 +4592,6 @@ Figur: 20
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
 | **organisasjonsnummer** |             | \[1..1\]     |          | string   |
-
-<span class="underline"> </span>
 
 ##### **Matrikkel**
 
@@ -4644,13 +4635,11 @@ Figur: 20
 | ------------------- | ----------- | ------------ | -------- | --------------- |
 | **matrikkelnummer** |             | \[1..1\]     |          | Matrikkelnummer |
 
-<span class="underline"> </span>
-
 ##### **Nasjonalidentifikator**
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 *<span class="underline">Relasjoner</span>*
 
@@ -4743,8 +4732,6 @@ Figur: 20
 | **systemID**    |             | \[0..1\]     |          | SystemID |
 | **beskrivelse** |             | \[0..1\]     |          | string   |
 
-<span class="underline"> </span>
-
 ##### **Personidentifikator**
 
 *Type:* **<span class="underline">Class </span>**
@@ -4812,8 +4799,6 @@ Figur: 20
 </tbody>
 </table>
 
-<span class="underline"> </span>
-
 ##### **Plan**
 
 *Type:* **<span class="underline">Class </span>**
@@ -4855,8 +4840,6 @@ Figur: 20
 | **Navn**              | **Merknad** | **Multipl.** | **Kode** | **Type**            |
 | --------------------- | ----------- | ------------ | -------- | ------------------- |
 | **planidentifikator** |             | \[1..1\]     |          | NasjonalArealplanId |
-
-<span class="underline"> </span>
 
 ##### **Posisjon**
 
@@ -4900,8 +4883,6 @@ Figur: 20
 | -------------- | ----------- | ------------ | -------- | -------- |
 | **plassering** |             | \[1..1\]     |          | Punkt    |
 
-<span class="underline"> </span>
-
 ### Kodelister 
 
 Felles skjema for alle kodelister og felles typer
@@ -4922,7 +4903,7 @@ Figur: 22
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -4949,7 +4930,7 @@ M051
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -4974,7 +4955,7 @@ M050
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5003,7 +4984,7 @@ M619
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5031,7 +5012,7 @@ M300
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5056,7 +5037,7 @@ M054
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5083,7 +5064,7 @@ M083
 
 *Type:* **<span class="underline">Class «codeList»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5119,7 +5100,7 @@ elektroniskSignaturSikkerhetsnivåå
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5146,7 +5127,7 @@ M508
 
 *Type:* **<span class="underline">Class «codeList»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5168,7 +5149,7 @@ M508
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5195,7 +5176,7 @@ M508
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5220,7 +5201,7 @@ M508
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 *<span class="underline">Relasjonsnøkler</span>*
 
@@ -5237,13 +5218,11 @@ M508
 | **Søknad komplett** |             |              |          |          |
 | **Vedtak**          |             |              |          |          |
 
-<span class="underline"> </span>
-
 #### Journalposttype
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5272,7 +5251,7 @@ M082
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Definisjon: Status til journalposten, dvs. om dokumentet er registrert,
 under behandling eller endelig arkivert.
@@ -5369,7 +5348,7 @@ M053
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5396,7 +5375,7 @@ M450
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5428,7 +5407,7 @@ M086
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5459,7 +5438,7 @@ M087
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Landkoder ihht ISO 3166
 https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
@@ -5474,7 +5453,7 @@ https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5489,7 +5468,7 @@ https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5515,7 +5494,7 @@ M084
 
 *Type:* **<span class="underline">Class «codeList»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5541,7 +5520,7 @@ moetedeltakerFunksjon
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5578,7 +5557,7 @@ moeteregistreringsstatus
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Definisjon: Navn på type møteregistrering
 
@@ -5620,7 +5599,7 @@ moeteregistreringstype
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5651,7 +5630,7 @@ M088 moetesakstype
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Postens postnummer liste
 http://adressesok.posten.no/nb/postal\_codes/search
@@ -5672,7 +5651,7 @@ http://adressesok.posten.no/nb/postal\_codes/search
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5698,7 +5677,7 @@ M056
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5721,7 +5700,7 @@ M056
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5752,7 +5731,7 @@ M052
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5778,7 +5757,7 @@ M503
 
 *Type:* **<span class="underline">Class «codeList»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5814,7 +5793,7 @@ M502
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5887,7 +5866,7 @@ M001
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -5915,7 +5894,7 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen
 kodeliste
@@ -5948,7 +5927,7 @@ kodeliste
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen
 kodeliste
@@ -5970,7 +5949,7 @@ kodeliste
 
 *Type:* **<span class="underline">Class «codelist»</span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Åpen kodeliste
 
@@ -6055,7 +6034,7 @@ Figur: 31
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 En Journalpost av typene ”inngående dokument” eller ”organinternt
 dokument for oppfølging”
@@ -6198,7 +6177,7 @@ kan forekomme en eller flere ganger i en journalpost.
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Et dokument som er under produksjon, skal kunne sendes fram og tilbake i
 linjen det
@@ -6389,8 +6368,7 @@ produksjon.
 
 *Type:* **<span class="underline">Class «dataType»</span>**
 
-*Arver:* <span class="underline">
-</span>
+*Arver:*
 
 *<span class="underline">Relasjonsnøkler</span>*
 
@@ -6412,8 +6390,6 @@ produksjon.
 | **postnr**        |             | \[0..1\]     |          | Postnummer |
 | **poststed**      |             | \[1..1\]     |          | string     |
 | **landkode**      |             | \[0..1\]     |          | Land       |
-
-<span class="underline"> </span>
 
 #### Journalpost
 
@@ -6826,8 +6802,7 @@ heter Record.)
 
 *Type:* **<span class="underline">Class «dataType»</span>**
 
-*Arver:* <span class="underline">
-</span>
+*Arver:*
 
 *<span class="underline">Relasjonsnøkler</span>*
 
@@ -6845,13 +6820,11 @@ heter Record.)
 | **mobiltelefon** |             | \[0..1\]     |          | string   |
 | **telefon**      |             | \[0..1\]     |          | string   |
 
-<span class="underline"> </span>
-
 #### Korrespondansepart
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Korrespondansepart er obligatorisk, og skal forekomme en eller flere
 ganger i en journalpost.
@@ -7027,8 +7000,6 @@ avsender(e) og mottaker(e) registreres.
 | **kontaktinformasjon**  |             | \[0..1\]     |          | Kontaktinformasjon |
 | **kontaktperson**       |             | \[0..1\]     |          | string             |
 
-<span class="underline"> </span>
-
 #### KorrespondansepartIntern
 
 *Type:* **<span class="underline">Class </span>**
@@ -7074,8 +7045,6 @@ avsender(e) og mottaker(e) registreres.
 | **referanseAdministrativEnhet** | referanse til AdministrativEnhet sin systemID | \[0..1\]     |          | SystemID |
 | **saksbehandler**               |                                               | \[0..1\]     |          | string   |
 | **referanseSaksbehandler**      | referanse til Bruker sin systemID             | \[0..1\]     |          | SystemID |
-
-<span class="underline"> </span>
 
 #### KorrespondansepartPerson
 
@@ -7125,13 +7094,11 @@ avsender(e) og mottaker(e) registreres.
 | **bostedsadresse**     |             | \[0..1\]     |          | EnkelAdresse       |
 | **kontaktinformasjon** |             | \[0..1\]     |          | Kontaktinformasjon |
 
-<span class="underline"> </span>
-
 #### Presedens
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Med presedens menes en (retts)avgjørelse som siden kan tjene som
 rettesnor i lignende tilfeller
@@ -7753,7 +7720,7 @@ saksmappe.
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 En eller flere virksomheter eller personer kan være knyttet til en
 saksmappe som saksparter.
@@ -7921,8 +7888,6 @@ Dersom det er mer enn
 | **kontaktinformasjon**  |             | \[0..1\]     |          | Kontaktinformasjon |
 | **kontaktperson**       |             | \[0..1\]     |          | string             |
 
-<span class="underline"> </span>
-
 #### SakspartPerson
 
 *Type:* **<span class="underline">Class </span>**
@@ -7971,8 +7936,6 @@ Dersom det er mer enn
 | **bostedsadresse**     |             | \[0..1\]     |          | EnkelAdresse       |
 | **kontaktinformasjon** |             | \[0..1\]     |          | Kontaktinformasjon |
 
-<span class="underline"> </span>
-
 ### Admin 
 
 I dette kapitlet ligger Noark 5 kjernens krav til systemteknisk
@@ -8012,7 +7975,7 @@ Figur: 32
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 *<span class="underline">Relasjoner</span>*
 
@@ -8175,13 +8138,11 @@ Figur: 32
 | M602b avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.                                                                      |             |
 | Ny - navn skal ikke endres. Hvis enhet får nytt navn så opprettes ny enhet med ny systemid. Den gamle kan da settes avsluttet dato på. |             |
 
-<span class="underline"> </span>
-
 #### Bruker
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 definerer alle brukere som har eller har hatt interaksjon med
 arkivkjernen. Fungerer som brukerregister til valg av saksbehandler i
@@ -8329,7 +8290,7 @@ når pålogget bruker ikke finnes fra før.
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 Styrer tilgang til data i kjernen basert på brukers
 rolletilknytning
@@ -8373,7 +8334,7 @@ Figur: 33
 
 *Type:* **<span class="underline">Class </span>**
 
-*Arver:* <span class="underline"> </span>
+*Arver:* 
 
 *<span class="underline">Relasjoner</span>*
 
@@ -8417,6 +8378,3 @@ Figur: 33
 | **referanseEndretAv**   | referanse til Bruker sin systemID | \[1..1\]     |          | SystemID |
 | **tidligereVerdi**      |                                   | \[0..1\]     |          | string   |
 | **nyVerdi**             |                                   | \[0..1\]     |          | string   |
-
-<span class="underline"> </span>
-
