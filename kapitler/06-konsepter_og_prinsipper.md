@@ -37,8 +37,7 @@ til.
 
 **Request**
 
-GET
-[<span class="underline">http://localhost:49708/api</span>](http://localhost:49708/api)
+GET http://localhost:49708/api
 
 Accept: application/vnd.noark5-v4+json
 
@@ -50,73 +49,25 @@ Content-Type: application/vnd.noark5-v4+json
 
 Eksempelet viser at denne arkivkjernen støtter arkivstruktur
 (http://rel.kxml.no/noark5/v4/api/arkivstruktur) og sakarkiv
-([<span class="underline">http://rel.kxml.no/noark5/v4/api/sakarkiv</span>](http://rel.kxml.no/noark5/v4/api/sakarkiv)).
+(http://rel.kxml.no/noark5/v4/api/sakarkiv).
 Ved å følge Href til disse relasjonsnøkler vil tilgjengelige ressurser
 innen disse områder annonseres på samme måte.
 
 **Resultatkoder**
 
-<table>
-<thead>
-<tr class="header">
-<th>Statuskode</th>
-<th>Beskrivelse</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>200</td>
-<td>OK</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>400</td>
-<td>BadRequest - ugyldig forespørsel</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>403</td>
-<td>Forbidden - ingen tilgang</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>404</td>
-<td>NotFound - ikke funnet</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>501</td>
-<td>NotImplemented - ikke implementert</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Statuskode | Beskrivelse                        |
+| ---------- | ---------------------------------- |
+| 200        | OK                                 |
+| 400        | BadRequest - ugyldig forespørsel   |
+| 403        | Forbidden - ingen tilgang          |
+| 404        | NotFound - ikke funnet             |
+| 501        | NotImplemented - ikke implementert |
 
 Alternativt som XML
 
 **Request**
 
-GET
-[<span class="underline">http://localhost:49708/api</span>](http://localhost:49708/api)
+GET http://localhost:49708/api
 
 Accept: application/vnd.noark5-v4+xml
 
@@ -135,10 +86,10 @@ relevant for denne relasjonsnøkkelen.
 **Relasjonsnøkler på
 rotnivå**
 
-| Relasjonsnøkkel (rel)                                                                                                           | Beskrivelse                                            |
-| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| [<span class="underline">http://rel.kxml.no/noark5/v4/api/arkivstruktur</span>](http://rel.kxml.no/noark5/v4/api/arkivstruktur) | Arkivkjerne støtter konformitetsnivå 1 arkivstruktur   |
-| [<span class="underline">http://rel.kxml.no/noark5/v4/api/sakarkiv</span>](http://rel.kxml.no/noark5/v4/api/sakarkiv)           | Arkivkjerne støtter konformitetsnivå for sakarkiv (2a) |
+| Relasjonsnøkkel (rel)                          | Beskrivelse                                            |
+| ---------------------------------------------- | ------------------------------------------------------ |
+| http://rel.kxml.no/noark5/v4/api/arkivstruktur | Arkivkjerne støtter konformitetsnivå 1 arkivstruktur   |
+| http://rel.kxml.no/noark5/v4/api/sakarkiv      | Arkivkjerne støtter konformitetsnivå for sakarkiv (2a) |
 
 Relasjonsnøkler under de forskjellige konformitetsnivå listes ut i
 kapittel 7 sammen med beskrivelse av klasser.
@@ -146,10 +97,10 @@ kapittel 7 sammen med beskrivelse av klasser.
 **Spesielle
 relasjonsnøkler**
 
-| Relasjonsnøkkel (rel)                                                                 | Beskrivelse                                                                      |
-| ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| [<span class="underline">self</span>](http://rel.kxml.no/noark5/v4/api/arkivstruktur) | Brukes for å identifisere en ressurs, og kan brukes til oppdatering og sletting. |
-| next                                                                                  | Brukes for å angi neste side ved serverstyrt resultatoppdeling                   |
+| Relasjonsnøkkel (rel)                                  | Beskrivelse                                                                      |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| [self](http://rel.kxml.no/noark5/v4/api/arkivstruktur) | Brukes for å identifisere en ressurs, og kan brukes til oppdatering og sletting. |
+| next                                                   | Brukes for å angi neste side ved serverstyrt resultatoppdeling                   |
 
 Ressurser bør kun gjøres tilgjengelig i API når pålogget bruker har
 tilgang til disse. Hvis en bruker ikke har tilgang til å avslutte en
@@ -159,8 +110,8 @@ det lettere å navigere til aktuelle funksjoner.
 #### Finne objekter (Read)
 
 For filter skal syntaks fra oData standarden
-([<span class="underline">http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html\#\_Toc372793790</span>](http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html#_Toc372793790)
-) benyttes. De ressurser som støtter filter skal annonserer dette under
+(http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html\#\_Toc372793790)
+benyttes. De ressurser som støtter filter skal annonserer dette under
 \_links med «templated=true» og parametre som kan brukes til dette i
 «href». Typiske parametre er $filter, $top, $skip og $orderby. Alle
 lister med data bør støtte søk og filtrering.
@@ -172,25 +123,17 @@ Figur anonsering av templated link for søk etter arkiv
 Filter parametre som skal støttes er:
 
   - $filter
-
   - $top
-
   - $skip
-
   - $search
-
   - $orderby
 
 **Nivå på filter**
 
   - Nivå basis (påkrevd):
-    
       - Filter på direkte felter.
-    
       - Filter på en-til-en gruppe relasjoner (blant annet kodelister)
-
   - Nivå utvidet:
-    
       - Filter på en-til-mange relasjoner (vha. 'any' og 'all' odata
         funksjonene)
 
@@ -273,65 +216,14 @@ registrere et objekt, men ikke rettigheter til å vise dette etterpå.
 
 Resultatkoder ved navigering/søk
 
-<table>
-<thead>
-<tr class="header">
-<th>Statuskode</th>
-<th>Beskrivelse</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>200</td>
-<td>OK</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>400</td>
-<td>BadRequest - ugyldig forespørsel</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>403</td>
-<td>Forbidden - ingen tilgang</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>404</td>
-<td>NotFound - ikke funnet</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>500</td>
-<td>InternalServerError – generell feil på server</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>501</td>
-<td>NotImplemented - ikke implementert</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Statuskode | Beskrivelse                                   |
+| ---------- | --------------------------------------------- |
+| 200        | OK                                            |
+| 400        | BadRequest - ugyldig forespørsel              |
+| 403        | Forbidden - ingen tilgang                     |
+| 404        | NotFound - ikke funnet                        |
+| 500        | InternalServerError – generell feil på server |
+| 501        | NotImplemented - ikke implementert            |
 
 #### Opprette objekter (Create)
 
@@ -340,10 +232,10 @@ relasjonsnøkkel.
 
 For eksempel kan en opprette mapper på arkivdel, og da vil \_Links under
 en arkivdel inneholde relasjonsnøkkelen
-rel=»<span class="underline"><http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/>»</span>
+rel=»http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/»
 om bruker har lov til å opprette mapper på denne arkivdelen. Den
 aktuelle ressurslenke kan være
-[<span class="underline">http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe</span>](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe).
+http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe .
 Denne kan brukes til både GET og POST forespørsel.
 
 GET forespørselen forhåndsutfyller en lovlig objektstruktur og gir
@@ -356,8 +248,7 @@ gitt url. Responsen gir statuskode 201 Created om objektet ble opprettet
 korrekt og komplett objekt samt location header for lese eller endre
 url.
 
-POST til
-[<span class="underline">http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe</span>](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe)
+POST til http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe
 
 Content-Type: application/vnd.noark5-v4+json
 
@@ -378,75 +269,16 @@ Figur respons fra opprett mappe (eksempel avkortet for liste over links)
 
 Resultatkoder ved oppretting av objekt
 
-<table>
-<thead>
-<tr class="header">
-<th>Statuskode</th>
-<th>Beskrivelse</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>200</td>
-<td>OK</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>201</td>
-<td>Created - opprettet</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>400</td>
-<td>BadRequest - ugyldig forespørsel</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>403</td>
-<td>Forbidden - ingen tilgang</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>404</td>
-<td>NotFound - ikke funnet</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>409</td>
-<td>Conflict – objektet kan være endret av andre</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>500</td>
-<td>InternalServerError – generell feil på server</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>501</td>
-<td>NotImplemented - ikke implementert</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Statuskode | Beskrivelse                                   |
+| ---------- | --------------------------------------------- |
+| 200        | OK                                            |
+| 201        | Created - opprettet                           |
+| 400        | BadRequest - ugyldig forespørsel              |
+| 403        | Forbidden - ingen tilgang                     |
+| 404        | NotFound - ikke funnet                        |
+| 409        | Conflict – objektet kan være endret av andre  |
+| 500        | InternalServerError – generell feil på server |
+| 501        | NotImplemented - ikke implementert            |
 
 Heleide objekter(komposisjoner) kan opprettes sammen med hovedobjektet
 og inngår i dens lovlige objektstruktur. For eksempel merknad på en
@@ -455,7 +287,7 @@ mappe kan registreres sammen med registreringen av mappe.
 #### Preutfylling av objekt
 
 Ved å bruke GET på for eksempel ny-mappe
-(<span class="underline"><http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/>)</span>
+(http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/)
 så kan arkivkjerne preutfylle og foreslå vanlige data for et objekt
 basert på pålogget bruker samt annonsere hvor diverse lovlige koder kan
 hentes fra slik som mappetype og dokumentmedium.
@@ -473,8 +305,7 @@ underobjekter som har en mange relasjon (0..\* eller 1..\*) i
 oppdatering av et objekt. Underobjekter må oppdateres separat med sine
 resurslenker.
 
-PUT til
-[<span class="underline">http://n5test.kxml.no/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8</span>](http://n5test.kxml.no/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8)
+PUT til http://n5test.kxml.no/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
 Content-Type: application/vnd.noark5-v4+json
 
@@ -484,8 +315,7 @@ Content-Type: application/vnd.noark5-v4+json
 
 200 OK
 
-Location
-→
+Location →
 
 http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
@@ -496,75 +326,15 @@ Figur respons fra oppdatering av mappe med graderingsinformasjon
 
 Resultatkoder ved oppdatering av objekt
 
-<table>
-<thead>
-<tr class="header">
-<th>Statuskode</th>
-<th>Beskrivelse</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>200</td>
-<td>OK</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>400</td>
-<td>BadRequest - ugyldig forespørsel</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>403</td>
-<td>Forbidden - ingen tilgang</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>404</td>
-<td>NotFound - ikke funnet</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>409</td>
-<td>Conflict – objektet kan være endret av andre</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>500</td>
-<td>InternalServerError – generell feil på server</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>501</td>
-<td>NotImplemented - ikke implementert</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Statuskode | Beskrivelse                                   |
+| ---------- | --------------------------------------------- |
+| 200        | OK                                            |
+| 400        | BadRequest - ugyldig forespørsel              |
+| 403        | Forbidden - ingen tilgang                     |
+| 404        | NotFound - ikke funnet                        |
+| 409        | Conflict – objektet kan være endret av andre  |
+| 500        | InternalServerError – generell feil på server |
+| 501        | NotImplemented - ikke implementert            |
 
 #### Oppdatere referanser mellom objekter
 
@@ -611,81 +381,16 @@ Her slettes referansen til dokumentbeskrivelse fra registrering.
 
 Resultatkoder ved oppdatering av referanser til objekt
 
-<table>
-<thead>
-<tr class="header">
-<th>Statuskode</th>
-<th>Beskrivelse</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>200</td>
-<td>OK</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>204</td>
-<td>NoContent</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>400</td>
-<td>BadRequest - ugyldig forespørsel</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>403</td>
-<td>Forbidden - ingen tilgang</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>404</td>
-<td>NotFound - ikke funnet</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>409</td>
-<td>Conflict - objektet kan være endret av andre</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>500</td>
-<td>InternalServerError – generell feil på server</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>501</td>
-<td>NotImplemented - ikke implementert</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Statuskode | Beskrivelse                                   |
+| ---------- | --------------------------------------------- |
+| 200        | OK                                            |
+| 204        | NoContent                                     |
+| 400        | BadRequest - ugyldig forespørsel              |
+| 403        | Forbidden - ingen tilgang                     |
+| 404        | NotFound - ikke funnet                        |
+| 409        | Conflict - objektet kan være endret av andre  |
+| 500        | InternalServerError – generell feil på server |
+| 501        | NotImplemented - ikke implementert            |
 
 #### Slette objekter (Delete)
 
@@ -712,81 +417,16 @@ rettigheter en bruker har? – Arkivverket må avklare dette
 
 Resultatkoder ved sletting av objekt
 
-<table>
-<thead>
-<tr class="header">
-<th>Statuskode</th>
-<th>Beskrivelse</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>200</td>
-<td>OK</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>204</td>
-<td>NoContent – slettet ok</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>400</td>
-<td>BadRequest - ugyldig forespørsel</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>403</td>
-<td>Forbidden - ingen tilgang</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>404</td>
-<td>NotFound - ikke funnet</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>409</td>
-<td>Conflict - objektet kan være endret av andre</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>500</td>
-<td>InternalServerError – generell feil på server</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>501</td>
-<td>NotImplemented - ikke implementert</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Statuskode | Beskrivelse                                   |
+| ---------- | --------------------------------------------- |
+| 200        | OK                                            |
+| 204        | NoContent – slettet ok                        |
+| 400        | BadRequest - ugyldig forespørsel              |
+| 403        | Forbidden - ingen tilgang                     |
+| 404        | NotFound - ikke funnet                        |
+| 409        | Conflict - objektet kan være endret av andre  |
+| 500        | InternalServerError – generell feil på server |
+| 501        | NotImplemented - ikke implementert            |
 
 #### Overføringsformat
 
@@ -800,10 +440,9 @@ Innholdstyper(Content-Type) som skal brukes:
 Overføringsformat skal være i henhold til følgende skjema for begge
 innholdstyper:
 
-  - [<span class="underline">http://skjema.kxml.no/arkivverket/noark5/v4.0/</span>](http://skjema.kxml.no/arkivverket/noark5/v4.0/)
+  - http://skjema.kxml.no/arkivverket/noark5/v4.0/
 
-Datoformat skal være angitt ihht
-[<span class="underline">http://www.w3.org/TR/NOTE-datetime</span>](http://www.w3.org/TR/NOTE-datetime)
+Datoformat skal være angitt ihht http://www.w3.org/TR/NOTE-datetime
 
 #### Hente og overføre filer
 
@@ -811,13 +450,11 @@ Ved navigering til dokumentobjekt så kan selve filen også åpnes ved å
 følge referanseDokumentfil eller href til relasjonsnøkkel
 http://rel.kxml.no/noark5/v4/arkivstruktur/fil
 
-GET
-[<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785)
+GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785
 
 ![](./media/json-innhold-resultat-av-hent-dokumentbeskrivelse.png)
 
-GET
-[<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil)
+GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
 
 Gir Content-type=filens mime type feks “application/pdf” og filen
 streames til klient
@@ -826,8 +463,7 @@ For å overføre en ny fil brukes POST til href til
 rel=http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil med header for
 content-type og content-length.
 
-> POST
-> [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil)  
+> POST http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil  
 > Content-Type: application/pdf  
 > Content-Length:111111
 > 
@@ -842,29 +478,25 @@ overføre bolker av filen. Header X-Upload-Content-Type og
 X-Upload-Content-Length kan brukes i POST for å angi mimetype og total
 størrelse på fila som skal overføres.
 
-> POST
-> [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil)  
+> POST http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil  
 > Content-Length:0  
 > X-Upload-Content-Type: image/jpeg  
 > X-Upload-Content-Length: 2000000
 
 Respons: 200 OK
 
-> Location:
-> [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567)
+> Location: http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
 
 Neste punkt er å overføre første bolk av filen.
 
-> PUT
-> [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567)  
+> PUT http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567  
 > Content-Length: 524288  
 > Content-Type: image/jpeg  
 > Content-Range: bytes 0-524287/2000000
 > 
 > Respons: 200 OK
 > 
-> Location:
-> [<span class="underline">http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567</span>](http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567)  
+> Location: http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567  
 > Range: bytes=0-524287
 
 Ved neste bolk av filen så brukes øvre verdi av Range header for å
@@ -874,98 +506,19 @@ Når siste overføring er gjort så returneres statuskode 201 Created.
 
 Resultatkoder for opplasting av filer
 
-<table>
-<thead>
-<tr class="header">
-<th>Statuskode</th>
-<th>Beskrivelse</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>200</td>
-<td>OK</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>201</td>
-<td>Created - opprettet</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>204</td>
-<td>NoContent – slettet ok</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>400</td>
-<td>BadRequest - ugyldig forespørsel</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>403</td>
-<td>Forbidden - ingen tilgang</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>404</td>
-<td>NotFound - ikke funnet</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="odd">
-<td>409</td>
-<td>Conflict - objektet kan være endret av andre</td>
-<td><table>
-<tbody>
-<tr class="odd">
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-<tr class="even">
-<td>415</td>
-<td>UnsupportedMediaType – filtypen støttes ikke</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>500</td>
-<td>InternalServerError – generell feil på server</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>501</td>
-<td>NotImplemented - ikke implementert</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>503</td>
-<td>ServiceUnavailable – tjeneste utilgjengelig</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-####   
+| Statuskode | Beskrivelse                                   |
+| ---------- | --------------------------------------------- |
+| 200        | OK                                            |
+| 201        | Created - opprettet                           |
+| 204        | NoContent – slettet ok                        |
+| 400        | BadRequest - ugyldig forespørsel              |
+| 403        | Forbidden - ingen tilgang                     |
+| 404        | NotFound - ikke funnet                        |
+| 409        | Conflict - objektet kan være endret av andre  |
+| 415        | UnsupportedMediaType – filtypen støttes ikke  |
+| 500        | InternalServerError – generell feil på server |
+| 501        | NotImplemented - ikke implementert            |
+| 503        | ServiceUnavailable – tjeneste utilgjengelig   |
 
 ## Validering av data
 
@@ -979,18 +532,17 @@ informasjonsmodellen skal valideres av kjernen. For eksempel hvis en
 mappe er avsluttet så skal det ikke være mulig å registrere flere
 registreringer på denne (jfr krav 5.4.7).
 
-For å hindre at data blir oppdatert samtidig av forskjellige brukere og
-overskrevet med gamle data så må kjernen sjekke innkomne objekt og
-lagret objekt. ETag
-([<span class="underline">http://en.wikipedia.org/wiki/HTTP\_ETag</span>](http://en.wikipedia.org/wiki/HTTP_ETag)
-) skal benyttes for å støtte «optimistic concurrency control». Om det
-oppstår konflikt så kan resultatkode 409 benyttes. Da må klient hente
-opp ny versjon fra arkivkjerne og gjøre fletting av data mellom server
-og klient.
+For å hindre at data blir oppdatert samtidig av forskjellige brukere
+og overskrevet med gamle data så må kjernen sjekke innkomne objekt og
+lagret objekt. ETag (http://en.wikipedia.org/wiki/HTTP_ETag) skal
+benyttes for å støtte «optimistic concurrency control». Om det oppstår
+konflikt så kan resultatkode 409 benyttes. Da må klient hente opp ny
+versjon fra arkivkjerne og gjøre fletting av data mellom server og
+klient.
 
-| Statuskode | Beskrivelse                                  |  |
-| ---------- | -------------------------------------------- |  |
-| 409        | Conflict – objektet kan være endret av andre |  |
+| Statuskode | Beskrivelse                                  |
+| ---------- | -------------------------------------------- |
+| 409        | Conflict – objektet kan være endret av andre |
 
 ## Identifikatorer
 
