@@ -227,3 +227,11 @@ kap6-image11.png:image13-json.png
 transform_1_0_beta
 transform_1_1
 transform_1_1_kap6
+
+mkdir -p kapitler
+(
+    cd kapitler
+    ../bin/mdsplit -s -1 ../NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md
+    #../bin/mdsplit -s -1 ../NOARK5v4_tjenestegrensesnitt_1.1.md
+    #./bin/mdsplit -s 6 NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
+)
