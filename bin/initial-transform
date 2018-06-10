@@ -4,27 +4,54 @@
 
 set -e
 
-pandoc --extract-media=./hele -t gfm \
-  arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_1.1.docx \
-  -o NOARK5v4_tjenestegrensesnitt_1.1.md
-  
-pandoc --extract-media=./kap6 -t gfm \
-  arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_Kapittel-6.docx \
-  -o NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
+transform_1_0_beta() {
+    pandoc --extract-media=./hele -t gfm \
+	   --reference-links \
+	   --reference-location=block \
+	   arkiv/2016-10-17-NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.docx \
+	   -o NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md
+    
+    for f in hele/media/*; do
+	mv $f media/
+    done
+    sed -i s%hele/media/%media/% NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md
+    rmdir hele/media hele
+    
+    # Prefer PNG over EMF, to make PDF processor happy
+    sed -i s/.emf/.png/ \
+	NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md
+}
 
-for f in hele/media/*; do
-    mv $f media/
-done
-sed -i s%hele/media/%media/% NOARK5v4_tjenestegrensesnitt_1.1.md
-rmdir hele/media hele
+transform_1_1() {
+    pandoc --extract-media=./hele -t gfm \
+	   --reference-links \
+	   --reference-location=block \
+	   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_1.1.docx \
+	   -o NOARK5v4_tjenestegrensesnitt_1.1.md
 
-for f in kap6/media/*; do
-    mv $f media/kap6-$(basename $f)
-done
-sed -i s%kap6/media/%media/kap6-% NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
-rmdir kap6/media kap6
+    pandoc --extract-media=./kap6 -t gfm \
+	   --reference-links \
+	   --reference-location=block \
+	   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_Kapittel-6.docx \
+	   -o NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
 
-# Prefer PNG over EMF, to make PDF processor happy
-sed -i s/.emf/.png/ \
-    NOARK5v4_tjenestegrensesnitt_1.1.md \
-    NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
+    for f in hele/media/*; do
+	mv $f media/
+    done
+    sed -i s%hele/media/%media/% NOARK5v4_tjenestegrensesnitt_1.1.md
+    rmdir hele/media hele
+
+    for f in kap6/media/*; do
+	mv $f media/kap6-$(basename $f)
+    done
+    sed -i s%kap6/media/%media/kap6-% NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
+    rmdir kap6/media kap6
+
+    # Prefer PNG over EMF, to make PDF processor happy
+    sed -i s/.emf/.png/ \
+	NOARK5v4_tjenestegrensesnitt_1.1.md \
+	NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
+}
+
+transform_1_0_beta
+transform_1_1
