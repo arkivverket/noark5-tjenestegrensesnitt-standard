@@ -17,6 +17,72 @@ transform_1_0_beta() {
     sed -i s%hele/media/%media/% NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md
     rmdir hele/media hele
     
+    imgmap="
+image1.png:logofront.png
+image2.png:logo.png
+image3.emf
+image4.png:image4-json.png
+image5.png:image5-json.png
+image6.png:image6-json.png
+image7.png:image7-json.png
+image8.png:image8-json.png
+image9.png:image9-json.png
+image10.png:image10-json.png
+image11.png:image11-json.png
+image12.png:image12-json.png
+image13.png:image13-json.png
+image14.emf
+image15.emf
+image16.emf
+image17.emf
+image18.emf
+image19.emf
+image20.emf
+image21.emf
+image22.emf
+image23.emf
+image24.emf
+image25.emf
+image26.emf
+image27.emf
+image28.emf
+image29.emf
+image30.emf
+image31.emf
+image32.emf
+image33.emf
+image34.emf
+image35.emf
+image36.emf
+image37.emf
+image38.emf
+image39.emf
+image40.emf
+image41.emf
+image42.emf
+image43.emf
+image44.emf
+image45.emf
+image46.emf
+image47.emf
+image48.emf
+image49.emf
+image50.emf
+image51.emf
+image52.emf
+image53.emf
+image54.emf
+"
+    for m in $imgmap; do
+	src=$(echo $m|cut -d: -f1)
+	dst=$(echo $m|cut -s -d: -f2)
+	if [ "$dst" ] ; then
+	    mv media/$src media/$dst
+	    sed -i s%media/$src%media/$dst% \
+		NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md
+	fi
+    done
+    
     # Prefer PNG over EMF, to make PDF processor happy
     sed -i s/.emf/.png/ \
 	NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md
@@ -29,17 +95,90 @@ transform_1_1() {
 	   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_1.1.docx \
 	   -o NOARK5v4_tjenestegrensesnitt_1.1.md
 
-    pandoc --extract-media=./kap6 -t gfm \
-	   --reference-links \
-	   --reference-location=block \
-	   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_Kapittel-6.docx \
-	   -o NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
-
     for f in hele/media/*; do
 	mv $f media/
     done
     sed -i s%hele/media/%media/% NOARK5v4_tjenestegrensesnitt_1.1.md
     rmdir hele/media hele
+
+    imgmap="
+image1.png:logofront.png
+image2.png:logo.png
+image3.emf
+image4.png:image4-json.png
+image5.png:image5-json.png
+image6.png:image6-json.png
+image7.png:image7-json.png
+image8.png:image8-json.png
+image9.png:image9-json.png
+image10.png:image10-json.png
+image11.png:image11-json.png
+image12.png:image12-json.png
+image13.png:image13-json.png
+image17.emf
+image18.emf
+image19.emf
+image20.emf
+image21.emf
+image22.emf
+image23.emf
+image24.emf
+image52.emf
+image53.emf
+image54.emf
+image55.emf
+image56.emf
+image57.emf
+image58.emf
+image59.emf
+image60.emf
+image61.emf
+image62.emf
+image63.emf
+image64.emf
+image65.emf
+image66.emf
+image67.emf
+image68.emf
+image69.emf
+image70.emf
+image71.emf
+image72.emf
+image73.emf
+image74.emf
+image75.emf
+image76.emf
+image77.emf
+image78.emf
+image79.emf
+image80.emf
+image81.emf
+image82.emf
+image83.emf
+image84.emf
+"
+
+    for m in $imgmap; do
+	src=$(echo $m|cut -d: -f1)
+	dst=$(echo $m|cut -d: -f2)
+	if [ "$dst" != "$src" ] ; then
+	    mv media/$src media/$dst
+	    sed -i s%media/$src%media/$dst% \
+		NOARK5v4_tjenestegrensesnitt_1.1.md
+	fi
+    done
+
+    # Prefer PNG over EMF, to make PDF processor happy
+    sed -i s/.emf/.png/ \
+	NOARK5v4_tjenestegrensesnitt_1.1.md
+}
+
+transform_1_1_kap6() {
+    pandoc --extract-media=./kap6 -t gfm \
+	   --reference-links \
+	   --reference-location=block \
+	   arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_Kapittel-6.docx \
+	   -o NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
 
     for f in kap6/media/*; do
 	mv $f media/kap6-$(basename $f)
@@ -47,11 +186,35 @@ transform_1_1() {
     sed -i s%kap6/media/%media/kap6-% NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
     rmdir kap6/media kap6
 
+    imgmap="
+kap6-image1.emf
+kap6-image2.png:kap6-image2-json.png
+kap6-image3.png:kap6-image3-json.png
+kap6-image4.png:kap6-image4-json.png
+kap6-image5.png:kap6-image5-json.png
+kap6-image6.png:kap6-image6-json.png
+kap6-image7.png:kap6-image7-json.png
+kap6-image8.png:kap6-image8-json.png
+kap6-image9.png:kap6-image9-json.png
+kap6-image10.png:kap6-image10-json.png
+kap6-image11.png:kap6-image11-json.png
+"
+
+    for m in $imgmap; do
+	src=$(echo $m|cut -d: -f1)
+	dst=$(echo $m|cut -d: -f2)
+	if [ "$dst" != "$src" ] ; then
+	    mv media/$src media/$dst
+	    sed -i s%media/$src%media/$dst% \
+		NOARK5v4_tjenestegrensesnitt_1.1.md
+	fi
+    done
+
     # Prefer PNG over EMF, to make PDF processor happy
     sed -i s/.emf/.png/ \
-	NOARK5v4_tjenestegrensesnitt_1.1.md \
 	NOARK5v4_tjenestegrensesnitt_Kapittel-6.md
 }
 
 transform_1_0_beta
 transform_1_1
+transform_1_1_kap6
