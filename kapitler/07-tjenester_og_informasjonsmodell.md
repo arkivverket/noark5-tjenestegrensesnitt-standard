@@ -148,46 +148,25 @@ Figur: 12
 
 **<span class="underline">Registrering</span>** - *(diagram) *
 
-I fysiske sakarkiver har det vært vanlig å legge dokumenter som ikke er
-journalføringspliktige -
-
-men som likevel er arkivpliktige (ikke underlagt arkivbegrensning) - inn
-i saksomslaget uten at
-
-dette ble registrert i journalen. Tilsvarende funksjonalitet bør også
-være mulig i et elektronisk
-
-arkivsystem. Her må dokumentene nødvendigvis bli registrert, men dette
-skal skje på en
-
-automatisk måte og med minst mulig metadata. Denne typen dokumenter skal
-ikke kunne
-
-søkes fram etter innhold, og de skal heller ikke inngå i den ordinære
-identifikasjonen
-
-(nummereringen) av journalposter. Disse dokumentene vil heller ikke
-komme på offentlig
-
-journal. Men de skal kunne inngå i arkivuttrekk dersom de er
-bevaringsverdige, og det må være
-
-mulig å skjerme dem internt. I Noark-4 ble dette kalt "loggede
-dokumenter". I Noark 5
-
-spesifiseres dette som en egen registreringstype kalt registrering. En
-registrering inneholder
-
-alle metadata som er nødvendig for å knytte registreringen til resten av
-arkivstrukturen. Dette
-
-er metadata som også skal inngå i alle de andre registreringstypene.
-Metadata for registrering
-
-er derfor obligatorisk, selv om det i selve løsningen ikke er
-implementert noen funksjon for
-
-"arkivering uten journalføring".
+I fysiske sakarkiver har det vært vanlig å legge dokumenter som ikke
+er journalføringspliktige - men som likevel er arkivpliktige (ikke
+underlagt arkivbegrensning) - inn i saksomslaget uten at dette ble
+registrert i journalen. Tilsvarende funksjonalitet bør også være mulig
+i et elektronisk arkivsystem. Her må dokumentene nødvendigvis bli
+registrert, men dette skal skje på en automatisk måte og med minst
+mulig metadata. Denne typen dokumenter skal ikke kunne søkes fram
+etter innhold, og de skal heller ikke inngå i den ordinære
+identifikasjonen (nummereringen) av journalposter. Disse dokumentene
+vil heller ikke komme på offentlig journal. Men de skal kunne inngå i
+arkivuttrekk dersom de er bevaringsverdige, og det må være mulig å
+skjerme dem internt. I Noark-4 ble dette kalt "loggede dokumenter". I
+Noark 5 spesifiseres dette som en egen registreringstype kalt
+registrering. En registrering inneholder alle metadata som er
+nødvendig for å knytte registreringen til resten av
+arkivstrukturen. Dette er metadata som også skal inngå i alle de andre
+registreringstypene.  Metadata for registrering er derfor
+obligatorisk, selv om det i selve løsningen ikke er implementert noen
+funksjon for "arkivering uten journalføring".
 
 ![](./media/uml-arkivstruktur-registrering-til-basisregistrering-til-journalpost.png)
 
@@ -239,35 +218,20 @@ Figur: 19
 *Arver:* <span class="underline"> **Arkivenhet**</span>
 
 Arkiv er det øverste nivået i arkivstrukturen. De fleste brukere vil
-bare ha behov for å opprette
-
-ett arkiv i sin Noark 5-løsning. Men det skal være mulig å opprette
-flere arkiver. Det kan være
-
-aktuelt dersom flere organer deler samme løsning. Det kan også være
-aktuelt dersom en hel
-
-etat deler samme løsning. Her kan da f.eks. hovedkontoret og hvert
-distriktskontor settes opp
-
-med hvert sitt arkiv. Men ved elektronisk arkivering er det heller ikke
-noe i veien for at hele
-
-etaten deler samme arkiv, selv om de enkelte avdelinger er spredt over
-et stort geografisk
-
-område.
+bare ha behov for å opprette ett arkiv i sin Noark 5-løsning. Men det
+skal være mulig å opprette flere arkiver. Det kan være aktuelt dersom
+flere organer deler samme løsning. Det kan også være aktuelt dersom en
+hel etat deler samme løsning. Her kan da f.eks. hovedkontoret og hvert
+distriktskontor settes opp med hvert sitt arkiv. Men ved elektronisk
+arkivering er det heller ikke noe i veien for at hele etaten deler
+samme arkiv, selv om de enkelte avdelinger er spredt over et stort
+geografisk område.
 
 Arkiv er obligatorisk i et arkivuttrekk. Toppnivået skal bare ha én
-forekomst, men kan ha ett
-
-eller flere undernivåer, se om underarkiv nedenfor. Et arkiv skal
-inneholde en eller flere
-
-arkivdeler. Dersom arkivet består av underarkiver, skal arkivdel være
-knyttet til det laveste
-
-nivået av disse.
+forekomst, men kan ha ett eller flere undernivåer, se om underarkiv
+nedenfor. Et arkiv skal inneholde en eller flere arkivdeler. Dersom
+arkivet består av underarkiver, skal arkivdel være knyttet til det
+laveste nivået av disse.
 
 *<span class="underline">Relasjoner</span>*
 
@@ -551,127 +515,67 @@ nivået av disse.
 
 *Arver:* <span class="underline"> **Arkivenhet**</span>
 
-Et arkiv skal kunne deles opp i arkivdeler for å gruppere arkivet etter
-overordnede kriterier. De
+Et arkiv skal kunne deles opp i arkivdeler for å gruppere arkivet
+etter overordnede kriterier. De viktigste kriteriene for oppdeling i
+arkivdeler er:
 
-viktigste kriteriene for oppdeling i arkivdeler er:
-
-l Skille mellom aktivt arkiv og avsluttede arkivperioder (tradisjonelt
-kalt
-
-bortsettingsarkiver). Viktige funksjoner i forbindelse med periodisering
-og produksjon
-
-av arkivuttrekk er knyttet til en arkivdel.
-
-l Skille mellom mapper som skal periodiseres etter forskjellige
-prinsipper. Emneordnede
-
-saksmapper kan periodiseres f.eks. hvert femte år, mens personalmapper
-kan beholdes i
-
-et aktiv arkiv så lenge en person er ansatt.
-
-l Skille mellom saksmapper som er klassifisert etter forskjellige
-prinsipper.
-
-l Skille mellom elektronisk arkiv og fysisk arkiv. Hovedregelen er at
-hele mapper enten
-
-skal være fysiske eller elektroniske. Men det kan gis dispensasjon fra
-denne regelen,
-
-slik at enkelte registreringer kan være fysiske og andre elektroniske i
-samme mappe.
-
-Dersom et stort vedlegg (f.eks. en trykksak) ikke er blitt skannet, kan
-også fysiske
-
-dokumenter forekomme sammen med elektroniske dokumenter i samme
-registrering
-
-(journalpost).
-
-l Skille mellom sakarkivet og andre typer arkiver, f.eks. arkiver
-tilknyttet fagsystemer.
-
-Noen vil ha behov for et klart skille mellom de administrative sakene og
-fagsakene. Det
-
-vil også være et behov for å skille ut møtedokumenter.
-
-l Skille mellom mapper, registreringer eller dokumenttyper som skal
-bevares eller som
-
-skal kasseres.
-
-l Skille mellom mapper, registreringer eller dokumenttyper som er
-offentlige eller som
-
-skal skjermes.
+ - Skille mellom aktivt arkiv og avsluttede arkivperioder
+   (tradisjonelt kalt bortsettingsarkiver). Viktige funksjoner i
+   forbindelse med periodisering og produksjon av arkivuttrekk er
+   knyttet til en arkivdel.
+ - Skille mellom mapper som skal periodiseres etter forskjellige
+   prinsipper. Emneordnede saksmapper kan periodiseres f.eks. hvert
+   femte år, mens personalmapper kan beholdes i et aktiv arkiv så
+   lenge en person er ansatt.
+ - Skille mellom saksmapper som er klassifisert etter forskjellige
+   prinsipper.
+ - Skille mellom elektronisk arkiv og fysisk arkiv. Hovedregelen er at
+   hele mapper enten skal være fysiske eller elektroniske. Men det kan
+   gis dispensasjon fra denne regelen, slik at enkelte registreringer
+   kan være fysiske og andre elektroniske i samme mappe.  Dersom et
+   stort vedlegg (f.eks. en trykksak) ikke er blitt skannet, kan også
+   fysiske dokumenter forekomme sammen med elektroniske dokumenter i
+   samme registrering (journalpost).
+ - Skille mellom sakarkivet og andre typer arkiver, f.eks. arkiver
+   tilknyttet fagsystemer.  Noen vil ha behov for et klart skille
+   mellom de administrative sakene og fagsakene. Det vil også være et
+   behov for å skille ut møtedokumenter.
+ - Skille mellom mapper, registreringer eller dokumenttyper som skal
+   bevares eller som skal kasseres.
+ - Skille mellom mapper, registreringer eller dokumenttyper som er
+   offentlige eller som skal skjermes.
 
 Arkivdel er obligatorisk i et arkivuttrekk, og skal forekomme én eller
-flere ganger i et arkiv.
+flere ganger i et arkiv.  Dersom arkivet er delt opp i underarkiver,
+skal arkivdel bare kunne knyttes til det laveste arkivnivået. Dersom
+det dreier seg om et sakarkiv, skal arkivdelen inneholde et primært
+klassifikasjonssystem. Arkivdelen kan i tillegg inneholde et eller
+flere sekundære klassifikasjonssystemer. I et fagsystem uten
+klassifikasjon, skal arkivdelen inneholde én eller flere mapper. I et
+fagsystem uten klassifikasjon og mapper, skal arkivdelen inneholde én
+eller flere registreringer.
 
-Dersom arkivet er delt opp i underarkiver, skal arkivdel bare kunne
-knyttes til det laveste
-
-arkivnivået. Dersom det dreier seg om et sakarkiv, skal arkivdelen
-inneholde et primært
-
-klassifikasjonssystem. Arkivdelen kan i tillegg inneholde et eller flere
-sekundære
-
-klassifikasjonssystemer. I et fagsystem uten klassifikasjon, skal
-arkivdelen inneholde én
-
-eller flere mapper. I et fagsystem uten klassifikasjon og mapper, skal
-arkivdelen inneholde
-
-én eller flere registreringer.
-
-Arkivdeler kan brukes til å skille ut dokumenter som skal kasseres etter
-andre regler enn
-
-resten av dokumentene i mappen (f.eks. alle inngående dokumenter) eller
-registreringen
-
-(f.eks. alle vedlegg). Slike regler kan da knyttes til en egen arkivdel.
-Se mer om dette i
-
-NOARK 5 v3.1 kapittel 5.10 Bevaring og kassasjon, om kassasjon av
-dokumenttyper.
-
-Det samme gjelder dokumenter som skal skjermes etter andre regler enn
-resten av
-
-dokumentene i mappen eller registreringen. Se mer under NOARK 5 v3.1
-kapittel 6.6.1 Skjerming.
+Arkivdeler kan brukes til å skille ut dokumenter som skal kasseres
+etter andre regler enn resten av dokumentene i mappen (f.eks. alle
+inngående dokumenter) eller registreringen (f.eks. alle
+vedlegg). Slike regler kan da knyttes til en egen arkivdel.  Se mer om
+dette i NOARK 5 v3.1 kapittel 5.10 Bevaring og kassasjon, om kassasjon
+av dokumenttyper.  Det samme gjelder dokumenter som skal skjermes
+etter andre regler enn resten av dokumentene i mappen eller
+registreringen. Se mer under NOARK 5 v3.1 kapittel 6.6.1 Skjerming.
 
 Dessuten kan det være tilfeller hvor noen dokumenter i en mappe eller
-registrering er
-
-arkivert på papir, mens resten av dokumentene er elektroniske. En egen
-arkivdel skiller da
-
-ut disse dokumentene.
+registrering er arkivert på papir, mens resten av dokumentene er
+elektroniske. En egen arkivdel skiller da ut disse dokumentene.
 
 Arkivdeler som brukes til å angi andre kassasjonsvedtak,
-skjermingsregler og
-
-dokumentmedium enn de som gjelder for resten av innholdet i arkivet, vil
-være "tomme" –
-
-dvs. de har ikke egne barn. Mapper, registreringer og
-dokumentbeskrivelse som har
-
-referanse til slike arkivdeler, skal arve metadata fra disse. Disse
-mappene, registreringene
-
-og dokumentbeskrivelsene vil indirekte også tilhøre arkivdelen som er
-utgangspunktet for
-
-den hierarkiske arkivstrukturen, men arv herfra blir overstyrt.
+skjermingsregler og dokumentmedium enn de som gjelder for resten av
+innholdet i arkivet, vil være "tomme" – dvs. de har ikke egne
+barn. Mapper, registreringer og dokumentbeskrivelse som har referanse
+til slike arkivdeler, skal arve metadata fra disse. Disse mappene,
+registreringene og dokumentbeskrivelsene vil indirekte også tilhøre
+arkivdelen som er utgangspunktet for den hierarkiske arkivstrukturen,
+men arv herfra blir overstyrt.
 
 *<span class="underline">Relasjoner</span>*
 
@@ -1142,20 +1046,12 @@ den hierarkiske arkivstrukturen, men arv herfra blir overstyrt.
 *Arver:* 
 
 En arkivenhet (se NOARK 5 v3.1 krav 5.1.2 og 5.1.3) skal kunne
-
-identifiseres entydig innenfor det arkivskapende
-
-organet. I et arkivuttrekk skal denne identifikasjonen
-
-hete systemID, og være entydig på tvers av alle uttrekk
-
-som organet produserer, dermed også på tvers av alle
-
-systemer organet benytter. Også arkivenheter som
-
-dupliseres i et arkivuttrekk, skal identifiseres entydig,
-
-slik at identiske arkivenheter har ulik systemID.
+identifiseres entydig innenfor det arkivskapende organet. I et
+arkivuttrekk skal denne identifikasjonen hete systemID, og være
+entydig på tvers av alle uttrekk som organet produserer, dermed også
+på tvers av alle systemer organet benytter. Også arkivenheter som
+dupliseres i et arkivuttrekk, skal identifiseres entydig, slik at
+identiske arkivenheter har ulik systemID.
 
 *<span class="underline">Relasjoner</span>*
 
@@ -1340,22 +1236,14 @@ slik at identiske arkivenheter har ulik systemID.
 *Arver:* <span class="underline"> **Arkivenhet**</span>
 
 Tradisjonelt har et arkiv blitt definert etter organisasjon. Ett organ
-skaper ett arkiv, dvs.
-
-organet er arkivskaperen. Men elektronisk informasjonsteknologi har ført
-til at det blir stadig
-
-vanligere at flere arkivskapere sammen skaper ett arkiv. Arkivet vil da
-være definert etter
-
-funksjon, ikke organisasjon
-
-.
+skaper ett arkiv, dvs.  organet er arkivskaperen. Men elektronisk
+informasjonsteknologi har ført til at det blir stadig vanligere at
+flere arkivskapere sammen skaper ett arkiv. Arkivet vil da være
+definert etter funksjon, ikke organisasjon.
 
 I en Noark 5-løsning skal det altså være mulig å knytte en eller flere
-arkivskapere til ett arkiv.
-
-Informasjon om arkivskapere er obligatorisk i arkivuttrekk.
+arkivskapere til ett arkiv.  Informasjon om arkivskapere er
+obligatorisk i arkivuttrekk.
 
 *<span class="underline">Relasjoner</span>*
 
@@ -1461,12 +1349,9 @@ Informasjon om arkivskapere er obligatorisk i arkivuttrekk.
 *Arver:* <span class="underline"> **Registrering**</span>
 
 En basisregistrering inneholder alle metadata fra registrering, samt
-andre metadata som er
-
-obligatoriske i alle typer arkivsystemer. En basisregistrering kan danne
-utgangspunkt for andre
-
-registreringstyper for spesialiserte fagsystemer
+andre metadata som er obligatoriske i alle typer arkivsystemer. En
+basisregistrering kan danne utgangspunkt for andre registreringstyper
+for spesialiserte fagsystemer
 
 *<span class="underline">Relasjoner</span>*
 
@@ -1676,15 +1561,10 @@ registreringstyper for spesialiserte fagsystemer
 
 *Arver:* <span class="underline"> **Arkivenhet**</span>
 
-Et dokument er et informasjonsobjekt som kan behandles som en enhet. For
-å understreke at
-
-det dreier seg om en enhet, kan vi bruke begrepet enkeltdokument. En
-registrering som
-
-dokumenterer en transaksjon, vil vanligvis bestå av bare ett
-enkeltdokument.
-
+Et dokument er et informasjonsobjekt som kan behandles som en
+enhet. For å understreke at det dreier seg om en enhet, kan vi bruke
+begrepet enkeltdokument. En registrering som dokumenterer en
+transaksjon, vil vanligvis bestå av bare ett enkeltdokument.
 Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 
 *<span class="underline">Relasjoner</span>*
@@ -2054,33 +1934,18 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 *Arver:* 
 
 Dokumentobjekt er det laveste metadatanivået i arkivstrukturen. Et
-dokumentobjekt skal
-
-referere til én og kun en dokumentfil. Dokumentfila inneholder selve
-dokumentet. Dersom
-
-dokumentet er arkivert i flere versjoner, må vi ha et dokumentobjekt og
-en dokumentfil for
-
-hver versjon. Hver versjon av dokumentet kan dessuten arkiveres i flere
-forskjellige formater,
-
-og da må det i tillegg opprettes egne dokumentobjekter og dokumentfiler
-for hvert format. I
-
-noen tilfeller kan det også være aktuelt å lage varianter av enkelte
-dokumenter. Den mest
-
-vanlige varianten vil være et "sladdet" dokument hvor taushetsbelagt
-informasjon er fjernet slik
-
-at varianten kan være offentlig tilgjengelig. Dokumentobjektet
-inneholder mer tekniske
-
-metadata enn de andre arkivenhetene, bl.a. sjekksummen til bytesekvensen
-som representerer
-
-dokumentet.
+dokumentobjekt skal referere til én og kun en
+dokumentfil. Dokumentfila inneholder selve dokumentet. Dersom
+dokumentet er arkivert i flere versjoner, må vi ha et dokumentobjekt
+og en dokumentfil for hver versjon. Hver versjon av dokumentet kan
+dessuten arkiveres i flere forskjellige formater, og da må det i
+tillegg opprettes egne dokumentobjekter og dokumentfiler for hvert
+format. I noen tilfeller kan det også være aktuelt å lage varianter av
+enkelte dokumenter. Den mest vanlige varianten vil være et "sladdet"
+dokument hvor taushetsbelagt informasjon er fjernet slik at varianten
+kan være offentlig tilgjengelig. Dokumentobjektet inneholder mer
+tekniske metadata enn de andre arkivenhetene, bl.a. sjekksummen til
+bytesekvensen som representerer dokumentet.
 
 *<span class="underline">Relasjoner</span>*
 
@@ -2470,9 +2335,8 @@ dokumentet.
 *Arver:* 
 
 Metadata for gradering skal grupperes inn i metadata for mappe,
-registrering og
-
-dokumentbeskrivelse. Gradering er valgfritt, og kan forekomme en gang
+registrering og dokumentbeskrivelse. Gradering er valgfritt, og kan
+forekomme en gang
 
 *<span class="underline">Attributter</span>*
 
@@ -2616,49 +2480,31 @@ dokumentbeskrivelse. Gradering er valgfritt, og kan forekomme en gang
 
 *Arver:* 
 
-Kassasjon vil si at elektroniske dokumenter fjernes fra arkivstrukturen.
-Dersom dokumentet
-
-ikke er tilknyttet andre registreringer, innebærer en kassasjon også at
-dokumentet slettes helt
-
+Kassasjon vil si at elektroniske dokumenter fjernes fra
+arkivstrukturen.  Dersom dokumentet ikke er tilknyttet andre
+registreringer, innebærer en kassasjon også at dokumentet slettes helt
 fra Noark 5-løsningen. Kassasjon av fysiske dokumenter vil si at de
-plukkes ut fra stedet de
-
-oppbevares, og makuleres eller destrueres på en betryggende måte.
+plukkes ut fra stedet de oppbevares, og makuleres eller destrueres på
+en betryggende måte.
 
 Inneholder vedtak om kassasjon. Kassasjonsvedtak bestemmer hvilket
-arkivmateriale som skal
-
-fjernes fra arkivet og tilintetgjøres. (Se NOARK 5 v3.1 eget kapittel:
-5.10 Bevaring og kassasjon)
+arkivmateriale som skal fjernes fra arkivet og tilintetgjøres. (Se
+NOARK 5 v3.1 eget kapittel: 5.10 Bevaring og kassasjon)
 
 Metadata for bevaring og kassasjon skal grupperes inn i metadata for
-arkivdel, klasse, mappe,
-
-registrering og dokumentbeskrivelse. Funksjonalitet for kassasjon er
-obligatorisk i alle Noark
-
-5-løsninger, men det kan gis dispensasjon til fagsystemløsninger hvor
-kassasjon er uaktuelt.
+arkivdel, klasse, mappe, registrering og
+dokumentbeskrivelse. Funksjonalitet for kassasjon er obligatorisk i
+alle Noark 5-løsninger, men det kan gis dispensasjon til
+fagsystemløsninger hvor kassasjon er uaktuelt.
 
 Overordnede kassasjonsbestemmelser kan settes på arkiv- og klassenivå,
-og skal da arves
-
-nedover i arkivstrukturen til mappe, registrering og
-dokumentbeskrivelse. Verdiene som arves
-
-skal kunne overstyres. Ved deponering/avlevering er det bare
-kassasjonsvedtak som innebærer
-
-kassasjon som skal være med. Det skal altså ikke knyttes opplysninger om
-kassasjon til
-
-arkivenheter hvor alle tilordnede dokumenter skal bevares. Kassasjon kan
-altså være knyttet
-
-en gang til arkivdel, klasse, mappe, registrering og
-dokumentbeskrivelse.
+og skal da arves nedover i arkivstrukturen til mappe, registrering og
+dokumentbeskrivelse. Verdiene som arves skal kunne overstyres. Ved
+deponering/avlevering er det bare kassasjonsvedtak som innebærer
+kassasjon som skal være med. Det skal altså ikke knyttes opplysninger
+om kassasjon til arkivenheter hvor alle tilordnede dokumenter skal
+bevares. Kassasjon kan altså være knyttet en gang til arkivdel,
+klasse, mappe, registrering og dokumentbeskrivelse.
 
 *<span class="underline">Attributter</span>*
 
@@ -2723,20 +2569,15 @@ dokumentbeskrivelse.
 *Arver:* <span class="underline"> **Arkivenhet**</span>
 
 Et klassifikasjonssystem er bygd opp av klasser. Ved funksjonsbasert
-(emnebasert)
-
-klassifikasjon vil klassene vanligvis inngå i et hierarki, hvor tre
-eller fire nivåer er det vanlige.
-
-I den konseptuelle modellen er undernivåene kalt underklasser, og
-fremkommer som en egenrelasjon i Klasse5.
+(emnebasert) klassifikasjon vil klassene vanligvis inngå i et
+hierarki, hvor tre eller fire nivåer er det vanlige.  I den
+konseptuelle modellen er undernivåene kalt underklasser, og fremkommer
+som en egenrelasjon i Klasse5.
 
 ISO 15489 anbefaler at klassene beskriver organets funksjoner og
-aktiviteter
-
-(forretningsprosesser). Øverste nivå vil da typisk beskrive
-hovedfunksjonene, nivå to kan beskrive underfunksjoner og nivå tre
-prosessene (dvs. aktiviteter som stadig gjentas).
+aktiviteter (forretningsprosesser). Øverste nivå vil da typisk
+beskrive hovedfunksjonene, nivå to kan beskrive underfunksjoner og
+nivå tre prosessene (dvs. aktiviteter som stadig gjentas).
 
 Klassene skal ha en egen identifikasjon som er unik innenfor
 klassifikasjonssystemet. Dette tilsvarer det som er kalt ordningsverdi
@@ -3001,7 +2842,6 @@ befinner seg på6
 
 Moderne arkivteori legger vekt på at klassifikasjonssystemet skal være
 funksjonsbasert. Alle
-
 virksomheter utøver et bestemt antall funksjoner. Disse er ofte stabile
 over tid, men funksjoner kan overføres fra en virksomhet til en annen.
 Et eksempel på en slik overføring er når saksområder flytter fra et
@@ -3189,11 +3029,8 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 *Arver:* 
 
 Alle arkivdokumenter som skal avleveres må være i arkivformat.
-Konvertering til arkivformat
-
-skal foretas senest ved avslutning av mappe (jf. NOARK 5 v3.1 krav
-6.1.11). Systemet skal logge alle
-
+Konvertering til arkivformat skal foretas senest ved avslutning av
+mappe (jf. NOARK 5 v3.1 krav 6.1.11). Systemet skal logge alle
 konverteringer, og informasjon om dette skal tas med ved
 deponering/avlevering.
 
@@ -3332,27 +3169,17 @@ deponering/avlevering.
 *Arver:* 
 
 Dette er en referanse på tvers av hierarkiet i arkivstrukturen.
-Referansen kan gå fra en mappe
-
-til en annen mappe, fra en registrering til en annen registrering, fra
-en mappe til en registrering
-
-og fra en registrering til en mappe. Det kan også refereres fra en
-klasse til en annen klasse.
+Referansen kan gå fra en mappe til en annen mappe, fra en registrering
+til en annen registrering, fra en mappe til en registrering og fra en
+registrering til en mappe. Det kan også refereres fra en klasse til en
+annen klasse.
 
 Kryssreferanse er valgfritt, og kan knyttes en eller flere ganger til
-klasse, mappe og
-
-basisregistrering. Referansen går en vei, dvs. den kan kun være en
-referanse til en arkivenhet. I
-
-og med at kryssreferanser knyttes til Mappe og Basisregistrering, vil
-det si at Referanser også
-
-knyttes til alle utvidelsene (spesialiseringer) under disse (Saksmappe,
-Møtemappe og
-
-Journalpost, Møteregistrering).
+klasse, mappe og basisregistrering. Referansen går en vei, dvs. den
+kan kun være en referanse til en arkivenhet. I og med at
+kryssreferanser knyttes til Mappe og Basisregistrering, vil det si at
+Referanser også knyttes til alle utvidelsene (spesialiseringer) under
+disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 
 *<span class="underline">Relasjoner</span>*
 
@@ -3450,7 +3277,6 @@ Innholdet i personalmappen kan da ordnes etter aktivitet. Dersom en
 likevel velger å ha personalmapper, kan klassifikasjonssystemet være på
 et overordnet nivå med bare noen få klasser. Dokumentene som skapes i et
 bestemt prosjekt kan samles i en prosjektmappe (med
-
 undermapper), men det er sannsynligvis bedre å definere prosjektet i
 klassifikasjonssystemet og gruppere mappene etter instanser av
 aktiviteter.
@@ -3869,14 +3695,9 @@ innenfor året, f.eks. 2011/3869.
 *Arver:* 
 
 En eller flere merknader skal kunne knyttes til en mappe,
-basisregistrering eller en
-
-dokumentbeskrivelse. Merknader skal brukes for å dokumentere spesielle
-forhold rundt
-
-saksbehandlingen og arkivering av dokumenter, og denne informasjonen
-skal tas med i
-
+basisregistrering eller en dokumentbeskrivelse. Merknader skal brukes
+for å dokumentere spesielle forhold rundt saksbehandlingen og
+arkivering av dokumenter, og denne informasjonen skal tas med i
 arkivuttrekket.
 
 *<span class="underline">Relasjoner</span>*
@@ -4255,12 +4076,9 @@ registrering.
 *Arver:* 
 
 Skjerming benyttes til å skjerme registrerte opplysninger eller
-enkeltdokumenter. Skjermingen
-
-trer i kraft når en tilgangskode påføres den enkelte mappe, registrering
-eller det enkelte
-
-dokument. (Se NOARK 5 v3.1 eget kapittel: 6.6.1 Skjerming)
+enkeltdokumenter. Skjermingen trer i kraft når en tilgangskode påføres
+den enkelte mappe, registrering eller det enkelte dokument. (Se NOARK
+5 v3.1 eget kapittel: 6.6.1 Skjerming)
 
 *<span class="underline">Attributter</span>*
 
@@ -4345,44 +4163,28 @@ dokument. (Se NOARK 5 v3.1 eget kapittel: 6.6.1 Skjerming)
 *Arver:* 
 
 Et viktig krav i Noark 5 er at arkiverte elektroniske dokumenter ikke
-skal kunne slettes.
-
-Kontrollert sletting skal bare kunne foretas av autoriserte brukere i
-forbindelse med kassasjon,
-
-se NOARK 5 v3.1 kapittel 5.10 Bevaring og kassasjon.
+skal kunne slettes.  Kontrollert sletting skal bare kunne foretas av
+autoriserte brukere i forbindelse med kassasjon, se NOARK 5 v3.1
+kapittel 5.10 Bevaring og kassasjon.
 
 Dessuten kan dokumenter slettes av autoriserte brukere dersom de er
-formelt avlevert til et
-
-arkivdepot, se NOARK 5 v3.1 kapittel 5.12 Avlevering. Det understrekes
-at dette siste bare gjelder avleverte
-
+formelt avlevert til et arkivdepot, se NOARK 5 v3.1 kapittel 5.12
+Avlevering. Det understrekes at dette siste bare gjelder avleverte
 dokumenter, ikke dokumenter som bare er deponert til arkivdepotet.
 
-Dersom et dokument er arkivert i mer enn én versjon, skal det være mulig
-å slette de eldre
-
-versjonene. Vanligvis er det bare den siste, ferdiggjorte versjon som
-skal arkiveres. Men det
-
-kan også være aktuelt å arkivere tidligere versjoner dersom disse har
-dokumentasjonsverdi. Det
-
-kan f.eks. være tilfelle dersom en leder har gjort vesentlige endringer
-i utkastet til en
-
+Dersom et dokument er arkivert i mer enn én versjon, skal det være
+mulig å slette de eldre versjonene. Vanligvis er det bare den siste,
+ferdiggjorte versjon som skal arkiveres. Men det kan også være aktuelt
+å arkivere tidligere versjoner dersom disse har
+dokumentasjonsverdi. Det kan f.eks. være tilfelle dersom en leder har
+gjort vesentlige endringer i utkastet til en
 saksbehandler. Saksbehandlers utkast kan da arkiveres som en tidligere
-versjon av det ferdige
-
-dokumentet. Dette vil gi ekstra dokumentasjon om selve
-saksbehandlingsforløpet.
+versjon av det ferdige dokumentet. Dette vil gi ekstra dokumentasjon
+om selve saksbehandlingsforløpet.
 
 Dersom tidligere versjoner er blitt arkivert unødvendig, skal det være
-mulig å rydde opp på en
-
-effektiv måte. Slik opprydding skal alltid skje før det produseres et
-arkivuttrekk.
+mulig å rydde opp på en effektiv måte. Slik opprydding skal alltid
+skje før det produseres et arkivuttrekk.
 
 *<span class="underline">Attributter</span>*
 
@@ -4959,8 +4761,7 @@ M050
 
 Åpen kodeliste
 
-Måten en journalpost har blitt avskrevet
-på
+Måten en journalpost har blitt avskrevet på
 
 M619
 
@@ -5069,9 +4870,7 @@ M083
 Åpen kodeliste
 
 Definisjon: Angivelse av hvilket sikkerhetsnivå som ble brukt ved
-forsendelse og
-
-mottak av elektroniske dokumenter
+forsendelse og mottak av elektroniske dokumenter
 
 Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk
 signatur
@@ -5530,14 +5329,11 @@ Kilde: (ingen)
 
 Kommentar: Valgfrie verdier, eksempler:
 
-\- "Ferdig behandlet av utvalget"
+ - "Ferdig behandlet av utvalget"
+ - "Utsatt til nytt møte i samme utvalg"
+ - "Sendt tilbake til foregående utvalg"
 
-\- "Utsatt til nytt møte i samme utvalg"
-
-\- "Sendt tilbake til foregående utvalg"
-
-M055
-moeteregistreringsstatus
+M055 moeteregistreringsstatus
 
 *<span class="underline">Relasjonsnøkler</span>*
 
@@ -5566,16 +5362,12 @@ Kommentar: utvidet i forhold til forslagene i NOARK 5 Vedlegg 1
 Vedlegg 1 Metadatakatalog v 3.1, M085 lister følgende "aktuelle
 verdier":
 
-\- Møteinnkallelse
+ - Møteinnkallelse
+ - Saksliste
+ - Saksframlegg
+ - Vedlegg til møtesak
 
-\- Saksliste
-
-\- Saksframlegg
-
-\- Vedlegg til møtesak
-
-M085
-moeteregistreringstype
+M085 moeteregistreringstype
 
 *<span class="underline">Relasjonsnøkler</span>*
 
@@ -5896,8 +5688,7 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 *Arver:* 
 
-Åpen
-kodeliste
+Åpen kodeliste
 
 *<span class="underline">Relasjonsnøkler</span>*
 
@@ -5929,8 +5720,7 @@ kodeliste
 
 *Arver:* 
 
-Åpen
-kodeliste
+Åpen kodeliste
 
 *<span class="underline">Relasjonsnøkler</span>*
 
@@ -6037,20 +5827,14 @@ Figur: 31
 *Arver:* 
 
 En Journalpost av typene ”inngående dokument” eller ”organinternt
-dokument for oppfølging”
-
-står i restanse inntil de er markert som ferdigbehandlet, eller
-avskrives. Dette kapitlet angir
-
-krav til avskrivning.
+dokument for oppfølging” står i restanse inntil de er markert som
+ferdigbehandlet, eller avskrives. Dette kapitlet angir krav til
+avskrivning.
 
 Metadata for avskrivning skal kunne grupperes inn i metadata for
-journalpost. Avskrivning er
-
-obligatorisk for inngående dokumenter og organinterne dokumenter som
-skal følges opp, og
-
-kan forekomme en eller flere ganger i en journalpost.
+journalpost. Avskrivning er obligatorisk for inngående dokumenter og
+organinterne dokumenter som skal følges opp, og kan forekomme en eller
+flere ganger i en journalpost.
 
 *<span class="underline">Relasjoner</span>*
 
@@ -6179,23 +5963,14 @@ kan forekomme en eller flere ganger i en journalpost.
 
 *Arver:* 
 
-Et dokument som er under produksjon, skal kunne sendes fram og tilbake i
-linjen det
-
-nødvendige antall ganger. Saksbehandler og lederne i linjen skal kunne
-se hvor dokumentet
-
-befinner seg til enhver tid. Det skal være mulig å definere funksjoner
-for at dokumentet låses
-
-for endringer når det (videre)sendes, eller at det automatisk opprettes
-en ny versjon ved hver
-
-(videre)forsendelse. All funksjonalitet for korrektur og merknader i
-tilknyttet
-
-tekstbehandlingssystem skal kunne brukes på et dokument som er under
-produksjon.
+Et dokument som er under produksjon, skal kunne sendes fram og tilbake
+i linjen det nødvendige antall ganger. Saksbehandler og lederne i
+linjen skal kunne se hvor dokumentet befinner seg til enhver tid. Det
+skal være mulig å definere funksjoner for at dokumentet låses for
+endringer når det (videre)sendes, eller at det automatisk opprettes en
+ny versjon ved hver (videre)forsendelse. All funksjonalitet for
+korrektur og merknader i tilknyttet tekstbehandlingssystem skal kunne
+brukes på et dokument som er under produksjon.
 
 *<span class="underline">Relasjoner</span>*
 
@@ -6398,57 +6173,30 @@ produksjon.
 *Arver:* <span class="underline"> **Basisregistrering**</span>
 
 En journalpost fra Noark-4 utgjør en egen registreringstype i Noark 5.
-En journalpost
-
-representer en "innføring i journalen". Journalen er en kronologisk
-fortegnelse over inn- og
-
-utgående dokumenter (dvs. korrespondansedokumenter), og eventuelt også
-interne dokumenter
-
+En journalpost representer en "innføring i journalen". Journalen er en
+kronologisk fortegnelse over inn- og utgående dokumenter
+(dvs. korrespondansedokumenter), og eventuelt også interne dokumenter
 som inngår i saksbehandlingen. Til sammenligning representerer en
-basisregistrering en
-
-generell "innføring" i alle typer arkivsystemer, også de som ikke
-inneholder
-
-korrespondansebaserte dokumenter. Journalposten inneholder bl.a.
-metadata om
-
+basisregistrering en generell "innføring" i alle typer arkivsystemer,
+også de som ikke inneholder korrespondansebaserte
+dokumenter. Journalposten inneholder bl.a.  metadata om
 korrespondanseparter (avsender og mottaker), og om saksbehandlere. Det
-finnes flere typer
-
-journalposter. De viktigste er inngående dokument, utgående dokument,
-organinternt
-
-dokument for oppfølging og organinternt dokument uten oppfølging. Ved
-organinterne
-
-dokumenter kan en og samme journalpost inneholde metadata om både
-avsender og mottaker,
-
-og om saksbehandler både på avsender- og mottakersiden.
+finnes flere typer journalposter. De viktigste er inngående dokument,
+utgående dokument, organinternt dokument for oppfølging og
+organinternt dokument uten oppfølging. Ved organinterne dokumenter kan
+en og samme journalpost inneholde metadata om både avsender og
+mottaker, og om saksbehandler både på avsender- og mottakersiden.
 
 Registreringstypen journalpost er obligatorisk for sakarkiver. Alle
-journalføringspliktige
-
-dokumenter i offentlig forvaltning skal registreres som journalposter og
-inngå i et sakarkiv.
-
-Dersom et system basert på Noark 5 bare skal brukes for sakarkiver, er
-det ikke noe i veien for
-
-å fortsette å anvende begrepet "journalpost" i alle grensesnitt mot
-brukerne, på samme måte
-
-som en er vant til fra Noark-4. I denne standarden brukes registrering
-som en generell
-
+journalføringspliktige dokumenter i offentlig forvaltning skal
+registreres som journalposter og inngå i et sakarkiv.  Dersom et
+system basert på Noark 5 bare skal brukes for sakarkiver, er det ikke
+noe i veien for å fortsette å anvende begrepet "journalpost" i alle
+grensesnitt mot brukerne, på samme måte som en er vant til fra
+Noark-4. I denne standarden brukes registrering som en generell
 betegnelse på arkivenheter som dokumenter transaksjoner. (Registrering
-er dessuten en
-
-dekkende norsk oversettelse av det tilsvarende begrepet i MoReq2 som
-heter Record.)
+er dessuten en dekkende norsk oversettelse av det tilsvarende begrepet
+i MoReq2 som heter Record.)
 
 *<span class="underline">Relasjoner</span>*
 
@@ -6710,93 +6458,24 @@ heter Record.)
 
 *<span class="underline">Restriksjoner</span>*
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>5.5.8 En journalpost skal kunne defineres til å være av</p>
-<p>forskjellig type, se M082journalposttype.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.5.10 En Journalpost skal ha registrert en Saksansvar (dvs.</p>
-<p>administrativ enhet, Saksbehandler og eventuelt</p>
-<p>journalenhet) og en Saksansvar skal kunne inngå i ingen,</p>
-<p>en eller flere Journalposter.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.5.11 En Journalpost skal ha registrert en Korrespondansepart</p>
-<p>og en Korrespondansepart skal inngå i (kun) en</p>
-<p>Journalpost.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.5.12 Det bør finnes en tjeneste/funksjon for å ajourholde</p>
-<p>Journalenhet på en Registrering (Journalpost).</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.5.13 Det skal finnes en tjeneste/funksjon for å ajourholde</p>
-<p>Administrativ enhet og Saksbehandler på en Registrering</p>
-<p>(Journalpost).</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.5.14 Det skal finnes en tjeneste/funksjon for å ajourholde</p>
-<p>Korrespondansepart på en Journalpost</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M013 journalår: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M014 journalsekvensnummer: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M015 journalpostnummer: Skal normalt ikke endres, men ved flytting til en annen saksmappe kan journalposten få et nytt nummer (fordi det inngår i en annen nummerrekkefølge i denne mappen).</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M101 journaldato: Skal kunne endres manuelt inntil arkivering</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M103 dokumentetsDato: Skal kunne endres manuelt inntil arkivering</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>M104 mottattDato: Skal ikke kunne endres ved automatisk registrering, dato for</p>
-<p>mottak av fysiske dokumenter skal kunne endres inntil arkivering</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>M105 sendtDato: Skal ikke kunne endres ved automatisk registrering, dato for</p>
-<p>forsendelse av fysiske dokumenter skal kunne endres inntil arkivering</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>M106 utlåntDato: Utlån skal også kunne registreres etter at en saksmappe er</p>
-<p>avsluttet, eller etter at dokumentene i en journalpost ble arkivert.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M308 journalenhet: Er ikke lenger obligatorisk i Noark 5. Journalenhet er helt uavhengig av administrativ enhet. Kan f.eks. brukes som seleksjonskriterium ved produksjon av rapporter. Det anbefales ikke å knytte tilgangsrettigheter til journalenhet.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M309 utlåntTil: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller at dokumentene i en journalpost ble arkivert</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                                      | **Merknad** |
+| ------------------------------------------------------------- | ----------- |
+| 5.5.8 En journalpost skal kunne defineres til å være av forskjellig type, se M082journalposttype. | |
+| 5.5.10 En Journalpost skal ha registrert en Saksansvar (dvs. administrativ enhet, Saksbehandler og eventuelt journalenhet) og en Saksansvar skal kunne inngå i ingen, en eller flere Journalposter. | |
+| 5.5.11 En Journalpost skal ha registrert en Korrespondansepart og en Korrespondansepart skal inngå i (kun) en Journalpost. | |
+| 5.5.12 Det bør finnes en tjeneste/funksjon for å ajourholde Journalenhet på en Registrering (Journalpost). | |
+| 5.5.13 Det skal finnes en tjeneste/funksjon for å ajourholde Administrativ enhet og Saksbehandler på en Registrering (Journalpost). | |
+| 5.5.14 Det skal finnes en tjeneste/funksjon for å ajourholde Korrespondansepart på en Journalpost. |
+| M013 journalår: Skal ikke kunne endres. | |
+| M014 journalsekvensnummer: Skal ikke kunne endres. | |
+| M015 journalpostnummer: Skal normalt ikke endres, men ved flytting til en annen saksmappe kan journalposten få et nytt nummer (fordi det inngår i en annen nummerrekkefølge i denne mappen). | |
+| M101 journaldato: Skal kunne endres manuelt inntil arkivering. | | 
+| M103 dokumentetsDato: Skal kunne endres manuelt inntil arkivering. | |
+| M104 mottattDato: Skal ikke kunne endres ved automatisk registrering, dato for mottak av fysiske dokumenter skal kunne endres inntil arkivering. | |
+| M105 sendtDato: Skal ikke kunne endres ved automatisk registrering, dato for forsendelse av fysiske dokumenter skal kunne endres inntil arkivering. |
+| M106 utlåntDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert. | |
+| M308 journalenhet: Er ikke lenger obligatorisk i Noark 5. Journalenhet er helt uavhengig av administrativ enhet. Kan f.eks. brukes som seleksjonskriterium ved produksjon av rapporter. Det anbefales ikke å knytte tilgangsrettigheter til journalenhet. | |
+| M309 utlåntTil: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller at dokumentene i en journalpost ble arkivert. |
 
 #### Kontaktinformasjon
 
