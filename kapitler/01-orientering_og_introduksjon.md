@@ -81,23 +81,25 @@ Prosjekteiere: Riksarkivet, KS, KMD og Kartverket
 
 Styringsgruppe: SAMDOK sin strategigruppe Arkiv i e-forvaltning
 
-Prosjektgruppen har bestått av: Hans Fredrik Berg (Riksarkivet), Rune
-Sandland (KommIT), Michael Pande Rolfsen (KommIT), Anne Mette Dørum
-(KS), Line Richardsen (KS), Tor Kjetil Nilsen (KommIT/Arkitektum as),
-Per Arne Aass (Fredrikstad kommune), Atle Løvstakken (Bergen
-Kommune). Prosjektleder Inger Berit Eidsten (KommIT/EKOR AS).
+Prosjektgruppen har bestått av:
 
-Arbeidsgruppen har bestått av: Fra prosjektgruppen: Hans Fredrik Berg
-(Riksarkivet), Tor Kjetil Nilsen (KommIT), Rune Sandland (KommIT)
-Inger Berit Eidsten (KommIT).
+ - Hans Fredrik Berg (Riksarkivet), Rune Sandland (KommIT), Michael
+   Pande Rolfsen (KommIT), Anne Mette Dørum (KS), Line Richardsen
+   (KS), Tor Kjetil Nilsen (KommIT/Arkitektum as), Per Arne Aass
+   (Fredrikstad kommune), Atle Løvstakken (Bergen
+   Kommune). Prosjektleder Inger Berit Eidsten (KommIT/EKOR AS).
 
-Fra leverandørene: ACOS - Trygve Håland, Ciber - Antony Lærdahl /
-Kjetil Sahlberg, Evry - Ragnar Sturtzel, Gecko - Haakon Johannessen /
-Steinar Herland, Documaster - Christian Lundvang / Dimitar Ouzounov,
-Norconsult - Tor Olav Almås, Oppad - Thor Arne Johnsen, Software
-Innovation - Bjørn Tore Eriksen, Visma - Harry Myrene.
+Arbeidsgruppen har bestått av:
 
-Trondheim kommune: Jean-Philippe Caquet
+ - Fra prosjektgruppen: Hans Fredrik Berg (Riksarkivet), Tor Kjetil
+   Nilsen (KommIT), Rune Sandland (KommIT) Inger Berit Eidsten
+   (KommIT).
+ - Fra leverandørene: ACOS - Trygve Håland, Ciber - Antony Lærdahl /
+   Kjetil Sahlberg, Evry - Ragnar Sturtzel, Gecko - Haakon Johannessen
+   / Steinar Herland, Documaster - Christian Lundvang / Dimitar
+   Ouzounov, Norconsult - Tor Olav Almås, Oppad - Thor Arne Johnsen,
+   Software Innovation - Bjørn Tore Eriksen, Visma - Harry Myrene.
+ - Trondheim kommune: Jean-Philippe Caquet
 
 ## Endringslogg
 
