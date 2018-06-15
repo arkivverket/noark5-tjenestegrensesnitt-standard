@@ -45,7 +45,6 @@ Diagrammet viser oversikt over alle klasser og hvor de er definert
 
 Figur: 4
 
-
 ### Arkivstruktur 
 
 Basis skjema for arkivstruktur og indre kjerne
@@ -184,7 +183,7 @@ nedenfor. Et arkiv skal inneholde en eller flere arkivdeler. Dersom
 arkivet består av underarkiver, skal arkivdel være knyttet til det
 laveste nivået av disse.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -246,7 +245,7 @@ laveste nivået av disse.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                      |
 | --------- | -------------------------------------------------------------- |
@@ -261,7 +260,7 @@ laveste nivået av disse.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-arkivdel/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-arkiv/       |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -354,7 +353,7 @@ laveste nivået av disse.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -528,7 +527,7 @@ registreringene og dokumentbeskrivelsene vil indirekte også tilhøre
 arkivdelen som er utgangspunktet for den hierarkiske arkivstrukturen,
 men arv herfra blir overstyrt.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -603,7 +602,7 @@ men arv herfra blir overstyrt.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
@@ -621,7 +620,7 @@ men arv herfra blir overstyrt.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/arkivdelstatus/                |
 | REST\_REL | self                                                                     |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -783,7 +782,7 @@ men arv herfra blir overstyrt.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -1004,7 +1003,7 @@ på tvers av alle systemer organet benytter. Også arkivenheter som
 dupliseres i et arkivuttrekk, skal identifiseres entydig, slik at
 identiske arkivenheter har ulik systemID.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -1085,7 +1084,7 @@ identiske arkivenheter har ulik systemID.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
@@ -1093,7 +1092,7 @@ identiske arkivenheter har ulik systemID.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-hendelseslogg/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/logg/             |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -1171,7 +1170,7 @@ identiske arkivenheter har ulik systemID.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -1196,7 +1195,7 @@ I en Noark 5-løsning skal det altså være mulig å knytte en eller flere
 arkivskapere til ett arkiv.  Informasjon om arkivskapere er
 obligatorisk i arkivuttrekk.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -1229,7 +1228,7 @@ obligatorisk i arkivuttrekk.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                      |
 | --------- | -------------------------------------------------------------- |
@@ -1239,7 +1238,7 @@ obligatorisk i arkivuttrekk.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-arkiv/       |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/arkiv/          |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -1287,7 +1286,7 @@ obligatorisk i arkivuttrekk.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -1304,7 +1303,7 @@ andre metadata som er obligatoriske i alle typer arkivsystemer. En
 basisregistrering kan danne utgangspunkt for andre registreringstyper
 for spesialiserte fagsystemer
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -1360,7 +1359,7 @@ for spesialiserte fagsystemer
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                            |
 | --------- | -------------------------------------------------------------------- |
@@ -1373,7 +1372,7 @@ for spesialiserte fagsystemer
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/basisregistrering/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/kryssreferanse/       |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -1476,7 +1475,7 @@ for spesialiserte fagsystemer
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -1518,7 +1517,7 @@ begrepet enkeltdokument. En registrering som dokumenterer en
 transaksjon, vil vanligvis bestå av bare ett enkeltdokument.
 Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -1577,7 +1576,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                              |
 | --------- | ---------------------------------------------------------------------- |
@@ -1595,7 +1594,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-registrering/        |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/merknad/                |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -1780,7 +1779,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -1898,7 +1897,7 @@ kan være offentlig tilgjengelig. Dokumentobjektet inneholder mer
 tekniske metadata enn de andre arkivenhetene, bl.a. sjekksummen til
 bytesekvensen som representerer dokumentet.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -1933,7 +1932,7 @@ bytesekvensen som representerer dokumentet.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                              |
 | --------- | ---------------------------------------------------------------------- |
@@ -1948,7 +1947,7 @@ bytesekvensen som representerer dokumentet.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/konvertering/           |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil/                    |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -2095,7 +2094,7 @@ bytesekvensen som representerer dokumentet.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -2199,7 +2198,7 @@ bytesekvensen som representerer dokumentet.
 
 *Arver:*
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                     |
 | --------- | ----------------------------------------------------------------------------- |
@@ -2209,7 +2208,7 @@ bytesekvensen som representerer dokumentet.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/elektronisksignatur/           |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/elektronisksignaturverifisert/      |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -2272,7 +2271,7 @@ bytesekvensen som representerer dokumentet.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                             | **Merknad**                     |
 | ------------------------------------ | ------------------------------- |
@@ -2289,7 +2288,7 @@ Metadata for gradering skal grupperes inn i metadata for mappe,
 registrering og dokumentbeskrivelse. Gradering er valgfritt, og kan
 forekomme en gang
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -2375,7 +2374,7 @@ forekomme en gang
 
 *Arver:* ***Endringslogg***
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -2407,7 +2406,7 @@ forekomme en gang
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
@@ -2417,7 +2416,7 @@ forekomme en gang
 | REST\_REL | self                                                             |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/hendelseslogg/    |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type**     |
 | ---------------- | ----------- | ------------ | -------- | ------------ |
@@ -2457,7 +2456,7 @@ om kassasjon til arkivenheter hvor alle tilordnede dokumenter skal
 bevares. Kassasjon kan altså være knyttet en gang til arkivdel,
 klasse, mappe, registrering og dokumentbeskrivelse.
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -2536,7 +2535,7 @@ eller arkivkode i Noark-4. Identifikasjoner fra overordnede klasser skal
 arves nedover i hierarkiet, slik at det er lett å si hvilket nivå en
 befinner seg på6
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -2629,7 +2628,7 @@ befinner seg på6
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
@@ -2646,7 +2645,7 @@ befinner seg på6
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-registrering/          |
 | REST\_REL | self                                                                     |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -2747,7 +2746,7 @@ befinner seg på6
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -2807,7 +2806,7 @@ gjentar seg, tilhører den en prosess. Alle arkivdokumenter som
 produseres når en aktivitet utføres, skal normalt tilhøre samme
 (saks)mappe.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -2860,7 +2859,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                         |
 | --------- | --------------------------------------------------------------------------------- |
@@ -2875,7 +2874,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/klassifikasjonssystem/             |
 | REST\_REL | self                                                                              |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -2951,7 +2950,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -2985,7 +2984,7 @@ mappe (jf. NOARK 5 v3.1 krav 6.1.11). Systemet skal logge alle
 konverteringer, og informasjon om dette skal tas med ved
 deponering/avlevering.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -3009,7 +3008,7 @@ deponering/avlevering.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                       |
 | --------- | --------------------------------------------------------------- |
@@ -3017,7 +3016,7 @@ deponering/avlevering.
 | REST\_REL | self                                                            |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-konvertering/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -3103,7 +3102,7 @@ deponering/avlevering.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                                  | **Merknad** |
 | ----------------------------------------- | ----------- |
@@ -3132,7 +3131,7 @@ kryssreferanser knyttes til Mappe og Basisregistrering, vil det si at
 Referanser også knyttes til alle utvidelsene (spesialiseringer) under
 disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -3180,7 +3179,7 @@ disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                      |
 | --------- | -------------------------------------------------------------- |
@@ -3190,7 +3189,7 @@ disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/registrering/   |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/klasse/         |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                     | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------- | ----------- | ------------ | -------- | -------- |
@@ -3239,7 +3238,7 @@ mal som i tidligere versjoner av Noark-standarden - dvs. en kombinasjon
 av årstallet da mappen ble opprettet og et fortløpende seksjonsnummer
 innenfor året, f.eks. 2011/3869.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -3355,7 +3354,7 @@ innenfor året, f.eks. 2011/3869.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
@@ -3378,7 +3377,7 @@ innenfor året, f.eks. 2011/3869.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/undermappe/               |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/nasjonaleidentifikator/   |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -3536,7 +3535,7 @@ innenfor året, f.eks. 2011/3869.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -3651,7 +3650,7 @@ for å dokumentere spesielle forhold rundt saksbehandlingen og
 arkivering av dokumenter, og denne informasjonen skal tas med i
 arkivuttrekket.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -3693,7 +3692,7 @@ arkivuttrekket.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
@@ -3702,7 +3701,7 @@ arkivuttrekket.
 | REST\_REL | self                                                       |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/merknadstype/    |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -3773,7 +3772,7 @@ arkivuttrekket.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                                  | **Merknad** |
 | ----------------------------------------- | ----------- |
@@ -3791,7 +3790,7 @@ En registrering inneholder bare de metadata som er nødvendig dersom
 dokumentet arkiveres uten journalføring. Dette kalles også forenklet
 registrering.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -3873,7 +3872,7 @@ registrering.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
@@ -3891,7 +3890,7 @@ registrering.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-nasjonalidentifikator/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/registrering/             |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -3962,7 +3961,7 @@ registrering.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -4031,7 +4030,7 @@ enkeltdokumenter. Skjermingen trer i kraft når en tilgangskode påføres
 den enkelte mappe, registrering eller det enkelte dokument. (Se NOARK
 5 v3.1 eget kapittel: 6.6.1 Skjerming)
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -4137,7 +4136,7 @@ Dersom tidligere versjoner er blitt arkivert unødvendig, skal det være
 mulig å rydde opp på en effektiv måte. Slik opprydding skal alltid
 skje før det produseres et arkivuttrekk.
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -4190,7 +4189,7 @@ skje før det produseres et arkivuttrekk.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**          | **Merknad**                  |
 | ----------------- | ---------------------------- |
@@ -4211,7 +4210,7 @@ Dersom en hel
 
 arkivdel er kassert, skal metadata grupperes inn i arkivdel.
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -4254,7 +4253,7 @@ arkivdel er kassert, skal metadata grupperes inn i arkivdel.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**          | **Merknad**                         |
 | ----------------- | ----------------------------------- |
@@ -4276,7 +4275,7 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-*<span class="underline">Relasjoner</span>*
+###### Relasjoner
 
 <table>
 <thead>
@@ -4298,7 +4297,7 @@ Figur: 20
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+###### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
@@ -4306,7 +4305,7 @@ Figur: 20
 | REST\_REL | self                                                       |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-bygning/ |
 
-*<span class="underline">Attributter</span>*
+###### Attributter
 
 | **Navn**              | **Merknad** | **Multipl.** | **Kode** | **Type**  |
 | --------------------- | ----------- | ------------ | -------- | --------- |
@@ -4318,7 +4317,7 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-*<span class="underline">Relasjoner</span>*
+###### Relasjoner
 
 <table>
 <thead>
@@ -4340,7 +4339,7 @@ Figur: 20
 </tbody>
 </table>
 
-*<span class="underline">Attributter</span>*
+###### Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
@@ -4352,7 +4351,7 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-*<span class="underline">Relasjoner</span>*
+###### Relasjoner
 
 <table>
 <thead>
@@ -4374,7 +4373,7 @@ Figur: 20
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+###### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                    |
 | --------- | ------------------------------------------------------------ |
@@ -4382,7 +4381,7 @@ Figur: 20
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/matrikkel/    |
 | REST\_REL | self                                                         |
 
-*<span class="underline">Attributter</span>*
+###### Attributter
 
 | **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type**        |
 | ------------------- | ----------- | ------------ | -------- | --------------- |
@@ -4394,7 +4393,7 @@ Figur: 20
 
 *Arver:* 
 
-*<span class="underline">Relasjoner</span>*
+###### Relasjoner
 
 <table>
 <thead>
@@ -4469,7 +4468,7 @@ Figur: 20
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+###### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
@@ -4478,7 +4477,7 @@ Figur: 20
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
 | REST\_REL | self                                                                     |
 
-*<span class="underline">Attributter</span>*
+###### Attributter
 
 | **Navn**        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------- | ----------- | ------------ | -------- | -------- |
@@ -4491,7 +4490,7 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-*<span class="underline">Relasjoner</span>*
+###### Relasjoner
 
 <table>
 <thead>
@@ -4513,13 +4512,13 @@ Figur: 20
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+###### Relasjonsnøkler
 
 | **Tag** | **Verdi**                                        |
 | ------- | ------------------------------------------------ |
 | LOV     | https://lovdata.no/dokument/NL/lov/2000-04-14-31 |
 
-*<span class="underline">Attributter</span>*
+###### Attributter
 
 <table>
 <thead>
@@ -4558,7 +4557,7 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-*<span class="underline">Relasjoner</span>*
+###### Relasjoner
 
 <table>
 <thead>
@@ -4580,7 +4579,7 @@ Figur: 20
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+###### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                               |
 | --------- | ------------------------------------------------------- |
@@ -4588,7 +4587,7 @@ Figur: 20
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/plan/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-plan/ |
 
-*<span class="underline">Attributter</span>*
+###### Attributter
 
 | **Navn**              | **Merknad** | **Multipl.** | **Kode** | **Type**            |
 | --------------------- | ----------- | ------------ | -------- | ------------------- |
@@ -4600,7 +4599,7 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-*<span class="underline">Relasjoner</span>*
+###### Relasjoner
 
 <table>
 <thead>
@@ -4622,7 +4621,7 @@ Figur: 20
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+###### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                   |
 | --------- | ----------------------------------------------------------- |
@@ -4630,7 +4629,7 @@ Figur: 20
 | REST\_REL | self                                                        |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/posisjon/    |
 
-*<span class="underline">Attributter</span>*
+###### Attributter
 
 | **Navn**       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------- | ----------- | ------------ | -------- | -------- |
@@ -4664,13 +4663,13 @@ Status til den arkivperioden som arkivdelen omfatter
 
 M051
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                 |
 | -------- | --------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/arkivdelstatus/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
@@ -4691,13 +4690,13 @@ Status til arkivet
 
 M050
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                              |
 | -------- | ------------------------------------------------------ |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/arkivstatus/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
@@ -4716,13 +4715,13 @@ Måten en journalpost har blitt avskrevet på
 
 M619
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                    |
 | -------- | ------------------------------------------------------------ |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/avskrivningsmaate/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------- | ----------- | ------------ | -------- | -------- |
@@ -4746,13 +4745,13 @@ dokumenter
 
 M300
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                 |
 | -------- | --------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/dokumentmedium/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -4772,13 +4771,13 @@ Definisjon: Status til dokumentet
 
 M054
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                 |
 | -------- | --------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/dokumentstatus/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                           | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -4797,13 +4796,13 @@ Definisjon: Navn på type dokument
 
 M083
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                               |
 | -------- | ------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/dokumenttype/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------- | ----------- | ------------ | -------- | -------- |
@@ -4831,13 +4830,13 @@ Kommentar: (ingen)
 M507
 elektroniskSignaturSikkerhetsnivåå
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                                     |
 | -------- | ----------------------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/elektronisksignatursikkerhetsnivaa/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -4860,13 +4859,13 @@ verifisert.
 
 M508
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                                |
 | -------- | ------------------------------------------------------------------------ |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/elektronisksignaturverifisert/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------ | ----------- | ------------ | -------- | -------- |
@@ -4881,13 +4880,13 @@ M508
 
 Åpen kodeliste
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                             |
 | -------- | ----------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/flytstatus/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -4903,13 +4902,13 @@ M508
 
 Åpen kodeliste
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                         |
 | -------- | ------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/format/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                     | **Merknad**                                                                                                                                                              | **Multipl.** | **Kode**  | **Type** |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------- | -------- |
@@ -4930,13 +4929,13 @@ M508
 
 Åpen kodeliste
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                 |
 | -------- | --------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/graderingskode/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                                 | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -4953,13 +4952,13 @@ M508
 
 *Arver:* 
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                               |
 | -------- | ------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/hendelsetype/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
@@ -4981,13 +4980,13 @@ journalpost
 
 M082
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                  |
 | -------- | ---------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/journalposttype/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                                  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -5008,13 +5007,13 @@ under behandling eller endelig arkivert.
 
 M053
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/journalstatus/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -5107,13 +5106,13 @@ slutt.
 
 M450
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                   |
 | -------- | ----------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/kassasjonsvedtak/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
@@ -5134,13 +5133,13 @@ klassifikasjonssystem
 
 M086
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                      |
 | -------- | -------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/klassifikasjonstype/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                               | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -5166,13 +5165,13 @@ korrespondansepart
 
 M087
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                         |
 | -------- | ----------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/korrespondanseparttype/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
@@ -5193,7 +5192,7 @@ M087
 Landkoder ihht ISO 3166
 https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                       |
 | -------- | ----------------------------------------------- |
@@ -5207,7 +5206,7 @@ https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
 
 Åpen kodeliste
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                            |
 | -------- | ---------------------------------------------------- |
@@ -5226,13 +5225,13 @@ Definisjon: Navn på type merknad
 
 M084
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                               |
 | -------- | ------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/merknadstype/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------ | ----------- | ------------ | -------- | -------- |
@@ -5253,13 +5252,13 @@ Definisjon: Funksjon eller rolle til personen som deltok på møtet
 M373
 moetedeltakerFunksjon
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                        |
 | -------- | ---------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/moetedeltakerfunksjon/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
@@ -5286,13 +5285,13 @@ Kommentar: Valgfrie verdier, eksempler:
 
 M055 moeteregistreringsstatus
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                           |
 | -------- | ------------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/moeteregistreringsstatus/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -5320,13 +5319,13 @@ verdier":
 
 M085 moeteregistreringstype
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                         |
 | -------- | ----------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/moeteregistreringstype/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                | **Merknad**                                                                                                                     | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------- | -------- |
@@ -5354,13 +5353,13 @@ Kommentar: (ingen)
 
 M088 moetesakstype
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/moetesakstype/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -5378,13 +5377,13 @@ M088 moetesakstype
 Postens postnummer liste
 http://adressesok.posten.no/nb/postal\_codes/search
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 | **Relasjon**                                | **Kilde**  | **Mål**       | **Merknad** |
 | ------------------------------------------- | ---------- | ------------- | ----------- |
 | **<span class="underline">NoteLink</span>** | Postnummer | \<anonymous\> |             |
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                             |
 | -------- | ----------------------------------------------------- |
@@ -5403,13 +5402,13 @@ foreldet
 
 M056
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                  |
 | -------- | ---------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/presedensstatus/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
@@ -5424,13 +5423,13 @@ M056
 
 Åpen kodeliste
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/sakspartrolle/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
@@ -5452,13 +5451,13 @@ kommet.
 
 M052
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                             |
 | -------- | ----------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/saksstatus/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -5483,13 +5482,13 @@ skjermes.
 
 M503
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                    |
 | -------- | ------------------------------------------------------------ |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/skjermingdokument/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------ | ----------- | ------------ | -------- | -------- |
@@ -5509,13 +5508,13 @@ skjermes.
 
 M502
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                    |
 | -------- | ------------------------------------------------------------ |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/skjermingmetadata/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                                                 | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -5544,13 +5543,13 @@ Definisjon: Navn på hvilket objekt som er slettet
 
 M089
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/slettingstype/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -5583,7 +5582,7 @@ knyttet til flere forskjellige registreringer.
 
 M001
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -5616,14 +5615,14 @@ M001
 ny kodeliste jfr NOARK 5 v3.1 krav
 6.6.32
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                   |
 | -------- | ----------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/tilgangskategori/ |
 | NEW      | 5.4.0                                                       |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
@@ -5641,14 +5640,14 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 Åpen kodeliste
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                      |
 | -------- | -------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/tilgangsrestriksjon/ |
 | NEW      | 5.4.0                                                          |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                                           | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -5673,13 +5672,13 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 Åpen kodeliste
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                            |
 | -------- | -------------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/tilknyttetregistreringsom/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**          | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------- | ----------- | ------------ | -------- | -------- |
@@ -5698,13 +5697,13 @@ Definisjon: Angivelse av hvilken variant et dokument forekommer i
 
 M700
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/variantformat/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------------------ | ----------- | ------------ | -------- | -------- |
@@ -5787,7 +5786,7 @@ journalpost. Avskrivning er obligatorisk for inngående dokumenter og
 organinterne dokumenter som skal følges opp, og kan forekomme en eller
 flere ganger i en journalpost.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -5811,7 +5810,7 @@ flere ganger i en journalpost.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                    |
 | --------- | ------------------------------------------------------------ |
@@ -5820,7 +5819,7 @@ flere ganger i en journalpost.
 | REST\_REL | self                                                         |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/avskrivning/       |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -5900,7 +5899,7 @@ flere ganger i en journalpost.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                               | **Merknad** |
 | -------------------------------------- | ----------- |
@@ -5923,7 +5922,7 @@ ny versjon ved hver (videre)forsendelse. All funksjonalitet for
 korrektur og merknader i tilknyttet tekstbehandlingssystem skal kunne
 brukes på et dokument som er under produksjon.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -5947,7 +5946,7 @@ brukes på et dokument som er under produksjon.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
@@ -5956,7 +5955,7 @@ brukes på et dokument som er under produksjon.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/dokumentflyt/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-dokumentflyt/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -6056,7 +6055,7 @@ brukes på et dokument som er under produksjon.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -6096,7 +6095,7 @@ brukes på et dokument som er under produksjon.
 
 *Arver:*
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
@@ -6106,7 +6105,7 @@ brukes på et dokument som er under produksjon.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/land/            |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/postnummer/      |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**          | **Merknad** | **Multipl.** | **Kode** | **Type**   |
 | ----------------- | ----------- | ------------ | -------- | ---------- |
@@ -6149,7 +6148,7 @@ betegnelse på arkivenheter som dokumenter transaksjoner. (Registrering
 er dessuten en dekkende norsk oversettelse av det tilsvarende begrepet
 i MoReq2 som heter Record.)
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -6209,7 +6208,7 @@ i MoReq2 som heter Record.)
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
@@ -6227,7 +6226,7 @@ i MoReq2 som heter Record.)
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/korrespondansepart/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/dokumentflyt/          |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -6407,7 +6406,7 @@ i MoReq2 som heter Record.)
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                                                      | **Merknad** |
 | ------------------------------------------------------------- | ----------- |
@@ -6434,7 +6433,7 @@ i MoReq2 som heter Record.)
 
 *Arver:*
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
@@ -6442,7 +6441,7 @@ i MoReq2 som heter Record.)
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/kontaktinformasjon/    |
 | REST\_REL | self                                                             |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------- | ----------- | ------------ | -------- | -------- |
@@ -6467,7 +6466,7 @@ må både
 
 avsender(e) og mottaker(e) registreres.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -6512,7 +6511,7 @@ avsender(e) og mottaker(e) registreres.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                         |
 | --------- | ----------------------------------------------------------------- |
@@ -6520,7 +6519,7 @@ avsender(e) og mottaker(e) registreres.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/korrespondanseparttype/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/korrespondansepart/     |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -6576,7 +6575,7 @@ avsender(e) og mottaker(e) registreres.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                              | **Merknad** |
 | ------------------------------------- | ----------- |
@@ -6588,7 +6587,7 @@ avsender(e) og mottaker(e) registreres.
 
 *Arver:* ***Korrespondansepart***
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -6610,7 +6609,7 @@ avsender(e) og mottaker(e) registreres.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                             |
 | --------- | --------------------------------------------------------------------- |
@@ -6619,7 +6618,7 @@ avsender(e) og mottaker(e) registreres.
 | REST\_REL | self                                                                  |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-korrespondansepartenhet/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ----------------------- | ----------- | ------------ | -------- | ------------------ |
@@ -6636,7 +6635,7 @@ avsender(e) og mottaker(e) registreres.
 
 *Arver:* ***Korrespondansepart***
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -6658,7 +6657,7 @@ avsender(e) og mottaker(e) registreres.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                              |
 | --------- | ---------------------------------------------------------------------- |
@@ -6667,7 +6666,7 @@ avsender(e) og mottaker(e) registreres.
 | REST\_REL | self                                                                   |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-korrespondansepartintern/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                        | **Merknad**                                   | **Multipl.** | **Kode** | **Type** |
 | ------------------------------- | --------------------------------------------- | ------------ | -------- | -------- |
@@ -6682,7 +6681,7 @@ avsender(e) og mottaker(e) registreres.
 
 *Arver:* ***Korrespondansepart***
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -6704,7 +6703,7 @@ avsender(e) og mottaker(e) registreres.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                              |
 | --------- | ---------------------------------------------------------------------- |
@@ -6713,7 +6712,7 @@ avsender(e) og mottaker(e) registreres.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/korrespondansepartperson/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-korrespondansepartperson/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
@@ -6761,7 +6760,7 @@ Hvis opplysninger
 
 om presedens er registrert, er presedens obligatorisk for avlevering.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -6798,7 +6797,7 @@ om presedens er registrert, er presedens obligatorisk for avlevering.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
@@ -6811,7 +6810,7 @@ om presedens er registrert, er presedens obligatorisk for avlevering.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/journalpost/     |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-journalpost/  |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -6992,7 +6991,7 @@ om presedens er registrert, er presedens obligatorisk for avlevering.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                                                                                           | **Merknad** |
 | -------------------------------------------------------------------------------------------------- | ----------- |
@@ -7021,7 +7020,7 @@ sak i Noark-4, men har
 en del nye metadata. . For sakarkiver er det obligatorisk å bruke en
 saksmappe.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -7072,7 +7071,7 @@ saksmappe.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                          |
 | --------- | ------------------------------------------------------------------ |
@@ -7087,7 +7086,7 @@ saksmappe.
 | REST\_REL | self                                                               |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-saksmappe/            |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -7219,7 +7218,7 @@ saksmappe.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 <table>
 <thead>
@@ -7363,7 +7362,7 @@ Dersom det er mer enn
 
 én sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -7401,7 +7400,7 @@ Dersom det er mer enn
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                |
 | --------- | -------------------------------------------------------- |
@@ -7410,7 +7409,7 @@ Dersom det er mer enn
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sakspart/      |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-sakspart/   |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -7464,7 +7463,7 @@ Dersom det er mer enn
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                              | **Merknad** |
 | ------------------------------------- | ----------- |
@@ -7476,7 +7475,7 @@ Dersom det er mer enn
 
 *Arver:* ***Sakspart***
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -7498,7 +7497,7 @@ Dersom det er mer enn
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                   |
 | --------- | ----------------------------------------------------------- |
@@ -7507,7 +7506,7 @@ Dersom det er mer enn
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-sakspartenhet/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sakspartenhet/    |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ----------------------- | ----------- | ------------ | -------- | ------------------ |
@@ -7524,7 +7523,7 @@ Dersom det er mer enn
 
 *Arver:* ***Sakspart***
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -7546,7 +7545,7 @@ Dersom det er mer enn
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                    |
 | --------- | ------------------------------------------------------------ |
@@ -7555,7 +7554,7 @@ Dersom det er mer enn
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sakspartperson/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-sakspartperson/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
@@ -7607,7 +7606,7 @@ Figur: 32
 
 *Arver:* 
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -7633,7 +7632,7 @@ Figur: 32
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                     |
 | --------- | ------------------------------------------------------------- |
@@ -7643,7 +7642,7 @@ Figur: 32
 | REST\_REL | self                                                          |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/admin/administrativenhet/    |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -7757,7 +7756,7 @@ Figur: 32
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                                                                                                                               | **Merknad** |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
@@ -7779,7 +7778,7 @@ arkivkjernen. Fungerer som brukerregister til valg av saksbehandler i
 kjernen og bevarer alle brukere for ettertiden. Opprettes nye av kjernen
 når pålogget bruker ikke finnes fra før.
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -7805,7 +7804,7 @@ når pålogget bruker ikke finnes fra før.
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                     |
 | --------- | ------------------------------------------------------------- |
@@ -7815,7 +7814,7 @@ når pålogget bruker ikke finnes fra før.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/admin/enhet/                 |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/admin/ny-bruker/             |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 <table>
 <thead>
@@ -7905,7 +7904,7 @@ når pålogget bruker ikke finnes fra før.
 </tbody>
 </table>
 
-*<span class="underline">Restriksjoner</span>*
+##### Restriksjoner
 
 | **Navn**                                                                                     | **Merknad** |
 | -------------------------------------------------------------------------------------------- | ----------- |
@@ -7925,7 +7924,7 @@ når pålogget bruker ikke finnes fra før.
 Styrer tilgang til data i kjernen basert på brukers
 rolletilknytning
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                      |
 | --------- | -------------------------------------------------------------- |
@@ -7936,7 +7935,7 @@ rolletilknytning
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/tilgangskategori/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/admin/rettighet/              |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                | **Merknad**                                           | **Multipl.** | **Kode** | **Type**            |
 | ----------------------- | ----------------------------------------------------- | ------------ | -------- | ------------------- |
@@ -7966,7 +7965,7 @@ Figur: 33
 
 *Arver:* 
 
-*<span class="underline">Relasjoner</span>*
+##### Relasjoner
 
 <table>
 <thead>
@@ -7988,7 +7987,7 @@ Figur: 33
 </tbody>
 </table>
 
-*<span class="underline">Relasjonsnøkler</span>*
+##### Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                          |
 | --------- | ------------------------------------------------------------------ |
@@ -7996,7 +7995,7 @@ Figur: 33
 | REST\_REL | self                                                               |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/loggingogsporing/ny-endringslogg/ |
 
-*<span class="underline">Attributter</span>*
+##### Attributter
 
 | **Navn**                | **Merknad**                       | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | --------------------------------- | ------------ | -------- | -------- |
