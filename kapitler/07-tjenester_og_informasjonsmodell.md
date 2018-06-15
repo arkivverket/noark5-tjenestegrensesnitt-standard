@@ -5378,9 +5378,9 @@ http://adressesok.posten.no/nb/postal\_codes/search
 
 ##### Relasjoner
 
-| **Relasjon**                                | **Kilde**  | **Mål**       | **Merknad** |
-| ------------------------------------------- | ---------- | ------------- | ----------- |
-| **<span class="underline">NoteLink</span>** | Postnummer | \<anonymous\> |             |
+| **Relasjon** | **Kilde**  | **Mål**       | **Merknad** |
+| ------------ | ---------- | ------------- | ----------- |
+| NoteLink     | Postnummer | \<anonymous\> |             |
 
 ##### Relasjonsnøkler
 
