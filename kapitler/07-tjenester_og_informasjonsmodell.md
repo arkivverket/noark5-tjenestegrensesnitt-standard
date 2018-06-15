@@ -164,7 +164,7 @@ Figur: 19
 
 *Type:* ***Class***
 
-*Arver:* **Arkivenhet**
+*Arver:* ***Arkivenhet***
 
 Arkiv er det øverste nivået i arkivstrukturen. De fleste brukere vil
 bare ha behov for å opprette ett arkiv i sin Noark 5-løsning. Men det
@@ -460,9 +460,9 @@ laveste nivået av disse.
 
 #### Arkivdel
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Arkivenhet**</span>
+*Arver:* ***Arkivenhet***
 
 Et arkiv skal kunne deles opp i arkivdeler for å gruppere arkivet
 etter overordnede kriterier. De viktigste kriteriene for oppdeling i
@@ -990,7 +990,7 @@ men arv herfra blir overstyrt.
 
 #### Arkivenhet
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -1180,9 +1180,9 @@ identiske arkivenheter har ulik systemID.
 
 #### Arkivskaper
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Arkivenhet**</span>
+*Arver:* ***Arkivenhet***
 
 Tradisjonelt har et arkiv blitt definert etter organisasjon. Ett organ
 skaper ett arkiv, dvs.  organet er arkivskaperen. Men elektronisk
@@ -1293,9 +1293,9 @@ obligatorisk i arkivuttrekk.
 
 #### Basisregistrering
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Registrering**</span>
+*Arver:* ***Registrering***
 
 En basisregistrering inneholder alle metadata fra registrering, samt
 andre metadata som er obligatoriske i alle typer arkivsystemer. En
@@ -1506,9 +1506,9 @@ for spesialiserte fagsystemer
 
 #### Dokumentbeskrivelse
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Arkivenhet**</span>
+*Arver:* ***Arkivenhet***
 
 Et dokument er et informasjonsobjekt som kan behandles som en
 enhet. For å understreke at det dreier seg om en enhet, kan vi bruke
@@ -1878,7 +1878,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 
 #### Dokumentobjekt
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -2193,7 +2193,7 @@ bytesekvensen som representerer dokumentet.
 
 #### ElektroniskSignatur
 
-*Type:* **<span class="underline">Class «dataType»</span>**
+*Type:* ***Class «dataType»***
 
 *Arver:*
 
@@ -2279,7 +2279,7 @@ bytesekvensen som representerer dokumentet.
 
 #### Gradering
 
-*Type:* **<span class="underline">Class «dataType»</span>**
+*Type:* ***Class «dataType»***
 
 *Arver:* 
 
@@ -2369,9 +2369,9 @@ forekomme en gang
 
 #### Hendelseslogg
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Endringslogg**</span>
+*Arver:* ***Endringslogg***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -2425,7 +2425,7 @@ forekomme en gang
 
 #### Kassasjon
 
-*Type:* **<span class="underline">Class «dataType»</span>**
+*Type:* ***Class «dataType»***
 
 *Arver:* 
 
@@ -2513,9 +2513,9 @@ klasse, mappe, registrering og dokumentbeskrivelse.
 
 #### Klasse
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Arkivenhet**</span>
+*Arver:* ***Arkivenhet***
 
 Et klassifikasjonssystem er bygd opp av klasser. Ved funksjonsbasert
 (emnebasert) klassifikasjon vil klassene vanligvis inngå i et
@@ -2785,9 +2785,9 @@ befinner seg på6
 
 #### Klassifikasjonssystem
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Arkivenhet**</span>
+*Arver:* ***Arkivenhet***
 
 Moderne arkivteori legger vekt på at klassifikasjonssystemet skal være
 funksjonsbasert. Alle
@@ -2973,7 +2973,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 
 #### Konvertering
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -3113,7 +3113,7 @@ deponering/avlevering.
 
 #### Kryssreferanse
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -3198,9 +3198,9 @@ disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 
 #### Mappe
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Arkivenhet**</span>
+*Arver:* ***Arkivenhet***
 
 En mappe grupperer dokumenter som på en eller annen måte hører sammen.
 Helst bør dokumentene i en mappe utgjøre en instans (dvs. en utførelse)
@@ -3639,7 +3639,7 @@ innenfor året, f.eks. 2011/3869.
 
 #### Merknad
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -3781,9 +3781,9 @@ arkivuttrekket.
 
 #### Registrering
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Arkivenhet**</span>
+*Arver:* ***Arkivenhet***
 
 En registrering inneholder bare de metadata som er nødvendig dersom
 dokumentet arkiveres uten journalføring. Dette kalles også forenklet
@@ -4020,7 +4020,7 @@ registrering.
 
 #### Skjerming
 
-*Type:* **<span class="underline">Class «dataType»</span>**
+*Type:* ***Class «dataType»***
 
 *Arver:* 
 
@@ -4107,7 +4107,7 @@ den enkelte mappe, registrering eller det enkelte dokument. (Se NOARK
 
 #### Sletting
 
-*Type:* **<span class="underline">Class «dataType»</span>**
+*Type:* ***Class «dataType»***
 
 *Arver:* 
 
@@ -4197,7 +4197,7 @@ skje før det produseres et arkivuttrekk.
 
 #### UtførtKassasjon
 
-*Type:* **<span class="underline">Class «dataType»</span>**
+*Type:* ***Class «dataType»***
 
 *Arver:* 
 
@@ -4270,9 +4270,9 @@ Figur: 20
 
 ##### **Bygning**
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Nasjonalidentifikator**</span>
+*Arver:* ***Nasjonalidentifikator***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -4312,9 +4312,9 @@ Figur: 20
 
 ##### **Enhetsidentifikator**
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Nasjonalidentifikator**</span>
+*Arver:* ***Nasjonalidentifikator***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -4346,9 +4346,9 @@ Figur: 20
 
 ##### **Matrikkel**
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Nasjonalidentifikator**</span>
+*Arver:* ***Nasjonalidentifikator***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -4388,7 +4388,7 @@ Figur: 20
 
 ##### **Nasjonalidentifikator**
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -4485,9 +4485,9 @@ Figur: 20
 
 ##### **Personidentifikator**
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Nasjonalidentifikator**</span>
+*Arver:* ***Nasjonalidentifikator***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -4552,9 +4552,9 @@ Figur: 20
 
 ##### **Plan**
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Nasjonalidentifikator**</span>
+*Arver:* ***Nasjonalidentifikator***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -4594,9 +4594,9 @@ Figur: 20
 
 ##### **Posisjon**
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Nasjonalidentifikator**</span>
+*Arver:* ***Nasjonalidentifikator***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -4652,7 +4652,7 @@ Figur: 22
 
 #### Arkivdelstatus
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4679,7 +4679,7 @@ M051
 
 #### Arkivstatus
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4704,7 +4704,7 @@ M050
 
 #### Avskrivningsmåte
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4732,7 +4732,7 @@ M619
 
 #### Dokumentmedium
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4760,7 +4760,7 @@ M300
 
 #### Dokumentstatus
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4785,7 +4785,7 @@ M054
 
 #### Dokumenttype
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4812,7 +4812,7 @@ M083
 
 #### ElektroniskSignaturSikkerhetsnivå
 
-*Type:* **<span class="underline">Class «codeList»</span>**
+*Type:* ***Class «codeList»***
 
 *Arver:* 
 
@@ -4846,7 +4846,7 @@ elektroniskSignaturSikkerhetsnivåå
 
 #### ElektroniskSignaturVerifisert
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4873,7 +4873,7 @@ M508
 
 #### FlytStatus
 
-*Type:* **<span class="underline">Class «codeList»</span>**
+*Type:* ***Class «codeList»***
 
 *Arver:* 
 
@@ -4895,7 +4895,7 @@ M508
 
 #### Format
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4922,7 +4922,7 @@ M508
 
 #### Graderingskode
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4947,7 +4947,7 @@ M508
 
 #### Hendelsetype
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4968,7 +4968,7 @@ M508
 
 #### Journalposttype
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -4997,7 +4997,7 @@ M082
 
 #### Journalstatus
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5094,7 +5094,7 @@ M053
 
 #### Kassasjonsvedtak
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5121,7 +5121,7 @@ M450
 
 #### Klassifikasjonstype
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5153,7 +5153,7 @@ M086
 
 #### Korrespondanseparttype
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5184,7 +5184,7 @@ M087
 
 #### Land
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5199,7 +5199,7 @@ https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
 
 #### Mappetype
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5214,7 +5214,7 @@ https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
 
 #### Merknadstype
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5240,7 +5240,7 @@ M084
 
 #### MøtedeltakerFunksjon
 
-*Type:* **<span class="underline">Class «codeList»</span>**
+*Type:* ***Class «codeList»***
 
 *Arver:* 
 
@@ -5266,7 +5266,7 @@ moetedeltakerFunksjon
 
 #### Møteregistreringsstatus
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5300,7 +5300,7 @@ M055 moeteregistreringsstatus
 
 #### Møteregistreringstype
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5338,7 +5338,7 @@ M085 moeteregistreringstype
 
 #### Møtesakstype
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5369,7 +5369,7 @@ M088 moetesakstype
 
 #### Postnummer
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5390,7 +5390,7 @@ http://adressesok.posten.no/nb/postal\_codes/search
 
 #### Presedensstatus
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5416,7 +5416,7 @@ M056
 
 #### SakspartRolle
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5439,7 +5439,7 @@ M056
 
 #### Saksstatus
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5470,7 +5470,7 @@ M052
 
 #### SkjermingDokument
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5496,7 +5496,7 @@ M503
 
 #### SkjermingMetadata
 
-*Type:* **<span class="underline">Class «codeList»</span>**
+*Type:* ***Class «codeList»***
 
 *Arver:* 
 
@@ -5532,7 +5532,7 @@ M502
 
 #### Slettingstype
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5559,9 +5559,9 @@ M089
 
 #### SystemID
 
-*Type:* **<span class="underline">Class «simple»</span>**
+*Type:* ***Class «simple»***
 
-*Arver:* <span class="underline"> **string**</span>
+*Arver:* ***string***
 
 Definisjon: Entydig identifikasjon av arkivenheten innenfor det
 arkivskapende organet. Dersom organet har flere arkivsystemer, skal
@@ -5605,7 +5605,7 @@ M001
 
 #### Tilgangskategori
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5633,7 +5633,7 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 #### Tilgangsrestriksjon
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5665,7 +5665,7 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 #### TilknyttetRegistreringSom
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5686,7 +5686,7 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 #### Variantformat
 
-*Type:* **<span class="underline">Class «codelist»</span>**
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -5771,7 +5771,7 @@ Figur: 31
 
 #### Avskrivning
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -5908,7 +5908,7 @@ flere ganger i en journalpost.
 
 #### Dokumentflyt
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -6090,7 +6090,7 @@ brukes på et dokument som er under produksjon.
 
 #### EnkelAdresse
 
-*Type:* **<span class="underline">Class «dataType»</span>**
+*Type:* ***Class «dataType»***
 
 *Arver:*
 
@@ -6117,9 +6117,9 @@ brukes på et dokument som er under produksjon.
 
 #### Journalpost
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Basisregistrering**</span>
+*Arver:* ***Basisregistrering***
 
 En journalpost fra Noark-4 utgjør en egen registreringstype i Noark 5.
 En journalpost representer en "innføring i journalen". Journalen er en
@@ -6428,7 +6428,7 @@ i MoReq2 som heter Record.)
 
 #### Kontaktinformasjon
 
-*Type:* **<span class="underline">Class «dataType»</span>**
+*Type:* ***Class «dataType»***
 
 *Arver:*
 
@@ -6450,7 +6450,7 @@ i MoReq2 som heter Record.)
 
 #### Korrespondansepart
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -6582,9 +6582,9 @@ avsender(e) og mottaker(e) registreres.
 
 #### KorrespondansepartEnhet
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Korrespondansepart**</span>
+*Arver:* ***Korrespondansepart***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -6630,9 +6630,9 @@ avsender(e) og mottaker(e) registreres.
 
 #### KorrespondansepartIntern
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Korrespondansepart**</span>
+*Arver:* ***Korrespondansepart***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -6676,9 +6676,9 @@ avsender(e) og mottaker(e) registreres.
 
 #### KorrespondansepartPerson
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Korrespondansepart**</span>
+*Arver:* ***Korrespondansepart***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -6724,7 +6724,7 @@ avsender(e) og mottaker(e) registreres.
 
 #### Presedens
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -7003,9 +7003,9 @@ om presedens er registrert, er presedens obligatorisk for avlevering.
 
 #### Saksmappe
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Mappe**</span>
+*Arver:* ***Mappe***
 
 I denne versjonen av Noark 5 er det i tillegg til Mappe definert en
 spesialisering kalt
@@ -7346,7 +7346,7 @@ saksmappe.
 
 #### Sakspart
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -7470,9 +7470,9 @@ Dersom det er mer enn
 
 #### SakspartEnhet
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Sakspart**</span>
+*Arver:* ***Sakspart***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -7518,9 +7518,9 @@ Dersom det er mer enn
 
 #### SakspartPerson
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Sakspart**</span>
+*Arver:* ***Sakspart***
 
 *<span class="underline">Relasjoner</span>*
 
@@ -7601,7 +7601,7 @@ Figur: 32
 
 #### AdministrativEnhet
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -7768,7 +7768,7 @@ Figur: 32
 
 #### Bruker
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -7916,7 +7916,7 @@ når pålogget bruker ikke finnes fra før.
 
 #### Tilgang
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
@@ -7960,7 +7960,7 @@ Figur: 33
 
 #### Endringslogg
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
 *Arver:* 
 
