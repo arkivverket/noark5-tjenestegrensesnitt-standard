@@ -1,67 +1,17 @@
 # Tjenester og informasjonsmodell
 
 ## Om UML og notasjon som er benyttet
+|         |            |
+| ------------- |---------------  | 
+|![](./media/uml-forklaring-om-notasjon-som-er-brukt.png) | ***Klassediagram*** brukes for å vise utvalgte klasser i en UML-modell. Klassediagram ***trenger ikke være fullstendige***, hverken mhp hvilke klasser som vises eller hvilke assosiasjoner somvises. For kompliserte modeller (som NOARK-modellen) trengs flere klassediagram for å vise hele modellen. |
+|![](./media/uml-klasse-konspetet-bruker-registrering-som-eksempel.png) |I et ***klassediagram*** vises en klasse som en firkantet boks. ***Klassenavnet*** står i øverste «etasje», og er i eksempelet Registrering. ***Klasseattributtene*** karakteriserer klassen, og listes opp en i nest øverste etasje (i eksempelet i alt 7, den første/øverste har navnet arkivertDato). Firkanten kan også ha flere frivillige etasjer for å vise mer informasjon. I klassen Registrering vises en «etasje» med notes (ofte brukt for ***klassedefinisjon***) |
+|![](./media/uml-assosiasjoner-brukt-med-klasser.png") | Klasser kan knyttes sammen med ***assosiasjoner***. Assosiasjoner vises som streker mellom to klasser. En assosiasjon der begge ender er knytta til samme klasse kalles ***selv-assosiasjon***. Eksempel: Mappe kan ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like klasser. En assosiasjon kan være ***aggregering***. Symbolet er en strek mellom to klasser med åpen diamant i ene enden. Eksempel: Ei Mappe ***har*** Registrering(er). En registrering er en selvstendig enhet, som «overlever» selv om Mappa blir sletta. |
+|![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Basisregistrering som er en generalisering av Journalpost og Møteregistrering. En kan også si at Journalpost er en spesialisering av basisregistrering. I Basisregistrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost og Møteregistrering. Dette leses som Journalpost ***er en*** Basisregistrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Basisregistrering er en spesialisering av Registrering, selv om klassen Registrering ikke finnes i diagrammet. |
+|![](./media/uml-komposisjon-brukt-med-klasser.png) | En assosiasjon kan også være ***komposisjon***. Symbolet er en strek mellom to klasser med lukka diamant i den ene enden. En Basisregistrering ***har*** Korrespondansepart(er). En Korrespondansepart kan ikke eksistere uten at den er knytta til en mappe. Slettes («dør») basisregistreringen vil også korrespondanseparten bli sletta («vil dø»). Assosiasjonene forteller også hvilken vei de er ***navigerbare***. Symbolet for dette er piler i endene på streken. Eksempel: En basisregistrering «vet» hvilke korrespondansepart(er) som tilhører basisregistreringen, mens korrespondanseparten ikke vet hvilken basisregistrering den tilhører.|
+|![](./media/uml-multiplisitet-brukt-med-klasser.png) | ***Multiplisiteten*** forteller hvor mange forekomster som kan inngå. Multiplisitet kan brukes i forbindelse med assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to prikker mellom (0..1). Det første tallet angir minimums-multiplisitet (så mange det minst må være), det andre tallet er maksimumsmultiplisitet (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..***) Mapper(er). Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).En klasseattributt har angitt multiplisitet med klammeparenteser ([0..1]). Klasseattributten nøkkelord kan forekomme ingen eller en gang. Når det ikke er angitt multiplisitet, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en klasseID, og kan bare ha en.|
+|![](./media/uml-simple-datatyper-eller-primitiver.png) | Datatypene kan også være ***simple datatyper*** eller ***primitiver***. Disse brukes for å gi mulighet for restriksjoner også på primitivene. Epostadresse kan være modellert som en slik primitiv. Epost er en tekst-streng, men som i tillegg til å være tekst-streng også må oppfylle visse regler knytta til det å være gyldig epostadresse (bl.a. inneholde en og bare en forekomst av tegnet @). I eksempelet i figuren er SystemID en tekststreng (string) som i tillegg må oppfylle tilleggskrav. I store modeller kan det være hensiktsmessig å plassere ulike modell-elementer i ulike pakker. Da kan det også bli lettere for leseren å forstå modellen når han får vite hvilken pakke de ulike klassene er plassert i. Modellpakker kalles ofte ***navnerom*** (namespace) Dette kan angis foran klassenavnet, skilt fra klassenavnet med kolon (:). I eksempelet hører klassen SystemID til pakken/navnerommet Metadata og klassen string tilhører pakken/navnerommet BasicTypes.|
 
-![](./media/uml-forklaring-om-notasjon-som-er-brukt.png)***Klassediagram*** brukes for å vise
-utvalgte klasser i en UML-modell. Klassediagram ***trenger ikke være
-fullstendige***, hverken mhp hvilke klasser som vises eller hvilke
-assosiasjoner som vises. For kompliserte modeller (som NOARK-modellen)
-trengs flere klassediagram for å vise hele modellen.
-
-<table>
-<thead>
-<tr class="header">
-<th><embed src="./media/uml-klasse-konspetet-bruker-registrering-som-eksempel.png" style="width:1.54404in;height:1.39497in" /></th>
-<th><p>I et <em><strong>klassediagram</strong></em> vises en klasse som en firkantet boks. <em><strong>Klassenavnet</strong></em> står i øverste «etasje», og er i eksempelet Registrering. <em><strong>Klasseattributtene</strong></em> karakteriserer klassen, og listes opp en i nest øverste etasje (i eksempelet i alt 7, den første/øverste har navnet arkivertDato).</p>
-<p>Firkanten kan også ha flere frivillige etasjer for å vise mer informasjon. I klassen Registrering vises en «etasje» med notes (ofte brukt for <em><strong>klassedefinisjon</strong></em>)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><embed src="./media/uml-klasse-konseptet-og-bruken-av-stereotyper.png" style="width:1.45355in;height:1.96778in" /></td>
-<td><p>Klassene kan tilpasses (<em><strong>stereotypes</strong></em>) til ulik bruk. I eksempelet vises klassen Gradering som er stereotypet som <em><strong>datatype</strong> (dataType)</em>, og klassen Graderingskode som er stereotypet som <em><strong>kodeliste</strong></em> (codeList)</p>
-<p>Klasser med stereotypen <em><strong>dataType</strong></em> brukes til å gruppere sammen attributter som logisk hører sammen.</p>
-<p>Klasser med stereotype codeList brukes til å angi lister med kodeverdier.</p>
-<p>De klassene som ikke har noen stereotype, er <em><strong>objekttyper</strong></em>.</p>
-<p>For klasser som er datatyper eller objekttyper, er klasseattributtene <em><strong>egenskaper</strong></em>. Egenskaper har et egenskapsnavn og en datatype. Eksempel: Klassen Gradering har en klasseattributt som heter gradertAv, og som er av type string. Klassen Gradering har også en attributt som heter graderingskode. Den er av typen Graderingskode. Graderingskode er definert som en egen kodeliste-klasse.</p>
-<p>Klasseattributtene på kodelister er kodeverdiene.</p>
-<p><strong>Kodeliste</strong>(codeList) brukes her for å angi en åpen kodeliste som kan utvides med flere verdier og tilpasses organisasjonen som skal bruke disse.</p></td>
-</tr>
-<tr class="even">
-<td><embed src="./media/uml-assosiasjoner-brukt-med-klasser.png" style="width:1.51913in;height:1.82642in" /></td>
-<td><p>Klasser kan knyttes sammen med <em><strong>assosiasjoner</strong></em>. Assosiasjoner vises som streker mellom to klasser. En assosiasjon der begge ender er knytta til samme klasse kalles <em><strong>selv-assosiasjon</strong></em>. Eksempel: Mappe kan ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like klasser.</p>
-<p>En assosiasjon kan være <em><strong>aggregering</strong></em>. Symbolet er en strek mellom to klasser med åpen diamant i ene enden. Eksempel: Ei Mappe <em><strong>har</strong></em> Registrering(er). En registrering er en selvstendig enhet, som «overlever» selv om Mappa blir sletta.</p></td>
-</tr>
-<tr class="odd">
-<td><embed src="./media/uml-generalisering-brukt-med-klasser.png" style="width:1.83607in;height:0.96302in" /></td>
-<td><p>Assosiasjoner kan være <em><strong>generalisering/spesialisering</strong></em>. Symbolet er en strek med en trekant i ene enden. Eksempel er Basisregistrering som er en generalisering av Journalpost og Møteregistrering. En kan også si at Journalpost er en spesialisering av basisregistrering. I Basisregistrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost og Møteregistrering.</p>
-<p>Dette leses som Journalpost <em><strong>er en</strong></em> Basisregistrering.</p>
-<p>Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Basisregistrering er en spesialisering av Registrering, selv om klassen Registrering ikke finnes i diagrammet.</p></td>
-</tr>
-<tr class="even">
-<td><embed src="./media/uml-komposisjon-brukt-med-klasser.png" style="width:1.51366in;height:1.92903in" /></td>
-<td><p>En assosiasjon kan også være <em><strong>komposisjon</strong></em>. Symbolet er en strek mellom to klasser med lukka diamant i den ene enden. En Basisregistrering <em><strong>har</strong></em> Korrespondansepart(er). En Korrespondansepart kan ikke eksistere uten at den er knytta til en mappe. Slettes («dør») basisregistreringen vil også korrespondanseparten bli sletta («vil dø»).</p>
-<p>Assosiasjonene forteller også hvilken vei de er <em><strong>navigerbare</strong></em>. Symbolet for dette er piler i endene på streken. Eksempel: En basisregistrering «vet» hvilke korrespondansepart(er) som tilhører basisregistreringen, mens korrespondanseparten ikke vet hvilken basisregistrering den tilhører.</p></td>
-</tr>
-<tr class="odd">
-<td><embed src="./media/uml-multiplisitet-brukt-med-klasser.png" style="width:1.6612in;height:2.5598in" /></td>
-<td><p><em><strong>Multiplisiteten</strong></em> forteller hvor mange forekomster som kan inngå. Multiplisitet kan brukes i forbindelse med assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to prikker mellom (0..1). Det første tallet angir minimums-multiplisitet (så mange det minst må være), det andre tallet er maksimumsmultiplisitet (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..*) Mapper(er). Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).</p>
-<p>En klasseattributt har angitt multiplisitet med klammeparenteser ([0..1]). Klasseattributten nøkkelord kan forekomme ingen eller en gang.</p>
-<p>Når det ikke er angitt multiplisitet, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en klasseID, og kan bare ha en.</p></td>
-</tr>
-<tr class="even">
-<td><embed src="./media/uml-simple-datatyper-eller-primitiver.png" style="width:1.90164in;height:0.87285in" /></td>
-<td><p>Datatypene kan også være <em><strong>simple datatyper</strong></em> eller <em><strong>primitiver</strong></em>. Disse brukes for å gi mulighet for restriksjoner også på primitivene. Epostadresse kan være modellert som en slik primitiv. Epost er en tekst-streng, men som i tillegg til å være tekst-streng også må oppfylle visse regler knytta til det å være gyldig epostadresse (bl.a. inneholde en og bare en forekomst av tegnet @). I eksempelet i figuren er SystemID en tekststreng (string) som i tillegg må oppfylle tilleggskrav.</p>
-<p>I store modeller kan det være hensiktsmessig å plassere ulike modell-elementer i ulike pakker. Da kan det også bli lettere for leseren å forstå modellen når han får vite hvilken pakke de ulike klassene er plassert i. Modellpakker kalles ofte <em><strong>navnerom</strong></em> (namespace) Dette kan angis foran klassenavnet, skilt fra klassenavnet med kolon (:).</p>
-<p>I eksempelet hører klassen SystemID til pakken/navnerommet Metadata og klassen string tilhører pakken/navnerommet BasicTypes.</p></td>
-</tr>
-</tbody>
-</table>
-
-## Noark5v4 
-
-**<span class="underline">Noark5 kjerne arkivstruktur</span>** -
-*(diagram) *
+### Noark5 kjerne arkivstruktur
 
 Diagrammet viser pakkene som inngår i arkivstruktur kjernen
 
@@ -69,8 +19,7 @@ Diagrammet viser pakkene som inngår i arkivstruktur kjernen
 
 Figur: 1
 
-**<span class="underline">Noark5 spesialisering sakarkiv</span>** -
-*(diagram) *
+### Noark5 spesialisering sakarkiv - (diagram)
 
 Diagrammet viser oversikt over spesialiseringen sakarkiv
 
@@ -78,7 +27,7 @@ Diagrammet viser oversikt over spesialiseringen sakarkiv
 
 Figur: 2
 
-**<span class="underline">Noark5\_struktur</span>** - *(diagram) *
+### Noark5 struktur - (diagram)
 
 Diagrammet viser oversikt over pakker som kan inngå i en noark kjerne.
 
@@ -86,7 +35,7 @@ Diagrammet viser oversikt over pakker som kan inngå i en noark kjerne.
 
 Figur: 3
 
-**<span class="underline">Noark5\_elementlister</span>** - *(diagram) *
+### Noark5 elementlister - (diagram)
 
 Diagrammet viser oversikt over alle klasser og hvor de er definert
 
@@ -94,59 +43,60 @@ Diagrammet viser oversikt over alle klasser og hvor de er definert
 
 Figur: 4
 
+
 ### Arkivstruktur 
 
 Basis skjema for arkivstruktur og indre kjerne
 
-**<span class="underline">Arkivenheter</span>** - *(diagram) *
+#### Arkivenheter - (diagram)
 
 ![](./media/uml-arkivstruktur-arkivenhet-som-basis-klasse.png)
 
 Figur: 5
 
-**<span class="underline">BevaringOgKassasjon</span>** - *(diagram) *
+#### BevaringOgKassasjon - (diagram)
 
 ![](./media/uml-arkivenheter-som-har-noe-med-bevaring-og-kassasjon-aa-gjoere.png)
 
 Figur: 6
 
-**<span class="underline">Hovedmodell</span>** - *(diagram) *
+#### Hovedmodell - (diagram)
 
 ![](./media/uml-arkivstruktur-forklart-som-hovedmodell.png)
 
 Figur: 7
 
-**<span class="underline">Forenklet struktur</span>** - *(diagram) *
+#### Forenklet struktur - (diagram)
 
 ![](./media/uml-arkivstruktur-forenklet-modell.png)
 
 Figur: 8
 
-**<span class="underline">Arkiv og arkivdel</span>** - *(diagram) *
+#### Arkiv og arkivdel - (diagram)
 
 ![](./media/uml-arkivstruktur-arkiv-og-arkivdel.png)
 
 Figur: 9
 
-**<span class="underline">Mappestrukturen</span>** - *(diagram) *
+#### Mappestrukturen - (diagram)
 
 ![](./media/uml-arkivstruktur-mappe-til-saksmappe.png)
 
 Figur: 10
 
-**<span class="underline">Mappe</span>** - *(diagram) *
+#### Mappe - (diagram)
 
 ![](./media/uml-arkivstruktur-mappe.png)
 
 Figur: 11
 
-**<span class="underline">Klassifikasjonssystem</span>** - *(diagram) *
+#### Klassifikasjonssystem - (diagram)
 
 ![](./media/uml-arkivstruktur-klassifikasjon.png)
 
 Figur: 12
 
-**<span class="underline">Registrering</span>** - *(diagram) *
+#### Registrering - (diagram)
 
 I fysiske sakarkiver har det vært vanlig å legge dokumenter som ikke
 er journalføringspliktige - men som likevel er arkivpliktige (ikke
@@ -172,32 +122,31 @@ funksjon for "arkivering uten journalføring".
 
 Figur: 13
 
-**<span class="underline">Merknad</span>** - *(diagram) *
+#### Merknad - (diagram)
 
 ![](./media/uml-arkivstruktur-merknad.png)
 
 Figur: 14
 
-**<span class="underline">Dokumentbeskrivelse</span>** - *(diagram) *
+#### Dokumentbeskrivelse - (diagram)
 
 ![](./media/uml-arkivstruktur-dokumentbeskrivelse-og-dokumentobjekt.png)
 
 Figur: 15
 
-**<span class="underline">Arkivstruktur med attributter</span>** -
-*(diagram) *
+#### Arkivstruktur med attributter  - (diagram)
 
 ![](./media/uml-arkivstruktur-attributter.png)
 
 Figur: 16
 
-**<span class="underline">Kryssreferanse</span>** - *(diagram) *
+#### Kryssreferanse - (diagram)
 
 ![](./media/uml-arkivstruktur-kryssreferanse.png)
 
 Figur: 17
 
-**<span class="underline">Arkivstruktur alt</span>** - *(diagram) *
+#### Arkivstruktur alternativ - (diagram)
 
 henter korrespondansepart objekt
 
@@ -205,7 +154,7 @@ henter korrespondansepart objekt
 
 Figur: 18
 
-**<span class="underline">Skjerming</span>** - *(diagram) *
+#### Skjerming - (diagram)
 
 ![](./media/uml-arkivstruktur-skjerming.png)
 
@@ -213,9 +162,9 @@ Figur: 19
 
 #### Arkiv
 
-*Type:* **<span class="underline">Class </span>**
+*Type:* ***Class***
 
-*Arver:* <span class="underline"> **Arkivenhet**</span>
+*Arver:* **Arkivenhet**
 
 Arkiv er det øverste nivået i arkivstrukturen. De fleste brukere vil
 bare ha behov for å opprette ett arkiv i sin Noark 5-løsning. Men det
