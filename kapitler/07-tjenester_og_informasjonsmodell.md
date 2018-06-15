@@ -197,7 +197,7 @@ laveste nivået av disse.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>underarkiv</p>
 <p>0..*</p>
 <p>Arkiv</p></td>
@@ -206,7 +206,7 @@ laveste nivået av disse.
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Arkiv</td>
 <td>Arkivenhet</td>
 <td></td>
@@ -235,7 +235,7 @@ laveste nivået av disse.
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>underarkiv</p>
 <p>0..*</p>
 <p>Arkiv</p></td>
@@ -541,7 +541,7 @@ men arv herfra blir overstyrt.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Arkivdel</td>
 <td>Arkivenhet</td>
 <td></td>
@@ -592,7 +592,7 @@ men arv herfra blir overstyrt.
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>sekundærklassifikasjonssystem</p>
 <p>0..*</p>
 <p>Klassifikasjonssystem</p></td>
@@ -1017,14 +1017,14 @@ identiske arkivenheter har ulik systemID.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Arkivdel</td>
 <td>Arkivenhet</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>logg</p>
 <p>0..*</p>
 <p>Hendelseslogg</p></td>
@@ -1034,49 +1034,49 @@ identiske arkivenheter har ulik systemID.
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Klassifikasjonssystem</td>
 <td>Arkivenhet</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Arkiv</td>
 <td>Arkivenhet</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Mappe</td>
 <td>Arkivenhet</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Klasse</td>
 <td>Arkivenhet</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Arkivskaper</td>
 <td>Arkivenhet</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Registrering</td>
 <td>Arkivenhet</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Dokumentbeskrivelse</td>
 <td>Arkivenhet</td>
 <td></td>
@@ -1220,7 +1220,7 @@ obligatorisk i arkivuttrekk.
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Arkivskaper</td>
 <td>Arkivenhet</td>
 <td></td>
@@ -1317,7 +1317,7 @@ for spesialiserte fagsystemer
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Basisregistrering</td>
 <td>Registrering</td>
 <td></td>
@@ -1335,21 +1335,21 @@ for spesialiserte fagsystemer
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Møteregistrering</td>
 <td>Basisregistrering</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Journalpost</td>
 <td>Basisregistrering</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>merknad</p>
 <p>0..*</p>
 <p>Merknad</p></td>
@@ -1548,14 +1548,14 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Dokumentbeskrivelse</td>
 <td>Arkivenhet</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>merknad</p>
 <p>0..*</p>
 <p>Merknad</p></td>
@@ -1922,7 +1922,7 @@ bytesekvensen som representerer dokumentet.
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>konvertering</p>
 <p>0..*</p>
 <p>Konvertering</p></td>
@@ -2388,7 +2388,7 @@ forekomme en gang
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>logg</p>
 <p>0..*</p>
 <p>Hendelseslogg</p></td>
@@ -2398,7 +2398,7 @@ forekomme en gang
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Hendelseslogg</td>
 <td>Endringslogg</td>
 <td></td>
@@ -2549,7 +2549,7 @@ befinner seg på6
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>underklasse</p>
 <p>0..*</p>
 <p>Klasse</p></td>
@@ -2558,7 +2558,7 @@ befinner seg på6
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Klasse</td>
 <td>Arkivenhet</td>
 <td></td>
@@ -2576,7 +2576,7 @@ befinner seg på6
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>underklasse</p>
 <p>0..*</p>
 <p>Klasse</p></td>
@@ -2607,7 +2607,7 @@ befinner seg på6
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Saksmappe</td>
 <td><p>sekundærklassifikasjon</p>
 <p>0..*</p>
@@ -2831,14 +2831,14 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Klassifikasjonssystem</td>
 <td>Arkivenhet</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>sekundærklassifikasjonssystem</p>
 <p>0..*</p>
 <p>Klassifikasjonssystem</p></td>
@@ -2998,7 +2998,7 @@ deponering/avlevering.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>konvertering</p>
 <p>0..*</p>
 <p>Konvertering</p></td>
@@ -3274,14 +3274,14 @@ innenfor året, f.eks. 2011/3869.
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Mappe</td>
 <td>Arkivenhet</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>undermappe</p>
 <p>0..*</p>
 <p>Mappe</p></td>
@@ -3301,7 +3301,7 @@ innenfor året, f.eks. 2011/3869.
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>nasjonalidentifikator</p>
 <p>0..*</p>
 <p>Nasjonalidentifikator</p></td>
@@ -3310,7 +3310,7 @@ innenfor året, f.eks. 2011/3869.
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>merknad</p>
 <p>0..*</p>
 <p>Merknad</p></td>
@@ -3319,14 +3319,14 @@ innenfor året, f.eks. 2011/3869.
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Møtemappe</td>
 <td>Mappe</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Saksmappe</td>
 <td>Mappe</td>
 <td></td>
@@ -3344,7 +3344,7 @@ innenfor året, f.eks. 2011/3869.
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>undermappe</p>
 <p>0..*</p>
 <p>Mappe</p></td>
@@ -3664,7 +3664,7 @@ arkivuttrekket.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>merknad</p>
 <p>0..*</p>
 <p>Merknad</p></td>
@@ -3673,7 +3673,7 @@ arkivuttrekket.
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>merknad</p>
 <p>0..*</p>
 <p>Merknad</p></td>
@@ -3682,7 +3682,7 @@ arkivuttrekket.
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>merknad</p>
 <p>0..*</p>
 <p>Merknad</p></td>
@@ -3826,7 +3826,7 @@ registrering.
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Registrering</td>
 <td>Arkivenhet</td>
 <td></td>
@@ -3855,7 +3855,7 @@ registrering.
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>nasjonalidentifikator</p>
 <p>0..*</p>
 <p>Nasjonalidentifikator</p></td>
@@ -3864,7 +3864,7 @@ registrering.
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Basisregistrering</td>
 <td>Registrering</td>
 <td></td>
@@ -4288,7 +4288,7 @@ Figur: 20
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Bygning</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
@@ -4330,7 +4330,7 @@ Figur: 20
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Enhetsidentifikator</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
@@ -4364,7 +4364,7 @@ Figur: 20
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Matrikkel</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
@@ -4406,7 +4406,7 @@ Figur: 20
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>nasjonalidentifikator</p>
 <p>0..*</p>
 <p>Nasjonalidentifikator</p></td>
@@ -4415,7 +4415,7 @@ Figur: 20
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination -&gt; Source</p></td>
+<p>Destination → Source</p></td>
 <td><p>nasjonalidentifikator</p>
 <p>0..*</p>
 <p>Nasjonalidentifikator</p></td>
@@ -4424,42 +4424,42 @@ Figur: 20
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Bygning</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Enhetsidentifikator</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Matrikkel</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Plan</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Posisjon</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Personidentifikator</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
@@ -4503,7 +4503,7 @@ Figur: 20
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Personidentifikator</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
@@ -4570,7 +4570,7 @@ Figur: 20
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Plan</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
@@ -4612,7 +4612,7 @@ Figur: 20
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Posisjon</td>
 <td>Nasjonalidentifikator</td>
 <td></td>
@@ -5595,7 +5595,7 @@ M001
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>SystemID</td>
 <td>string</td>
 <td></td>
@@ -5798,7 +5798,7 @@ flere ganger i en journalpost.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Journalpost</td>
 <td><p>avskrivning</p>
 <p>0..*</p>
@@ -5934,7 +5934,7 @@ brukes på et dokument som er under produksjon.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Journalpost</td>
 <td><p>dokumentflyt</p>
 <p>0..*</p>
@@ -6171,7 +6171,7 @@ i MoReq2 som heter Record.)
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Journalpost</td>
 <td><p>dokumentflyt</p>
 <p>0..*</p>
@@ -6180,7 +6180,7 @@ i MoReq2 som heter Record.)
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Journalpost</td>
 <td><p>avskrivning</p>
 <p>0..*</p>
@@ -6189,14 +6189,14 @@ i MoReq2 som heter Record.)
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Journalpost</td>
 <td>Basisregistrering</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Journalpost</td>
 <td><p>korrespondansepart</p>
 <p>0..*</p>
@@ -6473,28 +6473,28 @@ mottaker(e) registreres.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>KorrespondansepartEnhet</td>
 <td>Korrespondansepart</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>KorrespondansepartPerson</td>
 <td>Korrespondansepart</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>KorrespondansepartIntern</td>
 <td>Korrespondansepart</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Journalpost</td>
 <td><p>korrespondansepart</p>
 <p>0..*</p>
@@ -6594,7 +6594,7 @@ mottaker(e) registreres.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>KorrespondansepartEnhet</td>
 <td>Korrespondansepart</td>
 <td></td>
@@ -6642,7 +6642,7 @@ mottaker(e) registreres.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>KorrespondansepartIntern</td>
 <td>Korrespondansepart</td>
 <td></td>
@@ -6688,7 +6688,7 @@ mottaker(e) registreres.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>KorrespondansepartPerson</td>
 <td>Korrespondansepart</td>
 <td></td>
@@ -7008,7 +7008,7 @@ bruke en saksmappe.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Saksmappe</td>
 <td><p>sakspart</p>
 <p>0..*</p>
@@ -7017,14 +7017,14 @@ bruke en saksmappe.
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Saksmappe</td>
 <td>Mappe</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Saksmappe</td>
 <td><p>sekundærklassifikasjon</p>
 <p>0..*</p>
@@ -7347,14 +7347,14 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>SakspartPerson</td>
 <td>Sakspart</td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Saksmappe</td>
 <td><p>sakspart</p>
 <p>0..*</p>
@@ -7363,7 +7363,7 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 </tr>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>SakspartEnhet</td>
 <td>Sakspart</td>
 <td></td>
@@ -7460,7 +7460,7 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>SakspartEnhet</td>
 <td>Sakspart</td>
 <td></td>
@@ -7508,7 +7508,7 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>SakspartPerson</td>
 <td>Sakspart</td>
 <td></td>
@@ -7931,7 +7931,7 @@ Figur: 33
 <table>
 <thead>
 <tr class="header">
-<th><strong>Relasjon</strong></th>
+th><strong>Relasjon</strong></th>
 <th><strong>Kilde</strong></th>
 <th><strong>Mål</strong></th>
 <th><strong>Merknad</strong></th>
@@ -7940,7 +7940,7 @@ Figur: 33
 <tbody>
 <tr class="odd">
 <td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source -&gt; Destination</p></td>
+<p>Source → Destination</p></td>
 <td>Hendelseslogg</td>
 <td>Endringslogg</td>
 <td></td>
