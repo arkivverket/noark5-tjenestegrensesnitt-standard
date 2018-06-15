@@ -4262,8 +4262,7 @@ arkivdel er kassert, skal metadata grupperes inn i arkivdel.
 
 #### NasjonaleIdentifikatorer 
 
-**<span class="underline">Nasjonale identifikatorer</span>** -
-*(diagram) *
+##### Nasjonale identifikatorer - (diagram)
 
 ![](./media/uml-bruken-av-nasjonalidentifikator.png)
 
@@ -4639,13 +4638,13 @@ Figur: 20
 
 Felles skjema for alle kodelister og felles typer
 
-**<span class="underline">Kodelister</span>** - *(diagram) *
+#### Kodelister - (diagram)
 
 ![](./media/uml-kodelister-entiter.png)
 
 Figur: 21
 
-**<span class="underline">Metadata</span>** - *(diagram) *
+#### Metadata - (diagram)
 
 ![](./media/uml-metadata-entitet.png)
 
@@ -5715,56 +5714,55 @@ M700
 
 Utvidelse for sakarkiv metadata
 
-**<span class="underline">Sakarkiv</span>** - *(diagram) *
+#### Sakarkiv - (diagram)
 
 ![](./media/uml-sakarkiv-entiteter.png)
 
 Figur: 23
 
-**<span class="underline">Sakarkiv kun</span>** - *(diagram) *
+#### Sakarkiv kun - (diagram)
 
 ![](./media/uml-sakarkiv-entiteter-forenklet.png)
 
 Figur: 24
 
-**<span class="underline">Saksbehandling</span>** - *(diagram) *
+#### Saksbehandling - (diagram)
 
 ![](./media/uml-klasse-saksbehandling.png)
 
 Figur: 25
 
-**<span class="underline">Avskrivning</span>** - *(diagram) *
+#### Avskrivning - (diagram)
 
 ![](./media/uml-klasse-avskrivning.png)
 
 Figur: 26
 
-**<span class="underline">Person og organisasjonsdata</span>** -
-*(diagram) *
+#### Person og organisasjonsdata - (diagram)
 
 ![](./media/uml-klasse-person-og-organisasjonsdata.png)
 
 Figur: 27
 
-**<span class="underline">Hovedmodell</span>** - *(diagram) *
+#### Hovedmodell - (diagram)
 
 ![](./media/uml-hovedmodell-saksbehandling.png)
 
 Figur: 28
 
-**<span class="underline">Saksmappe</span>** - *(diagram) *
+#### Saksmappe - (diagram)
 
 ![](./media/uml-saksmappe.png)
 
 Figur: 29
 
-**<span class="underline">Journalpost</span>** - *(diagram) *
+#### Journalpost - (diagram)
 
 ![](./media/uml-journalpost.png)
 
 Figur: 30
 
-**<span class="underline">Elektronisk signatur</span>** - *(diagram) *
+#### Elektronisk signatur - (diagram)
 
 ![](./media/uml-elektronisk-signatur.png)
 
@@ -6456,15 +6454,10 @@ i MoReq2 som heter Record.)
 *Arver:* 
 
 Korrespondansepart er obligatorisk, og skal forekomme en eller flere
-ganger i en journalpost.
-
-Ved inngående dokumenter er det obligatorisk å registrere avsender(e),
-ved utgående
-
-dokumenter mottaker(e). Ved organinterne dokumenter som skal følges opp,
-må både
-
-avsender(e) og mottaker(e) registreres.
+ganger i en journalpost.  Ved inngående dokumenter er det obligatorisk
+å registrere avsender(e), ved utgående dokumenter mottaker(e). Ved
+organinterne dokumenter som skal følges opp, må både avsender(e) og
+mottaker(e) registreres.
 
 ##### Relasjoner
 
@@ -6730,35 +6723,21 @@ avsender(e) og mottaker(e) registreres.
 *Arver:* 
 
 Med presedens menes en (retts)avgjørelse som siden kan tjene som
-rettesnor i lignende tilfeller
-
-eller saker. En presedens kan også være en sak som er regeldannende for
-behandling av
-
-tilsvarende saker. Det er som oftest snakk om et forvaltningsmessig
-vedtak, dvs. et
-
+rettesnor i lignende tilfeller eller saker. En presedens kan også være
+en sak som er regeldannende for behandling av tilsvarende saker. Det
+er som oftest snakk om et forvaltningsmessig vedtak, dvs. et
 enkeltvedtak fattet i henhold til det aktuelle organets
-forvaltningsområde, som inneholder en
+forvaltningsområde, som inneholder en rettsoppfatning som senere blir
+lagt til grunn i andre lignende tilfeller. Prinsippavgjørelser knyttet
+til ulike saksområder skal derfor kunne etableres på en hensiktsmessig
+måte og være tilgjengelig for saksbehandlere.
 
-rettsoppfatning som senere blir lagt til grunn i andre lignende
-tilfeller. Prinsippavgjørelser
-
-knyttet til ulike saksområder skal derfor kunne etableres på en
-hensiktsmessig måte og være
-
-tilgjengelig for saksbehandlere.
-
-Man snakker vanligvis om presedenssaker, men det er vanligvis ett eller
-noen få av
-
-dokumentene i saken som danner presedens. Foruten å registrere hele
-saken, må derfor det eller
-
-de dokumentene som inneholder presedensavgjørelser kunne identifiseres.
-Hvis opplysninger
-
-om presedens er registrert, er presedens obligatorisk for avlevering.
+Man snakker vanligvis om presedenssaker, men det er vanligvis ett
+eller noen få av dokumentene i saken som danner presedens. Foruten å
+registrere hele saken, må derfor det eller de dokumentene som
+inneholder presedensavgjørelser kunne identifiseres.  Hvis
+opplysninger om presedens er registrert, er presedens obligatorisk for
+avlevering.
 
 ##### Relasjoner
 
@@ -7009,16 +6988,11 @@ om presedens er registrert, er presedens obligatorisk for avlevering.
 *Arver:* ***Mappe***
 
 I denne versjonen av Noark 5 er det i tillegg til Mappe definert en
-spesialisering kalt
-
-Saksmappe, som tilsvarer en ”sak” i Noark-4. Saksmappen skal inneholde
-metadata fra Mappe
-
-i tillegg til egne metadata. En saksmappe er bakoverkompatibel med en
-sak i Noark-4, men har
-
-en del nye metadata. . For sakarkiver er det obligatorisk å bruke en
-saksmappe.
+spesialisering kalt Saksmappe, som tilsvarer en ”sak” i
+Noark-4. Saksmappen skal inneholde metadata fra Mappe i tillegg til
+egne metadata. En saksmappe er bakoverkompatibel med en sak i Noark-4,
+men har en del nye metadata. . For sakarkiver er det obligatorisk å
+bruke en saksmappe.
 
 ##### Relasjoner
 
@@ -7354,13 +7328,10 @@ saksmappe.
 En eller flere virksomheter eller personer kan være knyttet til en
 saksmappe som saksparter.
 
-Metadata for sakspart skal kunne grupperes inn i metadata for saksmappe.
-Sakspart er valgfritt,
-
-og kan forekomme en eller flere ganger i tilknytning til en saksmappe.
-Dersom det er mer enn
-
-én sakspart, må metadataene grupperes sammen ved eksport og utveksling.
+Metadata for sakspart skal kunne grupperes inn i metadata for
+saksmappe.  Sakspart er valgfritt, og kan forekomme en eller flere
+ganger i tilknytning til en saksmappe.  Dersom det er mer enn én
+sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
 ##### Relasjoner
 
@@ -7568,33 +7539,23 @@ Dersom det er mer enn
 ### Admin 
 
 I dette kapitlet ligger Noark 5 kjernens krav til systemteknisk
-administrasjon av Noark 5
-
-kjernen. Kravene skal legge til rette for at arkivansvarlige skal kunne
-administrere og ha
-
-kontroll på arkivet, arkivstrukturen og metadataene som hører til
-arkivenhetene i strukturen,
-
-dvs. legge inn grunnlagsdata som typer mapper og registreringer, og
-hvilke metadata utover de
-
-obligatoriske som skal kunne legges til disse.
+administrasjon av Noark 5 kjernen. Kravene skal legge til rette for at
+arkivansvarlige skal kunne administrere og ha kontroll på arkivet,
+arkivstrukturen og metadataene som hører til arkivenhetene i
+strukturen, dvs. legge inn grunnlagsdata som typer mapper og
+registreringer, og hvilke metadata utover de obligatoriske som skal
+kunne legges til disse.
 
 Det skal også gi muligheter for feilretting utover det som ellers er
-tillatt etter reglene for
-
-endring og frysing av metadata og dokumenter i løsningen.
+tillatt etter reglene for endring og frysing av metadata og dokumenter
+i løsningen.
 
 Løsningen må dessuten legge til rette for at administratorer har
-kontroll på arkivdokumentene
+kontroll på arkivdokumentene og hvilke formater disse er lagret i. Det
+vil også si å kunne implementere vedtatte regler for når konvertering
+skal skje.
 
-og hvilke formater disse er lagret i. Det vil også si å kunne
-implementere vedtatte regler for når
-
-konvertering skal skje.
-
-**<span class="underline">Admin</span>** - *(diagram) *
+#### Admin - (diagram)
 
 ![](./media/uml-administrasjon.png)
 
@@ -7953,7 +7914,7 @@ rolletilknytning
 
 Skjema for logging og sporing
 
-**<span class="underline">LoggingOgSporing</span>** - *(diagram) *
+#### LoggingOgSporing - (diagram)
 
 ![](./media/uml-endringslogg.png)
 
