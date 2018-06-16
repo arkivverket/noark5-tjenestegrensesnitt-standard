@@ -34,6 +34,7 @@ clean:
 
 # Draft Docbook based PDF building
 book:
+	[ -h docbook/media ] || ln -s ../media docbook
 	for m in kapitler/*.md; do \
 	    pandoc \
 		--top-level-division=chapter -f gfm \
