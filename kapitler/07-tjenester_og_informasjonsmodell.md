@@ -477,78 +477,14 @@ men arv herfra blir overstyrt.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Arkivdel</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>arkivdel</p>
-<p>0..*</p>
-<p>Arkivdel</p></td>
-<td><p>arkiv</p>
-<p>1</p>
-<p>Arkiv</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>klassifikasjonssystem</p>
-<p>0..1</p>
-<p>Klassifikasjonssystem</p></td>
-<td><p>arkivdel</p>
-<p>1..*</p>
-<p>Arkivdel</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>registrering</p>
-<p>0..*</p>
-<p>Registrering</p></td>
-<td><p>arkivdel</p>
-<p>0..1</p>
-<p>Arkivdel</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>mappe</p>
-<p>0..*</p>
-<p>Mappe</p></td>
-<td><p>arkivdel</p>
-<p>0..1</p>
-<p>Arkivdel</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>sekundærklassifikasjonssystem</p>
-<p>0..*</p>
-<p>Klassifikasjonssystem</p></td>
-<td>Arkivdel</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                              | **Kilde**                      | **Mål**         | **Merknad** |
+| ----------------------------------------- | ------------------------------ | --------------- | ----------- |
+| **Generalization** (Source → Destination) | Arkivdel			     | Arkivenhet      |  	     |
+| **Aggregation** (Bi-Directional)	    | arkivdel 0..* Arkivdel	     | arkiv 1 Arkiv   |	     |
+| **Aggregation** (Bi-Directional)	    | klassifikasjonssystem 0..1 Klassifikasjonssystem | arkivdel 1..* Arkivdel |  |
+| **Aggregation** (Bi-Directional)	    | registrering 0..* Registrering | arkivdel 0..1 Arkivdel |      |
+| **Aggregation** (Bi-Directional) 	    | mappe 0..* Mappe		     | arkivdel 0..1 Arkivdel |      |
+| **Aggregation** (Destination → Source)    | sekundærklassifikasjonssystem 0..* Klassifikasjonssystem | Arkivdel |  |
 
 ##### Relasjonsnøkler
 
