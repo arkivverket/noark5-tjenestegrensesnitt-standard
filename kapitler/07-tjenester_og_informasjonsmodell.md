@@ -185,65 +185,13 @@ laveste nivået av disse.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>underarkiv</p>
-<p>0..*</p>
-<p>Arkiv</p></td>
-<td>Arkiv</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Arkiv</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>arkivskaper</p>
-<p>1..*</p>
-<p>Arkivskaper</p></td>
-<td><p>arkiv</p>
-<p>0..*</p>
-<p>Arkiv</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>arkivdel</p>
-<p>0..*</p>
-<p>Arkivdel</p></td>
-<td><p>arkiv</p>
-<p>1</p>
-<p>Arkiv</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>underarkiv</p>
-<p>0..*</p>
-<p>Arkiv</p></td>
-<td>Arkiv</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
+| ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
+| **Aggregation** (Destination → Source)    | underarkiv 0..* Arkiv        | Arkiv            |             |
+| **Generalization** (Source → Destination) | Arkiv                        | Arkivenhet       |             |
+| **Aggregation** (Bi-Directional)          | arkivskaper 1..* Arkivskaper | arkiv 0..* Arkiv |             |
+| **Aggregation** (Bi-Directional)          | arkivdel 0..* Arkivdel       | arkiv 1 Arkiv    |             |
+| **Aggregation** (Destination → Source)    | underarkiv 0..* Arkiv        | Arkiv            |             |
 
 ##### Relasjonsnøkler
 
