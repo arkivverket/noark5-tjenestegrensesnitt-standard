@@ -1449,7 +1449,7 @@ arkivdel er kassert, skal metadata grupperes inn i arkivdel.
 
 Figur: 20
 
-##### **Bygning**
+##### Bygning
 
 *Type:* ***Class***
 
@@ -1475,7 +1475,7 @@ Figur: 20
 | --------------------- | ----------- | ------------ | -------- | --------- |
 | byggidentifikator     |             | \[1..1\]     |          | ByggIdent |
 
-##### **Enhetsidentifikator**
+##### Enhetsidentifikator
 
 *Type:* ***Class***
 
@@ -1493,7 +1493,7 @@ Figur: 20
 | ----------------------- | ----------- | ------------ | -------- | -------- |
 | organisasjonsnummer     |             | \[1..1\]     |          | string   |
 
-##### **Matrikkel**
+##### Matrikkel
 
 *Type:* ***Class***
 
@@ -1519,7 +1519,7 @@ Figur: 20
 | ------------------- | ----------- | ------------ | -------- | --------------- |
 | matrikkelnummer     |             | \[1..1\]     |          | Matrikkelnummer |
 
-##### **Nasjonalidentifikator**
+##### Nasjonalidentifikator
 
 *Type:* ***Class***
 
@@ -1554,7 +1554,7 @@ Figur: 20
 | systemID        |             | \[0..1\]     |          | SystemID |
 | beskrivelse     |             | \[0..1\]     |          | string   |
 
-##### **Personidentifikator**
+##### Personidentifikator
 
 *Type:* ***Class***
 
@@ -1579,7 +1579,7 @@ Figur: 20
 | fødselsnummer | Personopplysningsloven § 12. Bruk av fødselsnummer m.v. Fødselsnummer og andre entydige identifikasjonsmidler kan bare nyttes i behandlingen når det er saklig behov for sikker identifisering og metoden er nødvendig for å oppnå slik identifisering. Datatilsynet kan pålegge en behandlingsansvarlig å bruke identifikasjonsmidler som nevnt i første ledd for å sikre at personopplysningene har tilstrekkelig kvalitet. Kongen kan gi forskrift med nærmere regler om bruk av fødselsnummer og andre entydige identifikasjonsmidler. | \[0..1\] | | string |
 | dNummer       | Et D-nummer er et midlertidig nummer som blant annet tildeles utenlandske statsborgere som er skatte- eller avgiftspliktige til Norge. Det kreves et D-nummer for å bli registrert i Folkeregisteret. | \[0..1\] | | string|
 
-##### **Plan**
+##### Plan
 
 *Type:* ***Class***
 
@@ -1605,7 +1605,7 @@ Figur: 20
 | --------------------- | ----------- | ------------ | -------- | ------------------- |
 | planidentifikator     |             | \[1..1\]     |          | NasjonalArealplanId |
 
-##### **Posisjon**
+##### Posisjon
 
 *Type:* ***Class***
 
