@@ -101,7 +101,7 @@ Arbeidsgruppen har bestått av:
    Software Innovation - Bjørn Tore Eriksen, Visma - Harry Myrene.
  - Trondheim kommune: Jean-Philippe Caquet
 
-## Endringslogg
+## Endringslogg for dette dokumentet
 
 | Versjon  | Dato       | Utført av           | Endring                            |
 | -------- | ---------- | ------------------- | ---------------------------------- |
