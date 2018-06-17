@@ -33,7 +33,7 @@ clean:
 	$(RM) $(IMG_PNG)
 
 # Draft Docbook based PDF building
-book:
+docbook:
 	[ -h docbook/media ] || ln -s ../media docbook
 	for m in kapitler/*.md; do \
 	    pandoc \
@@ -41,4 +41,8 @@ book:
 		-t docbook4 $$m \
 		-o docbook/$$(basename $$m .md).xml; \
 	done
+book: docbook images
 	xmlto --with-fop pdf docbook/book.xml
+	#xmlto --with-dblatex pdf docbook/book.xml
+html: docbook images
+	xmlto html-nochunks docbook/book.xml
