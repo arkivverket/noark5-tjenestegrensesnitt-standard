@@ -529,10 +529,10 @@ for spesialiserte fagsystemer
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | Basisregistrering                                        | Registrering           |             |
-| *Association* (Bi-Directional)             | kryssreferanse 0..* Kryssreferanse                       | registrering 0..1 Basisregistrering ||
+| **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | registrering 0..1 Basisregistrering ||
 | **Generalization** (Source → Destination)  | Møteregistrering                                         | Basisregistrering      |             |
 | **Generalization** (Source → Destination)  | Journalpost                                              | Basisregistrering      |             |
-| *Association* (Destination → Source)       | merknad 0..* Merknad                                     | Basisregistrering      |             |
+| **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Basisregistrering      |             |
 
 ##### Relasjonsnøkler
 
@@ -589,7 +589,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 | *NoteLink*                               | Dokumentbeskrivelse                                      | \<anonymous\>          |             |
 | **Aggregation** (Bi-Directional)           | dokumentbeskrivelse 0..* Dokumentbeskrivelse             | registrering 1..* Registrering |     |
 | **Generalization** (Source → Destination)  | Dokumentbeskrivelse                                      | Arkivenhet             |             |
-| *Association* (Destination → Source)       | merknad 0..* Merknad                                     | Dokumentbeskrivelse    |             |
+| **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Dokumentbeskrivelse    |             |
 | **Aggregation** (Bi-Directional)           | dokumentobjekt 0..* Dokumentobjekt                       | dokumentbeskrivelse 1 Dokumentbeskrivelse | |
 
 ##### Relasjonsnøkler
@@ -901,8 +901,8 @@ befinner seg på.
 | **Aggregation** (Bi-Directional)           | klasse 0..* Klasse                                       | klassifikasjonssystem 0..1 Klassifikasjonssystem |  |
 | **Aggregation** (Destination → Source)     | underklasse 0..* Klasse                                  | Klasse                 |             |
 | **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | klasse 0..1 Klasse     |             |
-| *Association* (Bi-Directional)             | kryssreferanse 0..* Kryssreferanse                       | klasse 0..1 Klasse     |             |
-| *Association* (Source → Destination)       | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
+| **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | klasse 0..1 Klasse     |             |
+| **Association** (Source → Destination)     | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
 | **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | klasse 0..1 Klasse     |             |
 
 ##### Relasjonsnøkler
@@ -1079,11 +1079,11 @@ disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 
 ##### Relasjoner
 
-| **Relasjon**                 | **Kilde**                          | **Mål**                             | **Merknad** |
-| ---------------------------- | ---------------------------------- | ----------------------------------- | ----------- |
-| *Association* (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | registrering 0..1 Basisregistrering |             |
-| *Association* (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | klasse 0..1 Klasse                  |             |
-| *Association* (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | mappe 0..1 Mappe                    |             |
+| **Relasjon**                     | **Kilde**                          | **Mål**                             | **Merknad** |
+| -------------------------------- | ---------------------------------- | ----------------------------------- | ----------- |
+| **Association** (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | registrering 0..1 Basisregistrering |             |
+| **Association** (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | klasse 0..1 Klasse                  |             |
+| **Association** (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | mappe 0..1 Mappe                    |             |
 
 ##### Relasjonsnøkler
 
@@ -1154,10 +1154,10 @@ innenfor året, f.eks. 2011/3869.
 | **Aggregation** (Destination → Source)     | undermappe 0..* Mappe                                    | Mappe                  |             |
 | **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | mappe 0..1 Mappe       |             |
 | **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Mappe                  |             |
-| *Association* (Destination → Source)       | merknad 0..* Merknad                                     | Mappe                  |             |
+| **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Mappe                  |             |
 | **Generalization** (Source → Destination)  | Møtemappe                                                | Mappe                  |             |
 | **Generalization** (Source → Destination)  | Saksmappe                                                | Mappe                  |             |
-| *Association* (Bi-Directional)             | kryssreferanse 0..* Kryssreferanse                       | mappe 0..1 Mappe       |             |
+| **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | mappe 0..1 Mappe       |             |
 | **Aggregation** (Destination → Source)     | undermappe 0..* Mappe                                    | Mappe                  |             |
 
 ##### Relasjonsnøkler
@@ -1246,9 +1246,9 @@ arkivuttrekket.
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-|*Association* (Destination → Source)        | merknad 0..* Merknad                                     | Mappe                  |             |
-|*Association* (Destination → Source)        | merknad 0..* Merknad                                     | Basisregistrering      |             |
-|*Association* (Destination → Source)        | merknad 0..* Merknad                                     | Dokumentbeskrivelse    |             |
+| **Association** (Destination → Source)   | merknad 0..* Merknad                                     | Mappe                  |             |
+| **Association** (Destination → Source)   | merknad 0..* Merknad                                     | Basisregistrering      |             |
+| **Association** (Destination → Source)   | merknad 0..* Merknad                                     | Dokumentbeskrivelse    |             |
 
 ##### Relasjonsnøkler
 
@@ -2700,7 +2700,7 @@ flere ganger i en journalpost.
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| *Association* (Source → Destination)       | Journalpost                                              | avskrivning 0..* Avskrivning |       |
+| **Association** (Source → Destination)   | Journalpost                                              | avskrivning 0..* Avskrivning |       |
 
 ##### Relasjonsnøkler
 
@@ -2750,7 +2750,7 @@ brukes på et dokument som er under produksjon.
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| *Association* (Source → Destination)       | Journalpost                                              | dokumentflyt 0..* Dokumentflyt |     |
+| **Association** (Source → Destination)   | Journalpost                                              | dokumentflyt 0..* Dokumentflyt |     |
 
 ##### Relasjonsnøkler
 
@@ -2848,11 +2848,11 @@ i MoReq2 som heter Record.)
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| *Association* (Bi-Directional)             | journalpost 0..* Journalpost                             | presedens 0..* Presedens |           |
-| *Association* (Source → Destination)       | Journalpost                                              | dokumentflyt 0..* Dokumentflyt |     |
-| *Association* (Source → Destination)       | Journalpost                                              | avskrivning 0..* Avskrivning |       |
-| **Generalization** (Source → Destination)  | Journalpost                                              | Basisregistrering       |            |
-| *Association* (Source → Destination)       | Journalpost                                              | korrespondansepart 0..* Korrespondansepart | |
+| **Association** (Bi-Directional)         | journalpost 0..* Journalpost                             | presedens 0..* Presedens |           |
+| **Association** (Source → Destination)   | Journalpost                                              | dokumentflyt 0..* Dokumentflyt |     |
+| **Association** (Source → Destination)   | Journalpost                                              | avskrivning 0..* Avskrivning |       |
+| **Generalization** (Source → Destination) | Journalpost                                              | Basisregistrering       |            |
+| **Association** (Source → Destination)   | Journalpost                                              | korrespondansepart 0..* Korrespondansepart | |
 
 ##### Relasjonsnøkler
 
@@ -2956,7 +2956,7 @@ mottaker(e) registreres.
 | **Generalization** (Source → Destination)  | KorrespondansepartEnhet                                  | Korrespondansepart     |             |
 | **Generalization** (Source → Destination)  | KorrespondansepartPerson                                 | Korrespondansepart     |             |
 | **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
-| *Association* (Source → Destination)       | Journalpost                                              | korrespondansepart 0..* Korrespondansepart | | 
+| **Association** (Source → Destination)     | Journalpost                                              | korrespondansepart 0..* Korrespondansepart | | 
 
 ##### Relasjonsnøkler
 
@@ -3101,8 +3101,8 @@ avlevering.
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| *Association* (Bi-Directional)             | journalpost 0..* Journalpost                             | presedens 0..* Presedens |           |
-| *Association* (Bi-Directional)             | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
+| **Association** (Bi-Directional)         | journalpost 0..* Journalpost                             | presedens 0..* Presedens |           |
+| **Association** (Bi-Directional)         | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
 
 ##### Relasjonsnøkler
 
@@ -3164,12 +3164,12 @@ bruke en saksmappe.
 
 ##### Relasjoner
 
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| *Association* (Source → Destination)       | Saksmappe                                                | sakspart 0..* Sakspart |             |
-| **Generalization** (Source → Destination)  | Saksmappe                                                | Mappe                  |             |
-| *Association* (Source → Destination)       | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
-| *Association* (Bi-Directional)             | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
+| **Relasjon**                              | **Kilde**                                                | **Mål**                | **Merknad** |
+| ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Association** (Source → Destination)    | Saksmappe                                                | sakspart 0..* Sakspart |             |
+| **Generalization** (Source → Destination) | Saksmappe                                                | Mappe                  |             |
+| **Association** (Source → Destination)    | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
+| **Association** (Bi-Directional)          | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
 
 ##### Relasjonsnøkler
 
@@ -3248,7 +3248,7 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | SakspartPerson                                           | Sakspart               |             |
-| *Association* (Source → Destination)       | Saksmappe                                                | sakspart  0..*  Sakspart |           |
+| **Association** (Source → Destination)     | Saksmappe                                                | sakspart  0..*  Sakspart |           |
 | **Generalization** (Source → Destination)  | SakspartEnhet                                            | Sakspart               |             |
 
 ##### Relasjonsnøkler
@@ -3373,7 +3373,7 @@ Figur: 32
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| *Association* (Bi-Directional)             | bruker 0..* Bruker                                       | enhet 0..* AdministrativEnhet |      |
+| **Association** (Bi-Directional)         | bruker 0..* Bruker                                       | enhet 0..* AdministrativEnhet |      |
 
 ##### Relasjonsnøkler
 
@@ -3425,7 +3425,7 @@ når pålogget bruker ikke finnes fra før.
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| *Association* (Bi-Directional)             | bruker 0..* Bruker                                       | enhet 0..* AdministrativEnhet |      |
+| **Association** (Bi-Directional)         | bruker 0..* Bruker                                       | enhet 0..* AdministrativEnhet |      |
 
 ##### Relasjonsnøkler
 
