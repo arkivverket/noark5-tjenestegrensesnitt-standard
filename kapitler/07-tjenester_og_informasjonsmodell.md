@@ -8,7 +8,7 @@
 |![](./media/uml-assosiasjoner-brukt-med-klasser.png) | Klasser kan knyttes sammen med ***assosiasjoner***. Assosiasjoner vises som streker mellom to klasser. En assosiasjon der begge ender er knytta til samme klasse kalles ***selv-assosiasjon***. Eksempel: Mappe kan ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like klasser. En assosiasjon kan være ***aggregering***. Symbolet er en strek mellom to klasser med åpen diamant i ene enden. Eksempel: Ei Mappe ***har*** Registrering(er). En registrering er en selvstendig enhet, som «overlever» selv om Mappa blir sletta. |
 |![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Basisregistrering som er en generalisering av Journalpost og Møteregistrering. En kan også si at Journalpost er en spesialisering av basisregistrering. I Basisregistrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost og Møteregistrering. Dette leses som Journalpost ***er en*** Basisregistrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Basisregistrering er en spesialisering av Registrering, selv om klassen Registrering ikke finnes i diagrammet. |
 |![](./media/uml-komposisjon-brukt-med-klasser.png) | En assosiasjon kan også være ***komposisjon***. Symbolet er en strek mellom to klasser med lukka diamant i den ene enden. En Basisregistrering ***har*** Korrespondansepart(er). En Korrespondansepart kan ikke eksistere uten at den er knytta til en mappe. Slettes («dør») basisregistreringen vil også korrespondanseparten bli sletta («vil dø»). Assosiasjonene forteller også hvilken vei de er ***navigerbare***. Symbolet for dette er piler i endene på streken. Eksempel: En basisregistrering «vet» hvilke korrespondansepart(er) som tilhører basisregistreringen, mens korrespondanseparten ikke vet hvilken basisregistrering den tilhører.|
-|![](./media/uml-multiplisitet-brukt-med-klasser.png) | ***Multiplisiteten*** forteller hvor mange forekomster som kan inngå. Multiplisitet kan brukes i forbindelse med assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to prikker mellom (0..1). Det første tallet angir minimums-multiplisitet (så mange det minst må være), det andre tallet er maksimumsmultiplisitet (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..***) Mapper(er). Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).En klasseattributt har angitt multiplisitet med klammeparenteser ([0..1]). Klasseattributten nøkkelord kan forekomme ingen eller en gang. Når det ikke er angitt multiplisitet, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en klasseID, og kan bare ha en.|
+|![](./media/uml-multiplisitet-brukt-med-klasser.png) | ***Multiplisiteten*** forteller hvor mange forekomster som kan inngå. Multiplisitet kan brukes i forbindelse med assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to prikker mellom (0..1). Det første tallet angir minimums-multiplisitet (så mange det minst må være), det andre tallet er maksimumsmultiplisitet (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..***) Mapper(er). Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).En klasseattributt har angitt multiplisitet med klammeparenteser (\[0..1\]). Klasseattributten nøkkelord kan forekomme ingen eller en gang. Når det ikke er angitt multiplisitet, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en klasseID, og kan bare ha en.|
 |![](./media/uml-simple-datatyper-eller-primitiver.png) | Datatypene kan også være ***simple datatyper*** eller ***primitiver***. Disse brukes for å gi mulighet for restriksjoner også på primitivene. Epostadresse kan være modellert som en slik primitiv. Epost er en tekst-streng, men som i tillegg til å være tekst-streng også må oppfylle visse regler knytta til det å være gyldig epostadresse (bl.a. inneholde en og bare en forekomst av tegnet @). I eksempelet i figuren er SystemID en tekststreng (string) som i tillegg må oppfylle tilleggskrav. I store modeller kan det være hensiktsmessig å plassere ulike modell-elementer i ulike pakker. Da kan det også bli lettere for leseren å forstå modellen når han får vite hvilken pakke de ulike klassene er plassert i. Modellpakker kalles ofte ***navnerom*** (namespace) Dette kan angis foran klassenavnet, skilt fra klassenavnet med kolon (:). I eksempelet hører klassen SystemID til pakken/navnerommet Metadata og klassen string tilhører pakken/navnerommet BasicTypes.|
 
 ## Noark5v4 
@@ -210,202 +210,42 @@ laveste nivået av disse.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>tittel</strong></td>
-<td><p>Definisjon: Tittel eller navn på arkivenheten</p>
-<p>Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem.</p>
-<p>Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet.</p>
-<p>M020</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>beskrivelse</strong></td>
-<td><p>Definisjon: Tekstlig beskrivelse av arkivenheten</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt)</p>
-<p>M021</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>arkivstatus</strong></td>
-<td><p>Definisjon: Status til arkivet</p>
-<p>Kilde: Registreres manuelt når arkivet opprettes eller ved skifte av status.</p>
-<p>Kommentarer: (ingen)</p>
-<p>M050</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>Arkivstatus</td>
-</tr>
-<tr class="even">
-<td><strong>dokumentmedium</strong></td>
-<td><p>Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter</p>
-<p>Kilde: Arves fra overordnet nivå, kan overstyres manuelt</p>
-<p>Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel.</p>
-<p>M300</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>Dokumentmedium</td>
-</tr>
-<tr class="odd">
-<td><strong>oppbevaringssted</strong></td>
-<td><p>Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder.</p>
-<p>Kilde: Arves fra overordnet nivå, kan overstyres manuelt</p>
-<p>Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument.</p>
-<p>M301</p></td>
-<td>[0..*]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>avsluttetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket</p>
-<p>Kilde: Registreres automatisk av systemet når enheten avsluttes</p>
-<p>Kommentarer: (ingen)</p>
-<p>M602</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>avsluttetAv</strong></td>
-<td><p>Definisjon: Navn på person som avsluttet/lukket arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M603</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseAvsluttetAv</strong></td>
-<td>referanse til Bruker sin systemID</td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**            | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|---------------------|---------------|---------------|-----------|-----------|
+| tittel              | Definisjon: Tittel eller navn på arkivenheten Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | string |
+| beskrivelse         | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | string |
+| arkivstatus         | Definisjon: Status til arkivet . Kilde: Registreres manuelt når arkivet opprettes eller ved skifte av status. Kommentarer: (ingen)  M050 | \[0..1\] | Arkivstatus |
+| dokumentmedium      | Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter . Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel. M300 | \[0..1\]| Dokumentmedium |
+| oppbevaringssted    | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument.  M301 | \[0..\*\] | string | 
+| avsluttetDato       | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen). M602 | \[0..1\] | datetime| 
+| avsluttetAv         | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen) M603 | \[0..1\] | string |
+| referanseAvsluttetAv| referanse til Bruker sin systemID | \[0..1\] | SystemID |
 
 ##### Restriksjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>5.2.1 En Noark 5-løsning skal kunne bestå av ett eller flere selvstendige Arkiv</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5.2.2 Det skal være mulig å opprette ingen, ett eller flere Arkiv for en Arkivskaper (virksomhet) og det skal være mulig å angi at flere arkivskapere sammen skaper ett Arkiv.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5.2.3 Et Arkiv skal bestå av en eller flere arkivdeler og en Arkivdel skal inngå i (kun) ett Arkiv.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5.2.4 Dersom Arkiv er registrert som ”Avsluttet”, skal det ikke være mulig å legge til flere underliggende Arkivdeler.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5.2.5 Når en tjeneste/funksjon sletter et helt Arkiv med alle underliggende nivå, skal dette logges.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.2.6 Det skal ikke være mulig å endre dato for opprettelse av</p>
-<p>Arkiv.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.2.7 Det skal ikke være mulig å slette dato for opprettelse av</p>
-<p>Arkiv.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.2.8 Det skal ikke være mulig å slette dato for avslutning av</p>
-<p>Arkiv.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.2.9 Det skal være mulig å definere statusverdier for Arkiv. Følgende verdier er anbefalt:</p>
-<p>Opprettet, Avsluttet</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5.2.10 Et Arkiv bør kunne inndeles i et hierarki (skissert i modellen ved bruk av egenrelasjon) av Underarkiver.</td>
-<td><p>/* Merknad: Det bør være mulig med ett eller flere nivåer under Arkiv, f.eks. for å representere fysiske delarkiver.</p>
-<p>Dette kan være aktuelt for virksomheter som har arkiver</p>
-<p>fysisk plassert på flere forskjellige steder.</p>
-<p>*/</p></td>
-</tr>
-<tr class="odd">
-<td>5.2.11 Systemet bør ha en tjeneste/funksjon for å angi et Arkiv som Underarkiv til et Arkiv.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5.2.12 Et Underarkiv skal kun opprettes og endres gjennom Administrasjonssystemet for Noark 5.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Ny - Når arkivet settes &quot;Avsluttet&quot; så skal avsluttetDato og avsluttetAv registreres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Ny - Etter registrering av arkiv skal systemID, opprettetAv og opprettetDato være utfylt</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.13.4 Et Arkiv og arkivets metadata skal kun opprettes</p>
-<p>gjennom Administratorfunksjonen for Noark 5 kjerne.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.13.5 Et Underarkiv skal kun defineres og endres gjennom</p>
-<p>Administratorfunksjonen for Noark 5 kjerne.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>avsluttetAv_M603A</td>
-<td>avsluttetAv: Skal ikke kunne endres</td>
-</tr>
-<tr class="even">
-<td>avsluttetAv_M603B</td>
-<td>avsluttetAv: Obligatorisk dersom arkivenheten er avsluttet.</td>
-</tr>
-<tr class="odd">
-<td>avsluttetDato_M602A</td>
-<td>avsluttetDato: Skal ikke kunne endres.</td>
-</tr>
-<tr class="even">
-<td>avsluttetDato_M602B</td>
-<td>avsluttetDato: Obligatorisk dersom arkivenheten er avsluttet.</td>
-</tr>
-<tr class="odd">
-<td>tittel_M020</td>
-<td>tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert</td>
-</tr>
-</tbody>
-</table>
+| **Navn**            | **Merknad**   | 
+|---------------------|---------------|
+| 5.2.1 En Noark 5-løsning skal kunne bestå av ett eller flere selvstendige Arkiv | |
+| 5.2.2 Det skal være mulig å opprette ingen, ett eller flere Arkiv for en Arkivskaper (virksomhet) og det skal være mulig å angi at flere arkivskapere sammen skaper ett Arkiv. | |
+| 5.2.3 Et Arkiv skal bestå av en eller flere arkivdeler og en Arkivdel skal inngå i (kun) ett Arkiv.| |
+| 5.2.4 Dersom Arkiv er registrert som ”Avsluttet”, skal det ikke være mulig å legge til flere underliggende Arkivdeler. | | 
+| 5.2.5 Når en tjeneste/funksjon sletter et helt Arkiv med alle underliggende nivå, skal dette logges. | |
+| 5.2.6 Det skal ikke være mulig å endre dato for opprettelse av Arkiv. | |
+| 5.2.7 Det skal ikke være mulig å slette dato for opprettelse av Arkiv. | |
+| 5.2.8 Det skal ikke være mulig å slette dato for avslutning av  Arkiv. | |
+| 5.2.9 Det skal være mulig å definere statusverdier for Arkiv. Følgende verdier er anbefalt: Opprettet, Avsluttet | |
+| 5.2.10 Et Arkiv bør kunne inndeles i et hierarki (skissert i modellen ved bruk av egenrelasjon) av Underarkiver.| Merknad: Det bør være mulig med ett eller flere nivåer under Arkiv, f.eks. for å representere fysiske delarkiver. Dette kan være aktuelt for virksomheter som har arkiver fysisk plassert på flere forskjellige steder. | 
+| 5.2.11 Systemet bør ha en tjeneste/funksjon for å angi et Arkiv som Underarkiv til et Arkiv.| |
+| 5.2.12 Et Underarkiv skal kun opprettes og endres gjennom Administrasjonssystemet for Noark 5.| |
+| Ny - Når arkivet settes &quot;Avsluttet&quot; så skal avsluttetDato og avsluttetAv registreres | |
+| Ny - Etter registrering av arkiv skal systemID, opprettetAv og opprettetDato være utfylt | |
+| 5.13.4 Et Arkiv og arkivets metadata skal kun opprettes gjennom Administratorfunksjonen for Noark 5 kjerne. | |
+| 5.13.5 Et Underarkiv skal kun defineres og endres gjennom Administratorfunksjonen for Noark 5 kjerne. | | 
+| avsluttetAv_M603A   | avsluttetAv: Skal ikke kunne endres | 
+| avsluttetAv_M603B   | avsluttetAv: Obligatorisk dersom arkivenheten er avsluttet.| 
+| avsluttetDato_M602A | avsluttetDato: Skal ikke kunne endres. | 
+| avsluttetDato_M602B | avsluttetDato: Obligatorisk dersom arkivenheten er avsluttet. |
+| tittel_M020          | tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert |
 
 #### Arkivdel
 
@@ -477,14 +317,14 @@ men arv herfra blir overstyrt.
 
 ##### Relasjoner
 
-| **Relasjon**                              | **Kilde**                      | **Mål**         | **Merknad** |
-| ----------------------------------------- | ------------------------------ | --------------- | ----------- |
-| **Generalization** (Source → Destination) | Arkivdel			     | Arkivenhet      |  	     |
-| **Aggregation** (Bi-Directional)	    | arkivdel 0..* Arkivdel	     | arkiv 1 Arkiv   |	     |
-| **Aggregation** (Bi-Directional)	    | klassifikasjonssystem 0..1 Klassifikasjonssystem | arkivdel 1..* Arkivdel |  |
-| **Aggregation** (Bi-Directional)	    | registrering 0..* Registrering | arkivdel 0..1 Arkivdel |      |
-| **Aggregation** (Bi-Directional) 	    | mappe 0..* Mappe		     | arkivdel 0..1 Arkivdel |      |
-| **Aggregation** (Destination → Source)    | sekundærklassifikasjonssystem 0..* Klassifikasjonssystem | Arkivdel |  |
+| **Relasjon**                              | **Kilde**                                                | **Mål**                | **Merknad** |
+| ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination) | Arkivdel                                                 | Arkivenhet             |             |
+| **Aggregation** (Bi-Directional)           | arkivdel 0..* Arkivdel                                   | arkiv 1 Arkiv          |             |
+| **Aggregation** (Bi-Directional)           | klassifikasjonssystem 0..1 Klassifikasjonssystem         | arkivdel 1..* Arkivdel |             |
+| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | arkivdel 0..1 Arkivdel |             |
+| **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | arkivdel 0..1 Arkivdel |             |
+| **Aggregation** (Destination → Source)     | sekundærklassifikasjonssystem 0..* Klassifikasjonssystem | Arkivdel               |             |
 
 ##### Relasjonsnøkler
 
@@ -506,372 +346,68 @@ men arv herfra blir overstyrt.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>tittel</strong></td>
-<td><p>Definisjon: Tittel eller navn på arkivenheten</p>
-<p>Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem.</p>
-<p>Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet.</p>
-<p>M020</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>beskrivelse</strong></td>
-<td><p>Definisjon: Tekstlig beskrivelse av arkivenheten</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt)</p>
-<p>M021</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>arkivdelstatus</strong></td>
-<td><p>Definisjon: Status til den arkivperioden som arkivdelen omfatter</p>
-<p>Kilde: Registreres manuelt når arkivdelen opprettes eller ved skifte av status.</p>
-<p>Kommentarer: Arkivdeler som avleveres skal ha status &quot;Avsluttet periode&quot;</p>
-<p>M051</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Arkivdelstatus</td>
-</tr>
-<tr class="even">
-<td><strong>dokumentmedium</strong></td>
-<td><p>Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter</p>
-<p>Kilde: Arves fra overordnet nivå, kan overstyres manuelt</p>
-<p>Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel.</p>
-<p>M300</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>Dokumentmedium</td>
-</tr>
-<tr class="odd">
-<td><strong>oppbevaringssted</strong></td>
-<td><p>Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder.</p>
-<p>Kilde: Arves fra overordnet nivå, kan overstyres manuelt</p>
-<p>Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument.</p>
-<p>M301</p></td>
-<td>[0..*]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>avsluttetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket</p>
-<p>Kilde: Registreres automatisk av systemet når enheten avsluttes</p>
-<p>Kommentarer: (ingen)</p>
-<p>M602</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>avsluttetAv</strong></td>
-<td><p>Definisjon: Navn på person som avsluttet/lukket arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M603</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseAvsluttetAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="odd">
-<td><strong>arkivperiodeStartDato</strong></td>
-<td><p>Definisjon: Dato for starten av en arkivperiode</p>
-<p>Kilde: Settes automatisk til samme dato som M600 opprettetDato</p>
-<p>Kommentarer: Det kan tenkes tilfeller hvor startdatoen ikke er identisk med datoen arkivdelen ble opprettet</p>
-<p>M107</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="even">
-<td><strong>arkivperiodeSluttDato</strong></td>
-<td><p>Definisjon: Dato for slutten av en arkivperiode</p>
-<p>Kilde: Settes automatisk til samme dato som M602 avsluttetDato</p>
-<p>Kommentarer: Det kan forekomme tilfeller hvor sluttdatoen ikke er identisk med datoen arkivdelen ble avsluttet.</p>
-<p>M108</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseForløper</strong></td>
-<td>M202</td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>referanseArvtaker</strong></td>
-<td>M203</td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="odd">
-<td><strong>kassasjon</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Kassasjon</td>
-</tr>
-<tr class="even">
-<td><strong>utførtKassasjon</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>UtførtKassasjon</td>
-</tr>
-<tr class="odd">
-<td><strong>sletting</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Sletting</td>
-</tr>
-<tr class="even">
-<td><strong>skjerming</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Skjerming</td>
-</tr>
-<tr class="odd">
-<td><strong>gradering</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Gradering</td>
-</tr>
-</tbody>
-</table>
+| **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------------------|---------------|---------------|-----------|-----------|
+| tittel                | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | string | 
+| beskrivelse           | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | string | 
+| arkivdelstatus        | Definisjon: Status til den arkivperioden som arkivdelen omfatter . Kilde: Registreres manuelt når arkivdelen opprettes eller ved skifte av status. Kommentarer: Arkivdeler som avleveres skal ha status 'Avsluttet periode'. M051 |  \[1..1\] | Arkivdelstatus|
+| dokumentmedium        | Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter . Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel. M300 | \[0..1\] | Dokumentmedium |
+| oppbevaringssted      | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument. M301 | \[0..\*\] |string |
+| avsluttetDato         | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen) M602 | \[0..1\] | datetime| 
+| avsluttetAv           | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen) M603 | \[0..1\] | string | 
+| referanseAvsluttetAv  |           | \[0..1\] | SystemID | 
+| arkivperiodeStartDato | Definisjon: Dato for starten av en arkivperiode . Kilde: Settes automatisk til samme dato som M600 opprettetDato. Kommentarer: Det kan tenkes tilfeller hvor startdatoen ikke er identisk med datoen arkivdelen ble opprettet M107 | \[0..1\] | date | 
+| arkivperiodeSluttDato | Definisjon: Dato for slutten av en arkivperiode . Kilde: Settes automatisk til samme dato som M602 avsluttetDato. Kommentarer: Det kan forekomme tilfeller hvor sluttdatoen ikke er identisk med datoen arkivdelen ble avsluttet. M108 | \[0..1\] | date|
+| referanseForløper     | M202      | \[0..1\] | SystemID         |
+| referanseArvtaker     | M203      | \[0..1\] | SystemID         |
+| kassasjon             |           | \[0..1\] | Kassasjon        |
+| utførtKassasjon       |           | \[0..1\] | UtførtKassasjon  |
+| sletting              |           | \[0..1\] | Sletting         |
+| skjerming             |           | \[0..1\] | Skjerming        |
+| gradering             |           | \[0..1\] | Gradering        |
+
+
+
 
 ##### Restriksjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>5.2.13 En Arkivdel kan ha registrert ingen eller ett preferert</p>
-<p>Klassifikasjonssystem og et Klassifikasjonssystem kan</p>
-<p>inngå i ingen, en eller flere Arkivdel(er).</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.2.14 En Arkivdel kan ha registrert ingen eller en Skjerming og</p>
-<p>en Skjerming kan inngå i ingen, en eller flere Arkivdeler</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.2.15 En Arkivdel kan ha registrert ingen eller en Bevaring og</p>
-<p>kassasjon og en Bevaring og kassasjon kan inngå i ingen,</p>
-<p>en eller flere Arkivdeler.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.2.16 En Arkivdel kan ha tilknyttet (inneholde) ingen, en eller</p>
-<p>flere Mapper.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.2.17 Når en tjeneste/funksjon sletter en Arkivdel, skal dette</p>
-<p>logges.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.2.18 Det skal finnes en tjeneste/funksjon for å ajourholde</p>
-<p>primært Klassifikasjonssystem for en Arkivdel.</p>
-<p>(referanseKlassifikasjonssystem)</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.2.19 Dersom Arkivdel er registrert som avsluttet (avsluttetDato</p>
-<p>er satt) skal det ikke være mulig å legge til flere</p>
-<p>tilhørende Mapper eller Registreringer</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.2.20 En arkivdel skal inneholde informasjon om hvilken</p>
-<p>status arkivperioden har.</p></td>
-<td><p>/*</p>
-<p>Autoriserte brukere skal kunne</p>
-<p>endre statusverdier. Obligatoriske verdier er:</p>
-<p>1. Aktiv periode</p>
-<p>2. Overlappingsperiode</p>
-<p>3. Avsluttet periode</p>
-<p>Andre verdier kan brukes ved behov.</p>
-<p>*/</p></td>
-</tr>
-<tr class="odd">
-<td><p>5.2.21 En arkivdel skal inneholde dato for når arkivperioden</p>
-<p>starter.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.2.22 En avsluttet arkivdel skal inneholde dato for når</p>
-<p>perioden ble avsluttet.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.2.23 En arkivdel skal inneholde informasjon om de</p>
-<p>tilhørende dokumentene er fysiske eller elektroniske.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Ny - arkivdel kan ha liste med enten klassifikasjonssystem eller mapper</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Ny - Når arkivdel settes &quot;Avsluttet&quot; så skal avsluttetDato og avsluttetAv registreres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Ny - Etter registrering av arkivdel skal systemID, opprettetAv og opprettetDato være utfylt</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.10.1 En Arkivdel skal kunne ha registrert ingen eller ett</p>
-<p>Kassasjonsvedtak og et Kassasjonsvedtak kan inngå i</p>
-<p>ingen, en eller flere Arkivdeler.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.10.8 Det skal finnes en tjeneste/funksjon for å ajourholde</p>
-<p>kassasjonsvedtak, kassasjonshjemmel og bevaringstid</p>
-<p>for en Arkivdel.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.10.9 Metadata om bevaring og kassasjon på en Arkivdel skal</p>
-<p>kunne arves til Mappe, Registrering og</p>
-<p>Dokumentbeskrivelse.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.10.10 Dersom arv av metadata om bevaring og kassasjon skal</p>
-<p>skje fra arkivdel, skal dette overstyre arv av metadata fra</p>
-<p>klassene.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.10.16 Det skal være mulig å slå av funksjonen for arv fra</p>
-<p>klasser og arkivdeler, slik at metadata om bevaring og</p>
-<p>kassasjon ikke arves til underliggende mapper.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.11.1 En arkivdel skal kunne inneholde en tekstlig beskrivelse</p>
-<p>av hvilke prinsipper den skal periodiseres etter.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.11.2 En arkivdel skal inneholde referanser til eventuelle</p>
-<p>forløpere og arvtakere.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.11.4 En arkivdel som inneholder en overlappingsperiode,</p>
-<p>skal være sperret for tilføyelse av nyopprettede mapper.</p>
-<p>Men eksisterende mapper i en overlappingsperiode skal</p>
-<p>være åpne for nye registreringer</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.11.5 Dersom en ny registrering føyes til en mappe som</p>
-<p>tilhører en arkivdel i overlappingsperiode, skal mappen</p>
-<p>automatisk overføres til arkivdelens arvtaker.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.11.6 En arkivdel som inneholder en avsluttet arkivperiode,</p>
-<p>skal være sperret for tilføyelse av nye mapper. Alle</p>
-<p>mapper skal være lukket, slik at heller ingen</p>
-<p>registreringer og dokumenter kan føyes til.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.11.7 Det skal være umulig å avslutte en arkivdel i</p>
-<p>overlappingsperiode dersom den fremdeles inneholder</p>
-<p>åpne mapper.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.11.13 Dersom dokumentene i en arkivdel er ikke-elektroniske</p>
-<p>(fysiske), skal det også være mulig å registrere</p>
-<p>oppbevaringssted.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.13.6 En Arkivdel og arkivdelens metadata skal kun opprettes</p>
-<p>og endres gjennom Administratorfunksjonen for</p>
-<p>Noark 5 kjerne.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6.6.9 - 6.6.19 rettighetsangivelser</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>6.6.25 Det skal finnes en tjeneste/funksjon for å ajourholde</p>
-<p>opplysninger om skjermingskode (skjermingsgrad,</p>
-<p>skjermingshjemmel og skjermingsvarighet) for en verdi</p>
-<p>av Arkivdel, klasse, Mappe, Registrering og</p>
-<p>Dokumentbeskrivelse</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>6.6.26 Skjerming bør kunne arves til mappe, journalpost,</p>
-<p>dokumentbeskrivelse og dokumentobjekt.</p>
-<p>Arvede verdier skal kunne overstyres.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M107 arkivperiodeStartDato: Skal kunne endres manuelt</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M108 arkivperiodeSluttDato: Skal kunne endres manuelt</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M601 avsluttetDato: Skal ikke kunne endres. Obligatorisk dersom arkivdelen er avsluttet.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M603 avsluttetAv: Skal ikke kunne endres. Obligatorisk dersom arkivenheten er avsluttet.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**            | **Merknad**   | 
+|---------------------|---------------|
+| 5.2.13 En Arkivdel kan ha registrert ingen eller ett preferert Klassifikasjonssystem og et Klassifikasjonssystem kan inngå i ingen, en eller flere Arkivdel(er). | |
+| 5.2.14 En Arkivdel kan ha registrert ingen eller en Skjerming og en Skjerming kan inngå i ingen, en eller flere Arkivdeler | |
+| 5.2.15 En Arkivdel kan ha registrert ingen eller en Bevaring og kassasjon og en Bevaring og kassasjon kan inngå i ingen, en eller flere Arkivdeler. | |
+| 5.2.16 En Arkivdel kan ha tilknyttet (inneholde) ingen, en eller flere Mapper. | |
+| 5.2.17 Når en tjeneste/funksjon sletter en Arkivdel, skal dette logges. | |
+| 5.2.18 Det skal finnes en tjeneste/funksjon for å ajourholde primært Klassifikasjonssystem for en Arkivdel. (referanseKlassifikasjonssystem) | |
+| 5.2.19 Dersom Arkivdel er registrert som avsluttet (avsluttetDato er satt) skal det ikke være mulig å legge til flere tilhørende Mapper eller Registreringer | |
+| 5.2.20 En arkivdel skal inneholde informasjon om hvilken status arkivperioden har. | Autoriserte brukere skal kunne endre statusverdier. Obligatoriske verdier er: 1. Aktiv periode 2. Overlappingsperiode 3. Avsluttet periode Andre verdier kan brukes ved behov. |
+| 5.2.21 En arkivdel skal inneholde dato for når arkivperioden starter. | |
+| 5.2.22 En avsluttet arkivdel skal inneholde dato for når perioden ble avsluttet. | |
+| 5.2.23 En arkivdel skal inneholde informasjon om de tilhørende dokumentene er fysiske eller elektroniske. | |
+| Ny - arkivdel kan ha liste med enten klassifikasjonssystem eller mapper | |
+| Ny - Når arkivdel settes &quot;Avsluttet&quot; så skal avsluttetDato og avsluttetAv registreres | |
+| Ny - Etter registrering av arkivdel skal systemID, opprettetAv og opprettetDato være utfylt | |
+| 5.10.1 En Arkivdel skal kunne ha registrert ingen eller ett Kassasjonsvedtak og et Kassasjonsvedtak kan inngå i ingen, en eller flere Arkivdeler. | |
+| 5.10.8 Det skal finnes en tjeneste/funksjon for å ajourholde kassasjonsvedtak, kassasjonshjemmel og bevaringstid for en Arkivdel. | |
+| 5.10.9 Metadata om bevaring og kassasjon på en Arkivdel skal kunne arves til Mappe, Registrering og Dokumentbeskrivelse. | |
+| 5.10.10 Dersom arv av metadata om bevaring og kassasjon skal skje fra arkivdel, skal dette overstyre arv av metadata fra klassene. | |
+| 5.10.16 Det skal være mulig å slå av funksjonen for arv fra klasser og arkivdeler, slik at metadata om bevaring og kassasjon ikke arves til underliggende mapper. | |
+| 5.11.1 En arkivdel skal kunne inneholde en tekstlig beskrivelse av hvilke prinsipper den skal periodiseres etter. | |
+| 5.11.2 En arkivdel skal inneholde referanser til eventuelle forløpere og arvtakere. | |
+| 5.11.4 En arkivdel som inneholder en overlappingsperiode, skal være sperret for tilføyelse av nyopprettede mapper. Men eksisterende mapper i en overlappingsperiode skal være åpne for nye registreringer | |
+| 5.11.5 Dersom en ny registrering føyes til en mappe som tilhører en arkivdel i overlappingsperiode, skal mappen automatisk overføres til arkivdelens arvtaker. | |
+| 5.11.6 En arkivdel som inneholder en avsluttet arkivperiode, skal være sperret for tilføyelse av nye mapper. Alle mapper skal være lukket, slik at heller ingen registreringer og dokumenter kan føyes til. | |
+| 5.11.7 Det skal være umulig å avslutte en arkivdel i overlappingsperiode dersom den fremdeles inneholder åpne mapper. | |
+| 5.11.13 Dersom dokumentene i en arkivdel er ikke-elektroniske (fysiske), skal det også være mulig å registrere oppbevaringssted. | |
+| 5.13.6 En Arkivdel og arkivdelens metadata skal kun opprettes og endres gjennom Administratorfunksjonen for Noark 5 kjerne. | |
+| 6.6.9 - 6.6.19 rettighetsangivelser | |
+| 6.6.25 Det skal finnes en tjeneste/funksjon for å ajourholde opplysninger om skjermingskode (skjermingsgrad, skjermingshjemmel og skjermingsvarighet) for en verdi av Arkivdel, klasse, Mappe, Registrering og Dokumentbeskrivelse | |
+| 6.6.26 Skjerming bør kunne arves til mappe, journalpost, dokumentbeskrivelse og dokumentobjekt. Arvede verdier skal kunne overstyres. | |
+| M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert | |
+| M107 arkivperiodeStartDato: Skal kunne endres manuelt| |
+| M108 arkivperiodeSluttDato: Skal kunne endres manuelt| |
+| M601 avsluttetDato: Skal ikke kunne endres. Obligatorisk dersom arkivdelen er avsluttet. | |
+| M603 avsluttetAv: Skal ikke kunne endres. Obligatorisk dersom arkivenheten er avsluttet. | |
 
 #### Arkivenhet
 
@@ -889,84 +425,17 @@ identiske arkivenheter har ulik systemID.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Arkivdel</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>logg</p>
-<p>0..*</p>
-<p>Hendelseslogg</p></td>
-<td><p>0..1</p>
-<p>Arkivenhet</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Klassifikasjonssystem</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Arkiv</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Mappe</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Klasse</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Arkivskaper</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Registrering</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Dokumentbeskrivelse</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | Arkivdel                                                 | Arkivenhet             |             |
+| **Aggregation** (Destination → Source)     | logg 0..* Hendelseslogg                                  | 0..1 Arkivenhet        |             |
+| **Generalization** (Source → Destination)  | Klassifikasjonssystem                                    | Arkivenhet             |             |
+| **Generalization** (Source → Destination)  | Arkiv                                                    | Arkivenhet             |             |
+| **Generalization** (Source → Destination)  | Mappe                                                    | Arkivenhet             |             |
+| **Generalization** (Source → Destination)  | Klasse                                                   | Arkivenhet             |             |
+| **Generalization** (Source → Destination)  | Arkivskaper                                              | Arkivenhet             |             |
+| **Generalization** (Source → Destination)  | Registrering                                             | Arkivenhet             |             |
+| **Generalization** (Source → Destination)  | Dokumentbeskrivelse                                      | Arkivenhet             |             |
 
 ##### Relasjonsnøkler
 
@@ -978,81 +447,15 @@ identiske arkivenheter har ulik systemID.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>M001</p>
-<p>Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså <em>systemID</em> være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne.</p>
-<p>Registreres automatisk av systemet</p>
-<p>Skal ikke kunne endres</p>
-<p>Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal <em>systemID</em> være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer.</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>oppdatertDato</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>opprettetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M600</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>opprettetAv</strong></td>
-<td><p>Definisjon: Navn på person som opprettet/registrerte arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M601</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>oppdatertAv</strong></td>
-<td><p>Definisjon: Navn på person som oppdaterte arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved oppdatering av enheten</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseOppdatertAv</strong></td>
-<td><p>Definisjon: SystemID på person som oppdaterte arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved oppdatering av enheten</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseOpprettetAv</strong></td>
-<td><p>Definisjon: SystemID på person som opprettet/registrerte arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**             | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|----------------------|---------------|---------------|-----------|-----------|
+| systemID             | M001 Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså *systemID* være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Registreres automatisk av systemet. Skal ikke kunne endres. Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal *systemID* være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. | \[0..1\] | SystemID |
+| oppdatertDato        |               | \[0..1\] | | datetime |
+| opprettetDato        | Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert . Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M600 | \[0..1\] | datetime| 
+| opprettetAv          | Definisjon: Navn på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M601 | \[0..1\] | string | 
+| oppdatertAv          | Definisjon: Navn på person som oppdaterte arkivenheten. Kilde: Registreres automatisk av systemet ved oppdatering av enheten | \[0..1\] | string | 
+| referanseOppdatertAv | Definisjon: SystemID på person som oppdaterte arkivenheten. Kilde: Registreres automatisk av systemet ved oppdatering av enheten | \[0..1\] | SystemID |
+| referanseOpprettetAv | Definisjon: SystemID på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten | \[0..1\] | SystemID |
 
 ##### Restriksjoner
 
@@ -1081,36 +484,10 @@ obligatorisk i arkivuttrekk.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>arkivskaper</p>
-<p>1..*</p>
-<p>Arkivskaper</p></td>
-<td><p>arkiv</p>
-<p>0..*</p>
-<p>Arkiv</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Arkivskaper</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Aggregation** (Bi-Directional)           | arkivskaper 1..* Arkivskaper                             | arkiv 0..* Arkiv       |             |
+| **Generalization** (Source → Destination)  | Arkivskaper                                              | Arkivenhet             |             |
 
 ##### Relasjonsnøkler
 
@@ -1124,51 +501,11 @@ obligatorisk i arkivuttrekk.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>arkivskaperID</strong></td>
-<td><p>Definisjon: Unik ID for arkivskaperen</p>
-<p>Kilde: Registreres manuelt ved opprettelsen av arkivet</p>
-<p>Kommentar: Kan være organisasjonsnummer (Brønnøysundregistrene) eller annen identifikasjon avtalt med arkivdepotet</p>
-<p>M006</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>arkivskaperNavn</strong></td>
-<td><p>Definisjon: Navn på organisasjonen som har skapt arkivet</p>
-<p>Kilde: Registreres manuelt ved opprettelsen av arkivet.</p>
-<p>Kommentarer: (ingen)</p>
-<p>M023</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>beskrivelse</strong></td>
-<td><p>Definisjon: Tekstlig beskrivelse av arkivenheten</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller</p>
-<p>hadde egne attributter for merknad som kunne brukes som et</p>
-<p>beskrivelsesfelt)</p>
-<p>M021</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| arkivskaperID | Definisjon: Unik ID for arkivskaperen . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentar: Kan være organisasjonsnummer (Brønnøysundregistrene) eller annen identifikasjon avtalt med arkivdepotet. M006 | \[1..1\]  | string | 
+| arkivskaperNavn | Definisjon: Navn på organisasjonen som har skapt arkivet . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentarer: (ingen). M023 | \[1..1\] | string | 
+| beskrivelse | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | string |
 
 ##### Restriksjoner
 
@@ -1189,59 +526,13 @@ for spesialiserte fagsystemer
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Basisregistrering</td>
-<td>Registrering</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>kryssreferanse</p>
-<p>0..*</p>
-<p>Kryssreferanse</p></td>
-<td><p>registrering</p>
-<p>0..1</p>
-<p>Basisregistrering</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Møteregistrering</td>
-<td>Basisregistrering</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Journalpost</td>
-<td>Basisregistrering</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>merknad</p>
-<p>0..*</p>
-<p>Merknad</p></td>
-<td>Basisregistrering</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | Basisregistrering                                        | Registrering           |             |
+| *Association* (Bi-Directional)             | kryssreferanse 0..* Kryssreferanse                       | registrering 0..1 Basisregistrering ||
+| **Generalization** (Source → Destination)  | Møteregistrering                                         | Basisregistrering      |             |
+| **Generalization** (Source → Destination)  | Journalpost                                              | Basisregistrering      |             |
+| *Association* (Destination → Source)       | merknad 0..* Merknad                                     | Basisregistrering      |             |
 
 ##### Relasjonsnøkler
 
@@ -1258,136 +549,26 @@ for spesialiserte fagsystemer
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>registreringsID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av registreringen innenfor arkivet. Andre arkiver innenfor samme system kan inneholde den samme koden. Koden kan være rent nummerisk, men kan også ha en logisk oppbygging. Merk at registreringsID er identisk med saksår og sekvensnummer (oftest bare kalt &quot;saksnummer&quot;) i kombinasjon med &quot;dokumentnummer&quot; i Noark 4, se kommentar.</p>
-<p>Kilde: Registreres automatisk av systemet etter interne regler</p>
-<p>Kommentarer: Saksnummer og dokumentnummer (f.eks. 2011/3869-8, dvs. dokumentnummer 8 i saksnummer 2011/3869) er ikke lenger obligatorisk identifikasjon i Noark 5, men det anbefales at dette mønsteret fremdeles brukes i sakarkiver. I slike tilfeller skal verdien for &quot;dokumentnummer&quot; kopieres til M015 journalpostnummer i journalposten.</p>
-<p>M004</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>tittel</strong></td>
-<td><p>Definisjon: Tittel eller navn på arkivenheten</p>
-<p>Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem.</p>
-<p>Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet.</p>
-<p>M020</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>offentligTittel</strong></td>
-<td><p>Definisjon: Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med ******)</p>
-<p>Kilde: (ingen)</p>
-<p>Kommentarer: I løpende og offentlig journaler skal også offentligTittel være med dersom ord i tittelfeltet skal skjermes.</p>
-<p>M025</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>beskrivelse</strong></td>
-<td><p>Definisjon: Tekstlig beskrivelse av arkivenheten</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt)</p>
-<p>M021</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>nøkkelord</strong></td>
-<td><p>Definisjon: Nøkkeord eller stikkord som beskriver innholdet i enheten</p>
-<p>Kilde: Registreres vanligvis ved oppslag fra liste (f.eks. en tesaurus). Kan også registreres automatisk på grunnlag av dokumentinnhold eller integrering med fagsystem.</p>
-<p>Kommentarer: Nøkkelord kan brukes for å forbedre mulighetene for søking og gjenfinning. Nøkkelord skal ikke erstatte klassifikasjon.</p>
-<p>M022</p></td>
-<td>[0..*]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>forfatter</strong></td>
-<td><p>Definisjon: Navn på person (eller eventuelt organisasjon) som har forfattet eller skapt dokumentet.</p>
-<p>Kilde: Registreres automatisk av systemet, automatisk fra innholdet i dokumentet eller manuelt</p>
-<p>Kommentarer: Sakarkiver har tradisjonelt ikke noen forfatter på journalposten, men kan eventuelt ha det på dokumentbeskrivelsen. I en journalpost vil derfor forfatter vanligvis være forstått som M307 saksbehandler (utgående og organinterne dokumenter) eller eventuelt M400 korrespondansepartNavn (ved inngående dokumenter). Fagsystemer uten korrespondansedokumenter bør normal ha en forfatter. Her kan personnavn eventuelt erstattes med en kilde (f.eks. et system).</p>
-<p>M024</p></td>
-<td>[0..*]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>dokumentmedium</strong></td>
-<td><p>Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter</p>
-<p>Kilde: Arves fra overordnet nivå, kan overstyres manuelt</p>
-<p>Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel.</p>
-<p>M300</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>Dokumentmedium</td>
-</tr>
-<tr class="even">
-<td><strong>oppbevaringssted</strong></td>
-<td><p>Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder.</p>
-<p>Kilde: Arves fra overordnet nivå, kan overstyres manuelt</p>
-<p>Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument.</p>
-<p>M301</p></td>
-<td>[0..*]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>virksomhetsspesifikkeMetadata</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>any</td>
-</tr>
-</tbody>
-</table>
+| **Navn**                      | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-------------------------------|---------------|---------------|-----------|-----------|
+| registreringsID               | Definisjon: Entydig identifikasjon av registreringen innenfor arkivet. Andre arkiver innenfor samme system kan inneholde den samme koden. Koden kan være rent nummerisk, men kan også ha en logisk oppbygging. Merk at registreringsID er identisk med saksår og sekvensnummer (oftest bare kalt &quot;saksnummer&quot;) i kombinasjon med &quot;dokumentnummer&quot; i Noark 4, se kommentar. Kilde: Registreres automatisk av systemet etter interne regler. Kommentarer: Saksnummer og dokumentnummer (f.eks. 2011/3869-8, dvs. dokumentnummer 8 i saksnummer 2011/3869) er ikke lenger obligatorisk identifikasjon i Noark 5, men det anbefales at dette mønsteret fremdeles brukes i sakarkiver. I slike tilfeller skal verdien for &quot;dokumentnummer&quot; kopieres til M015 journalpostnummer i journalposten. M004 | \[0..1\] | | string | 
+| tittel                        | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
+| offentligTittel               | Definisjon: Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med ******) . Kilde: (ingen). Kommentarer: I løpende og offentlig journaler skal også offentligTittel være med dersom ord i tittelfeltet skal skjermes. M025 | \[0..1\] | | string | 
+| beskrivelse                   | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string | 
+| nøkkelord                     | Definisjon: Nøkkeord eller stikkord som beskriver innholdet i enheten . Kilde: Registreres vanligvis ved oppslag fra liste (f.eks. en tesaurus). Kan også registreres automatisk på grunnlag av dokumentinnhold eller integrering med fagsystem. Kommentarer: Nøkkelord kan brukes for å forbedre mulighetene for søking og gjenfinning. Nøkkelord skal ikke erstatte klassifikasjon. M022 | \[0..\*\] | | string | 
+| forfatter                     | Definisjon: Navn på person (eller eventuelt organisasjon) som har forfattet eller skapt dokumentet. Kilde: Registreres automatisk av systemet, automatisk fra innholdet i dokumentet eller  manuelt. Kommentarer: Sakarkiver har tradisjonelt ikke noen forfatter på journalposten, men kan eventuelt ha det på dokumentbeskrivelsen. I en journalpost vil derfor forfatter vanligvis være forstått som M307 saksbehandler (utgående og organinterne dokumenter) eller eventuelt M400 korrespondansepartNavn (ved inngående dokumenter). Fagsystemer uten korrespondansedokumenter bør normal ha en forfatter. Her kan personnavn eventuelt erstattes med en kilde (f.eks. et system). M024 | \[0..\*\] | | string |
+| dokumentmedium                | Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter . Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel. M300 | \[0..1\] | | Dokumentmedium |
+| oppbevaringssted              | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument. M301 | \[0..\*\] | | string | 
+| virksomhetsspesifikkeMetadata | |  \[0..1\] | | any |
 
 ##### Restriksjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>5.5.7 En Basisregistrering skal kunne utvides til en</p>
-<p>Journalpost.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M004 registreringsID: Skal normalt ikke kunne endres. Ved flytting til en annen mappe, kan endring av registreringsID forekomme.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M025 offentligTittel: Obligatorisk i arkivuttrekk dersom tittelen inneholder ord som skal skjermes, jf. M504 skjermingMetadata.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                          | **Merknad** |
+| ------------------------------------------------- | ----------- |
+| 5.5.7 En Basisregistrering skal kunne utvides til en Journalpost. | |
+| M004 registreringsID: Skal normalt ikke kunne endres. Ved flytting til en annen mappe, kan endring av registreringsID forekomme. | |
+| M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert | |
+| M025 offentligTittel: Obligatorisk i arkivuttrekk dersom tittelen inneholder ord som skal skjermes, jf. M504 skjermingMetadata. | |
 
 #### Dokumentbeskrivelse
 
@@ -1403,62 +584,13 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong><span class="underline">NoteLink</span></strong></td>
-<td>Dokumentbeskrivelse</td>
-<td>&lt;anonymous&gt;</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>dokumentbeskrivelse</p>
-<p>0..*</p>
-<p>Dokumentbeskrivelse</p></td>
-<td><p>registrering</p>
-<p>1..*</p>
-<p>Registrering</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Dokumentbeskrivelse</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>merknad</p>
-<p>0..*</p>
-<p>Merknad</p></td>
-<td>Dokumentbeskrivelse</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>dokumentobjekt</p>
-<p>0..*</p>
-<p>Dokumentobjekt</p></td>
-<td><p>dokumentbeskrivelse</p>
-<p>1</p>
-<p>Dokumentbeskrivelse</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| *NoteLink*                               | Dokumentbeskrivelse                                      | \<anonymous\>          |             |
+| **Aggregation** (Bi-Directional)           | dokumentbeskrivelse 0..* Dokumentbeskrivelse             | registrering 1..* Registrering |     |
+| **Generalization** (Source → Destination)  | Dokumentbeskrivelse                                      | Arkivenhet             |             |
+| *Association* (Destination → Source)       | merknad 0..* Merknad                                     | Dokumentbeskrivelse    |             |
+| **Aggregation** (Bi-Directional)           | dokumentobjekt 0..* Dokumentobjekt                       | dokumentbeskrivelse 1 Dokumentbeskrivelse | |
 
 ##### Relasjonsnøkler
 
@@ -1480,286 +612,50 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>dokumenttype</strong></td>
-<td><p>Definisjon: Navn på type dokument</p>
-<p>Kilde: Registreres automatisk av systemet eller manuelt</p>
-<p>Kommentarer: (ingen)</p>
-<p>M083</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Dokumenttype</td>
-</tr>
-<tr class="even">
-<td><strong>dokumentstatus</strong></td>
-<td><p>Definisjon: Status til dokumentet</p>
-<p>Kilde: Kan endres automatisk ved endring i saksstatus eller journalstatus.</p>
-<p>Kommentarer: Dokumentbeskrivelser som avlevers skal ha status &quot;Dokumentet er ferdigstilt&quot;.</p>
-<p>M054</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Dokumentstatus</td>
-</tr>
-<tr class="odd">
-<td><strong>tittel</strong></td>
-<td><p>Definisjon: Tittel eller navn på arkivenheten</p>
-<p>Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem.</p>
-<p>Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet.</p>
-<p>M020</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>beskrivelse</strong></td>
-<td><p>Definisjon: Tekstlig beskrivelse av arkivenheten</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt)</p>
-<p>M021</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>forfatter</strong></td>
-<td><p>Definisjon: Navn på person (eller eventuelt organisasjon) som har forfattet eller skapt dokumentet.</p>
-<p>Kilde: Registreres automatisk av systemet, automatisk fra innholdet i dokumentet eller manuelt</p>
-<p>Kommentarer: Sakarkiver har tradisjonelt ikke noen forfatter på journalposten, men kan eventuelt ha det på dokumentbeskrivelsen. I en journalpost vil derfor forfatter vanligvis være forstått som M307 saksbehandler (utgående og organinterne dokumenter) eller eventuelt M400 korrespondansepartNavn (ved inngående dokumenter). Fagsystemer uten korrespondansedokumenter bør normal ha en forfatter. Her kan personnavn eventuelt erstattes med en kilde (f.eks. et system).</p>
-<p>M024</p></td>
-<td>[0..*]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>dokumentmedium</strong></td>
-<td><p>Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter</p>
-<p>Kilde: Arves fra overordnet nivå, kan overstyres manuelt</p>
-<p>Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel.</p>
-<p>M300</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>Dokumentmedium</td>
-</tr>
-<tr class="odd">
-<td><strong>oppbevaringssted</strong></td>
-<td><p>Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder.</p>
-<p>Kilde: Arves fra overordnet nivå, kan overstyres manuelt</p>
-<p>Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument.</p>
-<p>M301</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>tilknyttetRegistreringSom</strong></td>
-<td><p>Definisjon: Angivelse av hvilken &quot;rolle&quot; dokumentet har i forhold til registreringen</p>
-<p>Kilde: Registreres automatisk eller manuelt når et dokument blir tilknyttet en registrering</p>
-<p>Kommentarer: (ingen)</p>
-<p>M217</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>TilknyttetRegistreringSom</td>
-</tr>
-<tr class="odd">
-<td><strong>dokumentnummer</strong></td>
-<td><p>Definisjon: Identifikasjon av dokumentene innenfor en registrering</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Dokumentnummeret avgjør i hvilken rekkefølge dokumentene vises i brukergrensesnittet. Normalt skal hoveddokument vises før vedleggene.</p>
-<p>M007</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>integer</td>
-</tr>
-<tr class="even">
-<td><strong>tilknyttetDato</strong></td>
-<td><p>Definisjon: Datoen et dokument ble knyttet til en registrering</p>
-<p>Kilde: Registreres automatisk nå tilknytning foretas</p>
-<p>Kommentarer: (ingen)</p>
-<p>M620</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="odd">
-<td><strong>tilknyttetAv</strong></td>
-<td><p>Definisjon: Navn på person som knyttet et dokument til en registrering</p>
-<p>Kilde: Registreres automatisk når tilknytning foretas</p>
-<p>Kommentarer: (ingen)</p>
-<p>M621</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseTilknyttetAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="odd">
-<td><strong>kassasjon</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Kassasjon</td>
-</tr>
-<tr class="even">
-<td><strong>utførtKassasjon</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>UtførtKassasjon</td>
-</tr>
-<tr class="odd">
-<td><strong>sletting</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Sletting</td>
-</tr>
-<tr class="even">
-<td><strong>skjerming</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Skjerming</td>
-</tr>
-<tr class="odd">
-<td><strong>gradering</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Gradering</td>
-</tr>
-<tr class="even">
-<td><strong>elektroniskSignatur</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>ElektroniskSignatur</td>
-</tr>
-<tr class="odd">
-<td><strong>virksomhetsspesifikkeMetadata</strong></td>
-<td><p>Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema.</p>
-<p>Kilde: (ingen)</p>
-<p>Kommentar: (ingen)</p>
-<p>M711 virksomhetsspesifikkeMetadata</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>any</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| dokumenttype                  | Definisjon: Navn på type dokument . Kilde: Registreres automatisk av systemet eller  manuelt. Kommentarer: (ingen). M083 | \[1..1\] | | Dokumenttype |
+| dokumentstatus                | Definisjon: Status til dokumentet . Kilde: Kan endres automatisk ved endring i saksstatus eller journalstatus. Kommentarer: Dokumentbeskrivelser som avlevers skal ha status &quot;Dokumentet er ferdigstilt&quot;. M054 | \[1..1\] | | Dokumentstatus |
+| tittel                        | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
+| beskrivelse                   | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string | 
+| forfatter                     | Definisjon: Navn på person (eller eventuelt organisasjon) som har forfattet eller skapt dokumentet. Kilde: Registreres automatisk av systemet, automatisk fra innholdet i dokumentet eller  manuelt. Kommentarer: Sakarkiver har tradisjonelt ikke noen forfatter på journalposten, men kan eventuelt ha det på dokumentbeskrivelsen. I en journalpost vil derfor forfatter vanligvis være forstått som M307 saksbehandler (utgående og organinterne dokumenter) eller eventuelt M400 korrespondansepartNavn (ved inngående dokumenter). Fagsystemer uten korrespondansedokumenter bør normal ha en forfatter. Her kan personnavn eventuelt erstattes med en kilde (f.eks. et system).  M024 | \[0..\*\] | | string | 
+| dokumentmedium                | Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter . Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel. M300 | \[0..1\] | | Dokumentmedium |
+| oppbevaringssted              | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument. M301 | \[0..1\] | | string | 
+| tilknyttetRegistreringSom     | Definisjon: Angivelse av hvilken &quot;rolle&quot; dokumentet har i forhold til registreringen . Kilde: Registreres automatisk eller manuelt når et dokument blir tilknyttet en registrering  Kommentarer: (ingen). M217 | \[1..1\] | | TilknyttetRegistreringSom |
+| dokumentnummer                | Definisjon: Identifikasjon av dokumentene innenfor en registrering . Kilde: Registreres automatisk av systemet. Kommentarer: Dokumentnummeret avgjør i hvilken rekkefølge dokumentene vises i brukergrensesnittet. Normalt skal hoveddokument vises før vedleggene. M007 | \[1..1\] | | integer |
+| tilknyttetDato                | Definisjon: Datoen et dokument ble knyttet til en registrering . Kilde: Registreres automatisk nå tilknytning foretas. Kommentarer: (ingen). M620 | \[1..1\] | | date |
+| tilknyttetAv                  | Definisjon: Navn på person som knyttet et dokument til en registrering . Kilde: Registreres automatisk når tilknytning foretas. Kommentarer: (ingen). M621 | \[0..1\] | | string | 
+| referanseTilknyttetAv         |  | \[0..1\] |         | SystemID |
+| kassasjon                     |  | \[0..1\] |         | Kassasjon |
+| utførtKassasjon               |  | \[0..1\] |         | UtførtKassasjon |
+| sletting                      |  | \[0..1\] |         | Sletting |
+| skjerming                     |  | \[0..1\] |         | Skjerming |
+| gradering                     |  | \[0..1\] |         | Gradering |
+| elektroniskSignatur           |  | \[0..1\] |         | ElektroniskSignatur |
+| virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen).Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 
 ##### Restriksjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.13.17 Autoriserte brukere skal kunne slette en arkivert inaktiv</p>
-<p>dokumentversjon. Den siste, endelige versjonen skal</p>
-<p>ikke kunne slettes.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.13.18 Det skal være mulig å søke fram dokumenter som er</p>
-<p>arkivert i flere versjoner</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.13.19 Det bør være mulig å utføre sletting av mange inaktive</p>
-<p>dokumentversjoner samtidig, f.eks. alle inaktive</p>
-<p>dokumentversjoner som funnet etter et søk.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.13.20 Sletting av arkiverte inaktive dokumentversjoner skal</p>
-<p>logges.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.13.21 Autoriserte brukere skal kunne slette en arkivert</p>
-<p>dokumentvariant. Det opprinnelige dokumentet skal</p>
-<p>ikke kunne slettes.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.13.22 Det skal være mulig å søke fram arkiverte</p>
-<p>dokumentvarianter.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.13.23 Det bør være mulig å slette mange dokumentvarianter</p>
-<p>samtidig, f.eks. alle dokumentvarianter som er funnet</p>
-<p>etter et søk.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5.13.24 Sletting av arkiverte dokumentvarianter skal logges.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.13.25 Autoriserte brukere skal kunne slette et arkivert</p>
-<p>dokument i produksjonsformat dersom dokumentet er</p>
-<p>blitt konvertert til arkivformat. Dokumentet i</p>
-<p>arkivformat skal ikke kunne slettes.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.13.26 Det skal være mulig å søke fram dokumenter arkivert i</p>
-<p>produksjonsformat.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.13.27 Det bør være mulig å slette mange produksjonsformater</p>
-<p>samtidig, f.eks. alle produksjonsformater som er funnet</p>
-<p>etter et søk.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5.13.28 Sletting av arkiverte produksjonsformater skal logges</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M007 dokumentnummer: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M620 tilknyttetDato: Kan ikke endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M621 tilknyttetAv: Kan ikke endres</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                          | **Merknad** |
+| ------------------------------------------------- | ----------- |
+| Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt| |
+| 5.13.17 Autoriserte brukere skal kunne slette en arkivert inaktiv dokumentversjon. Den siste, endelige versjonen skal ikke kunne slettes. | |
+| 5.13.18 Det skal være mulig å søke fram dokumenter som er arkivert i flere versjoner | |
+| 5.13.19 Det bør være mulig å utføre sletting av mange inaktive dokumentversjoner samtidig, f.eks. alle inaktive dokumentversjoner som funnet etter et søk. | |
+| 5.13.20 Sletting av arkiverte inaktive dokumentversjoner skal logges. | |
+| 5.13.21 Autoriserte brukere skal kunne slette en arkivert dokumentvariant. Det opprinnelige dokumentet skal ikke kunne slettes. | |
+| 5.13.22 Det skal være mulig å søke fram arkiverte dokumentvarianter. | |
+| 5.13.23 Det bør være mulig å slette mange dokumentvarianter samtidig, f.eks. alle dokumentvarianter som er funnet etter et søk. | |
+| 5.13.24 Sletting av arkiverte dokumentvarianter skal logges.| |
+| 5.13.25 Autoriserte brukere skal kunne slette et arkivert dokument i produksjonsformat dersom dokumentet er blitt konvertert til arkivformat. Dokumentet i arkivformat skal ikke kunne slettes. | |
+| 5.13.26 Det skal være mulig å søke fram dokumenter arkivert i produksjonsformat. | |
+| 5.13.27 Det bør være mulig å slette mange produksjonsformater samtidig, f.eks. alle produksjonsformater som er funnet etter et søk. | |
+| 5.13.28 Sletting av arkiverte produksjonsformater skal logges | |
+| M007 dokumentnummer: Skal ikke kunne endres | |
+| M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert | |
+| M620 tilknyttetDato: Kan ikke endres | |
+| M621 tilknyttetAv: Kan ikke endres | |
+
 
 #### Dokumentobjekt
 
@@ -1783,38 +679,11 @@ bytesekvensen som representerer dokumentet.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>dokumentobjekt</p>
-<p>0..*</p>
-<p>Dokumentobjekt</p></td>
-<td><p>dokumentbeskrivelse</p>
-<p>1</p>
-<p>Dokumentbeskrivelse</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>konvertering</p>
-<p>0..*</p>
-<p>Konvertering</p></td>
-<td>Dokumentobjekt</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Aggregation** (Bi-Directional)           | dokumentobjekt 0..* Dokumentobjekt                       | dokumentbeskrivelse  1 Dokumentbeskrivelse | |
+| **Aggregation** (Destination → Source)     | konvertering 0..* Konvertering                           | Dokumentobjekt         |             |
+
 
 ##### Relasjonsnøkler
 
@@ -1833,248 +702,45 @@ bytesekvensen som representerer dokumentet.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne.</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer.</p>
-<p>M001</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>versjonsnummer</strong></td>
-<td><p>Definisjon: Identifikasjon av versjoner innenfor ett og samme dokument.</p>
-<p>Kilde: Registreres automatisk når en ny versjon arkiveres</p>
-<p>Kommentarer: Versjonsnummer gjelder bare arkiverte versjoner. Annen versjons-håndtering ligger i komplett Noark, og genererer ikke metadata skal følge med i et arkivuttrekk.</p>
-<p>M005</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>integer</td>
-</tr>
-<tr class="odd">
-<td><strong>variantformat</strong></td>
-<td><p>Definisjon: Angivelse av hvilken variant et dokument forekommer i</p>
-<p>Kilde: Registreres automatisk når dokumentet arkiveres</p>
-<p>Kommentarer: (ingen)</p>
-<p>M700</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Variantformat</td>
-</tr>
-<tr class="even">
-<td><strong>format</strong></td>
-<td><p>Definisjon: Dokumentets format</p>
-<p>Kilde: Registreres automatisk når dokumentet arkiveres</p>
-<p>Kommentarer: Faste verdier bestemmes senere</p>
-<p>M701</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>Format</td>
-</tr>
-<tr class="odd">
-<td><strong>formatDetaljer</strong></td>
-<td><p>Definisjon: Nærmere spesifikasjon av dokuments format, f.eks. informasjon om komprimering</p>
-<p>Kilde: (ingen)</p>
-<p>Kommentarer: (ingen)</p>
-<p>M702</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>opprettetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M600</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>opprettetAv</strong></td>
-<td><p>Definisjon: Navn på person som opprettet/registrerte arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M601</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseDokumentfil</strong></td>
-<td><p>Definisjon: Referanse til filen som inneholder det elektroniske dokumentet som dokumentobjektet beskriver</p>
-<p>Kilde: Registreres automatisk når et dokument tilknyttes en registrering, når det arkiveres flere versjoner av et dokument, når det lages en egen variant av dokumentet og når dokumentet konverteres til nye formater</p>
-<p>Kommentarer: Referansen skal være en &quot;sti&quot; (dvs. også inneholde katalogstrukturen) til filnavnet som gjør det mulig å identifisere riktig fil i et arkivuttrekk.</p>
-<p>M218</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>filnavn</strong></td>
-<td>veFilnavn i n4</td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>sjekksum</strong></td>
-<td><p>Definisjon: En verdi som beregnes ut fra innholdet i dokumentet, og som dermed gir integritetssikring til dokumentets innhold</p>
-<p>Kilde: Påføres automatisk i forbindelse med eksport for avlevering</p>
-<p>Kommentarer: (ingen)</p>
-<p>M705</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>mimeType</strong></td>
-<td>veMimeType i n4</td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>sjekksumAlgoritme</strong></td>
-<td><p>Definisjon: Algoritmen som er brukt for å beregne sjekksummen</p>
-<p>Kilde: Registreres automatisk i forbindelse med eksport for avlevering</p>
-<p>Kommentarer: (ingen)</p>
-<p>M706</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>filstørrelse</strong></td>
-<td><p>Definisjon: Størrelsen på fila i antall bytes oppgitt med desimaltall</p>
-<p>Kilde: Registreres automatisk i forbindelse med eksport for avlevering</p>
-<p>Kommentarer: (ingen)</p>
-<p>M707</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>elektroniskSignatur</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>ElektroniskSignatur</td>
-</tr>
-</tbody>
-</table>
+| **Navn**             | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|----------------------|---------------|---------------|-----------|-----------|
+| systemID             | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
+| versjonsnummer       | Definisjon: Identifikasjon av versjoner innenfor ett og samme dokument. Kilde: Registreres automatisk når en ny versjon arkiveres. Kommentarer: Versjonsnummer gjelder bare arkiverte versjoner. Annen versjons-håndtering ligger i komplett Noark, og genererer ikke metadata skal følge med i et arkivuttrekk. M005 | \[1..1\] | | integer |
+| variantformat        | Definisjon: Angivelse av hvilken variant et dokument forekommer i . Kilde: Registreres automatisk når dokumentet arkiveres. Kommentarer: (ingen). M700 | \[1..1\] | | Variantformat |
+| format               | Definisjon: Dokumentets format . Kilde: Registreres automatisk når dokumentet arkiveres. Kommentarer: Faste verdier bestemmes senere. M701 | \[0..1\] | | Format |
+| formatDetaljer       | Definisjon: Nærmere spesifikasjon av dokuments format, f.eks. informasjon om komprimering . Kilde: (ingen). Kommentarer: (ingen). M702 | \[0..1\] | | string | 
+| opprettetDato        | Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert . Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M600 | \[0..1\] | | datetime |
+| opprettetAv          | Definisjon: Navn på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M601 | \[0..1\] | | string | 
+| referanseDokumentfil | Definisjon: Referanse til filen som inneholder det elektroniske dokumentet som dokumentobjektet beskriver . Kilde: Registreres automatisk når et dokument tilknyttes en registrering, når det arkiveres flere versjoner av et dokument, når det lages en egen variant av dokumentet og når dokumentet konverteres til nye formater. Kommentarer: Referansen skal være en &quot;sti&quot; (dvs. også inneholde katalogstrukturen) til filnavnet som gjør det mulig å identifisere riktig fil i et arkivuttrekk. M218 | \[0..1\] | | string | 
+| filnavn              | veFilnavn i n4 | \[0..1\]     |           | string | 
+| sjekksum             | Definisjon: En verdi som beregnes ut fra innholdet i dokumentet, og som dermed gir integritetssikring til dokumentets innhold . Kilde: Påføres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M705 | \[0..1\] | | string | 
+| mimeType             | veMimeType i n4 | \[0..1\]    |           | string | 
+| sjekksumAlgoritme    | Definisjon: Algoritmen som er brukt for å beregne sjekksummen . Kilde: Registreres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M706 | \[0..1\] | | string | 
+| filstørrelse         | Definisjon: Størrelsen på fila i antall bytes oppgitt med desimaltall . Kilde: Registreres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M707 | \[0..1\] | string | 
+| elektroniskSignatur  |              | \[0..1\]       |           | ElektroniskSignatur |
 
 ##### Restriksjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.13.13 Det skal finnes en tjeneste/funksjon som gjør at</p>
-<p>arkivadministrator kan sette opp regler for når (hvilke</p>
-<p>statuser) arkivdokumenter skal konverteres til</p>
-<p>arkivformat.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.13.14 Det skal være konfigurerbart om dokumenter skal</p>
-<p>konverteres til arkivformat når status på</p>
-<p>dokumentbeskrivelse settes til ”Dokumentet er</p>
-<p>ferdigstilt”.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.13.15 Det skal være konfigurerbart om alle eller spesielt</p>
-<p>merkede versjoner skal konverteres til arkivformat.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.13.16 Det skal finnes en tjeneste/funksjon og rapportering for</p>
-<p>filformattesting av dokumentene som er lagret i kjernen.</p></td>
-<td><p>/*</p>
-<p>Rapporten skal gi oversikt over hvilke mapper,</p>
-<p>registreringer og/eller dokumentbeskrivelser som ikke</p>
-<p>inneholder dokumenter lagret i godkjent arkivformat. */</p></td>
-</tr>
-<tr class="even">
-<td>M001 systemID: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M005 versjonsnummer: Skal ikke endres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M005 versjonsnummer: Den eldste versjonen skal ha det laveste nummeret</td>
-<td><p>Dersom arkiverte versjoner er slettet (gjelder ikke siste versjon), vil dette skape</p>
-<p>&quot;huller&quot; i nummerrekkefølgen.</p></td>
-</tr>
-<tr class="odd">
-<td>M600 opprettetDato: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M601 opprettetAv: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M700 veriantformat: Kan ikke endres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M701 format: Kan ikke endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M702 formatDetaljer: Kan ikke endres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M705 sjekksum: Kan ikke endres.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>M705 sjekksum: Sjekksummen skal være heksadesimal uten noen</p>
-<p>formatteringstegn.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M706 sjekksumAlgoritme: Kan ikke endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M706 sjekksumAlgoritme: Algoritmen som skal brukes inntil videre er SHA256.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M707 fulstoerrelse: Kan ikke endres</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                          | **Merknad** |
+| ------------------------------------------------- | ----------- |
+| Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt | |
+| 5.13.13 Det skal finnes en tjeneste/funksjon som gjør at arkivadministrator kan sette opp regler for når (hvilke statuser) arkivdokumenter skal konverteres til arkivformat. | |
+| 5.13.14 Det skal være konfigurerbart om dokumenter skal konverteres til arkivformat når status på dokumentbeskrivelse settes til ”Dokumentet er ferdigstilt”. | |
+| 5.13.15 Det skal være konfigurerbart om alle eller spesielt merkede versjoner skal konverteres til arkivformat. | |
+| 5.13.16 Det skal finnes en tjeneste/funksjon og rapportering for filformattesting av dokumentene som er lagret i kjernen. | Rapporten skal gi oversikt over hvilke mapper, registreringer og/eller dokumentbeskrivelser som ikke inneholder dokumenter lagret i godkjent arkivformat. |
+| M001 systemID: Skal ikke kunne endres | |
+| M005 versjonsnummer: Skal ikke endres | |
+| M005 versjonsnummer: Den eldste versjonen skal ha det laveste nummeret. Dersom arkiverte versjoner er slettet (gjelder ikke siste versjon), vil dette skape  &quot;huller&quot; i nummerrekkefølgen. | |
+| M600 opprettetDato: Skal ikke kunne endres | |
+| M601 opprettetAv: Skal ikke kunne endres | |
+| M700 veriantformat: Kan ikke endres | |
+| M701 format: Kan ikke endres | |
+| M702 formatDetaljer: Kan ikke endres | |
+| M705 sjekksum: Kan ikke endres. | |
+| M705 sjekksum: Sjekksummen skal være heksadesimal uten noen formatteringstegn. | |
+| M706 sjekksumAlgoritme: Kan ikke endres | |
+| M706 sjekksumAlgoritme: Algoritmen som skal brukes inntil videre er SHA256. | |
+| M707 fulstoerrelse: Kan ikke endres | |
 
 #### ElektroniskSignatur
 
@@ -2094,66 +760,13 @@ bytesekvensen som representerer dokumentet.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>elektroniskSignaturSikkerhetsnivå</strong></td>
-<td><p>Definisjon: Angivelse av hvilket sikkerhetsnivå som ble brukt ved forsendelse og mottak av elektroniske dokumenter</p>
-<p>Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk signatur</p>
-<p>Kommentarer: (ingen)</p>
-<p>M507 elektroniskSignaturSikkerhetsnivaa</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>ElektroniskSignaturSikkerhetsnivå</td>
-</tr>
-<tr class="even">
-<td><strong>elektroniskSignaturVerifisert</strong></td>
-<td><p>Definisjon: Angivelse av om et dokument er mottatt med elektronisk signatur, og om signaturen er verifisert.</p>
-<p>Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk signatur</p>
-<p>Kommentarer: Dersom signaturen er verifisert, skal det logges hvem som verifiserte den og når det skjedde</p>
-<p>M508</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>ElektroniskSignaturVerifisert</td>
-</tr>
-<tr class="odd">
-<td><strong>verifisertDato</strong></td>
-<td><p>Definisjon: Dato en elektronisk signatur ble verifisert</p>
-<p>Kilde: Registreres automatisk når verifisering utføres</p>
-<p>Kommentarer: (ingen)</p>
-<p>M622</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="even">
-<td><strong>verifisertAv</strong></td>
-<td><p>Definisjon: Navn på person som har verifisert en elektronisk signatur</p>
-<p>Kilde: Registreres automatisk når verifisering utføres</p>
-<p>Kommentarer: (ingen)</p>
-<p>M623</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseVerifisertAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| elektroniskSignaturSikkerhetsnivå | Definisjon: Angivelse av hvilket sikkerhetsnivå som ble brukt ved forsendelse og mottak av elektroniske dokumenter . Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk signatur. Kommentarer: (ingen). M507 elektroniskSignaturSikkerhetsnivaa | \[1..1\] | | ElektroniskSignaturSikkerhetsnivå |
+| elektroniskSignaturVerifisert     | Definisjon: Angivelse av om et dokument er mottatt med elektronisk signatur, og om signaturen er verifisert. Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk signatur. Kommentarer: Dersom signaturen er verifisert, skal det logges hvem som verifiserte den og når det skjedde. M508 | \[1..1\] | | ElektroniskSignaturVerifisert |
+| verifisertDato                    | Definisjon: Dato en elektronisk signatur ble verifisert . Kilde: Registreres automatisk når verifisering utføres. Kommentarer: (ingen). M622 | \[1..1\] | | date|
+| verifisertAv                      | Definisjon: Navn på person som har verifisert en elektronisk signatur. Kilde: Registreres automatisk når verifisering utføres. Kommentarer: (ingen). M623 | \[1..1\] | | string | 
+| referanseVerifisertAv             | | \[0..1\] | | SystemID |
 
 ##### Restriksjoner
 
@@ -2174,83 +787,15 @@ forekomme en gang
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>graderingskode</strong></td>
-<td><p>Definisjon: Angivelse av at dokumentene er gradert i henhold til sikkerhetsloven eller beskyttelsesinstruksen.</p>
-<p>Kilde: Registreres manuelt ved valg fra liste, kan også registres automatisk</p>
-<p>Kommentarer: Dokumenter gradert &quot;Strengt hemmelig&quot;, &quot;Hemmelig&quot;, &quot;Konfidensielt&quot; og &quot;Strengt fortrolig&quot; skal føres i en egen journal som i sin helhet er unntatt fra innsyn.</p>
-<p>M506 gradering</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Graderingskode</td>
-</tr>
-<tr class="even">
-<td><strong>graderingsdato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når et dokument ble gradert</p>
-<p>Kilde: Registreres automatisk ved gradering</p>
-<p>Kommentarer: (ingen)</p>
-<p>M624</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>gradertAv</strong></td>
-<td><p>Definisjon: Navn på person som foretok graderingen</p>
-<p>Kilde: Registreres automatisk ved gradering</p>
-<p>Kommentarer: (ingen)</p>
-<p>M625</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseGradertAv</strong></td>
-<td></td>
-<td>[1..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="odd">
-<td><strong>nedgraderingsdato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når et dokument ble nedgradert</p>
-<p>Kilde: Registreres automatisk ved nedgradering</p>
-<p>Kommentarer: (ingen)</p>
-<p>M626</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>nedgradertAv</strong></td>
-<td><p>Definisjon: Navn på person som foretok nedgraderingen</p>
-<p>Kilde: Registreres automatisk ved nedgradering</p>
-<p>Kommentarer: (ingen)</p>
-<p>M627</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseNedgradertAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| graderingskode        | Definisjon: Angivelse av at dokumentene er gradert i henhold til sikkerhetsloven eller beskyttelsesinstruksen. Kilde: Registreres manuelt ved valg fra liste, kan også registres automatisk. Kommentarer: Dokumenter gradert &quot;Strengt hemmelig&quot;, &quot;Hemmelig&quot;, &quot;Konfidensielt&quot; og &quot;Strengt fortrolig&quot; skal føres i en egen journal som i sin helhet er unntatt fra innsyn. M506 gradering | \[1..1\] | Graderingskode |
+| graderingsdato        | Definisjon: Dato og klokkeslett når et dokument ble gradert . Kilde: Registreres automatisk ved gradering. Kommentarer: (ingen). M624 | \[1..1\] | | datetime|
+| gradertAv             | Definisjon: Navn på person som foretok graderingen . Kilde: Registreres automatisk ved gradering. Kommentarer: (ingen). M625 | \[1..1\] | | string | 
+| referanseGradertAv    |   | \[1..1\]        |           | SystemID |
+| nedgraderingsdato     | Definisjon: Dato og klokkeslett når et dokument ble nedgradert . Kilde: Registreres automatisk ved nedgradering. Kommentarer: (ingen). M626 | \[0..1\] | | datetime|
+| nedgradertAv          | Definisjon: Navn på person som foretok nedgraderingen . Kilde: Registreres automatisk ved nedgradering. Kommentarer: (ingen). M627 | \[0..1\] | | string | 
+| referanseNedgradertAv |   | \[0..1\]        |           | SystemID |
 
 #### Hendelseslogg
 
@@ -2260,35 +805,10 @@ forekomme en gang
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>logg</p>
-<p>0..*</p>
-<p>Hendelseslogg</p></td>
-<td><p>0..1</p>
-<p>Arkivenhet</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Hendelseslogg</td>
-<td>Endringslogg</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Aggregation** (Destination → Source)     | logg 0..* Hendelseslogg                                  | 0..1 Arkivenhet        |             |
+| **Generalization** (Source → Destination)  | Hendelseslogg                                            | Endringslogg           |             |
 
 ##### Relasjonsnøkler
 
@@ -2342,59 +862,12 @@ klasse, mappe, registrering og dokumentbeskrivelse.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>kassasjonsvedtak</strong></td>
-<td><p>Definisjon:Handling som skal utføres ved bevaringstidens slutt.</p>
-<p>Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres manuelt.</p>
-<p>Kommentarer: (ingen)</p>
-<p>M450</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Kassasjonsvedtak</td>
-</tr>
-<tr class="even">
-<td><strong>kassasjonshjemmel</strong></td>
-<td><p>Definisjon: Angivelse av hjemmel for kassasjon</p>
-<p>Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres manuelt</p>
-<p>Kommentarer: Hjemmel kan f.eks. være Riksarkivarens bevarings- og kassasjons-vedtak.</p>
-<p>M453</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>bevaringstid</strong></td>
-<td><p>Definisjon: Antall år dokumentene som tilhører denne arkivdelen skal bevares.</p>
-<p>Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres manuelt.</p>
-<p>Kommentarer: Tidspunktet for når bevaringstiden starter å løpe, vil vanligvis være når en mappe avsluttes. Men andre regler kan være aktuelle.</p>
-<p>M451</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>integer</td>
-</tr>
-<tr class="even">
-<td><strong>kassasjonsdato</strong></td>
-<td><p>Definisjon: Dato for når dokumentene som tilhører denne arkivenheten skal kunne kasseres, eller vurderes for bevaring og kassasjon på ny</p>
-<p>Kilde: Datoen beregnes automatisk på grunnlag av M451 Bevaringstid, eller registreres manuelt</p>
-<p>Kommentarer: (ingen)</p>
-<p>M452</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| kassasjonsvedtak | Definisjon:Handling som skal utføres ved bevaringstidens slutt. Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres manuelt. Kommentarer: (ingen). M450 | \[1..1\] | | Kassasjonsvedtak |
+| kassasjonshjemmel | Definisjon: Angivelse av hjemmel for kassasjon . Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres  manuelt. Kommentarer: Hjemmel kan f.eks. være Riksarkivarens bevarings- og kassasjons-vedtak. M453 | \[0..1\] | | string | 
+| bevaringstid | Definisjon: Antall år dokumentene som tilhører denne arkivdelen skal bevares. Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres manuelt. Kommentarer: Tidspunktet for når bevaringstiden starter å løpe, vil vanligvis være når en mappe avsluttes. Men andre regler kan være aktuelle. M451 | \[1..1\] | | integer | 
+| kassasjonsdato | Definisjon: Dato for når dokumentene som tilhører denne arkivenheten skal kunne kasseres, eller vurderes for bevaring og kassasjon på ny . Kilde: Datoen beregnes automatisk på grunnlag av M451 Bevaringstid, eller registreres  manuelt. Kommentarer: (ingen). M452 | \[1..1\] | date |
 
 #### Klasse
 
@@ -2417,100 +890,20 @@ Klassene skal ha en egen identifikasjon som er unik innenfor
 klassifikasjonssystemet. Dette tilsvarer det som er kalt ordningsverdi
 eller arkivkode i Noark-4. Identifikasjoner fra overordnede klasser skal
 arves nedover i hierarkiet, slik at det er lett å si hvilket nivå en
-befinner seg på6
+befinner seg på.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>underklasse</p>
-<p>0..*</p>
-<p>Klasse</p></td>
-<td>Klasse</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Klasse</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>klasse</p>
-<p>0..*</p>
-<p>Klasse</p></td>
-<td><p>klassifikasjonssystem</p>
-<p>0..1</p>
-<p>Klassifikasjonssystem</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>underklasse</p>
-<p>0..*</p>
-<p>Klasse</p></td>
-<td>Klasse</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>mappe</p>
-<p>0..*</p>
-<p>Mappe</p></td>
-<td><p>klasse</p>
-<p>0..1</p>
-<p>Klasse</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>kryssreferanse</p>
-<p>0..*</p>
-<p>Kryssreferanse</p></td>
-<td><p>klasse</p>
-<p>0..1</p>
-<p>Klasse</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Saksmappe</td>
-<td><p>sekundærklassifikasjon</p>
-<p>0..*</p>
-<p>Klasse</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>registrering</p>
-<p>0..*</p>
-<p>Registrering</p></td>
-<td><p>klasse</p>
-<p>0..1</p>
-<p>Klasse</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Aggregation** (Destination → Source)     | underklasse 0..* Klasse                                  | Klasse                 |             |
+| **Generalization** (Source → Destination)  | Klasse                                                   | Arkivenhet             |             |
+| **Aggregation** (Bi-Directional)           | klasse 0..* Klasse                                       | klassifikasjonssystem 0..1 Klassifikasjonssystem |  |
+| **Aggregation** (Destination → Source)     | underklasse 0..* Klasse                                  | Klasse                 |             |
+| **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | klasse 0..1 Klasse     |             |
+| *Association* (Bi-Directional)             | kryssreferanse 0..* Kryssreferanse                       | klasse 0..1 Klasse     |             |
+| *Association* (Source → Destination)       | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
+| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | klasse 0..1 Klasse     |             |
 
 ##### Relasjonsnøkler
 
@@ -2531,142 +924,28 @@ befinner seg på6
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>klasseID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av klassen innenfor klassifikasjonssystemet. Andre klassifikasjonssystemer innenfor samme arkivsystem kan imidlertid inneholde en eller flere av de samme identifikasjonene. Identifikasjonen kan være rent nummerisk, men kan også være alfanumerisk og ha et logisk meningsinnhold. Merk at klasseID er identisk med begrepene ordningsverdi og arkivkode i Noark 4.</p>
-<p>Kilde: Alle klasser i et klassifikasjonssystem opprettes vanligvis når et arkivsystem tas i bruk. Men enkelte løsninger kan tillate at det opprettes nye klasser ved behov (mest aktuelt ved objektbasert klassifikasjon).</p>
-<p>Kommentarer: Eksempel på klasseID og tittel i tre nivåer fra statens arkivnøkkel (emne-/funksjonsbasert klassifikasjonssystem):</p>
-<p>2 Stillinger og personell</p>
-<p>2.3 Lønn og pensjon</p>
-<p>2.3.6 Arbeidsgiveravgift</p>
-<p>Ved personbasert klassifikasjonssystem, kan f.eks. fødselsnummer og navn utgjøre klasseID og tittel.</p>
-<p>M002</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>tittel</strong></td>
-<td><p>Definisjon: Tittel eller navn på arkivenheten</p>
-<p>Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem.</p>
-<p>Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet.</p>
-<p>M020</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>beskrivelse</strong></td>
-<td><p>Definisjon: Tekstlig beskrivelse av arkivenheten</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt)</p>
-<p>M021</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>nøkkelord</strong></td>
-<td><p>Definisjon: Nøkkeord eller stikkord som beskriver innholdet i enheten</p>
-<p>Kilde: Registreres vanligvis ved oppslag fra liste (f.eks. en tesaurus). Kan også registreres automatisk på grunnlag av dokumentinnhold eller integrering med fagsystem.</p>
-<p>Kommentarer: Nøkkelord kan brukes for å forbedre mulighetene for søking og gjenfinning. Nøkkelord skal ikke erstatte klassifikasjon.</p>
-<p>M022</p></td>
-<td>[0..*]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>avsluttetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket</p>
-<p>Kilde: Registreres automatisk av systemet når enheten avsluttes</p>
-<p>Kommentarer: (ingen)</p>
-<p>M602</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>avsluttetAv</strong></td>
-<td><p>Definisjon: Navn på person som avsluttet/lukket arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M603</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseAvsluttetAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>skjerming</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Skjerming</td>
-</tr>
-<tr class="odd">
-<td><strong>kassasjon</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Kassasjon</td>
-</tr>
-</tbody>
-</table>
+| **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------------------|---------------|---------------|-----------|-----------|
+| klasseID              | Definisjon: Entydig identifikasjon av klassen innenfor klassifikasjonssystemet. Andre klassifikasjonssystemer innenfor samme arkivsystem kan imidlertid inneholde en eller flere av de samme identifikasjonene. Identifikasjonen kan være rent nummerisk, men kan også være alfanumerisk og ha et logisk meningsinnhold. Merk at klasseID er identisk med begrepene ordningsverdi og arkivkode i Noark 4. Kilde: Alle klasser i et klassifikasjonssystem opprettes vanligvis når et arkivsystem tas i bruk. Men enkelte løsninger kan tillate at det opprettes nye klasser ved behov (mest aktuelt ved objektbasert klassifikasjon). Kommentarer: Eksempel på klasseID og tittel i tre nivåer fra statens arkivnøkkel (emne-/funksjonsbasert klassifikasjonssystem): 2 Stillinger og personell, 2.3 Lønn og pensjon, 2.3.6 Arbeidsgiveravgift. Ved personbasert klassifikasjonssystem, kan f.eks. fødselsnummer og navn utgjøre klasseID og tittel. M002 | \[1..1\] | | string | 
+| tittel                | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
+| beskrivelse           | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string | 
+| nøkkelord             | Definisjon: Nøkkeord eller stikkord som beskriver innholdet i enheten . Kilde: Registreres vanligvis ved oppslag fra liste (f.eks. en tesaurus). Kan også registreres automatisk på grunnlag av dokumentinnhold eller integrering med fagsystem. Kommentarer: Nøkkelord kan brukes for å forbedre mulighetene for søking og gjenfinning. Nøkkelord skal ikke erstatte klassifikasjon. M022 | \[0..\*\] | | string | 
+| avsluttetDato         | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen). M602 | \[0..1\] | | datetime | 
+| avsluttetAv           | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M603 | \[0..1\] | | string | 
+| referanseAvsluttetAv  |               | \[0..1\]      |           | SystemID |
+| skjerming             |               | \[0..1\]      |           | Skjerming |
+| kassasjon             |               | \[0..1\]      |           | Kassasjon |
 
 ##### Restriksjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Ny - Kan ha enten underklasse eller mappe eller registrering</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M002 klasseID: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller</p>
-<p>dokumentene arkivert</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M602 avsluttetDato: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M602 avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                          | **Merknad** |
+| ------------------------------------------------- | ----------- |
+| Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt | |
+| Ny - Kan ha enten underklasse eller mappe eller registrering | |
+| M002 klasseID: Skal ikke kunne endres | |
+| M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert | |
+| M602 avsluttetDato: Skal ikke kunne endres | |
+| M602 avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet. | |
 
 #### Klassifikasjonssystem
 
@@ -2692,56 +971,12 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>klassifikasjonssystem</p>
-<p>0..1</p>
-<p>Klassifikasjonssystem</p></td>
-<td><p>arkivdel</p>
-<p>1..*</p>
-<p>Arkivdel</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Klassifikasjonssystem</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>sekundærklassifikasjonssystem</p>
-<p>0..*</p>
-<p>Klassifikasjonssystem</p></td>
-<td>Arkivdel</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>klasse</p>
-<p>0..*</p>
-<p>Klasse</p></td>
-<td><p>klassifikasjonssystem</p>
-<p>0..1</p>
-<p>Klassifikasjonssystem</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                            | **Kilde**                                                | **Mål**                | **Merknad** |
+| --------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Aggregation** (Bi-Directional)          | klassifikasjonssystem 0..1 Klassifikasjonssystem         | arkivdel 1..* Arkivdel |             |
+| **Generalization** (Source → Destination) | Klassifikasjonssystem                                    | Arkivenhet             |             |
+| **Aggregation** (Destination → Source)    | sekundærklassifikasjonssystem 0..* Klassifikasjonssystem | Arkivdel               |             |
+| **Aggregation** (Bi-Directional)          | klasse 0..* Klasse                                       | klassifikasjonssystem 0..1 Klassifikasjonssystem  | |
 
 ##### Relasjonsnøkler
 
@@ -2760,101 +995,20 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>klassifikasjonstype</strong></td>
-<td><p>Definisjon: Type klassifikasjonssystem</p>
-<p>Kilde: Registreres manuelt ved opprettelse av klassifikasjonssystem</p>
-<p>Kommentarer: (ingen)</p>
-<p>M086</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>Klassifikasjonstype</td>
-</tr>
-<tr class="even">
-<td><strong>tittel</strong></td>
-<td><p>Definisjon: Tittel eller navn på arkivenheten</p>
-<p>Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem.</p>
-<p>Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot;</p>
-<p>og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet.</p>
-<p>M020</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>beskrivelse</strong></td>
-<td><p>Definisjon: Tekstlig beskrivelse av arkivenheten</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller</p>
-<p>hadde egne attributter for merknad som kunne brukes som et</p>
-<p>beskrivelsesfelt)</p>
-<p>M021</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>avsluttetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket</p>
-<p>Kilde: Registreres automatisk av systemet når enheten avsluttes</p>
-<p>Kommentarer: (ingen)</p>
-<p>M602</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>avsluttetAv</strong></td>
-<td><p>Definisjon: Navn på person som avsluttet/lukket arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M603</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseAvsluttetAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| klassifikasjonstype  | Definisjon: Type klassifikasjonssystem . Kilde: Registreres manuelt ved opprettelse av klassifikasjonssystem Kommentarer: (ingen) M086 | \[0..1\] | | Klassifikasjonstype|
+| tittel               | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | |string | 
+| beskrivelse          | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string | 
+| avsluttetDato        | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen) M602 | \[0..1\] | | datetime | 
+| avsluttetAv          | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M603 | \[0..1\] | | string | 
+| referanseAvsluttetAv |    | \[0..1\]      |           | SystemID |
 
 ##### Restriksjoner
-
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller</p>
-<p>dokumentene arkivert</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                          | **Merknad** |
+| ------------------------------------------------- | ----------- |
+| Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt| | 
+| M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller  dokumentene arkivert | |
 
 #### Konvertering
 
@@ -2870,27 +1024,9 @@ deponering/avlevering.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>konvertering</p>
-<p>0..*</p>
-<p>Konvertering</p></td>
-<td>Dokumentobjekt</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                         | **Kilde**                      | **Mål**        | **Merknad** |
+| ------------------------------------ | ------------------------------ | -------------- | ----------- |
+| **Aggregation** (Destination → Source) | konvertering 0..* Konvertering | Dokumentobjekt |             |
 
 ##### Relasjonsnøkler
 
@@ -2902,89 +1038,15 @@ deponering/avlevering.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne.</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer.</p>
-<p>M001</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>konvertertDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett for når et dokument ble konvertert fra et format til et annet</p>
-<p>Kilde: Registreres automatisk ved konvertering</p>
-<p>Kommentarer: (ingen)</p>
-<p>M615</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>konvertertAv</strong></td>
-<td><p>Definisjon: Person eller system som har foretatt konverteringen</p>
-<p>Kilde: Registreres automatisk ved konvertering</p>
-<p>Kommentarer: (ingen)</p>
-<p>M616</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>konvertertFraFormat</strong></td>
-<td><p>Definisjon: Formatet dokumentet hadde før det ble konvertert</p>
-<p>Kilde: Registreres automatisk ved konvertering</p>
-<p>Kommentarer: Dette vil vanligvis være produksjonsformatet, men kan også være et annet arkivformat. Faste verdier bestemmes senere</p>
-<p>M712</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>konvertertTilFormat</strong></td>
-<td><p>Definisjon: Formatet dokumentet fikk etter konvertering</p>
-<p>Kilde: Registreres automatisk ved konvertering</p>
-<p>Kommentarer: Faste verdier bestemmes senere</p>
-<p>M713</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>konverteringsverktøy</strong></td>
-<td><p>Definisjon: Navn på det IT-verktøyet som ble brukt til å foreta konverteringen</p>
-<p>Kilde: (ingen)</p>
-<p>Kommentarer: (ingen)</p>
-<p>M714</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>konverteringskommentar</strong></td>
-<td><p>Definisjon: Kommentarer til konverteringen</p>
-<p>Kilde: (ingen)</p>
-<p>Kommentarer: (ingen)</p>
-<p>M715</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-</tbody>
-</table>
+| **Navn**               | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|------------------------|---------------|---------------|-----------|-----------|
+| systemID               | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
+| konvertertDato         | Definisjon: Dato og klokkeslett for når et dokument ble konvertert fra et format til et annet . Kilde: Registreres automatisk ved konvertering. Kommentarer: (ingen). M615 | \[1..1\] | | datetime |
+| konvertertAv           | Definisjon: Person eller system som har foretatt konverteringen . Kilde: Registreres automatisk ved konvertering. Kommentarer: (ingen). M616 | \[1..1\] | | string | 
+| konvertertFraFormat    | Definisjon: Formatet dokumentet hadde før det ble konvertert . Kilde: Registreres automatisk ved konvertering. Kommentarer: Dette vil vanligvis være produksjonsformatet, men kan også være et annet arkivformat. Faste verdier bestemmes senere. M712 | \[1..1\] | | string | 
+| konvertertTilFormat    | Definisjon: Formatet dokumentet fikk etter konvertering . Kilde: Registreres automatisk ved konvertering. Kommentarer: Faste verdier bestemmes senere. M713 | \[1..1\] | | string | 
+| konverteringsverktøy   | Definisjon: Navn på det IT-verktøyet som ble brukt til å foreta konverteringen . Kilde: (ingen). Kommentarer: (ingen). M714 | \[0..1\] | | string | 
+| konverteringskommentar | Definisjon: Kommentarer til konverteringen . Kilde: (ingen).Kommentarer: (ingen). M715 | \[0..1\] | | string |
 
 ##### Restriksjoner
 
@@ -3017,51 +1079,11 @@ disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>kryssreferanse</p>
-<p>0..*</p>
-<p>Kryssreferanse</p></td>
-<td><p>registrering</p>
-<p>0..1</p>
-<p>Basisregistrering</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>kryssreferanse</p>
-<p>0..*</p>
-<p>Kryssreferanse</p></td>
-<td><p>klasse</p>
-<p>0..1</p>
-<p>Klasse</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>kryssreferanse</p>
-<p>0..*</p>
-<p>Kryssreferanse</p></td>
-<td><p>mappe</p>
-<p>0..1</p>
-<p>Mappe</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                 | **Kilde**                          | **Mål**                             | **Merknad** |
+| ---------------------------- | ---------------------------------- | ----------------------------------- | ----------- |
+| *Association* (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | registrering 0..1 Basisregistrering |             |
+| *Association* (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | klasse 0..1 Klasse                  |             |
+| *Association* (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | mappe 0..1 Mappe                    |             |
 
 ##### Relasjonsnøkler
 
@@ -3124,119 +1146,19 @@ innenfor året, f.eks. 2011/3869.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>mappe</p>
-<p>0..*</p>
-<p>Mappe</p></td>
-<td><p>arkivdel</p>
-<p>0..1</p>
-<p>Arkivdel</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>mappe</p>
-<p>0..*</p>
-<p>Mappe</p></td>
-<td><p>klasse</p>
-<p>0..1</p>
-<p>Klasse</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Mappe</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>undermappe</p>
-<p>0..*</p>
-<p>Mappe</p></td>
-<td>Mappe</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>registrering</p>
-<p>0..*</p>
-<p>Registrering</p></td>
-<td><p>mappe</p>
-<p>0..1</p>
-<p>Mappe</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>nasjonalidentifikator</p>
-<p>0..*</p>
-<p>Nasjonalidentifikator</p></td>
-<td>Mappe</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>merknad</p>
-<p>0..*</p>
-<p>Merknad</p></td>
-<td>Mappe</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Møtemappe</td>
-<td>Mappe</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Saksmappe</td>
-<td>Mappe</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>kryssreferanse</p>
-<p>0..*</p>
-<p>Kryssreferanse</p></td>
-<td><p>mappe</p>
-<p>0..1</p>
-<p>Mappe</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>undermappe</p>
-<p>0..*</p>
-<p>Mappe</p></td>
-<td>Mappe</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | arkivdel 0..1 Arkivdel |             |
+| **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | klasse 0..1 Klasse     |             |
+| **Generalization** (Source → Destination)  | Mappe                                                    | Arkivenhet             |             |
+| **Aggregation** (Destination → Source)     | undermappe 0..* Mappe                                    | Mappe                  |             |
+| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | mappe 0..1 Mappe       |             |
+| **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Mappe                  |             |
+| *Association* (Destination → Source)       | merknad 0..* Merknad                                     | Mappe                  |             |
+| **Generalization** (Source → Destination)  | Møtemappe                                                | Mappe                  |             |
+| **Generalization** (Source → Destination)  | Saksmappe                                                | Mappe                  |             |
+| *Association* (Bi-Directional)             | kryssreferanse 0..* Kryssreferanse                       | mappe 0..1 Mappe       |             |
+| **Aggregation** (Destination → Source)     | undermappe 0..* Mappe                                    | Mappe                  |             |
 
 ##### Relasjonsnøkler
 
@@ -3263,264 +1185,50 @@ innenfor året, f.eks. 2011/3869.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>mappeID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av mappen innenfor det arkivet mappen tilhører. Andre arkiver innenfor samme arkivsystem, kan inneholde en eller flere av de samme kodene. Koden kan være rent nummerisk, men kan også ha en logisk oppbygning. Merk at <em>mappeID</em> er identisk med kombinasjonen saksår og sekvensnummer (oftest bare kalt &quot;saksnummer&quot;) i Noark 4, se kommentarfeltet.</p>
-<p>Kilde: Registreres automatisk av systemet etter interne regler</p>
-<p>Kommentarer: Saksår og sekvensnummer er ikke lenger obligatorisk identifikasjon i Noark 5, men det anbefales at dette mønsteret fremdeles brukes i sakarkiver. I slike tilfeller skal verdien i mappeID også kopieres til de to metadataelementene <em>M011 saksaar</em> og <em>M012 sakssekvensnummer</em> i saksmappen. Grunnen til dette er at det i noen tilfeller er nødvendig å skille de to elementene i saksnummeret, f.eks. ved sortering og i tjenestegrensesnittet.</p>
-<p>M003</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>mappetype</strong></td>
-<td>angir mappetype som blant annet kan brukes som hint til hva som ligger i virksomhetsspesifikkemetadata</td>
-<td>[0..1]</td>
-<td></td>
-<td>Mappetype</td>
-</tr>
-<tr class="odd">
-<td><strong>tittel</strong></td>
-<td><p>Definisjon: Tittel eller navn på arkivenheten</p>
-<p>Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem.</p>
-<p>Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet.</p>
-<p>M020</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>offentligTittel</strong></td>
-<td><p>Definisjon: Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med ******)</p>
-<p>Kommentarer: I løpende og offentlig journaler skal også offentligTittel være med dersom ord i tittelfeltet skal skjermes.</p>
-<p>M025</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>beskrivelse</strong></td>
-<td><p>Definisjon: Tekstlig beskrivelse av arkivenheten</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt)</p>
-<p>M021</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>nøkkelord</strong></td>
-<td><p>Definisjon: Nøkkeord eller stikkord som beskriver innholdet i enheten</p>
-<p>Kilde: Registreres vanligvis ved oppslag fra liste (f.eks. en tesaurus). Kan også registreres automatisk på grunnlag av dokumentinnhold eller integrering med fagsystem.</p>
-<p>Kommentarer: Nøkkelord kan brukes for å forbedre mulighetene for søking og gjenfinning. Nøkkelord skal ikke erstatte klassifikasjon.</p>
-<p>M022</p></td>
-<td>[0..*]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>dokumentmedium</strong></td>
-<td><p>Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske</p>
-<p>dokumenter</p>
-<p>Kilde: Arves fra overordnet nivå, kan overstyres manuelt</p>
-<p>Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel.</p>
-<p>M300</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>Dokumentmedium</td>
-</tr>
-<tr class="even">
-<td><strong>oppbevaringssted</strong></td>
-<td><p>Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder.</p>
-<p>Kilde: Arves fra overordnet nivå, kan overstyres manuelt</p>
-<p>Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument.</p>
-<p>M301</p></td>
-<td>[0..*]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>avsluttetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket</p>
-<p>Kilde: Registreres automatisk av systemet når enheten avsluttes</p>
-<p>Kommentarer: (ingen)</p>
-<p>M602</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>avsluttetAv</strong></td>
-<td><p>Definisjon: Navn på person som avsluttet/lukket arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M603</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseAvsluttetAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>kassasjon</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Kassasjon</td>
-</tr>
-<tr class="odd">
-<td><strong>skjerming</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Skjerming</td>
-</tr>
-<tr class="even">
-<td><strong>gradering</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Gradering</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseForelderMappe</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>virksomhetsspesifikkeMetadata</strong></td>
-<td><p>Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema.</p>
-<p>Kilde: (ingen)</p>
-<p>Kommentar: (ingen)</p>
-<p>M711 virksomhetsspesifikkeMetadata</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>any</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| mappeID                       | Definisjon: Entydig identifikasjon av mappen innenfor det arkivet mappen tilhører. Andre arkiver innenfor samme arkivsystem, kan inneholde en eller flere av de samme kodene. Koden kan være rent nummerisk, men kan også ha en logisk oppbygning. Merk at *mappeID* er identisk med kombinasjonen saksår og sekvensnummer (oftest bare kalt &quot;saksnummer&quot;) i Noark 4, se kommentarfeltet. Kilde: Registreres automatisk av systemet etter interne regler. Kommentarer: Saksår og sekvensnummer er ikke lenger obligatorisk identifikasjon i Noark 5, men det anbefales at dette mønsteret fremdeles brukes i sakarkiver. I slike tilfeller skal verdien i mappeID også kopieres til de to metadataelementene *M011 saksaar* og *M012 sakssekvensnummer* i saksmappen. Grunnen til dette er at det i noen tilfeller er nødvendig å skille de to elementene i saksnummeret, f.eks. ved sortering og i tjenestegrensesnittet. M003 | \[0..1\] | | string | 
+| mappetype                     | angir mappetype som blant annet kan brukes som hint til hva som ligger i virksomhetsspesifikkemetadata| \[0..1\] | | Mappetype |
+| tittel                        | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
+| offentligTittel               | Definisjon: Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med \*\*\*\*\*\*) . Kommentarer: I løpende og offentlig journaler skal også offentligTittel være med dersom ord i tittelfeltet skal skjermes. M025 | \[0..1\] | | string | 
+| beskrivelse                   | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt) M021 | \[0..1\] | string | 
+| nøkkelord                     | Definisjon: Nøkkeord eller stikkord som beskriver innholdet i enheten . Kilde: Registreres vanligvis ved oppslag fra liste (f.eks. en tesaurus). Kan også registreres automatisk på grunnlag av dokumentinnhold eller integrering med fagsystem. Kommentarer: Nøkkelord kan brukes for å forbedre mulighetene for søking og gjenfinning. Nøkkelord skal ikke erstatte klassifikasjon. M022 | \[0..\*\] | | string | 
+| dokumentmedium                | Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter . Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel. M300 | \[0..1\] | | Dokumentmedium |
+| oppbevaringssted              | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument. M301 | \[0..\*\] | | string | 
+| avsluttetDato                 | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen). M602 | \[0..1\] | | datetime | 
+| avsluttetAv                   | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen) M603 | \[0..1\] | | string | 
+| referanseAvsluttetAv          | | \[0..1\] |          | SystemID |
+| kassasjon                     | | \[0..1\] |          | Kassasjon |
+| skjerming                     | | \[0..1\] |          | Skjerming |
+| gradering                     | | \[0..1\] |          | Gradering |
+| referanseForelderMappe        | | \[0..1\] |          | SystemID |
+| virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen). Kommentar: (ingen)  M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 
 ##### Restriksjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>5.4.1 En mappe skal kunne være av forskjellig type.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5.4.2 En Mappe skal tilhøre en Arkivdel og en Arkivdel kan innehold ingen, en eller flere Mapper.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5.4.3 En Mappe skal tilhøre en Klasse og en Klasse kan klassifisere ingen, en eller flere Mapper.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5.4.5 En Mappe bør kunne inngå i andre Mapper i et hierarki</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5.4.6 En Mappe skal kunne bestå av ingen, en eller flere Registreringer og en Registrering kan inngå i (kun) en Mappe.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5.4.7 Dersom en Mappe er registrert som avsluttet (avsluttetDato) skal det ikke være mulig å legge flere Registreringer til Mappen.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5.4.8 En Mappe skal kunne utvides til en Saksmappe</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.4.14 Dersom det er angitt et primært klassifikasjonssystem for</p>
-<p>Arkivdel, skal alle Mapper i arkivdelen ha verdier fra</p>
-<p>dette klassifikasjonssystemet som primær klasse.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.4.19 Det bør finnes en tjeneste/funksjon for å legge opp og</p>
-<p>ajourholde undermapper for en Mappe (mappehierarki).</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>6.1.1 Det skal finnes en tjeneste/funksjon for å avslutte en</p>
-<p>Mappe (dvs. at avsluttetDato settes).</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>6.1.2 For en Mappe som er avsluttet skal det ikke være mulig å endre følgende metadata: tittel ,dokumentmedium</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>6.1.17 Det skal ikke være mulig å slette en Mappe som er</p>
-<p>avsluttet.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Ny - Etter at mappe er registrert så skal kjernen fylle ut systemid, opprettetAv og opprettetDato</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Ny - Når mappe avsluttes så skal avsluttetDato og avsluttetAv registreres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Ny - Mappe kan enten være tilknyttet arkivdel eller referanseForelderMappe eller klasse</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M003 mappeID: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>M025 offentligTittel: Obligatorisk i arkivuttrekk dersom tittelen inneholder ord som skal</p>
-<p>skjermes, jf. M504 skjermingMetadata.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M602 avsluttetDato: Skal ikke kunne endres.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M602 avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M603 avsluttetAv: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M603 avsluttetAv: Obligatorisk dersom arkivenheten er avsluttet.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                          | **Merknad** |
+| ------------------------------------------------- | ----------- |
+| 5.4.1 En mappe skal kunne være av forskjellig type. | |
+| 5.4.2 En Mappe skal tilhøre en Arkivdel og en Arkivdel kan innehold ingen, en eller flere Mapper. | |
+| 5.4.3 En Mappe skal tilhøre en Klasse og en Klasse kan klassifisere ingen, en eller flere Mapper. | |
+| 5.4.5 En Mappe bør kunne inngå i andre Mapper i et hierarki. | |
+| 5.4.6 En Mappe skal kunne bestå av ingen, en eller flere Registreringer og en Registrering kan inngå i (kun) en Mappe. | |
+| 5.4.7 Dersom en Mappe er registrert som avsluttet (avsluttetDato) skal det ikke være mulig å legge flere Registreringer til Mappen. | | 
+| 5.4.8 En Mappe skal kunne utvides til en Saksmappe | | 
+| 5.4.14 Dersom det er angitt et primært klassifikasjonssystem for Arkivdel, skal alle Mapper i arkivdelen ha verdier fra dette klassifikasjonssystemet som primær klasse. | |
+| 5.4.19 Det bør finnes en tjeneste/funksjon for å legge opp og ajourholde undermapper for en Mappe (mappehierarki). | | 
+| 6.1.1 Det skal finnes en tjeneste/funksjon for å avslutte en Mappe (dvs. at avsluttetDato settes). | |
+| 6.1.2 For en Mappe som er avsluttet skal det ikke være mulig å endre følgende metadata: tittel ,dokumentmedium | |
+| 6.1.17 Det skal ikke være mulig å slette en Mappe som er avsluttet. | |
+| Ny - Etter at mappe er registrert så skal kjernen fylle ut systemid, opprettetAv og opprettetDato | |
+| Ny - Når mappe avsluttes så skal avsluttetDato og avsluttetAv registreres | |
+| Ny - Mappe kan enten være tilknyttet arkivdel eller referanseForelderMappe eller klasse | |
+| M003 mappeID: Skal ikke kunne endres | |
+| M025 offentligTittel: Obligatorisk i arkivuttrekk dersom tittelen inneholder ord som skal skjermes, jf. M504 skjermingMetadata. | |
+| M602 avsluttetDato: Skal ikke kunne endres. | |
+| M602 avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet. | |
+| M603 avsluttetAv: Skal ikke kunne endres. | |
+| M603 avsluttetAv: Obligatorisk dersom arkivenheten er avsluttet. | |
 
 #### Merknad
 
@@ -3536,45 +1244,11 @@ arkivuttrekket.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>merknad</p>
-<p>0..*</p>
-<p>Merknad</p></td>
-<td>Mappe</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>merknad</p>
-<p>0..*</p>
-<p>Merknad</p></td>
-<td>Basisregistrering</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>merknad</p>
-<p>0..*</p>
-<p>Merknad</p></td>
-<td>Dokumentbeskrivelse</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+|*Association* (Destination → Source)        | merknad 0..* Merknad                                     | Mappe                  |             |
+|*Association* (Destination → Source)        | merknad 0..* Merknad                                     | Basisregistrering      |             |
+|*Association* (Destination → Source)        | merknad 0..* Merknad                                     | Dokumentbeskrivelse    |             |
 
 ##### Relasjonsnøkler
 
@@ -3587,74 +1261,14 @@ arkivuttrekket.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne.</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer.</p>
-<p>M001</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>merknadstekst</strong></td>
-<td><p>Definisjon: Merknad fra saksbehandler, leder eller arkivpersonale.</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentarer: Merknaden bør gjelde selve saksbehandlingen eller forhold arkiveringen av dokumentene som tilhører arkivenheten.</p>
-<p>M310</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>merknadstype</strong></td>
-<td><p>Definisjon: Navn på type merknad</p>
-<p>M084</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>Merknadstype</td>
-</tr>
-<tr class="even">
-<td><strong>merknadsdato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når merknaden ble registrert</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: (ingen)</p>
-<p>M611</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>merknadRegistrertAv</strong></td>
-<td><p>Definisjon: Navn på person som har registrert merknaden</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: (ingen)</p>
-<p>M612</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseMerknadRegistrertAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**                     | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|------------------------------|---------------|---------------|-----------|-----------|
+| systemID                     | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
+| merknadstekst                | Definisjon: Merknad fra saksbehandler, leder eller arkivpersonale. Kilde: Registreres  manuelt. Kommentarer: Merknaden bør gjelde selve saksbehandlingen eller forhold arkiveringen av dokumentene som tilhører arkivenheten. M310 | \[1..1\] | |string | 
+| merknadstype                 | Definisjon: Navn på type merknad. M084 | \[0..1\] | | Merknadstype|
+| merknadsdato                 | Definisjon: Dato og klokkeslett når merknaden ble registrert . Kilde: Registreres automatisk av systemet. Kommentarer: (ingen). M611 | \[1..1\] | |datetime|
+| merknadRegistrertAv          | Definisjon: Navn på person som har registrert merknaden . Kilde: Registreres automatisk av systemet. Kommentarer: (ingen). M612 | \[0..1\] | | string | 
+| referanseMerknadRegistrertAv | | \[0..1\] | | SystemID |
 
 ##### Restriksjoner
 
@@ -3676,85 +1290,15 @@ registrering.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>registrering</p>
-<p>0..*</p>
-<p>Registrering</p></td>
-<td><p>mappe</p>
-<p>0..1</p>
-<p>Mappe</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>registrering</p>
-<p>0..*</p>
-<p>Registrering</p></td>
-<td><p>arkivdel</p>
-<p>0..1</p>
-<p>Arkivdel</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Registrering</td>
-<td>Arkivenhet</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>registrering</p>
-<p>0..*</p>
-<p>Registrering</p></td>
-<td><p>klasse</p>
-<p>0..1</p>
-<p>Klasse</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>dokumentbeskrivelse</p>
-<p>0..*</p>
-<p>Dokumentbeskrivelse</p></td>
-<td><p>registrering</p>
-<p>1..*</p>
-<p>Registrering</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>nasjonalidentifikator</p>
-<p>0..*</p>
-<p>Nasjonalidentifikator</p></td>
-<td>Registrering</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Basisregistrering</td>
-<td>Registrering</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | mappe 0..1 Mappe       |             |
+| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | arkivdel 0..1 Arkivdel |             |
+| **Generalization** (Source → Destination)  | Registrering                                             | Arkivenhet             |             |
+| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | klasse 0..1 Klasse     |             |
+| **Aggregation** (Bi-Directional)           | dokumentbeskrivelse 0..* Dokumentbeskrivelse             | registrering 1..* Registrering |     |
+| **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Registrering           |             |
+| **Generalization** (Source → Destination)  | Basisregistrering                                        |Registrering            |             |
 
 ##### Relasjonsnøkler
 
@@ -3776,132 +1320,29 @@ registrering.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>arkivertDato</strong></td>
-<td><p>Definisjon. Dato og klokkeslett når alle dokumentene som er tilknyttet registreringen ble arkivert</p>
-<p>Kilde: Registreres automatisk ved utførelse av en funksjon som markerer at dokumentene er arkivert. For journalposter kan dette knyttes til endring av journalstatus.</p>
-<p>Kommentarer: Arkivering innebærer at dokumentene blir &quot;frosset&quot;, dvs. sperret for all videre redigering/endring</p>
-<p>M604</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>arkivertAv</strong></td>
-<td><p>Definisjon: Navn på person som arkiverte dokumentet og frøs det for all videre redigering</p>
-<p>Kilde: Registreres automatisk ved utførelse av en funksjon som markerer at dokumentene er arkivert. For journalposter kan dette knyttes til endring av journalstatus.</p>
-<p>Kommentarer: (ingen)</p>
-<p>M605</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseArkivertAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>kassasjon</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Kassasjon</td>
-</tr>
-<tr class="odd">
-<td><strong>skjerming</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Skjerming</td>
-</tr>
-<tr class="even">
-<td><strong>gradering</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>Gradering</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseArkivdel</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| arkivertDato        | Definisjon. Dato og klokkeslett når alle dokumentene som er tilknyttet registreringen ble arkivert . Kilde: Registreres automatisk ved utførelse av en funksjon som markerer at dokumentene er arkivert. For journalposter kan dette knyttes til endring av journalstatus. Kommentarer: Arkivering innebærer at dokumentene blir &quot;frosset&quot;, dvs. sperret for all videre redigering/endring M604 | \[0..1\] | | datetime | 
+| arkivertAv          | Definisjon: Navn på person som arkiverte dokumentet og frøs det for all videre redigering . Kilde: Registreres automatisk ved utførelse av en funksjon som markerer at dokumentene er arkivert. For journalposter kan dette knyttes til endring av journalstatus. Kommentarer: (ingen) M605 | \[0..1\] | | string | 
+| referanseArkivertAv |     | \[0..1\] | | SystemID |
+| kassasjon           |     | \[0..1\] | | Kassasjon |
+| skjerming           |     | \[0..1\] | | Skjerming |
+| gradering           |     | \[0..1\] | | Gradering |
+| referanseArkivdel   |     | \[0..1\] | | SystemID |
 
 ##### Restriksjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>5.5.2 Hvis Mappenivået er benyttet, skal en Registrering</p>
-<p>tilhøre (kun) en Mappe og en Mappe kan innehold ingen,</p>
-<p>en eller flere Registreringer.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.5.3 Hvis Mappenivået ikke er benyttet, skal Registrering</p>
-<p>tilhøre (kun) én Arkivdel og en Arkivdel kan inneholde</p>
-<p>ingen, én eller flere Registreringer.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.5.4 Hvis Mappenivået ikke er benyttet, skal Registrering</p>
-<p>tilhøre kun en Klasse og en Klasse kan inngå i ingen, en</p>
-<p>eller flere Registreringer.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.5.5 En Registrering skal kunne inneholde ingen, en eller flere</p>
-<p>Dokumentbeskrivelser og en Dokumentbeskrivelse skal</p>
-<p>inngå i en eller flere Registreringer.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.5.6 En Registrering skal kunne utvides til en</p>
-<p>Basisregistrering</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Ny - Etter at registrering er registrert så skal kjernen fylle ut systemid, opprettetAv og opprettetDato</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Ny - Når registrering arkiveres så skal arkivertDato og arkivertAv/referanseArkivertAv registreres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M604 arkivertDato: Kan ikke endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M605 arkivertAv: Kan ikke endres</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                          | **Merknad** |
+| ------------------------------------------------- | ----------- |
+| 5.5.2 Hvis Mappenivået er benyttet, skal en Registrering tilhøre (kun) en Mappe og en Mappe kan innehold ingen, en eller flere Registreringer. | |
+| 5.5.3 Hvis Mappenivået ikke er benyttet, skal Registrering tilhøre (kun) én Arkivdel og en Arkivdel kan inneholde ingen, én eller flere Registreringer. | |
+| 5.5.4 Hvis Mappenivået ikke er benyttet, skal Registrering tilhøre kun en Klasse og en Klasse kan inngå i ingen, en eller flere Registreringer. | |
+| 5.5.5 En Registrering skal kunne inneholde ingen, en eller flere Dokumentbeskrivelser og en Dokumentbeskrivelse skal inngå i en eller flere Registreringer. | | 
+| 5.5.6 En Registrering skal kunne utvides til en Basisregistrering | |
+| Ny - Etter at registrering er registrert så skal kjernen fylle ut systemid, opprettetAv og opprettetDato | |
+| Ny - Når registrering arkiveres så skal arkivertDato og arkivertAv/referanseArkivertAv registreres | |
+| M604 arkivertDato: Kan ikke endres | | 
+| M605 arkivertAv: Kan ikke endres | |
 
 #### Skjerming
 
@@ -3916,79 +1357,14 @@ den enkelte mappe, registrering eller det enkelte dokument. (Se NOARK
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>tilgangsrestriksjon</strong></td>
-<td><p>Definisjon: Angivelse av at dokumentene som tilhører arkivenheten ikke er offentlig tilgjengelig i henhold til offentlighetsloven eller av en annen grunn</p>
-<p>Kilde: Registreres manuelt ved valg fra liste, kan også registres automatisk</p>
-<p>Kommentarer: (ingen)</p>
-<p>M500</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Tilgangsrestriksjon</td>
-</tr>
-<tr class="even">
-<td><strong>skjermingshjemmel</strong></td>
-<td><p>Definisjon: Henvisning til hjemmel (paragraf) i offentlighetsloven, sikkerhetsloven eller beskyttelsesinstruksen</p>
-<p>Kilde: Registreres automatisk på grunnlag av valgt tilgangskode, kan overstyres manuelt</p>
-<p>Kommentarer: (ingen)</p>
-<p>M501</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>skjermingMetadata</strong></td>
-<td><p>Definisjon: Angivelse av hvilke metadataelementer som skal skjermes.</p>
-<p>Kilde: Registreres manuelt ved valg fra liste eller annen funksjonalitet, kan også registreres automatisk</p>
-<p>Kommentarer: Skjerming av klasseID (arkivnøkkel, arkivkode) er f.eks. aktuelt når identifikasjonen er et fødselsnummer. Dersom utvalgte ord fra tittel skjermes, er metadataelementet M025 offentligTittel obligatorisk. Skjerming av navn på part i sak angis for saksmappe, skjerming av navn på avsender og mottaker angis for journalpost, skjerming av merknader angis for saksmappe og journalpost. Ved midlertidig skjerming skal alle metadata ovenfor skjermes, må bare brukes inntil skjermingsbehovet er vurdert.</p>
-<p>M502</p></td>
-<td>[0..*]</td>
-<td></td>
-<td>SkjermingMetadata</td>
-</tr>
-<tr class="even">
-<td><strong>skjermingDokument</strong></td>
-<td><p>Definisjon: Angivelse av at hele dokumentet eller deler av det må skjermes.</p>
-<p>Kilde: Registreres manuelt ved valg fra liste eller annen funksjonalitet, kan også registreres automatisk</p>
-<p>Kommentarer: Dersom deler av dokumentet skal skjermes, må dokumentet også finnes i en variant. Her må all informasjon som skal skjermes, være &quot;sladdet&quot;.</p>
-<p>M503</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SkjermingDokument</td>
-</tr>
-<tr class="odd">
-<td><strong>skjermingsvarighet</strong></td>
-<td><p>Definisjon: Antall år skjermingen skal opprettholdes.</p>
-<p>Kilde: Registreres automatisk knyttet til valg av tilgangskode, kan registreres manuelt.</p>
-<p>Kommentarer: Tidspunktet for når skjermingsvarigheten starter å løpe, vil vanligvis være når journalposten ble registrert, men det skal være mulig med andre regler.</p>
-<p>M504</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>integer</td>
-</tr>
-<tr class="even">
-<td><strong>skjermingOpphørerDato</strong></td>
-<td><p>Definisjon: Datoen skjermingen skal oppheves.</p>
-<p>Kilde: Datoen beregnes automatisk på grunnlag av M504 skjermingsvarighet</p>
-<p>Kommentarer: (ingen)</p>
-<p>M505</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-</tbody>
-</table>
+| **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------------------|---------------|---------------|-----------|-----------|
+| tilgangsrestriksjon   | Definisjon: Angivelse av at dokumentene som tilhører arkivenheten ikke er offentlig tilgjengelig i henhold til offentlighetsloven eller av en annen grunn . Kilde: Registreres manuelt ved valg fra liste, kan også registres automatisk. Kommentarer: (ingen). M500 | \[1..1\] | | Tilgangsrestriksjon|
+| skjermingshjemmel     | Definisjon: Henvisning til hjemmel (paragraf) i offentlighetsloven, sikkerhetsloven eller beskyttelsesinstruksen . Kilde: Registreres automatisk på grunnlag av valgt tilgangskode, kan overstyres  manuelt. Kommentarer: (ingen) M501 | \[1..1\] | | string | 
+| skjermingMetadata     | Definisjon: Angivelse av hvilke metadataelementer som skal skjermes. Kilde: Registreres manuelt ved valg fra liste eller annen funksjonalitet, kan også registreres automatisk. Kommentarer: Skjerming av klasseID (arkivnøkkel, arkivkode) er f.eks. aktuelt når identifikasjonen er et fødselsnummer. Dersom utvalgte ord fra tittel skjermes, er metadataelementet M025 offentligTittel obligatorisk. Skjerming av navn på part i sak angis for saksmappe, skjerming av navn på avsender og mottaker angis for journalpost, skjerming av merknader angis for saksmappe og journalpost. Ved midlertidig skjerming skal alle metadata ovenfor skjermes, må bare brukes inntil skjermingsbehovet er vurdert. M502 | \[0..\*\] | | SkjermingMetadata|
+| skjermingDokument     | Definisjon: Angivelse av at hele dokumentet eller deler av det må skjermes. Kilde: Registreres manuelt ved valg fra liste eller annen funksjonalitet, kan også registreres automatisk. Kommentarer: Dersom deler av dokumentet skal skjermes, må dokumentet også finnes i en variant. Her må all informasjon som skal skjermes, være &quot;sladdet&quot;. M503 | \[0..1\] | | SkjermingDokument |
+| skjermingsvarighet    | Definisjon: Antall år skjermingen skal opprettholdes. Kilde: Registreres automatisk knyttet til valg av tilgangskode, kan registreres manuelt. Kommentarer: Tidspunktet for når skjermingsvarigheten starter å løpe, vil vanligvis være når journalposten ble registrert, men det skal være mulig med andre regler. M504 | \[0..1\] | | integer |
+| skjermingOpphørerDato | Definisjon: Datoen skjermingen skal oppheves. Kilde: Datoen beregnes automatisk på grunnlag av M504 skjermingsvarighet. Kommentarer: (ingen). M505 | \[0..1\] | | date|
 
 #### Sletting
 
@@ -4022,56 +1398,12 @@ skje før det produseres et arkivuttrekk.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>slettingstype</strong></td>
-<td><p>Definisjon: Navn på hvilket objekt som er slettet</p>
-<p>Kilde: (ingen)</p>
-<p>Kommentarer: Siste versjon av et dokument skal vanligvis ikke kunne slettes. Sletting av innholdet i en arkivdel skal bare kunne utføres av autorisert personale.</p>
-<p>M089</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Slettingstype</td>
-</tr>
-<tr class="even">
-<td><strong>slettetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når et dokument ble slettet</p>
-<p>Kilde: Registreres automatisk når en tidligere versjon eller en variant av et dokument slettes.</p>
-<p>Kommentarer: Informasjon om sletting av dokumenter i produksjonsformat skal ikke avleveres. Sletting må ikke blandes sammen med kassasjon.</p>
-<p>M613</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>slettetAv</strong></td>
-<td><p>Definisjon: Navn på person som har utført en kontrollert kassasjon av dokumenter, eller sletting av versjoner, formater og varianter.</p>
-<p>Kilde: Registreres automatisk når et dokument blir slettet</p>
-<p>Kommentarer: Sletting må ikke blandes sammen med kassasjon.</p>
-<p>M614</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseSlettetAv</strong></td>
-<td></td>
-<td>[1..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**           | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|--------------------|---------------|---------------|-----------|-----------|
+| slettingstype      | Definisjon: Navn på hvilket objekt som er slettet . Kilde: (ingen). Kommentarer: Siste versjon av et dokument skal vanligvis ikke kunne slettes. Sletting av innholdet i en arkivdel skal bare kunne utføres av autorisert personale. M089 | \[1..1\] | | Slettingstype |
+| slettetDato        | Definisjon: Dato og klokkeslett når et dokument ble slettet . Kilde: Registreres automatisk når en tidligere versjon eller en variant av et dokument slettes. Kommentarer: Informasjon om sletting av dokumenter i produksjonsformat skal ikke avleveres. Sletting må ikke blandes sammen med kassasjon. M613 | \[1..1\] | |datetime|
+| slettetAv          | Definisjon: Navn på person som har utført en kontrollert kassasjon av dokumenter, eller sletting av versjoner, formater og varianter. Kilde: Registreres automatisk når et dokument blir slettet. Kommentarer: Sletting må ikke blandes sammen med kassasjon. M614 | \[1..1\] | | string | 
+| referanseSlettetAv | | \[1..1\] | | SystemID |
 
 ##### Restriksjoner
 
@@ -4096,46 +1428,11 @@ arkivdel er kassert, skal metadata grupperes inn i arkivdel.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>kassertDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når kassasjonen ble utført</p>
-<p>Kilde: Registreres automatisk når kassasjon utføres</p>
-<p>Kommentarer: (ingen)</p>
-<p>M630</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>kassertAv</strong></td>
-<td><p>Definisjon: Navn på person som har utført kassasjonen</p>
-<p>Kilde: Registreres automatisk når kassasjon utføres</p>
-<p>Kommentarer: (ingen)</p>
-<p>M631</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseKassertAv</strong></td>
-<td></td>
-<td>[1..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**           | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|--------------------|---------------|---------------|-----------|-----------|
+| kassertDato        | Definisjon: Dato og klokkeslett når kassasjonen ble utført . Kilde: Registreres automatisk når kassasjon utføres. Kommentarer: (ingen). M630 | \[1..1\] | | datetime |
+| kassertAv          | Definisjon: Navn på person som har utført kassasjonen . Kilde: Registreres automatisk når kassasjon utføres. Kommentarer: (ingen). M631 | \[1..1\] | | string | 
+| referanseKassertAv |               | \[1..1\ 1     |           | SystemID  |
 
 ##### Restriksjoner
 
@@ -4160,25 +1457,9 @@ Figur: 20
 
 ###### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Bygning</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | Bygning                                                  | Nasjonalidentifikator  |             |
 
 ###### Relasjonsnøkler
 
@@ -4202,25 +1483,9 @@ Figur: 20
 
 ###### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Enhetsidentifikator</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | Enhetsidentifikator                                      | Nasjonalidentifikator  |             |
 
 ###### Attributter
 
@@ -4236,25 +1501,9 @@ Figur: 20
 
 ###### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Matrikkel</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | Matrikkel                                                | Nasjonalidentifikator  |             |
 
 ###### Relasjonsnøkler
 
@@ -4278,78 +1527,16 @@ Figur: 20
 
 ###### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>nasjonalidentifikator</p>
-<p>0..*</p>
-<p>Nasjonalidentifikator</p></td>
-<td>Mappe</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Aggregation</span></strong></p>
-<p>Destination → Source</p></td>
-<td><p>nasjonalidentifikator</p>
-<p>0..*</p>
-<p>Nasjonalidentifikator</p></td>
-<td>Registrering</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Bygning</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Enhetsidentifikator</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Matrikkel</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Plan</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Posisjon</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Personidentifikator</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                              | **Kilde**                                                | **Mål**                | **Merknad** |
+| ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Aggregation** (Destination → Source)    | nasjonalidentifikator 0..* Nasjonalidentifikator         | Mappe                  |             |
+| **Aggregation** (Destination → Source)    | nasjonalidentifikator 0..* Nasjonalidentifikator         | Registrering           |             | 
+| **Generalization** (Source → Destination) | Bygning                                                  | Nasjonalidentifikator  |             |
+| **Generalization** (Source → Destination) | Enhetsidentifikator                                      | Nasjonalidentifikator  |             |
+| **Generalization** (Source → Destination) | Matrikkel                                                | Nasjonalidentifikator  |             |
+| **Generalization** (Source → Destination) | Plan                                                     | Nasjonalidentifikator  |             |
+| **Generalization** (Source → Destination) | Posisjon                                                 | Nasjonalidentifikator  |             |
+| **Generalization** (Source → Destination) | Personidentifikator                                      | Nasjonalidentifikator  |             |
 
 ###### Relasjonsnøkler
 
@@ -4375,25 +1562,9 @@ Figur: 20
 
 ###### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Personidentifikator</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                               | **Kilde**           | **Mål**               | **Merknad** |
+| ------------------------------------------ | ------------------- | --------------------- | ----------- |
+| **Generalization** (Source → Destination)  | Personidentifikator | Nasjonalidentifikator |             |
 
 ###### Relasjonsnøkler
 
@@ -4403,36 +1574,10 @@ Figur: 20
 
 ###### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>fødselsnummer</strong></td>
-<td><p>Personopplysningsloven § 12. Bruk av fødselsnummer m.v.</p>
-<p>Fødselsnummer og andre entydige identifikasjonsmidler kan bare nyttes i behandlingen når det er saklig behov for sikker identifisering og metoden er nødvendig for å oppnå slik identifisering.</p>
-<p>Datatilsynet kan pålegge en behandlingsansvarlig å bruke identifikasjonsmidler som nevnt i første ledd for å sikre at personopplysningene har tilstrekkelig kvalitet.</p>
-<p>Kongen kan gi forskrift med nærmere regler om bruk av fødselsnummer og andre entydige identifikasjonsmidler.</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>dNummer</strong></td>
-<td>Et D-nummer er et midlertidig nummer som blant annet tildeles utenlandske statsborgere som er skatte- eller avgiftspliktige til Norge. Det kreves et D-nummer for å bli registrert i Folkeregisteret.</td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-</tbody>
-</table>
+| **Navn**      | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|---------------|---------------|---------------|-----------|-----------|
+| fødselsnummer | Personopplysningsloven § 12. Bruk av fødselsnummer m.v. Fødselsnummer og andre entydige identifikasjonsmidler kan bare nyttes i behandlingen når det er saklig behov for sikker identifisering og metoden er nødvendig for å oppnå slik identifisering. Datatilsynet kan pålegge en behandlingsansvarlig å bruke identifikasjonsmidler som nevnt i første ledd for å sikre at personopplysningene har tilstrekkelig kvalitet. Kongen kan gi forskrift med nærmere regler om bruk av fødselsnummer og andre entydige identifikasjonsmidler. | \[0..1\] | | string |
+| dNummer       | Et D-nummer er et midlertidig nummer som blant annet tildeles utenlandske statsborgere som er skatte- eller avgiftspliktige til Norge. Det kreves et D-nummer for å bli registrert i Folkeregisteret. | \[0..1\] | | string|
 
 ##### **Plan**
 
@@ -4442,25 +1587,9 @@ Figur: 20
 
 ###### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Plan</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | Plan                                                     | Nasjonalidentifikator  |             |
 
 ###### Relasjonsnøkler
 
@@ -4484,25 +1613,9 @@ Figur: 20
 
 ###### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Posisjon</td>
-<td>Nasjonalidentifikator</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | Posisjon                                                 | Nasjonalidentifikator  |             |
 
 ###### Relasjonsnøkler
 
@@ -4704,8 +1817,7 @@ M083
 
 Definisjon: Angivelse av hvilket sikkerhetsnivå som ble brukt ved
 forsendelse og mottak av elektroniske dokumenter
-
-Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk
+. Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk
 signatur
 
 Kommentar: (ingen)
@@ -4898,83 +2010,18 @@ M053
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Journalført</strong></td>
-<td></td>
-<td></td>
-<td>J</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Ferdigstilt fra saksbehandler</strong></td>
-<td></td>
-<td></td>
-<td>F</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Godkjent av leder</strong></td>
-<td></td>
-<td></td>
-<td>G</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Ekspedert</strong></td>
-<td></td>
-<td></td>
-<td>E</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Arkivert</strong></td>
-<td></td>
-<td></td>
-<td>A</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Utgår</strong></td>
-<td></td>
-<td></td>
-<td>U</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Midlertidig registrering av innkommet dokument</strong></td>
-<td>anbefalt</td>
-<td></td>
-<td>M</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Saksbehandler har registrert innkommet dokument</strong></td>
-<td>anbefalt</td>
-<td></td>
-<td>S</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Reservert dokument</strong></td>
-<td><p>Reservert dokument, dvs. egenprodusert dokument</p>
-<p>er under arbeid</p></td>
-<td></td>
-<td>R</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| --------------------------------------------------- | ----------- | ------------ | -------- | -------- |
+| **Journalført**                                     |             |              | J        |          |
+| **Ferdigstilt fra saksbehandler**                   |             |              | F        |          |
+| **Godkjent av leder**                               |             |              | G        |          |
+| **Ekspedert**                                       |             |              | E        |          |
+| **Arkivert**                                        |             |              | A        |          |
+| **Utgår**                                           |             |              | U        |          |
+| **Midlertidig registrering av innkommet dokument**  | anbefalt    |              | M        |          |
+| **Saksbehandler har registrert innkommet dokument** | anbefalt    |              | S        |          |
+| **Reservert dokument**                              | Reservert dokument, dvs. egenprodusert dokument er under arbeid | | R |  |
+
 
 #### Kassasjonsvedtak
 
@@ -5157,8 +2204,7 @@ moetedeltakerFunksjon
 Åpen kodeliste
 
 Definisjon: Status til møteregistreringen
-
-Kilde: (ingen)
+. Kilde: (ingen)
 
 Kommentar: Valgfrie verdier, eksempler:
 
@@ -5229,8 +2275,7 @@ M085 moeteregistreringstype
 Åpen kodeliste
 
 Definisjon: Navn på type møtesak
-
-Kilde: (ingen)
+. Kilde: (ingen)
 
 Kommentar: (ingen)
 
@@ -5452,8 +2497,7 @@ arkivskapende organet. Dersom organet har flere arkivsystemer, skal
 altså systemID være gjennomgående entydig. Systemidentifikasjonen vil
 som oftest være en nummerisk kode uten noe logisk meningsinnhold.
 Identifikasjonen trenger ikke å være synlig for brukerne.
-
-Kilde: Registreres automatisk av systemet
+. Kilde: Registreres automatisk av systemet
 
 Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke
 til arkivenhetens systemidentifikasjon. Dette gjelder også referanser
@@ -5467,25 +2511,9 @@ M001
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>SystemID</td>
-<td>string</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | SystemID                                                 | string                 |             |
 
 #### Tilgangskategori
 
@@ -5670,27 +2698,9 @@ flere ganger i en journalpost.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Journalpost</td>
-<td><p>avskrivning</p>
-<p>0..*</p>
-<p>Avskrivning</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| *Association* (Source → Destination)       | Journalpost                                              | avskrivning 0..* Avskrivning |       |
 
 ##### Relasjonsnøkler
 
@@ -5703,83 +2713,15 @@ flere ganger i en journalpost.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne.</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer.</p>
-<p>M001</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>avskrivningsdato</strong></td>
-<td><p>Definisjon: Dato et dokument ble avskrevet</p>
-<p>Kilde: Registreres automatisk nå avskrivning foretas</p>
-<p>Kommentar: (ingen)</p>
-<p>M617</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="odd">
-<td><strong>avskrevetAv</strong></td>
-<td><p>Definisjon: Navn på person som har foretatt avskrivning</p>
-<p>Kilde: Registreres automatisk nå avskrivning foretas</p>
-<p>Kommentar: (ingen)</p>
-<p>M618</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseAvskrevetAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="odd">
-<td><strong>avskrivningsmåte</strong></td>
-<td><p>Definisjon: Måten en journalpost har blitt avskrevet på</p>
-<p>Kilde: Registreres automatisk når konvertering utføres.</p>
-<p>Kommentar: (ingen)</p>
-<p>M619 avskrivningsmaate</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Avskrivningsmåte</td>
-</tr>
-<tr class="even">
-<td><strong>referanseAvskrivesAvJournalpost</strong></td>
-<td><p>Definisjon: Referanse til en eller flere journalposter som avskriver denne journalposten</p>
-<p>Kilde: Registreres manuelt eller automatisk ved avskrivning</p>
-<p>Kommentar: (ingen)</p>
-<p>M215</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseAvskrivesAvKorrespondansepart</strong></td>
-<td>angir referanse til hvilken korrespondansepart som har avskrevet journalposten</td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| systemID                               | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID | 
+| avskrivningsdato                       | Definisjon: Dato et dokument ble avskrevet . Kilde: Registreres automatisk nå avskrivning foretas. Kommentar: (ingen). M617 | \[1..1\] ||date| 
+| avskrevetAv                            | Definisjon: Navn på person som har foretatt avskrivning . Kilde: Registreres automatisk nå avskrivning foretas. Kommentar: (ingen). M618 | \[1..1\] | | string | 
+| referanseAvskrevetAv                   | |  \[0..1\] | | SystemID | 
+| avskrivningsmåte                       | Definisjon: Måten en journalpost har blitt avskrevet på . Kilde: Registreres automatisk når konvertering utføres. Kommentar: (ingen). M619 avskrivningsmaate | \[1..1\] | | Avskrivningsmåte |
+| referanseAvskrivesAvJournalpost        | Definisjon: Referanse til en eller flere journalposter som avskriver denne journalposten . Kilde: Registreres manuelt eller automatisk ved avskrivning. Kommentar: (ingen). M215 | \[0..1\] | | SystemID |
+| referanseAvskrivesAvKorrespondansepart | angir referanse til hvilken korrespondansepart som har avskrevet journalposten | \[0..1\] | | SystemID |
 
 ##### Restriksjoner
 
@@ -5806,27 +2748,9 @@ brukes på et dokument som er under produksjon.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Journalpost</td>
-<td><p>dokumentflyt</p>
-<p>0..*</p>
-<p>Dokumentflyt</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| *Association* (Source → Destination)       | Journalpost                                              | dokumentflyt 0..* Dokumentflyt |     |
 
 ##### Relasjonsnøkler
 
@@ -5839,137 +2763,27 @@ brukes på et dokument som er under produksjon.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne.</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer.</p>
-<p>M001</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>flytTil</strong></td>
-<td><p>Definisjon: Person som har mottatt for godkjennelse et dokument som har vært sendt på flyt</p>
-<p>Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt</p>
-<p>Kommentar: (ingen)</p>
-<p>M660 flytTil</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseFlytTil</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>flytFra</strong></td>
-<td><p>Definisjon: Person som har sendt et dokument på flyt</p>
-<p>Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt</p>
-<p>Kommentar: (ingen)</p>
-<p>M665 flytFra</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseFlytFra</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>flytMottattDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett et dokument på flyt ble mottatt</p>
-<p>Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt</p>
-<p>Kommentar: (ingen)</p>
-<p>M661 flytMottattDato</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>flytSendtDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett et dokument på flyt ble sendt videre</p>
-<p>Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt</p>
-<p>Kommentar: (ingen)</p>
-<p>M662 flytSendtDato</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>flytStatus</strong></td>
-<td><p>Definisjon: Godkjennelse/ikke godkjennelse av dokumentet som er sendt på flyt</p>
-<p>Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt</p>
-<p>Kommentar: (ingen)</p>
-<p>M663 flytStatus</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>FlytStatus</td>
-</tr>
-<tr class="odd">
-<td><strong>flytMerknad</strong></td>
-<td><p>Definisjon: Merknad eller kommentar til et dokument som er sendt på flyt</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentar: (ingen)</p>
-<p>M664 flytMerknad</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| systemID          | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
+| flytTil           | Definisjon: Person som har mottatt for godkjennelse et dokument som har vært sendt på flyt . Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt. Kommentar: (ingen). M660 flytTil | \[1..1\] | | string | 
+| referanseFlytTil  | | \[0..1\] | | SystemID |
+| flytFra           | Definisjon: Person som har sendt et dokument på flyt . Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt. Kommentar: (ingen). M665 flytFra | \[1..1\] | |string | 
+| referanseFlytFra  | |  \[0..1\] | | SystemID |
+| flytMottattDato   | Definisjon: Dato og klokkeslett et dokument på flyt ble mottatt . Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt. Kommentar: (ingen). M661 flytMottattDato |  | \[1..1\] |datetime|
+| flytSendtDato     | Definisjon: Dato og klokkeslett et dokument på flyt ble sendt videre . Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt. Kommentar: (ingen). M662 flytSendtDato | \[1..1\] | |datetime|
+| flytStatus        | Definisjon: Godkjennelse/ikke godkjennelse av dokumentet som er sendt på flyt . Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt. Kommentar: (ingen). M663 flytStatus | \[1..1\] | |FlytStatus|
+| flytMerknad       | Definisjon: Merknad eller kommentar til et dokument som er sendt på flyt . Kilde: Registreres manuelt. Kommentar: (ingen). M664 flytMerknad | \[0..1\] | | string|
 
 ##### Restriksjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>M001 systemID: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M660 flytTil: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M661 flytMottattDato: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M662 flytSendtDato: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>M665 flytFra: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne</p>
-<p>endres.</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                          | **Merknad** |
+| ------------------------------------------------- | ----------- |
+| M001 systemID: Skal ikke kunne endres |   |
+| M660 flytTil: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres | |
+| M661 flytMottattDato: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres. | |
+| M662 flytSendtDato: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres. | |
+| M665 flytFra: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres. | |
 
 #### EnkelAdresse
 
@@ -6032,63 +2846,13 @@ i MoReq2 som heter Record.)
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>journalpost</p>
-<p>0..*</p>
-<p>Journalpost</p></td>
-<td><p>presedens</p>
-<p>0..*</p>
-<p>Presedens</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Journalpost</td>
-<td><p>dokumentflyt</p>
-<p>0..*</p>
-<p>Dokumentflyt</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Journalpost</td>
-<td><p>avskrivning</p>
-<p>0..*</p>
-<p>Avskrivning</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Journalpost</td>
-<td>Basisregistrering</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Journalpost</td>
-<td><p>korrespondansepart</p>
-<p>0..*</p>
-<p>Korrespondansepart</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| *Association* (Bi-Directional)             | journalpost 0..* Journalpost                             | presedens 0..* Presedens |           |
+| *Association* (Source → Destination)       | Journalpost                                              | dokumentflyt 0..* Dokumentflyt |     |
+| *Association* (Source → Destination)       | Journalpost                                              | avskrivning 0..* Avskrivning |       |
+| **Generalization** (Source → Destination)  | Journalpost                                              | Basisregistrering       |            |
+| *Association* (Source → Destination)       | Journalpost                                              | korrespondansepart 0..* Korrespondansepart | |
 
 ##### Relasjonsnøkler
 
@@ -6110,183 +2874,25 @@ i MoReq2 som heter Record.)
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>journalår</strong></td>
-<td><p>Definisjon: Viser året journalposten ble opprettet</p>
-<p>Kilde: Registreres automatisk når journalposten opprettes</p>
-<p>Kommentar: (ingen)</p>
-<p>M013 journalaar</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>integer</td>
-</tr>
-<tr class="even">
-<td><strong>journalsekvensnummer</strong></td>
-<td><p>Definisjon: Viser rekkefølgen når journalposten ble opprettet under året</p>
-<p>Kilde: Registreres automatisk når journalposten opprettes</p>
-<p>Kommentar: Kombinasjonen journalår og sekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. Noen rapporter er sortert på denne kombinasjonen, f.eks. løpende- og offentlig journal. Dersom journalår og sekvensnummer ikke brukes, må kronologiske utskrifter sorteres etter andre kriterier (f.eks. journalpostens opprettetDato). I Noark 4 skal sekvensnummeret vises før journalåret (f.eks. 25367/2011) for at det ikke skal blandes sammen med saksnummeret som har året først.</p>
-<p>M014 journalsekvensnummer</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>integer</td>
-</tr>
-<tr class="odd">
-<td><strong>journalpostnummer</strong></td>
-<td><p>Definisjon: Inngår i M004 journalpostID. Viser rekkefølgen journalpostene ble opprettet innenfor saksmappen, f.eks. 2011/3869-8 (dokument nr. 8 i sak 2011/3869).</p>
-<p>Kilde: Registreres automatisk når journalposten opprettes</p>
-<p>Kommentar: Er ikke obligatorisk, men anbefales brukt i sakarkiver. Dersom journalpostnummer ikke brukes, må andre kriterier kunne identifisere journalpostenes rekkefølge innenfor saksmappen.</p>
-<p>M015 journalpostnummer</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>integer</td>
-</tr>
-<tr class="even">
-<td><strong>journalposttype</strong></td>
-<td><p>Definisjon: Navn på type journalpost</p>
-<p>Kilde: Registreres automatisk av systemet eller manuelt</p>
-<p>Kommentar: Tilsvarer &quot;Noark dokumenttype&quot; i Noark 4</p>
-<p>M082 journalposttype</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Journalposttype</td>
-</tr>
-<tr class="odd">
-<td><strong>journalstatus</strong></td>
-<td><p>Definisjon: Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert.</p>
-<p>Kilde: Registreres automatisk gjennom forskjellig saksbehandlings-funksjonalitet, eller overstyres manuelt.</p>
-<p>Kommentar: Journalposter som avleveres skal ha status &quot;Arkivert&quot; eller &quot;Utgår&quot;.</p>
-<p>M053 journalstatus</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Journalstatus</td>
-</tr>
-<tr class="even">
-<td><strong>journaldato</strong></td>
-<td><p>Definisjon: Datoen journalposten er opprettet/arkivert</p>
-<p>Kilde: Settes automatisk til samme dato som M600 opprettetDato. Oppdateres til M604 arkivertDato når dokumentene som tilhørere journalposten arkiveres.</p>
-<p>Kommentar: (ingen)</p>
-<p>M101 journaldato</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="odd">
-<td><strong>dokumentetsDato</strong></td>
-<td><p>Definisjon: Dato som er påført selve dokumentet</p>
-<p>Kilde: Datoen hentes automatisk fra dokumentet, eller registreres manuelt</p>
-<p>Kommentar: Kan brukes både for inngående, utgående og organinterne dokumenter</p>
-<p>M103 dokumentetsDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="even">
-<td><strong>mottattDato</strong></td>
-<td><p>Definisjon: Dato et eksternt dokument ble mottatt</p>
-<p>Kilde: Registreres manuelt eller automatisk av systemet ved elektronisk kommunikasjon</p>
-<p>Kommentar: Merk at mottattDato ikke behøver å være identisk med M600 opprettetDato</p>
-<p>M104 mottattDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="odd">
-<td><strong>sendtDato</strong></td>
-<td><p>Definisjon: Dato et internt produsert dokument ble sendt/ekspedert</p>
-<p>Kilde: Registreres manuelt eller automatisk av systemet ved elektronisk kommunikasjon</p>
-<p>Kommentar: (ingen)</p>
-<p>M105 sendtDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="even">
-<td><strong>forfallsdato</strong></td>
-<td><p>Definisjon: Dato som angir fristen for når et inngående dokument må være besvart</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentar: Forfallsdato kan være angitt som en betingelse i det inngående dokumentet</p>
-<p>M109 forfallsdato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="odd">
-<td><strong>offentlighetsvurdertDato</strong></td>
-<td><p>Definisjon: Datoen da offentlighetsvurdering ble foretatt</p>
-<p>Kilde: Registreres automatisk knyttet til funksjonalitet for skjerming</p>
-<p>Kommentar: Dato for offentlighetsvurdering kan brukes dersom inngående dokumenter automatisk blir midlertidig skjermet ved mottak, og offentlighetsvurderingen skjer på et litt senere tidspunkt.</p>
-<p>M110 offentlighetsvurdertDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="even">
-<td><strong>antallVedlegg</strong></td>
-<td><p>Definisjon: Antall fysiske vedlegg til et fysisk hoveddokument</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentar: (ingen)</p>
-<p>M304 antallVedlegg</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>integer</td>
-</tr>
-<tr class="odd">
-<td><strong>utlåntDato</strong></td>
-<td><p>Definisjon: Dato når en fysisk saksmappe eller journalpost ble utlånt</p>
-<p>Kilde: Registreres manuelt ved utlån</p>
-<p>Kommentar: Det er ikke spesifisert noen dato for tilbakelevering. Tilbakelevering kan markeres ved at M106 utlaantDato slettes. Det er ingen krav om obligatorisk logging av utlån av fysiske dokumenter.</p>
-<p>M106 utlaantDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="even">
-<td><strong>utlåntTil</strong></td>
-<td><p>Definisjon: Navnet på person som har lånt en fysisk saksmappe</p>
-<p>Kilde: Registreres manuelt ved utlån</p>
-<p>Kommentar: (ingen)</p>
-<p>M309 utlaantTil</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseUtlåntTil</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>journalenhet</strong></td>
-<td><p>Definisjon: Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter</p>
-<p>Kilde: Registreres automatisk på grunnlag av innlogget bruker, kan overstyres manuelt</p>
-<p>Kommentar: (ingen)</p>
-<p>M308 journalenhet</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>elektroniskSignatur</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>ElektroniskSignatur</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| journalår                | Definisjon: Viser året journalposten ble opprettet . Kilde: Registreres automatisk når journalposten opprettes.Kommentar: (ingen). M013 journalaar | \[0..1\] | | integer|
+| journalsekvensnummer     | Definisjon: Viser rekkefølgen når journalposten ble opprettet under året . Kilde: Registreres automatisk når journalposten opprettes. Kommentar: Kombinasjonen journalår og sekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. Noen rapporter er sortert på denne kombinasjonen, f.eks. løpende- og offentlig journal. Dersom journalår og sekvensnummer ikke brukes, må kronologiske utskrifter sorteres etter andre kriterier (f.eks. journalpostens opprettetDato). I Noark 4 skal sekvensnummeret vises før journalåret (f.eks. 25367/2011) for at det ikke skal blandes sammen med saksnummeret som har året først. M014 journalsekvensnummer | \[0..1\] |  | integer|
+| journalpostnummer        | Definisjon: Inngår i M004 journalpostID. Viser rekkefølgen journalpostene ble opprettet innenfor saksmappen, f.eks. 2011/3869-8 (dokument nr. 8 i sak 2011/3869). Kilde: Registreres automatisk når journalposten opprettes. Kommentar: Er ikke obligatorisk, men anbefales brukt i sakarkiver. Dersom journalpostnummer ikke brukes, må andre kriterier kunne identifisere journalpostenes rekkefølge innenfor saksmappen. M015 journalpostnummer | \[0..1\] | | integer|
+| journalposttype          | Definisjon: Navn på type journalpost . Kilde: Registreres automatisk av systemet eller manuelt Kommentar: Tilsvarer &quot;Noark dokumenttype&quot; i Noark 4. M082 journalposttype | \[1..1\] | |Journalposttype|
+| journalstatus            | Definisjon: Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert. Kilde: Registreres automatisk gjennom forskjellig saksbehandlings-funksjonalitet, eller overstyres manuelt. Kommentar: Journalposter som avleveres skal ha status &quot;Arkivert&quot; eller &quot;Utgår&quot;. M053 journalstatus | \[1..1\] | |Journalstatus|
+| journaldato              | Definisjon: Datoen journalposten er opprettet/arkivert . Kilde: Settes automatisk til samme dato som M600 opprettetDato. Oppdateres til M604 arkivertDato når dokumentene som tilhørere journalposten arkiveres. Kommentar: (ingen). M101 journaldato | \[1..1\] | |date|
+| dokumentetsDato          | Definisjon: Dato som er påført selve dokumentet . Kilde: Datoen hentes automatisk fra dokumentet, eller registreres manuelt. Kommentar: Kan brukes både for inngående, utgående og organinterne dokumenter. M103 dokumentetsDato | \[0..1\] | | date|
+| mottattDato              | Definisjon: Dato et eksternt dokument ble mottatt . Kilde: Registreres manuelt eller automatisk av systemet ved elektronisk kommunikasjon. Kommentar: Merk at mottattDato ikke behøver å være identisk med M600 opprettetDato. M104 mottattDato | \[0..1\] | | date |
+| sendtDato                | Definisjon: Dato et internt produsert dokument ble sendt/ekspedert . Kilde: Registreres manuelt eller automatisk av systemet ved elektronisk kommunikasjon. Kommentar: (ingen). M105 sendtDato | \[0..1\] | | date |
+| forfallsdato             | Definisjon: Dato som angir fristen for når et inngående dokument må være besvart . Kilde: Registreres manuelt. Kommentar: Forfallsdato kan være angitt som en betingelse i det inngående dokumentet. M109 forfallsdato | \[0..1\] | | date|
+| offentlighetsvurdertDato | Definisjon: Datoen da offentlighetsvurdering ble foretatt . Kilde: Registreres automatisk knyttet til funksjonalitet for skjerming. Kommentar: Dato for offentlighetsvurdering kan brukes dersom inngående dokumenter automatisk blir midlertidig skjermet ved mottak, og offentlighetsvurderingen skjer på et litt senere tidspunkt. M110 offentlighetsvurdertDato | \[0..1\] | | date| 
+| antallVedlegg            | Definisjon: Antall fysiske vedlegg til et fysisk hoveddokument . Kilde: Registreres manuelt. Kommentar: (ingen). M304 antallVedlegg | \[0..1\] | | integer|
+| utlåntDato               | Definisjon: Dato når en fysisk saksmappe eller journalpost ble utlånt . Kilde: Registreres manuelt ved utlån. Kommentar: Det er ikke spesifisert noen dato for tilbakelevering. Tilbakelevering kan markeres ved at M106 utlaantDato slettes. Det er ingen krav om obligatorisk logging av utlån av fysiske dokumenter. M106 utlaantDato | \[0..1\] | | date|
+| utlåntTil                | Definisjon: Navnet på person som har lånt en fysisk saksmappe . Kilde: Registreres manuelt ved utlån. Kommentar: (ingen). M309 utlaantTil | \[0..1\] | | string | 
+| referanseUtlåntTil       | | \[0..1\] | | SystemID |
+| journalenhet             | Definisjon: Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter . Kilde: Registreres automatisk på grunnlag av innlogget bruker, kan overstyres manuelt. Kommentar: (ingen). M308 journalenhet | \[0..1\] | | string | 
+| elektroniskSignatur      | | \[0..1\] | | ElektroniskSignatur |
 
 ##### Restriksjoner
 
@@ -6345,48 +2951,12 @@ mottaker(e) registreres.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>KorrespondansepartEnhet</td>
-<td>Korrespondansepart</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>KorrespondansepartPerson</td>
-<td>Korrespondansepart</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>KorrespondansepartIntern</td>
-<td>Korrespondansepart</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Journalpost</td>
-<td><p>korrespondansepart</p>
-<p>0..*</p>
-<p>Korrespondansepart</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | KorrespondansepartEnhet                                  | Korrespondansepart     |             |
+| **Generalization** (Source → Destination)  | KorrespondansepartPerson                                 | Korrespondansepart     |             |
+| **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
+| *Association* (Source → Destination)       | Journalpost                                              | korrespondansepart 0..* Korrespondansepart | | 
 
 ##### Relasjonsnøkler
 
@@ -6398,59 +2968,11 @@ mottaker(e) registreres.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av arkivenheten innenfor det</p>
-<p>arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså</p>
-<p>systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest</p>
-<p>være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen</p>
-<p>trenger ikke å være synlig for brukerne.</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til</p>
-<p>arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en</p>
-<p>arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på</p>
-<p>forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik).</p>
-<p>Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være</p>
-<p>duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere</p>
-<p>forskjellige registreringer.</p>
-<p>M001</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>korrespondanseparttype</strong></td>
-<td><p>Definisjon: Type korrespondansepart</p>
-<p>Kilde: Registreres automatisk knyttet til funksjonalitet i forbindelse med opprettelse av journalpost, kan også registreres manuelt</p>
-<p>Kommentarer: Korrespondansetype forekommer én gang innenfor objektet korrespondansepart, men denne kan forekomme flere ganger innenfor en journalpost.</p>
-<p>M087</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Korrespondanseparttype</td>
-</tr>
-<tr class="odd">
-<td><strong>virksomhetsspesifikkeMetadata</strong></td>
-<td><p>Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema.</p>
-<p>Kilde: (ingen)</p>
-<p>Kommentar: (ingen)</p>
-<p>M711 virksomhetsspesifikkeMetadata</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>any</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
+| korrespondanseparttype        | Definisjon: Type korrespondansepart . Kilde: Registreres automatisk knyttet til funksjonalitet i forbindelse med opprettelse av journalpost, kan også registreres  manuelt. Kommentarer: Korrespondansetype forekommer én gang innenfor objektet korrespondansepart, men denne kan forekomme flere ganger innenfor en journalpost. M087 | \[1..1\] | | Korrespondanseparttype|
+| virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen). Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 
 ##### Restriksjoner
 
@@ -6466,25 +2988,9 @@ mottaker(e) registreres.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>KorrespondansepartEnhet</td>
-<td>Korrespondansepart</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | KorrespondansepartEnhet                                  | Korrespondansepart     |             | 
 
 ##### Relasjonsnøkler
 
@@ -6514,25 +3020,9 @@ mottaker(e) registreres.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>KorrespondansepartIntern</td>
-<td>Korrespondansepart</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
 
 ##### Relasjonsnøkler
 
@@ -6560,25 +3050,9 @@ mottaker(e) registreres.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>KorrespondansepartPerson</td>
-<td>Korrespondansepart</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | KorrespondansepartPerson                                 | Korrespondansepart     |             |
 
 ##### Relasjonsnøkler
 
@@ -6625,40 +3099,10 @@ avlevering.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>journalpost</p>
-<p>0..*</p>
-<p>Journalpost</p></td>
-<td><p>presedens</p>
-<p>0..*</p>
-<p>Presedens</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>sak</p>
-<p>0..*</p>
-<p>Saksmappe</p></td>
-<td><p>presedens</p>
-<p>0..*</p>
-<p>Presedens</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| *Association* (Bi-Directional)             | journalpost 0..* Journalpost                             | presedens 0..* Presedens |           |
+| *Association* (Bi-Directional)             | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
 
 ##### Relasjonsnøkler
 
@@ -6675,184 +3119,24 @@ avlevering.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende</p>
-<p>organet. Dersom organet har flere arkivsystemer, skal altså systemID være</p>
-<p>gjennomgående entydig. Systemidentifikasjonen vil som oftest være en</p>
-<p>nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke</p>
-<p>å være synlig for brukerne.</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til</p>
-<p>arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en</p>
-<p>arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på</p>
-<p>forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik).</p>
-<p>Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være</p>
-<p>duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere</p>
-<p>forskjellige registreringer.</p>
-<p>M001 systemID</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>presedensDato</strong></td>
-<td><p>Definisjon: Datoen på presedensen</p>
-<p>Kilde: Registreres manuelt ved opprettelse av presedens, men bør også kunne hentes automatisk fra M103 dokumentetsDato på journalposten presedensen opprettes på.</p>
-<p>Kommentar: (ingen)</p>
-<p>M111 presedensDato</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="odd">
-<td><strong>opprettetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M600 opprettetDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>opprettetAv</strong></td>
-<td><p>Definisjon: Navn på person som opprettet/registrerte arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M601 opprettetAv</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseOpprettetAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>tittel</strong></td>
-<td><p>Definisjon: Tittel eller navn på arkivenheten</p>
-<p>Kilde: Registreres manuelt eller hentes automatisk fra innholdet i</p>
-<p>arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel</p>
-<p>som klassen. Kan også hentes automatisk fra et fagsystem.</p>
-<p>Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og</p>
-<p>&quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet.</p>
-<p>M020 tittel</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>beskrivelse</strong></td>
-<td><p>Definisjon: Tekstlig beskrivelse av arkivenheten</p>
-<p>Kilde: Registreres manuelt</p>
-<p>Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller</p>
-<p>hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt)</p>
-<p>M021 beskrivelse</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>presedensHjemmel</strong></td>
-<td><p>Definisjon: Lovparagrafen som saken eller journalposten danner presedens for</p>
-<p>Kilde: Registreres manuelt ved opprettelse av presedens</p>
-<p>Kommentar: (ingen)</p>
-<p>M311 presedensHjemmel</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>rettskildefaktor</strong></td>
-<td><p>Definisjon: En argumentkilde som brukes til å løse rettslige problemer. En retts-anvender som skal ta stilling til et juridisk spørsmål, vil ta utgangspunkt i en rettskildefaktor.</p>
-<p>Kilde: Registreres manuelt ved opprettelse av presedens</p>
-<p>Kommentar: En rettskildefaktor kan være en lov- eller forskriftstekst, lovforarbeider, domstolspraksis, andre myndigheters praksis, privates praksis (kontraktspraksis), rettsoppfatninger, reelle hensyn, folkerett, EU-/ EØS-rett mv.</p>
-<p>M312 rettskildefaktor</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>presedensGodkjentDato</strong></td>
-<td><p>Definisjon:Dato og klokkeslett for når presedensen er godkjent</p>
-<p>Kilde: Registreres automatisk dersom det finnes funksjonalitet for å godkjenne presedenser</p>
-<p>Kommentar: (ingen)</p>
-<p>M628 presedensGodkjentDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>presedensGodkjentAv</strong></td>
-<td><p>Definisjon: Navn på person som har godkjent presedensen</p>
-<p>Kilde: Registreres automatisk dersom det finnes funksjonalitet for å godkjenne presedenser</p>
-<p>Kommentar: (ingen)</p>
-<p>M629 presedensGodkjentAv</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referansePresedensGodkjentAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="odd">
-<td><strong>avsluttetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket</p>
-<p>Kilde: Registreres automatisk av systemet når enheten avsluttes</p>
-<p>Kommentarer: (ingen)</p>
-<p>M602 avsluttetDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>avsluttetAv</strong></td>
-<td><p>Definisjon: Navn på person som avsluttet/lukket arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M603 avsluttetAv</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseAvsluttetAv</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>presedensStatus</strong></td>
-<td><p>Definisjon: Informasjon om presedensen er gjeldende eller foreldet</p>
-<p>Kilde: Registreres manuelt ved foreldelse</p>
-<p>Kommentar: (ingen)</p>
-<p>M056 presedensstatus</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>Presedensstatus</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| systemID                     | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 systemID | \[0..1\] | | SystemID |
+| presedensDato                | Definisjon: Datoen på presedensen . Kilde: Registreres manuelt ved opprettelse av presedens, men bør også kunne hentes automatisk fra M103 dokumentetsDato på journalposten presedensen opprettes på. Kommentar: (ingen). M111 presedensDato | \[1..1\] | |date|
+| opprettetDato                | Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert . Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M600 opprettetDato | \[0..1\] | | datetime|
+| opprettetAv                  | Definisjon: Navn på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M601 opprettetAv | \[0..1\] | | string | 
+| referanseOpprettetAv         | | \[0..1\] | | SystemID |
+| tittel                       | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 tittel | \[1..1\] | | string | 
+| beskrivelse                  | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 beskrivelse | \[0..1\] | string | presedensHjemmel | Definisjon: Lovparagrafen som saken eller journalposten danner presedens for . Kilde: Registreres manuelt ved opprettelse av presedens. Kommentar: (ingen). M311 presedensHjemmel | \[0..1\] | | string | 
+| rettskildefaktor             | Definisjon: En argumentkilde som brukes til å løse rettslige problemer. En retts-anvender som skal ta stilling til et juridisk spørsmål, vil ta utgangspunkt i en rettskildefaktor. Kilde: Registreres manuelt ved opprettelse av presedens Kommentar: En rettskildefaktor kan være en lov- eller forskriftstekst, lovforarbeider, domstolspraksis, andre myndigheters praksis, privates praksis (kontraktspraksis), rettsoppfatninger, reelle hensyn, folkerett, EU-/ EØS-rett mv. M312 rettskildefaktor | \[1..1\] | |string | 
+| presedensGodkjentDato        | Definisjon:Dato og klokkeslett for når presedensen er godkjent . Kilde: Registreres automatisk dersom det finnes funksjonalitet for å godkjenne presedenser .Kommentar: (ingen). M628 presedensGodkjentDato | \[0..1\] | | datetime |
+| presedensGodkjentAv          | Definisjon: Navn på person som har godkjent presedensen . Kilde: Registreres automatisk dersom det finnes funksjonalitet for å godkjenne presedenser. Kommentar: (ingen). M629 presedensGodkjentAv | \[0..1\] | | string | 
+| referansePresedensGodkjentAv | | \[0..1\] | | SystemID | 
+| avsluttetDato                | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen). M602 avsluttetDato | \[0..1\] | | datetime| 
+| avsluttetAv                  | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten Kommentarer: (ingen). M603 avsluttetAv | \[0..1\] | | string | 
+| referanseAvsluttetAv         | | \[0..1\] | | SystemID |
+| presedensStatus              | Definisjon: Informasjon om presedensen er gjeldende eller foreldet . Kilde: Registreres manuelt ved foreldelse. Kommentar: (ingen) M056 presedensstatus | \[0..1\] |  | Presedensstatus |
+
 
 ##### Restriksjoner
 
@@ -6875,59 +3159,17 @@ I denne versjonen av Noark 5 er det i tillegg til Mappe definert en
 spesialisering kalt Saksmappe, som tilsvarer en ”sak” i
 Noark-4. Saksmappen skal inneholde metadata fra Mappe i tillegg til
 egne metadata. En saksmappe er bakoverkompatibel med en sak i Noark-4,
-men har en del nye metadata. . For sakarkiver er det obligatorisk å
+men har en del nye metadata. For sakarkiver er det obligatorisk å
 bruke en saksmappe.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Saksmappe</td>
-<td><p>sakspart</p>
-<p>0..*</p>
-<p>Sakspart</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Saksmappe</td>
-<td>Mappe</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Saksmappe</td>
-<td><p>sekundærklassifikasjon</p>
-<p>0..*</p>
-<p>Klasse</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>sak</p>
-<p>0..*</p>
-<p>Saksmappe</p></td>
-<td><p>presedens</p>
-<p>0..*</p>
-<p>Presedens</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| *Association* (Source → Destination)       | Saksmappe                                                | sakspart 0..* Sakspart |             |
+| **Generalization** (Source → Destination)  | Saksmappe                                                | Mappe                  |             |
+| *Association* (Source → Destination)       | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
+| *Association* (Bi-Directional)             | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
 
 ##### Relasjonsnøkler
 
@@ -6946,262 +3188,46 @@ bruke en saksmappe.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>saksår</strong></td>
-<td><p>Definisjon: Inngår i M003 mappeID. Viser året saksmappen ble opprettet.</p>
-<p>Kilde: Registreres automatisk når saksmappen opprettes</p>
-<p>Kommentar: Se kommentar under M012 sakssekvensnummer</p>
-<p>M011 saksaar</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>integer</td>
-</tr>
-<tr class="even">
-<td><strong>sakssekvensnummer</strong></td>
-<td><p>Definisjon: Inngår i M003 mappeID. Viser rekkefølgen når saksmappen ble opprettet innenfor året.</p>
-<p>Kilde: Registreres automatisk når saksmappen opprettes</p>
-<p>Kommentar: Kombinasjonen saksår og sakssekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver.</p>
-<p>M012 sakssekvensnummer</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>integer</td>
-</tr>
-<tr class="odd">
-<td><strong>saksdato</strong></td>
-<td><p>Definisjon: Datoen saken er opprettet</p>
-<p>Kilde: Settes automatisk til samme dato som M600 opprettetDato</p>
-<p>Kommentar: (ingen)</p>
-<p>M100 saksdato</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="even">
-<td><strong>administrativEnhet</strong></td>
-<td><p>Definisjon: Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen.</p>
-<p>Kilde: Registreres automatisk f.eks. på grunnlag av innlogget bruker, kan overstyres</p>
-<p>Kommentar: Merk at på journalpostnivå grupperes administrativEnhet sammen med M307 saksbehandler inn i korrespondansepart. Dette muliggjør individuell behandling når det er flere mottakere, noe som er særlig aktuelt ved organinterne dokumenter som skal følges opp.</p>
-<p>M305 administrativEnhet</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseAdministrativEnhet</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>saksansvarlig</strong></td>
-<td><p>Definisjon: Navn på person som er saksansvarlig</p>
-<p>Kilde: Registreres automatisk på grunnlag av innlogget bruker eller annen saksbehandlingsfunksjonalitet (f.eks. saksfordeling), kan overstyres manuelt</p>
-<p>Kommentar: (ingen)</p>
-<p>M306 saksansvarlig</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>referanseSaksansvarlig</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>journalenhet</strong></td>
-<td><p>Definisjon: Navn på enhet som har det arkivmessige ansvaret for</p>
-<p>kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring)</p>
-<p>og arkivering av fysiske dokumenter</p>
-<p>Kilde: Registreres automatisk på grunnlag av innlogget bruker, kan overstyres</p>
-<p>manuelt</p>
-<p>Kommentar: (ingen)</p>
-<p>M308 journalenhet</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>saksstatus</strong></td>
-<td><p>Definisjon: Status til saksmappen, dvs. hvor langt saksbehandlingen har kommet.</p>
-<p>Kilde: Registreres automatisk gjennom forskjellig saksbehandlings-funksjonalitet, eller overstyres manuelt.</p>
-<p>Kommentar: Saksmapper som avleveres skal ha status &quot;Avsluttet&quot; eller &quot;Utgår&quot;.</p>
-<p>M052 saksstatus</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>Saksstatus</td>
-</tr>
-<tr class="even">
-<td><strong>utlåntDato</strong></td>
-<td><p>Definisjon: Dato når en fysisk saksmappe eller journalpost ble utlånt</p>
-<p>Kilde: Registreres manuelt ved utlån</p>
-<p>Kommentar: Det er ikke spesifisert noen dato for tilbakelevering. Tilbakelevering</p>
-<p>kan markeres ved at M106 utlaantDato slettes. Det er ingen krav om obligatorisk</p>
-<p>logging av utlån av fysiske dokumenter.</p>
-<p>M106 utlaantDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>date</td>
-</tr>
-<tr class="odd">
-<td><strong>utlåntTil</strong></td>
-<td><p>Definisjon: Navnet på person som har lånt en fysisk saksmappe</p>
-<p>Kilde: Registreres manuelt ved utlån</p>
-<p>Kommentar: (ingen)</p>
-<p>M309 utlaantTil</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseUtlåntTil</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| saksår                 | Definisjon: Inngår i M003 mappeID. Viser året saksmappen ble opprettet. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Se kommentar under M012 sakssekvensnummer. M011 saksaar | \[0..1\] | | integer|
+| sakssekvensnummer      | Definisjon: Inngår i M003 mappeID. Viser rekkefølgen når saksmappen ble opprettet innenfor året. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Kombinasjonen saksår og sakssekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. M012 sakssekvensnummer | \[0..1\] | | integer|
+| saksdato               | Definisjon: Datoen saken er opprettet . Kilde: Settes automatisk til samme dato som M600 opprettetDato. Kommentar: (ingen). M100 saksdato | \[1..1\] | |date| 
+| administrativEnhet     | Definisjon: Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen. Kilde: Registreres automatisk f.eks. på grunnlag av innlogget bruker, kan overstyres. Kommentar: Merk at på journalpostnivå grupperes administrativEnhet sammen med M307 saksbehandler inn i korrespondansepart. Dette muliggjør individuell behandling når det er flere mottakere, noe som er særlig aktuelt ved organinterne dokumenter som skal følges opp. M305 administrativEnhet | \[0..1\] | string | referanseAdministrativEnhet| \[0..1\] | | SystemID |
+| saksansvarlig          | Definisjon: Navn på person som er saksansvarlig . Kilde: Registreres automatisk på grunnlag av innlogget bruker eller annen saksbehandlingsfunksjonalitet (f.eks. saksfordeling), kan overstyres manuelt. Kommentar: (ingen). M306 saksansvarlig | \[1..1\] | | string | 
+| referanseSaksansvarlig | | \[0..1\] | | SystemID |
+| journalenhet           | Definisjon: Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter . Kilde: Registreres automatisk på grunnlag av innlogget bruker, kan overstyres manuelt. Kommentar: (ingen). M308 journalenhet | \[0..1\] | | string | 
+| saksstatus             | Definisjon: Status til saksmappen, dvs. hvor langt saksbehandlingen har kommet. Kilde: Registreres automatisk gjennom forskjellig saksbehandlings-funksjonalitet, eller overstyres manuelt. Kommentar: Saksmapper som avleveres skal ha status &quot;Avsluttet&quot; eller &quot;Utgår&quot;. M052 saksstatus | \[1..1\] | |Saksstatus|
+| utlåntDato             | Definisjon: Dato når en fysisk saksmappe eller journalpost ble utlånt . Kilde: Registreres manuelt ved utlån. Kommentar: Det er ikke spesifisert noen dato for tilbakelevering. Tilbakelevering kan markeres ved at M106 utlaantDato slettes. Det er ingen krav om obligatorisk logging av utlån av fysiske dokumenter. M106 utlaantDato | \[0..1\] | | date |
+| utlåntTil              | Definisjon: Navnet på person som har lånt en fysisk saksmappe . Kilde: Registreres manuelt ved utlån. Kommentar: (ingen). M309 utlaantTil | \[0..1\] | | string | 
+| referanseUtlåntTil     | | \[0..1\] | | SystemID |
 
 ##### Restriksjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>5.4.9 En Saksmappe skal kunne identifiseres entydig innenfor arkivet.</td>
-<td><p>/* Det anbefales at denne identifikasjonen er en</p>
-<p>kombinasjon av saksår og et forløpende sekvensnummer</p>
-<p>for saksmappene innenfor året.</p>
-<p>*/</p></td>
-</tr>
-<tr class="even">
-<td>5.4.10 En Saksmappe skal kunne ha registrert ingen, en eller flere Sekundærklassering og en Sekundærklassering tilhører kun en Saksmappe og kun en Klasse.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.4.11 En Saksmappe bør kunne ha registrert ingen eller en</p>
-<p>Journalenhet og en Journalenhet kan inngå i ingen, en</p>
-<p>eller flere Saksmapper.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>5.4.12 En Saksmappe skal kunne ha registrert ingen eller en</p>
-<p>Administrativ enhet og en Administrativ enhet kan inngå i</p>
-<p>ingen, en eller flere Saksmapper.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>5.4.13 En Saksmappe skal kunne inneha ingen, en eller flere</p>
-<p>Saksparter og en Sakspart skal alltid tilhøre en</p>
-<p>Saksmappe.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>6.1.3 Det skal finnes en tjeneste/funksjon for å sette Status på</p>
-<p>en Saksmappe.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>6.1.4 Følgende statusverdier er obligatorisk for Saksmappe: Under behandling, Avsluttet, Utgår</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6.1.5 Følgende statusverdier er anbefalt for Saksmappe: Opprettet av saksbehandler, Avsluttet av saksbehandler, Unntatt prosesstyring</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>6.1.6 Når status på Saksmappe settes til Avsluttet, skal</p>
-<p>avsluttetDato settes automatisk.</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>6.1.7 Det skal ikke være mulig å avslutte en Saksmappe uten</p>
-<p>at det er angitt en primær klassifikasjon (Klasse).</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>6.1.8 Det skal ikke være mulig å avslutte en Saksmappe som</p>
-<p>inneholder Registreringer som ikke er avsluttet</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>6.1.11 Det skal ikke være mulig å avslutte en Saksmappe uten</p>
-<p>at alle dokumenter på registreringene i mappen er lagret</p>
-<p>i arkivformat</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>6.1.12 Det skal ikke være mulig å avslutte en Saksmappe uten</p>
-<p>at alle restanser på Registreringer er avskrevet</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>6.1.13 Når statusen til en Saksmappe settes til avsluttet, skal det</p>
-<p>på mappenivå ikke være mulig å endre metadataene: saksdato, administrativEnhet , saksansvarlig</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>6.1.14 Når statusen til en Saksmappe settes til avsluttet, bør det</p>
-<p>på Saksmappe fortsatt være mulig å endre de øvrige</p>
-<p>metadataene. Endringer skal logges</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>6.1.15 En avsluttet Saksmappe bør kunne åpnes igjen av</p>
-<p>autoriserte roller og personer. Det skal være mulig å</p>
-<p>parameterstyre hvem som er autorisert for å åpne en</p>
-<p>mappe. Åpning av mappe skal logges.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p>6.1.18 Det skal ikke være mulig å slette en Saksmappe som</p>
-<p>inneholder eller har inneholdt Journalposter med status</p>
-<p>ekspedert, journalført eller arkivert</p></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>6.2.1 Det skal finnes en tjeneste/funksjon for å ajourholde</p>
-<p>utlån av en Saksmappe.</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M011 saksår: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>M012 sakssekvensnummer: Skal ikke kunne endres</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>M100 saksdato: Skal kunne endres manuelt inntil saksmappen avsluttes</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>M106 utlåntDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet,</p>
-<p>eller etter at dokumentene i en journalpost ble arkivert.</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Navn**                                          | **Merknad** |
+| ------------------------------------------------- | ----------- |
+| 5.4.9 En Saksmappe skal kunne identifiseres entydig innenfor arkivet.| Det anbefales at denne identifikasjonen er en kombinasjon av saksår og et forløpende sekvensnummer for saksmappene innenfor året. |
+| 5.4.10 En Saksmappe skal kunne ha registrert ingen, en eller flere Sekundærklassering og en Sekundærklassering tilhører kun en Saksmappe og kun en Klasse.| |
+| 5.4.11 En Saksmappe bør kunne ha registrert ingen eller en Journalenhet og en Journalenhet kan inngå i ingen, en  eller flere Saksmapper. | |
+| 5.4.12 En Saksmappe skal kunne ha registrert ingen eller en Administrativ enhet og en Administrativ enhet kan inngå i ingen, en eller flere Saksmapper. | |
+| 5.4.13 En Saksmappe skal kunne inneha ingen, en eller flere Saksparter og en Sakspart skal alltid tilhøre en Saksmappe. | |
+| 6.1.3 Det skal finnes en tjeneste/funksjon for å sette Status på en Saksmappe. | |
+| 6.1.4 Følgende statusverdier er obligatorisk for Saksmappe: Under behandling, Avsluttet, Utgår | |
+| 6.1.5 Følgende statusverdier er anbefalt for Saksmappe: Opprettet av saksbehandler, Avsluttet av saksbehandler, Unntatt prosesstyring | |
+| 6.1.6 Når status på Saksmappe settes til Avsluttet, skal avsluttetDato settes automatisk. | |
+| 6.1.7 Det skal ikke være mulig å avslutte en Saksmappe uten at det er angitt en primær klassifikasjon (Klasse). | |
+| 6.1.8 Det skal ikke være mulig å avslutte en Saksmappe som inneholder Registreringer som ikke er avsluttet | |
+| 6.1.11 Det skal ikke være mulig å avslutte en Saksmappe uten at alle dokumenter på registreringene i mappen er lagret i arkivformat | |
+| 6.1.12 Det skal ikke være mulig å avslutte en Saksmappe uten at alle restanser på Registreringer er avskrevet | |
+| 6.1.13 Når statusen til en Saksmappe settes til avsluttet, skal det på mappenivå ikke være mulig å endre metadataene: saksdato, administrativEnhet , saksansvarlig | |
+| 6.1.14 Når statusen til en Saksmappe settes til avsluttet, bør det på Saksmappe fortsatt være mulig å endre de øvrige metadataene. Endringer skal logges | |
+| 6.1.15 En avsluttet Saksmappe bør kunne åpnes igjen av autoriserte roller og personer. Det skal være mulig å parameterstyre hvem som er autorisert for å åpne en  mappe. Åpning av mappe skal logges. | |
+| 6.1.18 Det skal ikke være mulig å slette en Saksmappe som inneholder eller har inneholdt Journalposter med status ekspedert, journalført eller arkivert | |
+| 6.2.1 Det skal finnes en tjeneste/funksjon for å ajourholde utlån av en Saksmappe. | |
+| M011 saksår: Skal ikke kunne endres | |
+| M012 sakssekvensnummer: Skal ikke kunne endres | |
+| M100 saksdato: Skal kunne endres manuelt inntil saksmappen avsluttes | |
+| M106 utlåntDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert. | |
 
 #### Sakspart
 
@@ -7219,41 +3245,11 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>SakspartPerson</td>
-<td>Sakspart</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Saksmappe</td>
-<td><p>sakspart</p>
-<p>0..*</p>
-<p>Sakspart</p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>SakspartEnhet</td>
-<td>Sakspart</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | SakspartPerson                                           | Sakspart               |             |
+| *Association* (Source → Destination)       | Saksmappe                                                | sakspart  0..*  Sakspart |           |
+| **Generalization** (Source → Destination)  | SakspartEnhet                                            | Sakspart               |             |
 
 ##### Relasjonsnøkler
 
@@ -7266,57 +3262,11 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av arkivenheten innenfor det</p>
-<p>arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså</p>
-<p>systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest</p>
-<p>være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen</p>
-<p>trenger ikke å være synlig for brukerne.</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til</p>
-<p>arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en</p>
-<p>arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på</p>
-<p>forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik).</p>
-<p>Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være</p>
-<p>duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere</p>
-<p>forskjellige registreringer.</p>
-<p>M001</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>sakspartRolle</strong></td>
-<td><p>Definisjon: Angivelse av rollen til saksparten</p>
-<p>Kilde: Registreres manuelt eller automatisk fra fagsystem</p>
-<p>Kommentarer: (ingen)</p>
-<p>Betingelser: Her er det mange tenkelige roller avhengig av type sak, f.eks. Klient, Pårørende, Formynder, Advokat</p>
-<p>M303</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>SakspartRolle</td>
-</tr>
-<tr class="odd">
-<td><strong>virksomhetsspesifikkeMetadata</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>any</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
+| sakspartRolle                 | Definisjon: Angivelse av rollen til saksparten . Kilde: Registreres manuelt eller automatisk fra fagsystem. Kommentarer: (ingen). Betingelser: Her er det mange tenkelige roller avhengig av type sak, f.eks. Klient, Pårørende, Formynder, Advokat. M303 | \[1..1\] | | SakspartRolle |
+| virksomhetsspesifikkeMetadata |  | \[0..1\] | | any |
 
 ##### Restriksjoner
 
@@ -7332,25 +3282,9 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>SakspartEnhet</td>
-<td>Sakspart</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | SakspartEnhet                                            | Sakspart               |             |
 
 ##### Relasjonsnøkler
 
@@ -7380,25 +3314,9 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>SakspartPerson</td>
-<td>Sakspart</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | SakspartPerson                                           | Sakspart               |             |
 
 ##### Relasjonsnøkler
 
@@ -7453,29 +3371,9 @@ Figur: 32
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>bruker</p>
-<p>0..*</p>
-<p>Bruker</p></td>
-<td><p>enhet</p>
-<p>0..*</p>
-<p>AdministrativEnhet</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| *Association* (Bi-Directional)             | bruker 0..* Bruker                                       | enhet 0..* AdministrativEnhet |      |
 
 ##### Relasjonsnøkler
 
@@ -7489,117 +3387,17 @@ Figur: 32
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet</p>
-<p>har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil</p>
-<p>som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å</p>
-<p>være synlig for brukerne.</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens</p>
-<p>systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to</p>
-<p>arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig</p>
-<p>(unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et</p>
-<p>arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer.</p>
-<p>M001 systemID</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>administrativEnhetNavn</strong></td>
-<td><p>Definisjon: Navn på administrativ enhet</p>
-<p>Kilde: Registreres manuelt av administrator</p>
-<p>Kommentar: Navn på administrativ enhet vil registreres flere steder i arkivstrukturen, f.eks. sammen med saksansvarlig eller saksbehandler på saksmappe eller journalpost. Administrasjonsstrukturen inngår ikke i arkivstrukturen.</p>
-<p>M583 administrativEnhetNavn</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>kortnavn</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>opprettetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M600 opprettetDato</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>opprettetAv</strong></td>
-<td><p>Definisjon: Navn på person som opprettet/registrerte arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M601 opprettetAv</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>avsluttetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket</p>
-<p>Kilde: Registreres automatisk av systemet når enheten avsluttes</p>
-<p>Kommentarer: (ingen)</p>
-<p>M602 avsluttetDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="odd">
-<td><strong>administrativEnhetsstatus</strong></td>
-<td><p>Definisjon: Status til den administrative enheten</p>
-<p>Kilde: Registreres manuelt av administrator</p>
-<p>Kommentar: Ingen obligatoriske verdier. Aktuelle verdier kan være:</p>
-<p>- &quot;Aktiv enhet&quot;</p>
-<p>- &quot;Passiv enhet&quot;</p>
-<p>Administrasjonsstrukturen inngår ikke i arkivstrukturen</p>
-<p>M584 administrativEnhetsstatus</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="even">
-<td><strong>referanseOverordnetEnhet</strong></td>
-<td><p>Definisjon: Referanse til enhet som er direkte overordnet denne enheten</p>
-<p>Kilde: Registreres manuelt av administrator</p>
-<p>Kommentar: (ingen)</p>
-<p>NB 20150527: attributtnavnet endret fra overordnetEnhet til referanseOverordnetEnhet for å samsvare med M585</p>
-<p>M585 referanseOverordnetEnhet</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="odd">
-<td><strong>virksomhetsspesifikkeMetadata</strong></td>
-<td><p>Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema.</p>
-<p>Kilde: (ingen)</p>
-<p>Kommentar: (ingen)</p>
-<p>M711 virksomhetsspesifikkeMetadata</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>any</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 systemID | \[0..1\] | | SystemID | 
+| administrativEnhetNavn        | Definisjon: Navn på administrativ enhet . Kilde: Registreres manuelt av administrator. Kommentar: Navn på administrativ enhet vil registreres flere steder i arkivstrukturen, f.eks. sammen med saksansvarlig eller saksbehandler på saksmappe eller journalpost. Administrasjonsstrukturen inngår ikke i arkivstrukturen. M583 administrativEnhetNavn | \[1..1\] | |string | 
+| kortnavn                      | | \[0..1\] | | string | 
+| opprettetDato                 | Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert . Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M600 opprettetDato | \[1..1\] | | datetime|
+| opprettetAv                   | Definisjon: Navn på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M601 opprettetAv | \[0..1\] | | string | 
+| avsluttetDato                 | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen). M602 avsluttetDato | \[0..1\] | | datetime| 
+| administrativEnhetsstatus     | Definisjon: Status til den administrative enheten . Kilde: Registreres manuelt av administrator. Kommentar: Ingen obligatoriske verdier. Aktuelle verdier kan være: &quot;Aktiv enhet&quot; &quot;Passiv enhet&quot; Administrasjonsstrukturen inngår ikke i arkivstrukturen M584 administrativEnhetsstatus | \[1..1\] | |string | 
+| referanseOverordnetEnhet      | Definisjon: Referanse til enhet som er direkte overordnet denne enheten . Kilde: Registreres manuelt av administrator. Kommentar: (ingen) NB 20150527: attributtnavnet endret fra overordnetEnhet til referanseOverordnetEnhet for å samsvare med M585 referanseOverordnetEnhet | \[0..1\] | |  SystemID |
+| virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen). Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 
 ##### Restriksjoner
 
@@ -7625,29 +3423,9 @@ når pålogget bruker ikke finnes fra før.
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Association</span></strong></p>
-<p>Bi-Directional</p></td>
-<td><p>bruker</p>
-<p>0..*</p>
-<p>Bruker</p></td>
-<td><p>enhet</p>
-<p>0..*</p>
-<p>AdministrativEnhet</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| *Association* (Bi-Directional)             | bruker 0..* Bruker                                       | enhet 0..* AdministrativEnhet |      |
 
 ##### Relasjonsnøkler
 
@@ -7661,93 +3439,15 @@ når pålogget bruker ikke finnes fra før.
 
 ##### Attributter
 
-<table>
-<thead>
-<tr class="header">
-<th><strong>Navn</strong></th>
-<th><strong>Merknad</strong></th>
-<th><strong>Multipl.</strong></th>
-<th><strong>Kode</strong></th>
-<th><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>systemID</strong></td>
-<td><p>Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet</p>
-<p>har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil</p>
-<p>som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å</p>
-<p>være synlig for brukerne.</p>
-<p>Kilde: Registreres automatisk av systemet</p>
-<p>Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens</p>
-<p>systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to</p>
-<p>arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig</p>
-<p>(unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et</p>
-<p>arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer.</p>
-<p>M001 systemID</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>SystemID</td>
-</tr>
-<tr class="even">
-<td><strong>brukerNavn</strong></td>
-<td><p>Definisjon: Navn på bruker av en Noark 5-løsning</p>
-<p>Kilde: Registreres manuelt av administrator</p>
-<p>Kommentar: Navn på bruker vil registreres mange steder i arkivstrukturen, f.eks. som saksansvarlig eller saksbehandler, og ved forskjellige typer logging. Brukeradministrasjon inngår ikke i arkivstrukturen</p>
-<p>M580 brukerNavn</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>opprettetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M600 opprettetDato</p></td>
-<td>[1..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>opprettetAv</strong></td>
-<td><p>Definisjon: Navn på person som opprettet/registrerte arkivenheten</p>
-<p>Kilde: Registreres automatisk av systemet ved opprettelse av enheten</p>
-<p>Kommentarer: (ingen)</p>
-<p>M601 opprettetAv</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr class="odd">
-<td><strong>avsluttetDato</strong></td>
-<td><p>Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket</p>
-<p>Kilde: Registreres automatisk av systemet når enheten avsluttes</p>
-<p>Kommentarer: (ingen)</p>
-<p>M602 avsluttetDato</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>datetime</td>
-</tr>
-<tr class="even">
-<td><strong>virksomhetsspesifikkeMetadata</strong></td>
-<td><p>Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema.</p>
-<p>Kilde: (ingen)</p>
-<p>Kommentar: (ingen)</p>
-<p>M711 virksomhetsspesifikkeMetadata</p></td>
-<td>[0..1]</td>
-<td></td>
-<td>any</td>
-</tr>
-<tr class="odd">
-<td><strong>kortnavn</strong></td>
-<td></td>
-<td>[0..1]</td>
-<td></td>
-<td>string</td>
-</tr>
-</tbody>
-</table>
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 systemID | \[0..1\] | | SystemID |
+| brukerNavn                    | Definisjon: Navn på bruker av en Noark 5-løsning . Kilde: Registreres manuelt av administrator. Kommentar: Navn på bruker vil registreres mange steder i arkivstrukturen, f.eks. som saksansvarlig eller saksbehandler, og ved forskjellige typer logging. Brukeradministrasjon inngår ikke i arkivstrukturen. M580 brukerNavn | \[1..1\] | |string | 
+| opprettetDato                 | Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert . Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M600 opprettetDato | \[1..1\] | |datetime|
+| opprettetAv                   | Definisjon: Navn på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M601 opprettetAv | \[0..1\] | | string | 
+| avsluttetDato                 | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes.Kommentarer: (ingen). M602 avsluttetDato | \[0..1\] | | datetime |
+| virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen) Kommentar: (ingen).M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
+| kortnavn                      | |\[0..1\] |           | string |
 
 ##### Restriksjoner
 
@@ -7812,25 +3512,9 @@ Figur: 33
 
 ##### Relasjoner
 
-<table>
-<thead>
-<tr class="header">
-th><strong>Relasjon</strong></th>
-<th><strong>Kilde</strong></th>
-<th><strong>Mål</strong></th>
-<th><strong>Merknad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong><span class="underline">Generalization</span></strong></p>
-<p>Source → Destination</p></td>
-<td>Hendelseslogg</td>
-<td>Endringslogg</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
+| ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
+| **Generalization** (Source → Destination) | Hendelseslogg                | Endringslogg     |             |     
 
 ##### Relasjonsnøkler
 
