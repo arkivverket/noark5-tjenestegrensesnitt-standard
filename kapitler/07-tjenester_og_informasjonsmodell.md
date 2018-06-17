@@ -824,9 +824,9 @@ forekomme en gang
 
 | **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type**     |
 | ---------------- | ----------- | ------------ | -------- | ------------ |
-| **hendelsetype** |             | \[1..1\]     |          | Hendelsetype |
-| **beskrivelse**  |             | \[0..1\]     |          | string       |
-| **hendelseDato** |             | \[1..1\]     |          | datetime     |
+| hendelsetype     |             | \[1..1\]     |          | Hendelsetype |
+| beskrivelse      |             | \[0..1\]     |          | string       |
+| hendelseDato     |             | \[1..1\]     |          | datetime     |
 
 #### Kassasjon
 
@@ -1099,9 +1099,9 @@ disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 
 | **Navn**                     | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------- | ----------- | ------------ | -------- | -------- |
-| **referanseTilMappe**        | M210        | \[0..1\]     |          | SystemID |
-| **referanseTilKlasse**       | M219        | \[0..1\]     |          | SystemID |
-| **referanseTilRegistrering** | M212        | \[0..1\]     |          | SystemID |
+| referanseTilMappe            | M210        | \[0..1\]     |          | SystemID |
+| referanseTilKlasse           | M219        | \[0..1\]     |          | SystemID |
+| referanseTilRegistrering     | M212        | \[0..1\]     |          | SystemID |
 
 #### Mappe
 
@@ -1473,7 +1473,7 @@ Figur: 20
 
 | **Navn**              | **Merknad** | **Multipl.** | **Kode** | **Type**  |
 | --------------------- | ----------- | ------------ | -------- | --------- |
-| **byggidentifikator** |             | \[1..1\]     |          | ByggIdent |
+| byggidentifikator     |             | \[1..1\]     |          | ByggIdent |
 
 ##### **Enhetsidentifikator**
 
@@ -1491,7 +1491,7 @@ Figur: 20
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
-| **organisasjonsnummer** |             | \[1..1\]     |          | string   |
+| organisasjonsnummer     |             | \[1..1\]     |          | string   |
 
 ##### **Matrikkel**
 
@@ -1517,7 +1517,7 @@ Figur: 20
 
 | **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type**        |
 | ------------------- | ----------- | ------------ | -------- | --------------- |
-| **matrikkelnummer** |             | \[1..1\]     |          | Matrikkelnummer |
+| matrikkelnummer     |             | \[1..1\]     |          | Matrikkelnummer |
 
 ##### **Nasjonalidentifikator**
 
@@ -1551,8 +1551,8 @@ Figur: 20
 
 | **Navn**        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------- | ----------- | ------------ | -------- | -------- |
-| **systemID**    |             | \[0..1\]     |          | SystemID |
-| **beskrivelse** |             | \[0..1\]     |          | string   |
+| systemID        |             | \[0..1\]     |          | SystemID |
+| beskrivelse     |             | \[0..1\]     |          | string   |
 
 ##### **Personidentifikator**
 
@@ -1603,7 +1603,7 @@ Figur: 20
 
 | **Navn**              | **Merknad** | **Multipl.** | **Kode** | **Type**            |
 | --------------------- | ----------- | ------------ | -------- | ------------------- |
-| **planidentifikator** |             | \[1..1\]     |          | NasjonalArealplanId |
+| planidentifikator     |             | \[1..1\]     |          | NasjonalArealplanId |
 
 ##### **Posisjon**
 
@@ -1629,7 +1629,7 @@ Figur: 20
 
 | **Navn**       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------- | ----------- | ------------ | -------- | -------- |
-| **plassering** |             | \[1..1\]     |          | Punkt    |
+| plassering     |             | \[1..1\]     |          | Punkt    |
 
 ### Kodelister 
 
@@ -1669,10 +1669,10 @@ M051
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
-| **Aktiv periode**       |             |              | A        |          |
-| **Overlappingsperiode** |             |              | O        |          |
-| **Avsluttet periode**   |             |              | P        |          |
-| **Uaktuelle mapper**    |             |              | U        |          |
+| Aktiv periode           |             |              | A        |          |
+| Overlappingsperiode     |             |              | O        |          |
+| Avsluttet periode       |             |              | P        |          |
+| Uaktuelle mapper        |             |              | U        |          |
 
 #### Arkivstatus
 
@@ -1696,8 +1696,8 @@ M050
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
-| **Opprettet** |             |              | O        |          |
-| **Avsluttet** |             |              | A        |          |
+| Opprettet     |             |              | O        |          |
+| Avsluttet     |             |              | A        |          |
 
 #### Avskrivningsmåte
 
@@ -1721,11 +1721,11 @@ M619
 
 | **Navn**                  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------- | ----------- | ------------ | -------- | -------- |
-| **Besvart med brev**      |             |              | BU       |          |
-| **Besvart med e-post**    |             |              | BE       |          |
-| **Besvart på telefon**    |             |              | TLF      |          |
-| **Tatt til etterretning** |             |              | TE       |          |
-| **Tatt til orientering**  |             |              | TO       |          |
+| Besvart med brev          |             |              | BU       |          |
+| Besvart med e-post        |             |              | BE       |          |
+| Besvart på telefon        |             |              | TLF      |          |
+| Tatt til etterretning     |             |              | TE       |          |
+| Tatt til orientering      |             |              | TO       |          |
 
 #### Dokumentmedium
 
@@ -1751,9 +1751,9 @@ M300
 
 | **Navn**                                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Fysisk medium**                       |             |              | F        |          |
-| **Elektronisk arkiv**                   |             |              | E        |          |
-| **Blandet fysisk og elektronisk arkiv** |             |              | B        |          |
+| Fysisk medium                           |             |              | F        |          |
+| Elektronisk arkiv                       |             |              | E        |          |
+| Blandet fysisk og elektronisk arkiv     |             |              | B        |          |
 
 #### Dokumentstatus
 
@@ -1777,8 +1777,8 @@ M054
 
 | **Navn**                           | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Dokumentet er under redigering** |             |              | B        |          |
-| **Dokumentet er ferdigstilt**      |             |              | F        |          |
+| Dokumentet er under redigering     |             |              | B        |          |
+| Dokumentet er ferdigstilt          |             |              | F        |          |
 
 #### Dokumenttype
 
@@ -1802,10 +1802,10 @@ M083
 
 | **Navn**             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------- | ----------- | ------------ | -------- | -------- |
-| **Brev**             | Valgfri     |              | B        |          |
-| **Rundskriv**        | Valgfri     |              | R        |          |
-| **Faktura**          | Valgfri     |              | F        |          |
-| **Ordrebekreftelse** | Valgfri     |              | O        |          |
+| Brev                 | Valgfri     |              | B        |          |
+| Rundskriv            | Valgfri     |              | R        |          |
+| Faktura              | Valgfri     |              | F        |          |
+| Ordrebekreftelse     | Valgfri     |              | O        |          |
 
 #### ElektroniskSignaturSikkerhetsnivå
 
@@ -1835,10 +1835,10 @@ elektroniskSignaturSikkerhetsnivåå
 
 | **Navn**                                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Symmetrisk kryptert**                        | Valgfri     |              | SK       |          |
-| **Sendt med PKI/virksomhetssertifikat**        | Valgfri     |              | V        |          |
-| **Sendt med PKI/"person standard"-sertifikat** | Valgfri     |              | PS       |          |
-| **Sendt med PKI/"person høy"-sertifikat**      | Valgfri     |              | PH       |          |
+| Symmetrisk kryptert                            | Valgfri     |              | SK       |          |
+| Sendt med PKI/virksomhetssertifikat            | Valgfri     |              | V        |          |
+| Sendt med PKI/"person standard"-sertifikat     | Valgfri     |              | PS       |          |
+| Sendt med PKI/"person høy"-sertifikat          | Valgfri     |              | PH       |          |
 
 #### ElektroniskSignaturVerifisert
 
@@ -1864,8 +1864,8 @@ M508
 
 | **Navn**                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------ | ----------- | ------------ | -------- | -------- |
-| **Signatur påført, ikke verifisert** |             |              | I        |          |
-| **Signatur påført og verifisert**    |             |              | V        |          |
+| Signatur påført, ikke verifisert     |             |              | I        |          |
+| Signatur påført og verifisert        |             |              | V        |          |
 
 #### FlytStatus
 
@@ -1885,9 +1885,9 @@ M508
 
 | **Navn**                                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Godkjent**                                        | Valgfri     |              | G        |          |
-| **Ikke godkjent**                                   | Valgfri     |              | I        |          |
-| **Sendt tilbake til saksbehandler med kommentarer** | Valgfri     |              | S        |          |
+| Godkjent                                            | Valgfri     |              | G        |          |
+| Ikke godkjent                                       | Valgfri     |              | I        |          |
+| Sendt tilbake til saksbehandler med kommentarer     | Valgfri     |              | S        |          |
 
 #### Format
 
@@ -1905,16 +1905,16 @@ M508
 
 ##### Attributter
 
-| **Navn**                     | **Merknad**                                                                                                                                                              | **Multipl.** | **Kode**  | **Type** |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------- | -------- |
-| **Ren tekst**                | Som ren tekst: UTF-8 (ISO/IEC 10646-1:2000 Annex D) eller ISO 8859-1:1998, Latin 1. ISO 8859-1:1998, Latin 1 kan erstattes med ISO 8859-4:1998, Latin 4 for samiske tegn |              | RA-TEKST  |          |
-| **TIFF versjon 6**           | TIFF - Tag Image File Format versjon 6, med de presiseringer som fremgår av forskriftens § 8-18                                                                          |              | RA-TIFF6  |          |
-| **PDF/A - ISO 19005-1:2005** | PDF/A - ISO 19005-1:2005, versjon 1a eller 1b («Conformance Level» A eller B). PDF/A erstatter Adobe PDF, jf. forskriftens § 8-20 tredje ledd.                           |              | RA-PDF    |          |
-| **XML**                      | XML - Extensible Markup Language versjon 1.0, med de presiseringer som fremgår av forskriftens § 8-19                                                                    |              | RA-XML    |          |
-| **JPEG**                     | JPEG (ISO 10918-1:1994)                                                                                                                                                  |              | RA-JPEG   |          |
-| **SOSI**                     | SOSI versjon 2.2 (1995) eller nyere                                                                                                                                      |              | RA-SOSI   |          |
-| **MPEG-2**                   | MPEG-2 (ISO 13818-2.)                                                                                                                                                    |              | RA-MPEG-2 |          |
-| **MP3**                      | lyd: MP3 (ISO 11172-3), PCM eller PCM-basert Wave. Valget mellom disse lydformatene skal i hvert tilfelle være avtalt med Arkivverket før deponering eller avlevering    |              | RA-MP3    |          |
+| **Navn**                 | **Merknad**                                                                                                                                                              | **Multipl.** | **Kode**  | **Type** |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------- | -------- |
+| Ren tekst                | Som ren tekst: UTF-8 (ISO/IEC 10646-1:2000 Annex D) eller ISO 8859-1:1998, Latin 1. ISO 8859-1:1998, Latin 1 kan erstattes med ISO 8859-4:1998, Latin 4 for samiske tegn |              | RA-TEKST  |          |
+| TIFF versjon 6           | TIFF - Tag Image File Format versjon 6, med de presiseringer som fremgår av forskriftens § 8-18                                                                          |              | RA-TIFF6  |          |
+| PDF/A - ISO 19005-1:2005 | PDF/A - ISO 19005-1:2005, versjon 1a eller 1b («Conformance Level» A eller B). PDF/A erstatter Adobe PDF, jf. forskriftens § 8-20 tredje ledd.                           |              | RA-PDF    |          |
+| XML                      | XML - Extensible Markup Language versjon 1.0, med de presiseringer som fremgår av forskriftens § 8-19                                                                    |              | RA-XML    |          |
+| JPEG                     | JPEG (ISO 10918-1:1994)                                                                                                                                                  |              | RA-JPEG   |          |
+| SOSI                     | SOSI versjon 2.2 (1995) eller nyere                                                                                                                                      |              | RA-SOSI   |          |
+| MPEG-2                   | MPEG-2 (ISO 13818-2.)                                                                                                                                                    |              | RA-MPEG-2 |          |
+| MP3                      | lyd: MP3 (ISO 11172-3), PCM eller PCM-basert Wave. Valget mellom disse lydformatene skal i hvert tilfelle være avtalt med Arkivverket før deponering eller avlevering    |              | RA-MP3    |          |
 
 #### Graderingskode
 
@@ -1934,12 +1934,12 @@ M508
 
 | **Navn**                                 | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Strengt hemmelig (sikkerhetsgrad)**    |             |              | SH       |          |
-| **Hemmelig (sikkerhetsgrad)**            |             |              | H        |          |
-| **Konfidensielt (sikkerhetsgrad)**       |             |              | K        |          |
-| **Begrenset (sikkerhetsgrad)**           |             |              | B        |          |
-| **Fortrolig (beskyttelsesgrad)**         |             |              | F        |          |
-| **Strengt fortrolig (beskyttelsesgrad)** |             |              | SF       |          |
+| Strengt hemmelig (sikkerhetsgrad)        |             |              | SH       |          |
+| Hemmelig (sikkerhetsgrad)                |             |              | H        |          |
+| Konfidensielt (sikkerhetsgrad)           |             |              | K        |          |
+| Begrenset (sikkerhetsgrad)               |             |              | B        |          |
+| Fortrolig (beskyttelsesgrad)             |             |              | F        |          |
+| Strengt fortrolig (beskyttelsesgrad)     |             |              | SF       |          |
 
 #### Hendelsetype
 
@@ -1957,10 +1957,10 @@ M508
 
 | **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
-| **Endringslogg**    |             |              |          |          |
-| **Søknad mottatt**  |             |              |          |          |
-| **Søknad komplett** |             |              |          |          |
-| **Vedtak**          |             |              |          |          |
+| Endringslogg        |             |              |          |          |
+| Søknad mottatt      |             |              |          |          |
+| Søknad komplett     |             |              |          |          |
+| Vedtak              |             |              |          |          |
 
 #### Journalposttype
 
@@ -1985,11 +1985,11 @@ M082
 
 | **Navn**                                  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Inngående dokument**                    |             |              | I        |          |
-| **Utgående dokument**                     |             |              | U        |          |
-| **Organinternt dokument for oppfølging**  |             |              | N        |          |
-| **Organinternt dokument uten oppfølging** |             |              | X        |          |
-| **Saksframlegg**                          |             |              | S        |          |
+| Inngående dokument                        |             |              | I        |          |
+| Utgående dokument                         |             |              | U        |          |
+| Organinternt dokument for oppfølging      |             |              | N        |          |
+| Organinternt dokument uten oppfølging     |             |              | X        |          |
+| Saksframlegg                              |             |              | S        |          |
 
 #### Journalstatus
 
@@ -2012,15 +2012,15 @@ M053
 
 | **Navn**                                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Journalført**                                     |             |              | J        |          |
-| **Ferdigstilt fra saksbehandler**                   |             |              | F        |          |
-| **Godkjent av leder**                               |             |              | G        |          |
-| **Ekspedert**                                       |             |              | E        |          |
-| **Arkivert**                                        |             |              | A        |          |
-| **Utgår**                                           |             |              | U        |          |
-| **Midlertidig registrering av innkommet dokument**  | anbefalt    |              | M        |          |
-| **Saksbehandler har registrert innkommet dokument** | anbefalt    |              | S        |          |
-| **Reservert dokument**                              | Reservert dokument, dvs. egenprodusert dokument er under arbeid | | R |  |
+| Journalført                                         |             |              | J        |          |
+| Ferdigstilt fra saksbehandler                       |             |              | F        |          |
+| Godkjent av leder                                   |             |              | G        |          |
+| Ekspedert                                           |             |              | E        |          |
+| Arkivert                                            |             |              | A        |          |
+| Utgår                                               |             |              | U        |          |
+| Midlertidig registrering av innkommet dokument      | anbefalt    |              | M        |          |
+| Saksbehandler har registrert innkommet dokument     | anbefalt    |              | S        |          |
+| Reservert dokument                                  | Reservert dokument, dvs. egenprodusert dokument er under arbeid | | R |  |
 
 
 #### Kassasjonsvedtak
@@ -2046,9 +2046,9 @@ M450
 
 | **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
-| **Bevares**         |             |              | B        |          |
-| **Kasseres**        |             |              | K        |          |
-| **Vurderes senere** |             |              | G        |          |
+| Bevares             |             |              | B        |          |
+| Kasseres            |             |              | K        |          |
+| Vurderes senere     |             |              | G        |          |
 
 #### Klassifikasjonstype
 
@@ -2073,14 +2073,14 @@ M086
 
 | **Navn**                               | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Gårds- og bruksnummer**              | Valgfri     |              | GBN      |          |
-| **Funksjonsbasert, hierarkisk**        | Valgfri     |              | FH       |          |
-| **Emnebasert, hierarkisk arkivnøkkel** | Valgfri     |              | EH       |          |
-| **Emnebasert, ett nivå**               | Valgfri     |              | E1       |          |
-| **K-koder**                            | Valgfri     |              | KK       |          |
-| **Mangefasettert, ikke hierarki**      | Valgfri     |              | MF       |          |
-| **Objektbasert**                       | Valgfri     |              | UO       |          |
-| **Fødselsnummer**                      | Valgfri     |              | PNR      |          |
+| Gårds- og bruksnummer                  | Valgfri     |              | GBN      |          |
+| Funksjonsbasert, hierarkisk            | Valgfri     |              | FH       |          |
+| Emnebasert, hierarkisk arkivnøkkel     | Valgfri     |              | EH       |          |
+| Emnebasert, ett nivå                   | Valgfri     |              | E1       |          |
+| K-koder                                | Valgfri     |              | KK       |          |
+| Mangefasettert, ikke hierarki          | Valgfri     |              | MF       |          |
+| Objektbasert                           | Valgfri     |              | UO       |          |
+| Fødselsnummer                          | Valgfri     |              | PNR      |          |
 
 #### Korrespondanseparttype
 
@@ -2105,13 +2105,13 @@ M087
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
-| **Avsender**            |             |              | EA       |          |
-| **Mottaker**            |             |              | EM       |          |
-| **Kopimottaker**        |             |              | EK       |          |
-| **Gruppemottaker**      |             |              | GM       |          |
-| **Intern avsender**     |             |              | IA       |          |
-| **Intern mottaker**     |             |              | IM       |          |
-| **Intern kopimottaker** |             |              | IK       |          |
+| Avsender                |             |              | EA       |          |
+| Mottaker                |             |              | EM       |          |
+| Kopimottaker            |             |              | EK       |          |
+| Gruppemottaker          |             |              | GM       |          |
+| Intern avsender         |             |              | IA       |          |
+| Intern mottaker         |             |              | IM       |          |
+| Intern kopimottaker     |             |              | IK       |          |
 
 #### Land
 
@@ -2165,9 +2165,9 @@ M084
 
 | **Navn**                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------ | ----------- | ------------ | -------- | -------- |
-| **Merknad fra saksbehandler**  | Valgfri     |              | MS       |          |
-| **Merknad fra leder**          | Valgfri     |              | ML       |          |
-| **Merknad fra arkivansvarlig** | Valgfri     |              | MA       |          |
+| Merknad fra saksbehandler      | Valgfri     |              | MS       |          |
+| Merknad fra leder              | Valgfri     |              | ML       |          |
+| Merknad fra arkivansvarlig     | Valgfri     |              | MA       |          |
 
 #### MøtedeltakerFunksjon
 
@@ -2192,8 +2192,8 @@ moetedeltakerFunksjon
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
-| **Møteleder** | Valgfri     |              | M        |          |
-| **Referent**  | Valgfri     |              | R        |          |
+| Møteleder     | Valgfri     |              | M        |          |
+| Referent      | Valgfri     |              | R        |          |
 
 #### Møteregistreringsstatus
 
@@ -2224,9 +2224,9 @@ M055 moeteregistreringsstatus
 
 | **Navn**                                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Ferdig behandlet av utvalget**        | Valgfri     |              | BE       |          |
-| **Utsatt til nytt møte i samme utvalg** | Valgfri     |              | UT       |          |
-| **Sendt tilbake til foregående utvalg** | Valgfri     |              | TB       |          |
+| Ferdig behandlet av utvalget            | Valgfri     |              | BE       |          |
+| Utsatt til nytt møte i samme utvalg     | Valgfri     |              | UT       |          |
+| Sendt tilbake til foregående utvalg     | Valgfri     |              | TB       |          |
 
 #### Møteregistreringstype
 
@@ -2258,13 +2258,13 @@ M085 moeteregistreringstype
 
 | **Navn**                | **Merknad**                                                                                                                     | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------- | -------- |
-| **Møteinnkalling**      |                                                                                                                                 |              | MI       |          |
-| **Saksframlegg**        |                                                                                                                                 |              | SF       |          |
-| **Saksprotokoll**       |                                                                                                                                 |              | SP       |          |
-| **Møteprotokoll**       |                                                                                                                                 |              | MP       |          |
-| **Saksliste**           |                                                                                                                                 |              | SL       |          |
-| **Offentlig saksliste** | Offentlig saksliste, dvs en saksliste hvor informasjon (vanligvis kun i sakstittel) som skal unntas offentligheten, er skjermet |              | OL       |          |
-| **Vedlegg til møtesak** |                                                                                                                                 |              | VL       |          |
+| Møteinnkalling          |                                                                                                                                 |              | MI       |          |
+| Saksframlegg            |                                                                                                                                 |              | SF       |          |
+| Saksprotokoll           |                                                                                                                                 |              | SP       |          |
+| Møteprotokoll           |                                                                                                                                 |              | MP       |          |
+| Saksliste               |                                                                                                                                 |              | SL       |          |
+| Offentlig saksliste     | Offentlig saksliste, dvs en saksliste hvor informasjon (vanligvis kun i sakstittel) som skal unntas offentligheten, er skjermet |              | OL       |          |
+| Vedlegg til møtesak     |                                                                                                                                 |              | VL       |          |
 
 #### Møtesakstype
 
@@ -2291,10 +2291,10 @@ M088 moetesakstype
 
 | **Navn**                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Politisk sak**                 |             |              | PS       |          |
-| **Delegert møtesak**             |             |              | DS       |          |
-| **Referatsak**                   |             |              | RS       |          |
-| **Forespørsel (interpellasjon)** |             |              | FO       |          |
+| Politisk sak                     |             |              | PS       |          |
+| Delegert møtesak                 |             |              | DS       |          |
+| Referatsak                       |             |              | RS       |          |
+| Forespørsel (interpellasjon)     |             |              | FO       |          |
 
 #### Postnummer
 
@@ -2340,8 +2340,8 @@ M056
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
-| **Gjeldende** |             |              | G        |          |
-| **Foreldet**  |             |              | F        |          |
+| Gjeldende     |             |              | G        |          |
+| Foreldet      |             |              | F        |          |
 
 #### SakspartRolle
 
@@ -2361,10 +2361,10 @@ M056
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
-| **Klient**    | Valgfri     |              | KLI      |          |
-| **Pårørende** | Valgfri     |              | PÅ       |          |
-| **Formynder** | Valgfri     |              | FORM     |          |
-| **Advokat**   | Valgfri     |              | ADV      |          |
+| Klient        | Valgfri     |              | KLI      |          |
+| Pårørende     | Valgfri     |              | PÅ       |          |
+| Formynder     | Valgfri     |              | FORM     |          |
+| Advokat       | Valgfri     |              | ADV      |          |
 
 #### Saksstatus
 
@@ -2389,13 +2389,13 @@ M052
 
 | **Navn**                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Under behandling**            |             |              | B        |          |
-| **Avsluttet**                   |             |              | A        |          |
-| **Utgår**                       |             |              | U        |          |
-| **Opprettet av saksbehandler ** | anbefalt    |              | R        |          |
-| **Avsluttet av saksbehandler**  | anbefalt    |              | S        |          |
-| **Unntatt prosesstyring**       | anbefalt    |              | P        |          |
-| **Ferdig fra saksbehandler**    |             |              | F        |          |
+| Under behandling                |             |              | B        |          |
+| Avsluttet                       |             |              | A        |          |
+| Utgår                           |             |              | U        |          |
+| Opprettet av saksbehandler      | anbefalt    |              | R        |          |
+| Avsluttet av saksbehandler      | anbefalt    |              | S        |          |
+| Unntatt prosesstyring           | anbefalt    |              | P        |          |
+| Ferdig fra saksbehandler        |             |              | F        |          |
 
 #### SkjermingDokument
 
@@ -2420,8 +2420,8 @@ M503
 
 | **Navn**                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------ | ----------- | ------------ | -------- | -------- |
-| **Skjerming av hele dokumentet**     |             |              | H        |          |
-| **Skjerming av deler av dokumentet** |             |              | D        |          |
+| Skjerming av hele dokumentet         |             |              | H        |          |
+| Skjerming av deler av dokumentet     |             |              | D        |          |
 
 #### SkjermingMetadata
 
@@ -2446,18 +2446,18 @@ M502
 
 | **Navn**                                                 | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Skjerming klasseID**                                   |             |              | KID      |          |
-| **Skjerming tittel klasse**                              |             |              | TKL      |          |
-| **Skjerming tittel mappe - unntatt første linje**        |             |              | TM1      |          |
-| **Skjerming tittel mappe - utvalgte ord**                |             |              | TMO      |          |
-| **Skjerming navn part i sak**                            |             |              | NPS      |          |
-| **Skjerming tittel registrering - unntatt første linje** |             |              | TR1      |          |
-| **Skjerming tittel registrering - utvalgte ord**         |             |              | TRO      |          |
-| **Skjerming navn avsender**                              |             |              | NA       |          |
-| **Skjerming navn mottaker**                              |             |              | NM       |          |
-| **Skjerming tittel dokumentbeskrivelse**                 |             |              | TD       |          |
-| **Skjerming merknadstekst**                              |             |              | MT       |          |
-| **Midlertidig skjerming**                                |             |              | M        |          |
+| Skjerming klasseID                                       |             |              | KID      |          |
+| Skjerming tittel klasse                                  |             |              | TKL      |          |
+| Skjerming tittel mappe - unntatt første linje            |             |              | TM1      |          |
+| Skjerming tittel mappe - utvalgte ord                    |             |              | TMO      |          |
+| Skjerming navn part i sak                                |             |              | NPS      |          |
+| Skjerming tittel registrering - unntatt første linje     |             |              | TR1      |          |
+| Skjerming tittel registrering - utvalgte ord             |             |              | TRO      |          |
+| Skjerming navn avsender                                  |             |              | NA       |          |
+| Skjerming navn mottaker                                  |             |              | NM       |          |
+| Skjerming tittel dokumentbeskrivelse                     |             |              | TD       |          |
+| Skjerming merknadstekst                                  |             |              | MT       |          |
+| Midlertidig skjerming                                    |             |              | M        |          |
 
 #### Slettingstype
 
@@ -2481,10 +2481,10 @@ M089
 
 | **Navn**                                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Sletting av produksjonsformat**               |             |              | SP       |          |
-| **Sletting av tidligere versjon**               |             |              | SV       |          |
-| **Sletting av variant med sladdet informasjon** |             |              | SS       |          |
-| **Sletting av hele innholdet i arkivdelen**     |             |              | SA       |          |
+| Sletting av produksjonsformat                   |             |              | SP       |          |
+| Sletting av tidligere versjon                   |             |              | SV       |          |
+| Sletting av variant med sladdet informasjon     |             |              | SS       |          |
+| Sletting av hele innholdet i arkivdelen         |             |              | SA       |          |
 
 #### SystemID
 
@@ -2537,11 +2537,11 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
-| **arkivdel**            |             |              | A        |          |
-| **klasse**              |             |              | K        |          |
-| **mappe**               |             |              | M        |          |
-| **registrering**        |             |              | R        |          |
-| **dokumentbeskrivelse** |             |              | D        |          |
+| arkivdel                |             |              | A        |          |
+| klasse                  |             |              | K        |          |
+| mappe                   |             |              | M        |          |
+| registrering            |             |              | R        |          |
+| dokumentbeskrivelse     |             |              | D        |          |
 
 #### Tilgangsrestriksjon
 
@@ -2562,18 +2562,18 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 | **Navn**                                           | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------------------- | ----------- | ------------ | -------- | -------- |
-| **Begrenset etter sikkerhetsinstruksen**           |             |              | B        |          |
-| **Konfidensielt etter sikkerhetsinstruksen**       |             |              | K        |          |
-| **Hemmelig etter sikkerhetsinstruksen**            |             |              | H        |          |
-| **Fortrolig etter beskyttelsesinstruksen**         |             |              | F        |          |
-| **Strengt fortrolig etter beskyttelsesinstruksen** |             |              | SF       |          |
-| **Unntatt etter offentlighetsloven § 5**           |             |              | 5        |          |
-| **Unntatt etter offentlighetsloven § 5a**          |             |              | 5a       |          |
-| **Unntatt etter offentlighetsloven § 6**           |             |              | 6        |          |
-| **Unntatt etter offentlighetsloven § 11**          |             |              | 11       |          |
-| **Midlertidig sperret **                           |             |              | XX       |          |
-| **Personalsaker**                                  |             |              | P        |          |
-| **Klientsaker**                                    |             |              | KL       |          |
+| Begrenset etter sikkerhetsinstruksen               |             |              | B        |          |
+| Konfidensielt etter sikkerhetsinstruksen           |             |              | K        |          |
+| Hemmelig etter sikkerhetsinstruksen                |             |              | H        |          |
+| Fortrolig etter beskyttelsesinstruksen             |             |              | F        |          |
+| Strengt fortrolig etter beskyttelsesinstruksen     |             |              | SF       |          |
+| Unntatt etter offentlighetsloven § 5               |             |              | 5        |          |
+| Unntatt etter offentlighetsloven § 5a              |             |              | 5a       |          |
+| Unntatt etter offentlighetsloven § 6               |             |              | 6        |          |
+| Unntatt etter offentlighetsloven § 11              |             |              | 11       |          |
+| Midlertidig sperret                                |             |              | XX       |          |
+| Personalsaker                                      |             |              | P        |          |
+| Klientsaker                                        |             |              | KL       |          |
 
 #### TilknyttetRegistreringSom
 
@@ -2593,8 +2593,8 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 | **Navn**          | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------- | ----------- | ------------ | -------- | -------- |
-| **Hoveddokument** |             |              | H        |          |
-| **Vedlegg**       |             |              | V        |          |
+| Hoveddokument     |             |              | H        |          |
+| Vedlegg           |             |              | V        |          |
 
 #### Variantformat
 
@@ -2618,9 +2618,9 @@ M700
 
 | **Navn**                                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------------------ | ----------- | ------------ | -------- | -------- |
-| **Produksjonsformat**                            |             |              | P        |          |
-| **Arkivformat**                                  |             |              | A        |          |
-| **Dokument hvor deler av innholdet er skjermet** |             |              | O        |          |
+| Produksjonsformat                                |             |              | P        |          |
+| Arkivformat                                      |             |              | A        |          |
+| Dokument hvor deler av innholdet er skjermet     |             |              | O        |          |
 
 ### Sakarkiv 
 
@@ -2805,12 +2805,12 @@ brukes på et dokument som er under produksjon.
 
 | **Navn**          | **Merknad** | **Multipl.** | **Kode** | **Type**   |
 | ----------------- | ----------- | ------------ | -------- | ---------- |
-| **adresselinje1** |             | \[0..1\]     |          | string     |
-| **adresselinje2** |             | \[0..1\]     |          | string     |
-| **adresselinje3** |             | \[0..1\]     |          | string     |
-| **postnr**        |             | \[0..1\]     |          | Postnummer |
-| **poststed**      |             | \[1..1\]     |          | string     |
-| **landkode**      |             | \[0..1\]     |          | Land       |
+| adresselinje1     |             | \[0..1\]     |          | string     |
+| adresselinje2     |             | \[0..1\]     |          | string     |
+| adresselinje3     |             | \[0..1\]     |          | string     |
+| postnr            |             | \[0..1\]     |          | Postnummer |
+| poststed          |             | \[1..1\]     |          | string     |
+| landkode          |             | \[0..1\]     |          | Land       |
 
 #### Journalpost
 
@@ -2933,9 +2933,9 @@ i MoReq2 som heter Record.)
 
 | **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------- | ----------- | ------------ | -------- | -------- |
-| **epostadresse** |             | \[0..1\]     |          | string   |
-| **mobiltelefon** |             | \[0..1\]     |          | string   |
-| **telefon**      |             | \[0..1\]     |          | string   |
+| epostadresse     |             | \[0..1\]     |          | string   |
+| mobiltelefon     |             | \[0..1\]     |          | string   |
+| telefon          |             | \[0..1\]     |          | string   |
 
 #### Korrespondansepart
 
@@ -3005,12 +3005,12 @@ mottaker(e) registreres.
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ----------------------- | ----------- | ------------ | -------- | ------------------ |
-| **organisasjonsnummer** |             | \[0..1\]     |          | string             |
-| **navn**                |             | \[1..1\]     |          | string             |
-| **forretningsadresse**  |             | \[0..1\]     |          | EnkelAdresse       |
-| **postadresse**         |             | \[0..1\]     |          | EnkelAdresse       |
-| **kontaktinformasjon**  |             | \[0..1\]     |          | Kontaktinformasjon |
-| **kontaktperson**       |             | \[0..1\]     |          | string             |
+| organisasjonsnummer     |             | \[0..1\]     |          | string             |
+| navn                    |             | \[1..1\]     |          | string             |
+| forretningsadresse      |             | \[0..1\]     |          | EnkelAdresse       |
+| postadresse             |             | \[0..1\]     |          | EnkelAdresse       |
+| kontaktinformasjon      |             | \[0..1\]     |          | Kontaktinformasjon |
+| kontaktperson           |             | \[0..1\]     |          | string             |
 
 #### KorrespondansepartIntern
 
@@ -3037,10 +3037,10 @@ mottaker(e) registreres.
 
 | **Navn**                        | **Merknad**                                   | **Multipl.** | **Kode** | **Type** |
 | ------------------------------- | --------------------------------------------- | ------------ | -------- | -------- |
-| **administrativEnhet**          |                                               | \[0..1\]     |          | string   |
-| **referanseAdministrativEnhet** | referanse til AdministrativEnhet sin systemID | \[0..1\]     |          | SystemID |
-| **saksbehandler**               |                                               | \[0..1\]     |          | string   |
-| **referanseSaksbehandler**      | referanse til Bruker sin systemID             | \[0..1\]     |          | SystemID |
+| administrativEnhet              |                                               | \[0..1\]     |          | string   |
+| referanseAdministrativEnhet     | referanse til AdministrativEnhet sin systemID | \[0..1\]     |          | SystemID |
+| saksbehandler                   |                                               | \[0..1\]     |          | string   |
+| referanseSaksbehandler          | referanse til Bruker sin systemID             | \[0..1\]     |          | SystemID |
 
 #### KorrespondansepartPerson
 
@@ -3067,12 +3067,12 @@ mottaker(e) registreres.
 
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
-| **fødselsnummer**      |             | \[0..1\]     |          | string             |
-| **DNummer**            |             | \[0..1\]     |          | string             |
-| **navn**               |             | \[1..1\]     |          | string             |
-| **postadresse**        |             | \[0..1\]     |          | EnkelAdresse       |
-| **bostedsadresse**     |             | \[0..1\]     |          | EnkelAdresse       |
-| **kontaktinformasjon** |             | \[0..1\]     |          | Kontaktinformasjon |
+| fødselsnummer          |             | \[0..1\]     |          | string             |
+| DNummer                |             | \[0..1\]     |          | string             |
+| navn                   |             | \[1..1\]     |          | string             |
+| postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
+| bostedsadresse         |             | \[0..1\]     |          | EnkelAdresse       |
+| kontaktinformasjon     |             | \[0..1\]     |          | Kontaktinformasjon |
 
 #### Presedens
 
@@ -3299,12 +3299,12 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ----------------------- | ----------- | ------------ | -------- | ------------------ |
-| **organisasjonsnummer** |             | \[0..1\]     |          | string             |
-| **navn**                |             | \[1..1\]     |          | string             |
-| **forretningsadresse**  |             | \[0..1\]     |          | EnkelAdresse       |
-| **postadresse**         |             | \[0..1\]     |          | EnkelAdresse       |
-| **kontaktinformasjon**  |             | \[0..1\]     |          | Kontaktinformasjon |
-| **kontaktperson**       |             | \[0..1\]     |          | string             |
+| organisasjonsnummer     |             | \[0..1\]     |          | string             |
+| navn                    |             | \[1..1\]     |          | string             |
+| forretningsadresse      |             | \[0..1\]     |          | EnkelAdresse       |
+| postadresse             |             | \[0..1\]     |          | EnkelAdresse       |
+| kontaktinformasjon      |             | \[0..1\]     |          | Kontaktinformasjon |
+| kontaktperson           |             | \[0..1\]     |          | string             |
 
 #### SakspartPerson
 
@@ -3331,12 +3331,12 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
-| **fødselsnummer**      |             | \[0..1\]     |          | string             |
-| **DNummer**            |             | \[0..1\]     |          | string             |
-| **navn**               |             | \[1..1\]     |          | string             |
-| **postadresse**        |             | \[0..1\]     |          | EnkelAdresse       |
-| **bostedsadresse**     |             | \[0..1\]     |          | EnkelAdresse       |
-| **kontaktinformasjon** |             | \[0..1\]     |          | Kontaktinformasjon |
+| fødselsnummer          |             | \[0..1\]     |          | string             |
+| DNummer                |             | \[0..1\]     |          | string             |
+| navn                   |             | \[1..1\]     |          | string             |
+| postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
+| bostedsadresse         |             | \[0..1\]     |          | EnkelAdresse       |
+| kontaktinformasjon     |             | \[0..1\]     |          | Kontaktinformasjon |
 
 ### Admin 
 
@@ -3484,15 +3484,15 @@ rolletilknytning
 
 | **Navn**                | **Merknad**                                           | **Multipl.** | **Kode** | **Type**            |
 | ----------------------- | ----------------------------------------------------- | ------------ | -------- | ------------------- |
-| **systemID**            |                                                       | \[0..1\]     |          | SystemID            |
-| **rolle**               | Sammenlignes feks med rolle gitt i AD eller lignende. | \[1..1\]     |          | string              |
-| **tilgangskategori**    |                                                       | \[1..1\]     |          | Tilgangskategori    |
-| **referanseArkivenhet** |                                                       | \[0..1\]     |          | SystemID            |
-| **tilgangsrestriksjon** |                                                       | \[0..1\]     |          | Tilgangsrestriksjon |
-| **les**                 |                                                       | \[1..1\]     |          | boolean             |
-| **ny**                  |                                                       | \[1..1\]     |          | boolean             |
-| **endre**               |                                                       | \[1..1\]     |          | boolean             |
-| **slett**               |                                                       | \[1..1\]     |          | boolean             |
+| systemID                |                                                       | \[0..1\]     |          | SystemID            |
+| rolle                   | Sammenlignes feks med rolle gitt i AD eller lignende. | \[1..1\]     |          | string              |
+| tilgangskategori        |                                                       | \[1..1\]     |          | Tilgangskategori    |
+| referanseArkivenhet     |                                                       | \[0..1\]     |          | SystemID            |
+| tilgangsrestriksjon     |                                                       | \[0..1\]     |          | Tilgangsrestriksjon |
+| les                     |                                                       | \[1..1\]     |          | boolean             |
+| ny                      |                                                       | \[1..1\]     |          | boolean             |
+| endre                   |                                                       | \[1..1\]     |          | boolean             |
+| slett                   |                                                       | \[1..1\]     |          | boolean             |
 
 ### LoggingOgSporing 
 
@@ -3528,11 +3528,11 @@ Figur: 33
 
 | **Navn**                | **Merknad**                       | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | --------------------------------- | ------------ | -------- | -------- |
-| **systemID**            |                                   | \[0..1\]     |          | SystemID |
-| **referanseArkivenhet** |                                   | \[0..1\]     |          | SystemID |
-| **referanseMetadata**   |                                   | \[0..1\]     |          | string   |
-| **endretDato**          |                                   | \[1..1\]     |          | datetime |
-| **endretAv**            |                                   | \[1..1\]     |          | string   |
-| **referanseEndretAv**   | referanse til Bruker sin systemID | \[1..1\]     |          | SystemID |
-| **tidligereVerdi**      |                                   | \[0..1\]     |          | string   |
-| **nyVerdi**             |                                   | \[0..1\]     |          | string   |
+| systemID                |                                   | \[0..1\]     |          | SystemID |
+| referanseArkivenhet     |                                   | \[0..1\]     |          | SystemID |
+| referanseMetadata       |                                   | \[0..1\]     |          | string   |
+| endretDato              |                                   | \[1..1\]     |          | datetime |
+| endretAv                |                                   | \[1..1\]     |          | string   |
+| referanseEndretAv       | referanse til Bruker sin systemID | \[1..1\]     |          | SystemID |
+| tidligereVerdi          |                                   | \[0..1\]     |          | string   |
+| nyVerdi                 |                                   | \[0..1\]     |          | string   |
