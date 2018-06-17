@@ -42,7 +42,7 @@ docbook:
 		-o docbook/$$(basename $$m .md).xml; \
 	done
 book: docbook images
-	xmlto --with-fop pdf docbook/book.xml
-	#xmlto --with-dblatex pdf docbook/book.xml
+	#xmlto --with-fop pdf docbook/book.xml
+	xmlto --with-dblatex pdf docbook/book.xml
 html: docbook images
 	xmlto html-nochunks docbook/book.xml
