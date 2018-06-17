@@ -13,7 +13,7 @@
 
 ## Noark5v4 
 
-### Noark5 kjerne arkivstruktur
+### Noark5 kjerne arkivstruktur (diagram)
 
 Diagrammet viser pakkene som inngår i arkivstruktur kjernen
 
