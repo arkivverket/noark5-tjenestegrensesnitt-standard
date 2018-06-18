@@ -88,7 +88,31 @@ Accept: application/vnd.noark5-v4+xml
 
 Content-Type: application/vnd.noark5-v4+xml
 
-![](./media/xml-arkivstruktur-toppnivaa.png)
+```XML
+<Links
+    xmlns:xsi="http://www.w3.org/2001/XMLSChema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSChema"
+    xmlns="http://www.kxml.no/rest/1.0">
+    <Links>
+        <link>
+            <rel>http://rel.kxml.no/noark5/v4/api/arkivstruktur</rel>
+            <href>http://localhost:49708/api/arkivstruktur</href>
+            <type sxi:nil="true" />
+            <deprecation xsi:nil="true" />
+            <name xsi:nil="true" />
+            <title xsi:nil="true" />
+        </link>
+        <link>
+            <rel>http://rel.kxml.no/noark5/v4/api/sakarkiv</rel>
+            <href>http://localhost:49708/api/sakarkiv</href>
+            <type sxi:nil="true" />
+            <deprecation xsi:nil="true" />
+            <name xsi:nil="true" />
+            <title xsi:nil="true" />
+        </link>
+    </Links>
+</Links>
+```
 
 ­­­«href» kan være hva som helst og trenger ikke følge noe fast mønster
 for oppbygning av url. Mens «rel»(relasjonsnøkkelen) har faste verdier
@@ -135,16 +159,16 @@ lister med data bør støtte søk og filtrering.
         {
             "href": "http://localhost:49708/api/arkivstruktur/arkiv{?$filter&$orderby&$top&$skip&$search}",
             "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/arkiv",
-	    "templated": true
+            "templated": true
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/ny-arkivskaper",
             "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-arkivskaper",
-	    "templated": false
+            "templated": false
         },
 ```
 
-Figur anonsering av templated link for søk etter arkiv
+Figur 1 anonsering av templated link for søk etter arkiv
 
 Filter parametre som skal støttes er:
 
@@ -271,23 +295,23 @@ relasjonslenker til aktuelle kodelister.
 {
     "mappetype": {
         "kode": "BYGG",
-	"beskrivelse": "Byggesak"
+        "beskrivelse": "Byggesak"
     },
     "tittel": "angi tittel på mappe",
     "dokumentmendium": {
         "kode": "E",
-	"beskrivelse": "Elektronisk arkiv"
+        "beskrivelse": "Elektronisk arkiv"
     },
     "_links": [
         {
             "href": "http://localhost:49708/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
             "rel": "http://rel.kxml.no/noark5/v4/api/administrasjon/dokumentmedium",
-	    "templated": true
+            "templated": true
         },
         {
             "href": "http://localhost:49708/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
             "rel": "http://rel.kxml.no/noark5/v4/api/administrasjon/mappetype",
-	    "templated": true
+            "templated": true
         }
     ]
 }
@@ -306,12 +330,12 @@ Content-Type: application/vnd.noark5-v4+json
 {
     "mappetype": {
         "kode": "BYGG",
-	"beskrivelse": "Byggesak"
+        "beskrivelse": "Byggesak"
     },
     "tittel", "Testvegen 32, ny enebolig",
     "dokumentmendium": {
         "kode": "E",
-	"beskrivelse": "Elektronisk arkiv"
+        "beskrivelse": "Elektronisk arkiv"
     }
 }
 ```
@@ -330,12 +354,12 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
     "mappeID": "123456/2016",
     "mappetype": {
         "kode": "BYGG",
-	"beskrivelse": "Byggesak"
+        "beskrivelse": "Byggesak"
     },
     "tittel", "Testvegen 32, ny enebolig",
     "dokumentmendium": {
         "kode": "E",
-	"beskrivelse": "Elektronisk arkiv"
+        "beskrivelse": "Elektronisk arkiv"
     },
     "systemID": "515c45b5-e903-4320-a085-2a98813878ba",
     "opprettetDato": "2016-04-03T15:45:28.4985538+02:00",
@@ -364,7 +388,7 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         },
 ```
 
-Figur respons fra opprett mappe (eksempel avkortet for liste over links)
+Figur 2 respons fra opprett mappe (eksempel avkortet for liste over links)
 
 Resultatkoder ved oppretting av objekt
 
@@ -391,7 +415,31 @@ så kan arkivkjerne preutfylle og foreslå vanlige data for et objekt
 basert på pålogget bruker samt annonsere hvor diverse lovlige koder kan
 hentes fra slik som mappetype og dokumentmedium.
 
-![](./media/json-arkivstruktur-mal-create-mappe-etter-GET-forespoersel.png)
+```Python
+{
+    "mappetype": {
+        "kode": "BYGG",
+        "beskrivelse": "Byggesak"
+    },
+    "tittel": "angi tittel på mappe",
+    "dokumentmendium": {
+        "kode": "E",
+        "beskrivelse": "Elektronisk arkiv"
+    },
+    "_links": [
+        {
+            "href": "http://localhost:49708/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
+            "rel": "http://rel.kxml.no/noark5/v4/api/administrasjon/dokumentmedium",
+            "templated": true
+        },
+        {
+            "href": "http://localhost:49708/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
+            "rel": "http://rel.kxml.no/noark5/v4/api/administrasjon/mappetype",
+            "templated": true
+        }
+    ]
+}
+```
 
 #### Oppdatere objekter (Update)
 
@@ -408,7 +456,30 @@ PUT til http://n5test.kxml.no/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-05
 
 Content-Type: application/vnd.noark5-v4+json
 
-![](./media/json-nyttelast-oppdater-mappe.png)
+```Python
+{
+    "mappeID": "123456/2016",
+    "mappetype": {
+        "kode": "BYGG",
+        "beskrivelse": "Byggesak"
+    },
+    "tittel", "Testvegen 32, ny enebolig",
+    "dokumentmendium": {
+        "kode": "E",
+        "beskrivelse": "Elektronisk arkiv"
+    },
+    "systemID": "515c45b5-e903-4320-a085-2a98813878ba",
+    "opprettetDato": "2016-04-03T15:45:28.4985538+02:00",
+    "opprettetAv": "pålogget bruker",
+    "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
+    "gradering": {
+        "graderingskode": {
+            "kode": "B"
+        },
+        "graderingsdato": "2016-05-03T16:05:48.4966742+02:00"
+    }
+}
+```
 
 **Resultat**
 
@@ -418,10 +489,55 @@ Location →
 
 http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
-![](./media/json-innhold-resultat-av-oppdater-mappe.png)
+```Python
+{
+    "mappeID": "123456/2016",
+    "mappetype": {
+        "kode": "BYGG",
+        "beskrivelse": "Byggesak"
+    },
+    "tittel", "Testvegen 32, ny enebolig",
+    "dokumentmendium": {
+        "kode": "E",
+        "beskrivelse": "Elektronisk arkiv"
+    },
+    "gradering": {
+        "graderingskode": {
+            "kode": "B"
+        },
+        "graderingsdato": "2016-05-03T16:05:48.4966742+02:00"
+    },
+    "systemID": "515c45b5-e903-4320-a085-2a98813878ba",
+    "oppdatertDato": "2016-05-03T16:10:01.9386215+02:00",
+    "opprettetDato": "2016-04-03T15:45:28.4985538+02:00",
+    "opprettetAv": "pålogget bruker",
+    "oppdatertAv": "pålogget bruker",
+    "referanseOppdatertAv": "8f58d80c-9b5c-4ddf-af5a-764f08a7661e",
+    "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
+    "_links": [
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
+            "rel": "self",
+            "templated": false
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
+            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/mappe",
+            "templated": false
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
+            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/avslutt-mappe",
+            "templated": false
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
+            "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe",
+            "templated": false
+        },
+```
 
-Figur respons fra oppdatering av mappe med graderingsinformasjon
-(eksempel avkortet ved links liste)
+Figur 3 respons fra oppdatering av mappe med graderingsinformasjon (eksempel avkortet ved links liste)
 
 Resultatkoder ved oppdatering av objekt
 
@@ -512,7 +628,63 @@ De som ikke har sletting datatype, hvordan skal de merkes/fjernes?Krav
 om logging nok?Skal ikke være mulig å slette uansett hvor mye
 rettigheter en bruker har? – Arkivverket må avklare dette
 
-![](./media/json-nyttelast-oppdater-arkivdel-for-sletting.png)
+```Python
+{
+    "tittel": "Arkivdel byggesak",
+    "beskrivelse": "Lorem ipsum",
+    "arkivdelstatus": {
+        "kode": "",
+        "beskrivelse": ""
+    },
+    "dokumentmedium": {
+        "kode": "",
+        "beskrivelse": ""
+    },
+    "avsluttetAv": "",
+    "referanseAvsluttetAv": "",
+    "referanseForloeper": "",
+    "referanseArvtaker": "",
+    "kassasjon": {
+        "kassasjonsvedtak": {
+            "kode": "",
+            "beskrivelse": ""
+        },
+        "kassasjonshjemmel": "",
+        "bevaringstid": "",
+        "kassasjonsdato": "0001-01-01T00:00:00"
+    },
+    "utfoertKassasjon": {
+        "kassertDato": "0001-01-01T00:00:00"
+        "kassertAv": "",
+        "referanseKassertAv": ""
+    },
+    "sletting": {
+        "slettingstype": {
+            "kode": "SA",
+            "beskrivelse": "Sletting av hele innholdet i arkivdelen"
+        },
+        "slettedato": "2016-05-02T14:23:27.4065323+02:00",
+        "slettetAv": "pålogget bruker"
+    },
+    "skjerming": {
+        "tilgangsrestrisjon": {
+            "kode": "",
+            "beskrivelse": ""
+        },
+        "skjermingshjemmel": "",
+        "skjermingsdokument": {
+            "kode": "",
+            "beskrivelse": ""
+        },
+        "skjermingsvarighet": ""
+    },
+    "gradering": {
+        "graderingskode": {
+            "kode": "",
+            "beskrivelse": ""
+        },
+        "graderingsdato": "0001-01-01T00:00:00",
+```
 
 Resultatkoder ved sletting av objekt
 
@@ -551,7 +723,38 @@ http://rel.kxml.no/noark5/v4/arkivstruktur/fil
 
 GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785
 
-![](./media/json-innhold-resultat-av-hent-dokumentbeskrivelse.png)
+```Python
+{
+    "systemID": "a895c8ed-c15a-43f6-86de-86a626433785",
+    "versjonsnummer": "1",
+    "variantformat": {
+        "kode": "A",
+        "beskrivelse": "Arkivformat"
+    },
+    "format": {
+        "kode": "RA-PDF",
+        "beskrivelse": "PDF/A - ISO 19005-1:2005"
+    },
+    "referanseDokumentfil": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
+    "_links": [
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
+            "rel": "self",
+            "templated": false
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
+            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/dokumentobjekt",
+            "templated": false
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
+            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil",
+            "templated": false
+        }
+    ]
+}
+```
 
 GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
 
