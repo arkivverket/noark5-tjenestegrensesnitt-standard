@@ -45,7 +45,20 @@ Accept: application/vnd.noark5-v4+json
 
 Content-Type: application/vnd.noark5-v4+json
 
-![](./media/json-arkivstruktur-toppnivaa.png)
+```Python
+{
+    "_links": [
+        {
+            "href": "http://localhost:49708/api/arkivstruktur",
+            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur"
+        },
+        {
+            "href": "http://localhost:49708/api/sakarkiv",
+            "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv"
+        }
+    ]
+}
+```
 
 Eksempelet viser at denne arkivkjernen støtter arkivstruktur
 (http://rel.kxml.no/noark5/v4/api/arkivstruktur) og sakarkiv
