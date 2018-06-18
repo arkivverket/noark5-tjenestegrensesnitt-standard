@@ -129,7 +129,20 @@ benyttes. De ressurser som støtter filter skal annonserer dette under
 «href». Typiske parametre er $filter, $top, $skip og $orderby. Alle
 lister med data bør støtte søk og filtrering.
 
-![](./media/json-arkivstruktur-toppnivaa-med-odata-syntaks.png)
+```Python
+{
+    "_links": [
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/arkiv{?$filter&$orderby&$top&$skip&$search}",
+            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/arkiv",
+	    "templated": true
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/ny-arkivskaper",
+            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-arkivskaper",
+	    "templated": false
+        },
+```
 
 Figur anonsering av templated link for søk etter arkiv
 
@@ -254,7 +267,31 @@ Denne kan brukes til både GET og POST forespørsel.
 GET forespørselen forhåndsutfyller en lovlig objektstruktur og gir
 relasjonslenker til aktuelle kodelister.
 
-![](./media/json-arkivstruktur-mal-create-mappe-etter-GET-forespoersel.png)
+```Python
+{
+    "mappetype": {
+        "kode": "BYGG",
+	"beskrivelse": "Byggesak"
+    },
+    "tittel": "angi tittel på mappe",
+    "dokumentmendium": {
+        "kode": "E",
+	"beskrivelse": "Elektronisk arkiv"
+    },
+    "_links": [
+        {
+            "href": "http://localhost:49708/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
+            "rel": "http://rel.kxml.no/noark5/v4/api/administrasjon/dokumentmedium",
+	    "templated": true
+        },
+        {
+            "href": "http://localhost:49708/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
+            "rel": "http://rel.kxml.no/noark5/v4/api/administrasjon/mappetype",
+	    "templated": true
+        }
+    ]
+}
+```
 
 Klienten sender en POST forespørsel med en lovlig objektstruktur til
 gitt url. Responsen gir statuskode 201 Created om objektet ble opprettet
@@ -265,7 +302,19 @@ POST til http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe
 
 Content-Type: application/vnd.noark5-v4+json
 
-![](./media/json-nyttelast-opprett-mappe.png)
+```Python
+{
+    "mappetype": {
+        "kode": "BYGG",
+	"beskrivelse": "Byggesak"
+    },
+    "tittel", "Testvegen 32, ny enebolig",
+    "dokumentmendium": {
+        "kode": "E",
+	"beskrivelse": "Elektronisk arkiv"
+    }
+}
+```
 
 **Resultat**
 
@@ -276,7 +325,44 @@ Location
 
 http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
-![](./media/json-innhold-resultat-av-opprett-mappe.png)
+```Python
+{
+    "mappeID": "123456/2016",
+    "mappetype": {
+        "kode": "BYGG",
+	"beskrivelse": "Byggesak"
+    },
+    "tittel", "Testvegen 32, ny enebolig",
+    "dokumentmendium": {
+        "kode": "E",
+	"beskrivelse": "Elektronisk arkiv"
+    },
+    "systemID": "515c45b5-e903-4320-a085-2a98813878ba",
+    "opprettetDato": "2016-04-03T15:45:28.4985538+02:00",
+    "opprettetAv": "pålogget bruker",
+    "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
+    "_links": [
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
+            "rel": "self",
+            "templated": false
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
+            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/mappe",
+            "templated": false
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
+            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/avslutt-mappe",
+            "templated": false
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
+            "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe",
+            "templated": false
+        },
+```
 
 Figur respons fra opprett mappe (eksempel avkortet for liste over links)
 
