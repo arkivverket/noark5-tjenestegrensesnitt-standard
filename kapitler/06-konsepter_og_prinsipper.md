@@ -120,7 +120,7 @@ som beskriver hva ressursen kan brukes til. Denne kan klienten også åpne
 for å vise beskrivelse, eksempel på bruk, statuskoder og annet som er
 relevant for denne relasjonsnøkkelen.
 
-** Relasjonsnøkler på rotnivå **
+**Relasjonsnøkler på rotnivå**
 
 | Relasjonsnøkkel (rel)                          | Beskrivelse                                            |
 | ---------------------------------------------- | ------------------------------------------------------ |
@@ -130,7 +130,7 @@ relevant for denne relasjonsnøkkelen.
 Relasjonsnøkler under de forskjellige konformitetsnivå listes ut i
 kapittel 7 sammen med beskrivelse av klasser.
 
-** Spesielle relasjonsnøkler **
+**Spesielle relasjonsnøkler**
 
 | Relasjonsnøkkel (rel)                                  | Beskrivelse                                                                      |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------- |
