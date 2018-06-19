@@ -26,7 +26,7 @@ images: $(IMG_PNG)
 .SUFFIXES: .md .pdf .docx .emf .png
 
 .emf.png:
-	inkscape --export-dpi=600 --export-png=$@ $^
+	inkscape --export-dpi=72 --export-png=$@ $^
 	#cd $(dirname $@); libreoffice --headless --convert-to png $(abspath $^)
 .docx.pdf:
 	cd $(shell dirname $@); libreoffice --headless --invisible --convert-to pdf $(abspath $^)
