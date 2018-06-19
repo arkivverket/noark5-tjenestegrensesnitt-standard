@@ -10,6 +10,10 @@
 <xsl:param name="page.margin.bottom">0.55in</xsl:param>
 <xsl:param name="latex.class.options">a4paper,openright,twoside</xsl:param>
 
+<!-- Place table titles at the top -->
 <xsl:param name="table.title.top">1</xsl:param>
+
+<!-- Make sure tables do not float away from their proper location. -->
+<xsl:param name="table.in.float">0</xsl:param>
 
 </xsl:stylesheet>
