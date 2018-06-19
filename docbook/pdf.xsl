@@ -16,4 +16,7 @@
 <!-- Make sure tables do not float away from their proper location. -->
 <xsl:param name="table.in.float">0</xsl:param>
 
+<!-- Do not list figures and tables -->
+<xsl:param name="doc.lot.show"></xsl:param>
+
 </xsl:stylesheet>
