@@ -16,8 +16,8 @@ følger under, og ytterligere detaljer kan en finne i vedlegg 3.
 
 ### REST tjenestene
 
-For REST er HATEOAS prinsipper fulgt slik at en klient skal fra en hoved
-url kunne navigere og oppdage selv alle mulig tjenester som kjernen
+For REST er HATEOAS prinsipper fulgt slik at en klient skal fra en
+hoved-URL kunne navigere og oppdage selv alle mulig tjenester som kjernen
 tilbyr.
 
 Dette gjøres med ressurslenker og relasjonslenker som inneholder
@@ -30,7 +30,7 @@ Under følger eksempler fra tjenestene.
 
 #### Oppkobling og ressurslenker
 
-Oppkobling skjer mot en hoved url og er den eneste ressursen klienten
+Oppkobling skjer mot en hoved-URL og er den eneste ressursen klienten
 trenger å vite for å starte interaksjon. Resten av endepunkter oppdages
 av klienten via relasjonsnøkler som beskriver hva ressursen kan brukes
 til.
@@ -63,7 +63,7 @@ Content-Type: application/vnd.noark5-v4+json
 Eksempelet viser at denne arkivkjernen støtter arkivstruktur
 (http://rel.kxml.no/noark5/v4/api/arkivstruktur) og sakarkiv
 (http://rel.kxml.no/noark5/v4/api/sakarkiv).
-Ved å følge Href til disse relasjonsnøkler vil tilgjengelige ressurser
+Ved å følge **href** til disse relasjonsnøkler vil tilgjengelige ressurser
 innen disse områder annonseres på samme måte.
 
 **Resultatkoder**
@@ -114,8 +114,8 @@ Content-Type: application/vnd.noark5-v4+xml
 </Links>
 ```
 
-­­­«href» kan være hva som helst og trenger ikke følge noe fast mønster
-for oppbygning av url. Mens «rel»(relasjonsnøkkelen) har faste verdier
+­­­**href** kan være hva som helst og trenger ikke følge noe fast mønster
+for oppbygning av url. Mens **rel** (relasjonsnøkkelen) har faste verdier
 som beskriver hva ressursen kan brukes til. Denne kan klienten også åpne
 for å vise beskrivelse, eksempel på bruk, statuskoder og annet som er
 relevant for denne relasjonsnøkkelen.
@@ -147,8 +147,8 @@ det lettere å navigere til aktuelle funksjoner.
 For filter skal syntaks fra oData standarden
 (http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html\#\_Toc372793790)
 benyttes. De ressurser som støtter filter skal annonserer dette under
-\_links med «templated=true» og parametre som kan brukes til dette i
-«href». Typiske parametre er $filter, $top, $skip og $orderby. Alle
+**\_links** med **templated=true** og parametre som kan brukes til dette i
+**href**. Typiske parametre er **$filter**, **$top**, **$skip** og **$orderby**. Alle
 lister med data bør støtte søk og filtrering.
 
 ```Python
@@ -185,30 +185,100 @@ Filter parametre som skal støttes er:
       - Filter på en-til-mange relasjoner (vha. 'any' og 'all' odata
         funksjonene)
 
-**Filtrering**
+##### Filtrering
 
-Filtrering støttes med $filter parameter.
+Filtrering støttes med $filter parameter. Nedenfor følger en del
+eksempeler på ulike filtreringer med de innebygde odata-operatorene.
+Flere filtre kan kombineres med operatorene **and** og **or**.
 
-| Operasjon            | Syntaks                       | Eksempel                                                                                                                                                                        |
-| -------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Begynner med         | startsWith(feltnavn, ‘tekst’) | [.../mapper?$filter=startsWith(tittel, 'test'](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/1235/mappe?$top=2&$filter=tittel%20eq%20%E2%80%98testmappe%E2%80%99))           |
-| Er lik               | Feltnavn eq verdi             | .../arkiv?$filter=systemID eq '123456789'                                                                                                                                       |
-| Inneholder           | contains(feltnavn, ‘tekst’)   | [../arkivdel/1235/mappe?$filter=contains(tittel, ‘test’)](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/1235/mappe?$top=2&$filter=tittel%20eq%20%E2%80%98testmappe%E2%80%99) |
-| Større enn           | Feltnavn gt verdi             | ../arkivstruktur/registrering/?$filter=year(oppdatertDato) gt 2012                                                                                                              |
-| Mindre enn           | Feltnavn lt verdi             | ../arkivstruktur/registrering/?$filter=year(oppdatertDato) lt 2014                                                                                                              |
-| Større enn eller lik | Feltnavn ge verdi             | ../arkivstruktur/registrering/?$filter=year(oppdatertDato) ge 2012                                                                                                              |
-| Mindre enn eller lik | Feltnavn le verdi             | ../arkivstruktur/registrering/?$filter=year(oppdatertDato) le 2014                                                                                                              |
-| Og                   | Uttrykk and uttrykk           | ../arkivstruktur/registrering/?$filter=year(oppdatertDato) gt 2012 and year(oppdatertDato) lt 2014                                                                              |
-| Eller                | Uttrykk or uttrykk            | ../arkivstruktur/registrering/?$filter=year(oppdatertDato) gt 2012 or year(oppdatertDato) lt 2014                                                                               |
+*Begynner med*
 
-**Filter
-eksempler**
+**Syntaks:** startswith(feltnavn, ‘tekst’)
+
+**Eksempel:**
+
+> /api/arkivstruktur/mappe/?$filter=startswith(tittel, 'allergisk testmappe')
+
+*Er lik*
+
+*Syntaks:* feltnavn eq verdi
+
+**Eksempel:**
+
+> /api/arkivstruktur/mappe/?$filter=systemID eq '1'
+
+*Inneholder*
+
+**Syntaks:** substringof(‘tekst’, feltnavn)
+
+**Eksempel:**
+
+> /api/arkivstruktur/mappe/?$filter=substringof('test', tittel)
+
+*Større enn*
+
+**Syntaks:** feltnavn gt verdi
+
+**Eksempel:**
+
+> /api/arkivstruktur/registrering/?$filter=year(oppdatertDato) gt 2012
+
+> /api/sakarkiv/saksmappe?$filter=saksdato gt DateTime'2017-02-15'
+
+*Mindre enn*
+
+**Syntaks:** feltnavn lt verdi
+
+**Eksempel:**
+
+> /api/sakarkiv/saksmappe?$filter=saksdato lt DateTime'2017-02-15'
+
+*Større enn eller lik*
+
+**Syntaks:** feltnavn ge verdi
+
+**Eksempel:**
+
+> /api/sakarkiv/saksmappe?$filter=saksdato ge DateTime'2017-02-15'
+
+*Mindre enn eller lik*
+
+**Syntaks:** feltnavn le verdi
+
+**Eksempel:**
+
+> /api/sakarkiv/saksmappe?$filter=saksdato le DateTime'2017-02-15'
+
+*Og*
+
+**Syntaks:** uttrykk and utrykk
+
+**Eksempel:**
+
+> /api/sakarkiv/saksmappe/?$filter=saksdato gt DateTime'2017-02-10' and saksdato lt DateTime'2017-02-12'
+
+*Eller*
+
+**Syntaks:** uttrykk or utrykk
+
+**Eksempel:**
+
+> /api/sakarkiv/saksmappe/?$filter=year(saksdato) gt 2014 or year(opprettetDato) gt 2014
+
+**Flere eksempler på filtrering**
+
+*De to første mappene med test i tittelen*
+
+> /api/arkivstruktur/mappe/?$top=2&$filter=substringof('test',tittel)
+
+*Mapper med graderingskode B*
+
+> /api/arkivstruktur/mappe/?$filter=gradering/graderingskode/kode eq 'B'
+
+*Mapper med merknader som har merknadstype B*
 
 | Eksempel                                                                                                                                                                                                                        | Forklaring                                                                                              | Nivå    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------- |
-| [../1235/mappe?$top=2&$filter=tittel eq 'testmappe'](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/1235/mappe?$top=2&$filter=tittel%20eq%20%E2%80%98testmappe%E2%80%99)                                                      | De to første mapper med tittel testmappe                                                                | basis   |
-| ../arkivstruktur/arkiv?$search='test'                                                                                                                                                                                           | Arkiv som inneholder test – implementasjonen kan tolke selv hva som skal søkes mot av felter og innhold | basis   |
-| ../arkivstruktur/mappe/?$filter=gradering/graderingskode/kode eq 'B'                                                                                                                                                            | Mapper med graderingskode B                                                                             | basis   |
 | ../arkivstruktur/mappe/?$expand=merknad&$filter=merknad/any(m: m/merknadstype/kode eq 'B')                                                                                                                                      | Mapper med merknader som har merknadstype B                                                             | utvidet |
 | [../arkivdel/1235/mappe?$top=2&$filter=contains(‘testmappe’, tittel) eq true](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/1235/mappe?$top=2&$filter=tittel%20eq%20%E2%80%98testmappe%E2%80%99) $orderby=oppdatertDato desc | De to første mapper hvor testmappe er en del av tittel sortert synkende på oppdatertDato                | basis   |
 | ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq '12/2' and klasse/klassifikasjonssystem/klassifikasjonstype/kode eq 'GBNR'                                                                                                | Mappe med klassering på eiendom                                                                         | utvidet |
@@ -224,6 +294,10 @@ eksempler**
 $search brukes for generelt søk. Arkivkjernen bestemmer hvordan denne er
 implementert med hensyn på hvilke felter den inkluderer i søk og om for
 eksempel innhold i dokumenter er med.
+
+Eksempel på hvordan syntaks for et søk i et arkiv kan se ut:
+
+> /api/arkivstruktur/arkiv?$search='test'
 
 **Sortering**
 
@@ -245,6 +319,10 @@ må returnere en next link som gir neste siden.
 Any eller All brukes for å filtrere på navigerbare objekter. Det kan
 være begrensninger på hvor mange nivå/dybde en arkivkjerne støtter.
 
+| localhost:49708/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | -- |
+| localhost:49708/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |    |
+ 
 **Resultat med underobjekter**
 
 $expand brukes for å inkludere underobjekter i resultat. Det kan være
@@ -286,7 +364,9 @@ http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe .
 Denne kan brukes til både GET og POST forespørsel.
 
 GET forespørselen forhåndsutfyller en lovlig objektstruktur og gir
-relasjonslenker til aktuelle kodelister.
+relasjonslenker til aktuelle kodelister.  En slik forespørsel
+oppretter ikke noe objekt og returverdien refererer ikke heller til et
+objekt i databasen, og er derfor uten «self»-relasjon.
 
 ```Python
 {
@@ -449,6 +529,16 @@ underobjekter som har en mange relasjon (0..\* eller 1..\*) i
 oppdatering av et objekt. Underobjekter må oppdateres separat med sine
 resurslenker.
 
+For å hindre at data blir oppdatert samtidig av forskjellige brukere
+og overskrevet med gamle data så må kjernen sjekke innkomne objekt og
+lagret objekt. ETag (http://en.wikipedia.org/wiki/HTTP_ETag) skal
+benyttes for å støtte «optimistic concurrency control». Om det oppstår
+konflikt så kan resultatkode 409 benyttes. Da må klient hente opp ny
+versjon fra arkivkjerne og gjøre fletting av data mellom server og
+klient. For å redusere risikoen for konflikt bør derfor klienten
+alltid hente en fersk utgave av objektet med en GET-forespørsel og
+deretter oppdatere opbjektet med en PUT-forespørsel.
+
 PUT til http://n5test.kxml.no/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
 Content-Type: application/vnd.noark5-v4+json
@@ -547,6 +637,79 @@ Table: Resultatkoder ved oppdatering av objekt
 | 409        | Conflict – objektet kan være endret av andre  |
 | 500        | InternalServerError – generell feil på server |
 | 501        | NotImplemented - ikke implementert            |
+| 409        | Conflict – objektet kan være endret av andre  |
+
+#### Utvid objekter til andre typer
+
+Noen objekter kan utvides fra sin basistype til en annen subtype. Dette
+gjelder for eksempel Mappe og Saksmappe. Dette annonseres ved hjelp av
+**utvid-til-xx** metodene.
+
+Ved uthenting av en mappe vil du få følgende relasjon tilbake:
+
+```Python
+{
+    "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe",
+    "href": "http://n5test.kxml.no/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe",
+    "templated": false
+}
+```
+
+Ved å kjøre PUT-forespørsel på angitt href med tilhørende felter som
+er påkrevd for saksmappe så skal objektet utvides til å bli en
+saksmappe.
+
+**PUT http://n5test.kxml.no/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe**
+
+Content-Type: application/vnd.noark5-v4+json
+
+```Python
+{
+    "saksansvarlig": "Arne",
+    "saksdato": "2017-12-08T00:00:00",
+    "saksstatus": { "kode": "R", "beskrivelse": "Opprettet av saksbehandler"}
+}
+```
+
+Respons skal være den nye saksmappen. Merk at **self** nå peker på
+saksmappe og ikke mappe.
+
+```Python
+{
+    "saksdato": "2017-12-08T00:00:00",
+    "saksansvarlig": "Henning",
+    "saksstatus": {
+        "kode": "R",
+        "beskrivelse": "Opprettet av saksbehandler"
+    },
+    "mappeID": "1/2014",
+    "tittel": "klok testmappe 1",
+    "offentligTittel": "Dette er en offentlig tittel ****",
+    "gradering": {
+        "graderingskode": {
+            "kode": "B"
+        },
+        "graderingsdato": "2017-12-08T15:32:10.739027+01:00",
+        "_links": []
+    },
+    /// Resten av objektet utelatt
+    "_links": [
+        {
+            "rel": "self",
+            "href": "http://n5test.kxml.no/api/sakarkiv/saksmappe/1",
+            "templated": false
+        },
+```
+
+Resultatkoder ved utvidelse av objekt
+
+| Statuskode | Beskrivelse                                   |
+| ---------- | --------------------------------------------- |
+| 200        | OK					     |
+| 400	     | BadRequest - ugyldig forespørsel		     |
+ 
+Resultatkode 400 leveres dersom id til eksterende mappe er ugyldig eller
+det mangler påkrevde felter.
 
 #### Oppdatere referanser mellom objekter
 
@@ -562,34 +725,47 @@ referanser mellom objekter.
 
 **For å opprette ny referanse**
 
+Her opprettes ny referanse mellom registrering og dokumentbeskrivelse.
+
 POST
 http://localhost:49708/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/$ref?$id=http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/1fa94a89-3550-470b-a220-92dd4d709044
 
 Resultatkode 204 – noContent
 
-Her opprettes ny referanse mellom registrering og dokumentbeskrivelse.
-
 **For å oppdatere/flytte referanse**
 
+Her flyttes mappen fra en arkivdel til en annen.
+
 PUT
-http://localhost:49708/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/$ref?$id=http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/1fa94a89-3550-470b-a220-92dd4d709044
+http://localhost:49708/api/arkivstruktur/mappe/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/arkivdel/$ref
 
 Body:
 
-http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/092e497a-a528-4121-8f22-fbc78fa6c930
+http://localhost:49708/api/arkivstruktur/arkivdel/092e497a-a528-4121-8f22-fbc78fa6c930
 
-Resultatkode 200 – OK
+Resultatkode 204 – No Content
 
-Her flyttes registreringen fra en dokumentbeskrivelse til en annen.
+**For å slette referanser fra en liste**
 
-**For å slette en referanse**
+Ved sletting av referanser i en liste skal $id-parameteren
+benyttes. Her slettes referansen til dokumentbeskrivelse fra
+registrering.
 
 DELETE
 http://localhost:49708/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/$ref?$id=http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/092e497a-a528-4121-8f22-fbc78fa6c930
 
-Resultatkode 204 – noContent
+Resultatkode 204 – No Content
 
-Her slettes referansen til dokumentbeskrivelse fra registrering.
+**For å slette en enkelt-referanse**
+
+Ved sletting av en enkelt-referanse så skal ikke $id-parameteren
+benyttes. Her slettes referansen til registrering fra
+dokumentbeskrivelse.
+
+DELETE
+http://localhost:49708/api/arkivstruktur/dokumentbeskrivelse/092e497a-a528-4121-8f22-fbc78fa6c930/registrering/$ref
+ 
+Resultatkode 204 – No Content
 
 Table: Resultatkoder ved oppdatering av referanser til objekt
 
@@ -758,50 +934,90 @@ GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
 Gir Content-type=filens mime type feks “application/pdf” og filen
 streames til klient
 
+**Overføre små filer**
+
 For å overføre en ny fil brukes POST til href til
-rel=http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil med header for
+rel=http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil med headere for
 content-type og content-length.
 
-> POST http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil  
-> Content-Type: application/pdf  
-> Content-Length:111111
-> 
-> Pdf data
+```
+POST http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
+Content-Type: application/pdf
+Content-Length: 111111
 
-For store filer(over 150MB) så kan filen overføres i bolker.
+Pdf data
+```
 
-Ved å sette Content-Length til 0 på en POST til href til
-rel=http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil skal responsen
-inneholde location header til en sesjonsuri som brukes med PUT for å
-overføre bolker av filen. Header X-Upload-Content-Type og
-X-Upload-Content-Length kan brukes i POST for å angi mimetype og total
-størrelse på fila som skal overføres.
+**Overføre små filer**
 
-> POST http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil  
-> Content-Length:0  
-> X-Upload-Content-Type: image/jpeg  
-> X-Upload-Content-Length: 2000000
-> 
-> Respons: 200 OK
-> 
-> Location: http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+For store filer (over 150MB) så kan filen overføres i
+bolker. Prosessen for å overføre store filer er inspirert av APIet til
+Google Drive,
+https://developers.google.com/drive/v3/web/resumable-upload .
 
-Neste punkt er å overføre første bolk av filen.
+For å starte en opplastingssesjon:
 
-> PUT http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567  
-> Content-Length: 524288  
-> Content-Type: image/jpeg  
-> Content-Range: bytes 0-524287/2000000
-> 
-> Respons: 200 OK
-> 
-> Location: http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567  
-> Range: bytes=0-524287
+1.  Send en POST til href til
+    rel=http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil
 
-Ved neste bolk av filen så brukes øvre verdi av Range header for å
-starte neste overføring.
+    Headeren Content-Length settes til 0
+    
+    Headeren X-Upload-Content-Type settes til filens MIME-type
+    
+    Headeren X-Upload-Content-Length settes til filens totalstørrelse
 
-Når siste overføring er gjort så returneres statuskode 201 Created.
+2.  Responsen du mottar vil inneholde en Location-Header som inneholder
+    en sesjons-URI som skal benyttes i en PUT-forespørsel for å overføre
+    filen i bolker.
+
+3.  Deretter overføres filen med en PUT-forespørsel. Responsen fra
+    serveren inneholder en Range-header, hvor øvre verdi benyttes som
+    start verdi i Content-Range i neste oversending.
+
+    Headeren Content-Range settes for å angi hvor mye av filen som
+    blir oversendt.
+
+4.  Når siste overføring er gjort så returneres statuskode 201 Created.
+
+Komplett eksempel
+
+Opprett sesjon:
+
+```
+POST http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
+Content-Length: 0
+X-Upload-Content-Type: image/jpeg
+X-Upload-Content-Length: 2000000
+
+Respons: 200 OK
+
+Location: http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+```
+
+Last opp første del:
+
+```
+PUT http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+Content-Length: 524288
+Content-Type: image/jpeg
+Content-Range: bytes 0-524287/2000000
+
+Respons: 200 OK
+
+Location: http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+Range: bytes 0-524287
+```
+
+Last opp siste del:
+
+```
+PUT http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+Content-Length: 524288
+Content-Type: image/jpeg
+Content-Range: bytes 524287-2000000/2000000
+
+Respons: 201 Created
+```
 
 Table: Resultatkoder for opplasting av filer
 
@@ -830,18 +1046,6 @@ Restriksjoner som er dokumentert under hvert objekt i
 informasjonsmodellen skal valideres av kjernen. For eksempel hvis en
 mappe er avsluttet så skal det ikke være mulig å registrere flere
 registreringer på denne (jfr krav 5.4.7).
-
-For å hindre at data blir oppdatert samtidig av forskjellige brukere
-og overskrevet med gamle data så må kjernen sjekke innkomne objekt og
-lagret objekt. ETag (http://en.wikipedia.org/wiki/HTTP_ETag) skal
-benyttes for å støtte «optimistic concurrency control». Om det oppstår
-konflikt så kan resultatkode 409 benyttes. Da må klient hente opp ny
-versjon fra arkivkjerne og gjøre fletting av data mellom server og
-klient.
-
-| Statuskode | Beskrivelse                                  |
-| ---------- | -------------------------------------------- |
-| 409        | Conflict – objektet kan være endret av andre |
 
 ## Identifikatorer
 
