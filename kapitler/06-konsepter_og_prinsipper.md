@@ -781,9 +781,9 @@ størrelse på fila som skal overføres.
 > Content-Length:0  
 > X-Upload-Content-Type: image/jpeg  
 > X-Upload-Content-Length: 2000000
-
-Respons: 200 OK
-
+> 
+> Respons: 200 OK
+> 
 > Location: http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
 
 Neste punkt er å overføre første bolk av filen.
