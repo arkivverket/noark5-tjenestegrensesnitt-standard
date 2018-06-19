@@ -1,9 +1,17 @@
 # Tjenester og informasjonsmodell
 
 ## Om UML og notasjon som er benyttet
-|         |            |
+
+![](./media/uml-forklaring-om-notasjon-som-er-brukt.png)
+
+***Klassediagram*** brukes for å vise utvalgte klasser i en
+UML-modell. Klassediagram ***trenger ikke være fullstendige***,
+hverken mhp hvilke klasser som vises eller hvilke assosiasjoner
+somvises. For kompliserte modeller (som NOARK-modellen) trengs flere
+klassediagram for å vise hele modellen.
+
+|               |                 |
 | ------------- |---------------  | 
-|![](./media/uml-forklaring-om-notasjon-som-er-brukt.png) | ***Klassediagram*** brukes for å vise utvalgte klasser i en UML-modell. Klassediagram ***trenger ikke være fullstendige***, hverken mhp hvilke klasser som vises eller hvilke assosiasjoner somvises. For kompliserte modeller (som NOARK-modellen) trengs flere klassediagram for å vise hele modellen. |
 |![](./media/uml-klasse-konspetet-bruker-registrering-som-eksempel.png) |I et ***klassediagram*** vises en klasse som en firkantet boks. ***Klassenavnet*** står i øverste «etasje», og er i eksempelet Registrering. ***Klasseattributtene*** karakteriserer klassen, og listes opp en i nest øverste etasje (i eksempelet i alt 7, den første/øverste har navnet arkivertDato). Firkanten kan også ha flere frivillige etasjer for å vise mer informasjon. I klassen Registrering vises en «etasje» med notes (ofte brukt for ***klassedefinisjon***) |
 |![](./media/uml-assosiasjoner-brukt-med-klasser.png) | Klasser kan knyttes sammen med ***assosiasjoner***. Assosiasjoner vises som streker mellom to klasser. En assosiasjon der begge ender er knytta til samme klasse kalles ***selv-assosiasjon***. Eksempel: Mappe kan ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like klasser. En assosiasjon kan være ***aggregering***. Symbolet er en strek mellom to klasser med åpen diamant i ene enden. Eksempel: Ei Mappe ***har*** Registrering(er). En registrering er en selvstendig enhet, som «overlever» selv om Mappa blir sletta. |
 |![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Basisregistrering som er en generalisering av Journalpost og Møteregistrering. En kan også si at Journalpost er en spesialisering av basisregistrering. I Basisregistrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost og Møteregistrering. Dette leses som Journalpost ***er en*** Basisregistrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Basisregistrering er en spesialisering av Registrering, selv om klassen Registrering ikke finnes i diagrammet. |
@@ -13,91 +21,33 @@
 
 ## Noark5v4 
 
-### Noark5 kjerne arkivstruktur (diagram)
+![Noark5 kjerne arkivstruktur (diagram) Diagrammet viser pakkene som inngår i arkivstruktur kjernen.](./media/uml-pakker-som-inngaar-i-loesninger-geointegrasjon-eksempel.png)
 
-Diagrammet viser pakkene som inngår i arkivstruktur kjernen
+![Noark5 spesialisering sakarkiv - (diagram) Diagrammet viser oversikt over spesialiseringen sakarkiv.](./media/uml-pakker-som-inngaar-i-loesninger-sakarkiv-eksempel.png)
 
-![](./media/uml-pakker-som-inngaar-i-loesninger-geointegrasjon-eksempel.png)
+![Noark5 struktur - (diagram) Diagrammet viser oversikt over pakker som kan inngå i en noark kjerne.](./media/uml-pakker-som-inngaar-i-loesninger-noark5-kjerne.png)
 
-Figur: 1
-
-### Noark5 spesialisering sakarkiv - (diagram)
-
-Diagrammet viser oversikt over spesialiseringen sakarkiv
-
-![](./media/uml-pakker-som-inngaar-i-loesninger-sakarkiv-eksempel.png)
-
-Figur: 2
-
-### Noark5 struktur - (diagram)
-
-Diagrammet viser oversikt over pakker som kan inngå i en noark kjerne.
-
-![](./media/uml-pakker-som-inngaar-i-loesninger-noark5-kjerne.png)
-
-Figur: 3
-
-### Noark5 elementlister - (diagram)
-
-Diagrammet viser oversikt over alle klasser og hvor de er definert
-
-![](./media/uml-pakker-og-tilhoerende-klasser.png)
-
-Figur: 4
+![Noark5 elementlister - (diagram) Diagrammet viser oversikt over alle klasser og hvor de er definert.](./media/uml-pakker-og-tilhoerende-klasser.png)
 
 ### Arkivstruktur 
 
 Basis skjema for arkivstruktur og indre kjerne
 
-#### Arkivenheter - (diagram)
+![Arkivenheter - (diagram)](./media/uml-arkivstruktur-arkivenhet-som-basis-klasse.png)
 
-![](./media/uml-arkivstruktur-arkivenhet-som-basis-klasse.png)
+![BevaringOgKassasjon - (diagram)](./media/uml-arkivenheter-som-har-noe-med-bevaring-og-kassasjon-aa-gjoere.png)
 
-Figur: 5
+![Hovedmodell - (diagram)](./media/uml-arkivstruktur-forklart-som-hovedmodell.png)
 
-#### BevaringOgKassasjon - (diagram)
+![Forenklet struktur - (diagram)](./media/uml-arkivstruktur-forenklet-modell.png)
 
-![](./media/uml-arkivenheter-som-har-noe-med-bevaring-og-kassasjon-aa-gjoere.png)
+![Arkiv og arkivdel - (diagram)](./media/uml-arkivstruktur-arkiv-og-arkivdel.png)
 
-Figur: 6
+![Mappestrukturen - (diagram)](./media/uml-arkivstruktur-mappe-til-saksmappe.png)
 
-#### Hovedmodell - (diagram)
+![Mappe - (diagram)](./media/uml-arkivstruktur-mappe.png)
 
-![](./media/uml-arkivstruktur-forklart-som-hovedmodell.png)
-
-Figur: 7
-
-#### Forenklet struktur - (diagram)
-
-![](./media/uml-arkivstruktur-forenklet-modell.png)
-
-Figur: 8
-
-#### Arkiv og arkivdel - (diagram)
-
-![](./media/uml-arkivstruktur-arkiv-og-arkivdel.png)
-
-Figur: 9
-
-#### Mappestrukturen - (diagram)
-
-![](./media/uml-arkivstruktur-mappe-til-saksmappe.png)
-
-Figur: 10
-
-#### Mappe - (diagram)
-
-![](./media/uml-arkivstruktur-mappe.png)
-
-Figur: 11
-
-#### Klassifikasjonssystem - (diagram)
-
-![](./media/uml-arkivstruktur-klassifikasjon.png)
-
-Figur: 12
-
-#### Registrering - (diagram)
+![Klassifikasjonssystem - (diagram)](./media/uml-arkivstruktur-klassifikasjon.png)
 
 I fysiske sakarkiver har det vært vanlig å legge dokumenter som ikke
 er journalføringspliktige - men som likevel er arkivpliktige (ikke
@@ -119,47 +69,19 @@ registreringstypene.  Metadata for registrering er derfor
 obligatorisk, selv om det i selve løsningen ikke er implementert noen
 funksjon for "arkivering uten journalføring".
 
-![](./media/uml-arkivstruktur-registrering-til-basisregistrering-til-journalpost.png)
+![Registrering - (diagram)](./media/uml-arkivstruktur-registrering-til-basisregistrering-til-journalpost.png)
 
-Figur: 13
+![Merknad - (diagram)](./media/uml-arkivstruktur-merknad.png)
 
-#### Merknad - (diagram)
+![Dokumentbeskrivelse - (diagram)](./media/uml-arkivstruktur-dokumentbeskrivelse-og-dokumentobjekt.png)
 
-![](./media/uml-arkivstruktur-merknad.png)
+![Arkivstruktur med attributter  - (diagram)](./media/uml-arkivstruktur-attributter.png)
 
-Figur: 14
+![Kryssreferanse - (diagram)](./media/uml-arkivstruktur-kryssreferanse.png)
 
-#### Dokumentbeskrivelse - (diagram)
+![Arkivstruktur alternativ - (diagram) henter korrespondansepart objekt](./media/uml-arkivstruktur-omfattende-forklart.png)
 
-![](./media/uml-arkivstruktur-dokumentbeskrivelse-og-dokumentobjekt.png)
-
-Figur: 15
-
-#### Arkivstruktur med attributter  - (diagram)
-
-![](./media/uml-arkivstruktur-attributter.png)
-
-Figur: 16
-
-#### Kryssreferanse - (diagram)
-
-![](./media/uml-arkivstruktur-kryssreferanse.png)
-
-Figur: 17
-
-#### Arkivstruktur alternativ - (diagram)
-
-henter korrespondansepart objekt
-
-![](./media/uml-arkivstruktur-omfattende-forklart.png)
-
-Figur: 18
-
-#### Skjerming - (diagram)
-
-![](./media/uml-arkivstruktur-skjerming.png)
-
-Figur: 19
+![Skjerming - (diagram)](./media/uml-arkivstruktur-skjerming.png)
 
 #### Arkiv
 
@@ -1440,11 +1362,7 @@ Table: Restriksjoner
 
 #### NasjonaleIdentifikatorer 
 
-##### Nasjonale identifikatorer - (diagram)
-
-![](./media/uml-bruken-av-nasjonalidentifikator.png)
-
-Figur: 20
+![Nasjonale identifikatorer - (diagram)](./media/uml-bruken-av-nasjonalidentifikator.png)
 
 ##### Bygning
 
@@ -1632,17 +1550,9 @@ Table: Attributter
 
 Felles skjema for alle kodelister og felles typer
 
-#### Kodelister - (diagram)
+![Kodelister - (diagram)](./media/uml-kodelister-entiter.png)
 
-![](./media/uml-kodelister-entiter.png)
-
-Figur: 21
-
-#### Metadata - (diagram)
-
-![](./media/uml-metadata-entitet.png)
-
-Figur: 22
+![Metadata - (diagram)](./media/uml-metadata-entitet.png)
 
 #### Arkivdelstatus
 
@@ -2623,59 +2533,23 @@ Table: Attributter
 
 Utvidelse for sakarkiv metadata
 
-#### Sakarkiv - (diagram)
+![Sakarkiv - (diagram)](./media/uml-sakarkiv-entiteter.png)
 
-![](./media/uml-sakarkiv-entiteter.png)
+![Sakarkiv kun - (diagram)](./media/uml-sakarkiv-entiteter-forenklet.png)
 
-Figur: 23
+![Saksbehandling - (diagram)](./media/uml-klasse-saksbehandling.png)
 
-#### Sakarkiv kun - (diagram)
+![Avskrivning - (diagram)](./media/uml-klasse-avskrivning.png)
 
-![](./media/uml-sakarkiv-entiteter-forenklet.png)
+![Person og organisasjonsdata - (diagram)](./media/uml-klasse-person-og-organisasjonsdata.png)
 
-Figur: 24
+![Hovedmodell - (diagram)](./media/uml-hovedmodell-saksbehandling.png)
 
-#### Saksbehandling - (diagram)
+![Saksmappe - (diagram)](./media/uml-saksmappe.png)
 
-![](./media/uml-klasse-saksbehandling.png)
+![Journalpost - (diagram)](./media/uml-journalpost.png)
 
-Figur: 25
-
-#### Avskrivning - (diagram)
-
-![](./media/uml-klasse-avskrivning.png)
-
-Figur: 26
-
-#### Person og organisasjonsdata - (diagram)
-
-![](./media/uml-klasse-person-og-organisasjonsdata.png)
-
-Figur: 27
-
-#### Hovedmodell - (diagram)
-
-![](./media/uml-hovedmodell-saksbehandling.png)
-
-Figur: 28
-
-#### Saksmappe - (diagram)
-
-![](./media/uml-saksmappe.png)
-
-Figur: 29
-
-#### Journalpost - (diagram)
-
-![](./media/uml-journalpost.png)
-
-Figur: 30
-
-#### Elektronisk signatur - (diagram)
-
-![](./media/uml-elektronisk-signatur.png)
-
-Figur: 31
+![Elektronisk signatur - (diagram)](./media/uml-elektronisk-signatur.png)
 
 #### Avskrivning
 
@@ -3354,11 +3228,7 @@ kontroll på arkivdokumentene og hvilke formater disse er lagret i. Det
 vil også si å kunne implementere vedtatte regler for når konvertering
 skal skje.
 
-#### Admin - (diagram)
-
-![](./media/uml-administrasjon.png)
-
-Figur: 32
+![Admin - (diagram)](./media/uml-administrasjon.png)
 
 #### AdministrativEnhet
 
@@ -3495,11 +3365,7 @@ Table: Attributter
 
 Skjema for logging og sporing
 
-#### LoggingOgSporing - (diagram)
-
-![](./media/uml-endringslogg.png)
-
-Figur: 33
+![LoggingOgSporing - (diagram)](./media/uml-endringslogg.png)
 
 #### Endringslogg
 
