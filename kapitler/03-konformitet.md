@@ -1,5 +1,7 @@
 # Konformitet
 
+![](./media/logo-noark5-kjerne.png)
+
 Bakgrunnen for konformitetsnivåene er behovet for å kunne gruppere krav
 i NOARK standarden med aktuell modularitet i system som skal anskaffes.
 Det vil også gjøre det enklere for leverandører å få godkjenning for
@@ -15,8 +17,6 @@ De grunnleggende krav er lagt i basiskrav og arkivstruktur og må støttes
 av alle kjerner. Utvidelser skjer med egne moduler som er delt mellom
 obligatoriske og valgfrie krav. Valgfrie krav må spesifiseres
 særskilt.
-
-![](./media/logo-noark5-kjerne.png)
 
 Konformitetsnivåer er:
 
