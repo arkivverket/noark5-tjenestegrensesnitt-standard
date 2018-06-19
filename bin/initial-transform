@@ -19,9 +19,9 @@ docx2md() {
 transform_1_0_beta() {
     docx2md \
 	arkiv/2016-10-17-NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.docx \
-	NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md gfm
+	arkiv/NOARK5v4_tjenestegrensesnitt_1.0_beta_utensporing.md gfm
 
-    (cd hele/media; md5sum *) > image-1.0beta.md5
+    (cd hele/media; md5sum *) > arkiv/image-1.0beta.md5
     for f in hele/media/*; do
 	mv $f media/
     done
@@ -102,9 +102,9 @@ image54.emf:uml-endringslogg.emf
 transform_1_1() {
     docx2md \
 	arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_1.1.docx \
-	NOARK5v4_tjenestegrensesnitt_1.1.md gfm
+	arkiv/NOARK5v4_tjenestegrensesnitt_1.1.md gfm
 
-    (cd hele/media; md5sum *) > image-1.1.md5
+    (cd hele/media; md5sum *) > arkiv/image-1.1.md5
     for f in hele/media/*; do
 	mv $f media/
     done
@@ -186,9 +186,9 @@ image84.emf:uml-endringslogg.emf
 transform_1_1_kap6() {
     docx2md \
 	arkiv/2018-06-06-NOARK5v4_tjenestegrensesnitt_Kapittel-6.docx \
-	NOARK5v4_tjenestegrensesnitt_Kapittel-6.md gfm
+	arkiv/NOARK5v4_tjenestegrensesnitt_Kapittel-6.md gfm
 
-    (cd hele/media; md5sum *) > image-1.1-kap6.md5
+    (cd hele/media; md5sum *) > arkiv/image-1.1-kap6.md5
     for f in hele/media/*; do
 	mv $f media/kap6-$(basename $f)
     done
