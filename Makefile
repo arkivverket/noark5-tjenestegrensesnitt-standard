@@ -3,6 +3,8 @@
 IMG_EMF := $(wildcard media/*.emf)
 IMG_PNG := $(IMG_EMF:.emf=.png)
 
+PANDOC_TYPE = gfm
+
 PDF = \
 	NOARK5v4_tjenestegrensesnitt_1.1.pdf \
 	NOARK5v4_tjenestegrensesnitt_Kapittel-6.pdf
@@ -17,7 +19,7 @@ pdf:  $(IMG_PNG) $(PDF)
 $(PDF):
 
 .md.pdf:
-	pandoc -f gfm -t latex $^ -o $@
+	pandoc -f $(PANDOC_TYPE) -t latex $^ -o $@
 
 images: $(IMG_PNG)
 
@@ -37,7 +39,7 @@ docbook: kapitler/*.md
 	[ -h docbook/media ] || ln -s ../media docbook
 	for m in kapitler/*.md; do \
 	    pandoc \
-		--top-level-division=chapter -f gfm \
+		--top-level-division=chapter -f $(PANDOC_TYPE) \
 		-t docbook4 $$m \
 		-o docbook/$$(basename $$m .md).xml; \
 	done
