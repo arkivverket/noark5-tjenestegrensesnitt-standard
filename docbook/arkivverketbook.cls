@@ -40,3 +40,8 @@
 % elements. We thought that looked sillier than having pages be
 % different lengths, so we used the raggedbottom command.
 \raggedbottom
+
+% Use space to separate paragraphs, instead of indenting the first
+% line of the paragraph.
+\setlength{\parindent}{0cm} \hangindent=\parindent
+\setlength{\parskip}{2ex}
