@@ -134,7 +134,7 @@ kapittel 7 sammen med beskrivelse av klasser.
 
 | Relasjonsnøkkel (rel)                                  | Beskrivelse                                                                      |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------- |
-| [self](http://rel.kxml.no/noark5/v4/api/arkivstruktur) | Brukes for å identifisere en ressurs, og kan brukes til oppdatering og sletting. |
+| self                                                   | Brukes for å identifisere en ressurs, og kan brukes til oppdatering og sletting. |
 | next                                                   | Brukes for å angi neste side ved serverstyrt resultatoppdeling                   |
 
 Ressurser bør kun gjøres tilgjengelig i API når pålogget bruker har
