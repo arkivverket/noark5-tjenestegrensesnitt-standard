@@ -3,7 +3,7 @@
 IMG_EMF := $(wildcard media/*.emf)
 IMG_PNG := $(IMG_EMF:.emf=.png)
 
-PANDOC_TYPE = gfm
+PANDOC_TYPE = markdown_github+table_captions+auto_identifiers
 
 PDF = \
 	NOARK5v4_tjenestegrensesnitt_1.1.pdf \

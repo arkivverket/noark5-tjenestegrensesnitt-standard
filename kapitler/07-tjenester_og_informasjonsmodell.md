@@ -183,7 +183,7 @@ nedenfor. Et arkiv skal inneholde en eller flere arkivdeler. Dersom
 arkivet består av underarkiver, skal arkivdel være knyttet til det
 laveste nivået av disse.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
 | ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
@@ -193,7 +193,7 @@ laveste nivået av disse.
 | **Aggregation** (Bi-Directional)          | arkivdel 0..* Arkivdel       | arkiv 1 Arkiv    |             |
 | **Aggregation** (Destination → Source)    | underarkiv 0..* Arkiv        | Arkiv            |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                      |
 | --------- | -------------------------------------------------------------- |
@@ -208,7 +208,7 @@ laveste nivået av disse.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-arkivdel/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-arkiv/       |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**            | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |---------------------|---------------|---------------|-----------|-----------|
@@ -221,7 +221,7 @@ laveste nivået av disse.
 | avsluttetAv         | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen) M603 | \[0..1\] | string |
 | referanseAvsluttetAv| referanse til Bruker sin systemID | \[0..1\] | SystemID |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**            | **Merknad**   | 
 |---------------------|---------------|
@@ -315,7 +315,7 @@ registreringene og dokumentbeskrivelsene vil indirekte også tilhøre
 arkivdelen som er utgangspunktet for den hierarkiske arkivstrukturen,
 men arv herfra blir overstyrt.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                              | **Kilde**                                                | **Mål**                | **Merknad** |
 | ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -326,7 +326,7 @@ men arv herfra blir overstyrt.
 | **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | arkivdel 0..1 Arkivdel |             |
 | **Aggregation** (Destination → Source)     | sekundærklassifikasjonssystem 0..* Klassifikasjonssystem | Arkivdel               |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
@@ -344,7 +344,7 @@ men arv herfra blir overstyrt.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/arkivdelstatus/                |
 | REST\_REL | self                                                                     |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------------------|---------------|---------------|-----------|-----------|
@@ -366,10 +366,7 @@ men arv herfra blir overstyrt.
 | skjerming             |           | \[0..1\] | Skjerming        |
 | gradering             |           | \[0..1\] | Gradering        |
 
-
-
-
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**            | **Merknad**   | 
 |---------------------|---------------|
@@ -423,7 +420,7 @@ på tvers av alle systemer organet benytter. Også arkivenheter som
 dupliseres i et arkivuttrekk, skal identifiseres entydig, slik at
 identiske arkivenheter har ulik systemID.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -437,7 +434,7 @@ identiske arkivenheter har ulik systemID.
 | **Generalization** (Source → Destination)  | Registrering                                             | Arkivenhet             |             |
 | **Generalization** (Source → Destination)  | Dokumentbeskrivelse                                      | Arkivenhet             |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
@@ -445,7 +442,7 @@ identiske arkivenheter har ulik systemID.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-hendelseslogg/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/logg/             |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**             | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |----------------------|---------------|---------------|-----------|-----------|
@@ -457,7 +454,7 @@ identiske arkivenheter har ulik systemID.
 | referanseOppdatertAv | Definisjon: SystemID på person som oppdaterte arkivenheten. Kilde: Registreres automatisk av systemet ved oppdatering av enheten | \[0..1\] | SystemID |
 | referanseOpprettetAv | Definisjon: SystemID på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten | \[0..1\] | SystemID |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -482,14 +479,14 @@ I en Noark 5-løsning skal det altså være mulig å knytte en eller flere
 arkivskapere til ett arkiv.  Informasjon om arkivskapere er
 obligatorisk i arkivuttrekk.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Aggregation** (Bi-Directional)           | arkivskaper 1..* Arkivskaper                             | arkiv 0..* Arkiv       |             |
 | **Generalization** (Source → Destination)  | Arkivskaper                                              | Arkivenhet             |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                      |
 | --------- | -------------------------------------------------------------- |
@@ -499,7 +496,7 @@ obligatorisk i arkivuttrekk.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-arkiv/       |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/arkiv/          |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -507,7 +504,7 @@ obligatorisk i arkivuttrekk.
 | arkivskaperNavn | Definisjon: Navn på organisasjonen som har skapt arkivet . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentarer: (ingen). M023 | \[1..1\] | string | 
 | beskrivelse | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | string |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -524,7 +521,7 @@ andre metadata som er obligatoriske i alle typer arkivsystemer. En
 basisregistrering kan danne utgangspunkt for andre registreringstyper
 for spesialiserte fagsystemer
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -534,7 +531,7 @@ for spesialiserte fagsystemer
 | **Generalization** (Source → Destination)  | Journalpost                                              | Basisregistrering      |             |
 | **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Basisregistrering      |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                            |
 | --------- | -------------------------------------------------------------------- |
@@ -547,7 +544,7 @@ for spesialiserte fagsystemer
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/basisregistrering/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/kryssreferanse/       |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                      | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-------------------------------|---------------|---------------|-----------|-----------|
@@ -561,7 +558,7 @@ for spesialiserte fagsystemer
 | oppbevaringssted              | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument. M301 | \[0..\*\] | | string | 
 | virksomhetsspesifikkeMetadata | |  \[0..1\] | | any |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -582,7 +579,7 @@ begrepet enkeltdokument. En registrering som dokumenterer en
 transaksjon, vil vanligvis bestå av bare ett enkeltdokument.
 Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -592,7 +589,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 | **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Dokumentbeskrivelse    |             |
 | **Aggregation** (Bi-Directional)           | dokumentobjekt 0..* Dokumentobjekt                       | dokumentbeskrivelse 1 Dokumentbeskrivelse | |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                              |
 | --------- | ---------------------------------------------------------------------- |
@@ -610,7 +607,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-registrering/        |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/merknad/                |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -634,7 +631,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 | elektroniskSignatur           |  | \[0..1\] |         | ElektroniskSignatur |
 | virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen).Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -677,7 +674,7 @@ kan være offentlig tilgjengelig. Dokumentobjektet inneholder mer
 tekniske metadata enn de andre arkivenhetene, bl.a. sjekksummen til
 bytesekvensen som representerer dokumentet.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -685,7 +682,7 @@ bytesekvensen som representerer dokumentet.
 | **Aggregation** (Destination → Source)     | konvertering 0..* Konvertering                           | Dokumentobjekt         |             |
 
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                              |
 | --------- | ---------------------------------------------------------------------- |
@@ -700,7 +697,7 @@ bytesekvensen som representerer dokumentet.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/konvertering/           |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil/                    |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**             | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |----------------------|---------------|---------------|-----------|-----------|
@@ -719,7 +716,7 @@ bytesekvensen som representerer dokumentet.
 | filstørrelse         | Definisjon: Størrelsen på fila i antall bytes oppgitt med desimaltall . Kilde: Registreres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M707 | \[0..1\] | string | 
 | elektroniskSignatur  |              | \[0..1\]       |           | ElektroniskSignatur |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -748,7 +745,7 @@ bytesekvensen som representerer dokumentet.
 
 *Arver:*
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                     |
 | --------- | ----------------------------------------------------------------------------- |
@@ -758,7 +755,7 @@ bytesekvensen som representerer dokumentet.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/elektronisksignatur/           |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/elektronisksignaturverifisert/      |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -768,7 +765,7 @@ bytesekvensen som representerer dokumentet.
 | verifisertAv                      | Definisjon: Navn på person som har verifisert en elektronisk signatur. Kilde: Registreres automatisk når verifisering utføres. Kommentarer: (ingen). M623 | \[1..1\] | | string | 
 | referanseVerifisertAv             | | \[0..1\] | | SystemID |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                             | **Merknad**                     |
 | ------------------------------------ | ------------------------------- |
@@ -785,7 +782,7 @@ Metadata for gradering skal grupperes inn i metadata for mappe,
 registrering og dokumentbeskrivelse. Gradering er valgfritt, og kan
 forekomme en gang
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -803,14 +800,14 @@ forekomme en gang
 
 *Arver:* ***Endringslogg***
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Aggregation** (Destination → Source)     | logg 0..* Hendelseslogg                                  | 0..1 Arkivenhet        |             |
 | **Generalization** (Source → Destination)  | Hendelseslogg                                            | Endringslogg           |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
@@ -820,7 +817,7 @@ forekomme en gang
 | REST\_REL | self                                                             |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/hendelseslogg/    |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type**     |
 | ---------------- | ----------- | ------------ | -------- | ------------ |
@@ -860,7 +857,7 @@ om kassasjon til arkivenheter hvor alle tilordnede dokumenter skal
 bevares. Kassasjon kan altså være knyttet en gang til arkivdel,
 klasse, mappe, registrering og dokumentbeskrivelse.
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -892,7 +889,7 @@ eller arkivkode i Noark-4. Identifikasjoner fra overordnede klasser skal
 arves nedover i hierarkiet, slik at det er lett å si hvilket nivå en
 befinner seg på.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -905,7 +902,7 @@ befinner seg på.
 | **Association** (Source → Destination)     | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
 | **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | klasse 0..1 Klasse     |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
@@ -922,7 +919,7 @@ befinner seg på.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-registrering/          |
 | REST\_REL | self                                                                     |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------------------|---------------|---------------|-----------|-----------|
@@ -936,7 +933,7 @@ befinner seg på.
 | skjerming             |               | \[0..1\]      |           | Skjerming |
 | kassasjon             |               | \[0..1\]      |           | Kassasjon |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -969,7 +966,7 @@ gjentar seg, tilhører den en prosess. Alle arkivdokumenter som
 produseres når en aktivitet utføres, skal normalt tilhøre samme
 (saks)mappe.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                            | **Kilde**                                                | **Mål**                | **Merknad** |
 | --------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -978,7 +975,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 | **Aggregation** (Destination → Source)    | sekundærklassifikasjonssystem 0..* Klassifikasjonssystem | Arkivdel               |             |
 | **Aggregation** (Bi-Directional)          | klasse 0..* Klasse                                       | klassifikasjonssystem 0..1 Klassifikasjonssystem  | |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                         |
 | --------- | --------------------------------------------------------------------------------- |
@@ -993,7 +990,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/klassifikasjonssystem/             |
 | REST\_REL | self                                                                              |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -1004,7 +1001,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 | avsluttetAv          | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M603 | \[0..1\] | | string | 
 | referanseAvsluttetAv |    | \[0..1\]      |           | SystemID |
 
-##### Restriksjoner
+Table: Restriksjoner
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
 | Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt| | 
@@ -1022,13 +1019,13 @@ mappe (jf. NOARK 5 v3.1 krav 6.1.11). Systemet skal logge alle
 konverteringer, og informasjon om dette skal tas med ved
 deponering/avlevering.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                         | **Kilde**                      | **Mål**        | **Merknad** |
 | ------------------------------------ | ------------------------------ | -------------- | ----------- |
 | **Aggregation** (Destination → Source) | konvertering 0..* Konvertering | Dokumentobjekt |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                       |
 | --------- | --------------------------------------------------------------- |
@@ -1036,7 +1033,7 @@ deponering/avlevering.
 | REST\_REL | self                                                            |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-konvertering/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**               | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |------------------------|---------------|---------------|-----------|-----------|
@@ -1048,7 +1045,7 @@ deponering/avlevering.
 | konverteringsverktøy   | Definisjon: Navn på det IT-verktøyet som ble brukt til å foreta konverteringen . Kilde: (ingen). Kommentarer: (ingen). M714 | \[0..1\] | | string | 
 | konverteringskommentar | Definisjon: Kommentarer til konverteringen . Kilde: (ingen).Kommentarer: (ingen). M715 | \[0..1\] | | string |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                  | **Merknad** |
 | ----------------------------------------- | ----------- |
@@ -1077,7 +1074,7 @@ kryssreferanser knyttes til Mappe og Basisregistrering, vil det si at
 Referanser også knyttes til alle utvidelsene (spesialiseringer) under
 disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                     | **Kilde**                          | **Mål**                             | **Merknad** |
 | -------------------------------- | ---------------------------------- | ----------------------------------- | ----------- |
@@ -1085,7 +1082,7 @@ disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 | **Association** (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | klasse 0..1 Klasse                  |             |
 | **Association** (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | mappe 0..1 Mappe                    |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                      |
 | --------- | -------------------------------------------------------------- |
@@ -1095,7 +1092,7 @@ disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/registrering/   |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/klasse/         |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                     | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------- | ----------- | ------------ | -------- | -------- |
@@ -1144,7 +1141,7 @@ mal som i tidligere versjoner av Noark-standarden - dvs. en kombinasjon
 av årstallet da mappen ble opprettet og et fortløpende seksjonsnummer
 innenfor året, f.eks. 2011/3869.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -1160,7 +1157,7 @@ innenfor året, f.eks. 2011/3869.
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | mappe 0..1 Mappe       |             |
 | **Aggregation** (Destination → Source)     | undermappe 0..* Mappe                                    | Mappe                  |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
@@ -1183,7 +1180,7 @@ innenfor året, f.eks. 2011/3869.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/undermappe/               |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/nasjonaleidentifikator/   |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -1204,7 +1201,7 @@ innenfor året, f.eks. 2011/3869.
 | referanseForelderMappe        | | \[0..1\] |          | SystemID |
 | virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen). Kommentar: (ingen)  M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -1242,7 +1239,7 @@ for å dokumentere spesielle forhold rundt saksbehandlingen og
 arkivering av dokumenter, og denne informasjonen skal tas med i
 arkivuttrekket.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -1250,7 +1247,7 @@ arkivuttrekket.
 | **Association** (Destination → Source)   | merknad 0..* Merknad                                     | Basisregistrering      |             |
 | **Association** (Destination → Source)   | merknad 0..* Merknad                                     | Dokumentbeskrivelse    |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
@@ -1259,7 +1256,7 @@ arkivuttrekket.
 | REST\_REL | self                                                       |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/merknadstype/    |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                     | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |------------------------------|---------------|---------------|-----------|-----------|
@@ -1270,7 +1267,7 @@ arkivuttrekket.
 | merknadRegistrertAv          | Definisjon: Navn på person som har registrert merknaden . Kilde: Registreres automatisk av systemet. Kommentarer: (ingen). M612 | \[0..1\] | | string | 
 | referanseMerknadRegistrertAv | | \[0..1\] | | SystemID |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                  | **Merknad** |
 | ----------------------------------------- | ----------- |
@@ -1288,7 +1285,7 @@ En registrering inneholder bare de metadata som er nødvendig dersom
 dokumentet arkiveres uten journalføring. Dette kalles også forenklet
 registrering.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -1300,7 +1297,7 @@ registrering.
 | **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Registrering           |             |
 | **Generalization** (Source → Destination)  | Basisregistrering                                        |Registrering            |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
@@ -1318,7 +1315,7 @@ registrering.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-nasjonalidentifikator/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/registrering/             |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -1330,7 +1327,7 @@ registrering.
 | gradering           |     | \[0..1\] | | Gradering |
 | referanseArkivdel   |     | \[0..1\] | | SystemID |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -1355,7 +1352,7 @@ enkeltdokumenter. Skjermingen trer i kraft når en tilgangskode påføres
 den enkelte mappe, registrering eller det enkelte dokument. (Se NOARK
 5 v3.1 eget kapittel: 6.6.1 Skjerming)
 
-##### Attributter
+Table: Attributter
 
 | **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------------------|---------------|---------------|-----------|-----------|
@@ -1396,7 +1393,7 @@ Dersom tidligere versjoner er blitt arkivert unødvendig, skal det være
 mulig å rydde opp på en effektiv måte. Slik opprydding skal alltid
 skje før det produseres et arkivuttrekk.
 
-##### Attributter
+Table: Attributter
 
 | **Navn**           | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |--------------------|---------------|---------------|-----------|-----------|
@@ -1405,7 +1402,7 @@ skje før det produseres et arkivuttrekk.
 | slettetAv          | Definisjon: Navn på person som har utført en kontrollert kassasjon av dokumenter, eller sletting av versjoner, formater og varianter. Kilde: Registreres automatisk når et dokument blir slettet. Kommentarer: Sletting må ikke blandes sammen med kassasjon. M614 | \[1..1\] | | string | 
 | referanseSlettetAv | | \[1..1\] | | SystemID |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**          | **Merknad**                  |
 | ----------------- | ---------------------------- |
@@ -1426,7 +1423,7 @@ Dersom en hel
 
 arkivdel er kassert, skal metadata grupperes inn i arkivdel.
 
-##### Attributter
+Table: Attributter
 
 | **Navn**           | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |--------------------|---------------|---------------|-----------|-----------|
@@ -1434,7 +1431,7 @@ arkivdel er kassert, skal metadata grupperes inn i arkivdel.
 | kassertAv          | Definisjon: Navn på person som har utført kassasjonen . Kilde: Registreres automatisk når kassasjon utføres. Kommentarer: (ingen). M631 | \[1..1\] | | string | 
 | referanseKassertAv |               | \[1..1\ 1     |           | SystemID  |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**          | **Merknad**                         |
 | ----------------- | ----------------------------------- |
@@ -1455,13 +1452,13 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-###### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | Bygning                                                  | Nasjonalidentifikator  |             |
 
-###### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
@@ -1469,7 +1466,7 @@ Figur: 20
 | REST\_REL | self                                                       |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-bygning/ |
 
-###### Attributter
+Table: Attributter
 
 | **Navn**              | **Merknad** | **Multipl.** | **Kode** | **Type**  |
 | --------------------- | ----------- | ------------ | -------- | --------- |
@@ -1481,13 +1478,13 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-###### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | Enhetsidentifikator                                      | Nasjonalidentifikator  |             |
 
-###### Attributter
+Table: Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
@@ -1499,13 +1496,13 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-###### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | Matrikkel                                                | Nasjonalidentifikator  |             |
 
-###### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                    |
 | --------- | ------------------------------------------------------------ |
@@ -1513,7 +1510,7 @@ Figur: 20
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/matrikkel/    |
 | REST\_REL | self                                                         |
 
-###### Attributter
+Table: Attributter
 
 | **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type**        |
 | ------------------- | ----------- | ------------ | -------- | --------------- |
@@ -1525,7 +1522,7 @@ Figur: 20
 
 *Arver:* 
 
-###### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                              | **Kilde**                                                | **Mål**                | **Merknad** |
 | ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -1538,7 +1535,7 @@ Figur: 20
 | **Generalization** (Source → Destination) | Posisjon                                                 | Nasjonalidentifikator  |             |
 | **Generalization** (Source → Destination) | Personidentifikator                                      | Nasjonalidentifikator  |             |
 
-###### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
@@ -1547,7 +1544,7 @@ Figur: 20
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
 | REST\_REL | self                                                                     |
 
-###### Attributter
+Table: Attributter
 
 | **Navn**        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------- | ----------- | ------------ | -------- | -------- |
@@ -1560,19 +1557,19 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-###### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                               | **Kilde**           | **Mål**               | **Merknad** |
 | ------------------------------------------ | ------------------- | --------------------- | ----------- |
 | **Generalization** (Source → Destination)  | Personidentifikator | Nasjonalidentifikator |             |
 
-###### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag** | **Verdi**                                        |
 | ------- | ------------------------------------------------ |
 | LOV     | https://lovdata.no/dokument/NL/lov/2000-04-14-31 |
 
-###### Attributter
+Table: Attributter
 
 | **Navn**      | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |---------------|---------------|---------------|-----------|-----------|
@@ -1585,13 +1582,13 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-###### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | Plan                                                     | Nasjonalidentifikator  |             |
 
-###### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                               |
 | --------- | ------------------------------------------------------- |
@@ -1599,7 +1596,7 @@ Figur: 20
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/plan/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-plan/ |
 
-###### Attributter
+Table: Attributter
 
 | **Navn**              | **Merknad** | **Multipl.** | **Kode** | **Type**            |
 | --------------------- | ----------- | ------------ | -------- | ------------------- |
@@ -1611,13 +1608,13 @@ Figur: 20
 
 *Arver:* ***Nasjonalidentifikator***
 
-###### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | Posisjon                                                 | Nasjonalidentifikator  |             |
 
-###### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                   |
 | --------- | ----------------------------------------------------------- |
@@ -1625,7 +1622,7 @@ Figur: 20
 | REST\_REL | self                                                        |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/posisjon/    |
 
-###### Attributter
+Table: Attributter
 
 | **Navn**       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------- | ----------- | ------------ | -------- | -------- |
@@ -1659,13 +1656,13 @@ Status til den arkivperioden som arkivdelen omfatter
 
 M051
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                 |
 | -------- | --------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/arkivdelstatus/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
@@ -1686,13 +1683,13 @@ Status til arkivet
 
 M050
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                              |
 | -------- | ------------------------------------------------------ |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/arkivstatus/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
@@ -1711,13 +1708,13 @@ Måten en journalpost har blitt avskrevet på
 
 M619
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                    |
 | -------- | ------------------------------------------------------------ |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/avskrivningsmaate/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------- | ----------- | ------------ | -------- | -------- |
@@ -1741,13 +1738,13 @@ dokumenter
 
 M300
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                 |
 | -------- | --------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/dokumentmedium/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -1767,13 +1764,13 @@ Definisjon: Status til dokumentet
 
 M054
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                 |
 | -------- | --------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/dokumentstatus/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                           | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -1792,13 +1789,13 @@ Definisjon: Navn på type dokument
 
 M083
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                               |
 | -------- | ------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/dokumenttype/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------- | ----------- | ------------ | -------- | -------- |
@@ -1825,13 +1822,13 @@ Kommentar: (ingen)
 M507
 elektroniskSignaturSikkerhetsnivåå
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                                     |
 | -------- | ----------------------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/elektronisksignatursikkerhetsnivaa/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -1854,13 +1851,13 @@ verifisert.
 
 M508
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                                |
 | -------- | ------------------------------------------------------------------------ |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/elektronisksignaturverifisert/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------ | ----------- | ------------ | -------- | -------- |
@@ -1875,13 +1872,13 @@ M508
 
 Åpen kodeliste
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                             |
 | -------- | ----------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/flytstatus/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -1897,13 +1894,13 @@ M508
 
 Åpen kodeliste
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                         |
 | -------- | ------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/format/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                 | **Merknad**                                                                                                                                                              | **Multipl.** | **Kode**  | **Type** |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------- | -------- |
@@ -1924,13 +1921,13 @@ M508
 
 Åpen kodeliste
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                 |
 | -------- | --------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/graderingskode/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                 | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -1947,13 +1944,13 @@ M508
 
 *Arver:* 
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                               |
 | -------- | ------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/hendelsetype/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
@@ -1975,13 +1972,13 @@ journalpost
 
 M082
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                  |
 | -------- | ---------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/journalposttype/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -2002,13 +1999,13 @@ under behandling eller endelig arkivert.
 
 M053
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/journalstatus/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -2036,13 +2033,13 @@ slutt.
 
 M450
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                   |
 | -------- | ----------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/kassasjonsvedtak/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
@@ -2063,13 +2060,13 @@ klassifikasjonssystem
 
 M086
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                      |
 | -------- | -------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/klassifikasjonstype/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                               | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -2095,13 +2092,13 @@ korrespondansepart
 
 M087
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                         |
 | -------- | ----------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/korrespondanseparttype/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
@@ -2122,7 +2119,7 @@ M087
 Landkoder ihht ISO 3166
 https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                       |
 | -------- | ----------------------------------------------- |
@@ -2136,7 +2133,7 @@ https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
 
 Åpen kodeliste
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                            |
 | -------- | ---------------------------------------------------- |
@@ -2155,13 +2152,13 @@ Definisjon: Navn på type merknad
 
 M084
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                               |
 | -------- | ------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/merknadstype/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------ | ----------- | ------------ | -------- | -------- |
@@ -2182,13 +2179,13 @@ Definisjon: Funksjon eller rolle til personen som deltok på møtet
 M373
 moetedeltakerFunksjon
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                        |
 | -------- | ---------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/moetedeltakerfunksjon/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
@@ -2214,13 +2211,13 @@ Kommentar: Valgfrie verdier, eksempler:
 
 M055 moeteregistreringsstatus
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                           |
 | -------- | ------------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/moeteregistreringsstatus/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -2248,13 +2245,13 @@ verdier":
 
 M085 moeteregistreringstype
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                         |
 | -------- | ----------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/moeteregistreringstype/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                | **Merknad**                                                                                                                     | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------- | -------- |
@@ -2281,13 +2278,13 @@ Kommentar: (ingen)
 
 M088 moetesakstype
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/moetesakstype/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -2305,13 +2302,13 @@ M088 moetesakstype
 Postens postnummer liste
 http://adressesok.posten.no/nb/postal\_codes/search
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon** | **Kilde**  | **Mål**       | **Merknad** |
 | ------------ | ---------- | ------------- | ----------- |
 | NoteLink     | Postnummer | \<anonymous\> |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                             |
 | -------- | ----------------------------------------------------- |
@@ -2330,13 +2327,13 @@ foreldet
 
 M056
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                  |
 | -------- | ---------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/presedensstatus/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
@@ -2351,13 +2348,13 @@ M056
 
 Åpen kodeliste
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/sakspartrolle/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
@@ -2379,13 +2376,13 @@ kommet.
 
 M052
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                             |
 | -------- | ----------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/saksstatus/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -2410,13 +2407,13 @@ skjermes.
 
 M503
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                    |
 | -------- | ------------------------------------------------------------ |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/skjermingdokument/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------ | ----------- | ------------ | -------- | -------- |
@@ -2436,13 +2433,13 @@ skjermes.
 
 M502
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                    |
 | -------- | ------------------------------------------------------------ |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/skjermingmetadata/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                                 | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -2471,13 +2468,13 @@ Definisjon: Navn på hvilket objekt som er slettet
 
 M089
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/slettingstype/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -2509,7 +2506,7 @@ knyttet til flere forskjellige registreringer.
 
 M001
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -2526,14 +2523,14 @@ M001
 ny kodeliste jfr NOARK 5 v3.1 krav
 6.6.32
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                   |
 | -------- | ----------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/tilgangskategori/ |
 | NEW      | 5.4.0                                                       |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
@@ -2551,14 +2548,14 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 Åpen kodeliste
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                      |
 | -------- | -------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/tilgangsrestriksjon/ |
 | NEW      | 5.4.0                                                          |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                           | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------------------- | ----------- | ------------ | -------- | -------- |
@@ -2583,13 +2580,13 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 Åpen kodeliste
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                            |
 | -------- | -------------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/tilknyttetregistreringsom/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**          | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------- | ----------- | ------------ | -------- | -------- |
@@ -2608,13 +2605,13 @@ Definisjon: Angivelse av hvilken variant et dokument forekommer i
 
 M700
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/variantformat/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------------------ | ----------- | ------------ | -------- | -------- |
@@ -2696,13 +2693,13 @@ journalpost. Avskrivning er obligatorisk for inngående dokumenter og
 organinterne dokumenter som skal følges opp, og kan forekomme en eller
 flere ganger i en journalpost.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Association** (Source → Destination)   | Journalpost                                              | avskrivning 0..* Avskrivning |       |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                    |
 | --------- | ------------------------------------------------------------ |
@@ -2711,7 +2708,7 @@ flere ganger i en journalpost.
 | REST\_REL | self                                                         |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/avskrivning/       |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -2723,7 +2720,7 @@ flere ganger i en journalpost.
 | referanseAvskrivesAvJournalpost        | Definisjon: Referanse til en eller flere journalposter som avskriver denne journalposten . Kilde: Registreres manuelt eller automatisk ved avskrivning. Kommentar: (ingen). M215 | \[0..1\] | | SystemID |
 | referanseAvskrivesAvKorrespondansepart | angir referanse til hvilken korrespondansepart som har avskrevet journalposten | \[0..1\] | | SystemID |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                               | **Merknad** |
 | -------------------------------------- | ----------- |
@@ -2746,13 +2743,13 @@ ny versjon ved hver (videre)forsendelse. All funksjonalitet for
 korrektur og merknader i tilknyttet tekstbehandlingssystem skal kunne
 brukes på et dokument som er under produksjon.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Association** (Source → Destination)   | Journalpost                                              | dokumentflyt 0..* Dokumentflyt |     |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
@@ -2761,7 +2758,7 @@ brukes på et dokument som er under produksjon.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/dokumentflyt/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-dokumentflyt/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -2775,7 +2772,7 @@ brukes på et dokument som er under produksjon.
 | flytStatus        | Definisjon: Godkjennelse/ikke godkjennelse av dokumentet som er sendt på flyt . Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt. Kommentar: (ingen). M663 flytStatus | \[1..1\] | |FlytStatus|
 | flytMerknad       | Definisjon: Merknad eller kommentar til et dokument som er sendt på flyt . Kilde: Registreres manuelt. Kommentar: (ingen). M664 flytMerknad | \[0..1\] | | string|
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -2791,7 +2788,7 @@ brukes på et dokument som er under produksjon.
 
 *Arver:*
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
@@ -2801,7 +2798,7 @@ brukes på et dokument som er under produksjon.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/land/            |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/postnummer/      |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**          | **Merknad** | **Multipl.** | **Kode** | **Type**   |
 | ----------------- | ----------- | ------------ | -------- | ---------- |
@@ -2844,7 +2841,7 @@ betegnelse på arkivenheter som dokumenter transaksjoner. (Registrering
 er dessuten en dekkende norsk oversettelse av det tilsvarende begrepet
 i MoReq2 som heter Record.)
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -2854,7 +2851,7 @@ i MoReq2 som heter Record.)
 | **Generalization** (Source → Destination) | Journalpost                                              | Basisregistrering       |            |
 | **Association** (Source → Destination)   | Journalpost                                              | korrespondansepart 0..* Korrespondansepart | |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
@@ -2872,7 +2869,7 @@ i MoReq2 som heter Record.)
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/korrespondansepart/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/dokumentflyt/          |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -2894,7 +2891,7 @@ i MoReq2 som heter Record.)
 | journalenhet             | Definisjon: Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter . Kilde: Registreres automatisk på grunnlag av innlogget bruker, kan overstyres manuelt. Kommentar: (ingen). M308 journalenhet | \[0..1\] | | string | 
 | elektroniskSignatur      | | \[0..1\] | | ElektroniskSignatur |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                                      | **Merknad** |
 | ------------------------------------------------------------- | ----------- |
@@ -2921,7 +2918,7 @@ i MoReq2 som heter Record.)
 
 *Arver:*
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
@@ -2929,7 +2926,7 @@ i MoReq2 som heter Record.)
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/kontaktinformasjon/    |
 | REST\_REL | self                                                             |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------- | ----------- | ------------ | -------- | -------- |
@@ -2949,7 +2946,7 @@ ganger i en journalpost.  Ved inngående dokumenter er det obligatorisk
 organinterne dokumenter som skal følges opp, må både avsender(e) og
 mottaker(e) registreres.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -2958,7 +2955,7 @@ mottaker(e) registreres.
 | **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
 | **Association** (Source → Destination)     | Journalpost                                              | korrespondansepart 0..* Korrespondansepart | | 
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                         |
 | --------- | ----------------------------------------------------------------- |
@@ -2966,7 +2963,7 @@ mottaker(e) registreres.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/korrespondanseparttype/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/korrespondansepart/     |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -2974,7 +2971,7 @@ mottaker(e) registreres.
 | korrespondanseparttype        | Definisjon: Type korrespondansepart . Kilde: Registreres automatisk knyttet til funksjonalitet i forbindelse med opprettelse av journalpost, kan også registreres  manuelt. Kommentarer: Korrespondansetype forekommer én gang innenfor objektet korrespondansepart, men denne kan forekomme flere ganger innenfor en journalpost. M087 | \[1..1\] | | Korrespondanseparttype|
 | virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen). Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                              | **Merknad** |
 | ------------------------------------- | ----------- |
@@ -2986,13 +2983,13 @@ mottaker(e) registreres.
 
 *Arver:* ***Korrespondansepart***
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | KorrespondansepartEnhet                                  | Korrespondansepart     |             | 
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                             |
 | --------- | --------------------------------------------------------------------- |
@@ -3001,7 +2998,7 @@ mottaker(e) registreres.
 | REST\_REL | self                                                                  |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-korrespondansepartenhet/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ----------------------- | ----------- | ------------ | -------- | ------------------ |
@@ -3018,13 +3015,13 @@ mottaker(e) registreres.
 
 *Arver:* ***Korrespondansepart***
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                              |
 | --------- | ---------------------------------------------------------------------- |
@@ -3033,7 +3030,7 @@ mottaker(e) registreres.
 | REST\_REL | self                                                                   |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-korrespondansepartintern/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                        | **Merknad**                                   | **Multipl.** | **Kode** | **Type** |
 | ------------------------------- | --------------------------------------------- | ------------ | -------- | -------- |
@@ -3048,13 +3045,13 @@ mottaker(e) registreres.
 
 *Arver:* ***Korrespondansepart***
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | KorrespondansepartPerson                                 | Korrespondansepart     |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                              |
 | --------- | ---------------------------------------------------------------------- |
@@ -3063,7 +3060,7 @@ mottaker(e) registreres.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/korrespondansepartperson/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-korrespondansepartperson/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
@@ -3097,14 +3094,14 @@ inneholder presedensavgjørelser kunne identifiseres.  Hvis
 opplysninger om presedens er registrert, er presedens obligatorisk for
 avlevering.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Association** (Bi-Directional)         | journalpost 0..* Journalpost                             | presedens 0..* Presedens |           |
 | **Association** (Bi-Directional)         | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
@@ -3117,7 +3114,7 @@ avlevering.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/journalpost/     |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-journalpost/  |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -3138,7 +3135,7 @@ avlevering.
 | presedensStatus              | Definisjon: Informasjon om presedensen er gjeldende eller foreldet . Kilde: Registreres manuelt ved foreldelse. Kommentar: (ingen) M056 presedensstatus | \[0..1\] |  | Presedensstatus |
 
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                                                                           | **Merknad** |
 | -------------------------------------------------------------------------------------------------- | ----------- |
@@ -3162,7 +3159,7 @@ egne metadata. En saksmappe er bakoverkompatibel med en sak i Noark-4,
 men har en del nye metadata. For sakarkiver er det obligatorisk å
 bruke en saksmappe.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                              | **Kilde**                                                | **Mål**                | **Merknad** |
 | ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -3171,7 +3168,7 @@ bruke en saksmappe.
 | **Association** (Source → Destination)    | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
 | **Association** (Bi-Directional)          | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                          |
 | --------- | ------------------------------------------------------------------ |
@@ -3186,7 +3183,7 @@ bruke en saksmappe.
 | REST\_REL | self                                                               |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-saksmappe/            |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -3202,7 +3199,7 @@ bruke en saksmappe.
 | utlåntTil              | Definisjon: Navnet på person som har lånt en fysisk saksmappe . Kilde: Registreres manuelt ved utlån. Kommentar: (ingen). M309 utlaantTil | \[0..1\] | | string | 
 | referanseUtlåntTil     | | \[0..1\] | | SystemID |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
@@ -3243,7 +3240,7 @@ saksmappe.  Sakspart er valgfritt, og kan forekomme en eller flere
 ganger i tilknytning til en saksmappe.  Dersom det er mer enn én
 sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
@@ -3251,7 +3248,7 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 | **Association** (Source → Destination)     | Saksmappe                                                | sakspart  0..*  Sakspart |           |
 | **Generalization** (Source → Destination)  | SakspartEnhet                                            | Sakspart               |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                |
 | --------- | -------------------------------------------------------- |
@@ -3260,7 +3257,7 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sakspart/      |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-sakspart/   |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -3268,7 +3265,7 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 | sakspartRolle                 | Definisjon: Angivelse av rollen til saksparten . Kilde: Registreres manuelt eller automatisk fra fagsystem. Kommentarer: (ingen). Betingelser: Her er det mange tenkelige roller avhengig av type sak, f.eks. Klient, Pårørende, Formynder, Advokat. M303 | \[1..1\] | | SakspartRolle |
 | virksomhetsspesifikkeMetadata |  | \[0..1\] | | any |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                              | **Merknad** |
 | ------------------------------------- | ----------- |
@@ -3280,13 +3277,13 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
 *Arver:* ***Sakspart***
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | SakspartEnhet                                            | Sakspart               |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                   |
 | --------- | ----------------------------------------------------------- |
@@ -3295,7 +3292,7 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-sakspartenhet/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sakspartenhet/    |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ----------------------- | ----------- | ------------ | -------- | ------------------ |
@@ -3312,13 +3309,13 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 
 *Arver:* ***Sakspart***
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | SakspartPerson                                           | Sakspart               |             |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                    |
 | --------- | ------------------------------------------------------------ |
@@ -3327,7 +3324,7 @@ sakspart, må metadataene grupperes sammen ved eksport og utveksling.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sakspartperson/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-sakspartperson/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
@@ -3369,13 +3366,13 @@ Figur: 32
 
 *Arver:* 
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Association** (Bi-Directional)         | bruker 0..* Bruker                                       | enhet 0..* AdministrativEnhet |      |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                     |
 | --------- | ------------------------------------------------------------- |
@@ -3385,7 +3382,7 @@ Figur: 32
 | REST\_REL | self                                                          |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/admin/administrativenhet/    |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -3399,7 +3396,7 @@ Figur: 32
 | referanseOverordnetEnhet      | Definisjon: Referanse til enhet som er direkte overordnet denne enheten . Kilde: Registreres manuelt av administrator. Kommentar: (ingen) NB 20150527: attributtnavnet endret fra overordnetEnhet til referanseOverordnetEnhet for å samsvare med M585 referanseOverordnetEnhet | \[0..1\] | |  SystemID |
 | virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen). Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                                                                                                               | **Merknad** |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
@@ -3421,13 +3418,13 @@ arkivkjernen. Fungerer som brukerregister til valg av saksbehandler i
 kjernen og bevarer alle brukere for ettertiden. Opprettes nye av kjernen
 når pålogget bruker ikke finnes fra før.
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Association** (Bi-Directional)         | bruker 0..* Bruker                                       | enhet 0..* AdministrativEnhet |      |
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                     |
 | --------- | ------------------------------------------------------------- |
@@ -3437,7 +3434,7 @@ når pålogget bruker ikke finnes fra før.
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/admin/enhet/                 |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/admin/ny-bruker/             |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
@@ -3449,7 +3446,7 @@ når pålogget bruker ikke finnes fra før.
 | virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen) Kommentar: (ingen).M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 | kortnavn                      | |\[0..1\] |           | string |
 
-##### Restriksjoner
+Table: Restriksjoner
 
 | **Navn**                                                                                     | **Merknad** |
 | -------------------------------------------------------------------------------------------- | ----------- |
@@ -3469,7 +3466,7 @@ når pålogget bruker ikke finnes fra før.
 Styrer tilgang til data i kjernen basert på brukers
 rolletilknytning
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                      |
 | --------- | -------------------------------------------------------------- |
@@ -3480,7 +3477,7 @@ rolletilknytning
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/tilgangskategori/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/admin/rettighet/              |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                | **Merknad**                                           | **Multipl.** | **Kode** | **Type**            |
 | ----------------------- | ----------------------------------------------------- | ------------ | -------- | ------------------- |
@@ -3510,13 +3507,13 @@ Figur: 33
 
 *Arver:* 
 
-##### Relasjoner
+Table: Relasjoner
 
 | **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
 | ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
 | **Generalization** (Source → Destination) | Hendelseslogg                | Endringslogg     |             |     
 
-##### Relasjonsnøkler
+Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                          |
 | --------- | ------------------------------------------------------------------ |
@@ -3524,7 +3521,7 @@ Figur: 33
 | REST\_REL | self                                                               |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/loggingogsporing/ny-endringslogg/ |
 
-##### Attributter
+Table: Attributter
 
 | **Navn**                | **Merknad**                       | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | --------------------------------- | ------------ | -------- | -------- |

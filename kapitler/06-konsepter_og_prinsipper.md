@@ -264,7 +264,7 @@ unntatt offentlighet, skjermet eller gradert så skal ikke uautoriserte
 brukere få tilgang til dette. Dette kan bety at en bruker har lov til å
 registrere et objekt, men ikke rettigheter til å vise dette etterpå.
 
-Resultatkoder ved navigering/søk
+Table: Resultatkoder ved navigering/søk
 
 | Statuskode | Beskrivelse                                   |
 | ---------- | --------------------------------------------- |
@@ -390,7 +390,7 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
 
 Figur 2 respons fra opprett mappe (eksempel avkortet for liste over links)
 
-Resultatkoder ved oppretting av objekt
+Table: Resultatkoder ved oppretting av objekt
 
 | Statuskode | Beskrivelse                                   |
 | ---------- | --------------------------------------------- |
@@ -539,7 +539,7 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
 
 Figur 3 respons fra oppdatering av mappe med graderingsinformasjon (eksempel avkortet ved links liste)
 
-Resultatkoder ved oppdatering av objekt
+Table: Resultatkoder ved oppdatering av objekt
 
 | Statuskode | Beskrivelse                                   |
 | ---------- | --------------------------------------------- |
@@ -594,7 +594,7 @@ Resultatkode 204 – noContent
 
 Her slettes referansen til dokumentbeskrivelse fra registrering.
 
-Resultatkoder ved oppdatering av referanser til objekt
+Table: Resultatkoder ved oppdatering av referanser til objekt
 
 | Statuskode | Beskrivelse                                   |
 | ---------- | --------------------------------------------- |
@@ -686,7 +686,7 @@ rettigheter en bruker har? – Arkivverket må avklare dette
         "graderingsdato": "0001-01-01T00:00:00",
 ```
 
-Resultatkoder ved sletting av objekt
+Table: Resultatkoder ved sletting av objekt
 
 | Statuskode | Beskrivelse                                   |
 | ---------- | --------------------------------------------- |
@@ -806,7 +806,7 @@ starte neste overføring.
 
 Når siste overføring er gjort så returneres statuskode 201 Created.
 
-Resultatkoder for opplasting av filer
+Table: Resultatkoder for opplasting av filer
 
 | Statuskode | Beskrivelse                                   |
 | ---------- | --------------------------------------------- |
