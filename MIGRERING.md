@@ -41,3 +41,33 @@ innholdsfortegnelse, fotnoter, lenker osv.  Nøyaktig prosess kommer
 litt an på hvordan figurene vedlikeholdes og hvor mye spesiell
 formattering vi må ta hensyn til.  Det ser jeg når første omforming er
 gjort.
+
+
+
+
+Bruker av Markdown slik github tolker det gir endel utfordringer:
+
+ - Mangler mulighet for å styre plassering av bilder (f.eks. i høyre
+   marg slik det gjøres i kapittel 3).
+
+ - Mangler mulighet til å ha flere avsnitt i en tabellrute
+   (f.eks. slik det gjøres i kapittel 7, delpunkt 7.1 og de fleste
+   relasjons- og attributt-tabeller).
+
+ - Mangler støtte for understreket tekst (f.eks. slik det brukes i
+   overskrifter og for å markere klikkbare lenker i teksten, se
+   7.2.1.1 fjerde avsnitt og 6.2 tredje avsnitt).
+
+ - Mangler støtte for tabell- og bildetitler.  Har har brukt
+   pandoc-utvidelser som gjør at PDF og HTML-utgave får slike.
+
+En løsning er å gå for et annet oppmerkingsspråk mer egnet for
+PDF-produksjon.  RST kan være et godt alternativ.  Ulempen er at
+dokumentene da ikke vil se like bra ut når de vises frem på
+github.com, og ikke like enkelt kan redigeres direkte via github.com.
+Et dokument som argumenteres for dette valget finnes på
+http://www.zverovich.net/2016/06/16/rst-vs-markdown.html
+
+En annen løsning er å strukturere om teksten slik at disse egenskapene
+ikke brukes i dokumentene.  Vi har gått for denne løsningen i første
+utgave av github-versjonen av spesifikasjonen.
