@@ -14,7 +14,9 @@ images: $(IMG_PNG)
 	inkscape --export-dpi=72 --export-png=$@ $^
 	#cd $(dirname $@); libreoffice --headless --convert-to png $(abspath $^)
 
-# Draft Docbook based PDF building
+# Draft Docbook based PDF building.  Remove colwidth to let the
+# docbook processors calculate columns widths.  Can pandoc be told to
+# not set colwidth?
 docbook: kapitler/*.md
 	[ -h docbook/media ] || ln -s ../media docbook
 	for m in kapitler/*.md; do \
@@ -22,6 +24,7 @@ docbook: kapitler/*.md
 		--top-level-division=chapter -f $(PANDOC_TYPE) \
 		-t docbook4 $$m \
 		-o docbook/$$(basename $$m .md).xml; \
+		sed -i 's/ colwidth="[0-9]*\*"//' $$m ; \
 	done
 DBLATEX_OPTS = \
 	-T simple \
