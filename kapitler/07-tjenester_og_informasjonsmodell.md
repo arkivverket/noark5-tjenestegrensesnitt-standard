@@ -924,6 +924,7 @@ Table: Attributter
 | referanseAvsluttetAv |    | \[0..1\]      |           | SystemID |
 
 Table: Restriksjoner
+
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
 | Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt| | 
