@@ -421,8 +421,7 @@ Content-Type: application/vnd.noark5-v4+json
 
 201 Opprettet
 
-Location
-→
+Location →
 
 http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
@@ -637,7 +636,6 @@ Table: Resultatkoder ved oppdatering av objekt
 | 409        | Conflict – objektet kan være endret av andre  |
 | 500        | InternalServerError – generell feil på server |
 | 501        | NotImplemented - ikke implementert            |
-| 409        | Conflict – objektet kan være endret av andre  |
 
 #### Utvid objekter til andre typer
 
@@ -948,7 +946,7 @@ Content-Length: 111111
 Pdf data
 ```
 
-**Overføre små filer**
+**Overføre store filer**
 
 For store filer (over 150MB) så kan filen overføres i
 bolker. Prosessen for å overføre store filer er inspirert av APIet til
