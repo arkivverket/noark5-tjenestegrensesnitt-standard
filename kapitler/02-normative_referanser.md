@@ -13,4 +13,4 @@ konsortiumet [Object Management Group] (OMG) - http://www.omg.org/spec/UML/
 [Object Management Group]: http://no.wikipedia.org/wiki/Object_Management_Group
 
 Webtjenester med REST/HATEOAS -
-https://tools.ietf.org/html/draft-kelly-json-hal-07
+https://tools.ietf.org/html/draft-kelly-json-hal-08
