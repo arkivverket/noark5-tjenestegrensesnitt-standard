@@ -100,6 +100,9 @@ Arbeidsgruppen har bestått av:
    Ouzounov, Norconsult - Tor Olav Almås, Oppad - Thor Arne Johnsen,
    Software Innovation - Bjørn Tore Eriksen, Visma - Harry Myrene.
  - Trondheim kommune: Jean-Philippe Caquet
+ 
+Denne spesifikasjonen faller inn under unntakene i den norske åndsverkslovens §
+9, og er ikke opphavsrettslig vernet.
 
 ## Endringslogg for dette dokumentet
 
