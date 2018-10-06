@@ -357,7 +357,7 @@ relasjonsnøkkel.
 
 For eksempel kan en opprette mapper på arkivdel, og da vil \_Links under
 en arkivdel inneholde relasjonsnøkkelen
-rel=»http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/»
+rel="http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/"
 om bruker har lov til å opprette mapper på denne arkivdelen. Den
 aktuelle ressurslenke kan være
 http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe .
@@ -519,7 +519,7 @@ hentes fra slik som mappetype og dokumentmedium.
 
 #### Oppdatere objekter (Update)
 
-Alle ressurser kan med sin relasjonslenke rel=»self» og ressurslenke
+Alle ressurser kan med sin relasjonslenke rel="self" og ressurslenke
 (href) benytte denne til oppdatering.
 
 For oppdatering sender klienten en PUT forespørsel med alle data for en
@@ -717,7 +717,7 @@ mappe også inneholder hvilke arkivdel denne skal opprettes på. Egne
 attributter kan for eksempel være referanseForeldremappe for å lage
 undermapper.
 
-Mer generelt kan klienter benytte href for rel=self for aktuelle
+Mer generelt kan klienter benytte href for rel="self" for aktuelle
 objekter sammen med $ref parameter for å slette, endre eller opprette
 referanser mellom objekter.
 
@@ -781,7 +781,7 @@ Table: Resultatkoder ved oppdatering av referanser til objekt
 #### Slette objekter (Delete)
 
 Klienten sender en DELETE forespørsel på aktuell ressurs(url). Alle
-ressurslenker med rel=»self» kan potensielt slettes om bruker har
+ressurslenker med rel="self" kan potensielt slettes om bruker har
 nødvendige rettigheter. Respons gir statuskode 204 om ressursen er
 korrekt slettet.
 
@@ -935,7 +935,7 @@ streames til klient
 **Overføre små filer**
 
 For å overføre en ny fil brukes POST til href til
-rel=http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil med headere for
+rel="http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil" med headere for
 content-type og content-length.
 
 ```
@@ -956,7 +956,7 @@ https://developers.google.com/drive/v3/web/resumable-upload .
 For å starte en opplastingssesjon:
 
 1.  Send en POST til href til
-    rel=http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil
+    rel="http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil"
 
     Headeren Content-Length settes til 0
     
