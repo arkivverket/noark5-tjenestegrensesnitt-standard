@@ -24,7 +24,7 @@ docbook: kapitler/*.md
 		--top-level-division=chapter -f $(PANDOC_TYPE) \
 		-t docbook4 $$m \
 		-o docbook/$$(basename $$m .md).xml; \
-		sed -i 's/ colwidth="[0-9]*\*"//' $$m ; \
+		sed -i 's/ colwidth="[0-9]*\*"//' docbook/$$(basename $$m .md).xml ; \
 	done
 DBLATEX_OPTS = \
 	-T simple \
