@@ -319,9 +319,10 @@ må returnere en next link som gir neste siden.
 Any eller All brukes for å filtrere på navigerbare objekter. Det kan
 være begrensninger på hvor mange nivå/dybde en arkivkjerne støtter.
 
-| localhost:49708/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | -- |
-| localhost:49708/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |    |
+| Eksempel:                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| localhost:49708/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |
+| localhost:49708/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |
  
 **Resultat med underobjekter**
 
