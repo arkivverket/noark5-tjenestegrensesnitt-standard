@@ -1823,6 +1823,7 @@ Table: Attributter
 | SOSI                     | SOSI versjon 2.2 (1995) eller nyere                                                                                                                                      |              | RA-SOSI   |          |
 | MPEG-2                   | MPEG-2 (ISO 13818-2.)                                                                                                                                                    |              | RA-MPEG-2 |          |
 | MP3                      | lyd: MP3 (ISO 11172-3), PCM eller PCM-basert Wave. Valget mellom disse lydformatene skal i hvert tilfelle være avtalt med Arkivverket før deponering eller avlevering    |              | RA-MP3    |          |
+| PNG                      | PNG (ISO/IEC15948)                                                                                                                                                       |              | RA-PNG    |          |
 
 #### Graderingskode
 
