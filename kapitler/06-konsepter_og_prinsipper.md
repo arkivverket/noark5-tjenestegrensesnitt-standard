@@ -279,6 +279,8 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 
 *Mapper med merknader som har merknadstype B*
 
+
+
 | Eksempel                                                                                                                                                                                                                        | Forklaring                                                                                              | Nivå    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------- |
 | ../arkivstruktur/mappe/?$expand=merknad&$filter=merknad/any(m: m/merknadstype/kode eq 'B')                                                                                                                                      | Mapper med merknader som har merknadstype B                                                             | utvidet |
