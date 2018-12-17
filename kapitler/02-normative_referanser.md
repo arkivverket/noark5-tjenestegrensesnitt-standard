@@ -3,8 +3,8 @@
 For den fulle forståelse av denne standarden bør en ha god kjennskap til
 referansene under.
 
-Norsk Arkivstandard(NOARK) 5 versjon 3.1
-https://arkivverket.no/arkivverket/Offentleg-forvalting/Noark/Noark-5/Standarden .
+Norsk arkivstandard (Noark 5):
+https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden
 
 Unified Modeling Language (UML) versjon 2 - er en industristandard
 for datarelatert modellering, forvaltet av det internasjonale
