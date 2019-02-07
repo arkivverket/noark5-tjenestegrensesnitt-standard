@@ -890,7 +890,11 @@ innholdstyper:
 
   - http://skjema.kxml.no/arkivverket/noark5/v4.0/
 
-Datoformat skal være angitt ihht http://www.w3.org/TR/NOTE-datetime
+Datoformat skal være angitt i tråd med definisjonen i Noark 5 krav
+5.12.7 (datoer uten klokkeslett) og 5.12.8 (datoer med klokkeslett),
+det vil si definisjonen for date og dateTime i XML Schema 1.0
+tilgjengelig fra https://www.w3.org/TR/xmlschema11-2/. Det skal alltid
+være tidssone-informasjon knyttet til date og dateTime-verdier.
 
 #### Hente og overføre filer
 
