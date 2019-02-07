@@ -901,7 +901,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                         |
 | --------- | --------------------------------------------------------------------------------- |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-klassifikasjonssystem/          |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-sekundaerklassifikasjonssystem/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/sekundaerklassifikasjonssystem/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/klassifikasjonstype/                    |
@@ -909,7 +908,6 @@ Table: Relasjonsnøkler
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-klasse/                         |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/arkivdel/                          |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/klasse/                            |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/klassifikasjonssystem/             |
 | REST\_REL | self                                                                              |
 
 Table: Attributter
