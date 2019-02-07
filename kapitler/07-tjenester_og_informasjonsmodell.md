@@ -658,7 +658,7 @@ Table: Restriksjoner
 | M705 sjekksum: Kan ikke endres. | |
 | M705 sjekksum: Sjekksummen skal være heksadesimal uten noen formatteringstegn. | |
 | M706 sjekksumAlgoritme: Kan ikke endres | |
-| M706 sjekksumAlgoritme: Algoritmen som skal brukes inntil videre er SHA256. | |
+| M706 sjekksumAlgoritme: Algoritmen som skal brukes inntil videre er SHA-256, med verdi presentert i hexadesimal form.  Obligatorisk verdi: «SHA-256» | |
 | M707 filstoerrelse: Kan ikke endres | |
 
 #### ElektroniskSignatur
