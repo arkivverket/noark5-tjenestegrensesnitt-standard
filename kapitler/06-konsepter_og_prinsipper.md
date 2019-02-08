@@ -376,7 +376,7 @@ relasjonslenker til aktuelle kodelister.  En slik forespørsel
 oppretter ikke noe objekt og returverdien refererer ikke heller til et
 objekt i databasen, og er derfor uten «self»-relasjon.
 
-Ved registrering av objektet så skal kjernen fylle ut systemid, opprettetAv og opprettetDato. OpprettetAv skal være personnavn, referanseOpprettetAv skal være en systemID. NB! Denne systemID-en kan være en entydig identifikator av brukeren i fagsystemet, slik at personen ikke nødvendigvis må være bruker i arkivkjernen. opprettetDato er datoen (eller dataTime) enheten er opprettet i fagsystemet.
+Ved registrering av objektet så skal kjernen fylle ut systemID, opprettetAv og opprettetDato. OpprettetAv skal være personnavn, referanseOpprettetAv skal være en systemID. NB! Denne systemID-en kan være en entydig identifikator av brukeren i fagsystemet, slik at personen ikke nødvendigvis må være bruker i arkivkjernen. opprettetDato er datoen (eller dataTime) enheten er opprettet i fagsystemet.
 
 
 ```Python
