@@ -798,7 +798,7 @@ Et klassifikasjonssystem er bygd opp av klasser. Ved funksjonsbasert
 (emnebasert) klassifikasjon vil klassene vanligvis inngå i et
 hierarki, hvor tre eller fire nivåer er det vanlige.  I den
 konseptuelle modellen er undernivåene kalt underklasser, og fremkommer
-som en egenrelasjon i Klasse5.
+som en egenrelasjon i Klasse.
 
 ISO 15489 anbefaler at klassene beskriver organets funksjoner og
 aktiviteter (forretningsprosesser). Øverste nivå vil da typisk
