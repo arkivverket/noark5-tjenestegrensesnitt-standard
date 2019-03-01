@@ -15,5 +15,5 @@ konsortiumet [Object Management Group] (OMG) - http://www.omg.org/spec/UML/
 Webtjenester med REST/HATEOAS -
 https://tools.ietf.org/html/draft-kelly-json-hal-08
 
-Sjekksumalgoritmen SHA-256 er definiert i IETF RFC 4634 -
+Sjekksumalgoritmen SHA-256 er definert i IETF RFC 4634 -
 https://tools.ietf.org/html/rfc4634
