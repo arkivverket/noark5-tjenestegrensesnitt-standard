@@ -1126,6 +1126,25 @@ rel="https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/" med headere fo
 content-type og content-length.  Når overføringen er fullført og
 filopplastingen vellykket, så returneres statuskode 201.
 
+Et dokumentobjekt opprettes før opplasting. Hvis noen av feltene
+«format», «mimeType», «filnavn», «sjekksum», «sjekksumAlgoritme» og
+«filstoerrelse» er fyllt inn ved opprettelsen skal tjeneren verifisere
+at verdiene i de angitte feltene stemmer når den komplette filen er
+lastet opp.  Tjeneren sjekker ved opplasting for felt som er
+forhåndsutfyllt også at mimeType er identisk med Content-Type,
+filstoerrelse er identisk med Content-Length (for komplett POST) eller
+X-Upload-Content-Length (for overføring i bolker med PUT) og at
+sjekksum stemmer overens med den overførte filen.  Hvis tjeneren etter
+opplasting ser at noen av verdiene avleded fra opplastet fil ikke
+stemmer overens med verdiene i dokumentobjekt-entiteten, så returneres
+statuskode 400 Bad Request. Hvis den opplastede filen har et format
+tjeneren ikke kjenner igjen, så settes format til 'UNKNOWN'. Når
+filopplasting er fullført setter tjeneren de feltene i dokumentobjekt
+som ikke var satt ved oppretting av dokumentobjekt-entiteten, det vil
+si utleder «format», «mimeType», «filnavn», «sjekksum», og
+«filstoerrelse» basert på filens innhold samt, samt gir
+«sjekksumAlgoritme» aktuell verdi.
+
 ```
 POST https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
 Content-Type: application/pdf
@@ -1169,6 +1188,21 @@ For å starte en opplastingssesjon:
 
 4.  Når siste overføring er gjort så returneres statuskode 201 Created.
 
+Det er ikke mulig å overskrive filen tilhørende en eksisterende
+dokumentobjekt-entitet med en POST eller en PUT-forespørsel.  Hvis en
+fil må erstattes etter fullført opplasting så skal
+dokumentobjekt-entieten slettes og en ny POST/PUT utføres mot href til
+rel=https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/.
+
+Når en filopplasting er vellykket, så returneres tilhørende
+dokumentobjekt som respons på avsluttende 200 OK / 201 Created.
+
+Dersom det skjer en feil under opplasting eller lagringsprossesen skal
+tjeneren returnere 422 Unprocessable Entity som svar.  Det er da
+klientens ansvar å slette relaterte dokumentbeskrivelse- og
+dokumentobjekt-entiteter ved hjelp av DELETE på entitetenes
+self-relasjon.
+
 Komplett eksempel
 
 Opprett sesjon:
@@ -1202,11 +1236,44 @@ Last opp siste del:
 
 ```
 PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
-Content-Length: 524288
+Content-Length: 427136
 Content-Type: image/jpeg
-Content-Range: bytes 524287-2000000/2000000
+Content-Range: bytes 1572864-2000000/2000000
 
 Respons: 201 Created
+
+{
+    "systemID": "e37be679-f87b-4485-a680-4c3e3c529bdf",
+    "versjonsnummer": "1",
+    "variantformat": {
+        "kode": "A",
+        "beskrivelse": "Arkivformat"
+    },
+    "format": {
+        "kode": "RA-JPEG",
+        "beskrivelse": "JPEG (ISO 10918-1:1994)"
+    },
+    "filnavn": "portrait.jpeg",
+    "filstoerrelse": 2000000,
+    "mimeType": "image/jpeg",
+    "sjekksum": "40cbd5b88175e268ef3a1c286ad7d46ff69c22787d368e8635cae7edca4b5625",
+    "sjekksumAlgoritme": "SHA-256",
+    "referanseDokumentfil": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf/referanseFil",
+    "_links": [
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf",
+            "rel": "self",
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/",
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf/referanseFil",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/",
+        }
+    ]
+}
 ```
 
 Table: Resultatkoder for opplasting av filer
@@ -1221,6 +1288,7 @@ Table: Resultatkoder for opplasting av filer
 | 404        | NotFound - ikke funnet                        |
 | 409        | Conflict - objektet kan være endret av andre  |
 | 415        | UnsupportedMediaType – filtypen støttes ikke  |
+| 422        | Unprocessable Entity                          |
 | 500        | InternalServerError – generell feil på server |
 | 501        | NotImplemented - ikke implementert            |
 | 503        | ServiceUnavailable – tjeneste utilgjengelig   |
