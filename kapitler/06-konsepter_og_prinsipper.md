@@ -25,7 +25,7 @@ beskrivelse av ressursen med eksempler på forespørsler, resultat og
 statuskoder. Alle slike ressurslenker og relasjonslenker har
 avsluttende skråstrek.
 
-Det skilles mellom små og store tegn i alle XML- og JSON-attributter
+Det skilles mellom små og store tegn i alle JSON-attributter
 og HATEOS-relasjoner, slik at disse har entydig definerte navn som
 ikke er avhengig av språkspesifikke regler for konvertering mellom
 små og store tegn.
@@ -81,44 +81,6 @@ innen disse områder annonseres på samme måte.
 | 403        | Forbidden - ingen tilgang          |
 | 404        | NotFound - ikke funnet             |
 | 501        | NotImplemented - ikke implementert |
-
-Alternativt som XML
-
-**Request**
-
-GET https://n5.example.com/api
-
-Accept: application/vnd.noark5-v4+xml
-
-**Response**
-
-Content-Type: application/vnd.noark5-v4+xml
-
-```XML
-<Links
-    xmlns:xsi="http://www.w3.org/2001/XMLSChema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSChema"
-    xmlns="http://www.kxml.no/rest/1.0">
-    <Links>
-        <link>
-            <rel>https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/</rel>
-            <href>https://n5.example.com/api/arkivstruktur</href>
-            <type sxi:nil="true" />
-            <deprecation xsi:nil="true" />
-            <name xsi:nil="true" />
-            <title xsi:nil="true" />
-        </link>
-        <link>
-            <rel>https://rel.arkivverket.no/noark5/v4/api/sakarkiv/</rel>
-            <href>https://n5.example.com/api/sakarkiv</href>
-            <type sxi:nil="true" />
-            <deprecation xsi:nil="true" />
-            <name xsi:nil="true" />
-            <title xsi:nil="true" />
-        </link>
-    </Links>
-</Links>
-```
 
 ­­­**href** kan være hva som helst og trenger ikke følge noe fast mønster
 for oppbygning av url. Mens **rel** (relasjonsnøkkelen) har faste verdier
@@ -1074,7 +1036,7 @@ tilgjengelig fra https://www.w3.org/TR/xmlschema11-2/. Det skal alltid
 være tidssone-informasjon knyttet til date og dateTime-verdier.
 
 Tjenestegrensesnittet skal bruke UTF-8 tegnsett som beskrevet i IETF RFC 3629
-i alle REST-forespørsler, både for JSON og XML.
+i alle REST-forespørsler.
 
 #### Hente og overføre filer
 

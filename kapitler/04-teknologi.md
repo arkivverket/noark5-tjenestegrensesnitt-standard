@@ -28,8 +28,4 @@ I praksis betyr dette at alle kall hvor klienten sender en request header med
 
     Content-Type: application/vnd.noark5-v4+json
 
-eller
-
-    Content-Type: application/vnd.noark5-v4+xml
-
 så skal serveren støtte http metoden **OPTIONS** slik det er definert i CORS-standarden. Dette vil gjelder alle metodene hvor klienten sender inn data, men det er ikke nødvendig å støtte **OPTIONS** metoden på GET-forespørsler.
