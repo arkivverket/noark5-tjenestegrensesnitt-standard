@@ -2749,8 +2749,8 @@ Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
-| journalår                | Definisjon: Viser året journalposten ble opprettet . Kilde: Registreres automatisk når journalposten opprettes.Kommentar: (ingen). M013 journalaar | \[0..1\] | | integer|
-| journalsekvensnummer     | Definisjon: Viser rekkefølgen når journalposten ble opprettet under året . Kilde: Registreres automatisk når journalposten opprettes. Kommentar: Kombinasjonen journalår og sekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. Noen rapporter er sortert på denne kombinasjonen, f.eks. løpende- og offentlig journal. Dersom journalår og sekvensnummer ikke brukes, må kronologiske utskrifter sorteres etter andre kriterier (f.eks. journalpostens opprettetDato). I Noark 4 skal sekvensnummeret vises før journalåret (f.eks. 25367/2011) for at det ikke skal blandes sammen med saksnummeret som har året først. M014 journalsekvensnummer | \[0..1\] |  | integer|
+| journalaar                | Definisjon: Viser året journalposten ble opprettet . Kilde: Registreres automatisk når journalposten opprettes.Kommentar: (ingen). M013 journalaar | \[0..1\] | | integer|
+| journalsekvensnummer     | Definisjon: Viser rekkefølgen når journalposten ble opprettet under året . Kilde: Registreres automatisk når journalposten opprettes. Kommentar: Kombinasjonen journalaar og sekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. Noen rapporter er sortert på denne kombinasjonen, f.eks. løpende- og offentlig journal. Dersom journalaar og sekvensnummer ikke brukes, må kronologiske utskrifter sorteres etter andre kriterier (f.eks. journalpostens opprettetDato). I Noark 4 skal sekvensnummeret vises før journalaar (f.eks. 25367/2011) for at det ikke skal blandes sammen med saksnummeret som har året først. M014 journalsekvensnummer | \[0..1\] |  | integer|
 | journalpostnummer        | Definisjon: Inngår i M004 journalpostID. Viser rekkefølgen journalpostene ble opprettet innenfor saksmappen, f.eks. 2011/3869-8 (dokument nr. 8 i sak 2011/3869). Kilde: Registreres automatisk når journalposten opprettes. Kommentar: Er ikke obligatorisk, men anbefales brukt i sakarkiver. Dersom journalpostnummer ikke brukes, må andre kriterier kunne identifisere journalpostenes rekkefølge innenfor saksmappen. M015 journalpostnummer | \[0..1\] | | integer|
 | journalposttype          | Definisjon: Navn på type journalpost . Kilde: Registreres automatisk av systemet eller manuelt Kommentar: Tilsvarer &quot;Noark dokumenttype&quot; i Noark 4. M082 journalposttype | \[1..1\] | |Journalposttype|
 | journalstatus            | Definisjon: Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert. Kilde: Registreres automatisk gjennom forskjellig saksbehandlings-funksjonalitet, eller overstyres manuelt. Kommentar: Journalposter som avleveres skal ha status &quot;Arkivert&quot; eller &quot;Utgår&quot;. M053 journalstatus | \[1..1\] | |Journalstatus|
@@ -2777,7 +2777,7 @@ Table: Restriksjoner
 | 5.5.12 Det bør finnes en tjeneste/funksjon for å ajourholde Journalenhet på en Registrering (Journalpost). | |
 | 5.5.13 Det skal finnes en tjeneste/funksjon for å ajourholde Administrativ enhet og Saksbehandler på en Registrering (Journalpost). | |
 | 5.5.14 Det skal finnes en tjeneste/funksjon for å ajourholde Korrespondansepart på en Journalpost. |
-| M013 journalår: Skal ikke kunne endres. | |
+| M013 journalaar: Skal ikke kunne endres. | |
 | M014 journalsekvensnummer: Skal ikke kunne endres. | |
 | M015 journalpostnummer: Skal normalt ikke endres, men ved flytting til en annen saksmappe kan journalposten få et nytt nummer (fordi det inngår i en annen nummerrekkefølge i denne mappen). | |
 | M101 journaldato: Skal kunne endres manuelt inntil arkivering. | | 
