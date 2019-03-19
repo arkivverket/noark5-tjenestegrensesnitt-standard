@@ -1,0 +1,67 @@
+@startuml
+skinparam classAttributeIconSize 0
+'FIXME dropped caption "class Klassediagram_forklaring"
+class Albumenhet {
+  +systemID : SystemID
+  +oppdatertDato : datetime
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string
+  +referanseOpprettetAv : SystemID [0..1]
+}
+class Foto {
+  +systemID : SystemID
+  +versjonsnummer : integer
+  +format : Format
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +filstørrelse : string
+  -- constraints --
+  {Det skal finnesvære mulig å |formattesting}
+  {M001 systemID: Skal ikke kunne endres}
+  -- notes --
+  Her kan de lages en forklaring om hva
+  denne klassen skal brukes til
+}
+Albumenhet "0..*" *-> "+foto 1..*" Foto
+class Fil {
+  +filnavn : string
+  +mimeType : string
+}
+Foto --> "+fotofil 0..1" Fil
+note bottom of Fil : Dette er eksempel på en\nnote, som kan være\nknytta til en klasse (som\ndenne) eller kan være\n"løs"
+
+class Fotoalbum {
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +oppbevaringssted : string [0..*]
+}
+class Albumdel {
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +oppbevaringssted : string [0..*]
+  +gradering : Gradering [0..1]
+}
+Fotoalbum "+underalbum 0..*" --o Fotoalbum
+Fotoalbum "+album 1" o- "+albumdel 0..*" Albumdel
+Albumenhet <|-- Fotoalbum
+Albumenhet <|-- Albumdel
+
+!include media/uml-datatype-gradering.iuml
+!include media/uml-codelist-graderingskode.iuml
+
+'FIXME figure out if two SystemID classes can co-exist
+class Arkivstruktur.SystemID <<simple>> {
+  -- notes --
+  Definisjon: Entydig
+  identifikasjon av
+  enheten
+}
+class BasicTypes.string <<simple>>
+class Arkivstruktur.SystemID <<simple>>
+BasicTypes.string <|-- Arkivstruktur.SystemID
+'layout adjustments
+Fotoalbum <-[hidden]- Arkivstruktur.Gradering
+Arkivstruktur.Gradering <-[hidden]- Kodelister.Graderingskode
+Albumdel <-[hidden]- BasicTypes.string
+@enduml

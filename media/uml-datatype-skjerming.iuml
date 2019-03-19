@@ -1,0 +1,10 @@
+@startuml
+class Arkivstruktur.Skjerming <<dataType>> {
+  +tilgangsrestriksjon : Tilgangsrestriksjon
+  +skjermingshjemmel : string
+  +skjermingMetadata : SkjermingMetadata [0..*]
+  +skjermingDokument : SkjermingDokument [0..1]
+  +skjermingsvarighet : integer [0..1]
+  +skjermingOpphørerDato : date [0..1]
+}
+@enduml

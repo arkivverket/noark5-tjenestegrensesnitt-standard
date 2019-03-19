@@ -1,0 +1,6 @@
+@startuml
+class Kodelister.Dokumentstatus <<codelist>> {
+  +Dokumentet er under redigering = B
+  +Dokumentet er ferdigstilt = F
+}
+@enduml

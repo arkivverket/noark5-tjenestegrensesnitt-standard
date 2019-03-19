@@ -1,0 +1,16 @@
+@startuml
+class Kodelister.SkjermingMetadata <<codelist>> {
+  +Skjerming klasseID = KID
+  +Skjerming tittel klasse = TKL
+  +Skjerming tittel mappe - unntatt første linje = TM1
+  +Skjerming tittel mappe - utvalgte ord = TMO
+  +Skjerming navn part i sak = NPS
+  +Skjerming tittel registrering - unntatt første linje = TR1
+  +Skjerming tittel registrering - utvalgte ord = TRO
+  +Skjerming navn avsender = NA
+  +Skjerming navn mottaker = NM
+  +Skjerming tittel dokumentbeskrivelse = TD
+  +Skjerming merknadstekst = MT
+  +Midlertidig skjerming = M
+}
+@enduml

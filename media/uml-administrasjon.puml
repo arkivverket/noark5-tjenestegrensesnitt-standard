@@ -1,0 +1,27 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+!include media/uml-class-bruker.iuml
+!include media/uml-class-administrativenhet.iuml
+!include media/uml-class-tilgang.iuml
+!include media/uml-codelist-tilgangsrestriksjon.iuml
+!include media/uml-codelist-tilgangskategori.iuml
+
+Admin.Bruker "+bruker 0..*" <--> "+enhet 0..*" Admin.AdministrativEnhet
+
+note "Aktuelle roller:\nArkivansvarlig\nArkivpersonale\nLeder\nSaksbehandler" as Roller
+
+note "Roller kan komme fra\nautentiseringsløsningen\n(som Claims)" as RolleNote
+
+Admin.Bruker .. RolleNote
+RolleNote .. Admin.Tilgang
+
+Roller .. RolleNote
+
+note "Saksbehandlerrolle X i fagsystem A = rolle\nfår lese tilgang til arkivdel med systemid=2\nkan lese, opprette og endre klasser\nKan lese, opprette og endre mapper\nKan IKKE lese mapper Personalsaker\nKan lese, opprette og endre registreringer\nKan lese, opprette og endre dokumentobjekt\nKan IKKE lese graderte dokumentobjekt" as Saksbehandlerrolle
+
+Kodelister.Tilgangsrestriksjon --[hidden]-> Saksbehandlerrolle
+Saksbehandlerrolle -[hidden]> Kodelister.Tilgangskategori
+Kodelister.Tilgangskategori -[hidden]> Admin.Tilgang
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class Admin.AdministrativEnhet {
+  +systemID : SystemID [0..1]
+  +administrativEnhetNavn : string
+  +kortnavn : string [0..1]
+  +opprettetDato : datetime
+  +opprettetAv : string [0..1]
+  +avsluttetDato : datetime [0..1]
+  +administrativEnhetsstatus : string
+  +referanseOverordnetEnhet : SystemID [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+@enduml

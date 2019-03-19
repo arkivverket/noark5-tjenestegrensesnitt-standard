@@ -1,0 +1,97 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Arkivstruktur.Arkivskaper <Arkivenhet> {
+  +arkivskaperID : string
+  +arkivskaperNavn : string
+  +beskrivelse : string [0..1]
+
+  -- Arkivenhet --
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+}
+class Arkivstruktur.Arkiv <Arkivenhet> {
+  +tittel : string
+  +beskrivelse ; string [0..1]
+  +arkivstatus : Arkivstatus [0..1]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+
+  -- Arkivenhet --
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+}
+class Arkivstruktur.Arkivdel <Arkivenhet> {
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +arkivdelstatus : Arkivdelstatus
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +arkivperiodeStartDato : date [0..1]
+  +arkivperiodeSluttDato : date [0..1]
+  +referanseForløper : SystemID [0..1]
+  +referanseArvtaker : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +utførtKassasjon : UtførtKassasjon [0..1]
+  +sletting : Sletting [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+
+  -- Arkivenhet --
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+}
+!include media/uml-codelist-arkivstatus.iuml
+!include media/uml-codelist-dokumentmedium.iuml
+!include media/uml-codelist-arkivdelstatus.iuml
+class Arkivstruktur.Mappe <Arkivenhet>
+class Arkivstruktur.Klassifikasjonssystem <Arkivenhet>
+!include media/uml-datatype-kassasjon.iuml
+!include media/uml-datatype-utfoertkassasjon.iuml
+!include media/uml-datatype-sletting.iuml
+!include media/uml-datatype-skjerming.iuml
+!include media/uml-datatype-gradering.iuml
+!include media/uml-codelist-kassasjonsvedtak.iuml
+!include media/uml-codelist-slettingstype.iuml
+!include media/uml-codelist-skjermingdokument.iuml
+!include media/uml-codelist-graderingskode.iuml
+
+Arkivstruktur.Arkivskaper "+arkivskaper 1..*" <-o "+arkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" <-o "+arkivdel 1..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "+sekundærklassifikasjonssystem 0..*" <-o Arkivstruktur.Arkivdel
+Arkivstruktur.Arkivdel "+arkivdel 0..1" o-> "+mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe
+
+Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.Sletting
+Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.Kassasjon
+Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.UtførtKassasjon
+Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.Skjerming
+Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.Gradering
+Arkivstruktur.Sletting <-[hidden]- Kodelister.Slettingstype
+Arkivstruktur.Gradering <-[hidden] Kodelister.Graderingskode
+Arkivstruktur.Kassasjon <-[hidden]- Kodelister.Kassasjonsvedtak
+Arkivstruktur.Skjerming <-[hidden]- Kodelister.SkjermingDokument
+@enduml

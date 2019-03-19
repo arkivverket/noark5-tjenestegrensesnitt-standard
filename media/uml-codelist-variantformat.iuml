@@ -1,0 +1,7 @@
+@startuml
+class Kodelister.Variantformat <<codelist>> {
+  +Produksjonsformat = P
+  +Arkivformat = A
+  +Dokument hvor deler av innholdet er skjermet = O
+}
+@enduml

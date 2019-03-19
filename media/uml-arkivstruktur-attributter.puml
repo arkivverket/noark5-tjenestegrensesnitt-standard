@@ -1,0 +1,40 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+!include media/uml-class-arkivskaper.iuml
+!include media/uml-class-arkiv.iuml
+!include media/uml-class-klassifikasjonssystem.iuml
+!include media/uml-class-klasse.iuml
+!include media/uml-class-arkivdel.iuml
+!include media/uml-class-mappe.iuml
+!include media/uml-class-merknad.iuml
+!include media/uml-class-registrering.iuml
+!include media/uml-class-basisregistrering.iuml
+!include media/uml-class-dokumentbeskrivelse.iuml
+!include media/uml-class-dokumentobjekt.iuml
+!include media/uml-class-konvertering.iuml
+!include media/uml-datatype-elektronisksignatur.iuml
+
+Arkivstruktur.Arkiv "+arkiv 0..*" o--> "+arkivskaper 1..*" Arkivstruktur.Arkivskaper
+Arkivstruktur.Arkiv o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" <--o "+arkivdel 1..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "+sekundærklassifikasjonssystem 0..*" <--o Arkivstruktur.Arkivdel
+
+Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o--> "+klasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Klasse --> "+underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Mappe --> "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Merknad "+merknad 0..*" <-* Arkivstruktur.Mappe
+Arkivstruktur.Merknad "+merknad 0..*" <--* Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Basisregistrering -|> Arkivstruktur.Registrering
+Arkivstruktur.Merknad "+merknad 0..*" <--* Arkivstruktur.Basisregistrering
+Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Dokumentbeskrivelse "+dokumentbeskrivelse 1" o--> "+dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
+Arkivstruktur.Dokumentobjekt *-> "+konvertering 0..*" Arkivstruktur.Konvertering
+Arkivstruktur.ElektroniskSignatur -[hidden]-> Arkivstruktur.Dokumentobjekt
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class Kodelister.Kassasjonsvedtak <<codelist>> {
+  +Bevares = B
+  +Kasseres = K
+  +Vurderes senere = G
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class Admin.Tilgang {
+  +systemID : SystemID [0..1]
+  +rolle : string
+  +tilgangskategori : Tilgangskategori
+  +referanseArkivenhet : SystemID [0..1]
+  +tilgangsrestriksjon : Tilgangsrestriksjon
+  +les : boolean
+  +ny : boolean
+  +endre : boolean
+  +slett : boolean
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class Kodelister.Korrespondanseparttype <<codelist>> {
+  +Avsender = EA
+  +Mottaker = EM
+  +Kopimottaker = EK
+  +Gruppemottaker = GM
+  +Intern avsender = IA
+  +Intern mottaker = IM
+  +Intern kopimottaker = IK
+}
+@enduml

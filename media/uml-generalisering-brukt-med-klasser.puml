@@ -1,0 +1,8 @@
+@startuml
+'FIXME dropped caption "class Fig04_Generalisering"
+class Basisregistrering < Registrering >
+class Journalpost < Basisregistrering >
+class Møteregistrering < Basisregistrering >
+Basisregistrering <|-- Journalpost
+Basisregistrering <|-- Møteregistrering
+@enduml

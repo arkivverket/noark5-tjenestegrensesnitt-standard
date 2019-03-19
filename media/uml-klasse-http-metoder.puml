@@ -1,0 +1,14 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "class Tjenester" <<Frame>> {
+
+class REST-tjenester << interface >> {
+  +GET (Request) : Response
+  +PUT (Request) : Reponse
+  +POST (Request) : Response
+  +DELETE (Request) : Response
+}
+
+}
+@enduml

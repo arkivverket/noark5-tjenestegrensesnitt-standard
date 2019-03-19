@@ -1,0 +1,10 @@
+@startuml
+class Admin.Bruker {
+  +brukerNavn : string [0..1]
+  +opprettetDato : datetime
+  +opprettetAv : string [0..1]
+  +avsluttetDato : datetime [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+  +kortnavn : string [0..1]
+}
+@enduml

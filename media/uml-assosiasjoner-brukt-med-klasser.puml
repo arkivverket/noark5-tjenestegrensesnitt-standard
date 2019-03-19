@@ -1,0 +1,8 @@
+@startuml
+skinparam classAttributeIconSize 0
+'FIXME dropped caption "class Fig03_Assosiasjon"
+class Arkivstruktur.Mappe <Arkivenhet>
+class Arkivstruktur.Registrering <Arkivenhet>
+Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe 
+Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
+@enduml

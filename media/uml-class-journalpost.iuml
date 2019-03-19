@@ -1,0 +1,21 @@
+@startuml
+class Sakarkiv.Journalpost <Basisregistrering> {
+  +journalår : integer [0..1]
+  +journalsekvensnummer : integer [0..1]
+  +journalpostnummer : integer [0..1]
+  +journalposttype : Journalposttype
+  +journalstatus : Journalstatus
+  +journaldato : date
+  +dokumentetsDato : date [0..1]
+  +mottattDato : date [0..1]
+  +sendtDato : date [0..1]
+  +forfallsdato : date [0..1]
+  +offentlighetsvurdertDato : date [0..1]
+  +antallVedlegg : integer [0..1]
+  +utlåntDato : date [0..1]
+  +utlåntTil : string [0..1]
+  +referanseUtlåntTil : SystemID [0..1]
+  +journalenhet : string [0..1]
+  +elektroniskSignatur : ElektroniskSignatur [0..1]
+}
+@enduml

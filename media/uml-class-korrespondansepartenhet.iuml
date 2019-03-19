@@ -1,0 +1,10 @@
+@startuml
+class Sakarkiv.KorrespondansepartEnhet <Korrespondansepart> {
+  +organisasjonsnummer : string [0..1]
+  +navn : string
+  +forretningsadresse : EnkelAdresse [0..1]
+  +postadresse : EnkelAdresse [0..1]
+  +kontaktinformasjon : Kontaktinformasjon [0..1]
+  +kontaktperson : string [0..1]
+}
+@enduml

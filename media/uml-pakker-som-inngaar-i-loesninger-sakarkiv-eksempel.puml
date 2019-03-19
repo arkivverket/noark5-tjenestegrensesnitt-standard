@@ -1,0 +1,8 @@
+@startuml
+package Sakarkiv <<applicationSchema>>
+package Arkivstruktur <<applicationSchema>>
+package Kodelister <<applicationSchema>>
+
+Sakarkiv .. Arkivstruktur : <<import>>
+Sakarkiv .. Kodelister : <<import>>
+@enduml

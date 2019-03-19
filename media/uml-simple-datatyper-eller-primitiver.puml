@@ -1,0 +1,6 @@
+@startuml
+'FIXME dropped caption "class Fig08_SimpleType"
+class BasicTypes.string << simple >>
+class Metadata.SystemID << simple >>
+BasicTypes.string <|--  Metadata.SystemID
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class Kodelister.TilknyttetRegistreringSom <<codelist>> {
+  +Hoveddokument = H
+  +Vedlegg = V
+}
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Arkivstruktur.Registrering <Arkivenhet> {
+  +arkivertDato : datetime [0..1]
+  +arkivertAv : string [0..1]
+  +referanseArkivertAv : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+  +referanseArkivdel : SystemID [0..1]
+  -- Arkivenhet --
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+}
+
+!include media/uml-class-basisregistrering.iuml
+
+class Sakarkiv.Journalpost <Basisregistrering>
+
+Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
+Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class Kodelister.Journalstatus <<codelist>> {
+  +Journalført = J
+  +Ferdigstilt fra saksbehandler = F
+  +Godkjent av leder = G
+  +Ekspedert = E
+  +Arkivert = A
+  +Utgår = U
+  +Midlertidig registrering av innkommet dokument = M
+  +Saksbehandler har registrert innkommet dokument = S
+  +Reservert dokument = R
+}
+@enduml

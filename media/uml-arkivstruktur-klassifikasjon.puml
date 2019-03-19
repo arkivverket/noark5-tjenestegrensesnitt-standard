@@ -1,0 +1,51 @@
+@startuml
+skinparam classAttributeIconSize 0
+class Arkivstruktur.Arkivdel <Arkivenhet>
+class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
+  +klassifikasjonstype : Klassifikasjonstype [0..1]
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  -- Arkivenhet --
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+}
+class Arkivstruktur.Klasse <Arkivenhet> {
+  +klasseID : string
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +nøkkelord : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +skjerming : Skjerming [0..1]
+  +kassasjon : Kassasjon [0..1]
+  -- Arkivenhet --
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+}
+class Arkivstruktur.Mappe <Arkivenhet>
+class Sakarkiv.Saksmappe <Mappe>
+
+Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" <-o "+arkivdel 1..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "+sekundærklassifikasjonssystem 0..1" <-o Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" <--o "+klasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klasse o--> "+underklasse" Arkivstruktur.Klasse
+Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*\n" Arkivstruktur.Mappe
+Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
+Arkivstruktur.Klasse "+sekundærklassifikasjon 0..*" <--o Sakarkiv.Saksmappe
+@enduml

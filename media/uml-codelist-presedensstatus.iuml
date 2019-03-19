@@ -1,0 +1,6 @@
+@startuml
+class Kodelister.Presedensstatus <<codelist>> {
+  +Gjeldende = G
+  +Foreldet = F
+}
+@enduml

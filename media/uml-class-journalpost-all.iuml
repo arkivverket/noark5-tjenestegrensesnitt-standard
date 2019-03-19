@@ -1,0 +1,50 @@
+@startuml
+class Sakarkiv.Journalpost <Basisregistrering> {
+  +journalår : integer [0..1]
+  +journalsekvensnummer : integer [0..1]
+  +journalpostnummer : integer [0..1]
+  +journalposttype : Journalposttype
+  +journalstatus : Journalstatus
+  +journaldato : date
+  +dokumentetsDato : date [0..1]
+  +mottattDato : date [0..1]
+  +sendtDato : date [0..1]
+  +forfallsdato : dato [0..1]
+  +offentlighetsvurdertDato : date [0..1]
+  +antallVedlegg : integer [0..1]
+  +utlantDato : date [0..1]
+  +utlåntTil : string [0..1]
+  +referanseUtlåntTil : SystemID [0..1]
+  +journalenhet : string [0..1]
+  +elektroniskSignatur : ElektroniskSignatur [0..1]
+
+  -- Basisregistrering --
+  +registreringID : string [0..1]
+  +tittel : string
+  +offentligTittel : string [0..1]
+  +beskrivelse : string [0..1]
+  +nøkkelord : string [0..*]
+  +forfatter : string [0..*]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+
+  -- Registrering --
+  +arkivertDato : datetime [0..1]
+  +arkivertAv : string [0..1]
+  +referanseArkivertAv : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+  +referanseArkivdel : SystemID [0..1]
+
+  -- Arkivenhet --
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+}
+@enduml

@@ -1,0 +1,78 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class NasjonaleIdentifikatorer.Nasjonalidentifikator {
+  +systemID : SystemID [0..1]
+  +beskrivelse : string [0..1]
+}
+
+
+class Arkivstruktur.Mappe <Arkivenhet>
+class Arkivstruktur.Registrering <Arkivenhet>
+class NasjonaleIdentifikatorer.Enhetsidentifikator {
+  +organisasjonsnummer : string
+}
+class NasjonaleIdentifikatorer.Personidentifikator {
+  +fødselsnummer : string [0..1]
+  +dNummer : string [0..1]
+}
+class NasjonaleIdentifikatorer.Posisjon {
+  +plassering : Punkt
+}
+class NasjonaleIdentifikatorer.Bygning {
+  +byggidentifikator : ByggIdent
+}
+class NasjonaleIdentifikatorer.Matrikkel {
+  +matrikkelnummer : Matrikkelnummer
+}
+class NasjonaleIdentifikatorer.Plan {
+  +planidentifikator : NasjonalArealplanId
+}
+
+package GeoIntegration {
+
+  package Geometri {
+
+    class Punkt <Geometri> <<dataType>> {
+      +posisjon : Koordinat
+      -- Geometri --
+      +koordinatsystem : KoordinatsystemKode
+    }
+  }
+
+  package Felles {
+    class ByggIdent <<dataType>> {
+      +bygningsNummer : Integer
+      +endringsløpenummer : Integer [0..1]
+    }
+
+    class NasjonalArealplanId {
+      +nummer : Administrativenhetsnummer
+      +planidentifikasjon : string
+    }
+
+    class "Matrikkelnummer\n{root,leaf}" as Matrikkelnummer <<dataType>> {
+      +kommunenummer : String
+      +gårdsnummer : Integer
+      +bruksnummer : Integer
+      +festenummer : Integer [0..1]
+     +seksjonsnummer : Integer [0..1]
+    }
+  }
+}
+Arkivstruktur.Mappe --> "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Registrering "+registrering 0..*" <-o "+mappe 0..1" Arkivstruktur.Mappe
+Arkivstruktur.Mappe *--> "+nasjonalidentifikator 0..*\n\n" NasjonaleIdentifikatorer.Nasjonalidentifikator
+Arkivstruktur.Registrering *--> "+nasjonalidentifikator 0..*\n" NasjonaleIdentifikatorer.Nasjonalidentifikator
+NasjonaleIdentifikatorer.Posisjon -|> NasjonaleIdentifikatorer.Nasjonalidentifikator
+NasjonaleIdentifikatorer.Nasjonalidentifikator <|- NasjonaleIdentifikatorer.Personidentifikator
+NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- NasjonaleIdentifikatorer.Enhetsidentifikator
+NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- NasjonaleIdentifikatorer.Bygning
+NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- NasjonaleIdentifikatorer.Matrikkel
+NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- NasjonaleIdentifikatorer.Plan
+
+NasjonaleIdentifikatorer.Plan <-[hidden]-- NasjonalArealplanId
+NasjonaleIdentifikatorer.Posisjon <-[hidden]-- Punkt
+NasjonaleIdentifikatorer.Bygning <-[hidden]-- ByggIdent
+NasjonaleIdentifikatorer.Matrikkel <-[hidden]-- Matrikkelnummer
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Kodelister.Hendelsetype <<codelist>> {
+  +Endringslogg
+  +Søknad mottatt
+  +Søknad komplett
+  +Vedtak
+}
+@enduml

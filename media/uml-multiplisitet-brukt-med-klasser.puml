@@ -1,0 +1,8 @@
+@startuml
+skinparam classAttributeIconSize 0
+'FIXME dropped caption "class Fig06_Multiplisitet"
+!include media/uml-class-klasse.iuml
+class Arkivstruktur.Mappe <Arkivenhet>
+
+Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
+@enduml

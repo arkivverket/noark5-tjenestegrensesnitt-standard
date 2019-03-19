@@ -1,0 +1,8 @@
+@startuml
+class Kodelister.SakspartRolle <<codelist>> {
+  +Klient = KLI
+  +Pårørende = PÅ
+  +Formynder = FORM
+  +Advokat = ADV
+}
+@enduml

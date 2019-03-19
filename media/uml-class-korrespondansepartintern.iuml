@@ -1,0 +1,8 @@
+@startuml
+class Sakarkiv.KorrespondansepartIntern <Korrespondansepart> {
+  +administrativEnhet : string [0..1]
+  +referanseAdministrativEnhet : SystemID [0..1]
+  +saksbehandler : string [0..1]
+  +referanseSaksbehandler : SystemID [0..1]
+}
+@enduml

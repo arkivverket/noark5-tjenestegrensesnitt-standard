@@ -1,0 +1,10 @@
+@startuml
+class Sakarkiv.EnkelAdresse <<dataType>> {
+  +adresselinje1 : string [0..1]
+  +adresselinje2 : string [0..1]
+  +adresselinje3 : string [0..1]
+  +postnr : Postnummer [0..1]
+  +poststed : string
+  +landkode : Land [0..1]
+}
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include media/uml-class-journalpost-all.iuml
+!include media/uml-class-korrespondansepart.iuml
+!include media/uml-class-presedens.iuml
+!include media/uml-class-avskrivning.iuml
+!include media/uml-class-dokumentflyt.iuml
+!include media/uml-codelist-journalposttype.iuml
+!include media/uml-codelist-journalstatus.iuml
+!include media/uml-codelist-flytstatus.iuml
+
+Kodelister.FlytStatus <-[hidden]-- Sakarkiv.Dokumentflyt
+Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <--* Sakarkiv.Journalpost
+Sakarkiv.Korrespondansepart "+korrespondansepart 0..*" <--* Sakarkiv.Journalpost
+Sakarkiv.Presedens "+presedens 0..*" <--o "+journalpost 0..*" Sakarkiv.Journalpost
+Sakarkiv.Journalpost *-> "+avskrivning 0..*" Sakarkiv.Avskrivning
+Sakarkiv.Journalpost <-[hidden]-- Kodelister.Journalposttype
+Sakarkiv.Journalpost <-[hidden]-- Kodelister.Journalstatus
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class Sakarkiv.Dokumentflyt {
+  +systemID : SystemID [0..1]
+  +flytTil : string
+  +referanseFlytTil : SystemID [0..1]
+  +flytFra : string
+  +referanseFlytFra : SystemID [0..1]
+  +flytMottattDato : datetime
+  +flytSendtDato : datetime
+  +flytStatus : FlytStatus
+  +flytMerknad : string [0..1]
+}
+@enduml

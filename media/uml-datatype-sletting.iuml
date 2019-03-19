@@ -1,0 +1,8 @@
+@startuml
+class Arkivstruktur.Sletting <<dataType>> {
+  +slettingstype : Slettingstype
+  +slettetDato : datetime
+  +slettetAv : string
+  +referanseSlettetAv : SystemID
+}
+@enduml

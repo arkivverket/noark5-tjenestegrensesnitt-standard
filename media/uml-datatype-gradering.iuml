@@ -1,0 +1,11 @@
+@startuml
+class Arkivstruktur.Gradering <<dataType>> {
+  +graderingskode : Graderingskode
+  +graderingsdato : datetime
+  +gradertAv : string
+  +referanseGradertAv : SystemID
+  +nedgraderingsdato : datetime [0..1]
+  +nedgradertAv : string [0..1]
+  +referanseNedgradertAv : SystemID [0..1]
+}
+@enduml

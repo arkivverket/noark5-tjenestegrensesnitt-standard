@@ -1,0 +1,20 @@
+@startuml
+class Sakarkiv.Presedens {
+  +systemID : SystemID [0..1]
+  +presedensDato : date
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +presedensHjemmel : string [0..1]
+  +rettskildefaktor : string
+  +presedensGodkjentDato : datetime [0..1]
+  +presedensGodkjentAv : string [0..1]
+  +referansePresedensGodkjentAv : SystemID [0..1]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +presedensStatus : Presedensstatus [0..1]
+}
+@enduml

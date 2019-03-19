@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
-IMG_EMF := $(wildcard media/*.emf)
-IMG_PNG := $(IMG_EMF:.emf=.png)
+IMG_PUML := $(wildcard media/*.puml)
+IMG_PNG := $(IMG_PUML:.puml=.png)
 
 PANDOC_TYPE = markdown_github+table_captions+auto_identifiers+implicit_figures
 
@@ -10,9 +10,8 @@ pdf: spesifikasjon.pdf
 
 images: $(IMG_PNG)
 
-.emf.png:
-	inkscape --export-dpi=72 --export-png=$@ $^
-	#cd $(dirname $@); libreoffice --headless --convert-to png $(abspath $^)
+.puml.png:
+	plantuml -p < $^ > $@
 
 # Draft Docbook based PDF building.  Remove colwidth to let the
 # docbook processors calculate columns widths.  Can pandoc be told to
@@ -45,7 +44,7 @@ spesifikasjon.html: docbook images
 	pandoc -f $(PANDOC_TYPE) -t latex $^ -o $@
 
 .PHONY: docbook
-.SUFFIXES: .md .pdf .docx .emf .png
+.SUFFIXES: .md .pdf .docx .puml .png
 
 clean:
 	$(RM) $(IMG_PNG)

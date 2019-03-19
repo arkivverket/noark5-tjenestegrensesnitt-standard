@@ -1,0 +1,11 @@
+@startuml
+class Arkivstruktur.Konvertering {
+  +systemID : SystemID [0..1]
+  +konvertertDato : datetime
+  +konvertertAv : string
+  +konvertertFraFormat : string
+  +konvertertTilFormat : string
+  +konverteringsverktøy : string [0..1]
+  +konverteringskommentar : string [0..1]
+}
+@enduml

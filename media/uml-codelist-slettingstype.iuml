@@ -1,0 +1,8 @@
+@startuml
+class Kodelister.Slettingstype <<codelist>> {
+  +Sletting av produksjonsformat = SP
+  +Sletting av tidligere versjon = SV
+  +Sletting av variant med sladdet informasjon = SS
+  +Sletting av hele innholdet i arkivdelen = SA
+}
+@enduml

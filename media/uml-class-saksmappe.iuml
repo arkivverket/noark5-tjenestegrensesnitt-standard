@@ -1,0 +1,16 @@
+@startuml
+class Sakarkiv.Saksmappe <Mappe> {
+  +saksår : integer [0..1]
+  +sakssekvensnummer : integer [0..1]
+  +saksdato : date
+  +administrativEnhet : string [0..1]
+  +referanseAdministrativEnhet : SystemID [0..1]
+  +saksansvarlig : string
+  +referanseSaksansvarlig : SystemID [0..1]
+  +journalenhet : string [0..1]
+  +saksstatus : Saksstatus
+  +utlåntDato : date [0..1]
+  +utlåntTil : string [0..1]
+  +referanseUtlåntTil : SystemID [0..1]
+}
+@enduml

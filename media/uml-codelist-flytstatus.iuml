@@ -1,0 +1,7 @@
+@startuml
+class Kodelister.FlytStatus <<codelist>> {
+  +Godkjent = G
+  +Ikke godkjent = I
+  +Sendt tilbake til saksbehandler med kommentarer = S
+}
+@enduml
