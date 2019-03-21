@@ -1104,12 +1104,219 @@ databaser.
 
 Generering av systemID-verdier skal følge UUID-algoritmen beskrevet i IETF RFC 4122, ISO/IEC 9834-8:2004 og ITU-T Rec. X.667. Slike UUID-verdier bør være frakoblet verdiene i objektet det henviser til.
 
-## Utvidelsesmuligheter
+## Virksomhetsspesifikke metadata
 
-Virksomhetsspesifikke metadata kan brukes for å legge ved mer data på
-enkelte objekter i kjernen.
+Virksomhetsspesifikke metadata er felt som kan brukes for å legge ved
+ekstra informasjon knyttet til enkelte objekter i
+arkivet. Virksomhetsspesifikke metadatafelter kan brukes til å utvide
+de arkivenhetene i Noark 5 som har feltet definert i sitt XML-skjema,
+det vil si *mappe*, *registrering* og *sakspart*. I tillegg kan de
+brukes på endel administrasjonsfelter som *bruker*.  Det er ingen
+teknisk begresning på hvilken entitet et gitt felt kan brukes på.  Det
+er opp til API-klienter og virksomheter å velge hvilke felt som gir
+mening for dem.
 
-Søk i virksomhetsspesifikke data dekkes ikke av NOARK 5
-tjenestegrensesnitt, men den enkelte arkivleverandør kan tilby tjenester
-som tilbyr søk i virksomhetsspesifikke data
+Feltet virksomhetsspesifikkeMetadata er et JSON «object» med
+nøkkel/verdi-oppføringer.  Nøkkelen er feltnavn registrert i
+metadatakatalogen, og verdiens type er formattert i tråd med typen
+registrert på feltnavnet i metadatakatalogen.
 
+Slike virksomhetsspesifikke metadata blir en del av arkivstrukturen og
+skal tas med i et arkivuttrekk.
+
+For informasjon om felles og velkjente virksomhetsspesifikke
+metadatafelter, se vedlegg 4.
+
+Her er en eksempelmappe med tre slike metadatafelt:
+
+**GET /api/sakarkiv/saksmappe/494c05c6-496f-11e9-b8fe-002354090596**
+
+```
+{
+     "systemID": "494c05c6-496f-11e9-b8fe-002354090596",
+     "tittel": "saksmappe 1",
+     "virksomhetsspesifikkeMetadata": {
+         "ppt-v1:henvisningdato": "2018-04-22T13:30:00" ,
+         "ppt-v1:skoleaar": "2018/2019",
+         "ppt-v1:saksnummer": 123
+     }
+}
+```
+
+Metadatafelt har et navenrom-navn og en verdi. Navnerom-navnet er en
+string inndelt i delstrenger skilt med bindestrek (-) og kolon (:).
+Kolon skiller navnerom og felt, mens bindestrek i navnerom skiller
+individuelle deler i navnet på navnerommet.  Feltene skal navngis på
+formatet &lt;type>-&lt;versjon>:&lt;feltnavn> hvis feltet er sentralt
+registrert hos arkivverket, og
+vnd-&lt;enhet/leverandør>-&lt;versjon>:&lt;feltnavn> hvis feltet ikke
+er registrert hos Arkivverket.  Delstrengene som utgjør navn på
+navnerom og feltnavn består utelukkende av ASCII-tegnene for små
+bokstaver (a-z) samt siffer (0-9).  I stedet for de særnorske tegnene
+«æ», «ø» og «å» benyttes henholdvis «ae», «oe» og «aa».
+
+Det anbefales å registrere felt i det sentrale registeret for å
+forenkle samhandling og bruk av samme feltdefinisjon på tvers av ulike
+fagsystemer og løsninger.  &lt;enhet/leverandør> henviser her til
+API-klient eller leverandør av API-klient, eller leverandør av
+API-tjeneste.
+
+En entitet kan ha virksomhetsspesifikke metadatafelt fra ulike
+aktører, det vil si med ulike prefikser.  Her er et eksempel på dette:
+
+**GET /api/sakarkiv/saksmappe/4eb9647c-496f-11e9-b445-002354090596**
+
+```
+{
+     "systemID": "4eb9647c-496f-11e9-b445-002354090596",
+     "tittel": "saksmappe 1",
+     "virksomhetsspesifikkeMetadata": {
+         "ppt-v1:innskrivingsdato": "2018-04-22T13:30:00",
+         "ppt-v1:skoleaar": "2018/2019",
+         "ppt-v1:saksnummer": 123,
+         "vnd-nikita-v1:eksempelfelt": "ett eller annet",
+         "barnehage-v2:skoleaar": "2017/2018"
+     }
+}
+```
+
+Her kan en se at det er to ulike felt som henviser til skoleaar.  For
+å unngå slik duplisering, som kan gi problemer når et system
+oppdaterer kun det ene feltet det forstår, så oppfordres det til
+gjenbruk av feltdefinisjoner og samkjøring mellom fagsystemer og andre
+som bruker virksomhetsspesifikke metadata.
+
+Det kan kun være èn *virksomhetsspesifikkeMetadata*-attributt
+tilknyttet entiter som støtter dette feltet.
+
+### Metadatakatalog for virksomhetsspesifikke metadata
+
+Definisjonen over alle virksomhetsspesifikke metadatafelt som er kjent
+for API-tjenesten skal kunne hentes ut fra metadatadelen av API-et.
+API-et annonserer at virksomhetsspesifikke metadata støttes ved at det
+vil finnes en HREF/REL par under HREFen som tilsvarer RELen til
+http://rel.kxml.no/noark5/v4/api/metadata/.
+
+Ved GET mot href for relasjonen
+http://rel.kxml.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/
+så kan en hente ut listen over virksomhetsspesifikke metadatafelt som
+er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
+
+**GET /api/metadata/virksomhetsspesifikkeMetadata/**
+
+```
+{
+    "results": [
+        {
+            "systemID": "4f8f7d94-4a43-11e9-ab36-002354090596",
+            "navn": "ppt-v1:skoleaar",
+            "type": "string",
+            "utdatert": true,
+            "beskrivelse": "Hvilket skoleår saken gjelder",
+            "kilde": "https://some/where/with/explanation",
+            "_links": [
+                {
+                    "rel": "self",
+                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
+                },
+                {
+                    "rel": "http://rel.kxml.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
+                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
+                }
+            ]
+        },
+        {
+            "systemID": "2f6e8634-4a45-11e9-844a-f3021c6321a6",
+            "navn": "ppt-v1:saksnummer",
+            "type": "integer",
+            "beskrivelse": "Saksnummer i fagsystemet",
+            "kilde": "https://some/where/with/explanation",
+            "_links": [
+                {
+                    "rel": "self",
+                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
+                },
+                {
+                    "rel": "http://rel.kxml.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
+                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
+                }
+            ]
+        },
+        {
+            "systemID": "25c93304-4a45-11e9-94b8-bf76fc1ca3ac",
+            "navn": "ppt-v1:innskrivingsdato",
+            "type": "datetime",
+            "beskrivelse": "Dato barnet blir innskrevet til skolen",
+            "kilde": "https://some/where/with/explanation",
+            "_links": [
+                {
+                    "rel": "self",
+                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
+                },
+                {
+                    "rel": "http://rel.kxml.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
+                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
+                }
+            ]
+        }
+    ]
+}
+```
+
+En slik metadataoppføring består av følgende felt:
+
+| **Navn**               | **Beskrivelse**                                    |
+|------------------------|----------------------------------------------------|
+| systemID               | en UUID som identifiserer metadatafeltet.  Denne UUID-verdien er unik internt i hver API-instans, men trenger ikke være lik for samme feltnavn på tvers av API-instanser. |
+| navn                   | navn på formen «&lt;type>-&lt;versjon>:&lt;feltnavn>» eller «vnd-&lt;enhet/leverandør>-&lt;versjon>:&lt;feltnavn>».   Navnet skal kun forekomme en gang i metadatalisten. |
+| type                  | feltets type, se liste over tilgjengelige typer i tabellen under. |
+| beskrivelse (valgfri) | beskrivelse / definisjon av feltets innhold. |
+| kilde (valgfri)       | en URL med nærmere beskrivelse av feltets innhold. |
+| utdatert (valgfri)    | en boolsk verdi som sier om feltet kan brukes på nye oppføringer.  Feltet skal kun vises hvis verdien er «true».  Hvis verdien er «true», så skal POST til for eksempel *ny-entitet* avvise forsøk på å sette feltet. |
+
+Følgende typer er tilgjengelige for virksomhetsspesifikke metadata.
+Alle typene er kompatible med datatyper tilgjengelig i [XML Skjema /
+XSD](https://www.w3.org/TR/xmlschema-2/#built-in-datatypes):
+
+| **Type**    | **Beskrivelse**                                                   |
+|-------------|-------------------------------------------------------------------|
+| boolean     | En boolsk verdi, sann eller usann.  Gyldige verdier er true og false, dvs. lik JSON-notasjon for samme felttype. |
+| date        | En datoverdi. Syntaksen er beskrevet i del 6.1.1.8 (Overføringsformat). |
+| datetime    | En dato og tidspunkt-verdi.  Syntaksen er beskrevet i del 6.1.1.8 (Overføringsformat). |
+| integer     | En heltallsverdi.  Syntaksen er i tråd med JSON-typen «number» uten desimalpunktum og fraksjoner. |
+| decimal     | En desimaltallsverdi.  Syntaksen er i tråd med JSON-typen «number». |
+| string      | UTF-8-sekvens med tegn. |
+| uri         | Verdien samsvarer med syntaksen til en URI definert i IETF RFC 2396 og endret av IETF RFC 2732.  Dette er en undertype av string. |
+
+Det er ingen begresning på hvilke verdier som kan lages i integer og
+decimal, dvs.  de har ingen fast bitlengde og oppløsning.  Det er
+heller ingen begresning på lengden på streng og uri.
+
+For mapper som støtter virksomhetsspesifikke metadata, så skal GET på
+ny-mappe returnere feltet virksomhetsspesifikkeMetadata, der verdien
+enten skal være ```null``` for å markere at ingen slike felter er
+satt, eller inneholde forvalgte felter med verdier som API-kjernen
+foreslår å sette på alle / de fleste slike objekter.
+
+Her er et eksempel for ```GET
+/api/arkivstruktur/klasse/7c9246ff-effe-4edd-ad8a-8cab317229df/ny-mappe```:
+
+```
+{
+    "dokumentmedium" : "Elektronisk arkiv",
+    "virsomhetsspesifikkeMetadata": null
+}
+```
+
+### Søk i virksomhetsspesifikke metadata
+
+Det skal være mulig å utføre søk i virksomhetsspesifikke metadata, på
+samme måte som andre metadatafelt.  Merk at fullt feltnavn inkludert
+prefiks må brukes når en navngir feltnavn i søk.  For eksempel ved søk
+på feltet skoleaar, brukt i ppt-v1:skoleaar, må det brukes
+«ppt-v1:skoleaar». Her er to enkle OData-søkeeksempel:
+
+```
+.../mappe?$filter=ppt-v1:skoleaar eq '2018/2019'
+.../saksmappe?$filter=contains(vnd-nikita-v1:eksempelfelt, ‘verdi’)
+```
