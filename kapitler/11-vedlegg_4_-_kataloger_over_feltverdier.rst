@@ -7,6 +7,20 @@ virksomhetsspesifikkeMetadata. Mer informasjon om disse er
 tilgjengelig fra `Arkivverkets sider om Noark
 5 <https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/tjenestegrensesnitt-noark5>`__.
 
+Virksomhetsspesifikke metadatafeltnavn
+--------------------------------------
+
+Feltnavn brukt i virksomhetsspesifikkeMetadata registreres ved å sende
+inn informasjon til Arkivverket, med referanse Erik Gunnar m.fl.
+Disse vil på forespørsel forklare hva som skal sendes inn.  Det som
+trengs er informasjon om feltet, slik som:
+
+ * Navn på feltet, slik det brukes i virksomhetsspesifikkeMetadata.
+ * Feltets type.
+ * Definisjon for feltets verdi.
+ * Beskrivelse av feltet.
+ * Hvilke systemer som som bruker feltet ved registreringstidspunktet.
+
 Formatkoder
 -----------
 
