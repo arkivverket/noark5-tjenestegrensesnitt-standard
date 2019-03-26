@@ -113,7 +113,6 @@ Table: Relasjoner
 | **Generalization** (Source → Destination) | Arkiv                        | Arkivenhet       |             |
 | **Aggregation** (Bi-Directional)          | arkivskaper 1..* Arkivskaper | arkiv 0..* Arkiv |             |
 | **Aggregation** (Bi-Directional)          | arkivdel 0..* Arkivdel       | arkiv 1 Arkiv    |             |
-| **Aggregation** (Destination → Source)    | underarkiv 0..* Arkiv        | Arkiv            |             |
 
 Table: Relasjonsnøkler
 
@@ -818,7 +817,6 @@ Table: Relasjoner
 | **Aggregation** (Destination → Source)     | underklasse 0..* Klasse                                  | Klasse                 |             |
 | **Generalization** (Source → Destination)  | Klasse                                                   | Arkivenhet             |             |
 | **Aggregation** (Bi-Directional)           | klasse 0..* Klasse                                       | klassifikasjonssystem 0..1 Klassifikasjonssystem |  |
-| **Aggregation** (Destination → Source)     | underklasse 0..* Klasse                                  | Klasse                 |             |
 | **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | klasse 0..1 Klasse     |             |
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | klasse 0..1 Klasse     |             |
 | **Association** (Source → Destination)     | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
@@ -1078,7 +1076,6 @@ Table: Relasjoner
 | **Generalization** (Source → Destination)  | Møtemappe                                                | Mappe                  |             |
 | **Generalization** (Source → Destination)  | Saksmappe                                                | Mappe                  |             |
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | mappe 0..1 Mappe       |             |
-| **Aggregation** (Destination → Source)     | undermappe 0..* Mappe                                    | Mappe                  |             |
 
 Table: Relasjonsnøkler
 
