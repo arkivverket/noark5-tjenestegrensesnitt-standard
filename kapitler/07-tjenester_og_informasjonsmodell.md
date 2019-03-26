@@ -1717,7 +1717,7 @@ Table: Attributter
 
 #### ElektroniskSignaturSikkerhetsnivå
 
-*Type:* ***Class «codeList»***
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -1777,7 +1777,7 @@ Table: Attributter
 
 #### FlytStatus
 
-*Type:* ***Class «codeList»***
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -2080,7 +2080,7 @@ Table: Attributter
 
 #### MøtedeltakerFunksjon
 
-*Type:* ***Class «codeList»***
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
@@ -2334,7 +2334,7 @@ Table: Attributter
 
 #### SkjermingMetadata
 
-*Type:* ***Class «codeList»***
+*Type:* ***Class «codelist»***
 
 *Arver:* 
 
