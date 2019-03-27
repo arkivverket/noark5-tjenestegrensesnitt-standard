@@ -2018,8 +2018,8 @@ Table: Attributter
 
 *Arver:* 
 
-Landkoder ihht ISO 3166
-https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
+Navn på land og tobokstavs landskoder ihht ISO 3166, tilgjengelig fra
+blant annet https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2
 
 Table: Relasjonsnøkler
 
@@ -2198,8 +2198,16 @@ Table: Attributter
 
 *Arver:* 
 
-Postens postnummer liste
-http://adressesok.posten.no/nb/postal\_codes/search
+Postens liste over norske poststeder og postnummer for oppslag av
+stedsnavn tilknyttet et gitt postnummer.  Kodelistens *navn* er
+poststed, og *kode* er postnummer.
+
+Tilgang til oppdatert liste kan [kjøpes fra
+Posten/Bring](https://www.bring.no/radgivning/sende-noe/adressetjenester/adresseregistre)
+eller hentes fra andre kilder, som
+[data.norge.no](https://data.norge.no/data/posten-norge/postnummer-i-norge)
+og [Erik Bolstads postnummeroversikt med geografisk
+plassering](http://www.erikbolstad.no/geo/noreg/postnummer/).
 
 Table: Relasjoner
 
