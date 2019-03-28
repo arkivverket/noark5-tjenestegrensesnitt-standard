@@ -1339,12 +1339,9 @@ Table: Restriksjoner
 *Arver:* 
 
 Metadata for utført kassasjon er obligatorisk når kassasjon er utført
-før arkivuttrekket
-
-produseres. Det skal grupperes inn i metadata for dokumentbeskrivelse.
-Dersom en hel
-
-arkivdel er kassert, skal metadata grupperes inn i arkivdel.
+før arkivuttrekket produseres. Det skal grupperes inn i metadata for
+dokumentbeskrivelse.  Dersom en hel arkivdel er kassert, skal metadata
+grupperes inn i arkivdel.
 
 Table: Attributter
 
