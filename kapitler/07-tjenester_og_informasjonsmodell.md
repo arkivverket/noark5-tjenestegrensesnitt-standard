@@ -708,7 +708,7 @@ Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
-| graderingskode        | Definisjon: Angivelse av at dokumentene er gradert i henhold til sikkerhetsloven eller beskyttelsesinstruksen. Kilde: Registreres manuelt ved valg fra liste, kan også registres automatisk. Kommentarer: Dokumenter gradert &quot;Strengt hemmelig&quot;, &quot;Hemmelig&quot;, &quot;Konfidensielt&quot; og &quot;Strengt fortrolig&quot; skal føres i en egen journal som i sin helhet er unntatt fra innsyn. M506 gradering | \[1..1\] | Graderingskode |
+| graderingskode        | Definisjon: Angivelse av at dokumentene er gradert i henhold til sikkerhetsloven eller beskyttelsesinstruksen. Kilde: Registreres manuelt ved valg fra liste, kan også registres automatisk. Kommentarer: Dokumenter gradert &quot;Strengt hemmelig&quot;, &quot;Hemmelig&quot;, &quot;Konfidensielt&quot; og &quot;Strengt fortrolig&quot; skal føres i en egen journal som i sin helhet er unntatt fra innsyn. M506 gradering | \[1..1\] | | Graderingskode |
 | graderingsdato        | Definisjon: Dato og klokkeslett når et dokument ble gradert . Kilde: Registreres automatisk ved gradering. Kommentarer: (ingen). M624 | \[1..1\] | | datetime|
 | gradertAv             | Definisjon: Navn på person som foretok graderingen . Kilde: Registreres automatisk ved gradering. Kommentarer: (ingen). M625 | \[1..1\] | | string | 
 | referanseGradertAv    |   | \[1..1\]        |           | SystemID |
@@ -786,7 +786,7 @@ Table: Attributter
 | kassasjonsvedtak | Definisjon:Handling som skal utføres ved bevaringstidens slutt. Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres manuelt. Kommentarer: (ingen). M450 | \[1..1\] | | Kassasjonsvedtak |
 | kassasjonshjemmel | Definisjon: Angivelse av hjemmel for kassasjon . Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres  manuelt. Kommentarer: Hjemmel kan f.eks. være Riksarkivarens bevarings- og kassasjons-vedtak. M453 | \[0..1\] | | string | 
 | bevaringstid | Definisjon: Antall år dokumentene som tilhører denne arkivdelen skal bevares. Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres manuelt. Kommentarer: Tidspunktet for når bevaringstiden starter å løpe, vil vanligvis være når en mappe avsluttes. Men andre regler kan være aktuelle. M451 | \[1..1\] | | integer | 
-| kassasjonsdato | Definisjon: Dato for når dokumentene som tilhører denne arkivenheten skal kunne kasseres, eller vurderes for bevaring og kassasjon på ny . Kilde: Datoen beregnes automatisk på grunnlag av M451 Bevaringstid, eller registreres  manuelt. Kommentarer: (ingen). M452 | \[1..1\] | date |
+| kassasjonsdato | Definisjon: Dato for når dokumentene som tilhører denne arkivenheten skal kunne kasseres, eller vurderes for bevaring og kassasjon på ny . Kilde: Datoen beregnes automatisk på grunnlag av M451 Bevaringstid, eller registreres  manuelt. Kommentarer: (ingen). M452 | \[1..1\] | | date |
 
 #### Klasse
 
