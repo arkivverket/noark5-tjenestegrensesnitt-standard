@@ -134,14 +134,14 @@ Table: Attributter
 
 | **Navn**            | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |---------------------|---------------|---------------|-----------|-----------|
-| tittel              | Definisjon: Tittel eller navn på arkivenheten Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | string |
-| beskrivelse         | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | string |
-| arkivstatus         | Definisjon: Status til arkivet . Kilde: Registreres manuelt når arkivet opprettes eller ved skifte av status. Kommentarer: (ingen)  M050 | \[0..1\] | Arkivstatus |
-| dokumentmedium      | Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter . Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel. M300 | \[0..1\]| Dokumentmedium |
-| oppbevaringssted    | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument.  M301 | \[0..\*\] | string | 
-| avsluttetDato       | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen). M602 | \[0..1\] | datetime| 
-| avsluttetAv         | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen) M603 | \[0..1\] | string |
-| referanseAvsluttetAv| referanse til Bruker sin systemID | \[0..1\] | SystemID |
+| tittel              | Definisjon: Tittel eller navn på arkivenheten Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string |
+| beskrivelse         | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string |
+| arkivstatus         | Definisjon: Status til arkivet . Kilde: Registreres manuelt når arkivet opprettes eller ved skifte av status. Kommentarer: (ingen)  M050 | \[0..1\] | | Arkivstatus |
+| dokumentmedium      | Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter . Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel. M300 | \[0..1\] | | Dokumentmedium |
+| oppbevaringssted    | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument.  M301 | \[0..\*\] | | string | 
+| avsluttetDato       | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen). M602 | \[0..1\] | | datetime| 
+| avsluttetAv         | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen) M603 | \[0..1\] | | string |
+| referanseAvsluttetAv| referanse til Bruker sin systemID | \[0..1\] | | SystemID |
 
 Table: Restriksjoner
 
@@ -270,23 +270,23 @@ Table: Attributter
 
 | **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------------------|---------------|---------------|-----------|-----------|
-| tittel                | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | string | 
-| beskrivelse           | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | string | 
-| arkivdelstatus        | Definisjon: Status til den arkivperioden som arkivdelen omfatter . Kilde: Registreres manuelt når arkivdelen opprettes eller ved skifte av status. Kommentarer: Arkivdeler som avleveres skal ha status 'Avsluttet periode'. M051 |  \[1..1\] | Arkivdelstatus|
-| dokumentmedium        | Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter . Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel. M300 | \[0..1\] | Dokumentmedium |
-| oppbevaringssted      | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument. M301 | \[0..\*\] |string |
-| avsluttetDato         | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen) M602 | \[0..1\] | datetime| 
-| avsluttetAv           | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen) M603 | \[0..1\] | string | 
-| referanseAvsluttetAv  |           | \[0..1\] | SystemID | 
-| arkivperiodeStartDato | Definisjon: Dato for starten av en arkivperiode . Kilde: Settes automatisk til samme dato som M600 opprettetDato. Kommentarer: Det kan tenkes tilfeller hvor startdatoen ikke er identisk med datoen arkivdelen ble opprettet M107 | \[0..1\] | date | 
-| arkivperiodeSluttDato | Definisjon: Dato for slutten av en arkivperiode . Kilde: Settes automatisk til samme dato som M602 avsluttetDato. Kommentarer: Det kan forekomme tilfeller hvor sluttdatoen ikke er identisk med datoen arkivdelen ble avsluttet. M108 | \[0..1\] | date|
-| referanseForløper     | M202      | \[0..1\] | SystemID         |
-| referanseArvtaker     | M203      | \[0..1\] | SystemID         |
-| kassasjon             |           | \[0..1\] | Kassasjon        |
-| utførtKassasjon       |           | \[0..1\] | UtførtKassasjon  |
-| sletting              |           | \[0..1\] | Sletting         |
-| skjerming             |           | \[0..1\] | Skjerming        |
-| gradering             |           | \[0..1\] | Gradering        |
+| tittel                | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
+| beskrivelse           | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string | 
+| arkivdelstatus        | Definisjon: Status til den arkivperioden som arkivdelen omfatter . Kilde: Registreres manuelt når arkivdelen opprettes eller ved skifte av status. Kommentarer: Arkivdeler som avleveres skal ha status 'Avsluttet periode'. M051 |  \[1..1\] | | Arkivdelstatus|
+| dokumentmedium        | Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter . Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel. M300 | \[0..1\] | | Dokumentmedium |
+| oppbevaringssted      | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument. M301 | \[0..\*\] | | string |
+| avsluttetDato         | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen) M602 | \[0..1\] | | datetime| 
+| avsluttetAv           | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen) M603 | \[0..1\] | | string | 
+| referanseAvsluttetAv  |           | \[0..1\] | | SystemID | 
+| arkivperiodeStartDato | Definisjon: Dato for starten av en arkivperiode . Kilde: Settes automatisk til samme dato som M600 opprettetDato. Kommentarer: Det kan tenkes tilfeller hvor startdatoen ikke er identisk med datoen arkivdelen ble opprettet M107 | \[0..1\] | | date | 
+| arkivperiodeSluttDato | Definisjon: Dato for slutten av en arkivperiode . Kilde: Settes automatisk til samme dato som M602 avsluttetDato. Kommentarer: Det kan forekomme tilfeller hvor sluttdatoen ikke er identisk med datoen arkivdelen ble avsluttet. M108 | \[0..1\] | | date |
+| referanseForløper     | M202      | \[0..1\] | | SystemID         |
+| referanseArvtaker     | M203      | \[0..1\] | | SystemID         |
+| kassasjon             |           | \[0..1\] | | Kassasjon        |
+| utførtKassasjon       |           | \[0..1\] | | UtførtKassasjon  |
+| sletting              |           | \[0..1\] | | Sletting         |
+| skjerming             |           | \[0..1\] | | Skjerming        |
+| gradering             |           | \[0..1\] | | Gradering        |
 
 Table: Restriksjoner
 
@@ -368,13 +368,13 @@ Table: Attributter
 
 | **Navn**             | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |----------------------|---------------|---------------|-----------|-----------|
-| systemID             | M001 Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså *systemID* være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Registreres automatisk av systemet. Skal ikke kunne endres. Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal *systemID* være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. | \[0..1\] | SystemID |
+| systemID             | M001 Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså *systemID* være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Registreres automatisk av systemet. Skal ikke kunne endres. Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal *systemID* være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. | \[0..1\] | | SystemID |
 | oppdatertDato        |               | \[0..1\] | | datetime |
-| opprettetDato        | Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert . Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M600 | \[0..1\] | datetime| 
-| opprettetAv          | Definisjon: Navn på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M601 | \[0..1\] | string | 
-| oppdatertAv          | Definisjon: Navn på person som oppdaterte arkivenheten. Kilde: Registreres automatisk av systemet ved oppdatering av enheten | \[0..1\] | string | 
-| referanseOppdatertAv | Definisjon: SystemID på person som oppdaterte arkivenheten. Kilde: Registreres automatisk av systemet ved oppdatering av enheten | \[0..1\] | SystemID |
-| referanseOpprettetAv | Definisjon: SystemID på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten | \[0..1\] | SystemID |
+| opprettetDato        | Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert . Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M600 | \[0..1\] | | datetime| 
+| opprettetAv          | Definisjon: Navn på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M601 | \[0..1\] | | string | 
+| oppdatertAv          | Definisjon: Navn på person som oppdaterte arkivenheten. Kilde: Registreres automatisk av systemet ved oppdatering av enheten | \[0..1\] | | string | 
+| referanseOppdatertAv | Definisjon: SystemID på person som oppdaterte arkivenheten. Kilde: Registreres automatisk av systemet ved oppdatering av enheten | \[0..1\] | | SystemID |
+| referanseOpprettetAv | Definisjon: SystemID på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten | \[0..1\] | | SystemID |
 
 Table: Restriksjoner
 
@@ -422,9 +422,9 @@ Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
-| arkivskaperID | Definisjon: Unik ID for arkivskaperen . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentar: Kan være organisasjonsnummer (Brønnøysundregistrene) eller annen identifikasjon avtalt med arkivdepotet. M006 | \[1..1\]  | string | 
-| arkivskaperNavn | Definisjon: Navn på organisasjonen som har skapt arkivet . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentarer: (ingen). M023 | \[1..1\] | string | 
-| beskrivelse | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | string |
+| arkivskaperID | Definisjon: Unik ID for arkivskaperen . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentar: Kan være organisasjonsnummer (Brønnøysundregistrene) eller annen identifikasjon avtalt med arkivdepotet. M006 | \[1..1\]  | | string | 
+| arkivskaperNavn | Definisjon: Navn på organisasjonen som har skapt arkivet . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentarer: (ingen). M023 | \[1..1\] | | string | 
+| beskrivelse | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string |
 
 Table: Restriksjoner
 
@@ -635,7 +635,7 @@ Table: Attributter
 | sjekksum             | Definisjon: En verdi som beregnes ut fra innholdet i dokumentet, og som dermed gir integritetssikring til dokumentets innhold . Kilde: Påføres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M705 | \[0..1\] | | string | 
 | mimeType             | veMimeType i n4 | \[0..1\]    |           | string | 
 | sjekksumAlgoritme    | Definisjon: Algoritmen som er brukt for å beregne sjekksummen . Kilde: Registreres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M706 | \[0..1\] | | string | 
-| filstoerrelse         | Definisjon: Størrelsen på fila i antall bytes oppgitt med desimaltall . Kilde: Registreres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M707 | \[0..1\] | string |
+| filstoerrelse         | Definisjon: Størrelsen på fila i antall bytes oppgitt med desimaltall . Kilde: Registreres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M707 | \[0..1\] | | string |
 | elektroniskSignatur  |              | \[0..1\]       |           | ElektroniskSignatur |
 
 Table: Restriksjoner
@@ -1111,12 +1111,12 @@ Table: Attributter
 | mappetype                     | angir mappetype som blant annet kan brukes som hint til hva som ligger i virksomhetsspesifikkemetadata| \[0..1\] | | Mappetype |
 | tittel                        | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
 | offentligTittel               | Definisjon: Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med \*\*\*\*\*\*) . Kommentarer: I løpende og offentlig journaler skal også offentligTittel være med dersom ord i tittelfeltet skal skjermes. M025 | \[0..1\] | | string | 
-| beskrivelse                   | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt) M021 | \[0..1\] | string | 
+| beskrivelse                   | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt) M021 | \[0..1\] | | string | 
 | nøkkelord                     | Definisjon: Nøkkeord eller stikkord som beskriver innholdet i enheten . Kilde: Registreres vanligvis ved oppslag fra liste (f.eks. en tesaurus). Kan også registreres automatisk på grunnlag av dokumentinnhold eller integrering med fagsystem. Kommentarer: Nøkkelord kan brukes for å forbedre mulighetene for søking og gjenfinning. Nøkkelord skal ikke erstatte klassifikasjon. M022 | \[0..\*\] | | string | 
 | dokumentmedium                | Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter . Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Obligatorisk ved blanding av fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller elektronisk, er det tilstrekkelig med verdi på arkivnivå. Er en hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig å angi det på arkivdelnivå. Dersom underordnede arkivdeler inneholder både fysiske og elektroniske dokumenter, må informasjon om dette arves nedover i hierarkiet. Se også kommentar til M208 referanseArkivdel. M300 | \[0..1\] | | Dokumentmedium |
-| oppbevaringssted              | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument. M301 | \[0..\*\] | | string | 
-| avsluttetDato                 | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen). M602 | \[0..1\] | | datetime | 
-| avsluttetAv                   | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen) M603 | \[0..1\] | | string | 
+| oppbevaringssted              | Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan være angivelse av rom, hylle, skap osv. Overordnede arkivdeler (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves fra overordnet nivå, kan overstyres  manuelt. Kommentarer: Fysiske dokumenters plassering skal ellers gå fram av arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i utgangspunktet være ordnet i overordnede omslag (f.eks. hengemapper) etter stigende klasseID. Innenfor hver av disse skal omslagene skal dokumentene ligge i fysiske saksmapper som er ordnet etter stigende mappeID. Innenfor saksmappene skal dokumentene være ordnet etter stigende journalpostnummer (&quot;dokumentnummer&quot;). Vedlegg skal legges sammen med tilhørende hoveddokument. M301 | \[0..\*\] | | string |
+| avsluttetDato                 | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen). M602 | \[0..1\] | | datetime |
+| avsluttetAv                   | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen) M603 | \[0..1\] | | string |
 | referanseAvsluttetAv          | | \[0..1\] |          | SystemID |
 | kassasjon                     | | \[0..1\] |          | Kassasjon |
 | skjerming                     | | \[0..1\] |          | Skjerming |
@@ -2997,7 +2997,8 @@ Table: Attributter
 | opprettetAv                  | Definisjon: Navn på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M601 opprettetAv | \[0..1\] | | string | 
 | referanseOpprettetAv         | | \[0..1\] | | SystemID |
 | tittel                       | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 tittel | \[1..1\] | | string | 
-| beskrivelse                  | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 beskrivelse | \[0..1\] | string | presedensHjemmel | Definisjon: Lovparagrafen som saken eller journalposten danner presedens for . Kilde: Registreres manuelt ved opprettelse av presedens. Kommentar: (ingen). M311 presedensHjemmel | \[0..1\] | | string | 
+| beskrivelse                  | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 beskrivelse | \[0..1\] | | string |
+| presedensHjemmel | Definisjon: Lovparagrafen som saken eller journalposten danner presedens for . Kilde: Registreres manuelt ved opprettelse av presedens. Kommentar: (ingen). M311 presedensHjemmel | \[0..1\] | | string | 
 | rettskildefaktor             | Definisjon: En argumentkilde som brukes til å løse rettslige problemer. En retts-anvender som skal ta stilling til et juridisk spørsmål, vil ta utgangspunkt i en rettskildefaktor. Kilde: Registreres manuelt ved opprettelse av presedens Kommentar: En rettskildefaktor kan være en lov- eller forskriftstekst, lovforarbeider, domstolspraksis, andre myndigheters praksis, privates praksis (kontraktspraksis), rettsoppfatninger, reelle hensyn, folkerett, EU-/ EØS-rett mv. M312 rettskildefaktor | \[1..1\] | |string | 
 | presedensGodkjentDato        | Definisjon:Dato og klokkeslett for når presedensen er godkjent . Kilde: Registreres automatisk dersom det finnes funksjonalitet for å godkjenne presedenser .Kommentar: (ingen). M628 presedensGodkjentDato | \[0..1\] | | datetime |
 | presedensGodkjentAv          | Definisjon: Navn på person som har godkjent presedensen . Kilde: Registreres automatisk dersom det finnes funksjonalitet for å godkjenne presedenser. Kommentar: (ingen). M629 presedensGodkjentAv | \[0..1\] | | string | 
@@ -3063,7 +3064,8 @@ Table: Attributter
 | saksår                 | Definisjon: Inngår i M003 mappeID. Viser året saksmappen ble opprettet. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Se kommentar under M012 sakssekvensnummer. M011 saksaar | \[0..1\] | | integer|
 | sakssekvensnummer      | Definisjon: Inngår i M003 mappeID. Viser rekkefølgen når saksmappen ble opprettet innenfor året. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Kombinasjonen saksår og sakssekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. M012 sakssekvensnummer | \[0..1\] | | integer|
 | saksdato               | Definisjon: Datoen saken er opprettet . Kilde: Settes automatisk til samme dato som M600 opprettetDato. Kommentar: (ingen). M100 saksdato | \[1..1\] | |date| 
-| administrativEnhet     | Definisjon: Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen. Kilde: Registreres automatisk f.eks. på grunnlag av innlogget bruker, kan overstyres. Kommentar: Merk at på journalpostnivå grupperes administrativEnhet sammen med M307 saksbehandler inn i korrespondansepart. Dette muliggjør individuell behandling når det er flere mottakere, noe som er særlig aktuelt ved organinterne dokumenter som skal følges opp. M305 administrativEnhet | \[0..1\] | string | referanseAdministrativEnhet| \[0..1\] | | SystemID |
+| administrativEnhet     | Definisjon: Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen. Kilde: Registreres automatisk f.eks. på grunnlag av innlogget bruker, kan overstyres. Kommentar: Merk at på journalpostnivå grupperes administrativEnhet sammen med M307 saksbehandler inn i korrespondansepart. Dette muliggjør individuell behandling når det er flere mottakere, noe som er særlig aktuelt ved organinterne dokumenter som skal følges opp. M305 administrativEnhet | \[0..1\] | | string |
+| referanseAdministrativEnhet | | \[0..1\] | | SystemID |
 | saksansvarlig          | Definisjon: Navn på person som er saksansvarlig . Kilde: Registreres automatisk på grunnlag av innlogget bruker eller annen saksbehandlingsfunksjonalitet (f.eks. saksfordeling), kan overstyres manuelt. Kommentar: (ingen). M306 saksansvarlig | \[1..1\] | | string | 
 | referanseSaksansvarlig | | \[0..1\] | | SystemID |
 | journalenhet           | Definisjon: Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter . Kilde: Registreres automatisk på grunnlag av innlogget bruker, kan overstyres manuelt. Kommentar: (ingen). M308 journalenhet | \[0..1\] | | string | 
@@ -3398,3 +3400,57 @@ Table: Attributter
 | referanseEndretAv       | referanse til Bruker sin systemID | \[1..1\]     |          | SystemID |
 | tidligereVerdi          |                                   | \[0..1\]     |          | string   |
 | nyVerdi                 |                                   | \[0..1\]     |          | string   |
+
+### MøteOgUtvalgsbehandling
+
+#### Møtemappe
+
+*Type:* ***Class***
+
+*Arver:* ***Mappe***
+
+Table: Relasjoner
+
+| **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
+| ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
+| **Generalization** (Source → Destination)  | Møtemappe                                                | Mappe                  |             |
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                          |
+| --------- | ------------------------------------------------------------------ |
+| REST\_REL | http://rel.kxml.no/noark5/v4/api/moeterutvalg/moetemappe/    |
+| REST\_REL | self                                                               |
+| REST\_REL | http://rel.kxml.no/noark5/v4/api/moeterutvalg/ny-moetemappe/ |
+
+Table: Attributter
+
+| **Navn**                | **Merknad**                       | **Multipl.** | **Kode** | **Type** |
+| ----------------------- | --------------------------------- | ------------ | -------- | -------- |
+| systemID                |                                   | \[0..1\]     |          | SystemID |
+
+#### Møteregistrering
+
+*Type:* ***Class***
+
+*Arver:* ***Basisregistrering***
+
+Table: Relasjoner
+
+| **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
+| ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
+| **Generalization** (Source → Destination)  | Møteregistrering                                         | Basisregistrering      |             |
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                          |
+| --------- | ------------------------------------------------------------------ |
+| REST\_REL | http://rel.kxml.no/noark5/v4/api/moeterutvalg/moeteregistrereing/    |
+| REST\_REL | self                                                               |
+| REST\_REL | http://rel.kxml.no/noark5/v4/api/moeterutvalg/ny-moeteregistrering/ |
+
+Table: Attributter
+
+| **Navn**                | **Merknad**                       | **Multipl.** | **Kode** | **Type** |
+| ----------------------- | --------------------------------- | ------------ | -------- | -------- |
+| systemID                |                                   | \[0..1\]     |          | SystemID |
