@@ -132,6 +132,7 @@ def c2full(c):
 fieldnames = None # load2fieldmetadata("../noark5-tester/noark5-schema/v4.0/")
 
 print("@startuml")
+print("scale max 2048 width")
 
 for c in sorted(classes.keys(), key=lambda x: classes[x]['fullname']):
     stereotype = "class"
