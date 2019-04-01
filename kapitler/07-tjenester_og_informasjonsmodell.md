@@ -1124,8 +1124,6 @@ Table: Restriksjoner
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
 | 5.4.1 En mappe skal kunne være av forskjellig type. | |
-| 5.4.2 En Mappe skal tilhøre en Arkivdel og en Arkivdel kan innehold ingen, en eller flere Mapper. | |
-| 5.4.3 En Mappe skal tilhøre en Klasse og en Klasse kan klassifisere ingen, en eller flere Mapper. | |
 | 5.4.5 En Mappe bør kunne inngå i andre Mapper i et hierarki. | |
 | 5.4.6 En Mappe skal kunne bestå av ingen, en eller flere Registreringer og en Registrering kan inngå i (kun) en Mappe. | |
 | 5.4.7 Dersom en Mappe er registrert som avsluttet (avsluttetDato) skal det ikke være mulig å legge flere Registreringer til Mappen. | | 
