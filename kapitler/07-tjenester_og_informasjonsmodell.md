@@ -7,7 +7,7 @@
 ***Klassediagram*** brukes for å vise utvalgte klasser i en
 UML-modell. Klassediagram ***trenger ikke være fullstendige***,
 hverken mhp hvilke klasser som vises eller hvilke assosiasjoner
-somvises. For kompliserte modeller (som NOARK-modellen) trengs flere
+som vises. For kompliserte modeller (som NOARK-modellen) trengs flere
 klassediagram for å vise hele modellen.
 
 |               |                 |
