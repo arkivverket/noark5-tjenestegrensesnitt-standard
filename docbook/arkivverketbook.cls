@@ -33,6 +33,13 @@
 % you want to micromanage even more.
 \usepackage{microtype}
 
+% Use lineno to show the line numbers on each page
+% The line numbers appear after the frontmatter
+\usepackage{lineno}
+
+\let\orgmainmatter=\mainmatter
+\def\mainmatter{\orgmainmatter\linenumbers}
+
 % By dafault, LaTeX will try and make all your pages the length that
 % you set using the geometry setting. If a page has images, tables,
 % headings or paragraph breaks which make it shorter than that page
