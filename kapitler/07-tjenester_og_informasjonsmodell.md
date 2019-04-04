@@ -1721,7 +1721,7 @@ signatur
 Kommentar: (ingen)
 
 M507
-elektroniskSignaturSikkerhetsnivåå
+elektroniskSignaturSikkerhetsnivå
 
 Table: Relasjonsnøkler
 
