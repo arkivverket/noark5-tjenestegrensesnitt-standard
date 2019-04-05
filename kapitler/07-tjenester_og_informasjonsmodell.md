@@ -2957,7 +2957,7 @@ Table: Relasjoner
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Association** (Bi-Directional)         | journalpost 0..* Journalpost                             | presedens 0..* Presedens |           |
-| **Association** (Bi-Directional)         | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
+| **Association** (Bi-Directional)         | saksmappe 0..* Saksmappe                                 | presedens 0..* Presedens |           |
 
 Table: Relasjonsnøkler
 
@@ -2965,7 +2965,7 @@ Table: Relasjonsnøkler
 | --------- | ---------------------------------------------------------- |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/presedensstatus/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-saksmappe/    |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sak/             |
+| REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/saksmappe/       |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-presedens/    |
 | REST\_REL | self                                                       |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/presedens/       |
@@ -3025,7 +3025,7 @@ Table: Relasjoner
 | **Association** (Source → Destination)    | Saksmappe                                                | sakspart 0..* Sakspart |             |
 | **Generalization** (Source → Destination) | Saksmappe                                                | Mappe                  |             |
 | **Association** (Source → Destination)    | Saksmappe                                                | sekundaerklassifikasjon 0..* Klasse | |
-| **Association** (Bi-Directional)          | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
+| **Association** (Bi-Directional)          | saksmappe 0..* Saksmappe                                 | presedens 0..* Presedens |           |
 
 Table: Relasjonsnøkler
 
