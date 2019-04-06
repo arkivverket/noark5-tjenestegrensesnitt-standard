@@ -168,7 +168,7 @@ og **$orderby**. Alle lister med data bør støtte søk og filtrering.
         },
 ```
 
-Figur 1 anonsering av templated link for søk etter arkiv
+Figur 1 annonsering av templated link for søk etter arkiv
 
 Filter parametre som skal støttes er:
 
