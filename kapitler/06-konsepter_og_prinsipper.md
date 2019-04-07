@@ -53,16 +53,14 @@ Content-Type: application/vnd.noark5-v4+json
 
 ```Python
 {
-    "_links": [
-        {
-            "href": "https://n5.example.com/api/arkivstruktur",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/"
+    "_links": {
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/": {
+            "href": "https://n5.example.com/api/arkivstruktur"
         },
-        {
-            "href": "https://n5.example.com/api/sakarkiv",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/"
+        "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/": {
+            "href": "https://n5.example.com/api/sakarkiv"
         }
-    ]
+    }
 }
 ```
 
@@ -122,16 +120,15 @@ samme href som «self» representerer entitetsrelasjonsnøkkelen til
 ```Python
 { "results": [
   { ...
-    "_links": [
-      {
-        "rel": "self",
-        "href": "http://localhost:49708/api/sakarkiv/saksmappe/2624ed49-dc39-47d5-8966-52f9fdc75868/"
-      }, {
-        "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/",
-        "href": "http://localhost:49708/api/sakarkiv/saksmappe/2624ed49-dc39-47d5-8966-52f9fdc75868/"
+    "_links": {
+      "self": {
+        "href": "https://n5.example.com/api/sakarkiv/saksmappe/2624ed49-dc39-47d5-8966-52f9fdc75868/"
+      },
+      "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/": {
+        "href": "https://n5.example.com/api/sakarkiv/saksmappe/2624ed49-dc39-47d5-8966-52f9fdc75868/"
       },
       ...
-    ]
+    }
   } ]
 }
 ```
@@ -149,15 +146,13 @@ i _links er alfabetisk sortert på «rel»-feltet i henhold til ASCII-verdi.
 
 ```Python
 {
-    "_links": [
-        {
+    "_links": {
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/": {
             "href": "https://n5.example.com/api/arkivstruktur/arkiv{?$filter&$orderby&$top&$skip&$search}",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/",
             "templated": true
         },
-        {
-            "href": "https://n5.example.com/api/arkivstruktur/ny-arkivskaper",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/",
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/": {
+            "href": "https://n5.example.com/api/arkivstruktur/ny-arkivskaper"
         },
 ```
 
@@ -362,9 +357,9 @@ Respons:
     }
   ],
   "count" : 3,
-  "_links" : [
-    { "rel": "next",
-      "href": "https://n5.example.com/api/arkivstruktur/mappe/?top=2&skip=2",
+  "_links" : {
+    "next": {
+      "href": "https://n5.example.com/noark5v4/api/arkivstruktur/mappe/?top=2&skip=2"
     },
     ...
   ]
@@ -385,14 +380,14 @@ JSON-strukturen se slik ut:
 ```Python
 {
   "count": 0,
-  "_links" : [
-    { "rel": "self",
+  "_links" : {
+    "self": {
       "href": "https://n5.example.com/api/arkivstruktur/arkiv/"
     },
-    { "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/",
+    "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/": {
       "href": "https://n5.example.com/api/arkivstruktur/arkiv/"
     }
-  ]
+  }
 }
 ```
 
@@ -442,18 +437,16 @@ Ved registrering av objektet så skal kjernen fylle ut systemID, opprettetAv og 
         "kode": "E",
         "beskrivelse": "Elektronisk arkiv"
     },
-    "_links": [
-        {
+    "_links": {
+        "https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium/": {
             "href": "https://n5.example.com/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium/",
             "templated": true
         },
-        {
+        "https://rel.arkivverket.no/noark5/v4/api/administrasjon/mappetype/": {
             "href": "https://n5.example.com/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/mappetype/",
             "templated": true
         }
-    ]
+    }
 }
 ```
 
@@ -504,18 +497,15 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
     "opprettetDato": "2016-04-03T15:45:28.4985538+02:00",
     "opprettetAv": "pålogget bruker",
     "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
-    "_links": [
-        {
-            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
-            "rel": "self",
+    "_links": {
+        "self": {
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba"
         },
-        {
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/": {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/",
         },
-        {
+        "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/": {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
         },
 ```
 
@@ -557,18 +547,16 @@ hentes fra slik som mappetype og dokumentmedium.
         "kode": "E",
         "beskrivelse": "Elektronisk arkiv"
     },
-    "_links": [
-        {
+    "_links": {
+        "https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium/": {
             "href": "https://n5.example.com/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium/",
             "templated": true
         },
-        {
+        "https://rel.arkivverket.no/noark5/v4/api/administrasjon/mappetype/": {
             "href": "https://n5.example.com/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/mappetype/",
             "templated": true
         }
-    ]
+    }
 }
 ```
 
@@ -656,18 +644,15 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
     "oppdatertAv": "pålogget bruker",
     "referanseOppdatertAv": "8f58d80c-9b5c-4ddf-af5a-764f08a7661e",
     "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
-    "_links": [
-        {
-            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
-            "rel": "self",
+    "_links": {
+        "self": {
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba"
         },
-        {
-            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/",
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/": {
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba"
         },
-        {
-            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
+        "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/": {
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe"
         },
 ```
 
@@ -686,7 +671,7 @@ PATCH.
 Her er et eksempel som endrer Mappe-instansen som ble returnert for
 PUT gjengitt over:
 
-PATCH til http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
+PATCH til https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
 Content-Type: application/merge-patch+json
 
@@ -707,7 +692,7 @@ Content-Type: application/merge-patch+json
 
 Location →
 
-http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
+https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
 ```Python
 {
@@ -734,31 +719,29 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
     "oppdatertAv": "pålogget bruker",
     "referanseOppdatertAv": "8f58d80c-9b5c-4ddf-af5a-764f08a7661e",
     "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
-    "_links": [
-        {
-            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
-            "rel": "self",
+    "_links": {
+        "self": {
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba"
         },
-        {
-            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/",
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/": {
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba"
         },
 	...
-    ]
+    }
 }
 ```
 
 Slik kan en flytter en dokumentbeskrivelse fra en registrering til en annen:
 
-
-PATCH til http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/1fa94a89-3550-470b-a220-92dd4d709044
+PATCH til https://n5.example.com/api/arkivstruktur/Dokumentbeskrivelse/1fa94a89-3550-470b-a220-92dd4d709044
 
 ```Python
 {
-  "_links": {
-   "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/",
-   "href": "http://localhost:49708/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/"
-  }
+    "_links": {
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/": {
+            "href": "https://n5.example.com/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/"
+         }
+    }
 }
 ```
 
@@ -785,9 +768,8 @@ Saksmappe.
 Ved uthenting av en mappe vil du få følgende relasjon tilbake:
 
 ```Python
-{
-    "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
-    "href": "https://n5.example.com/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe",
+"https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/": {
+    "href": "https://n5.example.com/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe"
 }
 ```
 
@@ -826,13 +808,12 @@ saksmappe og ikke mappe.
             "kode": "B"
         },
         "graderingsdato": "2017-12-08T15:32:10.739027+01:00",
-        "_links": []
+        "_links": {}
     },
     /// Resten av objektet utelatt
-    "_links": [
-        {
-            "rel": "self",
-            "href": "https://n5.example.com/api/sakarkiv/saksmappe/1",
+    "_links": {
+        "self": {
+            "href": "https://n5.example.com/api/sakarkiv/saksmappe/1"
         },
 ```
 
@@ -876,22 +857,18 @@ JSON-listen over relasjoner for en klasseinstans midt i et slikt
 hierarki kan for eksempel se slik ut:
 
 ```Python
-"_links": [
-  {
-    "rel": "self",
-    "href": "http://localhost:49708/api/arkivstruktur/klasse/7b3989b0-53d7-11e9-bd4e-17d6c4d53856/"
+"_links": {
+  "self": {
+    "href": "https://n5.example.com/api/arkivstruktur/klasse/7b3989b0-53d7-11e9-bd4e-17d6c4d53856/"
   },
-  {
-    "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/",
-    "href": "http://localhost:49708/api/arkivstruktur/klasse/7b3989b0-53d7-11e9-bd4e-17d6c4d53856/"
+  "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/": {
+    "href": "https://n5.example.com/api/arkivstruktur/klasse/7b3989b0-53d7-11e9-bd4e-17d6c4d53856/"
   },
-  {
-    "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overklasse/",
-    "href": "http://localhost:49708/api/arkivstruktur/klasse/6787ba68-53d7-11e9-a583-8f084aaf5d19/"
+  "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overklasse/": {
+    "href": "https://n5.example.com/api/arkivstruktur/klasse/6787ba68-53d7-11e9-a583-8f084aaf5d19/"
   },
-  {
-    "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underklasse/",
-    "href": "http://localhost:49708/api/arkivstruktur/klasse/?$filter=overklasse eq 7b3989b0-53d7-11e9-bd4e-17d6c4d53856"
+  "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underklasse/": {
+    "href": "https://n5.example.com/api/arkivstruktur/klasse/?$filter=overklasse eq 7b3989b0-53d7-11e9-bd4e-17d6c4d53856"
   },
   ...
 }
@@ -1117,20 +1094,17 @@ GET https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
         "beskrivelse": "PDF/A - ISO 19005-1:2005"
     },
     "referanseDokumentfil": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
-    "_links": [
-        {
-            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
-            "rel": "self",
+    "_links": {
+        "self": {
+            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785"
         },
-        {
-            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/",
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/": {
+            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785"
         },
-        {
-            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/",
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/": {
+            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil"
         }
-    ]
+    }
 }
 ```
 
@@ -1289,21 +1263,18 @@ Respons: 201 Created
     "mimeType": "image/jpeg",
     "sjekksum": "40cbd5b88175e268ef3a1c286ad7d46ff69c22787d368e8635cae7edca4b5625",
     "sjekksumAlgoritme": "SHA-256",
-    "referanseDokumentfil": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf/referanseFil",
-    "_links": [
-        {
-            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf",
-            "rel": "self",
+    "referanseDokumentfil": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf/referanseFil",
+    "_links": {
+        "self": {
+            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf"
         },
-        {
-            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/",
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/": {
+            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf"
         },
-        {
-            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf/referanseFil",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/",
+        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/": {
+            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf/referanseFil"
         }
-    ]
+    }
 }
 ```
 
@@ -1490,16 +1461,14 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
             "utdatert": true,
             "beskrivelse": "Hvilket skoleår saken gjelder",
             "kilde": "https://some/where/with/explanation",
-            "_links": [
-                {
-                    "rel": "self",
+            "_links": {
+                "self": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
                 },
-                {
-                    "rel": "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
+                "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
                 }
-            ]
+            }
         },
         {
             "systemID": "2f6e8634-4a45-11e9-844a-f3021c6321a6",
@@ -1507,16 +1476,14 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
             "type": "integer",
             "beskrivelse": "Saksnummer i fagsystemet",
             "kilde": "https://some/where/with/explanation",
-            "_links": [
-                {
-                    "rel": "self",
+            "_links": {
+                "self": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
                 },
-                {
-                    "rel": "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
+                "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
                 }
-            ]
+            }
         },
         {
             "systemID": "25c93304-4a45-11e9-94b8-bf76fc1ca3ac",
@@ -1524,16 +1491,14 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
             "type": "datetime",
             "beskrivelse": "Dato barnet blir innskrevet til skolen",
             "kilde": "https://some/where/with/explanation",
-            "_links": [
-                {
-                    "rel": "self",
+            "_links": {
+                "self": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
                 },
-                {
-                    "rel": "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
+                "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
                 }
-            ]
+            }
         }
     ]
 }
