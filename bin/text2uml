@@ -165,7 +165,7 @@ for c in sorted(classes.keys(), key=lambda x: classes[x]['fullname']):
                 entry += astr.rstrip() + "\n"
     entry += "}\n"
 
-    filename = 'media/uml-%s-%s.iuml' % (stereotype.lower(), c.lower())
+    filename = 'kapitler/media/uml-%s-%s.iuml' % (stereotype.lower(), c.lower())
     with open(filename, "w") as iuml:
         iuml.write("@startuml\n")
         iuml.write(entry)
