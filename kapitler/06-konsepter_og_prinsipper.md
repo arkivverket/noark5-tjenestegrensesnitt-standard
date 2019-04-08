@@ -25,6 +25,11 @@ beskrivelse av ressursen med eksempler på forespørsler, resultat og
 statuskoder. Alle slike ressurslenker og relasjonslenker har
 avsluttende skråstrek.
 
+Det skilles mellom små og store tegn i alle XML- og JSON-attributter
+og HATEOS-relasjoner, slik at disse har entydig definerte navn som
+ikke er avhengig av språkspesifikke regler for konvertering mellom
+små og store tegn.
+
 ![](./media/uml-klasse-http-metoder.png)
 
 Under følger eksempler fra tjenestene.
@@ -371,7 +376,7 @@ relasjonslenker til aktuelle kodelister.  En slik forespørsel
 oppretter ikke noe objekt og returverdien refererer ikke heller til et
 objekt i databasen, og er derfor uten «self»-relasjon.
 
-Ved registrering av objektet så skal kjernen fylle ut systemid, opprettetAv og opprettetDato. OpprettetAv skal være personnavn, referanseOpprettetAv skal være en systemID. NB! Denne systemID-en kan være en entydig identifikator av brukeren i fagsystemet, slik at personen ikke nødvendigvis må være bruker i arkivkjernen. opprettetDato er datoen (eller dataTime) enheten er opprettet i fagsystemet.
+Ved registrering av objektet så skal kjernen fylle ut systemID, opprettetAv og opprettetDato. OpprettetAv skal være personnavn, referanseOpprettetAv skal være en systemID. NB! Denne systemID-en kan være en entydig identifikator av brukeren i fagsystemet, slik at personen ikke nødvendigvis må være bruker i arkivkjernen. opprettetDato er datoen (eller dataTime) enheten er opprettet i fagsystemet.
 
 
 ```Python

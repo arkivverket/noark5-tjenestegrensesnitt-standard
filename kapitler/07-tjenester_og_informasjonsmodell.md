@@ -1133,7 +1133,7 @@ Table: Restriksjoner
 | 6.1.1 Det skal finnes en tjeneste/funksjon for å avslutte en Mappe (dvs. at avsluttetDato settes). | |
 | 6.1.2 For en Mappe som er avsluttet skal det ikke være mulig å endre følgende metadata: tittel ,dokumentmedium | |
 | 6.1.17 Det skal ikke være mulig å slette en Mappe som er avsluttet. | |
-| Ny - Etter at mappe er registrert så skal kjernen fylle ut systemid, opprettetAv og opprettetDato | |
+| Ny - Etter at mappe er registrert så skal kjernen fylle ut systemID, opprettetAv og opprettetDato | |
 | Ny - Når mappe avsluttes så skal avsluttetDato og avsluttetAv registreres | |
 | Ny - Mappe kan enten være tilknyttet arkivdel eller referanseForelderMappe eller klasse | |
 | M003 mappeID: Skal ikke kunne endres | |
@@ -1252,7 +1252,7 @@ Table: Restriksjoner
 | 5.5.4 Hvis Mappenivået ikke er benyttet, skal Registrering tilhøre kun en Klasse og en Klasse kan inngå i ingen, en eller flere Registreringer. | |
 | 5.5.5 En Registrering skal kunne inneholde ingen, en eller flere Dokumentbeskrivelser og en Dokumentbeskrivelse skal inngå i en eller flere Registreringer. | | 
 | 5.5.6 En Registrering skal kunne utvides til en Basisregistrering | |
-| Ny - Etter at registrering er registrert så skal kjernen fylle ut systemid, opprettetAv og opprettetDato | |
+| Ny - Etter at registrering er registrert så skal kjernen fylle ut systemID, opprettetAv og opprettetDato | |
 | Ny - Når registrering arkiveres så skal arkivertDato og arkivertAv/referanseArkivertAv registreres | |
 | M604 arkivertDato: Kan ikke endres | | 
 | M605 arkivertAv: Kan ikke endres | |
@@ -3269,7 +3269,7 @@ Table: Restriksjoner
 | M601 opprettetAv: Skal ikke kunne endres                                                                                               |             |
 | M602a avsluttetDato: Skal ikke kunne endres.                                                                                           |             |
 | M602b avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.                                                                      |             |
-| Ny - navn skal ikke endres. Hvis enhet får nytt navn så opprettes ny enhet med ny systemid. Den gamle kan da settes avsluttet dato på. |             |
+| Ny - navn skal ikke endres. Hvis enhet får nytt navn så opprettes ny enhet med ny systemID. Den gamle kan da settes avsluttet dato på. |             |
 
 #### Bruker
 
@@ -3319,7 +3319,7 @@ Table: Restriksjoner
 | M601 opprettetAv: Skal ikke kunne endres                                                     |             |
 | M602a avsluttetDato: Skal ikke kunne endres                                                  |             |
 | M602b avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.                            |             |
-| Ny - navn skal ikke endres. Hvis person får nytt navn så opprettes ny bruker med ny systemid |             |
+| Ny - navn skal ikke endres. Hvis person får nytt navn så opprettes ny bruker med ny systemID |             |
 
 #### Tilgang
 
