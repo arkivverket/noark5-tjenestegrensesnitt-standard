@@ -1,0 +1,18 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+!include media/uml-class-journalpost-all.iuml
+!include media/uml-class-korrespondansepart.iuml
+!include media/uml-class-korrespondansepartperson.iuml
+!include media/uml-class-korrespondansepartenhet.iuml
+!include media/uml-class-korrespondansepartintern.iuml
+!include media/uml-class-avskrivning.iuml
+!include media/uml-codelist-avskrivningsmaate.iuml
+
+Sakarkiv.Journalpost *-> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
+Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartPerson
+Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartEnhet
+Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartIntern
+Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
+Sakarkiv.Avskrivning <-[hidden]- Kodelister.Avskrivningsmåte
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class Arkivstruktur.Mappe <Arkivenhet> {
+  +mappeID : string [0..1]
+  +mappetype : Mappetype [0..1]
+  +tittel : string
+  +offentligTittel : string [0..1]
+  +beskrivelse : string [0..1]
+  +nøkkelord : string [0..*]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+  +referanseForelderMappe : SystemID [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+
+  --Arkivenhet--
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+}
+@enduml

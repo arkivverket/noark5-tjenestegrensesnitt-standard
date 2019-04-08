@@ -1,0 +1,7 @@
+@startuml
+class Arkivstruktur.Arkivskaper <Arkivenhet> {
+  +arkivskaperID : string
+  +arkivskaperNavn : string
+  +beskrivelse : string [0..1]
+}
+@enduml

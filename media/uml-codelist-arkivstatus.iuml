@@ -1,0 +1,6 @@
+@startuml
+class Kodelister.Arkivstatus <<codelist>> {
+  +Opprettet = O
+  +Avsluttet = A
+}
+@enduml

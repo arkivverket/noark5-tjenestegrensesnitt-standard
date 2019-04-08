@@ -1,0 +1,23 @@
+@startuml
+package Admin <<applicationSchema>>
+package Kodelister <<applicationSchema>>
+package Arkivstruktur <<applicationSchema>>
+package LoggingOgSporing <<applicationSchema>>
+package Sakarkiv <<applicationSchema>>
+
+package GeoIntegrasjon {
+  package Felles.Geometri <<applicationSchema>>
+  package Matrikkel.Applikasjonsskjema.Felles <<applicationSchema>>
+  package Plan.Applikasjonsskjema.Felles <<applicationSchema>>
+}
+
+Admin .> Kodelister : <<import>>
+Sakarkiv ..> Kodelister : <<import>>
+Sakarkiv .> Arkivstruktur : <<import>>
+LoggingOgSporing ..> Kodelister : <<import>>
+Kodelister <.. Arkivstruktur : <<import>>
+Arkivstruktur .> LoggingOgSporing : <<import>>
+Arkivstruktur ..> Felles.Geometri : <<import>>
+Arkivstruktur ..> Matrikkel.Applikasjonsskjema.Felles : <<import>>
+Arkivstruktur ..> Plan.Applikasjonsskjema.Felles : <<import>>
+@enduml

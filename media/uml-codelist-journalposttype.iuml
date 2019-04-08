@@ -1,0 +1,9 @@
+@startuml
+class Kodelister.Journalposttype <<codelist>> {
+  +Inngående dokument = I
+  +Utgående dokument = U
+  +Organinternt dokument for oppfølging = N
+  +Organinternt dokument uten oppfølging = X
+  +Saksframlegg = S
+}
+@enduml

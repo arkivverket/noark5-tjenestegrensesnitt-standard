@@ -1,0 +1,5 @@
+@startuml
+class Arkivstruktur.SystemID << simple >>
+class BasicTypes.string << simple >>
+BasicTypes.string <|-- Arkivstruktur.SystemID
+@enduml

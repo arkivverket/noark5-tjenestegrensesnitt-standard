@@ -1,0 +1,39 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Arkivstruktur.Arkiv <Arkivenhet>
+class Arkivstruktur.Arkivdel <Arkivenhet>
+class Arkivstruktur.Klassifikasjonssystem <Arkivenhet>
+class Arkivstruktur.Klasse <Arkivenhet>
+class Arkivstruktur.Mappe <Arkivenhet>
+class Arkivstruktur.Registrering <Arkivenhet>
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>
+class Sakarkiv.Saksmappe #pink
+class Sakarkiv.Presedens #pink
+class Sakarkiv.Journalpost #pink
+class Sakarkiv.Avskrivning #pink
+class Sakarkiv.Dokumentflyt #pink
+
+Arkivstruktur.Arkiv o-> "+underarkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Arkivdel "+arkivdel 1..*" o--> "+klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Arkivdel o--> "+sekundærklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o--> "+klasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klasse o--> "+underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe o--> "+mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
+Arkivstruktur.Klasse "\n\n+sekundærklassifikasjon\n0..*" <--o Sakarkiv.Saksmappe
+Arkivstruktur.Mappe "mappe 0..1" o--> "+registrering 0..*\n\n" Arkivstruktur.Registrering
+Arkivstruktur.Mappe "mappe 0..*\n\n" <--o "+arkivdel 0..1" Arkivstruktur.Arkivdel
+Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Registrering "+registrering 0..*" <--o "+arkivdel 0..1" Arkivstruktur.Arkivdel
+Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
+Arkivstruktur.Dokumentbeskrivelse "+dokumentbeskrivelse 1" o--> "+dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
+Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
+Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
+Sakarkiv.Presedens "+presedens 0..*" <--o "+journalpost 0..*" Sakarkiv.Journalpost
+Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
+Sakarkiv.Journalpost *--> "+dokumentflyt 0..*" Sakarkiv.Dokumentflyt
+@enduml

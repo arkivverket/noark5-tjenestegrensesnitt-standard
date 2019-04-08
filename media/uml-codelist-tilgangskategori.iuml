@@ -1,0 +1,9 @@
+@startuml
+class Kodelister.Tilgangskategori <<codelist>> {
+  +arkivdel = A
+  +klasse = K
+  +mappe = M
+  +registrering = R
+  +dokumentbeskrivelse = D
+}
+@enduml

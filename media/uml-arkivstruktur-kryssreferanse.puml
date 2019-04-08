@@ -1,0 +1,14 @@
+@startuml
+skinparam classAttributeIconSize 0
+!include media/uml-class-basisregistrering.iuml
+!include media/uml-class-klasse.iuml
+!include media/uml-class-mappe.iuml
+!include media/uml-class-kryssreferanse.iuml
+
+Arkivstruktur.Basisregistrering "+registrering 0..1" <--> "+kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+Arkivstruktur.Kryssreferanse "+kryssreferanse 0..*" <--> "+mappe 0..1" Arkivstruktur.Mappe
+Arkivstruktur.Kryssreferanse "+kryssreferanse 0..*" <--> "+klasse 0..1" Arkivstruktur.Klasse
+Arkivstruktur.Klasse o-> "+underklasse o..*" Arkivstruktur.Klasse
+Arkivstruktur.Mappe o-> "+undermappe o..*" Arkivstruktur.Mappe
+Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
+@enduml

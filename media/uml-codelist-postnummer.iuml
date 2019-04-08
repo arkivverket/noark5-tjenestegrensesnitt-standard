@@ -1,0 +1,4 @@
+@startuml
+class Kodelister.Postnummer <<codelist>> {
+}
+@enduml

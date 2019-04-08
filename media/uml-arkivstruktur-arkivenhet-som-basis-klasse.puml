@@ -1,0 +1,51 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+!include media/uml-class-arkivenhet.iuml
+class Arkivstruktur.Arkivskaper <Arkivenhet>
+class Arkivstruktur.Arkiv <Arkivenhet>
+class Arkivstruktur.Arkivdel <Arkivenhet>
+class Arkivstruktur.Klassifikasjonssystem <Arkivenhet>
+class Arkivstruktur.Klasse <Arkivenhet>
+class Arkivstruktur.Mappe <Arkivenhet>
+class Arkivstruktur.Registrering <Arkivenhet>
+class Arkivstruktur.Basisregistrering <Registrering>
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>
+class Sakarkiv.Journalpost <Basisregistrering>
+class Sakarkiv.Saksmappe <Mappe>
+
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivskaper
+Arkivstruktur.Arkivenhet <|--  Arkivstruktur.Arkiv
+Arkivstruktur.Arkivskaper --o "+arkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv "+underarkiv 0..*" --o Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv "+arkiv 1" --o "+arkivdel 0..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivdel
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" --o "+arkivdel 1..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "\n+sekundærklassifikasjonssystem 0..*" --o Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o-- "+klasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klasse
+Arkivstruktur.Klasse --o "+underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
+Arkivstruktur.Arkivdel "\n+arkivdel 0..1" o-- "+mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Klasse "+klasse 0..1" o-- "+mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe o-- "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
+Arkivstruktur.Arkivdel "+arkivdel 0..1" o-- "+registrering 0..*" .Arkivstruktur.Registrering
+Arkivstruktur.Mappe "+mappe 0..1" o-- "+registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Klasse "+klasse 0..1" o-- "+registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Registrering "+registrering 1..*" o-- "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+
+Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
+Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
+
+!include media/uml-class-endringslogg.iuml
+!include media/uml-class-hendelseslogg.iuml
+!include media/uml-codelist-hendelsetype.iuml
+
+Arkivstruktur.Arkivenhet "0..1" o-- "+logg 0..*" Arkivstruktur.Hendelseslogg
+LoggingOgSporing.Endringslogg <|-- Arkivstruktur.Hendelseslogg
+Arkivstruktur.Hendelseslogg -[hidden]> Kodelister.Hendelsetype
+@enduml

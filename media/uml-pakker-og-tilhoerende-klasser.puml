@@ -1,0 +1,227 @@
+@startuml
+hide circle
+hide empty members
+skinparam ranksep 12
+
+package Arkivstruktur <<applicationSchema>> {
+  class Arkiv
+  class Arkivdel
+  abstract class Arkivenhet
+  class Basisregistrering
+  class Dokumentbeskrivelse
+  class Dokumentobjekt
+  class ElektroniskSignatur
+  class Gradering
+  class Hendelseslogg
+  class Kassasjon
+  class Klasse
+  class Klassifikasjonssystem
+  class Konvertering
+  class Kryssreferanse
+  class Mappe
+  class Merknad
+  class Registrering
+  class Skjerming
+  class UtførtKassasjon
+
+  Arkiv -[hidden]- Arkivdel
+  Arkivdel -[hidden]- Arkivenhet
+  Arkivenhet -[hidden]-  Basisregistrering
+  Basisregistrering -[hidden]-  Dokumentbeskrivelse
+  Dokumentbeskrivelse -[hidden]-  Dokumentobjekt
+  Dokumentobjekt -[hidden]-  ElektroniskSignatur
+  ElektroniskSignatur -[hidden]-  Gradering
+  Gradering -[hidden]-  Hendelseslogg
+  Hendelseslogg -[hidden]-  Kassasjon
+  Kassasjon -[hidden]-  Klasse
+  Klasse -[hidden]-  Klassifikasjonssystem
+  Klassifikasjonssystem -[hidden]-  Konvertering
+  Konvertering -[hidden]-  Kryssreferanse
+  Kryssreferanse -[hidden]-  Mappe
+  Mappe -[hidden]-  Merknad
+  Merknad -[hidden]-  Registrering
+  Registrering -[hidden]-  Skjerming
+  Skjerming -[hidden]-  UtførtKassasjon
+  UtførtKassasjon -[hidden]- Bygning
+
+  package NasjonaleIdentifikatorer {
+    class Bygning
+    class Enhetsidentifikator
+    class Matrikkel
+    abstract class NasjonalIdentifikator
+    class Personidentifikator
+    class Plan
+    class Posisjon
+
+    Bygning -[hidden]- Enhetsidentifikator
+    Enhetsidentifikator -[hidden]- Matrikkel
+    Matrikkel -[hidden]- NasjonalIdentifikator
+    NasjonalIdentifikator -[hidden]- Personidentifikator
+    Personidentifikator -[hidden]- Plan
+    Plan -[hidden]- Posisjon
+  }
+}
+package Sakarkiv <<applicationSchema>> {
+  class Avskrivning
+  class Dokumentflyt
+  class EnkelAdresse
+  class Journalpost
+  class Kontaktinformasjon
+  abstract class Korrespondansepart
+  class KorrespondansepartEnhet
+  class KorrespondansepartIntern
+  class KorrespondansepartPerson
+  class Presedens
+  class Saksmappe
+  abstract class Sakspart
+  class SakspartEnhet
+  class SakspartPerson
+
+  Posisjon -[hidden]- Avskrivning
+  Avskrivning -[hidden]- Dokumentflyt
+  Dokumentflyt -[hidden]- EnkelAdresse
+  EnkelAdresse -[hidden]- Journalpost
+  Journalpost -[hidden]- Kontaktinformasjon
+  Kontaktinformasjon -[hidden]- Korrespondansepart
+  Korrespondansepart -[hidden]- KorrespondansepartEnhet
+  KorrespondansepartEnhet -[hidden]- KorrespondansepartIntern
+  KorrespondansepartIntern -[hidden]- KorrespondansepartPerson
+  KorrespondansepartPerson -[hidden]- Presedens
+  Presedens -[hidden]- Saksmappe
+  Saksmappe -[hidden]- Sakspart
+  Sakspart -[hidden]- SakspartEnhet
+  SakspartEnhet -[hidden]- SakspartPerson
+}
+package Admin <<applicationSchema>> {
+  class AdministrativEnhet
+  class Bruker
+  class Tilgang
+
+  AdministrativEnhet -[hidden]- Bruker
+  Bruker --Tilgang
+}
+package LoggingOgSporing <<applicationSchema>> {
+  class EndringsLogg
+
+  Tilgang -[hidden]- EndringsLogg
+}
+package Kodelister <<applicationSchema>> {
+  class Arkivdelstatus
+  class Arkivstatus
+  class Avskrivningsmåte
+  class Dokumentmedium
+  class Dokumentstatus
+  class Dokumenttype
+  class ElektroniskSignaturSikkerhetsnivå
+  class ElektroniskSignaturVerifisert
+  class FlytStatus
+  class Format
+  class Graderingskode
+  class Hendelsetype
+  class Journalposttype
+  class Kassasjonsvedtak
+  class Klassifikajonstype
+  class Korrespondanseparttype
+  class Land
+  class Mappetype
+  class Merknadstype
+  class MøtedeltagerFunksjon
+  class Møteregistreringsstatus
+  class Møteregistreringstype
+  class Møtesakstype
+  class Postnummer
+  class Presedensstatus
+  class Sakspartrolle
+  class Saksstatus
+  class SkjermingDokument
+  class SkjermingMetadata
+  class Slettingstype
+  class SystemID
+  class Tilgangskategori
+  class Tilgangsrestriksjon
+  class TilknyttetRegistreringSom
+  class Variantformat
+
+  Arkivdelstatus -[hidden]- Arkivstatus
+  Arkivstatus -[hidden]- Avskrivningsmåte
+  Avskrivningsmåte -[hidden]- Dokumentmedium
+  Dokumentmedium -[hidden]- Dokumentstatus
+  Dokumentstatus -[hidden]- Dokumenttype
+  Dokumenttype -[hidden]- ElektroniskSignaturSikkerhetsnivå
+  ElektroniskSignaturSikkerhetsnivå -[hidden]- ElektroniskSignaturVerifisert
+  ElektroniskSignaturVerifisert -[hidden]- FlytStatus
+  FlytStatus -[hidden]- Format
+  Format -[hidden]- Graderingskode
+  Graderingskode -[hidden]- Hendelsetype
+  Hendelsetype -[hidden]- Journalposttype
+  Journalposttype -[hidden]- Kassasjonsvedtak
+  Kassasjonsvedtak -[hidden]- Klassifikajonstype
+  Klassifikajonstype -[hidden]- Korrespondanseparttype
+  Korrespondanseparttype -[hidden]- Land
+  Land -[hidden]- Mappetype
+  Mappetype -[hidden]- Merknadstype
+  Merknadstype -[hidden]- MøtedeltagerFunksjon
+  MøtedeltagerFunksjon -[hidden]- Møteregistreringsstatus
+  Møteregistreringsstatus -[hidden]- Møteregistreringstype
+  Møteregistreringstype -[hidden]- Møtesakstype
+  Møtesakstype -[hidden]- Postnummer
+  Postnummer -[hidden]- Presedensstatus
+  Presedensstatus -[hidden]- Sakspartrolle
+  Sakspartrolle -[hidden]- Saksstatus
+  Saksstatus -[hidden]- SkjermingDokument
+  SkjermingDokument -[hidden]- SkjermingMetadata
+  SkjermingMetadata -[hidden]- Slettingstype
+  Slettingstype -[hidden]- SystemID
+  SystemID -[hidden]- Tilgangskategori
+  Tilgangskategori -[hidden]- Tilgangsrestriksjon
+  Tilgangsrestriksjon -[hidden]- TilknyttetRegistreringSom
+  TilknyttetRegistreringSom -[hidden]- Variantformat
+}
+package GeoIntegrasjon {
+
+  package Felles.Geometri <<applicationSchema>> {
+    class KoordinatsystemKode
+    class Flate
+    abstract class Geometri
+    class Koordinat
+    class Kurve
+    class Punkt
+    class Ring
+    class Bbox
+    class Område
+
+    KoordinatsystemKode -[hidden]- Flate
+    Flate -[hidden]- Geometri
+    Geometri -[hidden]- Koordinat
+    Koordinat -[hidden]- Kurve
+    Kurve -[hidden]- Punkt
+    Punkt -[hidden]- Ring
+    Ring -[hidden]- Bbox
+    Bbox -[hidden]- Område
+  }
+
+  package Matrikkel.Applikasjonsskjema.Felles <<applicationSchema>> {
+    class ByggIdent
+    class Matrikkelnummer
+
+    ByggIdent -[hidden]- Matrikkelnummer
+  }
+
+  package Plan.Applikasjonsskjema.Felles <<applicationSchema>> {
+    abstract class Administrativenhetsnummer
+    class Fylke
+    class Kommune
+    class NasjonalArealplanId
+    class Stat
+
+    Administrativenhetsnummer -[hidden]- Fylke
+    Fylke -[hidden]- Kommune
+    Kommune -[hidden]- NasjonalArealplanId
+    NasjonalArealplanId -[hidden]- Stat
+  }
+
+  Variantformat -[hidden]- KoordinatsystemKode
+  Variantformat -[hidden]- ByggIdent
+  Variantformat -[hidden]- Administrativenhetsnummer
+}
+@enduml

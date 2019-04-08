@@ -1,0 +1,8 @@
+@startuml
+class Arkivstruktur.Kassasjon <<dataType>> {
+  +kassasjonsvedtak : Kassasjonsvedtak
+  +kassasjonshjemmel : string [0..1]
+  +bevaringstid : integer
+  +kassasjonsdato : date
+}
+@enduml

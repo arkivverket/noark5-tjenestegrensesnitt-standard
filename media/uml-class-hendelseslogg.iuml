@@ -1,0 +1,7 @@
+@startuml
+class Arkivstruktur.Hendelseslogg <Endringslogg> {
+  +hendelsetype : Hendelsetype
+  +beskrivelse : string [0..1]
+  +hendelseDato : datetime
+}
+@enduml

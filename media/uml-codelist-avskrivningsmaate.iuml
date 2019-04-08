@@ -1,0 +1,9 @@
+@startuml
+class Kodelister.Avskrivningsmåte <<codelist>> {
+  +Besvart med brev = BU
+  +Besvart med e-post = BE
+  +Besvart på telefon = TLF
+  +Tatt til etterretning = TE
+  +Tatt til orientering = TO
+}
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+!include media/uml-class-saksmappe-all.iuml
+!include media/uml-class-presedens.iuml
+!include media/uml-class-sakspart.iuml
+!include media/uml-codelist-sakspartrolle.iuml
+!include media/uml-class-journalpost-all.iuml
+!include media/uml-class-korrespondansepart.iuml
+!include media/uml-codelist-korrespondanseparttype.iuml
+!include media/uml-class-avskrivning.iuml
+!include media/uml-codelist-avskrivningsmaate.iuml
+!include media/uml-class-dokumentflyt.iuml
+
+Sakarkiv.Sakspart "+sakspart 0..*" <--* Sakarkiv.Saksmappe
+Kodelister.SakspartRolle <-[hidden]--  Sakarkiv.Sakspart
+Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
+Sakarkiv.Journalpost "+journalpost 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
+Sakarkiv.Journalpost *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
+Kodelister.Korrespondanseparttype <-[hidden]-- Sakarkiv.Korrespondansepart
+Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
+Kodelister.Avskrivningsmåte  <-[hidden]- Sakarkiv.Avskrivning
+Sakarkiv.Journalpost *-> "+dokumentflyt 0..*" Sakarkiv.Dokumentflyt
+@enduml

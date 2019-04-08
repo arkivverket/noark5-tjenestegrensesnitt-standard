@@ -1,0 +1,6 @@
+@startuml
+class Kodelister.ElektroniskSignaturVerifisert <<codelist>> {
+  +Signatur påført, ikke verifisert = I
+  +Signatur påført og verifisert = V
+}
+@enduml

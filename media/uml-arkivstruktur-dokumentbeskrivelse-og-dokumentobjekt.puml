@@ -1,0 +1,44 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Arkivstruktur.Registrering <Arkivenhet>
+!include media/uml-class-dokumentobjekt.iuml
+!include media/uml-class-merknad.iuml
+!include media/uml-class-konvertering.iuml
+
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
+  +dokumenttype : Dokumenttype
+  +dokumentstatus : Dokumentstatus
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +forfatter : string [0..*]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..1]
+  +tilknyttetRegistreringSom : TilknyttetRegistreringSom
+  +dokumentnummer : integer
+  +tilknyttetDato : date
+  +tilknyttetAv : string [0..1]
+  +referanseTilknyttetAv : systemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +utførtKassasjon : UtførtKassasjon [0..1]
+  +sletting : Sletting [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+  +elektroniskSignatur : ElektroniskSignatur [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+  -- Arkivenhet --
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOppdatertav : SystemID [0..1]
+}
+
+
+Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Dokumentbeskrivelse *-> "+merknad 0..*" Arkivstruktur.Merknad
+Arkivstruktur.Dokumentbeskrivelse "+dokumentbeskrivelse 1" o--> "+dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
+Arkivstruktur.Dokumentobjekt *-> "+konvertering 0..*" Arkivstruktur.Konvertering
+@enduml

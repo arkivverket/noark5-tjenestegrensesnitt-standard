@@ -1,0 +1,10 @@
+@startuml
+class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
+  +klassifikasjonstype : Klassifikasjonstype [0..1]
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+}
+@enduml

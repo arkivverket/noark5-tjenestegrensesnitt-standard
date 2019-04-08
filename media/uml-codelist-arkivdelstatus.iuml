@@ -1,0 +1,8 @@
+@startuml
+class Kodelister.Arkivdelstatus <<codelist>> {
+  +Aktiv periode = A
+  +Overlappingsperiode = O
+  +Avsluttet periode = P
+  +Uaktuelle mapper = U
+}
+@enduml

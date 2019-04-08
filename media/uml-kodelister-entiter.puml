@@ -1,0 +1,70 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+!include media/uml-codelist-arkivstatus.iuml
+!include media/uml-codelist-dokumentmedium.iuml
+!include media/uml-codelist-klassifikasjonstype.iuml
+!include media/uml-codelist-merknadstype.iuml
+!include media/uml-codelist-skjermingdokument.iuml
+!include media/uml-codelist-arkivdelstatus.iuml
+!include media/uml-codelist-dokumenttype.iuml
+!include media/uml-codelist-tilknyttetregistreringsom.iuml
+!include media/uml-codelist-format.iuml
+!include media/uml-codelist-dokumentstatus.iuml
+!include media/uml-codelist-skjermingmetadata.iuml
+!include media/uml-codelist-flytstatus.iuml
+!include media/uml-codelist-variantformat.iuml
+!include media/uml-codelist-saksstatus.iuml
+!include media/uml-codelist-korrespondanseparttype.iuml
+!include media/uml-codelist-slettingstype.iuml
+!include media/uml-codelist-journalposttype.iuml
+!include media/uml-codelist-presedensstatus.iuml
+!include media/uml-codelist-avskrivningsmaate.iuml
+!include media/uml-codelist-journalstatus.iuml
+!include media/uml-codelist-kassasjonsvedtak.iuml
+!include media/uml-codelist-graderingskode.iuml
+!include media/uml-codelist-elektronisksignaturverifisert.iuml
+
+class Kodelister.Møtesakstype <<codelist>> {
+  +Politisk sak = PS
+  +Delegert møtesak = DS
+  +Referatsak = RS
+  {field} +Forespørsel (interpellasjon) = FO
+}
+
+class Kodelister.Møteregistreringstype <<codelist>> {
+  +Møteinnkalling = MI
+  +Saksfremlegg = SF
+  +Saksprotokoll = SP
+  +Møteprotokoll = MP
+  +Saksliste = SL
+  +Offentlig saksliste = OL
+  +Vedlegg til møtesak = FL
+}
+
+class Kodelister.ElektroniskSignaturSikkerhetsnivå <<codelist>> {
+  +Symmetrisk kryptert = SK
+  +Sendt med PKI/virksomhetssertifikat = V
+  +Sendt med PKI/"person standard"-sertifikat = PS
+  +Sendt med PKI/"person høy"-sertifikat = PH
+}
+
+!include media/uml-codelist-mappetype.iuml
+!include media/uml-codelist-tilgangskategori.iuml
+
+class Kodelister.Møteregistreringsstatus <<codelist>> {
+  +Ferdig behandlet av utvalget = BE
+  +Utsatt til nytt møte i samme utvalg = UT
+  +Sendt tilbake til foregående utvalg = TB
+}
+
+class Kodelister.MøtedeltakerFunksjon <<codelist>> {
+  +Møteleder = M
+  +Referent = R
+}
+
+!include media/uml-codelist-sakspartrolle.iuml
+!include media/uml-codelist-tilgangsrestriksjon.iuml
+!include media/uml-codelist-land.iuml
+!include media/uml-codelist-postnummer.iuml
+@enduml

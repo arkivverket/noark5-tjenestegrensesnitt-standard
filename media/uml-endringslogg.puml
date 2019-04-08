@@ -1,0 +1,13 @@
+@startuml
+skinparam classAttributeIconSize 0
+class Arkivstruktur.Endringslogg {
+  +systemID : SystemID [0..1]
+  +referanseArkivenhet : SystemID [0..1]
+  +referanseMetadata : string [0..1]
+  +endretDato : datetime
+  +endretAv : string
+  +referanseEndretAv : string
+  +tidligereVerdi : string [0..1]
+  +nyVerdi : string [0..1]
+}
+@enduml

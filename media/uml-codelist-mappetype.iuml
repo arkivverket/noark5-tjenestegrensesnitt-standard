@@ -1,0 +1,4 @@
+@startuml
+class Kodelister.Mappetype <<codelist>> {
+}
+@enduml

@@ -1,0 +1,23 @@
+@startuml uml-sakarkiv-entiteter.puml
+
+class Arkivstruktur.Mappe <Arkivenhet>
+class Arkivstruktur.Registrering <Arkivenhet>
+class Arkivstruktur.Basisregistrering <Registrering>
+class Sakarkiv.Journalpost <Basisregistrering>
+class Sakarkiv.Saksmappe <Mappe>
+
+Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
+Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
+Arkivstruktur.Mappe <|- Sakarkiv.Saksmappe
+
+Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe
+Sakarkiv.Saksmappe *-> "+sakspart 0..*" Sakarkiv.Sakspart 
+Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*\n" Sakarkiv.Presedens
+Sakarkiv.Journalpost "+journalpost 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
+
+Sakarkiv.Journalpost *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
+Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
+Sakarkiv.Journalpost *--> "+dokumentflyt 0..*\n" Sakarkiv.Dokumentflyt
+Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse 
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class Kodelister.SkjermingDokument <<codelist>> {
+  +Skjerming av hele dokumentet = H
+  +Skjerming av deler av dokumentet = D
+}
+@enduml

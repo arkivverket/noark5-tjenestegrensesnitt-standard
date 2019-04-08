@@ -1,0 +1,13 @@
+@startuml
+class Arkivstruktur.Klasse <Arkivenhet> {
+  +klasseID : string
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +nøkkelord : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +skjerming : Skjerming [0..1]
+  +kassasjon : Kassasjon [0..1]
+}
+@enduml
