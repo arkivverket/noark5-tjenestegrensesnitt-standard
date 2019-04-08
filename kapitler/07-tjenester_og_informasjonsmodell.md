@@ -3037,7 +3037,7 @@ Table: Relasjonsnøkler
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/saksmappe/               |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-klasse/          |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/presedens/               |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/saksparter/              |
+| REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sakspart/                |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sekundaerklassifikasjon/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/saksstatus/              |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-sakspart/             |
