@@ -1,6 +1,6 @@
 @startuml
 class Arkivstruktur.ElektroniskSignatur <<dataType>> {
-  +elektroniskSignaturSikkerhetsnivå : ElektroniskSignaturSikkerhetsnivå
+  +elektroniskSignaturSikkerhetsnivaa : ElektroniskSignaturSikkerhetsnivaa
   +elektroniskSignaturVerifisert : ElektroniskSignaturVerifisert
   +verifisertDato : date
   +verifisertAv : string

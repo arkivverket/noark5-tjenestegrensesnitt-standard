@@ -112,7 +112,7 @@ package Kodelister <<applicationSchema>> {
   class Dokumentmedium
   class Dokumentstatus
   class Dokumenttype
-  class ElektroniskSignaturSikkerhetsnivå
+  class ElektroniskSignaturSikkerhetsnivaa
   class ElektroniskSignaturVerifisert
   class FlytStatus
   class Format
@@ -147,8 +147,8 @@ package Kodelister <<applicationSchema>> {
   Avskrivningsmåte -[hidden]- Dokumentmedium
   Dokumentmedium -[hidden]- Dokumentstatus
   Dokumentstatus -[hidden]- Dokumenttype
-  Dokumenttype -[hidden]- ElektroniskSignaturSikkerhetsnivå
-  ElektroniskSignaturSikkerhetsnivå -[hidden]- ElektroniskSignaturVerifisert
+  Dokumenttype -[hidden]- ElektroniskSignaturSikkerhetsnivaa
+  ElektroniskSignaturSikkerhetsnivaa -[hidden]- ElektroniskSignaturVerifisert
   ElektroniskSignaturVerifisert -[hidden]- FlytStatus
   FlytStatus -[hidden]- Format
   Format -[hidden]- Graderingskode
