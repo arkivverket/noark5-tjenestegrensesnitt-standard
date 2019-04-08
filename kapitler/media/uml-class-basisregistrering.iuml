@@ -4,7 +4,7 @@ class Arkivstruktur.Basisregistrering <Registrering> {
   +tittel : string
   +offentligTittel : string [0..1]
   +beskrivelse : string [0..1]
-  +nøkkelord : string [0..*]
+  +noekkelord : string [0..*]
   +forfatter : string [0..*]
   +dokumentmedium : Dokumentmedium [0..1]
   +oppbevaringssted : string [0..*]
