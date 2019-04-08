@@ -1,0 +1,181 @@
+#!/usr/bin/python3
+
+"""Read all class relations from chapter 7, and print PlantUML diagram
+data for all classes listed in this chapter.  This is useful for
+verifying the relations and comparing them with the other UML
+diagrams.
+
+Run like this to generate a UML diagram image:
+
+```
+bin/text2uml  | plantuml -p > uml-relations.png
+```
+
+"""
+
+import os.path
+import re
+from collections import OrderedDict
+from lxml import etree
+
+classes = {}
+links = {}
+
+
+def load2fieldmetadata(filepath):
+    fieldnames = {}
+    parser = etree.XMLParser(remove_blank_text=True)
+    with open(os.path.join(filepath, "metadatakatalog.xsd")) as fh:
+        tree = etree.parse(fh, parser)
+    element = tree.getroot()
+    for sub in element.iterchildren():
+        if "{http://www.w3.org/2001/XMLSchema}simpleType" == sub.tag:
+            fieldnames[sub.get('name')] = True
+    with open(os.path.join(filepath, "arkivstruktur.xsd")) as fh:
+        tree = etree.parse(fh, parser)
+    element = tree.getroot()
+    for sub in element.iterchildren():
+        if "{http://www.w3.org/2001/XMLSchema}complexType" == sub.tag:
+            fieldnames[sub.get('name')] = True
+    return fieldnames
+
+def relation(f):
+    if -1 != f.find(" "):
+        s = re.split(r" +", f)
+        c = s[-1]
+        return (c, "\"" + " ".join(s[:-1]) + "\"")
+    else:
+        return (f, None)
+
+def process(link, f):
+    (c0,f0) = relation(f[0])
+    (c1,f1) = relation(f[1])
+    if f0 is not None and f1 is not None:
+        links[(c1, f1, link, f0, c0)] = True
+    elif f0 is None and f1 is not None:
+        links[(c1, f1, link, c0)] = True
+    elif f0 is not None and f1 is None:
+        links[(c1, link, f0, c0)] = True
+    else:
+        links[(c1, link, c0)] = True
+
+with open('kapitler/07-tjenester_og_informasjonsmodell.md') as f:
+    tablename = None
+    for line in f:
+        line = line.strip()
+        m = re.match('^### (.*)$', line)
+        if m:
+            package = m.group(1)
+            heading = None
+        m = re.match('^####+ (.*)$', line)
+        if m:
+            heading = m.group(1)
+            tablename = None
+            inherit = None
+            fullname = "%s.%s" % (package, heading)
+            if heading not in classes:
+                classes[heading] = {}
+                classes[heading]['package'] = package
+                classes[heading]['fullname'] = fullname
+        m = re.match('^\*Arver:\* \*+([^\*]*)\*+$', line)
+        if m:
+            inherit = m.group(1)
+            classes[heading]['inherit'] = inherit
+        m = re.match('^Table: (.*)$', line)
+        if m:
+            tablename = m.group(1)
+        m = re.match('^\*Type:\* \*+([^\* ]*)( «(.+)»)?\*+$', line)
+        if m:
+            classtype = m.group(1)
+            stereotype = m.group(3)
+            if stereotype:
+                classes[heading]['stereotype'] = stereotype
+        if 'Attributter' == tablename and re.match('\| .* \| ', line):
+#            print("'", heading, inherit, tablename)
+            f = re.split(' *\| *', line)[1:-1]
+#            print("'", f)
+#            print(len(f))
+            assert 5 == len(f)
+            if -1 == f[0].find('**Navn**') and -1 == f[0].find('--'):
+                if 'attributes' not in classes[heading]:
+                    classes[heading]['attributes'] = OrderedDict()
+                classes[heading]['attributes'][f[0]] = {
+                    'merknad' : f[1],
+                    'multip' : f[2].replace('\\','').replace('[1..1]', ''),
+                    'code' : f[3],
+                    'type' : f[4],
+                }
+        if 'Relasjoner' == tablename and re.match('\| .* \| ', line):
+            f = re.split(' *\| *', line)[1:]
+#            print(f)
+            if '**Generalization** (Source → Destination)' == f[0] :
+                process('<|--', f[1:])
+            if '**Aggregation** (Bi-Directional)' == f[0] :
+                process('o-->', f[1:])
+            if '**Aggregation** (Destination → Source)' == f[0] :
+                process('o--', f[1:])
+            if '**Association** (Source → Destination)' == f[0] :
+                process('*--', f[1:])
+            # FIXME check if these two are correct
+            if '**Association** (Bi-Directional)' == f[0] :
+                process('*-->', f[1:])
+            if '**Association** (Destination → Source)' == f[0] :
+                process('--*', f[1:])
+
+def c2full(c):
+    if c in classes:
+        return classes[c]['fullname']
+    return c
+
+
+# Enable to compare with meta data directory
+fieldnames = None # load2fieldmetadata("../noark5-tester/noark5-schema/v4.0/")
+
+print("@startuml")
+print("scale max 2048 width")
+
+for c in sorted(classes.keys(), key=lambda x: classes[x]['fullname']):
+    stereotype = "class"
+    entry=""
+    entry += "class %s" % c2full(c)
+    if 'inherit' in classes[c]:
+        entry += " <%s>" % classes[c]['inherit']
+    if 'stereotype' in classes[c]:
+        stereotype = classes[c]['stereotype']
+        entry += " <<%s>>" % stereotype
+    entry += " {\n"
+
+    if 'attributes' in classes[c]:
+        for f in classes[c]['attributes'].keys():
+            # FIXME Treat codelist and codeList the same
+            # https://github.com/arkivverket/noark5-tjenestegrensesnitt-standard/pull/85
+            # is fixed.
+            if stereotype in ('codelist','codeList'):
+                if -1 != f.find('('):
+                    entry += "  {field} +%s = %s\n" % (f, classes[c]['attributes'][f]['code'])
+                elif '' != classes[c]['attributes'][f]['code']:
+                    entry += "  +%s = %s\n" % (f, classes[c]['attributes'][f]['code'])
+                else:
+                    entry += "  +%s\n" % f
+            else: # stereotype dataType and class/default
+                if fieldnames and f not in fieldnames:
+                    entry += "' warning: unknown field %s.%s\n" % (classes[c]['fullname'], f)
+                astr = "  +%s : %s %s" % (f, classes[c]['attributes'][f]['type'],
+                                          classes[c]['attributes'][f]['multip'])
+                entry += astr.rstrip() + "\n"
+    entry += "}\n"
+
+    filename = 'media/uml-%s-%s.iuml' % (stereotype.lower(), c.lower())
+    with open(filename, "w") as iuml:
+        iuml.write("@startuml\n")
+        iuml.write(entry)
+        iuml.write("@enduml\n")
+
+    print(entry)
+
+for link in sorted(links.keys()):
+    rel = list(link)
+    rel[0] = c2full(rel[0])
+    rel[-1] = c2full(rel[-1])
+    print(*rel)
+print("@enduml")
