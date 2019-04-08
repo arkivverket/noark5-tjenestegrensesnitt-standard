@@ -15,7 +15,7 @@ class Foto {
   +format : Format
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
-  +filstørrelse : string
+  +filstoerrelse : string
   -- constraints --
   {Det skal finnesvære mulig å |formattesting}
   {M001 systemID: Skal ikke kunne endres}

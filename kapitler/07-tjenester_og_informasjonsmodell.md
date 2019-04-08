@@ -7,7 +7,7 @@
 | ![](./media/uml-forklaring-om-notasjon-som-er-brukt.png) | ***Klassediagram*** brukes for å vise utvalgte klasser i en UML-modell. Klassediagram ***trenger ikke være fullstendige***, hverken mhp hvilke klasser som vises eller hvilke assosiasjoner som vises. For kompliserte modeller (som NOARK-modellen) trengs flere klassediagram for å vise hele modellen. |
 |![](./media/uml-klasse-konspetet-bruker-registrering-som-eksempel.png) |I et ***klassediagram*** vises en klasse som en firkantet boks. ***Klassenavnet*** står i øverste «etasje», og er i eksempelet Registrering. ***Klasseattributtene*** karakteriserer klassen, og listes opp en i nest øverste etasje (i eksempelet i alt 7, den første/øverste har navnet arkivertDato). Firkanten kan også ha flere frivillige etasjer for å vise mer informasjon. I klassen Registrering vises en «etasje» med notes (ofte brukt for ***klassedefinisjon***) |
 |![](./media/uml-assosiasjoner-brukt-med-klasser.png) | Klasser kan knyttes sammen med ***assosiasjoner***. Assosiasjoner vises som streker mellom to klasser. En assosiasjon der begge ender er knytta til samme klasse kalles ***selv-assosiasjon***. Eksempel: Mappe kan ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like klasser. En assosiasjon kan være ***aggregering***. Symbolet er en strek mellom to klasser med åpen diamant i ene enden. Eksempel: Ei Mappe ***har*** Registrering(er). En registrering er en selvstendig enhet, som «overlever» selv om Mappa blir sletta. |
-|![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Basisregistrering som er en generalisering av Journalpost og Møteregistrering. En kan også si at Journalpost er en spesialisering av basisregistrering. I Basisregistrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost og Møteregistrering. Dette leses som Journalpost ***er en*** Basisregistrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Basisregistrering er en spesialisering av Registrering, selv om klassen Registrering ikke finnes i diagrammet. |
+|![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Basisregistrering som er en generalisering av Journalpost og Moeteregistrering. En kan også si at Journalpost er en spesialisering av basisregistrering. I Basisregistrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost og Moeteregistrering. Dette leses som Journalpost ***er en*** Basisregistrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Basisregistrering er en spesialisering av Registrering, selv om klassen Registrering ikke finnes i diagrammet. |
 |![](./media/uml-komposisjon-brukt-med-klasser.png) | En assosiasjon kan også være ***komposisjon***. Symbolet er en strek mellom to klasser med lukka diamant i den ene enden. En Basisregistrering ***har*** Korrespondansepart(er). En Korrespondansepart kan ikke eksistere uten at den er knytta til en mappe. Slettes («dør») basisregistreringen vil også korrespondanseparten bli sletta («vil dø»). Assosiasjonene forteller også hvilken vei de er ***navigerbare***. Symbolet for dette er piler i endene på streken. Eksempel: En basisregistrering «vet» hvilke korrespondansepart(er) som tilhører basisregistreringen, mens korrespondanseparten ikke vet hvilken basisregistrering den tilhører.|
 |![](./media/uml-multiplisitet-brukt-med-klasser.png) | ***Multiplisiteten*** forteller hvor mange forekomster som kan inngå. Multiplisitet kan brukes i forbindelse med assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to prikker mellom (0..1). Det første tallet angir minimums-multiplisitet (så mange det minst må være), det andre tallet er maksimumsmultiplisitet (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..***) Mapper(er). Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).En klasseattributt har angitt multiplisitet med klammeparenteser (\[0..1\]). Klasseattributten nøkkelord kan forekomme ingen eller en gang. Når det ikke er angitt multiplisitet, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en klasseID, og kan bare ha en. En tom tekststreng-verdi ("") er likestilt med en manglende verdi, slik at ved multiplisiteten [1..1] betyr det at klasseID også må ha en verdi forskjellig fra tom streng.|
 |![](./media/uml-simple-datatyper-eller-primitiver.png) | Datatypene kan også være ***simple datatyper*** eller ***primitiver***. Disse brukes for å gi mulighet for restriksjoner også på primitivene. Epostadresse kan være modellert som en slik primitiv. Epost er en tekst-streng, men som i tillegg til å være tekst-streng også må oppfylle visse regler knytta til det å være gyldig epostadresse (bl.a. inneholde en og bare en forekomst av tegnet @). I eksempelet i figuren er SystemID en tekststreng (string) som i tillegg må oppfylle tilleggskrav. I store modeller kan det være hensiktsmessig å plassere ulike modell-elementer i ulike pakker. Da kan det også bli lettere for leseren å forstå modellen når han får vite hvilken pakke de ulike klassene er plassert i. Modellpakker kalles ofte ***navnerom*** (namespace) Dette kan angis foran klassenavnet, skilt fra klassenavnet med kolon (:). I eksempelet hører klassen SystemID til pakken/navnerommet Metadata og klassen string tilhører pakken/navnerommet BasicTypes.|
@@ -238,7 +238,7 @@ Table: Relasjoner
 | **Aggregation** (Bi-Directional)           | klassifikasjonssystem 0..1 Klassifikasjonssystem         | arkivdel 1..* Arkivdel |             |
 | **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | arkivdel 0..1 Arkivdel |             |
 | **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | arkivdel 0..1 Arkivdel |             |
-| **Aggregation** (Destination → Source)     | sekundærklassifikasjonssystem 0..* Klassifikasjonssystem | Arkivdel               |             |
+| **Aggregation** (Destination → Source)     | sekundaerklassifikasjonssystem 0..* Klassifikasjonssystem | Arkivdel               |             |
 
 Table: Relasjonsnøkler
 
@@ -272,10 +272,10 @@ Table: Attributter
 | referanseAvsluttetAv  |           | \[0..1\] | | SystemID | 
 | arkivperiodeStartDato | Definisjon: Dato for starten av en arkivperiode . Kilde: Settes automatisk til samme dato som M600 opprettetDato. Kommentarer: Det kan tenkes tilfeller hvor startdatoen ikke er identisk med datoen arkivdelen ble opprettet M107 | \[0..1\] | | date | 
 | arkivperiodeSluttDato | Definisjon: Dato for slutten av en arkivperiode . Kilde: Settes automatisk til samme dato som M602 avsluttetDato. Kommentarer: Det kan forekomme tilfeller hvor sluttdatoen ikke er identisk med datoen arkivdelen ble avsluttet. M108 | \[0..1\] | | date |
-| referanseForløper     | M202      | \[0..1\] | | SystemID         |
+| referanseForloeper    | M202      | \[0..1\] | | SystemID         |
 | referanseArvtaker     | M203      | \[0..1\] | | SystemID         |
 | kassasjon             |           | \[0..1\] | | Kassasjon        |
-| utførtKassasjon       |           | \[0..1\] | | UtførtKassasjon  |
+| utfoertKassasjon      |           | \[0..1\] | | UtfoertKassasjon |
 | sletting              |           | \[0..1\] | | Sletting         |
 | skjerming             |           | \[0..1\] | | Skjerming        |
 | gradering             |           | \[0..1\] | | Gradering        |
@@ -441,7 +441,7 @@ Table: Relasjoner
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | Basisregistrering                                        | Registrering           |             |
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | registrering 0..1 Basisregistrering ||
-| **Generalization** (Source → Destination)  | Møteregistrering                                         | Basisregistrering      |             |
+| **Generalization** (Source → Destination)  | Moeteregistrering                                         | Basisregistrering      |             |
 | **Generalization** (Source → Destination)  | Journalpost                                              | Basisregistrering      |             |
 | **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Basisregistrering      |             |
 
@@ -462,7 +462,7 @@ Table: Attributter
 
 | **Navn**                      | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-------------------------------|---------------|---------------|-----------|-----------|
-| registreringsID               | Definisjon: Entydig identifikasjon av registreringen innenfor arkivet. Andre arkiver innenfor samme system kan inneholde den samme koden. Koden kan være rent nummerisk, men kan også ha en logisk oppbygging. Merk at registreringsID er identisk med saksår og sekvensnummer (oftest bare kalt &quot;saksnummer&quot;) i kombinasjon med &quot;dokumentnummer&quot; i Noark 4, se kommentar. Kilde: Registreres automatisk av systemet etter interne regler. Kommentarer: Saksnummer og dokumentnummer (f.eks. 2011/3869-8, dvs. dokumentnummer 8 i saksnummer 2011/3869) er ikke lenger obligatorisk identifikasjon i Noark 5, men det anbefales at dette mønsteret fremdeles brukes i sakarkiver. I slike tilfeller skal verdien for &quot;dokumentnummer&quot; kopieres til M015 journalpostnummer i journalposten. M004 | \[0..1\] | | string | 
+| registreringsID               | Definisjon: Entydig identifikasjon av registreringen innenfor arkivet. Andre arkiver innenfor samme system kan inneholde den samme koden. Koden kan være rent nummerisk, men kan også ha en logisk oppbygging. Merk at registreringsID er identisk med saksaar og sekvensnummer (oftest bare kalt &quot;saksnummer&quot;) i kombinasjon med &quot;dokumentnummer&quot; i Noark 4, se kommentar. Kilde: Registreres automatisk av systemet etter interne regler. Kommentarer: Saksnummer og dokumentnummer (f.eks. 2011/3869-8, dvs. dokumentnummer 8 i saksnummer 2011/3869) er ikke lenger obligatorisk identifikasjon i Noark 5, men det anbefales at dette mønsteret fremdeles brukes i sakarkiver. I slike tilfeller skal verdien for &quot;dokumentnummer&quot; kopieres til M015 journalpostnummer i journalposten. M004 | \[0..1\] | | string |
 | tittel                        | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
 | offentligTittel               | Definisjon: Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med ******) . Kilde: (ingen). Kommentarer: I løpende og offentlig journaler skal også offentligTittel være med dersom ord i tittelfeltet skal skjermes. M025 | \[0..1\] | | string | 
 | beskrivelse                   | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string | 
@@ -538,7 +538,7 @@ Table: Attributter
 | tilknyttetAv                  | Definisjon: Navn på person som knyttet et dokument til en registrering . Kilde: Registreres automatisk når tilknytning foretas. Kommentarer: (ingen). M621 | \[0..1\] | | string | 
 | referanseTilknyttetAv         |  | \[0..1\] |         | SystemID |
 | kassasjon                     |  | \[0..1\] |         | Kassasjon |
-| utførtKassasjon               |  | \[0..1\] |         | UtførtKassasjon |
+| utfoertKassasjon              |  | \[0..1\] |         | UtfoertKassasjon |
 | sletting                      |  | \[0..1\] |         | Sletting |
 | skjerming                     |  | \[0..1\] |         | Skjerming |
 | gradering                     |  | \[0..1\] |         | Gradering |
@@ -812,7 +812,7 @@ Table: Relasjoner
 | **Aggregation** (Bi-Directional)           | klasse 0..* Klasse                                       | klassifikasjonssystem 0..1 Klassifikasjonssystem |  |
 | **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | klasse 0..1 Klasse     |             |
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | klasse 0..1 Klasse     |             |
-| **Association** (Source → Destination)     | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
+| **Association** (Source → Destination)     | Saksmappe                                                | sekundaerklassifikasjon 0..* Klasse | |
 | **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | klasse 0..1 Klasse     |             |
 
 Table: Relasjonsnøkler
@@ -885,7 +885,7 @@ Table: Relasjoner
 | --------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Aggregation** (Bi-Directional)          | klassifikasjonssystem 0..1 Klassifikasjonssystem         | arkivdel 1..* Arkivdel |             |
 | **Generalization** (Source → Destination) | Klassifikasjonssystem                                    | Arkivenhet             |             |
-| **Aggregation** (Destination → Source)    | sekundærklassifikasjonssystem 0..* Klassifikasjonssystem | Arkivdel               |             |
+| **Aggregation** (Destination → Source)    | sekundaerklassifikasjonssystem 0..* Klassifikasjonssystem | Arkivdel               |             |
 | **Aggregation** (Bi-Directional)          | klasse 0..* Klasse                                       | klassifikasjonssystem 0..1 Klassifikasjonssystem  | |
 
 Table: Relasjonsnøkler
@@ -954,7 +954,7 @@ Table: Attributter
 | konvertertAv           | Definisjon: Person eller system som har foretatt konverteringen . Kilde: Registreres automatisk ved konvertering. Kommentarer: (ingen). M616 | \[1..1\] | | string | 
 | konvertertFraFormat    | Definisjon: Formatet dokumentet hadde før det ble konvertert . Kilde: Registreres automatisk ved konvertering. Kommentarer: Dette vil vanligvis være produksjonsformatet, men kan også være et annet arkivformat. Faste verdier bestemmes senere. M712 | \[1..1\] | | string | 
 | konvertertTilFormat    | Definisjon: Formatet dokumentet fikk etter konvertering . Kilde: Registreres automatisk ved konvertering. Kommentarer: Faste verdier bestemmes senere. M713 | \[1..1\] | | string | 
-| konverteringsverktøy   | Definisjon: Navn på det IT-verktøyet som ble brukt til å foreta konverteringen . Kilde: (ingen). Kommentarer: (ingen). M714 | \[0..1\] | | string | 
+| konverteringsverktoey   | Definisjon: Navn på det IT-verktøyet som ble brukt til å foreta konverteringen . Kilde: (ingen). Kommentarer: (ingen). M714 | \[0..1\] | | string |
 | konverteringskommentar | Definisjon: Kommentarer til konverteringen . Kilde: (ingen).Kommentarer: (ingen). M715 | \[0..1\] | | string |
 
 Table: Restriksjoner
@@ -984,7 +984,7 @@ klasse, mappe og basisregistrering. Referansen går en vei, dvs. den
 kan kun være en referanse til en arkivenhet. I og med at
 kryssreferanser knyttes til Mappe og Basisregistrering, vil det si at
 Referanser også knyttes til alle utvidelsene (spesialiseringer) under
-disse (Saksmappe, Møtemappe og Journalpost, Møteregistrering).
+disse (Saksmappe, Moetemappe og Journalpost, Moeteregistrering).
 
 Table: Relasjoner
 
@@ -1064,7 +1064,7 @@ Table: Relasjoner
 | **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | mappe 0..1 Mappe       |             |
 | **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Mappe                  |             |
 | **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Mappe                  |             |
-| **Generalization** (Source → Destination)  | Møtemappe                                                | Mappe                  |             |
+| **Generalization** (Source → Destination)  | Moetemappe                                                | Mappe                  |             |
 | **Generalization** (Source → Destination)  | Saksmappe                                                | Mappe                  |             |
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | mappe 0..1 Mappe       |             |
 
@@ -1095,7 +1095,7 @@ Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
-| mappeID                       | Definisjon: Entydig identifikasjon av mappen innenfor det arkivet mappen tilhører. Andre arkiver innenfor samme arkivsystem, kan inneholde en eller flere av de samme kodene. Koden kan være rent nummerisk, men kan også ha en logisk oppbygning. Merk at *mappeID* er identisk med kombinasjonen saksår og sekvensnummer (oftest bare kalt &quot;saksnummer&quot;) i Noark 4, se kommentarfeltet. Kilde: Registreres automatisk av systemet etter interne regler. Kommentarer: Saksår og sekvensnummer er ikke lenger obligatorisk identifikasjon i Noark 5, men det anbefales at dette mønsteret fremdeles brukes i sakarkiver. I slike tilfeller skal verdien i mappeID også kopieres til de to metadataelementene *M011 saksaar* og *M012 sakssekvensnummer* i saksmappen. Grunnen til dette er at det i noen tilfeller er nødvendig å skille de to elementene i saksnummeret, f.eks. ved sortering og i tjenestegrensesnittet. M003 | \[0..1\] | | string | 
+| mappeID                       | Definisjon: Entydig identifikasjon av mappen innenfor det arkivet mappen tilhører. Andre arkiver innenfor samme arkivsystem, kan inneholde en eller flere av de samme kodene. Koden kan være rent nummerisk, men kan også ha en logisk oppbygning. Merk at *mappeID* er identisk med kombinasjonen saksaar og sekvensnummer (oftest bare kalt &quot;saksnummer&quot;) i Noark 4, se kommentarfeltet. Kilde: Registreres automatisk av systemet etter interne regler. Kommentarer: Saksaar og sekvensnummer er ikke lenger obligatorisk identifikasjon i Noark 5, men det anbefales at dette mønsteret fremdeles brukes i sakarkiver. I slike tilfeller skal verdien i mappeID også kopieres til de to metadataelementene *M011 saksaar* og *M012 sakssekvensnummer* i saksmappen. Grunnen til dette er at det i noen tilfeller er nødvendig å skille de to elementene i saksnummeret, f.eks. ved sortering og i tjenestegrensesnittet. M003 | \[0..1\] | | string |
 | mappetype                     | angir mappetype som blant annet kan brukes som hint til hva som ligger i virksomhetsspesifikkemetadata| \[0..1\] | | Mappetype |
 | tittel                        | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
 | offentligTittel               | Definisjon: Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med \*\*\*\*\*\*) . Kommentarer: I løpende og offentlig journaler skal også offentligTittel være med dersom ord i tittelfeltet skal skjermes. M025 | \[0..1\] | | string | 
@@ -1320,7 +1320,7 @@ Table: Restriksjoner
 | slettetAv\_M614   | slettetAv: Kan ikke endres   |
 | slettetDato\_M613 | slettetDato: Kan ikke endres |
 
-#### UtførtKassasjon
+#### UtfoertKassasjon
 
 *Type:* ***Class «dataType»***
 
@@ -1477,7 +1477,7 @@ Table: Attributter
 
 | **Navn**      | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |---------------|---------------|---------------|-----------|-----------|
-| fødselsnummer | Personopplysningsloven § 12. Bruk av fødselsnummer m.v. Fødselsnummer og andre entydige identifikasjonsmidler kan bare nyttes i behandlingen når det er saklig behov for sikker identifisering og metoden er nødvendig for å oppnå slik identifisering. Datatilsynet kan pålegge en behandlingsansvarlig å bruke identifikasjonsmidler som nevnt i første ledd for å sikre at personopplysningene har tilstrekkelig kvalitet. Kongen kan gi forskrift med nærmere regler om bruk av fødselsnummer og andre entydige identifikasjonsmidler. | \[0..1\] | | string |
+| foedselsnummer | Personopplysningsloven § 12. Bruk av fødselsnummer m.v. Fødselsnummer og andre entydige identifikasjonsmidler kan bare nyttes i behandlingen når det er saklig behov for sikker identifisering og metoden er nødvendig for å oppnå slik identifisering. Datatilsynet kan pålegge en behandlingsansvarlig å bruke identifikasjonsmidler som nevnt i første ledd for å sikre at personopplysningene har tilstrekkelig kvalitet. Kongen kan gi forskrift med nærmere regler om bruk av fødselsnummer og andre entydige identifikasjonsmidler. | \[0..1\] | | string |
 | dNummer       | Et D-nummer er et midlertidig nummer som blant annet tildeles utenlandske statsborgere som er skatte- eller avgiftspliktige til Norge. Det kreves et D-nummer for å bli registrert i Folkeregisteret. | \[0..1\] | | string|
 
 ##### Plan
@@ -1592,7 +1592,7 @@ Table: Attributter
 | Opprettet     |             |              | O        |          |
 | Avsluttet     |             |              | A        |          |
 
-#### Avskrivningsmåte
+#### Avskrivningsmaate
 
 *Type:* ***Class «codelist»***
 
@@ -2063,7 +2063,7 @@ Table: Attributter
 | Merknad fra leder              | Valgfri     |              | ML       |          |
 | Merknad fra arkivansvarlig     | Valgfri     |              | MA       |          |
 
-#### MøtedeltakerFunksjon
+#### MoetedeltakerFunksjon
 
 *Type:* ***Class «codelist»***
 
@@ -2089,7 +2089,7 @@ Table: Attributter
 | Møteleder     | Valgfri     |              | M        |          |
 | Referent      | Valgfri     |              | R        |          |
 
-#### Møteregistreringsstatus
+#### Moeteregistreringsstatus
 
 *Type:* ***Class «codelist»***
 
@@ -2097,8 +2097,7 @@ Table: Attributter
 
 Åpen kodeliste
 
-Definisjon: Status til møteregistreringen
-. Kilde: (ingen)
+Definisjon: Status til møteregistreringen. Kilde: (ingen)
 
 Kommentar: Valgfrie verdier, eksempler:
 
@@ -2122,7 +2121,7 @@ Table: Attributter
 | Utsatt til nytt møte i samme utvalg     | Valgfri     |              | UT       |          |
 | Sendt tilbake til foregående utvalg     | Valgfri     |              | TB       |          |
 
-#### Møteregistreringstype
+#### Moeteregistreringstype
 
 *Type:* ***Class «codelist»***
 
@@ -2160,7 +2159,7 @@ Table: Attributter
 | Offentlig saksliste     | Offentlig saksliste, dvs en saksliste hvor informasjon (vanligvis kun i sakstittel) som skal unntas offentligheten, er skjermet |              | OL       |          |
 | Vedlegg til møtesak     |                                                                                                                                 |              | VL       |          |
 
-#### Møtesakstype
+#### Moetesakstype
 
 *Type:* ***Class «codelist»***
 
@@ -2168,8 +2167,7 @@ Table: Attributter
 
 Åpen kodeliste
 
-Definisjon: Navn på type møtesak
-. Kilde: (ingen)
+Definisjon: Navn på type møtesak. Kilde: (ingen)
 
 Kommentar: (ingen)
 
@@ -2577,7 +2575,7 @@ Table: Attributter
 | avskrivningsdato                       | Definisjon: Dato et dokument ble avskrevet . Kilde: Registreres automatisk nå avskrivning foretas. Kommentar: (ingen). M617 | \[1..1\] ||date| 
 | avskrevetAv                            | Definisjon: Navn på person som har foretatt avskrivning . Kilde: Registreres automatisk nå avskrivning foretas. Kommentar: (ingen). M618 | \[1..1\] | | string | 
 | referanseAvskrevetAv                   | |  \[0..1\] | | SystemID | 
-| avskrivningsmåte                       | Definisjon: Måten en journalpost har blitt avskrevet på . Kilde: Registreres automatisk når konvertering utføres. Kommentar: (ingen). M619 avskrivningsmaate | \[1..1\] | | Avskrivningsmåte |
+| avskrivningsmaate                       | Definisjon: Måten en journalpost har blitt avskrevet på . Kilde: Registreres automatisk når konvertering utføres. Kommentar: (ingen). M619 avskrivningsmaate | \[1..1\] | | Avskrivningsmaate |
 | referanseAvskrivesAvJournalpost        | Definisjon: Referanse til en eller flere journalposter som avskriver denne journalposten . Kilde: Registreres manuelt eller automatisk ved avskrivning. Kommentar: (ingen). M215 | \[0..1\] | | SystemID |
 | referanseAvskrivesAvKorrespondansepart | angir referanse til hvilken korrespondansepart som har avskrevet journalposten | \[0..1\] | | SystemID |
 
@@ -2746,9 +2744,9 @@ Table: Attributter
 | forfallsdato             | Definisjon: Dato som angir fristen for når et inngående dokument må være besvart . Kilde: Registreres manuelt. Kommentar: Forfallsdato kan være angitt som en betingelse i det inngående dokumentet. M109 forfallsdato | \[0..1\] | | date|
 | offentlighetsvurdertDato | Definisjon: Datoen da offentlighetsvurdering ble foretatt . Kilde: Registreres automatisk knyttet til funksjonalitet for skjerming. Kommentar: Dato for offentlighetsvurdering kan brukes dersom inngående dokumenter automatisk blir midlertidig skjermet ved mottak, og offentlighetsvurderingen skjer på et litt senere tidspunkt. M110 offentlighetsvurdertDato | \[0..1\] | | date| 
 | antallVedlegg            | Definisjon: Antall fysiske vedlegg til et fysisk hoveddokument . Kilde: Registreres manuelt. Kommentar: (ingen). M304 antallVedlegg | \[0..1\] | | integer|
-| utlåntDato               | Definisjon: Dato når en fysisk saksmappe eller journalpost ble utlånt . Kilde: Registreres manuelt ved utlån. Kommentar: Det er ikke spesifisert noen dato for tilbakelevering. Tilbakelevering kan markeres ved at M106 utlaantDato slettes. Det er ingen krav om obligatorisk logging av utlån av fysiske dokumenter. M106 utlaantDato | \[0..1\] | | date|
-| utlåntTil                | Definisjon: Navnet på person som har lånt en fysisk saksmappe . Kilde: Registreres manuelt ved utlån. Kommentar: (ingen). M309 utlaantTil | \[0..1\] | | string | 
-| referanseUtlåntTil       | | \[0..1\] | | SystemID |
+| utlaantDato              | Definisjon: Dato når en fysisk saksmappe eller journalpost ble utlånt.  Kilde: Registreres manuelt ved utlån. Kommentar: Det er ikke spesifisert noen dato for tilbakelevering. Tilbakelevering kan markeres ved at M106 utlaantDato slettes. Det er ingen krav om obligatorisk logging av utlån av fysiske dokumenter. M106 utlaantDato | \[0..1\] | | date|
+| utlaantTil               | Definisjon: Navnet på person som har lånt en fysisk saksmappe . Kilde: Registreres manuelt ved utlån. Kommentar: (ingen). M309 utlaantTil | \[0..1\] | | string |
+| referanseUtlaantTil      | | \[0..1\] | | SystemID |
 | journalenhet             | Definisjon: Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter . Kilde: Registreres automatisk på grunnlag av innlogget bruker, kan overstyres manuelt. Kommentar: (ingen). M308 journalenhet | \[0..1\] | | string | 
 | elektroniskSignatur      | | \[0..1\] | | ElektroniskSignatur |
 
@@ -2769,9 +2767,9 @@ Table: Restriksjoner
 | M103 dokumentetsDato: Skal kunne endres manuelt inntil arkivering. | |
 | M104 mottattDato: Skal ikke kunne endres ved automatisk registrering, dato for mottak av fysiske dokumenter skal kunne endres inntil arkivering. | |
 | M105 sendtDato: Skal ikke kunne endres ved automatisk registrering, dato for forsendelse av fysiske dokumenter skal kunne endres inntil arkivering. |
-| M106 utlåntDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert. | |
+| M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert. | |
 | M308 journalenhet: Er ikke lenger obligatorisk i Noark 5. Journalenhet er helt uavhengig av administrativ enhet. Kan f.eks. brukes som seleksjonskriterium ved produksjon av rapporter. Det anbefales ikke å knytte tilgangsrettigheter til journalenhet. | |
-| M309 utlåntTil: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller at dokumentene i en journalpost ble arkivert. |
+| M309 utlaantTil: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller at dokumentene i en journalpost ble arkivert. |
 
 #### Kontaktinformasjon
 
@@ -2925,7 +2923,7 @@ Table: Attributter
 
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
-| fødselsnummer          |             | \[0..1\]     |          | string             |
+| foedselsnummer         |             | \[0..1\]     |          | string             |
 | DNummer                |             | \[0..1\]     |          | string             |
 | navn                   |             | \[1..1\]     |          | string             |
 | postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
@@ -3027,7 +3025,7 @@ Table: Relasjoner
 | ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Association** (Source → Destination)    | Saksmappe                                                | sakspart 0..* Sakspart |             |
 | **Generalization** (Source → Destination) | Saksmappe                                                | Mappe                  |             |
-| **Association** (Source → Destination)    | Saksmappe                                                | sekundærklassifikasjon 0..* Klasse | |
+| **Association** (Source → Destination)    | Saksmappe                                                | sekundaerklassifikasjon 0..* Klasse | |
 | **Association** (Bi-Directional)          | sak 0..* Saksmappe                                       | presedens 0..* Presedens |           |
 
 Table: Relasjonsnøkler
@@ -3049,8 +3047,8 @@ Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
-| saksår                 | Definisjon: Inngår i M003 mappeID. Viser året saksmappen ble opprettet. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Se kommentar under M012 sakssekvensnummer. M011 saksaar | \[0..1\] | | integer|
-| sakssekvensnummer      | Definisjon: Inngår i M003 mappeID. Viser rekkefølgen når saksmappen ble opprettet innenfor året. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Kombinasjonen saksår og sakssekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. M012 sakssekvensnummer | \[0..1\] | | integer|
+| saksaar                | Definisjon: Inngår i M003 mappeID. Viser året saksmappen ble opprettet. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Se kommentar under M012 sakssekvensnummer. M011 saksaar | \[0..1\] | | integer|
+| sakssekvensnummer      | Definisjon: Inngår i M003 mappeID. Viser rekkefølgen når saksmappen ble opprettet innenfor året. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Kombinasjonen saksaar og sakssekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. M012 sakssekvensnummer | \[0..1\] | | integer|
 | saksdato               | Definisjon: Datoen saken er opprettet . Kilde: Settes automatisk til samme dato som M600 opprettetDato. Kommentar: (ingen). M100 saksdato | \[1..1\] | |date| 
 | administrativEnhet     | Definisjon: Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen. Kilde: Registreres automatisk f.eks. på grunnlag av innlogget bruker, kan overstyres. Kommentar: Merk at på journalpostnivå grupperes administrativEnhet sammen med M307 saksbehandler inn i korrespondansepart. Dette muliggjør individuell behandling når det er flere mottakere, noe som er særlig aktuelt ved organinterne dokumenter som skal følges opp. M305 administrativEnhet | \[0..1\] | | string |
 | referanseAdministrativEnhet | | \[0..1\] | | SystemID |
@@ -3058,16 +3056,16 @@ Table: Attributter
 | referanseSaksansvarlig | | \[0..1\] | | SystemID |
 | journalenhet           | Definisjon: Navn på enhet som har det arkivmessige ansvaret for kvalitetssikring av arkivdanningen, og eventuelt registrering (journalføring) og arkivering av fysiske dokumenter . Kilde: Registreres automatisk på grunnlag av innlogget bruker, kan overstyres manuelt. Kommentar: (ingen). M308 journalenhet | \[0..1\] | | string | 
 | saksstatus             | Definisjon: Status til saksmappen, dvs. hvor langt saksbehandlingen har kommet. Kilde: Registreres automatisk gjennom forskjellig saksbehandlings-funksjonalitet, eller overstyres manuelt. Kommentar: Saksmapper som avleveres skal ha status &quot;Avsluttet&quot; eller &quot;Utgår&quot;. M052 saksstatus | \[1..1\] | |Saksstatus|
-| utlåntDato             | Definisjon: Dato når en fysisk saksmappe eller journalpost ble utlånt . Kilde: Registreres manuelt ved utlån. Kommentar: Det er ikke spesifisert noen dato for tilbakelevering. Tilbakelevering kan markeres ved at M106 utlaantDato slettes. Det er ingen krav om obligatorisk logging av utlån av fysiske dokumenter. M106 utlaantDato | \[0..1\] | | date |
-| utlåntTil              | Definisjon: Navnet på person som har lånt en fysisk saksmappe . Kilde: Registreres manuelt ved utlån. Kommentar: (ingen). M309 utlaantTil | \[0..1\] | | string | 
-| referanseUtlåntTil     | | \[0..1\] | | SystemID |
+| utlaantDato            | Definisjon: Dato når en fysisk saksmappe eller journalpost ble utlånt.  Kilde: Registreres manuelt ved utlån. Kommentar: Det er ikke spesifisert noen dato for tilbakelevering. Tilbakelevering kan markeres ved at M106 utlaantDato slettes. Det er ingen krav om obligatorisk logging av utlån av fysiske dokumenter. M106 utlaantDato | \[0..1\] | | date |
+| utlaantTil             | Definisjon: Navnet på person som har lånt en fysisk saksmappe . Kilde: Registreres manuelt ved utlån. Kommentar: (ingen). M309 utlaantTil | \[0..1\] | | string |
+| referanseUtlaantTil    | | \[0..1\] | | SystemID |
 
 Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
-| 5.4.9 En Saksmappe skal kunne identifiseres entydig innenfor arkivet.| Det anbefales at denne identifikasjonen er en kombinasjon av saksår og et forløpende sekvensnummer for saksmappene innenfor året. |
-| 5.4.10 En Saksmappe skal kunne ha registrert ingen, en eller flere Sekundærklassering og en Sekundærklassering tilhører kun en Saksmappe og kun en Klasse.| |
+| 5.4.9 En Saksmappe skal kunne identifiseres entydig innenfor arkivet.| Det anbefales at denne identifikasjonen er en kombinasjon av saksaar og et forløpende sekvensnummer for saksmappene innenfor året. |
+| 5.4.10 En Saksmappe skal kunne ha registrert ingen, en eller flere Sekundaerklassering og en Sekundaerklassering tilhører kun en Saksmappe og kun en Klasse.| |
 | 5.4.11 En Saksmappe bør kunne ha registrert ingen eller en Journalenhet og en Journalenhet kan inngå i ingen, en  eller flere Saksmapper. | |
 | 5.4.12 En Saksmappe skal kunne ha registrert ingen eller en Administrativ enhet og en Administrativ enhet kan inngå i ingen, en eller flere Saksmapper. | |
 | 5.4.13 En Saksmappe skal kunne inneha ingen, en eller flere Saksparter og en Sakspart skal alltid tilhøre en Saksmappe. | |
@@ -3084,10 +3082,10 @@ Table: Restriksjoner
 | 6.1.15 En avsluttet Saksmappe bør kunne åpnes igjen av autoriserte roller og personer. Det skal være mulig å parameterstyre hvem som er autorisert for å åpne en  mappe. Åpning av mappe skal logges. | |
 | 6.1.18 Det skal ikke være mulig å slette en Saksmappe som inneholder eller har inneholdt Journalposter med status ekspedert, journalført eller arkivert | |
 | 6.2.1 Det skal finnes en tjeneste/funksjon for å ajourholde utlån av en Saksmappe. | |
-| M011 saksår: Skal ikke kunne endres | |
+| M011 saksaar: Skal ikke kunne endres | |
 | M012 sakssekvensnummer: Skal ikke kunne endres | |
 | M100 saksdato: Skal kunne endres manuelt inntil saksmappen avsluttes | |
-| M106 utlåntDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert. | |
+| M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert. | |
 
 #### Sakspart
 
@@ -3191,7 +3189,7 @@ Table: Attributter
 
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
-| fødselsnummer          |             | \[0..1\]     |          | string             |
+| foedselsnummer         |             | \[0..1\]     |          | string             |
 | DNummer                |             | \[0..1\]     |          | string             |
 | navn                   |             | \[1..1\]     |          | string             |
 | postadresse            |             | \[0..1\]     |          | EnkelAdresse       |

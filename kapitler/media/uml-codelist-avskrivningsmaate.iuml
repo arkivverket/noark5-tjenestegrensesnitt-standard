@@ -1,5 +1,5 @@
 @startuml
-class Kodelister.Avskrivningsmåte <<codelist>> {
+class Kodelister.Avskrivningsmaate <<codelist>> {
   +Besvart med brev = BU
   +Besvart med e-post = BE
   +Besvart på telefon = TLF

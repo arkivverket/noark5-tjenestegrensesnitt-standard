@@ -12,9 +12,9 @@ class Sakarkiv.Journalpost <Basisregistrering> {
   +forfallsdato : date [0..1]
   +offentlighetsvurdertDato : date [0..1]
   +antallVedlegg : integer [0..1]
-  +utlåntDato : date [0..1]
-  +utlåntTil : string [0..1]
-  +referanseUtlåntTil : SystemID [0..1]
+  +utlaantDato : date [0..1]
+  +utlaantTil : string [0..1]
+  +referanseUtlaantTil : SystemID [0..1]
   +journalenhet : string [0..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 }

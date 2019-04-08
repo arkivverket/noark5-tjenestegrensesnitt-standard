@@ -1,6 +1,6 @@
 @startuml
 class Sakarkiv.KorrespondansepartPerson <Korrespondansepart> {
-  +fødselsnummer : string [0..1]
+  +foedselsnummer : string [0..1]
   +DNummer : string [0..1]
   +navn : string
   +postadresse : EnkelAdresse [0..1]

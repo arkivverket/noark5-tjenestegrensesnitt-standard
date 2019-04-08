@@ -13,8 +13,8 @@ class Sakarkiv.Journalpost <Basisregistrering> {
   +offentlighetsvurdertDato : date [0..1]
   +antallVedlegg : integer [0..1]
   +utlantDato : date [0..1]
-  +utlåntTil : string [0..1]
-  +referanseUtlåntTil : SystemID [0..1]
+  +utlaantTil : string [0..1]
+  +referanseUtlaantTil : SystemID [0..1]
   +journalenhet : string [0..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 
@@ -23,7 +23,7 @@ class Sakarkiv.Journalpost <Basisregistrering> {
   +tittel : string
   +offentligTittel : string [0..1]
   +beskrivelse : string [0..1]
-  +nøkkelord : string [0..*]
+  +noekkelord : string [0..*]
   +forfatter : string [0..*]
   +dokumentmedium : Dokumentmedium [0..1]
   +oppbevaringssted : string [0..*]

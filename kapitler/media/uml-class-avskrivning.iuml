@@ -4,7 +4,7 @@ class Sakarkiv.Avskrivning {
   +avskrivningsdato : date
   +avskrevetAv : string
   +referanseAvskrevetAv : SystemID [0..1]
-  +avskrivningsmåte : Avskrivningsmåte
+  +avskrivningsmaate : Avskrivningsmaate
   +referanseAvskrivesAvJournalpost : SystemID [0..1]
   +referanseAvskrivesAvKorrespondansepart : SystemID [0..1]
 }

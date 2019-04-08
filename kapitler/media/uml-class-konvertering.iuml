@@ -5,7 +5,7 @@ class Arkivstruktur.Konvertering {
   +konvertertAv : string
   +konvertertFraFormat : string
   +konvertertTilFormat : string
-  +konverteringsverktøy : string [0..1]
+  +konverteringsverktoey : string [0..1]
   +konverteringskommentar : string [0..1]
 }
 @enduml
