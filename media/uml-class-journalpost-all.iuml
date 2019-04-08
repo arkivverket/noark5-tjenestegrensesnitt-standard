@@ -1,6 +1,6 @@
 @startuml
 class Sakarkiv.Journalpost <Basisregistrering> {
-  +journalår : integer [0..1]
+  +journalaar : integer [0..1]
   +journalsekvensnummer : integer [0..1]
   +journalpostnummer : integer [0..1]
   +journalposttype : Journalposttype

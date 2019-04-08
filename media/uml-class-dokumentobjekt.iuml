@@ -11,8 +11,8 @@ class Arkivstruktur.Dokumentobjekt {
   +filnavn : string [0..1]
   +sjekksum : string [0..1]
   +mimeType : string [0..1]
-  +sjekksumalgoritme : string [0..1]
-  +filstørrelse : string [0..1]
+  +sjekksumAlgoritme : string [0..1]
+  +filstoerrelse : string [0..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 }
 @enduml
