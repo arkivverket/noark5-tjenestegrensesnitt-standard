@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-!include media/uml-class-arkivenhet.iuml
+!include kapitler/media/uml-class-arkivenhet.iuml
 class Arkivstruktur.Arkivskaper <Arkivenhet>
 class Arkivstruktur.Arkiv <Arkivenhet>
 class Arkivstruktur.Arkivdel <Arkivenhet>
@@ -41,9 +41,9 @@ Arkivstruktur.Registrering "+registrering 1..*" o-- "+dokumentbeskrivelse 0..*" 
 Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
 Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
 
-!include media/uml-class-endringslogg.iuml
-!include media/uml-class-hendelseslogg.iuml
-!include media/uml-codelist-hendelsetype.iuml
+!include kapitler/media/uml-class-endringslogg.iuml
+!include kapitler/media/uml-class-hendelseslogg.iuml
+!include kapitler/media/uml-codelist-hendelsetype.iuml
 
 Arkivstruktur.Arkivenhet "0..1" o-- "+logg 0..*" Arkivstruktur.Hendelseslogg
 LoggingOgSporing.Endringslogg <|-- Arkivstruktur.Hendelseslogg

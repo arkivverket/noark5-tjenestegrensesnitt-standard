@@ -62,20 +62,20 @@ class Arkivstruktur.Arkivdel <Arkivenhet> {
   +referanseOppdatertAv : SystemID [0..1]
   +referanseOpprettetAv : SystemID [0..1]
 }
-!include media/uml-codelist-arkivstatus.iuml
-!include media/uml-codelist-dokumentmedium.iuml
-!include media/uml-codelist-arkivdelstatus.iuml
+!include kapitler/media/uml-codelist-arkivstatus.iuml
+!include kapitler/media/uml-codelist-dokumentmedium.iuml
+!include kapitler/media/uml-codelist-arkivdelstatus.iuml
 class Arkivstruktur.Mappe <Arkivenhet>
 class Arkivstruktur.Klassifikasjonssystem <Arkivenhet>
-!include media/uml-datatype-kassasjon.iuml
-!include media/uml-datatype-utfoertkassasjon.iuml
-!include media/uml-datatype-sletting.iuml
-!include media/uml-datatype-skjerming.iuml
-!include media/uml-datatype-gradering.iuml
-!include media/uml-codelist-kassasjonsvedtak.iuml
-!include media/uml-codelist-slettingstype.iuml
-!include media/uml-codelist-skjermingdokument.iuml
-!include media/uml-codelist-graderingskode.iuml
+!include kapitler/media/uml-datatype-kassasjon.iuml
+!include kapitler/media/uml-datatype-utfoertkassasjon.iuml
+!include kapitler/media/uml-datatype-sletting.iuml
+!include kapitler/media/uml-datatype-skjerming.iuml
+!include kapitler/media/uml-datatype-gradering.iuml
+!include kapitler/media/uml-codelist-kassasjonsvedtak.iuml
+!include kapitler/media/uml-codelist-slettingstype.iuml
+!include kapitler/media/uml-codelist-skjermingdokument.iuml
+!include kapitler/media/uml-codelist-graderingskode.iuml
 
 Arkivstruktur.Arkivskaper "+arkivskaper 1..*" <-o "+arkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv o--> "+underarkiv 0..*" Arkivstruktur.Arkiv

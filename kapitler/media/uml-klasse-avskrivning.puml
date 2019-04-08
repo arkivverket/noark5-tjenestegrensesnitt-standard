@@ -1,13 +1,13 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-!include media/uml-class-journalpost-all.iuml
-!include media/uml-class-korrespondansepart.iuml
-!include media/uml-class-korrespondansepartperson.iuml
-!include media/uml-class-korrespondansepartenhet.iuml
-!include media/uml-class-korrespondansepartintern.iuml
-!include media/uml-class-avskrivning.iuml
-!include media/uml-codelist-avskrivningsmaate.iuml
+!include kapitler/media/uml-class-journalpost-all.iuml
+!include kapitler/media/uml-class-korrespondansepart.iuml
+!include kapitler/media/uml-class-korrespondansepartperson.iuml
+!include kapitler/media/uml-class-korrespondansepartenhet.iuml
+!include kapitler/media/uml-class-korrespondansepartintern.iuml
+!include kapitler/media/uml-class-avskrivning.iuml
+!include kapitler/media/uml-codelist-avskrivningsmaate.iuml
 
 Sakarkiv.Journalpost *-> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
 Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartPerson

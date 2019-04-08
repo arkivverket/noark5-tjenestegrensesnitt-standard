@@ -3,8 +3,8 @@ skinparam classAttributeIconSize 0
 
 class Arkivstruktur.Klasse <Arkivenhet>
 class Arkivstruktur.Arkivdel <Arkivenhet>
-!include media/uml-class-saksmappe.iuml
-!include media/uml-class-mappe-all.iuml
+!include kapitler/media/uml-class-saksmappe.iuml
+!include kapitler/media/uml-class-mappe-all.iuml
 class Sakarkiv.Presedens
 class Arkivstruktur.Registrering <Arkivenhet>
 class MøteOgUtvalgsbehandling.Møtemappe {

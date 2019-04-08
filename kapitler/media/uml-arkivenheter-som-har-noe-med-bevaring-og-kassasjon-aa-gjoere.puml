@@ -1,0 +1,27 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+!include kapitler/media/uml-class-arkivdel.iuml
+!include kapitler/media/uml-datatype-skjerming.iuml
+!include kapitler/media/uml-codelist-tilgangsrestriksjon.iuml
+!include kapitler/media/uml-datatype-kassasjon.iuml
+!include kapitler/media/uml-codelist-skjermingdokument.iuml
+!include kapitler/media/uml-class-klasse.iuml
+!include kapitler/media/uml-datatype-utfoertkassasjon.iuml
+!include kapitler/media/uml-codelist-kassasjonsvedtak.iuml
+!include kapitler/media/uml-datatype-sletting.iuml
+!include kapitler/media/uml-codelist-slettingstype.iuml
+!include kapitler/media/uml-class-mappe.iuml
+!include kapitler/media/uml-datatype-gradering.iuml
+!include kapitler/media/uml-codelist-skjermingmetadata.iuml
+!include kapitler/media/uml-class-registrering.iuml
+!include kapitler/media/uml-codelist-graderingskode.iuml
+!include kapitler/media/uml-class-dokumentbeskrivelse.iuml
+
+Arkivstruktur.Gradering <-[hidden]-- Kodelister.Graderingskode
+Arkivstruktur.Sletting <-[hidden]-- Kodelister.Slettingstype
+Arkivstruktur.Skjerming <-[hidden]-- Kodelister.SkjermingDokument
+Arkivstruktur.Skjerming <-[hidden]-- Kodelister.SkjermingMetadata
+Arkivstruktur.Skjerming <-[hidden]-- Kodelister.Tilgangsrestriksjon
+Arkivstruktur.Kassasjon <-[hidden]-- Kodelister.Kassasjonsvedtak
+@enduml

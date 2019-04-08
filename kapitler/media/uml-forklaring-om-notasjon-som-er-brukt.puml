@@ -47,8 +47,8 @@ Fotoalbum "+album 1" o- "+albumdel 0..*" Albumdel
 Albumenhet <|-- Fotoalbum
 Albumenhet <|-- Albumdel
 
-!include media/uml-datatype-gradering.iuml
-!include media/uml-codelist-graderingskode.iuml
+!include kapitler/media/uml-datatype-gradering.iuml
+!include kapitler/media/uml-codelist-graderingskode.iuml
 
 'FIXME figure out if two SystemID classes can co-exist
 class Arkivstruktur.SystemID <<simple>> {

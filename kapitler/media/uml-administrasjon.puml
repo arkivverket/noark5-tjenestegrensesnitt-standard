@@ -1,11 +1,11 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-!include media/uml-class-bruker.iuml
-!include media/uml-class-administrativenhet.iuml
-!include media/uml-class-tilgang.iuml
-!include media/uml-codelist-tilgangsrestriksjon.iuml
-!include media/uml-codelist-tilgangskategori.iuml
+!include kapitler/media/uml-class-bruker.iuml
+!include kapitler/media/uml-class-administrativenhet.iuml
+!include kapitler/media/uml-class-tilgang.iuml
+!include kapitler/media/uml-codelist-tilgangsrestriksjon.iuml
+!include kapitler/media/uml-codelist-tilgangskategori.iuml
 
 Admin.Bruker "+bruker 0..*" <--> "+enhet 0..*" Admin.AdministrativEnhet
 

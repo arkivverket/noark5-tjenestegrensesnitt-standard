@@ -1,6 +1,6 @@
 @startuml
 skinparam classAttributeIconSize 0
-!include media/uml-class-merknad.iuml
+!include kapitler/media/uml-class-merknad.iuml
 class Arkivstruktur.Mappe <Arkivenhet>
 class Arkivstruktur.Basisregistrering <Registrering>
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>

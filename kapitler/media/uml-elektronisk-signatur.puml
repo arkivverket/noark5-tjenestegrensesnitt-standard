@@ -1,10 +1,10 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-!include media/uml-class-journalpost.iuml
-!include media/uml-datatype-elektronisksignatur.iuml
-!include media/uml-class-dokumentbeskrivelse.iuml
-!include media/uml-class-dokumentobjekt.iuml
+!include kapitler/media/uml-class-journalpost.iuml
+!include kapitler/media/uml-datatype-elektronisksignatur.iuml
+!include kapitler/media/uml-class-dokumentbeskrivelse.iuml
+!include kapitler/media/uml-class-dokumentobjekt.iuml
 
 Arkivstruktur.ElektroniskSignatur -[hidden]-> Sakarkiv.Journalpost
 Arkivstruktur.ElektroniskSignatur --[hidden]-> Arkivstruktur.Dokumentbeskrivelse

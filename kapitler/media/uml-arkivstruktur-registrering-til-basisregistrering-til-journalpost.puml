@@ -19,7 +19,7 @@ class Arkivstruktur.Registrering <Arkivenhet> {
   +referanseOpprettetAv : SystemID [0..1]
 }
 
-!include media/uml-class-basisregistrering.iuml
+!include kapitler/media/uml-class-basisregistrering.iuml
 
 class Sakarkiv.Journalpost <Basisregistrering>
 

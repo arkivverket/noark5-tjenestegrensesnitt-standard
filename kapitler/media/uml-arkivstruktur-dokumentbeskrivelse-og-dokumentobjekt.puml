@@ -2,9 +2,9 @@
 skinparam classAttributeIconSize 0
 
 class Arkivstruktur.Registrering <Arkivenhet>
-!include media/uml-class-dokumentobjekt.iuml
-!include media/uml-class-merknad.iuml
-!include media/uml-class-konvertering.iuml
+!include kapitler/media/uml-class-dokumentobjekt.iuml
+!include kapitler/media/uml-class-merknad.iuml
+!include kapitler/media/uml-class-konvertering.iuml
 
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
   +dokumenttype : Dokumenttype

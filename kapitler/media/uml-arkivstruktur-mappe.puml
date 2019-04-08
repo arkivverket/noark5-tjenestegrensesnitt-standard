@@ -4,8 +4,8 @@ skinparam classAttributeIconSize 0
 class Arkivstruktur.Klasse <Arkivenhet>
 class Arkivstruktur.Arkivdel <Arkivenhet>
 class Arkivstruktur.Registrering <Arkivenhet>
-!include media/uml-class-mappe-all.iuml
-!include media/uml-class-merknad.iuml
+!include kapitler/media/uml-class-mappe-all.iuml
+!include kapitler/media/uml-class-merknad.iuml
 class Arkivstruktur.NasjonalIdentifikatorer.NasjonalIdentifikator {
   +systemID : SystemID [0..1]
   +beskrivelse : string [0..1]

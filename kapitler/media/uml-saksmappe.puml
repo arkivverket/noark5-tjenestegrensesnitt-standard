@@ -1,9 +1,9 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-!include media/uml-class-saksmappe-all.iuml
-!include media/uml-class-presedens.iuml
-!include media/uml-class-sakspart.iuml
+!include kapitler/media/uml-class-saksmappe-all.iuml
+!include kapitler/media/uml-class-presedens.iuml
+!include kapitler/media/uml-class-sakspart.iuml
 
 class Arkivstruktur.Klasse <Arkivenhet>
 Arkivstruktur.Klasse "\n\n+sekundærklassifikasjon 0..*"  <--o Sakarkiv.Saksmappe

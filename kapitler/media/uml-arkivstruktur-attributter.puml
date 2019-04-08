@@ -1,19 +1,19 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-!include media/uml-class-arkivskaper.iuml
-!include media/uml-class-arkiv.iuml
-!include media/uml-class-klassifikasjonssystem.iuml
-!include media/uml-class-klasse.iuml
-!include media/uml-class-arkivdel.iuml
-!include media/uml-class-mappe.iuml
-!include media/uml-class-merknad.iuml
-!include media/uml-class-registrering.iuml
-!include media/uml-class-basisregistrering.iuml
-!include media/uml-class-dokumentbeskrivelse.iuml
-!include media/uml-class-dokumentobjekt.iuml
-!include media/uml-class-konvertering.iuml
-!include media/uml-datatype-elektronisksignatur.iuml
+!include kapitler/media/uml-class-arkivskaper.iuml
+!include kapitler/media/uml-class-arkiv.iuml
+!include kapitler/media/uml-class-klassifikasjonssystem.iuml
+!include kapitler/media/uml-class-klasse.iuml
+!include kapitler/media/uml-class-arkivdel.iuml
+!include kapitler/media/uml-class-mappe.iuml
+!include kapitler/media/uml-class-merknad.iuml
+!include kapitler/media/uml-class-registrering.iuml
+!include kapitler/media/uml-class-basisregistrering.iuml
+!include kapitler/media/uml-class-dokumentbeskrivelse.iuml
+!include kapitler/media/uml-class-dokumentobjekt.iuml
+!include kapitler/media/uml-class-konvertering.iuml
+!include kapitler/media/uml-datatype-elektronisksignatur.iuml
 
 Arkivstruktur.Arkiv "+arkiv 0..*" o--> "+arkivskaper 1..*" Arkivstruktur.Arkivskaper
 Arkivstruktur.Arkiv o--> "+underarkiv 0..*" Arkivstruktur.Arkiv

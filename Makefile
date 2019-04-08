@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-IMG_PUML := $(wildcard media/*.puml)
+IMG_PUML := $(wildcard kapitler/media/*.puml)
 IMG_PNG := $(IMG_PUML:.puml=.png)
 
 PANDOC_TYPE = markdown_github+table_captions+auto_identifiers+implicit_figures
@@ -17,7 +17,7 @@ images: $(IMG_PNG)
 # docbook processors calculate columns widths.  Can pandoc be told to
 # not set colwidth?
 docbook: kapitler/*.md
-	[ -h docbook/media ] || ln -s ../media docbook
+	[ -h docbook/media ] || ln -s ../kapitler/media docbook
 	for m in kapitler/*.md; do \
 	    pandoc \
 		--top-level-division=chapter -f $(PANDOC_TYPE) \

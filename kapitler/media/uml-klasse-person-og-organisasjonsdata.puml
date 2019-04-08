@@ -1,11 +1,11 @@
 @startuml
 class Sakarkiv.Journalpost <Basisregistrering>
 
-!include media/uml-codelist-korrespondanseparttype.iuml
-!include media/uml-class-korrespondansepart.iuml
-!include media/uml-class-korrespondansepartintern.iuml
-!include media/uml-class-korrespondansepartperson.iuml
-!include media/uml-class-korrespondansepartenhet.iuml
+!include kapitler/media/uml-codelist-korrespondanseparttype.iuml
+!include kapitler/media/uml-class-korrespondansepart.iuml
+!include kapitler/media/uml-class-korrespondansepartintern.iuml
+!include kapitler/media/uml-class-korrespondansepartperson.iuml
+!include kapitler/media/uml-class-korrespondansepartenhet.iuml
 
 Sakarkiv.Journalpost *- "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
 Sakarkiv.Korrespondansepart <-[hidden]- Kodelister.Korrespondanseparttype
@@ -22,22 +22,22 @@ Kodelister.Land .. isoliste
 Sakarkiv.EnkelAdresse <-[hidden]- Kodelister.Postnummer
 Kodelister.Postnummer .. fraposten
 
-!include media/uml-class-administrativenhet.iuml
-!include media/uml-class-bruker.iuml
+!include kapitler/media/uml-class-administrativenhet.iuml
+!include kapitler/media/uml-class-bruker.iuml
 
 Sakarkiv.KorrespondansepartIntern <-[hidden]-- Admin.AdministrativEnhet
 Admin.AdministrativEnhet "+enhet 0..*" <--> "+bruker 0..*" Admin.Bruker
 
-!include media/uml-datatype-enkeladresse.iuml
+!include kapitler/media/uml-datatype-enkeladresse.iuml
 
 Sakarkiv.KorrespondansepartPerson <-[hidden]-- Sakarkiv.EnkelAdresse
 Sakarkiv.KorrespondansepartEnhet <-[hidden]-- Sakarkiv.EnkelAdresse
 
-!include media/uml-datatype-kontaktinformasjon.iuml
-!include media/uml-class-saksmappe.iuml
-!include media/uml-class-sakspart.iuml
-!include media/uml-class-sakspartperson.iuml
-!include media/uml-class-sakspartenhet.iuml
+!include kapitler/media/uml-datatype-kontaktinformasjon.iuml
+!include kapitler/media/uml-class-saksmappe.iuml
+!include kapitler/media/uml-class-sakspart.iuml
+!include kapitler/media/uml-class-sakspartperson.iuml
+!include kapitler/media/uml-class-sakspartenhet.iuml
 
 Sakarkiv.Saksmappe *-- "+sakspart 0..*" Sakarkiv.Sakspart
 Sakarkiv.Sakspart <|-- Sakarkiv.SakspartPerson

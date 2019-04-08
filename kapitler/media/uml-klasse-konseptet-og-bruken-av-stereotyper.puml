@@ -2,8 +2,8 @@
 skinparam classAttributeIconSize 0
 'FIXME dropped caption "class Fig02_Stereotyper"
 
-!include media/uml-datatype-gradering.iuml
-!include media/uml-codelist-graderingskode.iuml
+!include kapitler/media/uml-datatype-gradering.iuml
+!include kapitler/media/uml-codelist-graderingskode.iuml
 
 Arkivstruktur.Gradering -[hidden]-> Kodelister.Graderingskode
 @enduml
