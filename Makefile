@@ -11,7 +11,7 @@ pdf: spesifikasjon.pdf
 images: $(IMG_PNG)
 
 .puml.png:
-	plantuml -p < $^ > $@
+	plantuml -p < $^ > $@.new && mv $@.new $@
 
 # Draft Docbook based PDF building.  Remove colwidth to let the
 # docbook processors calculate columns widths.  Can pandoc be told to
