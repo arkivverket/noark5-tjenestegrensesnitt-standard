@@ -719,36 +719,6 @@ Table: Attributter
 | nedgradertAv          | Definisjon: Navn på person som foretok nedgraderingen . Kilde: Registreres automatisk ved nedgradering. Kommentarer: (ingen). M627 | \[0..1\] | | string | 
 | referanseNedgradertAv |   | \[0..1\]        |           | SystemID |
 
-#### Hendelseslogg
-
-*Type:* ***Class***
-
-*Arver:* ***Endringslogg***
-
-Table: Relasjoner
-
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Aggregation** (Destination → Source)     | logg 0..* Hendelseslogg                                  | 0..1 Arkivenhet        |             |
-| **Generalization** (Source → Destination)  | Hendelseslogg                                            | Endringslogg           |             |
-
-Table: Relasjonsnøkler
-
-| **Tag**   | **Verdi**                                                        |
-| --------- | ---------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-hendelseslogg/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/hendelsetype/          |
-| REST\_REL | self                                                             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/hendelseslogg/    |
-
-Table: Attributter
-
-| **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type**     |
-| ---------------- | ----------- | ------------ | -------- | ------------ |
-| hendelsetype     |             | \[1..1\]     |          | Hendelsetype |
-| beskrivelse      |             | \[0..1\]     |          | string       |
-| hendelseDato     |             | \[1..1\]     |          | datetime     |
-
 #### Kassasjon
 
 *Type:* ***Class «dataType»***
@@ -3382,3 +3352,33 @@ Table: Attributter
 | referanseEndretAv       | referanse til Bruker sin systemID | \[1..1\]     |          | SystemID |
 | tidligereVerdi          |                                   | \[0..1\]     |          | string   |
 | nyVerdi                 |                                   | \[0..1\]     |          | string   |
+
+#### Hendelseslogg
+
+*Type:* ***Class***
+
+*Arver:* ***Endringslogg***
+
+Table: Relasjoner
+
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Aggregation** (Destination → Source)     | logg 0..* Hendelseslogg                                  | 0..1 Arkivenhet        |             |
+| **Generalization** (Source → Destination)  | Hendelseslogg                                            | Endringslogg           |             |
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                        |
+| --------- | ---------------------------------------------------------------- |
+| REST\_REL | self                                                             |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/hendelseslogg/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-hendelseslogg/ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/hendelsetype/          |
+
+Table: Attributter
+
+| **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type**     |
+| ---------------- | ----------- | ------------ | -------- | ------------ |
+| hendelsetype     |             | \[1..1\]     |          | Hendelsetype |
+| beskrivelse      |             | \[0..1\]     |          | string       |
+| hendelseDato     |             | \[1..1\]     |          | datetime     |

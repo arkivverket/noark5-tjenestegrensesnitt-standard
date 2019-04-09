@@ -1,5 +1,5 @@
 @startuml
-class Arkivstruktur.Hendelseslogg <Endringslogg> {
+class LoggingOgSporing.Hendelseslogg <Endringslogg> {
   +hendelsetype : Hendelsetype
   +beskrivelse : string [0..1]
   +hendelseDato : datetime
