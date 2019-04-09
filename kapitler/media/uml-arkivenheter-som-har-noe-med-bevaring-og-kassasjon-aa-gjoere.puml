@@ -2,26 +2,58 @@
 skinparam classAttributeIconSize 0
 
 !include kapitler/media/uml-class-arkivdel.iuml
-!include kapitler/media/uml-datatype-skjerming.iuml
-!include kapitler/media/uml-codelist-tilgangsrestriksjon.iuml
-!include kapitler/media/uml-datatype-kassasjon.iuml
-!include kapitler/media/uml-codelist-skjermingdokument.iuml
+!include kapitler/media/uml-class-dokumentbeskrivelse.iuml
 !include kapitler/media/uml-class-klasse.iuml
-!include kapitler/media/uml-datatype-utfoertkassasjon.iuml
-!include kapitler/media/uml-codelist-kassasjonsvedtak.iuml
-!include kapitler/media/uml-datatype-sletting.iuml
-!include kapitler/media/uml-codelist-slettingstype.iuml
 !include kapitler/media/uml-class-mappe.iuml
-!include kapitler/media/uml-datatype-gradering.iuml
-!include kapitler/media/uml-codelist-skjermingmetadata.iuml
 !include kapitler/media/uml-class-registrering.iuml
 !include kapitler/media/uml-codelist-graderingskode.iuml
-!include kapitler/media/uml-class-dokumentbeskrivelse.iuml
+!include kapitler/media/uml-codelist-kassasjonsvedtak.iuml
+!include kapitler/media/uml-codelist-skjermingdokument.iuml
+!include kapitler/media/uml-codelist-skjermingmetadata.iuml
+!include kapitler/media/uml-codelist-slettingstype.iuml
+!include kapitler/media/uml-codelist-tilgangsrestriksjon.iuml
+!include kapitler/media/uml-datatype-gradering.iuml
+!include kapitler/media/uml-datatype-kassasjon.iuml
+!include kapitler/media/uml-datatype-skjerming.iuml
+!include kapitler/media/uml-datatype-sletting.iuml
+!include kapitler/media/uml-datatype-utfoertkassasjon.iuml
 
-Arkivstruktur.Gradering <-[hidden]-- Kodelister.Graderingskode
-Arkivstruktur.Sletting <-[hidden]-- Kodelister.Slettingstype
-Arkivstruktur.Skjerming <-[hidden]-- Kodelister.SkjermingDokument
-Arkivstruktur.Skjerming <-[hidden]-- Kodelister.SkjermingMetadata
-Arkivstruktur.Skjerming <-[hidden]-- Kodelister.Tilgangsrestriksjon
-Arkivstruktur.Kassasjon <-[hidden]-- Kodelister.Kassasjonsvedtak
+Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Arkivdel "arkivdel 1..*" o--> "klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Arkivdel o-- "sekundaerklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
+
+Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+
+Arkivstruktur.Klasse "klasse 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+Arkivstruktur.Klasse "klasse 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Klasse "klasse 0..1" o-> "registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Klasse o-- "underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klassifikasjonssystem "klassifikasjonssystem 0..1" o--> "klasse 0..*" Arkivstruktur.Klasse
+
+Arkivstruktur.Mappe "mappe 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+
+Arkivstruktur.Mappe o-- "undermappe 0..*" Arkivstruktur.Mappe
+
+Arkivstruktur.Gradering <-[hidden]-- Arkivstruktur.Arkivdel
+Arkivstruktur.Gradering <-[hidden]-- Arkivstruktur.Mappe
+Arkivstruktur.Kassasjon <-[hidden]-- Arkivstruktur.Arkivdel
+Arkivstruktur.Kassasjon <-[hidden]-- Arkivstruktur.Mappe
+Arkivstruktur.Skjerming <-[hidden]-- Arkivstruktur.Mappe
+Arkivstruktur.Sletting <-[hidden]-- Arkivstruktur.Arkivdel
+
+Kodelister.Graderingskode <-[hidden] Arkivstruktur.Gradering
+Arkivstruktur.Sletting <-[hidden] Kodelister.Slettingstype
+Arkivstruktur.Skjerming <-[hidden] Kodelister.SkjermingDokument
+Arkivstruktur.Skjerming <-[hidden] Kodelister.SkjermingMetadata
+Arkivstruktur.Skjerming <-[hidden] Kodelister.Tilgangsrestriksjon
+Arkivstruktur.Kassasjon <-[hidden] Kodelister.Kassasjonsvedtak
+
+' try to order them above each other
+Kodelister.Graderingskode <-[hidden]- Kodelister.SkjermingMetadata
+Kodelister.SkjermingMetadata <-[hidden]- Kodelister.SkjermingDokument
+Kodelister.SkjermingDokument <-[hidden]- Kodelister.Tilgangsrestriksjon
+Kodelister.Tilgangsrestriksjon <-[hidden]- Kodelister.Kassasjonsvedtak
+Kodelister.Kassasjonsvedtak <-[hidden]- Kodelister.Slettingstype
 @enduml
