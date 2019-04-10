@@ -1,0 +1,6 @@
+@startuml
+class Kodelister.MoetedeltakerFunksjon <<codelist>> {
+  +Møteleder = M
+  +Referent = R
+}
+@enduml

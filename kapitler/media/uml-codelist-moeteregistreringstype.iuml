@@ -1,0 +1,11 @@
+@startuml
+class Kodelister.Moeteregistreringstype <<codelist>> {
+  +Møteinnkalling = MI
+  +Saksframlegg = SF
+  +Saksprotokoll = SP
+  +Møteprotokoll = MP
+  +Saksliste = SL
+  +Offentlig saksliste = OL
+  +Vedlegg til møtesak = VL
+}
+@enduml

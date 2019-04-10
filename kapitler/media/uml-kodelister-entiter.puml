@@ -24,45 +24,13 @@ skinparam classAttributeIconSize 0
 !include kapitler/media/uml-codelist-kassasjonsvedtak.iuml
 !include kapitler/media/uml-codelist-graderingskode.iuml
 !include kapitler/media/uml-codelist-elektronisksignaturverifisert.iuml
-
-class Kodelister.Møtesakstype <<codelist>> {
-  +Politisk sak = PS
-  +Delegert møtesak = DS
-  +Referatsak = RS
-  {field} +Forespørsel (interpellasjon) = FO
-}
-
-class Kodelister.Møteregistreringstype <<codelist>> {
-  +Møteinnkalling = MI
-  +Saksfremlegg = SF
-  +Saksprotokoll = SP
-  +Møteprotokoll = MP
-  +Saksliste = SL
-  +Offentlig saksliste = OL
-  +Vedlegg til møtesak = FL
-}
-
-class Kodelister.ElektroniskSignaturSikkerhetsnivaa <<codelist>> {
-  +Symmetrisk kryptert = SK
-  +Sendt med PKI/virksomhetssertifikat = V
-  +Sendt med PKI/"person standard"-sertifikat = PS
-  +Sendt med PKI/"person høy"-sertifikat = PH
-}
-
+!include kapitler/media/uml-codelist-moetesakstype.iuml
+!include kapitler/media/uml-codelist-moeteregistreringstype.iuml
+!include kapitler/media/uml-codelist-elektronisksignatursikkerhetsnivaa.iuml
 !include kapitler/media/uml-codelist-mappetype.iuml
 !include kapitler/media/uml-codelist-tilgangskategori.iuml
-
-class Kodelister.Møteregistreringsstatus <<codelist>> {
-  +Ferdig behandlet av utvalget = BE
-  +Utsatt til nytt møte i samme utvalg = UT
-  +Sendt tilbake til foregående utvalg = TB
-}
-
-class Kodelister.MøtedeltakerFunksjon <<codelist>> {
-  +Møteleder = M
-  +Referent = R
-}
-
+!include kapitler/media/uml-codelist-moeteregistreringsstatus.iuml
+!include kapitler/media/uml-codelist-moetedeltakerfunksjon.iuml
 !include kapitler/media/uml-codelist-sakspartrolle.iuml
 !include kapitler/media/uml-codelist-tilgangsrestriksjon.iuml
 !include kapitler/media/uml-codelist-land.iuml

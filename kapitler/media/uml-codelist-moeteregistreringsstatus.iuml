@@ -1,0 +1,7 @@
+@startuml
+class Kodelister.Moeteregistreringsstatus <<codelist>> {
+  +Ferdig behandlet av utvalget = BE
+  +Utsatt til nytt møte i samme utvalg = UT
+  +Sendt tilbake til foregående utvalg = TB
+}
+@enduml

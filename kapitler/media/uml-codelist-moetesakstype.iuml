@@ -1,0 +1,8 @@
+@startuml
+class Kodelister.Moetesakstype <<codelist>> {
+  +Politisk sak = PS
+  +Delegert møtesak = DS
+  +Referatsak = RS
+  {field} +Forespørsel (interpellasjon) = FO
+}
+@enduml
