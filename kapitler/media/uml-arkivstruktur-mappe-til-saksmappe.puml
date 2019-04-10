@@ -7,13 +7,13 @@ class Arkivstruktur.Arkivdel <Arkivenhet>
 !include kapitler/media/uml-class-mappe-all.iuml
 class Sakarkiv.Presedens
 class Arkivstruktur.Registrering <Arkivenhet>
-class MøteOgUtvalgsbehandling.Møtemappe {
-  +møtenummer : string [0..1]
+class MoeteOgUtvalgsbehandling.Moetemappe {
+  +moetenummer : string [0..1]
   +utvalg : string
-  +møtedato : datetime
-  +møtested : string [0..1]
-  +referanseForrigeMøte : SystemID [0..1]
-  +referanseNesteMøte : SystemID [0..1]
+  +moetedato : datetime
+  +moetested : string [0..1]
+  +referanseForrigeMoete : SystemID [0..1]
+  +referanseNesteMoete : SystemID [0..1]
 }
 
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
@@ -21,11 +21,11 @@ Arkivstruktur.Klasse --o "+underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
-Arkivstruktur.Klasse "+sekundærklassifikasjon 0..*" <--o Sakarkiv.Saksmappe
+Arkivstruktur.Klasse "+sekundaerklassifikasjon 0..*" <--o Sakarkiv.Saksmappe
 Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
-Arkivstruktur.Mappe <|-- MøteOgUtvalgsbehandling.Møtemappe
+Arkivstruktur.Mappe <|-- MoeteOgUtvalgsbehandling.Moetemappe
 
 @enduml

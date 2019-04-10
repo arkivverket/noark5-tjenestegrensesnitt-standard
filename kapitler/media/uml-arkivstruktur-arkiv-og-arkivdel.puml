@@ -45,10 +45,10 @@ class Arkivstruktur.Arkivdel <Arkivenhet> {
   +referanseAvsluttetAv : SystemID [0..1]
   +arkivperiodeStartDato : date [0..1]
   +arkivperiodeSluttDato : date [0..1]
-  +referanseForløper : SystemID [0..1]
+  +referanseForloeper : SystemID [0..1]
   +referanseArvtaker : SystemID [0..1]
   +kassasjon : Kassasjon [0..1]
-  +utførtKassasjon : UtførtKassasjon [0..1]
+  +utfoertKassasjon : UtfoertKassasjon [0..1]
   +sletting : Sletting [0..1]
   +skjerming : Skjerming [0..1]
   +gradering : Gradering [0..1]
@@ -81,7 +81,7 @@ Arkivstruktur.Arkivskaper "+arkivskaper 1..*" <-o "+arkiv 0..*" Arkivstruktur.Ar
 Arkivstruktur.Arkiv o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" <-o "+arkivdel 1..*" Arkivstruktur.Arkivdel
-Arkivstruktur.Klassifikasjonssystem "+sekundærklassifikasjonssystem 0..*" <-o Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "+sekundaerklassifikasjonssystem 0..*" <-o Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o-> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe
 

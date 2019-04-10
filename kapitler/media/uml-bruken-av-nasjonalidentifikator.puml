@@ -13,7 +13,7 @@ class NasjonaleIdentifikatorer.Enhetsidentifikator {
   +organisasjonsnummer : string
 }
 class NasjonaleIdentifikatorer.Personidentifikator {
-  +fødselsnummer : string [0..1]
+  +foedselsnummer : string [0..1]
   +dNummer : string [0..1]
 }
 class NasjonaleIdentifikatorer.Posisjon {
@@ -43,7 +43,7 @@ package GeoIntegration {
   package Felles {
     class ByggIdent <<dataType>> {
       +bygningsNummer : Integer
-      +endringsløpenummer : Integer [0..1]
+      +endringsloepenummer : Integer [0..1]
     }
 
     class NasjonalArealplanId {
@@ -53,7 +53,7 @@ package GeoIntegration {
 
     class "Matrikkelnummer\n{root,leaf}" as Matrikkelnummer <<dataType>> {
       +kommunenummer : String
-      +gårdsnummer : Integer
+      +gaardsnummer : Integer
       +bruksnummer : Integer
       +festenummer : Integer [0..1]
      +seksjonsnummer : Integer [0..1]
