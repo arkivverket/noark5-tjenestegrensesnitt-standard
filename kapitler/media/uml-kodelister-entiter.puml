@@ -42,7 +42,7 @@ class Kodelister.Møteregistreringstype <<codelist>> {
   +Vedlegg til møtesak = FL
 }
 
-class Kodelister.ElektroniskSignaturSikkerhetsnivå <<codelist>> {
+class Kodelister.ElektroniskSignaturSikkerhetsnivaa <<codelist>> {
   +Symmetrisk kryptert = SK
   +Sendt med PKI/virksomhetssertifikat = V
   +Sendt med PKI/"person standard"-sertifikat = PS

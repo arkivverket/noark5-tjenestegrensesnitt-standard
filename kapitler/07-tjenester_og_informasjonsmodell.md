@@ -673,7 +673,7 @@ Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
-| elektroniskSignaturSikkerhetsnivå | Definisjon: Angivelse av hvilket sikkerhetsnivå som ble brukt ved forsendelse og mottak av elektroniske dokumenter . Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk signatur. Kommentarer: (ingen). M507 elektroniskSignaturSikkerhetsnivaa | \[1..1\] | | ElektroniskSignaturSikkerhetsnivå |
+| elektroniskSignaturSikkerhetsnivaa | Definisjon: Angivelse av hvilket sikkerhetsnivå som ble brukt ved forsendelse og mottak av elektroniske dokumenter . Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk signatur. Kommentarer: (ingen). M507 elektroniskSignaturSikkerhetsnivaa | \[1..1\] | | ElektroniskSignaturSikkerhetsnivaa |
 | elektroniskSignaturVerifisert     | Definisjon: Angivelse av om et dokument er mottatt med elektronisk signatur, og om signaturen er verifisert. Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk signatur. Kommentarer: Dersom signaturen er verifisert, skal det logges hvem som verifiserte den og når det skjedde. M508 | \[1..1\] | | ElektroniskSignaturVerifisert |
 | verifisertDato                    | Definisjon: Dato en elektronisk signatur ble verifisert . Kilde: Registreres automatisk når verifisering utføres. Kommentarer: (ingen). M622 | \[1..1\] | | date|
 | verifisertAv                      | Definisjon: Navn på person som har verifisert en elektronisk signatur. Kilde: Registreres automatisk når verifisering utføres. Kommentarer: (ingen). M623 | \[1..1\] | | string | 
@@ -1700,7 +1700,7 @@ Table: Attributter
 | Faktura              | Valgfri     |              | F        |          |
 | Ordrebekreftelse     | Valgfri     |              | O        |          |
 
-#### ElektroniskSignaturSikkerhetsnivå
+#### ElektroniskSignaturSikkerhetsnivaa
 
 *Type:* ***Class «codelist»***
 
@@ -1709,14 +1709,13 @@ Table: Attributter
 Åpen kodeliste
 
 Definisjon: Angivelse av hvilket sikkerhetsnivå som ble brukt ved
-forsendelse og mottak av elektroniske dokumenter
-. Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk
-signatur
+forsendelse og mottak av elektroniske dokumenter.  Kilde: Registreres
+automatisk knyttet til funksjonalitet for elektronisk signatur
 
 Kommentar: (ingen)
 
 M507
-elektroniskSignaturSikkerhetsnivå
+elektroniskSignaturSikkerhetsnivaa
 
 Table: Relasjonsnøkler
 
