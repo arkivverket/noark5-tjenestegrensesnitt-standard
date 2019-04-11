@@ -7,7 +7,7 @@ class Sakarkiv.Journalpost <Basisregistrering> {
   +journalstatus : Journalstatus
   +journaldato : date
   +dokumentetsDato : date [0..1]
-  +mottattDato : date [0..1]
+  +mottattDato : datetime [0..1]
   +sendtDato : date [0..1]
   +forfallsdato : date [0..1]
   +offentlighetsvurdertDato : date [0..1]
