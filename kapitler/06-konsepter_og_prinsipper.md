@@ -348,6 +348,46 @@ unntatt offentlighet, skjermet eller gradert så skal ikke uautoriserte
 brukere få tilgang til dette. Dette kan bety at en bruker har lov til å
 registrere et objekt, men ikke rettigheter til å vise dette etterpå.
 
+En liste med objekter eller et søkeresultat returneres som et
+JSON-objekt med medlem «count» satt til antall elementer totalt i
+søkeresultatet/listen, «results» satt til en liste med instansene i
+listen, og «_links» til relevante relasjonsnøkler som «self» og
+«next».
+
+Det kan se se ut som følger:
+
+Forespørsel:
+
+GET http://localhost:49708/api/arkivstruktur/mappe/
+Accept: application/vnd.noark5-v4+json
+
+Respons:
+
+```Python
+{ "results" : [
+    { "mappeID": "1234/2017",
+      "tittel": "testmappe 1",
+      ...
+    },
+    { "mappeID": "1235/2017",
+      "tittel": "testmappe 2",
+      ...
+    }
+  ],
+  "count" : 3,
+  "_links" : [
+    { "rel": "next",
+      "href": "http://localhost/noark5v4/api/arkivstruktur/mappe/?top=2&skip=2",
+    },
+    ...
+  ]
+}
+```
+
+I dette eksemplet er det sideinndeling med 2 elementer per side, kun
+to av tre søkeresultater returneres i første omgang, og en
+«next»-lenke til resten av sideresultatet.
+
 Table: Resultatkoder ved navigering/søk
 
 | Statuskode | Beskrivelse                                   |
