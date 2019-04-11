@@ -819,7 +819,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-klassifikasjonssystem/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/registrering/             |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/        |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-klasse/                |
