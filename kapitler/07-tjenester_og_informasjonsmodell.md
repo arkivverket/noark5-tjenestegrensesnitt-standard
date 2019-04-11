@@ -152,7 +152,6 @@ Table: Restriksjoner
 | 5.2.11 Systemet bør ha en tjeneste/funksjon for å angi et Arkiv som Underarkiv til et Arkiv.| |
 | 5.2.12 Et Underarkiv skal kun opprettes og endres gjennom Administrasjonssystemet for Noark 5.| |
 | Ny - Når arkivet settes &quot;Avsluttet&quot; så skal avsluttetDato og avsluttetAv registreres | |
-| Ny - Etter registrering av arkiv skal systemID, opprettetAv og opprettetDato være utfylt | |
 | 5.13.4 Et Arkiv og arkivets metadata skal kun opprettes gjennom Administratorfunksjonen for Noark 5 kjerne. | |
 | 5.13.5 Et Underarkiv skal kun defineres og endres gjennom Administratorfunksjonen for Noark 5 kjerne. | | 
 | avsluttetAv_M603A   | avsluttetAv: Skal ikke kunne endres | 
@@ -297,7 +296,6 @@ Table: Restriksjoner
 | 5.2.23 En arkivdel skal inneholde informasjon om de tilhørende dokumentene er fysiske eller elektroniske. | |
 | Ny - arkivdel kan ha liste med enten klassifikasjonssystem eller mapper | |
 | Ny - Når arkivdel settes &quot;Avsluttet&quot; så skal avsluttetDato og avsluttetAv registreres | |
-| Ny - Etter registrering av arkivdel skal systemID, opprettetAv og opprettetDato være utfylt | |
 | 5.10.1 En Arkivdel skal kunne ha registrert ingen eller ett Kassasjonsvedtak og et Kassasjonsvedtak kan inngå i ingen, en eller flere Arkivdeler. | |
 | 5.10.8 Det skal finnes en tjeneste/funksjon for å ajourholde kassasjonsvedtak, kassasjonshjemmel og bevaringstid for en Arkivdel. | |
 | 5.10.9 Metadata om bevaring og kassasjon på en Arkivdel skal kunne arves til Mappe, Registrering og Dokumentbeskrivelse. | |
@@ -372,7 +370,7 @@ Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
-| Ny - Etter registrering skal systemID være utfylt |             |
+| Ny - Ved oppretting av Arkivenhet fyller API-tjenesten inn systemID, opprettetAv og opprettetDato.  Dette gjelder også alle underentiteter.  Disse attributtene trenger derfor ikke sendes inn ved oppretting. | |
 | M001 systemID: Skal ikke kunne endres             |             |
 | M600 opprettetDato: Skal ikke kunne endres        |             |
 | M601 opprettetAv: Skal ikke kunne endres          |             |
@@ -417,12 +415,6 @@ Table: Attributter
 | arkivskaperID | Definisjon: Unik ID for arkivskaperen . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentar: Kan være organisasjonsnummer (Brønnøysundregistrene) eller annen identifikasjon avtalt med arkivdepotet. M006 | \[1..1\]  | | string | 
 | arkivskaperNavn | Definisjon: Navn på organisasjonen som har skapt arkivet . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentarer: (ingen). M023 | \[1..1\] | | string | 
 | beskrivelse | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string |
-
-Table: Restriksjoner
-
-| **Navn**                                          | **Merknad** |
-| ------------------------------------------------- | ----------- |
-| Ny - Etter registrering skal systemID være utfylt |             |
 
 #### Basisregistrering
 
@@ -549,7 +541,6 @@ Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
-| Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt| |
 | 5.13.17 Autoriserte brukere skal kunne slette en arkivert inaktiv dokumentversjon. Den siste, endelige versjonen skal ikke kunne slettes. | |
 | 5.13.18 Det skal være mulig å søke fram dokumenter som er arkivert i flere versjoner | |
 | 5.13.19 Det bør være mulig å utføre sletting av mange inaktive dokumentversjoner samtidig, f.eks. alle inaktive dokumentversjoner som funnet etter et søk. | |
@@ -634,7 +625,6 @@ Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
-| Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt | |
 | 5.13.13 Det skal finnes en tjeneste/funksjon som gjør at arkivadministrator kan sette opp regler for når (hvilke statuser) arkivdokumenter skal konverteres til arkivformat. | |
 | 5.13.14 Det skal være konfigurerbart om dokumenter skal konverteres til arkivformat når status på dokumentbeskrivelse settes til ”Dokumentet er ferdigstilt”. | |
 | 5.13.15 Det skal være konfigurerbart om alle eller spesielt merkede versjoner skal konverteres til arkivformat. | |
@@ -850,7 +840,6 @@ Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
-| Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt | |
 | Ny - Kan ha enten underklasse eller mappe eller registrering | |
 | M002 klasseID: Skal ikke kunne endres | |
 | M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert | |
@@ -916,7 +905,6 @@ Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
-| Ny - Etter registrering skal systemID, opprettetAv og opprettetDato være utfylt| | 
 | M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller  dokumentene arkivert | |
 
 #### Konvertering
