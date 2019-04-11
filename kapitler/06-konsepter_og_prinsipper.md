@@ -156,7 +156,8 @@ benyttes. De ressurser som støtter filter skal annonserer dette under
 **\_links** med **templated=true** og parametre som kan brukes til dette i
 **href**. Feltet «templated» er valgfritt og verdien skal antas å være «false»
 hvis det ikke finnes.  Typiske parametre er **$filter**, **$top**, **$skip**
-og **$orderby**. Alle lister med data bør støtte søk og filtrering.
+og **$orderby**. Alle lister med data bør støtte søk og filtrering.  Ressurslisten
+i _links er alfabetisk sortert på «rel»-feltet i henhold til ASCII-verdi.
 
 ```Python
 {
