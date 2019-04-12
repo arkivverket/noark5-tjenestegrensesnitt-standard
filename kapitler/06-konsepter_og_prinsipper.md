@@ -170,7 +170,6 @@ i _links er alfabetisk sortert på «rel»-feltet i henhold til ASCII-verdi.
         {
             "href": "http://localhost:49708/api/arkivstruktur/ny-arkivskaper",
             "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/",
-            "templated": false
         },
 ```
 
@@ -457,22 +456,18 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
             "rel": "self",
-            "templated": false
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
             "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/mappe/",
-            "templated": false
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
             "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/avslutt-mappe/",
-            "templated": false
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
             "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
-            "templated": false
         },
 ```
 
@@ -616,22 +611,18 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
             "rel": "self",
-            "templated": false
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
             "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/mappe/",
-            "templated": false
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
             "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/avslutt-mappe/",
-            "templated": false
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
             "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
-            "templated": false
         },
 ```
 
@@ -661,7 +652,6 @@ Ved uthenting av en mappe vil du få følgende relasjon tilbake:
 {
     "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
     "href": "http://n5test.kxml.no/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe",
-    "templated": false
 }
 ```
 
@@ -707,7 +697,6 @@ saksmappe og ikke mappe.
         {
             "rel": "self",
             "href": "http://n5test.kxml.no/api/sakarkiv/saksmappe/1",
-            "templated": false
         },
 ```
 
@@ -927,17 +916,14 @@ GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
         {
             "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
             "rel": "self",
-            "templated": false
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
             "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/dokumentobjekt/",
-            "templated": false
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
             "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil/",
-            "templated": false
         }
     ]
 }
