@@ -37,15 +37,6 @@ class MoeteOgUtvalgsbehandling.Moeteregistrering {
 }
 !include kapitler/media/uml-class-konvertering.iuml
 !include kapitler/media/uml-datatype-elektronisksignatur.iuml
-class "Noark5 - Sektorspesifikke data.Fil" {
-}
-class "Noark5 - Sektorspesifikke data.FilInnhold" {
-  +base64 : base64Binary
-}
-class "Noark5 - Sektorspesifikke data.FilReferanse" {
-  +uri : anyURI
-  +kvitteringsUri : anyURI [0..1]
-}
 
 Arkivstruktur.Arkivskaper "+arkivskaper 1..*" <-o "+arkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
@@ -75,7 +66,4 @@ Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
 Arkivstruktur.Basisregistrering <|-- MoeteOgUtvalgsbehandling.Moeteregistrering
 Sakarkiv.Journalpost *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
 Arkivstruktur.Dokumentobjekt *--> "+konvertering 0..*" Arkivstruktur.Konvertering
-
-"Noark5 - Sektorspesifikke data.Fil" <|-- "Noark5 - Sektorspesifikke data.FilInnhold"
-"Noark5 - Sektorspesifikke data.Fil" <|-- "Noark5 - Sektorspesifikke data.FilReferanse"
 @enduml
