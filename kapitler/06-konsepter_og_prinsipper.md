@@ -729,7 +729,7 @@ Her opprettes ny referanse mellom registrering og dokumentbeskrivelse.
 POST
 http://localhost:49708/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/$ref?$id=http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/1fa94a89-3550-470b-a220-92dd4d709044
 
-Resultatkode 204 – noContent
+Resultatkode 204 – NoContent
 
 **For å oppdatere/flytte referanse**
 
@@ -742,7 +742,7 @@ Body:
 
 http://localhost:49708/api/arkivstruktur/arkivdel/092e497a-a528-4121-8f22-fbc78fa6c930
 
-Resultatkode 204 – No Content
+Resultatkode 204 – NoContent
 
 **For å slette referanser fra en liste**
 
@@ -753,7 +753,7 @@ registrering.
 DELETE
 http://localhost:49708/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/$ref?$id=http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/092e497a-a528-4121-8f22-fbc78fa6c930
 
-Resultatkode 204 – No Content
+Resultatkode 204 – NoContent
 
 **For å slette en enkelt-referanse**
 
@@ -764,7 +764,7 @@ dokumentbeskrivelse.
 DELETE
 http://localhost:49708/api/arkivstruktur/dokumentbeskrivelse/092e497a-a528-4121-8f22-fbc78fa6c930/registrering/$ref
  
-Resultatkode 204 – No Content
+Resultatkode 204 – NoContent
 
 Table: Resultatkoder ved oppdatering av referanser til objekt
 
