@@ -10,19 +10,20 @@ skinparam nodesep 180
 
 Admin.Bruker "+bruker 0..*" <--> "+enhet 0..*" Admin.AdministrativEnhet
 
+package Admin {
 note "Aktuelle roller:\nArkivansvarlig\nArkivpersonale\nLeder\nSaksbehandler" as Roller
 
 note "Roller kan komme fra\nautentiseringsløsningen\n(som Claims)" as RolleNote
+}
+Admin.Bruker .. Admin.RolleNote
+Admin.RolleNote .. Admin.Tilgang
 
-Admin.Bruker .. RolleNote
-RolleNote .. Admin.Tilgang
-
-Roller .. RolleNote
+Admin.Roller .. Admin.RolleNote
 
 note "Saksbehandlerrolle X i fagsystem A = rolle\nfår lese tilgang til arkivdel med systemid=2\nkan lese, opprette og endre klasser\nKan lese, opprette og endre mapper\nKan IKKE lese mapper Personalsaker\nKan lese, opprette og endre registreringer\nKan lese, opprette og endre dokumentobjekt\nKan IKKE lese graderte dokumentobjekt" as Saksbehandlerrolle
 
-Kodelister.Tilgangsrestriksjon --[hidden]-> Saksbehandlerrolle
-Saksbehandlerrolle -[hidden]> Kodelister.Tilgangskategori
+Kodelister.Tilgangsrestriksjon -[hidden]> Saksbehandlerrolle
+Kodelister.Tilgangskategori -[hidden]> Saksbehandlerrolle
 Kodelister.Tilgangskategori -[hidden]> Admin.Tilgang
-
+Kodelister.Tilgangsrestriksjon -[hidden]-> Kodelister.Tilgangskategori
 @enduml
