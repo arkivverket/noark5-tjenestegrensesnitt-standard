@@ -371,25 +371,53 @@ aktuelle ressurslenke kan være
 http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe .
 Denne kan brukes til både GET og POST forespørsel.
 
-GET forespørselen forhåndsutfyller en lovlig objektstruktur og gir
+GET-forespørselen forhåndsutfyller en lovlig objektstruktur og gir
 relasjonslenker til aktuelle kodelister.  En slik forespørsel
 oppretter ikke noe objekt og returverdien refererer ikke heller til et
-objekt i databasen, og er derfor uten «self»-relasjon.
+objekt i databasen, og er derfor uten «self»-relasjon.  Strukturen
+(uten "_links" og felt med verdi «null») kan brukes som del av en POST
+når et nytt objekt skal opprettes. Alle felt som kan brukes i POST for
+oppretting av nytt objekt er med i strukturen. De feltene som ikke kan
+forhåndsutfylles automatisk og som ikke må fylles ut manuelt har
+verdien «null» for enkeltverdier og «[]» for lister for å synliggjøre
+dette. Felter som må ha manuelt satt verdi i POST kan ha en
+standardverdi i resultatet fra GET, men standardverdien må avvises av
+POST for å sikre at feltet endres manuelt.
 
 Ved registrering av objektet så skal kjernen fylle ut systemID, opprettetAv og opprettetDato. OpprettetAv skal være personnavn, referanseOpprettetAv skal være en systemID. NB! Denne systemID-en kan være en entydig identifikator av brukeren i fagsystemet, slik at personen ikke nødvendigvis må være bruker i arkivkjernen. opprettetDato er datoen (eller dataTime) enheten er opprettet i fagsystemet.
 
 
 ```Python
 {
+    "systemID": null,
+    "oppdatertDato": null,
+    "opprettetDato": null,
+    "opprettetAv": null,
+    "oppdatertAv": null,
+    "referanseOppdatertAv": null,
+    "referanseOpprettetAv': null,
+    "mappeID": null,
+    "oppbevaringssted": [],
+    "avsluttetDato":n null,
+    "avsluttetAv": null,
+    "referanseAvsluttetAv": null,
+    "kassasjon": null,
+    "skjerming": null,
+    "gradering": null,
+    "referanseForelderMappe": null
     "mappetype": {
         "kode": "BYGG",
         "beskrivelse": "Byggesak"
     },
     "tittel": "angi tittel på mappe",
+    "offentligTittel": null,
+    "beskrivelse": null,
+    "noekkelord: [],
     "dokumentmedium": {
         "kode": "E",
         "beskrivelse": "Elektronisk arkiv"
     },
+    "virksomhetsspesifikkeMetadata": null,
     "_links": [
         {
             "href": "http://localhost:49708/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
