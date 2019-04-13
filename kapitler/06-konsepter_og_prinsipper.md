@@ -363,7 +363,7 @@ Table: Resultatkoder ved navigering/søk
 For å opprette objekter må først ressurslenke finnes basert på
 relasjonsnøkkel.
 
-For eksempel kan en opprette mapper på arkivdel, og da vil \_Links under
+For eksempel kan en opprette mapper på arkivdel, og da vil \_links under
 en arkivdel inneholde relasjonsnøkkelen
 rel="http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/"
 om bruker har lov til å opprette mapper på denne arkivdelen. Den
