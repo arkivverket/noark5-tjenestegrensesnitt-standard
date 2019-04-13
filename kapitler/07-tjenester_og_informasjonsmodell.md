@@ -618,7 +618,7 @@ Table: Attributter
 | sjekksum             | Definisjon: En verdi som beregnes ut fra innholdet i dokumentet, og som dermed gir integritetssikring til dokumentets innhold . Kilde: Påføres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M705 | \[0..1\] | | string | 
 | mimeType             | veMimeType i n4 | \[0..1\]    |           | string | 
 | sjekksumAlgoritme    | Definisjon: Algoritmen som er brukt for å beregne sjekksummen . Kilde: Registreres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M706 | \[0..1\] | | string | 
-| filstoerrelse         | Definisjon: Størrelsen på fila i antall bytes oppgitt med desimaltall . Kilde: Registreres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M707 | \[0..1\] | | string |
+| filstoerrelse         | Definisjon: Størrelsen i bytes på fila oppgitt som et heltall større enn 0.   Kilde: Registreres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M707 | \[0..1\] | | integer |
 | elektroniskSignatur  |              | \[0..1\]       |           | ElektroniskSignatur |
 
 Table: Restriksjoner
