@@ -386,7 +386,7 @@ Ved registrering av objektet så skal kjernen fylle ut systemID, opprettetAv og 
         "beskrivelse": "Byggesak"
     },
     "tittel": "angi tittel på mappe",
-    "dokumentmendium": {
+    "dokumentmedium": {
         "kode": "E",
         "beskrivelse": "Elektronisk arkiv"
     },
@@ -421,7 +421,7 @@ Content-Type: application/vnd.noark5-v4+json
         "beskrivelse": "Byggesak"
     },
     "tittel", "Testvegen 32, ny enebolig",
-    "dokumentmendium": {
+    "dokumentmedium": {
         "kode": "E",
         "beskrivelse": "Elektronisk arkiv"
     }
@@ -444,7 +444,7 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         "beskrivelse": "Byggesak"
     },
     "tittel", "Testvegen 32, ny enebolig",
-    "dokumentmendium": {
+    "dokumentmedium": {
         "kode": "E",
         "beskrivelse": "Elektronisk arkiv"
     },
@@ -505,7 +505,7 @@ hentes fra slik som mappetype og dokumentmedium.
         "beskrivelse": "Byggesak"
     },
     "tittel": "angi tittel på mappe",
-    "dokumentmendium": {
+    "dokumentmedium": {
         "kode": "E",
         "beskrivelse": "Elektronisk arkiv"
     },
@@ -557,7 +557,7 @@ Content-Type: application/vnd.noark5-v4+json
         "beskrivelse": "Byggesak"
     },
     "tittel", "Testvegen 32, ny enebolig",
-    "dokumentmendium": {
+    "dokumentmedium": {
         "kode": "E",
         "beskrivelse": "Elektronisk arkiv"
     },
@@ -590,7 +590,7 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         "beskrivelse": "Byggesak"
     },
     "tittel", "Testvegen 32, ny enebolig",
-    "dokumentmendium": {
+    "dokumentmedium": {
         "kode": "E",
         "beskrivelse": "Elektronisk arkiv"
     },
