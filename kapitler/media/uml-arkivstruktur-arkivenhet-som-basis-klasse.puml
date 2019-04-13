@@ -22,7 +22,7 @@ Arkivstruktur.Arkiv "+arkiv 1" --o "+arkivdel 0..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" --o "+arkivdel 1..*" Arkivstruktur.Arkivdel
-Arkivstruktur.Klassifikasjonssystem "\n+sekundærklassifikasjonssystem 0..*" --o Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "\n+sekundaerklassifikasjonssystem 0..*" --o Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o-- "+klasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klasse
 Arkivstruktur.Klasse --o "+underklasse 0..*" Arkivstruktur.Klasse

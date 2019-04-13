@@ -14,5 +14,5 @@ Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartPerson
 Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartEnhet
 Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartIntern
 Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
-Sakarkiv.Avskrivning <-[hidden]- Kodelister.Avskrivningsmåte
+Sakarkiv.Avskrivning <-[hidden]- Kodelister.Avskrivningsmaate
 @enduml

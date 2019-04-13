@@ -17,13 +17,13 @@ class Sakarkiv.Dokumentflyt #pink
 Arkivstruktur.Arkiv o-> "+underarkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivdel "+arkivdel 1..*" o--> "+klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
-Arkivstruktur.Arkivdel o--> "+sekundærklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Arkivdel o--> "+sekundaerklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o--> "+klasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse o--> "+underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
-Arkivstruktur.Klasse "\n\n+sekundærklassifikasjon\n0..*" <--o Sakarkiv.Saksmappe
+Arkivstruktur.Klasse "\n\n+sekundaerklassifikasjon\n0..*" <--o Sakarkiv.Saksmappe
 Arkivstruktur.Mappe "mappe 0..1" o--> "+registrering 0..*\n\n" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "mappe 0..*\n\n" <--o "+arkivdel 0..1" Arkivstruktur.Arkivdel
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering

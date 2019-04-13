@@ -15,7 +15,7 @@ Arkivstruktur.Klasse o--> "+underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "+klasse 0..1" o-> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
-Sakarkiv.Saksmappe o--> "+sekundærklassifikasjon 0..*" Arkivstruktur.Klasse
+Sakarkiv.Saksmappe o--> "+sekundaerklassifikasjon 0..*" Arkivstruktur.Klasse
 Sakarkiv.Presedens "+presedens 0..*" <--o "+sak 0..*" Sakarkiv.Saksmappe
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering

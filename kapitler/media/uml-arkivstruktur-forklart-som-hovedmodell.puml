@@ -12,7 +12,7 @@ class Arkivstruktur.Dokumentobjekt
 Arkivstruktur.Arkiv o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*\n" Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem  0..1" <-o "+arkivdel 1..*" Arkivstruktur.Arkivdel
-Arkivstruktur.Klassifikasjonssystem "+sekundærklassifikasjonssystem  0..1" <-o Arkivstruktur.Arkivdel
+Arkivstruktur.Klassifikasjonssystem "+sekundaerklassifikasjonssystem  0..1" <-o Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o--> "+klasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse o-> "+underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe

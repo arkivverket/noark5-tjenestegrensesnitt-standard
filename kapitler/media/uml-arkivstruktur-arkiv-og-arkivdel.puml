@@ -87,7 +87,7 @@ Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe
 
 Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.Sletting
 Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.Kassasjon
-Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.UtførtKassasjon
+Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.UtfoertKassasjon
 Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.Skjerming
 Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.Gradering
 Arkivstruktur.Sletting <-[hidden]- Kodelister.Slettingstype

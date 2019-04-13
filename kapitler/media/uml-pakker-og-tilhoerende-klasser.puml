@@ -22,7 +22,7 @@ package Arkivstruktur <<applicationSchema>> {
   class Merknad
   class Registrering
   class Skjerming
-  class UtførtKassasjon
+  class UtfoertKassasjon
 
   Arkiv -[hidden]- Arkivdel
   Arkivdel -[hidden]- Arkivenhet
@@ -41,8 +41,8 @@ package Arkivstruktur <<applicationSchema>> {
   Mappe -[hidden]-  Merknad
   Merknad -[hidden]-  Registrering
   Registrering -[hidden]-  Skjerming
-  Skjerming -[hidden]-  UtførtKassasjon
-  UtførtKassasjon -[hidden]- Bygning
+  Skjerming -[hidden]-  UtfoertKassasjon
+  UtfoertKassasjon -[hidden]- Bygning
 
   package NasjonaleIdentifikatorer {
     class Bygning
@@ -108,7 +108,7 @@ package LoggingOgSporing <<applicationSchema>> {
 package Kodelister <<applicationSchema>> {
   class Arkivdelstatus
   class Arkivstatus
-  class Avskrivningsmåte
+  class Avskrivningsmaate
   class Dokumentmedium
   class Dokumentstatus
   class Dokumenttype
@@ -125,10 +125,10 @@ package Kodelister <<applicationSchema>> {
   class Land
   class Mappetype
   class Merknadstype
-  class MøtedeltagerFunksjon
-  class Møteregistreringsstatus
-  class Møteregistreringstype
-  class Møtesakstype
+  class MoetedeltagerFunksjon
+  class Moeteregistreringsstatus
+  class Moeteregistreringstype
+  class Moetesakstype
   class Postnummer
   class Presedensstatus
   class Sakspartrolle
@@ -143,8 +143,8 @@ package Kodelister <<applicationSchema>> {
   class Variantformat
 
   Arkivdelstatus -[hidden]- Arkivstatus
-  Arkivstatus -[hidden]- Avskrivningsmåte
-  Avskrivningsmåte -[hidden]- Dokumentmedium
+  Arkivstatus -[hidden]- Avskrivningsmaate
+  Avskrivningsmaate -[hidden]- Dokumentmedium
   Dokumentmedium -[hidden]- Dokumentstatus
   Dokumentstatus -[hidden]- Dokumenttype
   Dokumenttype -[hidden]- ElektroniskSignaturSikkerhetsnivaa
@@ -160,11 +160,11 @@ package Kodelister <<applicationSchema>> {
   Korrespondanseparttype -[hidden]- Land
   Land -[hidden]- Mappetype
   Mappetype -[hidden]- Merknadstype
-  Merknadstype -[hidden]- MøtedeltagerFunksjon
-  MøtedeltagerFunksjon -[hidden]- Møteregistreringsstatus
-  Møteregistreringsstatus -[hidden]- Møteregistreringstype
-  Møteregistreringstype -[hidden]- Møtesakstype
-  Møtesakstype -[hidden]- Postnummer
+  Merknadstype -[hidden]- MoetedeltagerFunksjon
+  MoetedeltagerFunksjon -[hidden]- Moeteregistreringsstatus
+  Moeteregistreringsstatus -[hidden]- Moeteregistreringstype
+  Moeteregistreringstype -[hidden]- Moetesakstype
+  Moetesakstype -[hidden]- Postnummer
   Postnummer -[hidden]- Presedensstatus
   Presedensstatus -[hidden]- Sakspartrolle
   Sakspartrolle -[hidden]- Saksstatus

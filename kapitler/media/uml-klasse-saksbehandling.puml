@@ -19,6 +19,6 @@ Sakarkiv.Journalpost "+journalpost 0..*" o--> "+presedens 0..*" Sakarkiv.Presede
 Sakarkiv.Journalpost *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
 Kodelister.Korrespondanseparttype <-[hidden]-- Sakarkiv.Korrespondansepart
 Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
-Kodelister.Avskrivningsmåte  <-[hidden]- Sakarkiv.Avskrivning
+Kodelister.Avskrivningsmaate  <-[hidden]- Sakarkiv.Avskrivning
 Sakarkiv.Journalpost *-> "+dokumentflyt 0..*" Sakarkiv.Dokumentflyt
 @enduml
