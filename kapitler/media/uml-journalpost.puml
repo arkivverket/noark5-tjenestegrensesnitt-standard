@@ -1,5 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
+skinparam nodesep 180
+
 !include kapitler/media/uml-class-journalpost-all.iuml
 !include kapitler/media/uml-class-korrespondansepart.iuml
 !include kapitler/media/uml-class-presedens.iuml

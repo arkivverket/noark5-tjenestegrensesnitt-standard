@@ -1,5 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
+skinparam nodesep 180
+
 'FIXME dropped caption "class Klassediagram_forklaring"
 class Albumenhet {
   +systemID : SystemID

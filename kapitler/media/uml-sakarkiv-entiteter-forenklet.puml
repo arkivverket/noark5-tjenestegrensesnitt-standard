@@ -1,5 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
+skinparam nodesep 180
+
 class Arkivstruktur.Klasse <Arkivenhet>
 class Arkivstruktur.Mappe <Arkivenhet>
 class Arkivstruktur.Registrering <Arkivenhet>

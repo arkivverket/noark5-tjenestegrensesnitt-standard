@@ -1,5 +1,6 @@
 @startuml
 skinparam classAttributeIconSize 0
+skinparam nodesep 180
 
 class NasjonaleIdentifikatorer.Nasjonalidentifikator {
   +systemID : SystemID [0..1]

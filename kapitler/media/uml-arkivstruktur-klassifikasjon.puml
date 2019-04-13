@@ -1,5 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
+skinparam nodesep 210
+
 class Arkivstruktur.Arkivdel <Arkivenhet>
 class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
   +klassifikasjonstype : Klassifikasjonstype [0..1]

@@ -1,5 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
+skinparam nodesep 180
+
 !include kapitler/media/uml-class-arkivskaper.iuml
 !include kapitler/media/uml-class-arkiv.iuml
 !include kapitler/media/uml-class-arkivdel.iuml

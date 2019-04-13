@@ -1,5 +1,6 @@
 @startuml
 skinparam classAttributeIconSize 0
+skinparam nodesep 180
 
 class Arkivstruktur.Registrering <Arkivenhet>
 !include kapitler/media/uml-class-dokumentobjekt.iuml

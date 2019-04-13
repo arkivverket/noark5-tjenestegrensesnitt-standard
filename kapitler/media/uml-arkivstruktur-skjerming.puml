@@ -1,5 +1,6 @@
 @startuml
 skinparam classAttributeIconSize 0
+skinparam nodesep 180
 
 !include kapitler/media/uml-class-klasse.iuml
 !include kapitler/media/uml-class-mappe.iuml
