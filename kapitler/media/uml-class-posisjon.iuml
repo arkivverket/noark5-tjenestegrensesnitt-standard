@@ -1,0 +1,5 @@
+@startuml
+class Arkivstruktur.NasjonaleIdentifikatorer.Posisjon <Nasjonalidentifikator> {
+  +plassering : Punkt
+}
+@enduml

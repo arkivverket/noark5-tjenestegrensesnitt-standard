@@ -2,33 +2,15 @@
 skinparam classAttributeIconSize 0
 skinparam nodesep 180
 
-class NasjonaleIdentifikatorer.Nasjonalidentifikator {
-  +systemID : SystemID [0..1]
-  +beskrivelse : string [0..1]
-}
-
-
 class Arkivstruktur.Mappe <Arkivenhet>
 class Arkivstruktur.Registrering <Arkivenhet>
-class NasjonaleIdentifikatorer.Enhetsidentifikator {
-  +organisasjonsnummer : string
-}
-class NasjonaleIdentifikatorer.Personidentifikator {
-  +foedselsnummer : string [0..1]
-  +dNummer : string [0..1]
-}
-class NasjonaleIdentifikatorer.Posisjon {
-  +plassering : Punkt
-}
-class NasjonaleIdentifikatorer.Bygning {
-  +byggidentifikator : ByggIdent
-}
-class NasjonaleIdentifikatorer.Matrikkel {
-  +matrikkelnummer : Matrikkelnummer
-}
-class NasjonaleIdentifikatorer.Plan {
-  +planidentifikator : NasjonalArealplanId
-}
+!include kapitler/media/uml-class-bygning.iuml
+!include kapitler/media/uml-class-enhetsidentifikator.iuml
+!include kapitler/media/uml-class-matrikkel.iuml
+!include kapitler/media/uml-class-nasjonalidentifikator.iuml
+!include kapitler/media/uml-class-personidentifikator.iuml
+!include kapitler/media/uml-class-plan.iuml
+!include kapitler/media/uml-class-posisjon.iuml
 
 package GeoIntegration {
 
@@ -57,23 +39,23 @@ package GeoIntegration {
       +gaardsnummer : Integer
       +bruksnummer : Integer
       +festenummer : Integer [0..1]
-     +seksjonsnummer : Integer [0..1]
+      +seksjonsnummer : Integer [0..1]
     }
   }
 }
 Arkivstruktur.Mappe --> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Registrering "+registrering 0..*" <-o "+mappe 0..1" Arkivstruktur.Mappe
-Arkivstruktur.Mappe *--> "+nasjonalidentifikator 0..*\n\n" NasjonaleIdentifikatorer.Nasjonalidentifikator
-Arkivstruktur.Registrering *--> "+nasjonalidentifikator 0..*\n" NasjonaleIdentifikatorer.Nasjonalidentifikator
-NasjonaleIdentifikatorer.Posisjon -|> NasjonaleIdentifikatorer.Nasjonalidentifikator
-NasjonaleIdentifikatorer.Nasjonalidentifikator <|- NasjonaleIdentifikatorer.Personidentifikator
-NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- NasjonaleIdentifikatorer.Enhetsidentifikator
-NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- NasjonaleIdentifikatorer.Bygning
-NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- NasjonaleIdentifikatorer.Matrikkel
-NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- NasjonaleIdentifikatorer.Plan
+Arkivstruktur.Mappe *--> "+nasjonalidentifikator 0..*\n\n" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
+Arkivstruktur.Registrering *--> "+nasjonalidentifikator 0..*\n" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
+Arkivstruktur.NasjonaleIdentifikatorer.Posisjon -|> Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|- Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Bygning
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Plan
 
-NasjonaleIdentifikatorer.Plan <-[hidden]-- NasjonalArealplanId
-NasjonaleIdentifikatorer.Posisjon <-[hidden]-- Punkt
-NasjonaleIdentifikatorer.Bygning <-[hidden]-- ByggIdent
-NasjonaleIdentifikatorer.Matrikkel <-[hidden]-- Matrikkelnummer
+Arkivstruktur.NasjonaleIdentifikatorer.Plan <-[hidden]-- NasjonalArealplanId
+Arkivstruktur.NasjonaleIdentifikatorer.Posisjon <-[hidden]-- Punkt
+Arkivstruktur.NasjonaleIdentifikatorer.Bygning <-[hidden]-- ByggIdent
+Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel <-[hidden]-- Matrikkelnummer
 @enduml

@@ -1,0 +1,5 @@
+@startuml
+class Arkivstruktur.NasjonaleIdentifikatorer.Plan <Nasjonalidentifikator> {
+  +planidentifikator : NasjonalArealplanId
+}
+@enduml

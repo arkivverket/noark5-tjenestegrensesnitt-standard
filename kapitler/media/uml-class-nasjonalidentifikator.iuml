@@ -1,0 +1,6 @@
+@startuml
+class Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator {
+  +systemID : SystemID [0..1]
+  +beskrivelse : string [0..1]
+}
+@enduml

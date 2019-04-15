@@ -1,0 +1,5 @@
+@startuml
+class Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator <Nasjonalidentifikator> {
+  +organisasjonsnummer : string
+}
+@enduml

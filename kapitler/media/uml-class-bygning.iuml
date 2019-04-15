@@ -1,0 +1,5 @@
+@startuml
+class Arkivstruktur.NasjonaleIdentifikatorer.Bygning <Nasjonalidentifikator> {
+  +byggidentifikator : ByggIdent
+}
+@enduml
