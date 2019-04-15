@@ -67,29 +67,33 @@ with open('kapitler/07-tjenester_og_informasjonsmodell.md') as f:
         if m:
             package = m.group(1)
             heading = None
+            prevheading = None
         m = re.match('^####+ (.*)$', line)
         if m:
+            if not prevheading and 0 == line.find('##### '): # subpackage member
+                package = "%s.%s" % (package, heading)
+                prevheading = heading
             heading = m.group(1)
             tablename = None
             inherit = None
             fullname = "%s.%s" % (package, heading)
-            if heading not in classes:
-                classes[heading] = {}
-                classes[heading]['package'] = package
-                classes[heading]['fullname'] = fullname
-        m = re.match('^\*Arver:\* \*+([^\*]*)\*+$', line)
-        if m:
-            inherit = m.group(1)
-            classes[heading]['inherit'] = inherit
         m = re.match('^Table: (.*)$', line)
         if m:
             tablename = m.group(1)
         m = re.match('^\*Type:\* \*+([^\* ]*)( «(.+)»)?\*+$', line)
         if m:
+            if heading not in classes:
+                classes[heading] = {}
+                classes[heading]['package'] = package
+                classes[heading]['fullname'] = fullname
             classtype = m.group(1)
             stereotype = m.group(3)
             if stereotype:
                 classes[heading]['stereotype'] = stereotype
+        m = re.match('^\*Arver:\* \*+([^\*]*)\*+$', line)
+        if m:
+            inherit = m.group(1)
+            classes[heading]['inherit'] = inherit
         if 'Attributter' == tablename and re.match('\| .* \| ', line):
 #            print("'", heading, inherit, tablename)
             f = re.split(' *\| *', line)[1:-1]
