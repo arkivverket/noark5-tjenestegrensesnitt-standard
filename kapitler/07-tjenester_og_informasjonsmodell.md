@@ -459,7 +459,7 @@ Table: Relasjoner
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | registrering 0..1 Basisregistrering ||
 | **Generalization** (Source → Destination)  | Moeteregistrering                                         | Basisregistrering      |             |
 | **Generalization** (Source → Destination)  | Journalpost                                              | Basisregistrering      |             |
-| **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Basisregistrering      |             |
+| **Association** (Source → Destination)     | Basisregistrering                                        | merknad 0..* Merknad   |             |
 
 Table: Relasjonsnøkler
 
@@ -516,7 +516,7 @@ Table: Relasjoner
 | *NoteLink*                               | Dokumentbeskrivelse                                      | \<anonymous\>          |             |
 | **Aggregation** (Bi-Directional)           | dokumentbeskrivelse 0..* Dokumentbeskrivelse             | registrering 1..* Registrering |     |
 | **Generalization** (Source → Destination)  | Dokumentbeskrivelse                                      | Arkivenhet             |             |
-| **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Dokumentbeskrivelse    |             |
+| **Association** (Source → Destination)     | Dokumentbeskrivelse                                      | merknad 0..* Merknad   |             |
 | **Aggregation** (Bi-Directional)           | dokumentobjekt 0..* Dokumentobjekt                       | dokumentbeskrivelse 1 Dokumentbeskrivelse | |
 
 Table: Relasjonsnøkler
@@ -1070,7 +1070,7 @@ Table: Relasjoner
 | **Aggregation** (Destination → Source)     | undermappe 0..* Mappe                                    | Mappe                  |             |
 | **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | mappe 0..1 Mappe       |             |
 | **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Mappe                  |             |
-| **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Mappe                  |             |
+| **Association** (Source → Destination)     | Mappe                                                    | merknad 0..* Merknad   |             |
 | **Generalization** (Source → Destination)  | Moetemappe                                                | Mappe                  |             |
 | **Generalization** (Source → Destination)  | Saksmappe                                                | Mappe                  |             |
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | mappe 0..1 Mappe       |             |
@@ -1161,9 +1161,9 @@ Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Association** (Destination → Source)   | merknad 0..* Merknad                                     | Mappe                  |             |
-| **Association** (Destination → Source)   | merknad 0..* Merknad                                     | Basisregistrering      |             |
-| **Association** (Destination → Source)   | merknad 0..* Merknad                                     | Dokumentbeskrivelse    |             |
+| **Association** (Source → Destination) | Mappe               | merknad 0..* Merknad | |
+| **Association** (Source → Destination) | Basisregistrering   | merknad 0..* Merknad | |
+| **Association** (Source → Destination) | Dokumentbeskrivelse | merknad 0..* Merknad | |
 
 Table: Relasjonsnøkler
 
