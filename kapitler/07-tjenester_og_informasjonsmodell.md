@@ -350,7 +350,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
-| NEW       | 5.4.0                                                            |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-hendelseslogg/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/logg/             |
 
@@ -715,7 +714,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
-| NEW       | 5.4.0                                                            |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-hendelseslogg/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/hendelsetype/          |
 | REST\_REL | self                                                             |
@@ -1430,7 +1428,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
-| NEW       | 5.4.0                                                                    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-nasjonalidentifikator/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
 | REST\_REL | self                                                                     |
@@ -2021,7 +2018,6 @@ Table: Relasjonsnøkler
 | **Tag**  | **Verdi**                                            |
 | -------- | ---------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/mappetype/ |
-| NEW      | 5.4.0                                                |
 
 #### Merknadstype
 
@@ -2409,7 +2405,6 @@ Table: Relasjonsnøkler
 | **Tag**  | **Verdi**                                                   |
 | -------- | ----------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/tilgangskategori/ |
-| NEW      | 5.4.0                                                       |
 
 Table: Attributter
 
@@ -2434,7 +2429,6 @@ Table: Relasjonsnøkler
 | **Tag**  | **Verdi**                                                      |
 | -------- | -------------------------------------------------------------- |
 | codeList | http://rel.kxml.no/noark5/v4/api/metadata/tilgangsrestriksjon/ |
-| NEW      | 5.4.0                                                          |
 
 Table: Attributter
 
@@ -2838,7 +2832,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                             |
 | --------- | --------------------------------------------------------------------- |
-| NEW       | 5.4.0                                                                 |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/korrespondansepartenhet/    |
 | REST\_REL | self                                                                  |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-korrespondansepartenhet/ |
@@ -2870,7 +2863,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                              |
 | --------- | ---------------------------------------------------------------------- |
-| NEW       | 5.4.0                                                                  |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/korrespondansepartintern/    |
 | REST\_REL | self                                                                   |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-korrespondansepartintern/ |
@@ -2900,7 +2892,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                              |
 | --------- | ---------------------------------------------------------------------- |
-| NEW       | 5.4.0                                                                  |
 | REST\_REL | self                                                                   |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/korrespondansepartperson/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-korrespondansepartperson/ |
@@ -3134,7 +3125,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                   |
 | --------- | ----------------------------------------------------------- |
-| NEW       | 5.4.0                                                       |
 | REST\_REL | self                                                        |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-sakspartenhet/ |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sakspartenhet/    |
@@ -3166,7 +3156,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                    |
 | --------- | ------------------------------------------------------------ |
-| NEW       | 5.4.0                                                        |
 | REST\_REL | self                                                         |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/sakspartperson/    |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-sakspartperson/ |
@@ -3313,7 +3302,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                      |
 | --------- | -------------------------------------------------------------- |
-| NEW       | 5.4.0                                                          |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/admin/ny-rettighet/           |
 | REST\_REL | self                                                           |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/tilgangsrestriksjon/ |
