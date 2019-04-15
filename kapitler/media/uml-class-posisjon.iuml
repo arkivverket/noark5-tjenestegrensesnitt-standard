@@ -1,5 +1,8 @@
 @startuml
 class Arkivstruktur.NasjonaleIdentifikatorer.Posisjon <Nasjonalidentifikator> {
-  +plassering : Punkt
+  +koordinatsystem : Koordinatsystem
+  +x : integer
+  +y : integer
+  +z : integer
 }
 @enduml

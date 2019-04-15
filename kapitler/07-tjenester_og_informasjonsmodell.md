@@ -1167,25 +1167,36 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/        |
 | REST\_REL | self                                                                     |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/           |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/        |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/               |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/          |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                   |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-nasjonalidentifikator/ |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/                  |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/                 |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/                     |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/undermappe/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonaleidentifikator/   |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-basisregistrering/     |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-journalpost/           |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-moeteregistrering/     |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/                  |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/               |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/                  |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/               |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/           |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/        |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/                |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/             |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/plan/                     |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/                  |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/                 |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/              |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/                |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/                     |
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
 også være tilgjengelig via Mappe-instanser.
@@ -1318,15 +1329,26 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                |
 | --------- | ------------------------------------------------------------------------ |
+| REST\_REL | self                                                                     |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentbeskrivelse/   |
-| REST\_REL | self                                                                     |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/      |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonaleidentifikator/   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-nasjonalidentifikator/ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/             |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/                  |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/               |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/                  |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/               |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/           |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/        |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/                |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/             |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/plan/                     |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/                  |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/                 |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/              |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-basisregistrering/   |
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
@@ -1463,6 +1485,46 @@ Table: Restriksjoner
 
 ![Nasjonale identifikatorer - (diagram)](./media/uml-bruken-av-nasjonalidentifikator.png)
 
+Nasjonale identifikatorer gjør tjenestegrensesnittet kompatibelt med
+GeoIntegrasjon, og gjør det mulig å knytte mapper og registreringer
+til kataloger som brønnøysundsregisteret, folkeregisteret, matrikkelen
+og kart.
+
+##### Nasjonalidentifikator
+
+*Type:* ***Class***
+
+*Arver:*
+
+Dette er en virtuell klasse som ikke instansieres.  Attributten
+systemID settes av API-tjenesten ved instansiering av typene som arver
+fra Nasjonalidentifikator, og trenger ikke følge med ved opprettelse.
+
+Table: Relasjoner
+
+| **Relasjon**                              | **Kilde**                                                | **Mål**                | **Merknad** |
+| ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Aggregation** (Destination → Source)    | nasjonalidentifikator 0..* Nasjonalidentifikator         | Mappe                  |             |
+| **Aggregation** (Destination → Source)    | nasjonalidentifikator 0..* Nasjonalidentifikator         | Registrering           |             |
+| **Generalization** (Source → Destination) | Bygning                                                  | Nasjonalidentifikator  |             |
+| **Generalization** (Source → Destination) | Enhetsidentifikator                                      | Nasjonalidentifikator  |             |
+| **Generalization** (Source → Destination) | Matrikkel                                                | Nasjonalidentifikator  |             |
+| **Generalization** (Source → Destination) | Plan                                                     | Nasjonalidentifikator  |             |
+| **Generalization** (Source → Destination) | Posisjon                                                 | Nasjonalidentifikator  |             |
+| **Generalization** (Source → Destination) | Personidentifikator                                      | Nasjonalidentifikator  |             |
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                                |
+| --------- | ------------------------------------------------------------------------ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
+
+Table: Attributter
+
+| **Navn**        | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| --------------- | ----------- | ------------ | -------- | -------- |
+| systemID        |             | \[1..1\]     |          | SystemID |
+
 ##### Bygning
 
 *Type:* ***Class***
@@ -1479,15 +1541,16 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/    |
 | REST\_REL | self                                                       |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/ |
 
 Table: Attributter
 
-| **Navn**              | **Merknad** | **Multipl.** | **Kode** | **Type**  |
-| --------------------- | ----------- | ------------ | -------- | --------- |
-| byggidentifikator     |             | \[1..1\]     |          | ByggIdent |
+| **Navn**              | **Merknad**                   | **Multipl.** | **Kode** | **Type**  |
+| --------------------- | ----------------------------- | ------------ | -------- | --------- |
+| bygningsnummer        | Som registrert i Matrikkelen. | \[1..1\]     |          | integer   |
+| endringsloepenummer   | Som registrert i Matrikkelen. | \[0..1\]     |          | integer   |
 
 ##### Enhetsidentifikator
 
@@ -1513,6 +1576,9 @@ Table: Attributter
 
 *Arver:* ***Nasjonalidentifikator***
 
+Tilsvarer GeoIntegrasjon.Felles.MatrikkelNummer.  Feltene er de samme
+som brukes i matrikkelen.
+
 Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
@@ -1523,49 +1589,19 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                    |
 | --------- | ------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/    |
 | REST\_REL | self                                                         |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/ |
 
 Table: Attributter
 
 | **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type**        |
 | ------------------- | ----------- | ------------ | -------- | --------------- |
-| matrikkelnummer     |             | \[1..1\]     |          | Matrikkelnummer |
-
-##### Nasjonalidentifikator
-
-*Type:* ***Class***
-
-*Arver:* 
-
-Table: Relasjoner
-
-| **Relasjon**                              | **Kilde**                                                | **Mål**                | **Merknad** |
-| ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Aggregation** (Destination → Source)    | nasjonalidentifikator 0..* Nasjonalidentifikator         | Mappe                  |             |
-| **Aggregation** (Destination → Source)    | nasjonalidentifikator 0..* Nasjonalidentifikator         | Registrering           |             | 
-| **Generalization** (Source → Destination) | Bygning                                                  | Nasjonalidentifikator  |             |
-| **Generalization** (Source → Destination) | Enhetsidentifikator                                      | Nasjonalidentifikator  |             |
-| **Generalization** (Source → Destination) | Matrikkel                                                | Nasjonalidentifikator  |             |
-| **Generalization** (Source → Destination) | Plan                                                     | Nasjonalidentifikator  |             |
-| **Generalization** (Source → Destination) | Posisjon                                                 | Nasjonalidentifikator  |             |
-| **Generalization** (Source → Destination) | Personidentifikator                                      | Nasjonalidentifikator  |             |
-
-Table: Relasjonsnøkler
-
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-nasjonalidentifikator/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
-| REST\_REL | self                                                                     |
-
-Table: Attributter
-
-| **Navn**        | **Merknad** | **Multipl.** | **Kode** | **Type** |
-| --------------- | ----------- | ------------ | -------- | -------- |
-| systemID        |             | \[0..1\]     |          | SystemID |
-| beskrivelse     |             | \[0..1\]     |          | string   |
+| kommunenummer       |             | \[1..1\]     |          | string          |
+| gaardsnummer        |             | \[1..1\]     |          | integer         |
+| bruksnummer         |             | \[1..1\]     |          | integer         |
+| festenummer         |             | \[0..1\]     |          | string          |
+| seksjonsnummer      |             | \[0..1\]     |          | string          |
 
 ##### Personidentifikator
 
@@ -1573,30 +1609,97 @@ Table: Attributter
 
 *Arver:* ***Nasjonalidentifikator***
 
+Dette er en virtuell klasse som ikke kan instansieres.
+
+Merk at [personopplysningsloven § 12 (Bruk av fødselsnummer og andre
+entydige
+identifikasjonsmidler)](https://lovdata.no/dokument/NL/lov/2018-06-15-38/)
+er relevant når en benytter slike identifikatorer.  Den lyder:
+
+> Fødselsnummer og andre entydige identifikasjonsmidler kan bare
+> behandles når det er saklig behov for sikker identifisering og
+> metoden er nødvendig for å oppnå slik identifisering.
+>
+> Kongen kan gi forskrift om bruk av fødselsnummer og andre entydige
+> identifikasjonsmidler.
+
 Table: Relasjoner
 
 | **Relasjon**                               | **Kilde**           | **Mål**               | **Merknad** |
 | ------------------------------------------ | ------------------- | --------------------- | ----------- |
 | **Generalization** (Source → Destination)  | Personidentifikator | Nasjonalidentifikator |             |
+| **Generalization** (Source → Destination)  | Foedselsnummer      | Personidentifikator |             |
+| **Generalization** (Source → Destination)  | DNummer             | Personidentifikator |             |
+
+##### Foedselsnummer
+
+*Type:* ***Class***
+
+*Arver:* ***Personidentifikator***
+
+Table: Relasjoner
+
+| **Relasjon**                               | **Kilde**           | **Mål**               | **Merknad** |
+| ------------------------------------------ | ------------------- | --------------------- | ----------- |
+| **Generalization** (Source → Destination)  | Foedselsnummer      | Personidentifikator |             |
 
 Table: Relasjonsnøkler
 
-| **Tag** | **Verdi**                                        |
-| ------- | ------------------------------------------------ |
-| LOV     | https://lovdata.no/dokument/NL/lov/2000-04-14-31 |
+| **Tag**   | **Verdi**                                                                 |
+| --------- | ------------------------------------------------------------------------- |
+| REST\_REL | self                                                                      |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/ |
 
 Table: Attributter
 
-| **Navn**      | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
-|---------------|---------------|---------------|-----------|-----------|
-| foedselsnummer | Personopplysningsloven § 12. Bruk av fødselsnummer m.v. Fødselsnummer og andre entydige identifikasjonsmidler kan bare nyttes i behandlingen når det er saklig behov for sikker identifisering og metoden er nødvendig for å oppnå slik identifisering. Datatilsynet kan pålegge en behandlingsansvarlig å bruke identifikasjonsmidler som nevnt i første ledd for å sikre at personopplysningene har tilstrekkelig kvalitet. Kongen kan gi forskrift med nærmere regler om bruk av fødselsnummer og andre entydige identifikasjonsmidler. | \[0..1\] | | string |
-| dNummer       | Et D-nummer er et midlertidig nummer som blant annet tildeles utenlandske statsborgere som er skatte- eller avgiftspliktige til Norge. Det kreves et D-nummer for å bli registrert i Folkeregisteret. | \[0..1\] | | string|
+| **Navn**       | **Merknad** | **Multipl.** | **Kode** | **Type** |
+|----------------|-------------|--------------|----------|----------|
+| foedselsnummer |             | \[1..1\]     |          | string   |
+
+
+##### DNummer
+
+*Type:* ***Class***
+
+*Arver:* ***Personidentifikator***
+
+Et D-nummer er et midlertidig nummer som blant annet tildeles
+utenlandske statsborgere som er skatte- eller avgiftspliktige til
+Norge. Det kreves et D-nummer eller fødselsnummer for å bli registrert
+i Folkeregisteret.
+
+Table: Relasjoner
+
+| **Relasjon**                               | **Kilde**           | **Mål**               | **Merknad** |
+| ------------------------------------------ | ------------------- | --------------------- | ----------- |
+| **Generalization** (Source → Destination)  | DNummer             | Personidentifikator |             |
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                  |
+| --------- | ---------------------------------------------------------- |
+| REST\_REL | self                                                       |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/ |
+
+
+Table: Attributter
+
+| **Navn** | **Merknad** | **Multipl.** | **Kode** | **Type** |
+|----------|-------------|--------------|----------|----------|
+| dNummer  |             | \[1..1\]     |          | string   |
 
 ##### Plan
 
 *Type:* ***Class***
 
 *Arver:* ***Nasjonalidentifikator***
+
+Tilsvarer GeoIntegrasjon.Felles.NasjonalArealplanId.
+
+Se også [kartverkets informasjon om Tildeling av nasjonal
+arealplan-ID](https://www.kartverket.no/geodataarbeid/Arealplan-og-planregister/Verktoykasse/Tildeling-av-nasjonal-arealplan-ID/).
 
 Table: Relasjoner
 
@@ -1616,13 +1719,53 @@ Table: Attributter
 
 | **Navn**              | **Merknad** | **Multipl.** | **Kode** | **Type**            |
 | --------------------- | ----------- | ------------ | -------- | ------------------- |
-| planidentifikator     |             | \[1..1\]     |          | NasjonalArealplanId |
+| kommunenummer         |             | \[0..1\]     |          | string              |
+| fylkesnummer          |             | \[0..1\]     |          | string              |
+| landkode              |             | \[0..1\]     |          | Land                |
+| planidentifikasjon    |             | \[1..1\]     |          | string              |
+
+Table: Restriksjoner
+
+| **Navn**                            | **Merknad**                         |
+| ----------------------------------- | ----------------------------------- |
+| kommunenummer/fylkesnummer/landkode | Kun et av feltene kommunenummer, fylkesnummer og landkode kan være satt for en gitt instans.  Feltet som er satt identifiserer hvilken enhet som planen gjelder for. |
+
+##### Koordinatsystem
+
+*Type:* ***Class «codelist»***
+
+*Arver:*
+
+Åpen kodeliste
+
+Identifikator for referansekoordinatsystem som definert av
+[EPSG](http://www.epsg.org/).  Formatet på kodeverdiene er
+«EPSG:{nummer}», der {nummer} er EPSG-koden.
+
+Denne kodelisten er relatert til KoordinatsystemKode i GeoIntegrasjon.
+Koordinatsystem-verdier kan hentes fra registeret til GeoNorge,
+tilgjengelig fra [https://register.geonorge.no/epsg-koder].
+
+Table: Relasjonsnøkler
+
+| **Tag**  | **Verdi**                                                          |
+| -------- | ------------------------------------------------------------------ |
+| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/koordinatsystem/ |
+
+Table: Attributter
+
+| **Navn**                | **Merknad** | **Multipl.** | **Kode**   | **Type** |
+| ----------------------- | ----------- | ------------ | ---------- | -------- |
+| UTM32N                  |             |              | EPSG:32632 |          |
+| WGS84                   |             |              | EPSG:4326  |          |
 
 ##### Posisjon
 
 *Type:* ***Class***
 
 *Arver:* ***Nasjonalidentifikator***
+
+Tilsvarer GeoIntegrasjon.Geometri.Punkt.
 
 Table: Relasjoner
 
@@ -1632,17 +1775,20 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                   |
-| --------- | ----------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/ |
-| REST\_REL | self                                                        |
+| **Tag**   | **Verdi**                                                           |
+| --------- | ------------------------------------------------------------------- |
+| REST\_REL | self                                                                |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/ |
 
 Table: Attributter
 
-| **Navn**       | **Merknad** | **Multipl.** | **Kode** | **Type** |
-| -------------- | ----------- | ------------ | -------- | -------- |
-| plassering     |             | \[1..1\]     |          | Punkt    |
+| **Navn**       | **Merknad**                     | **Multipl.** | **Kode** | **Type**        |
+| -------------- | ------------------------------- | ------------ | -------- | --------------- |
+| koordinatsystem|                                 | \[1..1\]     |          | Koordinatsystem |
+| x              | øst-vest/breddegrad             | \[1..1\]     |          | decimal         |
+| y              | nord-sør/lengdegrad             | \[1..1\]     |          | decimal         |
+| z              | høyde, kun noen koordinatsystem | \[0..1\]     |          | decimal         |
 
 ### Kodelister 
 
@@ -3050,7 +3196,7 @@ Table: Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ----------------------- | ----------- | ------------ | -------- | ------------------ |
-| organisasjonsnummer     |             | \[0..1\]     |          | string             |
+| enhetsidentifikator     |             | \[0..1\]     |          | Enhetsidentifikator|
 | navn                    |             | \[1..1\]     |          | string             |
 | forretningsadresse      |             | \[0..1\]     |          | EnkelAdresse       |
 | postadresse             |             | \[0..1\]     |          | EnkelAdresse       |
@@ -3110,8 +3256,7 @@ Table: Attributter
 
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
-| foedselsnummer         |             | \[0..1\]     |          | string             |
-| DNummer                |             | \[0..1\]     |          | string             |
+| personidentifikator    |             | \[0..*\]     |          | Personidentifikator|
 | navn                   |             | \[1..1\]     |          | string             |
 | postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
 | bostedsadresse         |             | \[0..1\]     |          | EnkelAdresse       |
@@ -3343,7 +3488,7 @@ Table: Attributter
 
 | **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ----------------------- | ----------- | ------------ | -------- | ------------------ |
-| organisasjonsnummer     |             | \[0..1\]     |          | string             |
+| enhetsidentifikator     |             | \[0..1\]     |          | Enhetsidentifikator|
 | navn                    |             | \[1..1\]     |          | string             |
 | forretningsadresse      |             | \[0..1\]     |          | EnkelAdresse       |
 | postadresse             |             | \[0..1\]     |          | EnkelAdresse       |
@@ -3374,8 +3519,7 @@ Table: Attributter
 
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
-| foedselsnummer         |             | \[0..1\]     |          | string             |
-| DNummer                |             | \[0..1\]     |          | string             |
+| personidentifikator    |             | \[0..*\]     |          | Personidentifikator|
 | navn                   |             | \[1..1\]     |          | string             |
 | postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
 | bostedsadresse         |             | \[0..1\]     |          | EnkelAdresse       |

@@ -1,5 +1,6 @@
 @startuml
 class Arkivstruktur.NasjonaleIdentifikatorer.Bygning <Nasjonalidentifikator> {
-  +byggidentifikator : ByggIdent
+  +bygningsnummer : integer
+  +endringsloepenummer : integer [0..1]
 }
 @enduml

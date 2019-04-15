@@ -1,5 +1,8 @@
 @startuml
 class Arkivstruktur.NasjonaleIdentifikatorer.Plan <Nasjonalidentifikator> {
-  +planidentifikator : NasjonalArealplanId
+  +kommunenummer : string [0..1]
+  +fylkesnummer : string [0..1]
+  +landkode : Land [0..1]
+  +planidentifikasjon : string
 }
 @enduml
