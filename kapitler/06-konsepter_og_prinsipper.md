@@ -891,6 +891,9 @@ det vil si definisjonen for date og dateTime i XML Schema 1.0
 tilgjengelig fra https://www.w3.org/TR/xmlschema11-2/. Det skal alltid
 være tidssone-informasjon knyttet til date og dateTime-verdier.
 
+Tjenestegrensesnittet skal bruke UTF-8 tegnsett som beskrevet i IETF RFC 3629
+i alle REST-forespørsler, både for JSON og XML.
+
 #### Hente og overføre filer
 
 Ved navigering til dokumentobjekt så kan selve filen også åpnes ved å
