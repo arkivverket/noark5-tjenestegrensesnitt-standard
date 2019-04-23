@@ -366,10 +366,12 @@ aktuelle ressurslenke kan være
 http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe .
 Denne kan brukes til både GET og POST forespørsel.
 
-GET forespørselen forhåndsutfyller en lovlig objektstruktur og gir
+GET-forespørselen forhåndsutfyller en lovlig objektstruktur og gir
 relasjonslenker til aktuelle kodelister.  En slik forespørsel
 oppretter ikke noe objekt og returverdien refererer ikke heller til et
-objekt i databasen, og er derfor uten «self»-relasjon.
+objekt i databasen, og er derfor uten «self»-relasjon.  Strukturen
+(uten "_links" og felt med verdi «null») kan brukes som utgangspunkt for en POST
+når et nytt objekt skal opprettes. 
 
 Ved registrering av objektet så skal kjernen fylle ut systemid, opprettetAv og opprettetDato. OpprettetAv skal være personnavn, referanseOpprettetAv skal være en systemID. NB! Denne systemID-en kan være en entydig identifikator av brukeren i fagsystemet, slik at personen ikke nødvendigvis må være bruker i arkivkjernen. opprettetDato er datoen (eller dataTime) enheten er opprettet i fagsystemet.
 
