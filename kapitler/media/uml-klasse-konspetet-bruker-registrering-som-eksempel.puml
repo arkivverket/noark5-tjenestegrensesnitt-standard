@@ -8,7 +8,7 @@ class Arkivstruktur.Registrering < Arkivenhet > {
   +kassasjon : Kassasjon [0..1]
   +skjerming : Skjerming [0..1]
   +gradering : Gradering [0..1]
-  +referanseArkivdel : SystemID
+  +referanseArkivdel : SystemID [0..1]
 
   __ notes __
   En registrering inneholder bare de metadata som
