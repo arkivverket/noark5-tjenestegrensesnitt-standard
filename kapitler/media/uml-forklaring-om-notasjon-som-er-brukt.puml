@@ -9,7 +9,7 @@ class Albumenhet {
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
   +oppdatertAv : string
-  +referanseOpprettetAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID
 }
 class Foto {
   +systemID : SystemID
