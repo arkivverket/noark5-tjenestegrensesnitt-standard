@@ -16,6 +16,7 @@ class Arkivstruktur.Mappe <Arkivenhet> {
   +gradering : Gradering [0..1]
   +referanseForelderMappe : SystemID [0..1]
   +virksomhetsspesifikkeMetadata : any [0..1]
+  +referanseArkivdel : SystemID [0..1]
 
   --Arkivenhet--
   +systemID : SystemID [0..1]

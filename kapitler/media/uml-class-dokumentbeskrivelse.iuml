@@ -19,5 +19,6 @@ class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
   +gradering : Gradering [0..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
   +virksomhetsspesifikkeMetadata : any [0..1]
+  +referanseArkivdel : SystemID [0..1]
 }
 @enduml
