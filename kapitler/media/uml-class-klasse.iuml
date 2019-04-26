@@ -6,7 +6,7 @@ class Arkivstruktur.Klasse <Arkivenhet> {
   +noekkelord : string [0..*]
   +avsluttetDato : datetime [0..1]
   +avsluttetAv : string [0..1]
-  +referanseAvsluttetAv : SystemID [0..1]
+  +referanseAvsluttetAv : SystemID
   +skjerming : Skjerming [0..1]
   +kassasjon : Kassasjon [0..1]
 }

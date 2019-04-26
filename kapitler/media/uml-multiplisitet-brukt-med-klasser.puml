@@ -1,4 +1,4 @@
-@startuml
+@startuml uml-multiplisitet-brukt-med-klasser
 skinparam classAttributeIconSize 0
 'FIXME dropped caption "class Fig06_Multiplisitet"
 !include kapitler/media/uml-class-klasse.iuml
