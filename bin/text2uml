@@ -100,7 +100,9 @@ with open('kapitler/07-tjenester_og_informasjonsmodell.md') as f:
 #            print("'", f)
 #            print(len(f))
             assert 5 == len(f)
-            if -1 == f[0].find('**Navn**') and -1 == f[0].find('--'):
+            if -1 == f[0].find('**Navn**') \
+               and -1 == f[0].find('**Kodenavn**') \
+               and -1 == f[0].find('--'):
                 if 'attributes' not in classes[heading]:
                     classes[heading]['attributes'] = OrderedDict()
                 classes[heading]['attributes'][f[0]] = {
