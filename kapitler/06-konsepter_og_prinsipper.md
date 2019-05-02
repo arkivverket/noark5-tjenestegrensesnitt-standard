@@ -148,6 +148,32 @@ tilgang til disse. Hvis en bruker ikke har tilgang til å avslutte en
 mappe så bør ikke relasjonsnøkkel for dette annonseres i API for å gjøre
 det lettere å navigere til aktuelle funksjoner.
 
+#### Identifisere entitetstype
+
+En kan identifisere hvilken entitet en oppføring har ved å først
+identifisere «self»-relasjonsnøkkelen i «_links»-listen, deretter
+identifisere hvilken annen oppføring som har samme href som
+"self"-relasjonsnøkkelen.  Relasjonsnøkkelen til oppføringen som har
+samme href som «self» representerer entitetsrelasjonsnøkkelen til
+«self».  Dette kan se slik ut:
+
+```Python
+{ "results": [
+  { ...
+    "_links": [
+      {
+        "rel": "self",
+        "href": "http://localhost:49708/api/sakarkiv/saksmappe/2624ed49-dc39-47d5-8966-52f9fdc75868/"
+      }, {
+        "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/",
+        "href": "http://localhost:49708/api/sakarkiv/saksmappe/2624ed49-dc39-47d5-8966-52f9fdc75868/"
+      },
+      ...
+    ]
+  } ]
+}
+```
+
 #### Finne objekter (Read)
 
 For filter skal syntaks fra oData standarden
