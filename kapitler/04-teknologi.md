@@ -19,3 +19,7 @@ Single Sign On bør støttes.
 For REST er Basic autentication minimum for autentisering og en bør
 støtte SAML 2.0 og OpenID Connect.
 
+## CORS
+
+Tjenestegrensesnittet skal støtte CORS (Cross-Origin Resource
+Sharing) slik det er beskrevet på https://www.w3.org/TR/cors/.
