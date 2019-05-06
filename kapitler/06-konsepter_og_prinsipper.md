@@ -1094,13 +1094,15 @@ registreringer på denne (jfr krav 5.4.7).
 
 ## Identifikatorer
 
-SystemID brukes som entydig identifikator for alle objekter
+SystemID brukes som entydig identifikator for alle objekter.
 
 SystemID tildeles av kjernen og skal være konsistente over tid.
 Arkivkjernen må sørge for at dette blir en unik og persistent
 identifikator på tvers av andre system. Den skal kunne brukes til å
 identifisere og referere til objekter liggende i andre filer eller
 databaser.
+
+Generering av systemID-verdier skal følge UUID-algoritmen beskrevet i IETF RFC 4122, ISO/IEC 9834-8:2004 og ITU-T Rec. X.667. Slike UUID-verdier bør være frakoblet verdiene i objektet det henviser til.
 
 ## Utvidelsesmuligheter
 
