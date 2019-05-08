@@ -1,6 +1,6 @@
 @startuml
 skinparam classAttributeIconSize 0
 'FIXME dropped caption "class Fig05_Komposisjon"
-!include kapitler/media/uml-class-basisregistrering.iuml
-Arkivstruktur.Basisregistrering *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
+!include kapitler/media/uml-class-registrering.iuml
+Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
 @enduml

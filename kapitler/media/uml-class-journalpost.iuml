@@ -1,5 +1,5 @@
 @startuml
-class Sakarkiv.Journalpost <Basisregistrering> {
+class Sakarkiv.Journalpost <Registrering> {
   +journalaar : integer [0..1]
   +journalsekvensnummer : integer [0..1]
   +journalpostnummer : integer [0..1]
