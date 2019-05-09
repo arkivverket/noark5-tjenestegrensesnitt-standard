@@ -535,6 +535,7 @@ Table: Attributter
 | gradering                     |  | \[0..1\] |         | Gradering |
 | elektroniskSignatur           |  | \[0..1\] |         | ElektroniskSignatur |
 | virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen).Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
+| referanseArkivdel             |  | \[0..1\] |         | SystemID |
 
 Table: Restriksjoner
 
@@ -1096,6 +1097,7 @@ Table: Attributter
 | gradering                     | | \[0..1\] |          | Gradering |
 | referanseForelderMappe        | | \[0..1\] |          | SystemID |
 | virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen). Kommentar: (ingen)  M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
+| referanseArkivdel             |  | \[0..1\] |         | SystemID |
 
 Table: Restriksjoner
 
