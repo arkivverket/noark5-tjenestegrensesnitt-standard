@@ -652,10 +652,7 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                                     |
 | --------- | ----------------------------------------------------------------------------- |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-elektronisksignatur/        |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/elektronisksignatursikkerhetsnivaa/ |
-| REST\_REL | self                                                                          |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/arkivstruktur/elektronisksignatur/           |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/elektronisksignaturverifisert/      |
 
 Table: Attributter
@@ -2631,9 +2628,6 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/enkeladresse/    |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-enkeladresse/ |
-| REST\_REL | self                                                       |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/land/            |
 | REST\_REL | http://rel.kxml.no/noark5/v4/api/metadata/postnummer/      |
 
@@ -2756,14 +2750,6 @@ Table: Restriksjoner
 *Type:* ***Class «dataType»***
 
 *Arver:*
-
-Table: Relasjonsnøkler
-
-| **Tag**   | **Verdi**                                                        |
-| --------- | ---------------------------------------------------------------- |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/ny-kontaktinformasjon/ |
-| REST\_REL | http://rel.kxml.no/noark5/v4/api/sakarkiv/kontaktinformasjon/    |
-| REST\_REL | self                                                             |
 
 Table: Attributter
 
