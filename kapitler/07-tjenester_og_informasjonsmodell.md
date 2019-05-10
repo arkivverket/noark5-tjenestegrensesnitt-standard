@@ -710,7 +710,7 @@ Table: Attributter
 
 | **Navn**             | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |----------------------|---------------|---------------|-----------|-----------|
-| versjonsnummer       | Definisjon: Identifikasjon av versjoner innenfor ett og samme dokument. Kilde: Registreres automatisk når en ny versjon arkiveres. Kommentarer: Versjonsnummer gjelder bare arkiverte versjoner. Annen versjons-håndtering ligger i komplett Noark, og genererer ikke metadata skal følge med i et arkivuttrekk. M005 | \[1..1\] | | integer |
+| versjonsnummer       | Definisjon: Identifikasjon av versjoner innenfor ett og samme dokument.  Første versjon får nummer 0, deretter påfølgende heltall i stigende rekkefølge (1, 2, 3, ...). Det er ok med "hull" i versjonsnummer-sekvensen, da dette dokumenterer hvilke tidligere versjoner av dokumentet som er fjernet.  Kilde: Registreres automatisk når en ny versjon arkiveres. Kommentarer: Versjonsnummer gjelder bare arkiverte versjoner. Annen versjons-håndtering ligger i komplett Noark, og genererer ikke metadata skal følge med i et arkivuttrekk. M005 | \[1..1\] | | integer |
 | variantformat        | Definisjon: Angivelse av hvilken variant et dokument forekommer i . Kilde: Registreres automatisk når dokumentet arkiveres. Kommentarer: (ingen). M700 | \[1..1\] | | Variantformat |
 | format               | Definisjon: Dokumentets format . Kilde: Registreres automatisk når dokumentet arkiveres. Kommentarer: Faste verdier bestemmes senere. M701 | \[0..1\] | | Format |
 | formatDetaljer       | Definisjon: Nærmere spesifikasjon av dokuments format, f.eks. informasjon om komprimering . Kilde: (ingen). Kommentarer: (ingen). M702 | \[0..1\] | | string | 
