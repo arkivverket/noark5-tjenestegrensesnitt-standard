@@ -3276,7 +3276,7 @@ Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Association** (Bi-Directional)         | bruker 0..* Bruker                                       | enhet 0..* AdministrativEnhet |      |
+| **Association** (Bi-Directional)         | bruker 0..* Bruker                                       | administrativenhet 0..* AdministrativEnhet |      |
 
 Table: Relasjonsnøkler
 
@@ -3285,7 +3285,7 @@ Table: Relasjonsnøkler
 | REST\_REL | self                                                          |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/ny-administrativenhet/ |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/bruker/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/enhet/                 |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/administrativenhet/    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/ny-bruker/             |
 
 Table: Attributter
