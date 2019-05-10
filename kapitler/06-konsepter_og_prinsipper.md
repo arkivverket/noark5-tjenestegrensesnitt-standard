@@ -916,6 +916,14 @@ Mer generelt kan klienter benytte href for rel="self" for aktuelle
 objekter sammen med $ref parameter for å slette, endre eller opprette
 referanser mellom objekter.
 
+Når en oppdaterer en toveis relasjon mellom to instanser med
+relasjonsnavn på begge sider, så blir relasjonen også synlig på den
+andre siden av relasjonen.  For eksempel hvis en legger inn en lenke
+fra en Arkivdel A til forrige Arkivdel B ved hjelp av
+«forrigearkivdel»-relasjonsnøkkelen, så blir det automatisk en lenke
+til neste Arkivdel A i Arkivdel B synlig med
+«nestearkivdel»-relasjonsnøkkel.
+
 **For å opprette ny referanse**
 
 Her opprettes ny referanse mellom registrering og dokumentbeskrivelse.

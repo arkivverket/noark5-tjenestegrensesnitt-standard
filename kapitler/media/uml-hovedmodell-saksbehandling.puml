@@ -17,6 +17,7 @@ class Sakarkiv.Dokumentflyt #pink
 
 Arkivstruktur.Arkiv "+overarkiv 0..1" o-> "+underarkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Arkivdel "nestearkivdel 0..1" o--> "forrigearkivdel 0..1" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivdel "+arkivdel 1..*" o--> "+klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Arkivdel o--> "+sekundaerklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o--> "+klasse 0..*" Arkivstruktur.Klasse

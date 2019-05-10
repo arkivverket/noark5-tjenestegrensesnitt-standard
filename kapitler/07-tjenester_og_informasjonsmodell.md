@@ -310,6 +310,7 @@ Table: Relasjoner
 | ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination) | Arkivdel                                                 | Arkivenhet             |             |
 | **Aggregation** (Bi-Directional)           | arkivdel 0..* Arkivdel                                   | arkiv 1 Arkiv          |             |
+| **Aggregation** (Bi-Directional)           | forrigearkivdel 0..1 Arkivdel                           | nestearkivdel 0..1 Arkivdel | SystemID for forrige/neste Arkivdel avleveres som referanseForloeper(M202)/referanseArvtaker(M203). |
 | **Aggregation** (Bi-Directional)           | klassifikasjonssystem 0..1 Klassifikasjonssystem         | arkivdel 1..* Arkivdel |             |
 | **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | arkivdel 0..1 Arkivdel |             |
 | **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | arkivdel 0..1 Arkivdel |             |
@@ -329,6 +330,8 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klassifikasjonssystem/    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/                    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/forrigearkivdel/   |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nestearkivdel/     |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/                |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/arkivdelstatus/                |
 | REST\_REL | self                                                                     |

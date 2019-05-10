@@ -23,6 +23,7 @@ Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" <--o "+arkivde
 Arkivstruktur.Klassifikasjonssystem "+sekundaerklassifikasjonssystem 0..*" <--o Arkivstruktur.Arkivdel
 
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o--> "+klasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Arkivdel "nestearkivdel 0..1" o--> "forrigearkivdel 0..1" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe

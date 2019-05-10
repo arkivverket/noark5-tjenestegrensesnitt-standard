@@ -6,6 +6,7 @@ class Arkivstruktur.Registrering <Arkivenhet>
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>
 class Arkivstruktur.Dokumentobjekt
 Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Arkivdel "nestearkivdel 0..1" o--> "forrigearkivdel 0..1" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+registrering  0..*" Arkivstruktur.Registrering
 Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Dokumentbeskrivelse "+dokumentbeskrivelse 1" o--> "+dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
