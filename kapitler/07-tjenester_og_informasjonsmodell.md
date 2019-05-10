@@ -2901,7 +2901,7 @@ Table: Attributter
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
 | foedselsnummer         |             | \[0..1\]     |          | string             |
-| DNummer                |             | \[0..1\]     |          | string             |
+| dNummer                |             | \[0..1\]     |          | string             |
 | navn                   |             | \[1..1\]     |          | string             |
 | postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
 | bostedsadresse         |             | \[0..1\]     |          | EnkelAdresse       |
@@ -3165,7 +3165,7 @@ Table: Attributter
 | **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
 | foedselsnummer         |             | \[0..1\]     |          | string             |
-| DNummer                |             | \[0..1\]     |          | string             |
+| dNummer                |             | \[0..1\]     |          | string             |
 | navn                   |             | \[1..1\]     |          | string             |
 | postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
 | bostedsadresse         |             | \[0..1\]     |          | EnkelAdresse       |

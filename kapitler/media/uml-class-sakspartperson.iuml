@@ -1,7 +1,7 @@
 @startuml
 class Sakarkiv.SakspartPerson <Sakspart> {
   +foedselsnummer : string [0..1]
-  +DNummer : string [0..1]
+  +dNummer : string [0..1]
   +navn : string
   +postadresse : EnkelAdresse [0..1]
   +bostedsadresse : EnkelAdresse [0..1]
