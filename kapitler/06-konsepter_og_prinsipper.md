@@ -1237,6 +1237,9 @@ informasjonsmodellen skal valideres av kjernen. For eksempel hvis en
 mappe er avsluttet så skal det ikke være mulig å registrere flere
 registreringer på denne (jfr krav 5.4.7).
 
+Merk at tallfelt som overføres som JSON alltid skal overføres
+formatert som et JSON Number, dvs. uten anførselstegn.
+
 ## Håndtering av API-feil
 
 API-et returnerer to nivåer av tilbakemeldinger ved feil:
