@@ -3324,11 +3324,11 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                      |
 | --------- | -------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/ny-rettighet/           |
 | REST\_REL | self                                                           |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/tilgang/                |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/ny-tilgang/             |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangsrestriksjon/ |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangskategori/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/rettighet/              |
 
 Table: Attributter
 
