@@ -603,6 +603,14 @@ kan være offentlig tilgjengelig. Dokumentobjektet inneholder mer
 tekniske metadata enn de andre arkivenhetene, bl.a. sjekksummen til
 bytesekvensen som representerer dokumentet.
 
+I følge arkivstruktur.xsd for Noark 5 versjon 4 kan Registrering ha
+knyttet Dokumentobjekt direkte til seg.  Dette er en feil i denne
+versjonen av arkivstruktur.xsd som er korrigert i Noark 5 versjon 5.
+Direkte knytning mellom Registrering og Dokumentobjekt er derfor ikke
+tatt med i denne spesifikasjonen, for å sikre at tilgangskontrollen
+som Dokumentbeskrivelse bidrar med alltid ligger mellom Registrering
+og Dokumentobjekt.
+
 Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
