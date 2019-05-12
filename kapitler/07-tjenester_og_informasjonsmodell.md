@@ -1603,6 +1603,8 @@ Table: Attributter
 | Besvart på telefon        |             |              | TLF      |          |
 | Tatt til etterretning     |             |              | TE       |          |
 | Tatt til orientering      |             |              | TO       |          |
+| Besvart med notat         |             |              | BN       |          |
+| Saken ble avsluttet       |             |              | SA       |          |
 
 #### Dokumentmedium
 
@@ -1989,6 +1991,7 @@ Table: Attributter
 | Intern avsender         |             |              | IA       |          |
 | Intern mottaker         |             |              | IM       |          |
 | Intern kopimottaker     |             |              | IK       |          |
+| Medavsender             |             |              | IS       |          |
 
 #### Land
 
