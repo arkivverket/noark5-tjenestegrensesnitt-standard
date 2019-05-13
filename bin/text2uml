@@ -104,10 +104,10 @@ with open('kapitler/07-tjenester_og_informasjonsmodell.md') as f:
                 if 'attributes' not in classes[heading]:
                     classes[heading]['attributes'] = OrderedDict()
                 classes[heading]['attributes'][f[0]] = {
-                    'merknad' : f[1],
-                    'multip' : f[2].replace('\\','').replace('[1..1]', ''),
-                    'code' : f[3],
-                    'type' : f[4],
+                    'merknad' : f[1].strip(),
+                    'multip' : f[2].replace('\\','').replace('[1..1]', '').strip(),
+                    'code' : f[3].strip(),
+                    'type' : f[4].strip(),
                 }
         if 'Relasjoner' == tablename and re.match('\| .* \| ', line):
             f = re.split(' *\| *', line)[1:]
