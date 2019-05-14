@@ -732,9 +732,11 @@ Table: Resultatkoder ved oppdatering av objekt
 
 #### Utvid objekter til andre typer
 
-Noen objekter kan utvides fra sin basistype til en annen subtype. Dette
-gjelder for eksempel Mappe og Saksmappe. Dette annonseres ved hjelp av
-**utvid-til-xx** metodene.
+Hvis en ikke ønsker å opprette en instans med riktig entitet direkte
+ved å bruke **ny-xx**-metodene, men ønsker å utvide en entitet fra en
+basisentitet til en underentitet uten å endre systemID, så kan en
+bruke **utvid-til-xx*-metodene.  Dette gjelder for eksempel Mappe og
+Saksmappe.
 
 Ved uthenting av en mappe vil du få følgende relasjon tilbake:
 
@@ -796,7 +798,7 @@ Resultatkoder ved utvidelse av objekt
 | ---------- | --------------------------------------------- |
 | 200        | OK					     |
 | 400	     | BadRequest - ugyldig forespørsel		     |
- 
+
 Resultatkode 400 leveres dersom id til eksterende mappe er ugyldig eller
 det mangler påkrevde felter.
 
