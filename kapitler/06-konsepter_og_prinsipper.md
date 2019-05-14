@@ -977,21 +977,100 @@ GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
 GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
 
 Gir Content-type=filens mime type feks “application/pdf” og filen
-streames til klient
+streames til klient.
+
+
+**Overføring av filer**
+
+Ved filoverføring opprettes dokumentobjektet først. Ved filopplasting sjekker tjener at Content-Type og Content-Length i filen er identiske med det som er registrert i dataobjektet. Ved feilsituasjoner, f.eks. hvis content-type eller content-length stemmer ikke med det som er registrert returneres 400 Bad request kode.
+
+Hvis den opplastede filen har et format
+tjeneren ikke kjenner igjen, så settes format til 'UNKNOWN'. Når
+filopplasting er fullført setter tjeneren de feltene i dokumentobjekt
+som ikke var satt ved oppretting av dokumentobjekt-entiteten, det vil
+si utleder «format», «mimeType», «filnavn», «sjekksum», og
+«filstoerrelse» basert på filens innhold samt, samt gir
+«sjekksumAlgoritme» aktuell verdi.
+
+For å overføre en ny fil brukes POST til href til
+rel="http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/".
+
+Påkrevde headere:
+* Content-Type - filens MIME-type
+* Content-Length - størrelse på fil i antall bytes
+
+Det er ikke mulig å overskrive filen tilhørende en eksisterende
+dokumentobjekt-entitet med en POST-forespørsel.  Hvis en
+fil må erstattes etter fullført opplasting så skal
+dokumentobjekt-entieten slettes og en ny POST utføres mot href til
+rel=http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil/.
+
+Når en filopplasting er vellykket, så returneres tilhørende
+dokumentobjekt som respons på avsluttende 200 OK / 201 Created.
+
+Dersom det skjer en feil under opplasting eller lagringsprossesen skal
+tjeneren returnere 422 Unprocessable Entity som svar.  Det er da
+klientens ansvar å slette relaterte dokumentbeskrivelse- og
+dokumentobjekt-entiteter ved hjelp av DELETE på entitetenes
+self-relasjon.
+
+
+Table: Resultatkoder for opplasting av filer
+
+| Statuskode | Beskrivelse                                   |
+| ---------- | --------------------------------------------- |
+| 200        | OK                                            |
+| 201        | Created - opprettet                           |
+| 204        | NoContent – slettet ok                        |
+| 400        | BadRequest - ugyldig forespørsel              |
+| 403        | Forbidden - ingen tilgang                     |
+| 404        | NotFound - ikke funnet                        |
+| 409        | Conflict - objektet kan være endret av andre  |
+| 415        | UnsupportedMediaType – filtypen støttes ikke  |
+| 422        | Feil under opplasting/lagring av fil          |
+| 500        | InternalServerError – generell feil på server |
+| 501        | NotImplemented - ikke implementert            |
+| 503        | ServiceUnavailable – tjeneste utilgjengelig   |
+
 
 **Overføre små filer**
 
-For å overføre en ny fil brukes POST til href til
-rel="http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil/" med headere for
-content-type og content-length.
+Eksempel på oppretting av dokumentobjekt
+
+POST http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/123456789/dokumentobjekt
+
+```
+{
+    "versjonsnummer": "1",
+    "variantformat": {
+        "kode": "A",
+        "beskrivelse": "Arkivformat"
+    },
+    "format": {
+        "kode": "RA-JPEG",
+        "beskrivelse": "JPEG (ISO 10918-1:1994)"
+    },
+    "filnavn": "portrait.jpeg",
+    "filstoerrelse": 2000000,
+    "mimeType": "image/jpeg"
+}
+```
+
+
+Eksempel på filoverføring
 
 ```
 POST http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
-Content-Type: application/pdf
-Content-Length: 111111
+Content-Type: image/jpeg
+Content-Length: 2000000
 
 Pdf data
 ```
+
+Eksempel på respons av vellykket filoverføring
+
+201 Created - Oprettet
+dokumentobjekt...
 
 **Overføre store filer**
 
@@ -1063,22 +1142,6 @@ Content-Range: bytes 524287-2000000/2000000
 
 Respons: 201 Created
 ```
-
-Table: Resultatkoder for opplasting av filer
-
-| Statuskode | Beskrivelse                                   |
-| ---------- | --------------------------------------------- |
-| 200        | OK                                            |
-| 201        | Created - opprettet                           |
-| 204        | NoContent – slettet ok                        |
-| 400        | BadRequest - ugyldig forespørsel              |
-| 403        | Forbidden - ingen tilgang                     |
-| 404        | NotFound - ikke funnet                        |
-| 409        | Conflict - objektet kan være endret av andre  |
-| 415        | UnsupportedMediaType – filtypen støttes ikke  |
-| 500        | InternalServerError – generell feil på server |
-| 501        | NotImplemented - ikke implementert            |
-| 503        | ServiceUnavailable – tjeneste utilgjengelig   |
 
 ## Validering av data
 
