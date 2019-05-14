@@ -17,3 +17,6 @@ https://tools.ietf.org/html/draft-kelly-json-hal-08
 
 Sjekksumalgoritmen SHA-256 er definert i IETF RFC 4634 -
 https://tools.ietf.org/html/rfc4634
+
+Bruken av PATCH for å oppdatere JSON er beskrevet i [IETF RFC
+7396 - JSON Merge Patch](https://tools.ietf.org/html/rfc7396).

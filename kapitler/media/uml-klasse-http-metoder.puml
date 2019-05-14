@@ -7,6 +7,7 @@ class REST-tjenester << interface >> {
   +GET (Request) : Response
   +PUT (Request) : Reponse
   +POST (Request) : Response
+  +PATCH (Request) : Response
   +DELETE (Request) : Response
 }
 

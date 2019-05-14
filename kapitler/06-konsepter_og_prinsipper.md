@@ -593,11 +593,12 @@ hentes fra slik som mappetype og dokumentmedium.
 Alle ressurser kan med sin relasjonslenke rel="self" og ressurslenke
 (href) benytte denne til oppdatering.
 
-For oppdatering sender klienten en PUT forespørsel med alle data for en
-lovlig objektstruktur. Alle egenskaper må være med, med unntak av
-underobjekter som har en mange relasjon (0..\* eller 1..\*) i
-oppdatering av et objekt. Underobjekter må oppdateres separat med sine
-resurslenker.
+For oppdatering sender klienten enten en PUT forespørsel med alle data
+for en lovlig objektstruktur, eller en PATCH-forespørsel med de
+enkeltattributtene som skal endres. For PUT må alle egenskaper være
+med, med unntak av underobjekter som har en mange relasjon (0..\*
+eller 1..\*) i oppdatering av et objekt. Underobjekter må oppdateres
+separat med sine resurslenker.
 
 For å hindre at data blir oppdatert samtidig av forskjellige brukere
 og overskrevet med gamle data så må kjernen sjekke innkomne objekt og
@@ -691,6 +692,95 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
 ```
 
 Figur 3 respons fra oppdatering av mappe med graderingsinformasjon (eksempel avkortet ved links liste)
+
+Endring av instanser med PATCH gjøres slik det er beskrevet i IETF RFC
+7396 (JSON Merge Patch).  Kun de attributtene som skal endres i en
+instans sendes over, med Content-Type satt til
+«application/merge-patch+json».  Dette sikrer at en API-klient kan
+gjøre endringer i instanser uten å måtte forstå hele JSON-strukturen,
+og uten å risikere å endre på andre felter enn ønsket.
+
+API-klienter kan også endre på relasjoner i \_links ved hjelp av
+PATCH.
+
+Her er et eksempel som endrer Mappe-instansen som ble returnert for
+PUT gjengitt over:
+
+PATCH til http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
+
+Content-Type: application/merge-patch+json
+
+```Python
+{
+    "tittel", "Testvegen 33, ny enebolig",
+    "gradering": {
+        "graderingskode": {
+            "kode": "F"
+        }
+    }
+}
+```
+
+**Resultat**
+
+200 OK
+
+Location →
+
+http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
+
+```Python
+{
+    "mappeID": "123456/2016",
+    "mappetype": {
+        "kode": "BYGG",
+        "beskrivelse": "Byggesak"
+    },
+    "tittel", "Testvegen 33, ny enebolig",
+    "dokumentmedium": {
+        "kode": "E",
+        "beskrivelse": "Elektronisk arkiv"
+    },
+    "gradering": {
+        "graderingskode": {
+            "kode": "F"
+        },
+        "graderingsdato": "2016-05-03T16:05:48.4966742+02:00"
+    },
+    "systemID": "515c45b5-e903-4320-a085-2a98813878ba",
+    "oppdatertDato": "2016-05-03T16:10:01.9386215+02:00",
+    "opprettetDato": "2016-04-03T15:45:28.4985538+02:00",
+    "opprettetAv": "pålogget bruker",
+    "oppdatertAv": "pålogget bruker",
+    "referanseOppdatertAv": "8f58d80c-9b5c-4ddf-af5a-764f08a7661e",
+    "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
+    "_links": [
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
+            "rel": "self",
+        },
+        {
+            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/",
+        },
+	...
+    ]
+}
+```
+
+Slik kan en flytter en dokumentbeskrivelse fra en registrering til en annen:
+
+
+PATCH til http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/1fa94a89-3550-470b-a220-92dd4d709044
+
+```Python
+{
+  "_links": {
+   "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/",
+   "href": "http://localhost:49708/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/"
+  }
+}
+```
 
 Table: Resultatkoder ved oppdatering av objekt
 
