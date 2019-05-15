@@ -360,8 +360,9 @@ Table: Resultatkoder ved navigering/søk
 
 #### Opprette objekter (Create)
 
-For å opprette objekter må først ressurslenke finnes basert på
-relasjonsnøkkel.
+Nye objekter opprettes fra andre objekter vha. ressurslenker. Slike ressurslenker, f.eks. .../ny-mappe, vises for de underobjekttypene som er aktuelle iht. datamodellen og tilgjengelige med den aktuelle brukerens rettigheter. GET-forespørsler kan benyttes for å få returnert en gyldig og delvis utfylt objektstruktur. POST-forespørsel oppretter nytt objekt. Opprettet objekt vil tilhøre objektet det opprettes fra.
+
+For mappe og klasse som kan ha undermapper og underklasser så vil det være ressurslenkene .../ny-mappe og .../ny-klasse som benyttes for å opprette undermapper og underklasser. Disse blir så tilgjengelige for uthenting med GET-forspørsel til .../undermappe og .../underklasse.
 
 For eksempel kan en opprette mapper på arkivdel, og da vil \_links under
 en arkivdel inneholde relasjonsnøkkelen
