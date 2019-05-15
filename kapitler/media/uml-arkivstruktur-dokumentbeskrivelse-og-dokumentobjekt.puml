@@ -19,7 +19,7 @@ class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
   +dokumentnummer : integer
   +tilknyttetDato : date
   +tilknyttetAv : string [0..1]
-  +referanseTilknyttetAv : systemID [0..1]
+  +referanseTilknyttetAv : SystemID [0..1]
   +kassasjon : Kassasjon [0..1]
   +utfoertKassasjon : UtfoertKassasjon [0..1]
   +sletting : Sletting [0..1]

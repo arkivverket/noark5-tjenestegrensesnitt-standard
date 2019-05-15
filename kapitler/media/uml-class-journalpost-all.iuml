@@ -9,7 +9,7 @@ class Sakarkiv.Journalpost <Basisregistrering> {
   +dokumentetsDato : date [0..1]
   +mottattDato : date [0..1]
   +sendtDato : date [0..1]
-  +forfallsdato : dato [0..1]
+  +forfallsdato : date [0..1]
   +offentlighetsvurdertDato : date [0..1]
   +antallVedlegg : integer [0..1]
   +utlantDato : date [0..1]
