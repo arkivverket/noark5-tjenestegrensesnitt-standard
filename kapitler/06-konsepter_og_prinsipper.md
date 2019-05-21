@@ -401,7 +401,7 @@ JSON-strukturen se slik ut:
     { "rel": "self",
       "href": "http://localhost:49708/api/arkivstruktur/arkiv/"
     },
-    { "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/arkiv/",
+    { "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/",
       "href": "http://localhost:49708/api/arkivstruktur/arkiv/"
     }
   ]
@@ -1217,10 +1217,10 @@ Definisjonen over alle virksomhetsspesifikke metadatafelt som er kjent
 for API-tjenesten skal kunne hentes ut fra metadatadelen av API-et.
 API-et annonserer at virksomhetsspesifikke metadata støttes ved at det
 vil finnes en HREF/REL par under HREFen som tilsvarer RELen til
-http://rel.kxml.no/noark5/v4/api/metadata/.
+https://rel.arkivverket.no/noark5/v4/api/metadata/.
 
 Ved GET mot href for relasjonen
-http://rel.kxml.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/
+https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/
 så kan en hente ut listen over virksomhetsspesifikke metadatafelt som
 er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
 
@@ -1242,7 +1242,7 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
                     "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
                 },
                 {
-                    "rel": "http://rel.kxml.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
+                    "rel": "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
                     "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
                 }
             ]
@@ -1259,7 +1259,7 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
                     "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
                 },
                 {
-                    "rel": "http://rel.kxml.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
+                    "rel": "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
                     "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
                 }
             ]
@@ -1276,7 +1276,7 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
                     "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
                 },
                 {
-                    "rel": "http://rel.kxml.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
+                    "rel": "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
                     "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
                 }
             ]
