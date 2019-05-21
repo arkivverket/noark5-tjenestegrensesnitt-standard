@@ -387,6 +387,27 @@ I dette eksemplet er det sideinndeling med 2 elementer per side, kun
 to av tre søkeresultater returneres i første omgang, og en
 «next»-lenke til resten av sideresultatet.
 
+Når en forespurt listeressurs fra databasen er tom returneres medlem
+«count» satt til 0, intet medlem «results», samt relevante
+relasjonsnøkler i «_links» inkludert en «self»-relasjon tilbake til
+forespørselen som produserte den tomme listen.  Hvis en søker etter
+listen over arkiv og det ikke finnes noen arkiv, så kan
+JSON-strukturen se slik ut:
+
+```Python
+{
+  "count": 0,
+  "_links" : [
+    { "rel": "self",
+      "href": "http://localhost:49708/api/arkivstruktur/arkiv/"
+    },
+    { "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/arkiv/",
+      "href": "http://localhost:49708/api/arkivstruktur/arkiv/"
+    }
+  ]
+}
+```
+
 Table: Resultatkoder ved navigering/søk
 
 | Statuskode | Beskrivelse                                   |
