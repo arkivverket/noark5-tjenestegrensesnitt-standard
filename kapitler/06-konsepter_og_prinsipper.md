@@ -56,19 +56,19 @@ Content-Type: application/vnd.noark5-v4+json
     "_links": [
         {
             "href": "http://localhost:49708/api/arkivstruktur",
-            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/"
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/"
         },
         {
             "href": "http://localhost:49708/api/sakarkiv",
-            "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv/"
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/"
         }
     ]
 }
 ```
 
 Eksempelet viser at denne arkivkjernen støtter arkivstruktur
-(http://rel.kxml.no/noark5/v4/api/arkivstruktur/) og sakarkiv
-(http://rel.kxml.no/noark5/v4/api/sakarkiv/).
+(https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/) og sakarkiv
+(https://rel.arkivverket.no/noark5/v4/api/sakarkiv/).
 Ved å følge **href** til disse relasjonsnøkler vil tilgjengelige ressurser
 innen disse områder annonseres på samme måte.
 
@@ -101,7 +101,7 @@ Content-Type: application/vnd.noark5-v4+xml
     xmlns="http://www.kxml.no/rest/1.0">
     <Links>
         <link>
-            <rel>http://rel.kxml.no/noark5/v4/api/arkivstruktur/</rel>
+            <rel>https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/</rel>
             <href>http://localhost:49708/api/arkivstruktur</href>
             <type sxi:nil="true" />
             <deprecation xsi:nil="true" />
@@ -109,7 +109,7 @@ Content-Type: application/vnd.noark5-v4+xml
             <title xsi:nil="true" />
         </link>
         <link>
-            <rel>http://rel.kxml.no/noark5/v4/api/sakarkiv/</rel>
+            <rel>https://rel.arkivverket.no/noark5/v4/api/sakarkiv/</rel>
             <href>http://localhost:49708/api/sakarkiv</href>
             <type sxi:nil="true" />
             <deprecation xsi:nil="true" />
@@ -130,8 +130,8 @@ relevant for denne relasjonsnøkkelen.
 
 | Relasjonsnøkkel (rel)                          | Beskrivelse                                            |
 | ---------------------------------------------- | ------------------------------------------------------ |
-| http://rel.kxml.no/noark5/v4/api/arkivstruktur/ | Arkivkjerne støtter konformitetsnivå 1 arkivstruktur   |
-| http://rel.kxml.no/noark5/v4/api/sakarkiv/      | Arkivkjerne støtter konformitetsnivå for sakarkiv (2a) |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ | Arkivkjerne støtter konformitetsnivå 1 arkivstruktur   |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/      | Arkivkjerne støtter konformitetsnivå for sakarkiv (2a) |
 
 Relasjonsnøkler under de forskjellige konformitetsnivå listes ut i
 kapittel 7 sammen med beskrivelse av klasser.
@@ -164,12 +164,12 @@ i _links er alfabetisk sortert på «rel»-feltet i henhold til ASCII-verdi.
     "_links": [
         {
             "href": "http://localhost:49708/api/arkivstruktur/arkiv{?$filter&$orderby&$top&$skip&$search}",
-            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/arkiv/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/",
             "templated": true
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/ny-arkivskaper",
-            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/",
         },
 ```
 
@@ -405,7 +405,7 @@ relasjonsnøkkel.
 
 For eksempel kan en opprette mapper på arkivdel, og da vil \_links under
 en arkivdel inneholde relasjonsnøkkelen
-rel="http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/"
+rel="https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/"
 om bruker har lov til å opprette mapper på denne arkivdelen. Den
 aktuelle ressurslenke kan være
 http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe .
@@ -435,12 +435,12 @@ Ved registrering av objektet så skal kjernen fylle ut systemID, opprettetAv og 
     "_links": [
         {
             "href": "http://localhost:49708/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
-            "rel": "http://rel.kxml.no/noark5/v4/api/administrasjon/dokumentmedium/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium/",
             "templated": true
         },
         {
             "href": "http://localhost:49708/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
-            "rel": "http://rel.kxml.no/noark5/v4/api/administrasjon/mappetype/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/mappetype/",
             "templated": true
         }
     ]
@@ -501,15 +501,15 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
-            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/mappe/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/",
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
-            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/avslutt-mappe/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/avslutt-mappe/",
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
-            "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
         },
 ```
 
@@ -535,7 +535,7 @@ mappe kan registreres sammen med registreringen av mappe.
 #### Preutfylling av objekt
 
 Ved å bruke GET på for eksempel ny-mappe
-(http://rel.kxml.no/noark5/v4/api/arkivstruktur/ny-mappe/)
+(https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/)
 så kan arkivkjerne preutfylle og foreslå vanlige data for et objekt
 basert på pålogget bruker samt annonsere hvor diverse lovlige koder kan
 hentes fra slik som mappetype og dokumentmedium.
@@ -554,12 +554,12 @@ hentes fra slik som mappetype og dokumentmedium.
     "_links": [
         {
             "href": "http://localhost:49708/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
-            "rel": "http://rel.kxml.no/noark5/v4/api/administrasjon/dokumentmedium/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium/",
             "templated": true
         },
         {
             "href": "http://localhost:49708/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
-            "rel": "http://rel.kxml.no/noark5/v4/api/administrasjon/mappetype/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/mappetype/",
             "templated": true
         }
     ]
@@ -656,15 +656,15 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
-            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/mappe/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/",
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
-            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/avslutt-mappe/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/avslutt-mappe/",
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
-            "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
         },
 ```
 
@@ -692,7 +692,7 @@ Ved uthenting av en mappe vil du få følgende relasjon tilbake:
 
 ```Python
 {
-    "rel": "http://rel.kxml.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
+    "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
     "href": "http://n5test.kxml.no/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe",
 }
 ```
@@ -940,7 +940,7 @@ i alle REST-forespørsler, både for JSON og XML.
 
 Ved navigering til dokumentobjekt så kan selve filen også åpnes ved å
 følge referanseDokumentfil eller href til relasjonsnøkkel
-http://rel.kxml.no/noark5/v4/arkivstruktur/fil/.
+http://rel.arkivverket.no/noark5/v4/arkivstruktur/fil/.
 
 GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785
 
@@ -964,11 +964,11 @@ GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
-            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/dokumentobjekt/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/",
         },
         {
             "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
-            "rel": "http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil/",
+            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/",
         }
     ]
 }
@@ -982,7 +982,7 @@ streames til klient
 **Overføre små filer**
 
 For å overføre en ny fil brukes POST til href til
-rel="http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil/" med headere for
+rel="http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/" med headere for
 content-type og content-length.
 
 ```
@@ -1003,7 +1003,7 @@ https://developers.google.com/drive/v3/web/resumable-upload .
 For å starte en opplastingssesjon:
 
 1.  Send en POST til href til
-    rel="http://rel.kxml.no/noark5/v4/api/arkivstruktur/fil/"
+    rel="https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/"
 
     Headeren Content-Length settes til 0
     
