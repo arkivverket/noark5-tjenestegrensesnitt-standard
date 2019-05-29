@@ -8,7 +8,7 @@ skinparam classAttributeIconSize 0
 Arkivstruktur.Basisregistrering "+registrering 0..1" <--> "+kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 Arkivstruktur.Kryssreferanse "+kryssreferanse 0..*" <--> "+mappe 0..1" Arkivstruktur.Mappe
 Arkivstruktur.Kryssreferanse "+kryssreferanse 0..*" <--> "+klasse 0..1" Arkivstruktur.Klasse
-Arkivstruktur.Klasse o-> "+underklasse o..*" Arkivstruktur.Klasse
-Arkivstruktur.Mappe o-> "+undermappe o..*" Arkivstruktur.Mappe
+Arkivstruktur.Klasse "+overklasse 0..1" o-> "+underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Mappe "+overmappe 0..1" o-> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 @enduml

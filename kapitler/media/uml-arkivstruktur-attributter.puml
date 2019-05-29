@@ -17,7 +17,7 @@ skinparam nodesep 180
 !include kapitler/media/uml-datatype-elektronisksignatur.iuml
 
 Arkivstruktur.Arkiv "+arkiv 0..*" o--> "+arkivskaper 1..*" Arkivstruktur.Arkivskaper
-Arkivstruktur.Arkiv o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv "+overarkiv 0..1" o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" <--o "+arkivdel 1..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+sekundaerklassifikasjonssystem 0..*" <--o Arkivstruktur.Arkivdel
@@ -27,8 +27,8 @@ Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
-Arkivstruktur.Klasse --> "+underklasse 0..*" Arkivstruktur.Klasse
-Arkivstruktur.Mappe --> "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Klasse "+overklasse 0..1" o--> "+underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Merknad "+merknad 0..*" <-* Arkivstruktur.Mappe
 Arkivstruktur.Merknad "+merknad 0..*" <--* Arkivstruktur.Dokumentbeskrivelse

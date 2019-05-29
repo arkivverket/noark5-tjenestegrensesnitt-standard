@@ -18,7 +18,7 @@ class Sakarkiv.Saksmappe <Mappe>
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivskaper
 Arkivstruktur.Arkivenhet <|--  Arkivstruktur.Arkiv
 Arkivstruktur.Arkivskaper --o "+arkiv 0..*" Arkivstruktur.Arkiv
-Arkivstruktur.Arkiv "+underarkiv 0..*" --o Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv "+underarkiv 0..*" <--o "+overarkiv 0..1" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv "+arkiv 1" --o "+arkivdel 0..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
@@ -26,11 +26,11 @@ Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" --o "+arkivdel
 Arkivstruktur.Klassifikasjonssystem "\n+sekundaerklassifikasjonssystem 0..*" --o Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o-- "+klasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klasse
-Arkivstruktur.Klasse --o "+underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klasse "+overklasse 0..1" o--> "+underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
 Arkivstruktur.Arkivdel "\n+arkivdel 0..1" o-- "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Klasse "+klasse 0..1" o-- "+mappe 0..*" Arkivstruktur.Mappe
-Arkivstruktur.Mappe o-- "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o-- "+registrering 0..*" .Arkivstruktur.Registrering

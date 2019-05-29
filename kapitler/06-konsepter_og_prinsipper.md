@@ -854,6 +854,64 @@ Resultatkoder ved utvidelse av objekt
 Resultatkode 400 leveres dersom id til eksterende mappe er ugyldig eller
 det mangler påkrevde felter.
 
+#### Rekursive entitetshierarkier
+
+Noen entiteter kan ha samme type entitet under seg, og slik danne et
+rekursivt hierarki av instanser.  Det gjelder Arkiv, Klasse og Mappe,
+og entiter som arver fra disse (som Saksmappe og Moetemappe).
+
+Da det ikke er i tråd med HATEOAS-prinsippene å la samme
+relasjonsnøkkel peke til flere ulike href-er, så må dette håndteres
+litt annerledes enn relasjoner mellom entiteter av ulik type.  Listen
+over under-instanser til en gitt instans kan hentes ut ved å følge
+href for relasjonsnøkkelen
+https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underxx/, der
+xx er navnet på entitet.  Eksempler på slike relasjonsnøkler
+https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underklasse/ og
+https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/undermappe/.
+
+Av samme grunn er det ikke mulig å la foreldrerelasjonen gjenbruke
+entitetens relasjonsnøkkel.  En kan der finne foreldreinstans ved å
+følge href for relasjonsnøkkelen
+https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overxx/.
+Eksempler på slike relasjonsnøkler
+https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overklasse/
+og
+https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overmappe/.
+
+Kun relasjoner som eksisterer skal vises i relasjonslisten.
+JSON-listen over relasjoner for en klasseinstans midt i et slikt
+hierarki kan for eksempel se slik ut:
+
+```Python
+"_links": [
+  {
+    "rel": "self",
+    "href": "http://localhost:49708/api/arkivstruktur/klasse/7b3989b0-53d7-11e9-bd4e-17d6c4d53856/"
+  },
+  {
+    "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/",
+    "href": "http://localhost:49708/api/arkivstruktur/klasse/7b3989b0-53d7-11e9-bd4e-17d6c4d53856/"
+  },
+  {
+    "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overklasse/",
+    "href": "http://localhost:49708/api/arkivstruktur/klasse/6787ba68-53d7-11e9-a583-8f084aaf5d19/"
+  },
+  {
+    "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underklasse/",
+    "href": "http://localhost:49708/api/arkivstruktur/klasse/?$filter=overklasse eq 7b3989b0-53d7-11e9-bd4e-17d6c4d53856"
+  },
+  ...
+}
+```
+
+Merk at konkrete href-verdier ikke er standardisert, det er valgfritt
+hvordan en implementerer oppslag i foreldre- og undermapper.
+
+Overxx-relasjonen er kun tilstede når instansen er midt i og nederst i
+hierarkiet, og underxx-relasjonen er kun til stede når instansen er
+øverst og midt i hierarkiet.
+
 #### Oppdatere referanser mellom objekter
 
 Relasjoner kan angis ved tildelte attributter eller via plassering på

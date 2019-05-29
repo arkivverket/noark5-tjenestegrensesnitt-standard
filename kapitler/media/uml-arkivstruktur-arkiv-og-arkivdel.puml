@@ -79,12 +79,12 @@ class Arkivstruktur.Klassifikasjonssystem <Arkivenhet>
 !include kapitler/media/uml-codelist-graderingskode.iuml
 
 Arkivstruktur.Arkivskaper "+arkivskaper 1..*" <-o "+arkiv 0..*" Arkivstruktur.Arkiv
-Arkivstruktur.Arkiv o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv "+overarkiv 0..1" o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" <-o "+arkivdel 1..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+sekundaerklassifikasjonssystem 0..*" <-o Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o-> "+mappe 0..*" Arkivstruktur.Mappe
-Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
 
 Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.Sletting
 Arkivstruktur.Arkivdel <-[hidden]- Arkivstruktur.Kassasjon

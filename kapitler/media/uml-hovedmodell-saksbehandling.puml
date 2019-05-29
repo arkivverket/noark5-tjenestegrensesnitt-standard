@@ -15,12 +15,12 @@ class Sakarkiv.Journalpost #pink
 class Sakarkiv.Avskrivning #pink
 class Sakarkiv.Dokumentflyt #pink
 
-Arkivstruktur.Arkiv o-> "+underarkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv "+overarkiv 0..1" o-> "+underarkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivdel "+arkivdel 1..*" o--> "+klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Arkivdel o--> "+sekundaerklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o--> "+klasse 0..*" Arkivstruktur.Klasse
-Arkivstruktur.Klasse o--> "+underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klasse "+overklasse 0..1" o--> "+underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe

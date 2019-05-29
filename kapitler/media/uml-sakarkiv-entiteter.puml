@@ -13,7 +13,7 @@ Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
 Arkivstruktur.Mappe <|- Sakarkiv.Saksmappe
 
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
-Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
 Sakarkiv.Saksmappe *-> "+sakspart 0..*" Sakarkiv.Sakspart 
 Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*\n" Sakarkiv.Presedens
 Sakarkiv.Journalpost "+journalpost 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens

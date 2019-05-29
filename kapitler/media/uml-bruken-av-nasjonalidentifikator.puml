@@ -15,7 +15,7 @@ class Arkivstruktur.Registrering <Arkivenhet>
 !include kapitler/media/uml-class-posisjon.iuml
 !include kapitler/media/uml-codelist-koordinatsystem.iuml
 
-Arkivstruktur.Mappe --> "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Registrering "+registrering 0..*" <-o "+mappe 0..1" Arkivstruktur.Mappe
 Arkivstruktur.Mappe *--> "+nasjonalidentifikator 0..*\n\n" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
 Arkivstruktur.Registrering *--> "+nasjonalidentifikator 0..*\n" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator

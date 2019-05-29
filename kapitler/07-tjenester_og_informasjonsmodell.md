@@ -177,7 +177,7 @@ Table: Relasjoner
 
 | **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
 | ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
-| **Aggregation** (Destination → Source)    | underarkiv 0..* Arkiv        | Arkiv            |             |
+| **Aggregation** (Destination → Source)    | underarkiv 0..* Arkiv        | overarkiv 0..1 Arkiv  |             |
 | **Generalization** (Source → Destination) | Arkiv                        | Arkivenhet       |             |
 | **Aggregation** (Bi-Directional)          | arkivskaper 1..* Arkivskaper | arkiv 0..* Arkiv |             |
 | **Aggregation** (Bi-Directional)          | arkivdel 0..* Arkivdel       | arkiv 1 Arkiv    |             |
@@ -193,6 +193,7 @@ Table: Relasjonsnøkler
 | REST\_REL | self                                                           |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/ |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underarkiv/     |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overarkiv/      |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/arkivstatus/         |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv/       |
@@ -864,7 +865,7 @@ Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Aggregation** (Destination → Source)     | underklasse 0..* Klasse                                  | Klasse                 |             |
+| **Aggregation** (Destination → Source)     | underklasse 0..* Klasse                                | overklasse 0..1 Klasse |             |
 | **Generalization** (Source → Destination)  | Klasse                                                   | Arkivenhet             |             |
 | **Aggregation** (Bi-Directional)           | klasse 0..* Klasse                                       | klassifikasjonssystem 0..1 Klassifikasjonssystem |  |
 | **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | klasse 0..1 Klasse     |             |
@@ -880,6 +881,7 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/        |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klasse/                |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underklasse/              |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overlasse/                |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klassifikasjonssystem/    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                   |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/           |
@@ -1127,7 +1129,7 @@ Table: Relasjoner
 | **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | arkivdel 0..1 Arkivdel |             |
 | **Aggregation** (Bi-Directional)           | mappe 0..* Mappe                                         | klasse 0..1 Klasse     |             |
 | **Generalization** (Source → Destination)  | Mappe                                                    | Arkivenhet             |             |
-| **Aggregation** (Destination → Source)     | undermappe 0..* Mappe                                    | Mappe                  |             |
+| **Aggregation** (Destination → Source)     | undermappe 0..* Mappe                                    | overmappe 0..1 Mappe   |             |
 | **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | mappe 0..1 Mappe       |             |
 | **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Mappe                  |             |
 | **Association** (Source → Destination)     | Mappe                                                    | merknad 0..* Merknad   |             |
@@ -1150,6 +1152,7 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/                  |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/                 |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overmappe/                |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/undermappe/               |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-basisregistrering/     |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-journalpost/           |

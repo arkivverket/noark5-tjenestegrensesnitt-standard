@@ -7,7 +7,7 @@ skinparam classAttributeIconSize 0
 
 class Arkivstruktur.Klasse <Arkivenhet>
 Arkivstruktur.Klasse "\n\n+sekundaerklassifikasjon 0..*"  <--o Sakarkiv.Saksmappe
-Arkivstruktur.Klasse o--> "\n+underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klasse "+overklasse 0..1" o--> "\n+underklasse 0..*" Arkivstruktur.Klasse
 Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
 Sakarkiv.Saksmappe *--> "+sakspart 0..*" Sakarkiv.Sakspart
 
