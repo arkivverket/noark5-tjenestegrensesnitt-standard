@@ -2653,11 +2653,11 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                  |
 | --------- | ---------------------------------------------------------- |
-| REST\_REL | http://rel.arkivverket.no/noark5/v4/api/sakarkiv/enkeladresse/    |
-| REST\_REL | http://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-enkeladresse/ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/enkeladresse/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-enkeladresse/ |
 | REST\_REL | self                                                       |
-| REST\_REL | http://rel.arkivverket.no/noark5/v4/api/metadata/land/            |
-| REST\_REL | http://rel.arkivverket.no/noark5/v4/api/metadata/postnummer/      |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/land/            |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/postnummer/      |
 
 Table: Attributter
 
@@ -2783,8 +2783,8 @@ Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                        |
 | --------- | ---------------------------------------------------------------- |
-| REST\_REL | http://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-kontaktinformasjon/ |
-| REST\_REL | http://rel.arkivverket.no/noark5/v4/api/sakarkiv/kontaktinformasjon/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-kontaktinformasjon/ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/kontaktinformasjon/    |
 | REST\_REL | self                                                             |
 
 Table: Attributter

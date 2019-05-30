@@ -962,7 +962,7 @@ i alle REST-forespørsler, både for JSON og XML.
 
 Ved navigering til dokumentobjekt så kan selve filen også åpnes ved å
 følge referanseDokumentfil eller href til relasjonsnøkkel
-http://rel.arkivverket.no/noark5/v4/arkivstruktur/fil/.
+https://rel.arkivverket.no/noark5/v4/arkivstruktur/fil/.
 
 GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785
 
@@ -1004,7 +1004,7 @@ streames til klient
 **Overføre små filer**
 
 For å overføre en ny fil brukes POST til href til
-rel="http://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/" med headere for
+rel="https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/" med headere for
 content-type og content-length.
 
 ```
