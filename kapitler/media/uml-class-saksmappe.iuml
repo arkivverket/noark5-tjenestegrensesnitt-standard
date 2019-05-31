@@ -1,7 +1,7 @@
 @startuml
 class Sakarkiv.Saksmappe <Mappe> {
-  +saksaar : integer [0..1]
-  +sakssekvensnummer : integer [0..1]
+  +saksaar : integer
+  +sakssekvensnummer : integer
   +saksdato : date
   +administrativEnhet : string [0..1]
   +referanseAdministrativEnhet : SystemID [0..1]

@@ -1,7 +1,7 @@
 @startuml
-class Sakarkiv.Sakspart {
+class Sakarkiv.Part {
   +systemID : SystemID [0..1]
-  +sakspartRolle : SakspartRolle
+  +partRolle : PartRolle
   +virksomhetsspesifikkeMetadata : any [0..1]
 }
 @enduml

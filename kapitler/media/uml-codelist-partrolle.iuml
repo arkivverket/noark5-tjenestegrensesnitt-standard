@@ -1,5 +1,5 @@
 @startuml
-class Kodelister.SakspartRolle <<codelist>> {
+class Kodelister.PartRolle <<codelist>> {
   +Klient = KLI
   +Pårørende = PÅ
   +Formynder = FORM

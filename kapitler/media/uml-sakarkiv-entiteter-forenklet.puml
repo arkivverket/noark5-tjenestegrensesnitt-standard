@@ -5,11 +5,10 @@ skinparam nodesep 180
 class Arkivstruktur.Klasse <Arkivenhet>
 class Arkivstruktur.Mappe <Arkivenhet>
 class Arkivstruktur.Registrering <Arkivenhet>
-class Arkivstruktur.Basisregistrering <Registrering>
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>
 class Sakarkiv.Saksmappe <Mappe> #pink
 class Sakarkiv.Presedens #pink
-class Sakarkiv.Journalpost <Basisregistrering> #pink
+class Sakarkiv.Journalpost <Registrering> #pink
 class Sakarkiv.Avskrivning #pink
 class Sakarkiv.Dokumentflyt #pink
 
@@ -21,8 +20,7 @@ Sakarkiv.Saksmappe o--> "+sekundaerklassifikasjon 0..*" Arkivstruktur.Klasse
 Sakarkiv.Presedens "+presedens 0..*" <--o "+sak 0..*" Sakarkiv.Saksmappe
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
-Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
-Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
+Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 Sakarkiv.Presedens "+presedens 0..*" <--o "+journalpost 0..*" Sakarkiv.Journalpost
 Sakarkiv.Journalpost "+avskrivning 0..*" *--> Sakarkiv.Avskrivning
 Sakarkiv.Journalpost "+dokumentflyt 0..*" *--> Sakarkiv.Dokumentflyt

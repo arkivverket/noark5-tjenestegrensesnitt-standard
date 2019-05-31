@@ -26,15 +26,14 @@ Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Klasse "\n\n+sekundaerklassifikasjon\n0..*" <--o Sakarkiv.Saksmappe
-Arkivstruktur.Mappe "mappe 0..1" o--> "+registrering 0..*\n\n" Arkivstruktur.Registrering
+Arkivstruktur.Mappe "mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "mappe 0..*\n\n" <--o "+arkivdel 0..1" Arkivstruktur.Arkivdel
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Registrering "+registrering 0..*" <--o "+arkivdel 0..1" Arkivstruktur.Arkivdel
-Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
 Arkivstruktur.Dokumentbeskrivelse "+dokumentbeskrivelse 1" o--> "+dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
 Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
-Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
+Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 Sakarkiv.Presedens "+presedens 0..*" <--o "+journalpost 0..*" Sakarkiv.Journalpost
 Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
 Sakarkiv.Journalpost *--> "+dokumentflyt 0..*" Sakarkiv.Dokumentflyt

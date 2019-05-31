@@ -7,8 +7,8 @@
 | ![](./media/uml-forklaring-om-notasjon-som-er-brukt.png) | ***Klassediagram*** brukes for å vise utvalgte klasser i en UML-modell. Klassediagram ***trenger ikke være fullstendige***, hverken mhp hvilke klasser som vises eller hvilke assosiasjoner som vises. For kompliserte modeller (som NOARK-modellen) trengs flere klassediagram for å vise hele modellen. |
 |![](./media/uml-klasse-konspetet-bruker-registrering-som-eksempel.png) |I et ***klassediagram*** vises en klasse som en firkantet boks. ***Klassenavnet*** står i øverste «etasje», og er i eksempelet Registrering. ***Klasseattributtene*** karakteriserer klassen, og listes opp en i nest øverste etasje (i eksempelet i alt 7, den første/øverste har navnet arkivertDato). Firkanten kan også ha flere frivillige etasjer for å vise mer informasjon. I klassen Registrering vises en «etasje» med notes (ofte brukt for ***klassedefinisjon***) |
 |![](./media/uml-assosiasjoner-brukt-med-klasser.png) | Klasser kan knyttes sammen med ***assosiasjoner***. Assosiasjoner vises som streker mellom to klasser. En assosiasjon der begge ender er knytta til samme klasse kalles ***selv-assosiasjon***. Eksempel: Mappe kan ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like klasser. En assosiasjon kan være ***aggregering***. Symbolet er en strek mellom to klasser med åpen diamant i ene enden. Eksempel: Ei Mappe ***har*** Registrering(er). En registrering er en selvstendig enhet, som «overlever» selv om Mappa blir sletta. |
-|![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Basisregistrering som er en generalisering av Journalpost og Moeteregistrering. En kan også si at Journalpost er en spesialisering av basisregistrering. I Basisregistrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost og Moeteregistrering. Dette leses som Journalpost ***er en*** Basisregistrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Basisregistrering er en spesialisering av Registrering, selv om klassen Registrering ikke finnes i diagrammet. |
-|![](./media/uml-komposisjon-brukt-med-klasser.png) | En assosiasjon kan også være ***komposisjon***. Symbolet er en strek mellom to klasser med lukka diamant i den ene enden. En Basisregistrering ***har*** Korrespondansepart(er). En Korrespondansepart kan ikke eksistere uten at den er knytta til en mappe. Slettes («dør») basisregistreringen vil også korrespondanseparten bli sletta («vil dø»). Assosiasjonene forteller også hvilken vei de er ***navigerbare***. Symbolet for dette er piler i endene på streken. Eksempel: En basisregistrering «vet» hvilke korrespondansepart(er) som tilhører basisregistreringen, mens korrespondanseparten ikke vet hvilken basisregistrering den tilhører.|
+|![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Registrering som er en generalisering av Journalpost og Moeteregistrering. En kan også si at Journalpost er en spesialisering av Registrering. I Registrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost og Moeteregistrering. Dette leses som Journalpost ***er en*** Registrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Registrering er en spesialisering av Arkivenhet, selv om klassen Arkivenhet ikke finnes i diagrammet. |
+|![](./media/uml-komposisjon-brukt-med-klasser.png) | En assosiasjon kan også være ***komposisjon***. Symbolet er en strek mellom to klasser med lukka diamant i den ene enden. En Registrering ***har*** Korrespondansepart(er). En slik Korrespondansepart kan ikke eksistere uten at den er knytta til en Registrerign. Slettes («dør») Registreringen vil også korrespondanseparten bli sletta («vil dø»). Assosiasjonene forteller også hvilken vei de er ***navigerbare***. Symbolet for dette er piler i endene på streken. Eksempel: En registrering «vet» hvilke korrespondansepart(er) som tilhører registreringen, mens korrespondanseparten ikke vet hvilken registrering den tilhører.|
 |![](./media/uml-multiplisitet-brukt-med-klasser.png) | ***Multiplisiteten*** forteller hvor mange forekomster som kan inngå. Multiplisitet kan brukes i forbindelse med assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to prikker mellom (0..1). Det første tallet angir minimums-multiplisitet (så mange det minst må være), det andre tallet er maksimumsmultiplisitet (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..***) Mapper(er). Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).En klasseattributt har angitt multiplisitet med klammeparenteser (\[0..1\]). Klasseattributten noekkelord kan forekomme ingen eller en gang. Når det ikke er angitt multiplisitet, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en klasseID, og kan bare ha en. En tom tekststreng-verdi ("") og en tekststreng som kun inneholder usynlige tegn (definert som beskrevet i vedlegg 5) er likestilt med en manglende verdi, slik at ved multiplisiteten [1..1] betyr det at klasseID også må ha en verdi forskjellig fra tom streng.|
 |![](./media/uml-simple-datatyper-eller-primitiver.png) | Datatypene kan også være ***simple datatyper*** eller ***primitiver***. Disse brukes for å gi mulighet for restriksjoner også på primitivene. Epostadresse kan være modellert som en slik primitiv. Epost er en tekst-streng, men som i tillegg til å være tekst-streng også må oppfylle visse regler knytta til det å være gyldig epostadresse (bl.a. inneholde en og bare en forekomst av tegnet @). I eksempelet i figuren er SystemID en tekststreng (string) som i tillegg må oppfylle tilleggskrav. I store modeller kan det være hensiktsmessig å plassere ulike modell-elementer i ulike pakker. Da kan det også bli lettere for leseren å forstå modellen når han får vite hvilken pakke de ulike klassene er plassert i. Modellpakker kalles ofte ***navnerom*** (namespace) Dette kan angis foran klassenavnet, skilt fra klassenavnet med kolon (:). I eksempelet hører klassen SystemID til pakken/navnerommet Metadata og klassen string tilhører pakken/navnerommet BasicTypes.|
 
@@ -58,7 +58,6 @@ støtter Arkivstruktur-pakken:
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/                 |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/              |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivskaper/           |
-| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/basisregistrering/     |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/   |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/        |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/hendelseslogg/         |
@@ -112,7 +111,7 @@ registreringstypene.  Metadata for registrering er derfor
 obligatorisk, selv om det i selve løsningen ikke er implementert noen
 funksjon for "arkivering uten journalføring".
 
-![Registrering - (diagram)](./media/uml-arkivstruktur-registrering-til-basisregistrering-til-journalpost.png)
+![Registrering - (diagram)](./media/uml-arkivstruktur-registrering-til-journalpost.png)
 
 ![Merknad - (diagram)](./media/uml-arkivstruktur-merknad.png)
 
@@ -484,42 +483,86 @@ Table: Attributter
 | arkivskaperNavn | Definisjon: Navn på organisasjonen som har skapt arkivet . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentarer: (ingen). M023 | \[1..1\] | | string | 
 | beskrivelse | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string |
 
-#### Basisregistrering
+#### Registrering
 
 *Type:* ***Class***
 
-*Arver:* ***Registrering***
+*Arver:* ***Arkivenhet***
 
-En basisregistrering inneholder alle metadata fra registrering, samt
-andre metadata som er obligatoriske i alle typer arkivsystemer. En
-basisregistrering kan danne utgangspunkt for andre registreringstyper
-for spesialiserte fagsystemer
+En registrering inneholder alle metadata fra registrering og
+basisregistrering i Noark 5 versjon 4, samt andre metadata som er
+obligatoriske i alle typer arkivsystemer. En registrering kan være
+utgangspunkt for andre registreringstyper for spesialiserte
+fagsystemer.
+
+Hvis en ønsker å opprette en forenklet registrering uten tittel (kalt
+registrering i Noark 5 versjon 4), så skal tittel-attributten settes
+til «[forenklet registrering]».  En kan også bruke Arkivnotat.
+Instanser av registrering med denne tittelen og der ingen andre
+attributter enn de fra Arkivenhet og arkivertAv, arkivertDato,
+gradering, kassasjon, referanseArkivdel, referanseArkivertAv og
+skjerming (det forenkledep attributtsett) er i bruk, kan deponeres og
+avleveres som registrering i deponi-XML.  Denne tittelverdien skal kun
+brukes for instanser som kun har det forenklede attributtsett.  Hvis
+flere attributter er brukt, så må en benytte basisregistrering i slik
+XML ved avlevering som Noark 5 versjon 4.
 
 Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | Basisregistrering                                        | Registrering           |             |
-| **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | registrering 0..1 Basisregistrering ||
-| **Generalization** (Source → Destination)  | Moeteregistrering                                         | Basisregistrering      |             |
-| **Generalization** (Source → Destination)  | Journalpost                                              | Basisregistrering      |             |
-| **Association** (Source → Destination)     | Basisregistrering                                        | merknad 0..* Merknad   |             |
+| **Generalization** (Source → Destination)  | Registrering                                             | Arkivenhet             |             |
+| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | mappe 0..1 Mappe       |             |
+| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | arkivdel 0..1 Arkivdel |             |
+| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | klasse 0..1 Klasse     |             |
+| **Aggregation** (Bi-Directional)           | dokumentbeskrivelse 0..* Dokumentbeskrivelse             | registrering 1..* Registrering |     |
+| **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Registrering           |             |
+| **Association** (Destination → Source)     | korrespondansepart 0..* Korrespondansepart               | Registrering         |             |
+| **Association** (Destination → Source)     | part 0..* Part                                           | Registrering         |             |
+| **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | registrering 0..1 Registrering ||
+| **Generalization** (Source → Destination)  | Moeteregistrering                                         | Registrering      |             |
+| **Generalization** (Source → Destination)  | Journalpost                                              | Registrering      |             |
+| **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Registrering      |             |
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                            |
-| --------- | -------------------------------------------------------------------- |
+| **Tag**   | **Verdi**                                                                |
+| --------- | ------------------------------------------------------------------------ |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/              |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/            |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-basisregistrering/ |
-| REST\_REL | self                                                                 |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/      |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/basisregistrering/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/         |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/       |
+| REST\_REL | self                                                                     |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/              |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/      |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentbeskrivelse/   |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                   |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/                  |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/                 |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/part/                     |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-part/                  |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/                  |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/           |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/                |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/               |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/               |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/        |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/             |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/                  |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/              |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/plan/                     |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/                 |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepart/            |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepart/         |
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
-også være tilgjengelig via Basisregistrering-instanser som har en
+også være tilgjengelig via Registrering-instanser som har en
 Saksmappe som foreldre.
 
 Table: Relasjonsnøkler
@@ -532,8 +575,15 @@ Table: Attributter
 
 | **Navn**                      | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-------------------------------|---------------|---------------|-----------|-----------|
+| arkivertDato                  | Definisjon. Dato og klokkeslett når alle dokumentene som er tilknyttet registreringen ble arkivert . Kilde: Registreres automatisk ved utførelse av en funksjon som markerer at dokumentene er arkivert. For journalposter kan dette knyttes til endring av journalstatus. Kommentarer: Arkivering innebærer at dokumentene blir &quot;frosset&quot;, dvs. sperret for all videre redigering/endring M604 | \[0..1\] | | datetime |
+| arkivertAv                    | Definisjon: Navn på person som arkiverte dokumentet og frøs det for all videre redigering . Kilde: Registreres automatisk ved utførelse av en funksjon som markerer at dokumentene er arkivert. For journalposter kan dette knyttes til endring av journalstatus. Kommentarer: (ingen) M605 | \[0..1\] | | string |
+| referanseArkivertAv           |     | \[0..1\] | | SystemID |
+| kassasjon                     |     | \[0..1\] | | Kassasjon |
+| skjerming                     |     | \[0..1\] | | Skjerming |
+| gradering                     |     | \[0..1\] | | Gradering |
+| referanseArkivdel             |     | \[0..1\] | | SystemID |
 | registreringsID               | Definisjon: Entydig identifikasjon av registreringen innenfor arkivet. Kilde: Registreres automatisk av systemet etter interne regler. Kommentar: Ulike arkiv innenfor samme system kan inneholde samme identifikasjon. Identifikasjonen kan være rent numerisk, men den kan også ha en logisk oppbygging. Er en videreføring av saksår og sakssekvensnummer (oftest bare kalt &quot;saksnummer&quot;") i kombinasjon med &quot;dokumentnummer&quot; i Noark 4 (f.eks. 2011/3869-8, dvs. dokument nummer 8 i saksnummer 2011/3869), men trenger ikke ha denne formen for andre deler av arkivet. M004 | \[0..1\] | | string |
-| tittel                        | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
+| tittel                        | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet.   Settes til «[forenklet registrering]» for forenklede registreringer kompatible med Noark 5 versjon 4.  M020 | \[1..1\] | | string |
 | offentligTittel               | Definisjon: Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med ******) . Kilde: (ingen). Kommentarer: I løpende og offentlig journaler skal også offentligTittel være med dersom ord i tittelfeltet skal skjermes. M025 | \[0..1\] | | string | 
 | beskrivelse                   | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres  manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string | 
 | noekkelord                     | Definisjon: Nøkkeord eller stikkord som beskriver innholdet i enheten . Kilde: Registreres vanligvis ved oppslag fra liste (f.eks. en tesaurus). Kan også registreres automatisk på grunnlag av dokumentinnhold eller integrering med fagsystem. Kommentarer: Noekkelord kan brukes for å forbedre mulighetene for søking og gjenfinning. Noekkelord skal ikke erstatte klassifikasjon. M022 | \[0..\*\] | | string |
@@ -546,7 +596,15 @@ Table: Restriksjoner
 
 | **Navn**                                          | **Merknad** |
 | ------------------------------------------------- | ----------- |
-| 5.5.7 En Basisregistrering skal kunne utvides til en Journalpost. | |
+| 5.5.2 Hvis Mappenivået er benyttet, skal en Registrering tilhøre (kun) en Mappe og en Mappe kan innehold ingen, en eller flere Registreringer. | |
+| 5.5.3 Hvis Mappenivået ikke er benyttet, skal Registrering tilhøre (kun) én Arkivdel og en Arkivdel kan inneholde ingen, én eller flere Registreringer. | |
+| 5.5.4 Hvis Mappenivået ikke er benyttet, skal Registrering tilhøre kun en Klasse og en Klasse kan inngå i ingen, en eller flere Registreringer. | |
+| 5.5.5 En Registrering skal kunne inneholde ingen, en eller flere Dokumentbeskrivelser og en Dokumentbeskrivelse skal inngå i en eller flere Registreringer. | |
+| Ny - Etter at registrering er registrert så skal kjernen fylle ut systemID, opprettetAv og opprettetDato | |
+| Ny - Når registrering arkiveres så skal arkivertDato og arkivertAv/referanseArkivertAv registreres | |
+| M604 arkivertDato: Kan ikke endres | |
+| M605 arkivertAv: Kan ikke endres | |
+| 5.5.7 En Registrering skal kunne utvides til en Journalpost. | |
 | M004 registreringsID: Skal normalt ikke kunne endres. Ved flytting til en annen mappe, kan endring av registreringsID forekomme. | |
 | M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert | |
 | M025 offentligTittel: Obligatorisk i arkivuttrekk dersom tittelen inneholder ord som skal skjermes, jf. M504 skjermingMetadata. | |
@@ -613,7 +671,7 @@ Table: Attributter
 | skjerming                     |  | \[0..1\] |         | Skjerming |
 | gradering                     |  | \[0..1\] |         | Gradering |
 | elektroniskSignatur           |  | \[0..1\] |         | ElektroniskSignatur |
-| eksternReferanse              | Ekstern referanse på innkommende dokumenter.  Brukes til søk via API-et og kan ikke avleveres på deponi-formatet til Noark 5 versjon 4 og 5 som eget felt. | \[0..1\] | | string |
+| eksternReferanse              | Ekstern referanse på innkommende dokumenter.  Brukes til søk via API-et og kan ikke avleveres på deponi-formatet til Noark 5 versjon 4 og version 5 som eget felt, men kan avleveres som virksomhetsspesifikeMetadata. | \[0..1\] | | string |
 | virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen).Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 
 Table: Restriksjoner
@@ -658,10 +716,10 @@ kan være offentlig tilgjengelig. Dokumentobjektet inneholder mer
 tekniske metadata enn de andre arkivenhetene, bl.a. sjekksummen til
 bytesekvensen som representerer dokumentet.
 
-Ved avlevering i tråd med XML-skjema for Noark 5 versjon 4 så droppes
-følgende felt arvet fra Arkivenhet: «oppdatertDato», «oppdatertAv»,
-«referanseOppdatertAv» og «referanseOpprettetAv». Disse ikke har
-korresponderende felt i avleveringsformatet.
+Ved avlevering i tråd med XML-skjema for Noark 5 versjon 4 og versjon
+5 så droppes følgende felt arvet fra Arkivenhet: «oppdatertDato»,
+«oppdatertAv», «referanseOppdatertAv» og «referanseOpprettetAv».
+Disse ikke har korresponderende felt i avleveringsformatet.
 
 Table: Relasjoner
 
@@ -1024,13 +1082,13 @@ registrering til en mappe. Det kan også refereres fra en klasse til en
 annen klasse.
 
 Kryssreferanse er valgfritt, og kan knyttes en eller flere ganger til
-klasse, mappe og basisregistrering. Referansen går en vei, dvs. den
+klasse, mappe og registrering. Referansen går en vei, dvs. den
 kan kun være en referanse til en arkivenhet. I og med at
-kryssreferanser knyttes til Mappe og Basisregistrering, vil det si at
+kryssreferanser knyttes til Mappe og Registrering, vil det si at
 Referanser også knyttes til alle utvidelsene (spesialiseringer) under
 disse (Saksmappe, Moetemappe og Journalpost, Moeteregistrering).
 
-Ved avlevering i tråd med XML-skjema for Noark 5 versjon 4 så droppes
+Ved avlevering i tråd med XML-skjema for Noark 5 versjon 5 så droppes
 samtlige felt arvet fra Arkivenhet, da disse ikke har korresponderende
 felt i dette avleveringsformatet.
 
@@ -1038,7 +1096,7 @@ Table: Relasjoner
 
 | **Relasjon**                     | **Kilde**                          | **Mål**                             | **Merknad** |
 | -------------------------------- | ---------------------------------- | ----------------------------------- | ----------- |
-| **Association** (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | registrering 0..1 Basisregistrering |             |
+| **Association** (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | registrering 0..1 Registrering |             |
 | **Association** (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | klasse 0..1 Klasse                  |             |
 | **Association** (Bi-Directional) | kryssreferanse 0..* Kryssreferanse | mappe 0..1 Mappe                    |             |
 
@@ -1112,6 +1170,7 @@ Table: Relasjoner
 | **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | mappe 0..1 Mappe       |             |
 | **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Mappe                  |             |
 | **Association** (Source → Destination)     | Mappe                                                    | merknad 0..* Merknad   |             |
+| **Association** (Source → Destination)     | Mappe                                                    | part 0..* Part         |             |
 | **Generalization** (Source → Destination)  | Moetemappe                                                | Mappe                  |             |
 | **Generalization** (Source → Destination)  | Saksmappe                                                | Mappe                  |             |
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | mappe 0..1 Mappe       |             |
@@ -1133,7 +1192,6 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overmappe/                |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/undermappe/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-basisregistrering/     |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-journalpost/           |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-moeteregistrering/     |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
@@ -1149,6 +1207,8 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/                  |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/                 |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/              |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/part/                     |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-part/                  |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/                |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/                     |
 
@@ -1214,7 +1274,7 @@ Table: Restriksjoner
 *Arver:* 
 
 En eller flere merknader skal kunne knyttes til en mappe,
-basisregistrering eller en dokumentbeskrivelse. Merknader skal brukes
+registrering eller en dokumentbeskrivelse. Merknader skal brukes
 for å dokumentere spesielle forhold rundt saksbehandlingen og
 arkivering av dokumenter, og denne informasjonen skal tas med i
 arkivuttrekket.
@@ -1224,7 +1284,7 @@ Table: Relasjoner
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Association** (Source → Destination) | Mappe               | merknad 0..* Merknad | |
-| **Association** (Source → Destination) | Basisregistrering   | merknad 0..* Merknad | |
+| **Association** (Source → Destination) | Registrering        | merknad 0..* Merknad | |
 | **Association** (Source → Destination) | Dokumentbeskrivelse | merknad 0..* Merknad | |
 
 Table: Relasjonsnøkler
@@ -1254,90 +1314,6 @@ Table: Restriksjoner
 | M001 systemID: Skal ikke kunne endres     |             |
 | M611 merknadsdato: Kan ikke endres        |             |
 | M612 merknadRegistrertAv: Kan ikke endres |             |
-
-#### Registrering
-
-*Type:* ***Class***
-
-*Arver:* ***Arkivenhet***
-
-En registrering inneholder bare de metadata som er nødvendig dersom
-dokumentet arkiveres uten journalføring. Dette kalles også forenklet
-registrering.
-
-Table: Relasjoner
-
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | mappe 0..1 Mappe       |             |
-| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | arkivdel 0..1 Arkivdel |             |
-| **Generalization** (Source → Destination)  | Registrering                                             | Arkivenhet             |             |
-| **Aggregation** (Bi-Directional)           | registrering 0..* Registrering                           | klasse 0..1 Klasse     |             |
-| **Aggregation** (Bi-Directional)           | dokumentbeskrivelse 0..* Dokumentbeskrivelse             | registrering 1..* Registrering |     |
-| **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Registrering           |             |
-| **Generalization** (Source → Destination)  | Basisregistrering                                        |Registrering            |             |
-
-Table: Relasjonsnøkler
-
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | self                                                                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentbeskrivelse/   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/plan/                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-basisregistrering/   |
-
-Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
-også være tilgjengelig via Registrering-instanser som har en Saksmappe
-som foreldre.
-
-Table: Relasjonsnøkler
-
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-journalpost/ |
-
-Table: Attributter
-
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
-|-----------|---------------|---------------|-----------|-----------|
-| arkivertDato        | Definisjon. Dato og klokkeslett når alle dokumentene som er tilknyttet registreringen ble arkivert . Kilde: Registreres automatisk ved utførelse av en funksjon som markerer at dokumentene er arkivert. For journalposter kan dette knyttes til endring av journalstatus. Kommentarer: Arkivering innebærer at dokumentene blir &quot;frosset&quot;, dvs. sperret for all videre redigering/endring M604 | \[0..1\] | | datetime | 
-| arkivertAv          | Definisjon: Navn på person som arkiverte dokumentet og frøs det for all videre redigering . Kilde: Registreres automatisk ved utførelse av en funksjon som markerer at dokumentene er arkivert. For journalposter kan dette knyttes til endring av journalstatus. Kommentarer: (ingen) M605 | \[0..1\] | | string | 
-| referanseArkivertAv |     | \[0..1\] | | SystemID |
-| kassasjon           |     | \[0..1\] | | Kassasjon |
-| skjerming           |     | \[0..1\] | | Skjerming |
-| gradering           |     | \[0..1\] | | Gradering |
-| referanseArkivdel   |     | \[0..1\] | | SystemID |
-
-Table: Restriksjoner
-
-| **Navn**                                          | **Merknad** |
-| ------------------------------------------------- | ----------- |
-| 5.5.2 Hvis Mappenivået er benyttet, skal en Registrering tilhøre (kun) en Mappe og en Mappe kan innehold ingen, en eller flere Registreringer. | |
-| 5.5.3 Hvis Mappenivået ikke er benyttet, skal Registrering tilhøre (kun) én Arkivdel og en Arkivdel kan inneholde ingen, én eller flere Registreringer. | |
-| 5.5.4 Hvis Mappenivået ikke er benyttet, skal Registrering tilhøre kun en Klasse og en Klasse kan inngå i ingen, en eller flere Registreringer. | |
-| 5.5.5 En Registrering skal kunne inneholde ingen, en eller flere Dokumentbeskrivelser og en Dokumentbeskrivelse skal inngå i en eller flere Registreringer. | | 
-| 5.5.6 En Registrering skal kunne utvides til en Basisregistrering | |
-| Ny - Etter at registrering er registrert så skal kjernen fylle ut systemID, opprettetAv og opprettetDato | |
-| Ny - Når registrering arkiveres så skal arkivertDato og arkivertAv/referanseArkivertAv registreres | |
-| M604 arkivertDato: Kan ikke endres | | 
-| M605 arkivertAv: Kan ikke endres | |
 
 #### Skjerming
 
@@ -2526,7 +2502,7 @@ Table: Relasjonsnøkler
 | -------- | ----------------------------------------------------- |
 | codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/postnummer/ |
 
-#### Presedensstatus
+#### PresedensStatus
 
 *Type:* ***Class «codelist»***
 
@@ -2552,7 +2528,7 @@ Table: Attributter
 | Gjeldende     |             |              | G        |          |
 | Foreldet      |             |              | F        |          |
 
-#### SakspartRolle
+#### PartRolle
 
 *Type:* ***Class «codelist»***
 
@@ -2564,7 +2540,7 @@ Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                                |
 | -------- | -------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/sakspartrolle/ |
+| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/partrolle/ |
 
 Table: Attributter
 
@@ -2839,6 +2815,7 @@ Sakarkiv-pakken:
 
 | **Relasjonsnøkkel**                                                   |
 |-----------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/arkivnotat/                 |
 | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/journalpost/                |
 | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/presedens/                  |
 | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/                  |
@@ -2995,18 +2972,56 @@ Table: Attributter
 | poststed          |             | \[1..1\]     |          | string     |
 | landkode          |             | \[0..1\]     |          | Land       |
 
+#### Arkivnotat
+
+*Type:* ***Class***
+
+*Arver:* ***Registrering***
+
+
+Table: Relasjoner
+
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination) | Arkivnotat                                              | Registrering           |            |
+| **Association** (Source → Destination)   | Arkivnotat                                               | dokumentflyt 0..* Dokumentflyt |     |
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                          |
+| --------- | ------------------------------------------------------------------ |
+| REST\_REL | self                                                               |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/arkivnotat/      |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-arkivnotat/   |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/dokumentflyt/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-dokumentflyt/ |
+
+Table: Attributter
+
+| **Navn**                 | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|--------------------------|---------------|---------------|-----------|-----------|
+| dokumentetsDato          | M103          | \[0..1\]      |           | date      |
+| mottattDato              | M104          | \[0..1\]      |           | datetime  |
+| sendtDato                | M105          | \[0..1\]      |           | datetime  |
+| forfallsdato             | M109          | \[0..1\]      |           | date      |
+| offentlighetsvurdertDato | M110          | \[0..1\]      |           | date      |
+| antallVedlegg            | M304          | \[0..1\]      |           | integer   |
+| utlaantDato              | M106          | \[0..1\]      |           | date      |
+| utlaantTil               | M309          | \[0..1\]      |           | string    |
+| referanseUtlaantTil      | M309          | \[0..1\]      |           | SystemID  |
+
 #### Journalpost
 
 *Type:* ***Class***
 
-*Arver:* ***Basisregistrering***
+*Arver:* ***Registrering***
 
 En journalpost fra Noark-4 utgjør en egen registreringstype i Noark 5.
 En journalpost representer en "innføring i journalen". Journalen er en
 kronologisk fortegnelse over inn- og utgående dokumenter
 (dvs. korrespondansedokumenter), og eventuelt også interne dokumenter
 som inngår i saksbehandlingen. Til sammenligning representerer en
-basisregistrering en generell "innføring" i alle typer arkivsystemer,
+registrering en generell "innføring" i alle typer arkivsystemer,
 også de som ikke inneholder korrespondansebaserte
 dokumenter. Journalposten inneholder bl.a.  metadata om
 korrespondanseparter (avsender og mottaker), og om saksbehandlere. Det
@@ -3034,8 +3049,7 @@ Table: Relasjoner
 | **Association** (Bi-Directional)         | journalpost 0..* Journalpost                             | presedens 0..* Presedens |           |
 | **Association** (Source → Destination)   | Journalpost                                              | dokumentflyt 0..* Dokumentflyt |     |
 | **Association** (Source → Destination)   | Journalpost                                              | avskrivning 0..* Avskrivning |       |
-| **Generalization** (Source → Destination) | Journalpost                                              | Basisregistrering       |            |
-| **Association** (Source → Destination)   | Journalpost                                              | korrespondansepart 0..* Korrespondansepart | |
+| **Generalization** (Source → Destination) | Journalpost                                              | Registrering       |            |
 
 Table: Relasjonsnøkler
 
@@ -3060,7 +3074,7 @@ Table: Attributter
 |-----------|---------------|---------------|-----------|-----------|
 | journalaar                | Definisjon: Viser året journalposten ble opprettet . Kilde: Registreres automatisk når journalposten opprettes.Kommentar: (ingen). M013 journalaar | \[0..1\] | | integer|
 | journalsekvensnummer     | Definisjon: Viser rekkefølgen når journalposten ble opprettet under året . Kilde: Registreres automatisk når journalposten opprettes. Kommentar: Kombinasjonen journalaar og sekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. Noen rapporter er sortert på denne kombinasjonen, f.eks. løpende- og offentlig journal. Dersom journalaar og sekvensnummer ikke brukes, må kronologiske utskrifter sorteres etter andre kriterier (f.eks. journalpostens opprettetDato). I Noark 4 skal sekvensnummeret vises før journalaar (f.eks. 25367/2011) for at det ikke skal blandes sammen med saksnummeret som har året først. M014 journalsekvensnummer | \[0..1\] |  | integer|
-| journalpostnummer        | Definisjon: Inngår i M004 journalpostID. Viser rekkefølgen journalpostene ble opprettet innenfor saksmappen, f.eks. 2011/3869-8 (dokument nr. 8 i sak 2011/3869). Kilde: Registreres automatisk når journalposten opprettes. Kommentar: Er ikke obligatorisk, men anbefales brukt i sakarkiver. Dersom journalpostnummer ikke brukes, må andre kriterier kunne identifisere journalpostenes rekkefølge innenfor saksmappen. M015 journalpostnummer | \[0..1\] | | integer|
+| journalpostnummer        | Definisjon: Inngår i M004 journalpostID. Viser rekkefølgen journalpostene ble opprettet innenfor saksmappen, f.eks. 2011/3869-8 (dokument nr. 8 i sak 2011/3869). Kilde: Registreres automatisk når journalposten opprettes. Kommentar: Er ikke obligatorisk, men anbefales brukt i sakarkiver. Dersom journalpostnummer ikke brukes, må andre kriterier kunne identifisere journalpostenes rekkefølge innenfor saksmappen. M015 journalpostnummer | \[1..1\] | | integer|
 | journalposttype          | Definisjon: Navn på type journalpost . Kilde: Registreres automatisk av systemet eller manuelt Kommentar: Tilsvarer &quot;Noark dokumenttype&quot; i Noark 4. M082 journalposttype | \[1..1\] | |Journalposttype|
 | journalstatus            | Definisjon: Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert. Kilde: Registreres automatisk gjennom forskjellig saksbehandlings-funksjonalitet, eller overstyres manuelt. Kommentar: Journalposter som avleveres skal ha status &quot;Arkivert&quot; eller &quot;Utgår&quot;. M053 journalstatus | \[1..1\] | |Journalstatus|
 | journaldato              | Definisjon: Datoen journalposten er opprettet/arkivert . Kilde: Settes automatisk til samme dato som M600 opprettetDato. Oppdateres til M604 arkivertDato når dokumentene som tilhørere journalposten arkiveres. Kommentar: (ingen). M101 journaldato | \[1..1\] | |date|
@@ -3082,7 +3096,6 @@ Table: Restriksjoner
 | ------------------------------------------------------------- | ----------- |
 | 5.5.8 En journalpost skal kunne defineres til å være av forskjellig type, se M082journalposttype. | |
 | 5.5.10 En Journalpost skal ha registrert en Saksansvar (dvs. administrativ enhet, Saksbehandler og eventuelt journalenhet) og en Saksansvar skal kunne inngå i ingen, en eller flere Journalposter. | |
-| 5.5.11 En Journalpost skal ha registrert en Korrespondansepart og en Korrespondansepart skal inngå i (kun) en Journalpost. | |
 | 5.5.12 Det bør finnes en tjeneste/funksjon for å ajourholde Journalenhet på en Registrering (Journalpost). | |
 | 5.5.13 Det skal finnes en tjeneste/funksjon for å ajourholde Administrativ enhet og Saksbehandler på en Registrering (Journalpost). | |
 | 5.5.14 Det skal finnes en tjeneste/funksjon for å ajourholde Korrespondansepart på en Journalpost. |
@@ -3138,7 +3151,7 @@ Table: Relasjoner
 | **Generalization** (Source → Destination)  | KorrespondansepartEnhet                                  | Korrespondansepart     |             |
 | **Generalization** (Source → Destination)  | KorrespondansepartPerson                                 | Korrespondansepart     |             |
 | **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
-| **Association** (Source → Destination)     | Journalpost                                              | korrespondansepart 0..* Korrespondansepart | | 
+| **Association** (Destination → Source)     | korrespondansepart 1..* Korrespondansepart               | Registrering         |             |
 
 Table: Relasjonsnøkler
 
@@ -3314,7 +3327,7 @@ Table: Attributter
 | avsluttetDato                | Definisjon: Dato og klokkeslett når arkivenheten ble avsluttet/lukket . Kilde: Registreres automatisk av systemet når enheten avsluttes. Kommentarer: (ingen). M602 avsluttetDato | \[0..1\] | | datetime| 
 | avsluttetAv                  | Definisjon: Navn på person som avsluttet/lukket arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten Kommentarer: (ingen). M603 avsluttetAv | \[0..1\] | | string | 
 | referanseAvsluttetAv         | | \[0..1\] | | SystemID |
-| presedensStatus              | Definisjon: Informasjon om presedensen er gjeldende eller foreldet . Kilde: Registreres manuelt ved foreldelse. Kommentar: (ingen) M056 presedensstatus | \[0..1\] |  | Presedensstatus |
+| presedensStatus              | Definisjon: Informasjon om presedensen er gjeldende eller foreldet . Kilde: Registreres manuelt ved foreldelse. Kommentar: (ingen) M056 presedensStatus | \[0..1\] |  | PresedensStatus |
 
 
 Table: Restriksjoner
@@ -3345,7 +3358,6 @@ Table: Relasjoner
 
 | **Relasjon**                              | **Kilde**                                                | **Mål**                | **Merknad** |
 | ----------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Association** (Source → Destination)    | Saksmappe                                                | sakspart 0..* Sakspart |             |
 | **Generalization** (Source → Destination) | Saksmappe                                                | Mappe                  |             |
 | **Association** (Source → Destination)    | Saksmappe                                                | sekundaerklassifikasjon 0..* Klasse | |
 | **Association** (Bi-Directional)          | saksmappe 0..* Saksmappe                                 | presedens 0..* Presedens |           |
@@ -3357,10 +3369,8 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/               |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klasse/          |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/presedens/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/sakspart/                |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/sekundaerklassifikasjon/ |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/saksstatus/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-sakspart/             |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-presedens/            |
 | REST\_REL | self                                                               |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-journalpost/          |
@@ -3369,8 +3379,8 @@ Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
-| saksaar                | Definisjon: Inngår i M003 mappeID. Viser året saksmappen ble opprettet. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Se kommentar under M012 sakssekvensnummer. M011 saksaar | \[0..1\] | | integer|
-| sakssekvensnummer      | Definisjon: Inngår i M003 mappeID. Viser rekkefølgen når saksmappen ble opprettet innenfor året. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Kombinasjonen saksaar og sakssekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. M012 sakssekvensnummer | \[0..1\] | | integer|
+| saksaar                | Definisjon: Inngår i M003 mappeID. Viser året saksmappen ble opprettet. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Se kommentar under M012 sakssekvensnummer. M011 saksaar | \[1..1\] | | integer|
+| sakssekvensnummer      | Definisjon: Inngår i M003 mappeID. Viser rekkefølgen når saksmappen ble opprettet innenfor året. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Kombinasjonen saksaar og sakssekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. M012 sakssekvensnummer | \[1..1\] | | integer|
 | saksdato               | Definisjon: Datoen saken er opprettet . Kilde: Settes automatisk til samme dato som M600 opprettetDato. Kommentar: (ingen). M100 saksdato | \[1..1\] | |date| 
 | administrativEnhet     | Definisjon: Navn på avdeling, kontor eller annen administrativ enhet som har ansvaret for saksbehandlingen. Kilde: Registreres automatisk f.eks. på grunnlag av innlogget bruker, kan overstyres. Kommentar: Merk at på journalpostnivå grupperes administrativEnhet sammen med M307 saksbehandler inn i korrespondansepart. Dette muliggjør individuell behandling når det er flere mottakere, noe som er særlig aktuelt ved organinterne dokumenter som skal følges opp. M305 administrativEnhet | \[0..1\] | | string |
 | referanseAdministrativEnhet | | \[0..1\] | | SystemID |
@@ -3390,7 +3400,6 @@ Table: Restriksjoner
 | 5.4.10 En Saksmappe skal kunne ha registrert ingen, en eller flere Sekundaerklassering og en Sekundaerklassering tilhører kun en Saksmappe og kun en Klasse.| |
 | 5.4.11 En Saksmappe bør kunne ha registrert ingen eller en Journalenhet og en Journalenhet kan inngå i ingen, en  eller flere Saksmapper. | |
 | 5.4.12 En Saksmappe skal kunne ha registrert ingen eller en Administrativ enhet og en Administrativ enhet kan inngå i ingen, en eller flere Saksmapper. | |
-| 5.4.13 En Saksmappe skal kunne inneha ingen, en eller flere Saksparter og en Sakspart skal alltid tilhøre en Saksmappe. | |
 | 6.1.3 Det skal finnes en tjeneste/funksjon for å sette Status på en Saksmappe. | |
 | 6.1.4 Følgende statusverdier er obligatorisk for Saksmappe: Under behandling, Avsluttet, Utgår | |
 | 6.1.5 Følgende statusverdier er anbefalt for Saksmappe: Opprettet av saksbehandler, Avsluttet av saksbehandler, Unntatt prosesstyring | |
@@ -3409,43 +3418,45 @@ Table: Restriksjoner
 | M100 saksdato: Skal kunne endres manuelt inntil saksmappen avsluttes | |
 | M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert. | |
 
-#### Sakspart
+#### Part
 
 *Type:* ***Class***
 
 *Arver:* 
 
 En eller flere virksomheter eller personer kan være knyttet til en
-saksmappe som saksparter.
+mappe eller registrering som parter.
 
-Metadata for sakspart skal kunne grupperes inn i metadata for
-saksmappe.  Sakspart er valgfritt, og kan forekomme en eller flere
-ganger i tilknytning til en saksmappe.  Dersom det er mer enn én
-sakspart, må metadataene grupperes sammen ved eksport og utveksling.
+Metadata for part skal kunne grupperes inn i metadata for mappe og
+registrering.  Part er valgfritt, og kan forekomme en eller flere
+ganger i tilknytning til en mappe og registrering.  Dersom det er mer
+enn én part, må metadataene grupperes sammen ved eksport og
+utveksling.
 
 Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | SakspartPerson                                           | Sakspart               |             |
-| **Association** (Source → Destination)     | Saksmappe                                                | sakspart  0..*  Sakspart |           |
-| **Generalization** (Source → Destination)  | SakspartEnhet                                            | Sakspart               |             |
+| **Generalization** (Source → Destination)  | PartPerson                                           | Part               |             |
+| **Generalization** (Source → Destination)  | PartEnhet                                            | Part               |             |
+| **Association** (Destination → Source)     | part 0..* Part                                     | Mappe                |             |
+| **Association** (Destination → Source)     | part 0..* Part                                     | Registrering         |             |
 
 Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                |
 | --------- | -------------------------------------------------------- |
 | REST\_REL | self                                                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/sakspartrolle/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/sakspart/      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-sakspart/   |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/partrolle/ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/part/      |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-part/   |
 
 Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
-| sakspartRolle                 | Definisjon: Angivelse av rollen til saksparten . Kilde: Registreres manuelt eller automatisk fra fagsystem. Kommentarer: (ingen). Betingelser: Her er det mange tenkelige roller avhengig av type sak, f.eks. Klient, Pårørende, Formynder, Advokat. M303 | \[1..1\] | | SakspartRolle |
+| partRolle                 | Definisjon: Angivelse av rollen til parten . Kilde: Registreres manuelt eller automatisk fra fagsystem. Kommentarer: (ingen). Betingelser: Her er det mange tenkelige roller avhengig av type sak, f.eks. Klient, Pårørende, Formynder, Advokat. M303 | \[1..1\] | | PartRolle |
 | virksomhetsspesifikkeMetadata |  | \[0..1\] | | any |
 
 Table: Restriksjoner
@@ -3454,25 +3465,25 @@ Table: Restriksjoner
 | ------------------------------------- | ----------- |
 | M001 systemID: Skal ikke kunne endres |             |
 
-#### SakspartEnhet
+#### PartEnhet
 
 *Type:* ***Class***
 
-*Arver:* ***Sakspart***
+*Arver:* ***Part***
 
 Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | SakspartEnhet                                            | Sakspart               |             |
+| **Generalization** (Source → Destination)  | PartEnhet                                            | Part               |             |
 
 Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                   |
 | --------- | ----------------------------------------------------------- |
 | REST\_REL | self                                                        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-sakspartenhet/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/sakspartenhet/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-partenhet/ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/partenhet/    |
 
 Table: Attributter
 
@@ -3485,25 +3496,25 @@ Table: Attributter
 | kontaktinformasjon      |             | \[0..1\]     |          | Kontaktinformasjon |
 | kontaktperson           |             | \[0..1\]     |          | string             |
 
-#### SakspartPerson
+#### PartPerson
 
 *Type:* ***Class***
 
-*Arver:* ***Sakspart***
+*Arver:* ***Part***
 
 Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | SakspartPerson                                           | Sakspart               |             |
+| **Generalization** (Source → Destination)  | PartPerson                                           | Part               |             |
 
 Table: Relasjonsnøkler
 
 | **Tag**   | **Verdi**                                                    |
 | --------- | ------------------------------------------------------------ |
 | REST\_REL | self                                                         |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/sakspartperson/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-sakspartperson/ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/partperson/    |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-partperson/ |
 
 Table: Attributter
 

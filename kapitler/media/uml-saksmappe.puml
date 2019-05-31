@@ -3,12 +3,12 @@ skinparam classAttributeIconSize 0
 
 !include kapitler/media/uml-class-saksmappe-all.iuml
 !include kapitler/media/uml-class-presedens.iuml
-!include kapitler/media/uml-class-sakspart.iuml
+!include kapitler/media/uml-class-part.iuml
 
 class Arkivstruktur.Klasse <Arkivenhet>
 Arkivstruktur.Klasse "\n\n+sekundaerklassifikasjon 0..*"  <--o Sakarkiv.Saksmappe
 Arkivstruktur.Klasse "+overklasse 0..1" o--> "\n+underklasse 0..*" Arkivstruktur.Klasse
 Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
-Sakarkiv.Saksmappe *--> "+sakspart 0..*" Sakarkiv.Sakspart
+Sakarkiv.Saksmappe *--> "+part 0..*" Sakarkiv.Part
 
 @enduml

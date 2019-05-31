@@ -11,7 +11,7 @@ skinparam nodesep 180
 !include kapitler/media/uml-class-mappe.iuml
 !include kapitler/media/uml-class-merknad.iuml
 !include kapitler/media/uml-class-saksmappe.iuml
-!include kapitler/media/uml-class-sakspart.iuml
+!include kapitler/media/uml-class-part.iuml
 !include kapitler/media/uml-class-journalpost.iuml
 !include kapitler/media/uml-class-korrespondansepart.iuml
 class MoeteOgUtvalgsbehandling.Moetemappe {
@@ -23,8 +23,8 @@ class MoeteOgUtvalgsbehandling.Moetemappe {
   +referanseNesteMoete : SystemID [0..1]
 }
 !include kapitler/media/uml-class-registrering.iuml
+!include kapitler/media/uml-class-arkivnotat.iuml
 !include kapitler/media/uml-class-dokumentbeskrivelse.iuml
-!include kapitler/media/uml-class-basisregistrering.iuml
 !include kapitler/media/uml-class-dokumentobjekt.iuml
 class MoeteOgUtvalgsbehandling.Moeteregistrering {
   +moeteregistreringstype : Moeteregistreringstype
@@ -49,24 +49,25 @@ Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o--> "+klasse 
 Arkivstruktur.Klasse "+overklasse 0..1" o-> "+underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "+klasse 0..1" <-> "+kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 Arkivstruktur.Mappe "+mappe 0..1" <-> "+kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
-Arkivstruktur.Kryssreferanse "+kryssreferanse 0..*" <--> "+registrering 0..1" Arkivstruktur.Basisregistrering
+Arkivstruktur.Kryssreferanse "+kryssreferanse 0..*" <--> "+registrering 0..1" Arkivstruktur.Registrering
 Arkivstruktur.Arkivdel "nestearkivdel 0..1" o--> "forrigearkivdel 0..1" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Klasse "+sekundaerklassifikasjon 0..*" <--o Sakarkiv.Saksmappe
 Arkivstruktur.Klasse "+klasse 0..*" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Mappe <|- MoeteOgUtvalgsbehandling.Moetemappe
-Sakarkiv.Saksmappe *--> "+sakspart 0..*" Sakarkiv.Sakspart
+Arkivstruktur.Mappe *--> "+part 0..*" Sakarkiv.Part
 Arkivstruktur.Mappe *-> "+merknad 0..*" Arkivstruktur.Merknad
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
-Arkivstruktur.Merknad "+merknad 0..*" <--* Arkivstruktur.Basisregistrering
-Arkivstruktur.Registrering <|- Arkivstruktur.Basisregistrering
+Arkivstruktur.Merknad "+merknad 0..*" <--* Arkivstruktur.Registrering
 Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Merknad "+merknad 0..*" <--* Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Dokumentbeskrivelse "+dokumentbeskrivelse 1" o--> "+dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
-Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
-Arkivstruktur.Basisregistrering <|-- MoeteOgUtvalgsbehandling.Moeteregistrering
-Sakarkiv.Journalpost *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
+Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
+Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
+Arkivstruktur.Registrering <|-- MoeteOgUtvalgsbehandling.Moeteregistrering
+Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
+Arkivstruktur.Registrering *--> "+part 0..*" Sakarkiv.Part
 Arkivstruktur.Dokumentobjekt *--> "+konvertering 0..*" Arkivstruktur.Konvertering
 @enduml

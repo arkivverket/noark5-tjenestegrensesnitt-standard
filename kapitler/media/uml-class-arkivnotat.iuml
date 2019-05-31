@@ -1,0 +1,13 @@
+@startuml
+class Sakarkiv.Arkivnotat <Registrering> {
+  +dokumentetsDato : date [0..1]
+  +mottattDato : datetime [0..1]
+  +sendtDato : datetime [0..1]
+  +forfallsdato : date [0..1]
+  +offentlighetsvurdertDato : date [0..1]
+  +antallVedlegg : integer [0..1]
+  +utlaantDato : date [0..1]
+  +utlaantTil : string [0..1]
+  +referanseUtlaantTil : SystemID [0..1]
+}
+@enduml

@@ -9,6 +9,15 @@ class Arkivstruktur.Registrering <Arkivenhet> {
   +skjerming : Skjerming [0..1]
   +gradering : Gradering [0..1]
   +referanseArkivdel : SystemID [0..1]
+  +registreringsID : string [0..1]
+  +tittel : string
+  +offentligTittel : string [0..1]
+  +beskrivelse : string [0..1]
+  +noekkelord : string [0..*]
+  +forfatter : string [0..*]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +virksomhetsspesifikkeMetadata : any [0..1]
   -- Arkivenhet --
   +systemID : SystemID [0..1]
   +oppdatertDato : datetime [0..1]
@@ -19,11 +28,8 @@ class Arkivstruktur.Registrering <Arkivenhet> {
   +referanseOpprettetAv : SystemID [0..1]
 }
 
-!include kapitler/media/uml-class-basisregistrering.iuml
+class Sakarkiv.Journalpost <Registrering>
 
-class Sakarkiv.Journalpost <Basisregistrering>
-
-Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
-Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
+Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 
 @enduml

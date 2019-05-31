@@ -1,5 +1,5 @@
 @startuml
-class Kodelister.Presedensstatus <<codelist>> {
+class Kodelister.PresedensStatus <<codelist>> {
   +Gjeldende = G
   +Foreldet = F
 }
