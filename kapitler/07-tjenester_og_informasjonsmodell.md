@@ -49,6 +49,57 @@ Unicode legger til flere tegn i kategorien «Space Separator».
 
 ### Arkivstruktur 
 
+Når en gjør GET mot href til relasjonsnøkkel
+https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/, så returneres liste
+over relasjonsnøkler til de ulike entitetene som er tilgjengelig.
+Disse kan brukes til å søke etter instanser av hver enkelt entitet.  I
+tillegg er det relasjonsnøkler for å opprette entiteter på toppnivå i
+arkivstrukturen, hvis brukeren har tilgang til å opprette nye
+instanser (her ny-arkiv og ny-arkivskaper).  Resultatet kan for
+eksempel starte slik:
+
+```Python
+{
+  "_links": [
+    {
+      "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/",
+      "href": "http://localhost:49708/api/arkivstruktur/arkiv{?$filter&$orderby&$top&$skip&$search}",
+      "templated": true
+    },
+    {
+      "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv/",
+      "href": "http://localhost:49708/api/arkivstruktur/ny-arkiv",
+    },
+    ...
+  ]
+}
+```
+
+Følgende relasjonsnøkler skal listes opp fra en implementasjon som
+støtter Arkivstruktur-pakken:
+
+| **Relasjonsnøkkel**                                                   |
+|-----------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/                 |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/              |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivskaper/           |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/basisregistrering/     |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/   |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/        |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/hendelseslogg/         |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klassifikasjonssystem/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                 |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/          |
+
+Følgende relasjonsnøkler skal tilsvarende listes opp for privilgerte
+brukere etter innlogging:
+
+| **Relasjonsnøkkel**                                                   |
+|-----------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv/              |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/        |
+
 Basis skjema for arkivstruktur og indre kjerne
 
 ![Arkivenheter - (diagram)](./media/uml-arkivstruktur-arkivenhet-som-basis-klasse.png)
@@ -1539,6 +1590,74 @@ Table: Attributter
 
 ### Kodelister 
 
+Når en gjør GET mot href til relasjonsnøkkel
+https://rel.arkivverket.no/noark5/v4/api/metadata/, så returneres liste over
+relasjonsnøkler til de ulike entitetene som er tilgjengelig.  Følgende
+relasjonsnøkler skal listes opp fra en implementasjon som støtter
+Arkivstruktur-pakken:
+
+| **Relasjonsnøkkel**                                                           |
+|-------------------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/metadata/arkivdelstatus/                     |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/arkivstatus/                        |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/                     |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentstatus/                     |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumenttype/                       |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/format/                             |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/graderingskode/                     |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/kassasjonsvedtak/                   |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/klassifikasjonstype/                |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/                          |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/merknadstype/                       |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/skjermingdokument/                  |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/skjermingmetadata/                  |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/slettingstype/                      |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/tilknyttetregistreringsom/          |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/variantformat/                      |
+
+Følgende relasjonsnøkler skal listes opp fra en implementasjon som
+støtter Sakarkiv-pakken:
+
+| **Relasjonsnøkkel**                                                           |
+|-------------------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/metadata/avskrivningsmaate/                  |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/elektronisksignatursikkerhetsnivaa/ |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/elektronisksignaturverifisert/      |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/flytstatus/                         |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/journalposttype/                    |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/journalstatus/                      |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/korrespondanseparttype/             |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/land/                               |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/postnummer/                         |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/presedensstatus/                    |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/sakspartrolle/                      |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/saksstatus/                         |
+
+Følgende relasjonsnøkler skal listes opp fra en implementasjon som
+støtter Moeter-pakken:
+
+| **Relasjonsnøkkel**                                                           |
+|-------------------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/metadata/moetedeltakerfunksjon/              |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/moeteregistreringsstatus/           |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/moeteregistreringstype/             |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/moetesakstype/                      |
+
+Følgende relasjonsnøkler skal listes opp fra en implementasjon som
+støtter LoggingOgSporing-pakken:
+
+| **Relasjonsnøkkel**                                                           |
+|-------------------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/metadata/hendelsetype/                       |
+
+Følgende relasjonsnøkler skal listes opp fra en implementasjon som
+støtter Admin-pakken:
+
+| **Relasjonsnøkkel**                                                           |
+|-------------------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangskategori/                   |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangsrestriksjon/                |
+
 Felles skjema for alle kodelister og felles typer
 
 ![Kodelister - (diagram)](./media/uml-kodelister-entiter.png)
@@ -2517,6 +2636,18 @@ Table: Attributter
 
 ### Sakarkiv 
 
+Når en gjør GET mot href til relasjonsnøkkel
+https://rel.arkivverket.no/noark5/v4/api/sakarkiv/, så returneres liste over
+relasjonsnøkler til de ulike entitetene som er tilgjengelig.  Følgende
+relasjonsnøkler skal listes opp fra en implementasjon som støtter
+Sakarkiv-pakken:
+
+| **Relasjonsnøkkel**                                                   |
+|-----------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/journalpost/                |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/presedens/                  |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/                  |
+
 Utvidelse for sakarkiv metadata
 
 ![Sakarkiv - (diagram)](./media/uml-sakarkiv-entiteter.png)
@@ -3211,6 +3342,27 @@ kontroll på arkivdokumentene og hvilke formater disse er lagret i. Det
 vil også si å kunne implementere vedtatte regler for når konvertering
 skal skje.
 
+Når en gjør GET mot href til relasjonsnøkkel
+https://rel.arkivverket.no/noark5/v4/api/admin/, så returneres liste over
+relasjonsnøkler til de ulike entitetene som er tilgjengelig.  Følgende
+relasjonsnøkler skal listes opp fra en implementasjon som støtter
+Admin-pakken:
+
+| **Relasjonsnøkkel**                                                   |
+|-----------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/admin/administrativenhet/            |
+| https://rel.arkivverket.no/noark5/v4/api/admin/bruker/                        |
+| https://rel.arkivverket.no/noark5/v4/api/admin/rettighet/                     |
+
+Følgende relasjonsnøkler skal tilsvarende listes opp for privilgerte
+brukere etter innlogging:
+
+| **Relasjonsnøkkel**                                                   |
+|-----------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/admin/ny-administrativenhet/         |
+| https://rel.arkivverket.no/noark5/v4/api/admin/ny-bruker/                     |
+| https://rel.arkivverket.no/noark5/v4/api/admin/ny-rettighet/                  |
+
 ![Admin - (diagram)](./media/uml-administrasjon.png)
 
 #### AdministrativEnhet
@@ -3344,6 +3496,16 @@ Table: Attributter
 | slett                   |                                                       | \[1..1\]     |          | boolean             |
 
 ### LoggingOgSporing 
+
+Når en gjør GET mot href til relasjonsnøkkel
+https://rel.arkivverket.no/noark5/v4/api/loggingogsporing/, så returneres
+liste over relasjonsnøkler til de ulike entitetene som er
+tilgjengelig.  Følgende relasjonsnøkler skal listes opp fra en
+implementasjon som støtter LoggingOgSporing-pakken:
+
+| **Relasjonsnøkkel**                                                   |
+|-----------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/loggingogsporing/endringslogg/       |
 
 Skjema for logging og sporing
 
