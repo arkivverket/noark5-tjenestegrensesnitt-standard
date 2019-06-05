@@ -1028,7 +1028,7 @@ Table: Restriksjoner
 
 *Type:* ***Class***
 
-*Arver:* 
+*Arver:* ***Arkivenhet***
 
 Dette er en referanse på tvers av hierarkiet i arkivstrukturen.
 Referansen kan gå fra en mappe til en annen mappe, fra en registrering
@@ -1042,6 +1042,10 @@ kan kun være en referanse til en arkivenhet. I og med at
 kryssreferanser knyttes til Mappe og Basisregistrering, vil det si at
 Referanser også knyttes til alle utvidelsene (spesialiseringer) under
 disse (Saksmappe, Moetemappe og Journalpost, Moeteregistrering).
+
+Ved avlevering i tråd med XML-skjema for Noark 5 versjon 4 så droppes
+samtlige felt arvet fra Arkivenhet, da disse ikke har korresponderende
+felt i dette avleveringsformatet.
 
 Table: Relasjoner
 
