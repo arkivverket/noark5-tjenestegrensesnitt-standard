@@ -1132,12 +1132,10 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/           |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/              |
 | REST\_REL | self                                                                     |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/               |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/          |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klasse/                |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/             |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-nasjonalidentifikator/ |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/                  |
@@ -1147,6 +1145,9 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/                     |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/undermappe/               |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonaleidentifikator/   |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-basisregistrering/     |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-journalpost/           |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-moeteregistrering/     |
 
 Table: Attributter
 
