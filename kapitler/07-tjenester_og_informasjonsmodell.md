@@ -73,9 +73,8 @@ underlagt arkivbegrensning) - inn i saksomslaget uten at dette ble
 registrert i journalen. Tilsvarende funksjonalitet bør også være mulig
 i et elektronisk arkivsystem. Her må dokumentene nødvendigvis bli
 registrert, men dette skal skje på en automatisk måte og med minst
-mulig metadata. Denne typen dokumenter skal ikke kunne søkes fram
-etter innhold, og de skal heller ikke inngå i den ordinære
-identifikasjonen (nummereringen) av journalposter. Disse dokumentene
+mulig metadata.  Denne typen dokumenter tildeles ikke identifikasjonen
+(nummereringen) i motsetning til journalposter.  Disse dokumentene
 vil heller ikke komme på offentlig journal. Men de skal kunne inngå i
 arkivuttrekk dersom de er bevaringsverdige, og det må være mulig å
 skjerme dem internt. I Noark-4 ble dette kalt "loggede dokumenter". I
