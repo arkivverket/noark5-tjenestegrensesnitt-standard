@@ -1031,7 +1031,9 @@ streames til klient
 
 For å overføre en ny fil brukes POST til href til
 rel="https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/" med headere for
-content-type og content-length.
+
+content-type og content-length.  Når overføringen er fullført og
+filopplastingen vellykket, så returneres statuskode 201.
 
 ```
 POST http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
@@ -1041,12 +1043,16 @@ Content-Length: 111111
 Pdf data
 ```
 
+Respons: 201 Created
+
 **Overføre store filer**
 
 For store filer (over 150MB) så kan filen overføres i
 bolker. Prosessen for å overføre store filer er inspirert av APIet til
 Google Drive,
-https://developers.google.com/drive/v3/web/resumable-upload .
+https://developers.google.com/drive/v3/web/resumable-upload .  For
+hver bolk returneres statuskode 200, unntatt den siste når
+overføringen er fullført der det returneres statuskode 201.
 
 For å starte en opplastingssesjon:
 
