@@ -332,6 +332,21 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/arkivdelstatus/                |
 | REST\_REL | self                                                                     |
 
+Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkkel
+også være tilgjengelig via Arkivdel-instanser.
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                                |
+| --------- | ------------------------------------------------------------------------ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/          |
+
+Merk at underliggende lister med Saksmappe og andre underentiteter er
+tilgjengelig via relasjonsnøkkel
+`https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/`,
+dermed er det ikke egne relasjonsnøkler for å hente ut lister med de
+spesifikke under-entitetene.
+
 Table: Attributter
 
 | **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
@@ -523,6 +538,16 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/           |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/basisregistrering/    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/       |
+
+Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
+også være tilgjengelig via Basisregistrering-instanser som har en
+Saksmappe som foreldre.
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                                |
+| --------- | ------------------------------------------------------------------------ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-journalpost/ |
 
 Table: Attributter
 
@@ -891,6 +916,15 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/          |
 | REST\_REL | self                                                                     |
 
+Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
+også være tilgjengelig via Klasse-instanser.
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                                |
+| --------- | ------------------------------------------------------------------------ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/          |
+
 Table: Attributter
 
 | **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
@@ -1153,6 +1187,16 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-journalpost/           |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-moeteregistrering/     |
 
+Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
+også være tilgjengelig via Mappe-instanser.
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                                |
+| --------- | ------------------------------------------------------------------------ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/          |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/   |
+
 Table: Attributter
 
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
@@ -1277,16 +1321,23 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentbeskrivelse/   |
 | REST\_REL | self                                                                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klasse/                |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/      |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/                 |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                   |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonaleidentifikator/   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/          |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-nasjonalidentifikator/ |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/             |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-basisregistrering/   |
+
+Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
+også være tilgjengelig via Registrering-instanser som har en Saksmappe
+som foreldre.
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                                |
+| --------- | ------------------------------------------------------------------------ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-journalpost/ |
 
 Table: Attributter
 
@@ -2858,7 +2909,6 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-avskrivning/        |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/presedens/             |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-presedens/          |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-journalpost/        |
 | REST\_REL | self                                                             |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/journalpost/           |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-dokumentflyt/       |
@@ -3178,7 +3228,7 @@ Table: Relasjonsnøkler
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-sakspart/             |
 | REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-presedens/            |
 | REST\_REL | self                                                               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/            |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-journalpost/          |
 
 Table: Attributter
 
