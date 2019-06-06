@@ -1033,7 +1033,6 @@ streames til klient
 
 For å overføre en ny fil brukes POST til href til
 rel="https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/" med headere for
-
 content-type og content-length.  Når overføringen er fullført og
 filopplastingen vellykket, så returneres statuskode 201.
 
