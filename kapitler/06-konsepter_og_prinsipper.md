@@ -1147,6 +1147,35 @@ informasjonsmodellen skal valideres av kjernen. For eksempel hvis en
 mappe er avsluttet så skal det ikke være mulig å registrere flere
 registreringer på denne (jfr krav 5.4.7).
 
+## Håndtering av API-feil
+
+API-et returnerer to nivåer av tilbakemeldinger ved feil:
+
+ * HTTP statuskoder og meldinger i HTTP-hodefelt
+ * Et JSON-objekt som HTTP-responsens innhold (aka «body») med
+   ytterligere detaljer for å forstå hva som gikk galt.  Denne har
+   en attributt «feil» som peker til et JSON-objekt med feltene
+   «kode» og «beskrivelse».
+
+Som et eksempel, hvis en forsøker å hente ned en instans
+«.../arkivstruktur/arkivdel/9d5bda48-52b5-11e9-abc0-002354090596/» som
+ikke finnes, så er JSON-responsen strukturert på denne måten.  Konkret
+verdi av beskrivelse er ikke standardisert:
+
+```
+{
+  "feil": {
+    "kode": 404
+    "beskrivelse": "Not Found: arkivstruktur/arkivdel/9d5bda48-52b5-11e9-abc0-002354090596/"
+  }
+}
+```
+
+| Felt                  | Beskrivelse                                                      |
+|-----------------------|------------------------------------------------------------------|
+| kode                  | Feilkoden, samme som HTTP statuskoden til feilmeldingen          |
+| beskrivelse (valgfri) | En kort melding som beskriver feilen.  Disse verdiene er ikke standardisert. |
+
 ## Identifikatorer
 
 SystemID brukes som entydig identifikator for alle objekter.
