@@ -9,53 +9,24 @@ class Arkivstruktur.Registrering <Arkivenhet>
 !include kapitler/media/uml-class-matrikkel.iuml
 !include kapitler/media/uml-class-nasjonalidentifikator.iuml
 !include kapitler/media/uml-class-personidentifikator.iuml
+!include kapitler/media/uml-class-foedselsnummer.iuml
+!include kapitler/media/uml-class-dnummer.iuml
 !include kapitler/media/uml-class-plan.iuml
 !include kapitler/media/uml-class-posisjon.iuml
+!include kapitler/media/uml-codelist-koordinatsystem.iuml
 
-package GeoIntegration {
-
-  package Geometri {
-
-    class Punkt <Geometri> <<dataType>> {
-      +posisjon : Koordinat
-      -- Geometri --
-      +koordinatsystem : KoordinatsystemKode
-    }
-  }
-
-  package Felles {
-    class ByggIdent <<dataType>> {
-      +bygningsNummer : Integer
-      +endringsloepenummer : Integer [0..1]
-    }
-
-    class NasjonalArealplanId {
-      +nummer : Administrativenhetsnummer
-      +planidentifikasjon : string
-    }
-
-    class "Matrikkelnummer\n{root,leaf}" as Matrikkelnummer <<dataType>> {
-      +kommunenummer : String
-      +gaardsnummer : Integer
-      +bruksnummer : Integer
-      +festenummer : Integer [0..1]
-      +seksjonsnummer : Integer [0..1]
-    }
-  }
-}
 Arkivstruktur.Mappe --> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Registrering "+registrering 0..*" <-o "+mappe 0..1" Arkivstruktur.Mappe
 Arkivstruktur.Mappe *--> "+nasjonalidentifikator 0..*\n\n" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
 Arkivstruktur.Registrering *--> "+nasjonalidentifikator 0..*\n" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
 Arkivstruktur.NasjonaleIdentifikatorer.Posisjon -|> Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|- Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator
+Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.DNummer
+Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Foedselsnummer
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Bygning
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Plan
 
-Arkivstruktur.NasjonaleIdentifikatorer.Plan <-[hidden]-- NasjonalArealplanId
-Arkivstruktur.NasjonaleIdentifikatorer.Posisjon <-[hidden]-- Punkt
-Arkivstruktur.NasjonaleIdentifikatorer.Bygning <-[hidden]-- ByggIdent
-Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel <-[hidden]-- Matrikkelnummer
+Arkivstruktur.NasjonaleIdentifikatorer.Posisjon <-[hidden]-- Arkivstruktur.NasjonaleIdentifikatorer.Koordinatsystem
 @enduml

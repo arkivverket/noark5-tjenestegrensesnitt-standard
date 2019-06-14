@@ -1,5 +1,9 @@
 @startuml
 class Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel <Nasjonalidentifikator> {
-  +matrikkelnummer : Matrikkelnummer
+  +kommunenummer : string
+  +gaardsnummer : integer
+  +bruksnummer : integer
+  +festenummer : string [0..1]
+  +seksjonsnummer : string [0..1]
 }
 @enduml

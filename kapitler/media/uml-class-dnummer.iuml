@@ -1,0 +1,5 @@
+@startuml
+class Arkivstruktur.NasjonaleIdentifikatorer.DNummer <Personidentifikator> {
+  +dNummer : string
+}
+@enduml

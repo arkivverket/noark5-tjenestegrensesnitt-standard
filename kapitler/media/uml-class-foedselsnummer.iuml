@@ -1,0 +1,5 @@
+@startuml
+class Arkivstruktur.NasjonaleIdentifikatorer.Foedselsnummer <Personidentifikator> {
+  +foedselsnummer : string
+}
+@enduml

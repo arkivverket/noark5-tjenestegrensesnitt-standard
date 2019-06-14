@@ -1,6 +1,4 @@
 @startuml
 class Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <Nasjonalidentifikator> {
-  +foedselsnummer : string [0..1]
-  +dNummer : string [0..1]
 }
 @enduml

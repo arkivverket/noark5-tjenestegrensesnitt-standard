@@ -1,6 +1,6 @@
 @startuml
 class Sakarkiv.SakspartEnhet <Sakspart> {
-  +organisasjonsnummer : string [0..1]
+  +enhetsidentifikator : Enhetsidentifikator [0..1]
   +navn : string
   +forretningsadresse : EnkelAdresse [0..1]
   +postadresse : EnkelAdresse [0..1]
