@@ -21,6 +21,7 @@ Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Arkivdel "nestearkivdel 0..1" o--> "forrigearkivdel 0..1" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+registrering  0..*\n" Arkivstruktur.Registrering
 Arkivstruktur.Arkivdel "\n+arkivdel 0..1" o--> "+mappe  0..*" Arkivstruktur.Mappe
 Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
