@@ -514,10 +514,6 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/",
         },
         {
-            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/avslutt-mappe/",
-        },
-        {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
         },
@@ -668,10 +664,6 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/",
-        },
-        {
-            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
-            "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/avslutt-mappe/",
         },
         {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
