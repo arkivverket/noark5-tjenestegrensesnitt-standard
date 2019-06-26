@@ -11,15 +11,15 @@ class Arkivstruktur.Registrering <Arkivenhet>
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>
 class Arkivstruktur.Dokumentobjekt
 
-Arkivstruktur.Arkiv o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkiv "+overarkiv 0..1" o--> "+underarkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*\n" Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem  0..1" <-o "+arkivdel 1..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+sekundaerklassifikasjonssystem  0..1" <-o Arkivstruktur.Arkivdel
 Arkivstruktur.Klassifikasjonssystem "+klassifikasjonssystem 0..1" o--> "+klasse 0..*" Arkivstruktur.Klasse
-Arkivstruktur.Klasse o-> "+underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klasse "+overklasse 0..1" o-> "+underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
-Arkivstruktur.Mappe o--> "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Arkivdel "+arkivdel 0..1" o--> "+registrering  0..*\n" Arkivstruktur.Registrering
 Arkivstruktur.Arkivdel "\n+arkivdel 0..1" o--> "+mappe  0..*" Arkivstruktur.Mappe

@@ -13,9 +13,9 @@ skinparam nodesep 180
 !include kapitler/media/uml-codelist-tilgangsrestriksjon.iuml
 !include kapitler/media/uml-class-tilgang.iuml
 
-Arkivstruktur.Klasse o--> "+underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klasse "+overklasse 0..1" o--> "+underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "+klasse 0..1" o-> "+mappe 0..*" Arkivstruktur.Mappe
-Arkivstruktur.Mappe o-> "+undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe "+overmappe 0..1" o-> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Registrering "+registrering" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
