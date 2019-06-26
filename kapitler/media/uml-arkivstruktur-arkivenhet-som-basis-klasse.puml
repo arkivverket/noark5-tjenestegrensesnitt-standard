@@ -46,7 +46,7 @@ Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
 !include kapitler/media/uml-class-hendelseslogg.iuml
 !include kapitler/media/uml-codelist-hendelsetype.iuml
 
-Arkivstruktur.Arkivenhet "0..1" o-- "+logg 0..*" Arkivstruktur.Hendelseslogg
-LoggingOgSporing.Endringslogg <|-- Arkivstruktur.Hendelseslogg
-Arkivstruktur.Hendelseslogg -[hidden]> Kodelister.Hendelsetype
+Arkivstruktur.Arkivenhet "0..1" o-- "+logg 0..*" LoggingOgSporing.Hendelseslogg
+LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
+LoggingOgSporing.Hendelseslogg -[hidden]> Kodelister.Hendelsetype
 @enduml
