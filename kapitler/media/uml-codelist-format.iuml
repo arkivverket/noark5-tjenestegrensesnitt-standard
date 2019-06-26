@@ -1,13 +1,14 @@
 @startuml
 class Kodelister.Format <<codelist>> {
-  +Ren tekst = RA-TEKST
-  +TIFF versjon 6 = RA-TIFF6
-  +PDF/A - ISO 19005-1:2005 = RA-PDF
-  +XML = RA-XML
-  +JPEG = RA-JPEG
-  +SOSI = RA-SOSI
-  +MPEG-2 = RA-MPEG-2
-  +MP3 = RA-MP3
-  +PNG = RA-PNG
+  +Ren tekst = fmt/111
+  +TIFF versjon 6 = fmt/353
+  +PDF/A 1a - ISO 19005-1:2005 = fmt/95
+  +PDF/A 1b - ISO 19005-1:2005 = fmt/354
+  +XML = fmt/101
+  +JPEG = fmt/42
+  +SOSI = av/1
+  +MPEG-2 = x-fmt/386
+  +MP3 = fmt/134
+  +PNG = fmt/11
 }
 @enduml

@@ -7,5 +7,6 @@ class Kodelister.Korrespondanseparttype <<codelist>> {
   +Intern avsender = IA
   +Intern mottaker = IM
   +Intern kopimottaker = IK
+  +Medavsender = IS
 }
 @enduml

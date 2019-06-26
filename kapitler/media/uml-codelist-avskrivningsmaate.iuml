@@ -5,5 +5,7 @@ class Kodelister.Avskrivningsmaate <<codelist>> {
   +Besvart på telefon = TLF
   +Tatt til etterretning = TE
   +Tatt til orientering = TO
+  +Besvart med notat = BN
+  +Saken ble avsluttet = SA
 }
 @enduml
