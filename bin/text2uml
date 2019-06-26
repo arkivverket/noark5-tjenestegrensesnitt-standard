@@ -160,7 +160,11 @@ for c in sorted(classes.keys(), key=lambda x: classes[x]['fullname']):
                 if -1 != f.find('('):
                     entry += "  {field} +%s = %s\n" % (f, classes[c]['attributes'][f]['code'])
                 elif '' != classes[c]['attributes'][f]['code']:
-                    entry += "  +%s = %s\n" % (f, classes[c]['attributes'][f]['code'])
+                    kodename = classes[c]['attributes'][f]['code']
+                    m = re.match("^\[(.+)\]\(.+\)$", kodename)
+                    if m:
+                        kodename = m.group(1)
+                    entry += "  +%s = %s\n" % (f, kodename)
                 else:
                     entry += "  +%s\n" % f
             else: # stereotype dataType and class/default
