@@ -1131,7 +1131,16 @@ Formatverdier (her «fmt/95») hentes fra kodelisten Format, se kapittel 7.
 GET https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
 
 Returnerer med Content-type=filens MIME-type, for eksempel
-«application/pdf», og filen streames til klient.
+«application/pdf», og filen streames til klient.  Hodefeltet
+Content-type settes til filens MIME-type hentet fra
+dokumentobjekt-entiteten.  Merk, GET-forespørselen bør ikke inneholde
+HTTPs Accept-hodefelt, alternativt bør akseptere enhver MIME-type.
+HTTP-hodefeltet Accept brukes til å gi beskjed hvilket helst format
+som ønskes lastet ned, og klienten har ikke noe valg av format og bør
+derfor ikke forsøke å styre valg av format.  Hvis Accept-hodefeltet er
+satt, og ikke inneholder enten «*/*» eller er stemmer med verdien i
+mimeType-feltet til tilhørende dokumentobjekt, så returneres
+resultatkoden 406, ikke resultatkode 200.
 
 **Overføre små filer**
 
