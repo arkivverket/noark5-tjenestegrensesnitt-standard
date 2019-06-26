@@ -662,7 +662,7 @@ Table: Restriksjoner
 
 *Type:* ***Class***
 
-*Arver:* 
+*Arver:* ***Arkivenhet***
 
 Dokumentobjekt er det laveste metadatanivået i arkivstrukturen. Et
 dokumentobjekt skal referere til én og kun en
@@ -677,6 +677,11 @@ dokument hvor taushetsbelagt informasjon er fjernet slik at varianten
 kan være offentlig tilgjengelig. Dokumentobjektet inneholder mer
 tekniske metadata enn de andre arkivenhetene, bl.a. sjekksummen til
 bytesekvensen som representerer dokumentet.
+
+Ved avlevering i tråd med XML-skjema for Noark 5 versjon 4 så droppes
+følgende felt arvet fra Arkivenhet: «oppdatertDato», «oppdatertAv»,
+«referanseOppdatertAv» og «referanseOpprettetAv». Disse ikke har
+korresponderende felt i avleveringsformatet.
 
 Table: Relasjoner
 
@@ -705,13 +710,10 @@ Table: Attributter
 
 | **Navn**             | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |----------------------|---------------|---------------|-----------|-----------|
-| systemID             | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
 | versjonsnummer       | Definisjon: Identifikasjon av versjoner innenfor ett og samme dokument. Kilde: Registreres automatisk når en ny versjon arkiveres. Kommentarer: Versjonsnummer gjelder bare arkiverte versjoner. Annen versjons-håndtering ligger i komplett Noark, og genererer ikke metadata skal følge med i et arkivuttrekk. M005 | \[1..1\] | | integer |
 | variantformat        | Definisjon: Angivelse av hvilken variant et dokument forekommer i . Kilde: Registreres automatisk når dokumentet arkiveres. Kommentarer: (ingen). M700 | \[1..1\] | | Variantformat |
 | format               | Definisjon: Dokumentets format . Kilde: Registreres automatisk når dokumentet arkiveres. Kommentarer: Faste verdier bestemmes senere. M701 | \[0..1\] | | Format |
 | formatDetaljer       | Definisjon: Nærmere spesifikasjon av dokuments format, f.eks. informasjon om komprimering . Kilde: (ingen). Kommentarer: (ingen). M702 | \[0..1\] | | string | 
-| opprettetDato        | Definisjon: Dato og klokkeslett når arkivenheten ble opprettet/registrert . Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M600 | \[0..1\] | | datetime |
-| opprettetAv          | Definisjon: Navn på person som opprettet/registrerte arkivenheten. Kilde: Registreres automatisk av systemet ved opprettelse av enheten. Kommentarer: (ingen). M601 | \[0..1\] | | string | 
 | referanseDokumentfil | Definisjon: Referanse til filen som inneholder det elektroniske dokumentet som dokumentobjektet beskriver . Kilde: Registreres automatisk når et dokument tilknyttes en registrering, når det arkiveres flere versjoner av et dokument, når det lages en egen variant av dokumentet og når dokumentet konverteres til nye formater. Kommentarer: Referansen skal være en &quot;sti&quot; (dvs. også inneholde katalogstrukturen) til filnavnet som gjør det mulig å identifisere riktig fil i et arkivuttrekk. M218 | \[0..1\] | | string | 
 | filnavn              | veFilnavn i n4 | \[0..1\]     |           | string | 
 | sjekksum             | Definisjon: En verdi som beregnes ut fra innholdet i dokumentet, og som dermed gir integritetssikring til dokumentets innhold . Kilde: Påføres automatisk i forbindelse med eksport for avlevering. Kommentarer: (ingen). M705 | \[0..1\] | | string | 

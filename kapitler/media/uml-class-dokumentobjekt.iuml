@@ -1,12 +1,9 @@
 @startuml
-class Arkivstruktur.Dokumentobjekt {
-  +systemID : SystemID [0..1]
+class Arkivstruktur.Dokumentobjekt <Arkivenhet> {
   +versjonsnummer : integer
   +variantformat : Variantformat
   +format : Format [0..1]
   +formatDetaljer : string [0..1]
-  +opprettetDato : datetime [0..1]
-  +opprettetAv : string [0..1]
   +referanseDokumentfil : string [0..1]
   +filnavn : string [0..1]
   +sjekksum : string [0..1]
