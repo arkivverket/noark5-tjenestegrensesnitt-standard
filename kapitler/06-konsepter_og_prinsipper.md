@@ -1055,7 +1055,7 @@ GET https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
         "beskrivelse": "Arkivformat"
     },
     "format": {
-        "kode": "RA-PDF",
+        "kode": "fmt/95",
         "beskrivelse": "PDF/A - ISO 19005-1:2005"
     },
     "referanseDokumentfil": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
@@ -1076,10 +1076,12 @@ GET https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
 }
 ```
 
+Formatverdier (her «fmt/95») hentes fra kodelisten Format, se kapittel 7.
+
 GET https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
 
-Gir Content-type=filens mime type feks “application/pdf” og filen
-streames til klient
+Returnerer med Content-type=filens MIME-type, for eksempel
+«application/pdf», og filen streames til klient.
 
 **Overføre små filer**
 

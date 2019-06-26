@@ -2153,6 +2153,34 @@ Table: Attributter
 
 Åpen kodeliste
 
+Kodeverdier for formater hentes fra PRONOM-registeret over formater fra
+det britiske nasjonalarkivet.  Informasjon om PRONOM er tilgjengelig
+fra deres nettsider, `https://www.nationalarchives.gov.uk/PRONOM/`.
+Slike formatkoder består at et prefiks "fmt" eller "x-fmt", en
+skråstrek og et heltall, for eksempel "fmt/111" (ren tekst) og
+"x-fmt/18" (CSV).
+
+Ved bruk av formater som ikke har fått PRONOM-kode, bør det brukes en
+midlertidig formatkode.  Det er definert to slike midlertidige
+formatkoder.  Offisielle midlertidige formatkoder registrert i regi av
+Arkivverket har prefiks "av/", mens midlertidige formatkoder fastsatt
+av arkivleverandør eller arkivansvarlig gis prefiks "vnd/".  For mer
+informasjon om formatkoder og autorativ liste over, både offentlige og
+midlertidige, se vedlegg 4.
+
+Før en tar i bruk en lokalt definert kode (med prefix "vnd/"), så bør
+en sjekke om formatet allerede er registrert i formatkatalogen, og
+bruke formatkode derfra hvis mulig.  Når et format med midlertidig
+formatkode får en offisiell formatkode fra PRONOM, så skal kodeliste
+og oppføringer i databasen til API-implementasjonen oppdateres ved
+første praktiske anledning, maksimalt et år etter at slik kode er
+tildelt av PRONOM, dog aldri senere enn i forkant av eventuell
+deponering og avlevering av arkivmaterialet der slike koder blir
+brukt.
+
+Merk at listen over formater i tabellen over attributter her kun er
+eksempler.
+
 Table: Relasjonsnøkler
 
 | **Tag**  | **Verdi**                                         |
@@ -2163,15 +2191,16 @@ Table: Attributter
 
 | **Navn**                 | **Merknad**                                                                                                                                                              | **Multipl.** | **Kode**  | **Type** |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------- | -------- |
-| Ren tekst                | Som ren tekst: UTF-8 (ISO/IEC 10646-1:2000 Annex D) eller ISO 8859-1:1998, Latin 1. ISO 8859-1:1998, Latin 1 kan erstattes med ISO 8859-4:1998, Latin 4 for samiske tegn |              | RA-TEKST  |          |
-| TIFF versjon 6           | TIFF - Tag Image File Format versjon 6, med de presiseringer som fremgår av forskriftens § 8-18                                                                          |              | RA-TIFF6  |          |
-| PDF/A - ISO 19005-1:2005 | PDF/A - ISO 19005-1:2005, versjon 1a eller 1b («Conformance Level» A eller B). PDF/A erstatter Adobe PDF, jf. forskriftens § 8-20 tredje ledd.                           |              | RA-PDF    |          |
-| XML                      | XML - Extensible Markup Language versjon 1.0, med de presiseringer som fremgår av forskriftens § 8-19                                                                    |              | RA-XML    |          |
-| JPEG                     | JPEG (ISO 10918-1:1994)                                                                                                                                                  |              | RA-JPEG   |          |
-| SOSI                     | SOSI versjon 2.2 (1995) eller nyere                                                                                                                                      |              | RA-SOSI   |          |
-| MPEG-2                   | MPEG-2 (ISO 13818-2.)                                                                                                                                                    |              | RA-MPEG-2 |          |
-| MP3                      | lyd: MP3 (ISO 11172-3), PCM eller PCM-basert Wave. Valget mellom disse lydformatene skal i hvert tilfelle være avtalt med Arkivverket før deponering eller avlevering    |              | RA-MP3    |          |
-| PNG                      | PNG (ISO/IEC15948)                                                                                                                                                       |              | RA-PNG    |          |
+| Ren tekst                | Som ren tekst: UTF-8 (ISO/IEC 10646-1:2000 Annex D) eller ISO 8859-1:1998, Latin 1. ISO 8859-1:1998, Latin 1 kan erstattes med ISO 8859-4:1998, Latin 4 for samiske tegn |              | [fmt/111](http://www.nationalarchives.gov.uk/PRONOM/fmt/111)   |          |
+| TIFF versjon 6           | TIFF - Tag Image File Format versjon 6, med de presiseringer som fremgår av forskriftens § 8-18                                                                          |              | [fmt/353](http://www.nationalarchives.gov.uk/PRONOM/fmt/353)  |          |
+| PDF/A 1a - ISO 19005-1:2005 | PDF/A - ISO 19005-1:2005, versjon 1a («Conformance Level» A). PDF/A erstatter Adobe PDF, jf. forskriftens § 8-20 tredje ledd.                           |              | [fmt/95](http://www.nationalarchives.gov.uk/PRONOM/fmt/95) |          |
+| PDF/A 1b - ISO 19005-1:2005 | PDF/A - ISO 19005-1:2005, versjon 1b («Conformance Level» B). PDF/A erstatter Adobe PDF, jf. forskriftens § 8-20 tredje ledd.                           |              | [fmt/354](http://www.nationalarchives.gov.uk/PRONOM/fmt/354) |          |
+| XML                      | XML - Extensible Markup Language versjon 1.0, med de presiseringer som fremgår av forskriftens § 8-19                                                                    |              | [fmt/101](http://www.nationalarchives.gov.uk/PRONOM/fmt/101)    |          |
+| JPEG                     | JPEG 1.00 som beskrevet i ISO 10918-1:1994                                                                                                                               |              | [fmt/42](http://www.nationalarchives.gov.uk/PRONOM/fmt/42)   |          |
+| SOSI                     | SOSI versjon 2.2 (1995) eller nyere                                                                                                                                      |              | av/1     |          |
+| MPEG-2                   | MPEG-2 (ISO 13818-2.)                                                                                                                                                    |              | [x-fmt/386](http://www.nationalarchives.gov.uk/PRONOM/x-fmt/386) |          |
+| MP3                      | lyd: MP3 (ISO 11172-3), PCM eller PCM-basert Wave. Valget mellom disse lydformatene skal i hvert tilfelle være avtalt med Arkivverket før deponering eller avlevering    |              | [fmt/134](http://www.nationalarchives.gov.uk/PRONOM/fmt/134) |          |
+| PNG                      | PNG 1.2 som beskrevet i ISO / IEC 15948                                                                                                                                  |              | [fmt/11](http://www.nationalarchives.gov.uk/PRONOM/fmt/13)    |          |
 
 #### Graderingskode
 
