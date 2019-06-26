@@ -635,6 +635,7 @@ Table: Attributter
 | skjerming                     |  | \[0..1\] |         | Skjerming |
 | gradering                     |  | \[0..1\] |         | Gradering |
 | elektroniskSignatur           |  | \[0..1\] |         | ElektroniskSignatur |
+| eksternReferanse              | Ekstern referanse på innkommende dokumenter.  Brukes til søk via API-et og kan ikke avleveres på deponi-formatet til Noark 5 versjon 4 og 5 som eget felt. | \[0..1\] | string |
 | virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen).Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
 
 Table: Restriksjoner
