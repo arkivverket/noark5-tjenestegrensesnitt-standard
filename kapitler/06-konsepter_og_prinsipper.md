@@ -1057,7 +1057,6 @@ Innholdstyper(Content-Type) som skal brukes:
 | Innholdstype (Content-Type)    |
 | ------------------------------ |
 | application/vnd.noark5-v4+json |
-| application/vnd.noark5-v4+xml  |
 
 Datoformat skal være angitt i tråd med definisjonen i Noark 5 krav
 5.12.7 (datoer uten klokkeslett) og 5.12.8 (datoer med klokkeslett),
