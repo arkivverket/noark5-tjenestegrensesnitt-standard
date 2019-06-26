@@ -1082,11 +1082,6 @@ Innholdstyper(Content-Type) som skal brukes:
 | application/vnd.noark5-v4+json |
 | application/vnd.noark5-v4+xml  |
 
-Overføringsformat skal være i henhold til følgende skjema for begge
-innholdstyper:
-
-  - http://skjema.kxml.no/arkivverket/noark5/v4.0/
-
 Datoformat skal være angitt i tråd med definisjonen i Noark 5 krav
 5.12.7 (datoer uten klokkeslett) og 5.12.8 (datoer med klokkeslett),
 det vil si definisjonen for date og dateTime i XML Schema 1.0
