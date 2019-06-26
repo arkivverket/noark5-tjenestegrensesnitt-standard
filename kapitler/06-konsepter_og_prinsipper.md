@@ -43,7 +43,7 @@ til.
 
 **Request**
 
-GET http://localhost:49708/api
+GET https://n5.example.com/api
 
 Accept: application/vnd.noark5-v4+json
 
@@ -55,11 +55,11 @@ Content-Type: application/vnd.noark5-v4+json
 {
     "_links": [
         {
-            "href": "http://localhost:49708/api/arkivstruktur",
+            "href": "https://n5.example.com/api/arkivstruktur",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/"
         },
         {
-            "href": "http://localhost:49708/api/sakarkiv",
+            "href": "https://n5.example.com/api/sakarkiv",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/"
         }
     ]
@@ -86,7 +86,7 @@ Alternativt som XML
 
 **Request**
 
-GET http://localhost:49708/api
+GET https://n5.example.com/api
 
 Accept: application/vnd.noark5-v4+xml
 
@@ -102,7 +102,7 @@ Content-Type: application/vnd.noark5-v4+xml
     <Links>
         <link>
             <rel>https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/</rel>
-            <href>http://localhost:49708/api/arkivstruktur</href>
+            <href>https://n5.example.com/api/arkivstruktur</href>
             <type sxi:nil="true" />
             <deprecation xsi:nil="true" />
             <name xsi:nil="true" />
@@ -110,7 +110,7 @@ Content-Type: application/vnd.noark5-v4+xml
         </link>
         <link>
             <rel>https://rel.arkivverket.no/noark5/v4/api/sakarkiv/</rel>
-            <href>http://localhost:49708/api/sakarkiv</href>
+            <href>https://n5.example.com/api/sakarkiv</href>
             <type sxi:nil="true" />
             <deprecation xsi:nil="true" />
             <name xsi:nil="true" />
@@ -189,12 +189,12 @@ i _links er alfabetisk sortert på «rel»-feltet i henhold til ASCII-verdi.
 {
     "_links": [
         {
-            "href": "http://localhost:49708/api/arkivstruktur/arkiv{?$filter&$orderby&$top&$skip&$search}",
+            "href": "https://n5.example.com/api/arkivstruktur/arkiv{?$filter&$orderby&$top&$skip&$search}",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/",
             "templated": true
         },
         {
-            "href": "http://localhost:49708/api/arkivstruktur/ny-arkivskaper",
+            "href": "https://n5.example.com/api/arkivstruktur/ny-arkivskaper",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/",
         },
 ```
@@ -313,7 +313,7 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 | Eksempel                                                                                                                                                                                                                        | Forklaring                                                                                              | Nivå    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------- |
 | ../arkivstruktur/mappe/?$expand=merknad&$filter=merknad/any(m: m/merknadstype/kode eq 'B')                                                                                                                                      | Mapper med merknader som har merknadstype B                                                             | utvidet |
-| [../arkivdel/1235/mappe?$top=2&$filter=contains(‘testmappe’, tittel) eq true](http://n5test.kxml.no/api/arkivstruktur/Arkivdel/1235/mappe?$top=2&$filter=tittel%20eq%20%E2%80%98testmappe%E2%80%99) $orderby=oppdatertDato desc | De to første mapper hvor testmappe er en del av tittel sortert synkende på oppdatertDato                | basis   |
+| [../arkivdel/1235/mappe?$top=2&$filter=contains(‘testmappe’, tittel) eq true](https://n5.example.com/api/arkivstruktur/Arkivdel/1235/mappe?$top=2&$filter=tittel%20eq%20%E2%80%98testmappe%E2%80%99) $orderby=oppdatertDato desc | De to første mapper hvor testmappe er en del av tittel sortert synkende på oppdatertDato                | basis   |
 | ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq '12/2' and klasse/klassifikasjonssystem/klassifikasjonstype/kode eq 'GBNR'                                                                                                | Mappe med klassering på eiendom                                                                         | utvidet |
 | ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq '12345678901' and klasse/klassifikasjonssystem/klassifikasjonstype/kode eq 'PNR'                                                                                          | Mappe med klassering på fødselsnr                                                                       | utvidet |
 | ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq '123456789' and klasse/klassifikasjonssystem/klassifikasjonstype/kode eq 'ORG'                                                                                            | Mappe med klassering på organisasjonsnr                                                                 | utvidet |
@@ -354,8 +354,8 @@ være begrensninger på hvor mange nivå/dybde en arkivkjerne støtter.
 
 | Eksempel:                                                                                                                                         |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| localhost:49708/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |
-| localhost:49708/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |
+| https://n5.example.com/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |
+| https://n5.example.com/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |
  
 **Resultat med underobjekter**
 
@@ -383,7 +383,7 @@ Det kan se se ut som følger:
 
 Forespørsel:
 
-GET http://localhost:49708/api/arkivstruktur/mappe/
+GET https://n5.example.com/api/arkivstruktur/mappe/
 Accept: application/vnd.noark5-v4+json
 
 Respons:
@@ -402,7 +402,7 @@ Respons:
   "count" : 3,
   "_links" : [
     { "rel": "next",
-      "href": "http://localhost/noark5v4/api/arkivstruktur/mappe/?top=2&skip=2",
+      "href": "https://n5.example.com/api/arkivstruktur/mappe/?top=2&skip=2",
     },
     ...
   ]
@@ -425,10 +425,10 @@ JSON-strukturen se slik ut:
   "count": 0,
   "_links" : [
     { "rel": "self",
-      "href": "http://localhost:49708/api/arkivstruktur/arkiv/"
+      "href": "https://n5.example.com/api/arkivstruktur/arkiv/"
     },
     { "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/",
-      "href": "http://localhost:49708/api/arkivstruktur/arkiv/"
+      "href": "https://n5.example.com/api/arkivstruktur/arkiv/"
     }
   ]
 }
@@ -456,7 +456,7 @@ en arkivdel inneholde relasjonsnøkkelen
 rel="https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/"
 om bruker har lov til å opprette mapper på denne arkivdelen. Den
 aktuelle ressurslenke kan være
-http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe .
+https://n5.example.com/api/arkivstruktur/Arkivdel/12345/ny-mappe .
 Denne kan brukes til både GET og POST forespørsel.
 
 GET-forespørselen forhåndsutfyller en lovlig objektstruktur og gir
@@ -482,12 +482,12 @@ Ved registrering av objektet så skal kjernen fylle ut systemID, opprettetAv og 
     },
     "_links": [
         {
-            "href": "http://localhost:49708/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
+            "href": "https://n5.example.com/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium/",
             "templated": true
         },
         {
-            "href": "http://localhost:49708/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
+            "href": "https://n5.example.com/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/mappetype/",
             "templated": true
         }
@@ -500,7 +500,7 @@ gitt url. Responsen gir statuskode 201 Created om objektet ble opprettet
 korrekt og komplett objekt samt location header for lese eller endre
 url.
 
-POST til http://n5test.kxml.no/api/arkivstruktur/Arkivdel/12345/ny-mappe
+POST til https://n5.example.com/api/arkivstruktur/Arkivdel/12345/ny-mappe
 
 Content-Type: application/vnd.noark5-v4+json
 
@@ -524,7 +524,7 @@ Content-Type: application/vnd.noark5-v4+json
 
 Location →
 
-http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
+https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
 ```Python
 {
@@ -544,19 +544,19 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
     "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
     "_links": [
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
             "rel": "self",
         },
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/",
         },
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/avslutt-mappe/",
         },
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
         },
 ```
@@ -601,12 +601,12 @@ hentes fra slik som mappetype og dokumentmedium.
     },
     "_links": [
         {
-            "href": "http://localhost:49708/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
+            "href": "https://n5.example.com/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium/",
             "templated": true
         },
         {
-            "href": "http://localhost:49708/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
+            "href": "https://n5.example.com/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/administrasjon/mappetype/",
             "templated": true
         }
@@ -635,7 +635,7 @@ klient. For å redusere risikoen for konflikt bør derfor klienten
 alltid hente en fersk utgave av objektet med en GET-forespørsel og
 deretter oppdatere opbjektet med en PUT-forespørsel.
 
-PUT til http://n5test.kxml.no/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
+PUT til https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
 Content-Type: application/vnd.noark5-v4+json
 
@@ -670,7 +670,7 @@ Content-Type: application/vnd.noark5-v4+json
 
 Location →
 
-http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
+https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
 ```Python
 {
@@ -699,19 +699,19 @@ http://localhost:49708/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
     "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
     "_links": [
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
             "rel": "self",
         },
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/",
         },
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/avslutt",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/avslutt-mappe/",
         },
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
+            "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
         },
 ```
@@ -743,7 +743,7 @@ Ved uthenting av en mappe vil du få følgende relasjon tilbake:
 ```Python
 {
     "rel": "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/",
-    "href": "http://n5test.kxml.no/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe",
+    "href": "https://n5.example.com/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe",
 }
 ```
 
@@ -751,7 +751,7 @@ Ved å kjøre PUT-forespørsel på angitt href med tilhørende felter som
 er påkrevd for saksmappe så skal objektet utvides til å bli en
 saksmappe.
 
-**PUT http://n5test.kxml.no/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe**
+**PUT https://n5.example.com/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe**
 
 Content-Type: application/vnd.noark5-v4+json
 
@@ -788,7 +788,7 @@ saksmappe og ikke mappe.
     "_links": [
         {
             "rel": "self",
-            "href": "http://n5test.kxml.no/api/sakarkiv/saksmappe/1",
+            "href": "https://n5.example.com/api/sakarkiv/saksmappe/1",
         },
 ```
 
@@ -819,7 +819,7 @@ referanser mellom objekter.
 Her opprettes ny referanse mellom registrering og dokumentbeskrivelse.
 
 POST
-http://localhost:49708/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/$ref?$id=http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/1fa94a89-3550-470b-a220-92dd4d709044
+https://n5.example.com/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/$ref?$id=https://n5.example.com/api/arkivstruktur/Dokumentbeskrivelse/1fa94a89-3550-470b-a220-92dd4d709044
 
 Resultatkode 204 – NoContent
 
@@ -828,11 +828,11 @@ Resultatkode 204 – NoContent
 Her flyttes mappen fra en arkivdel til en annen.
 
 PUT
-http://localhost:49708/api/arkivstruktur/mappe/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/arkivdel/$ref
+https://n5.example.com/api/arkivstruktur/mappe/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/arkivdel/$ref
 
 Body:
 
-http://localhost:49708/api/arkivstruktur/arkivdel/092e497a-a528-4121-8f22-fbc78fa6c930
+https://n5.example.com/api/arkivstruktur/arkivdel/092e497a-a528-4121-8f22-fbc78fa6c930
 
 Resultatkode 204 – NoContent
 
@@ -843,7 +843,7 @@ benyttes. Her slettes referansen til dokumentbeskrivelse fra
 registrering.
 
 DELETE
-http://localhost:49708/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/$ref?$id=http://localhost:49708/api/arkivstruktur/Dokumentbeskrivelse/092e497a-a528-4121-8f22-fbc78fa6c930
+https://n5.example.com/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/$ref?$id=https://n5.example.com/api/arkivstruktur/Dokumentbeskrivelse/092e497a-a528-4121-8f22-fbc78fa6c930
 
 Resultatkode 204 – NoContent
 
@@ -854,7 +854,7 @@ benyttes. Her slettes referansen til registrering fra
 dokumentbeskrivelse.
 
 DELETE
-http://localhost:49708/api/arkivstruktur/dokumentbeskrivelse/092e497a-a528-4121-8f22-fbc78fa6c930/registrering/$ref
+https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/092e497a-a528-4121-8f22-fbc78fa6c930/registrering/$ref
  
 Resultatkode 204 – NoContent
 
@@ -992,7 +992,7 @@ Ved navigering til dokumentobjekt så kan selve filen også åpnes ved å
 følge referanseDokumentfil eller href til relasjonsnøkkel
 https://rel.arkivverket.no/noark5/v4/arkivstruktur/fil/.
 
-GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785
+GET https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785
 
 ```Python
 {
@@ -1006,25 +1006,25 @@ GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
         "kode": "RA-PDF",
         "beskrivelse": "PDF/A - ISO 19005-1:2005"
     },
-    "referanseDokumentfil": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
+    "referanseDokumentfil": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
     "_links": [
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
+            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
             "rel": "self",
         },
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
+            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/",
         },
         {
-            "href": "http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
+            "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
             "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/",
         }
     ]
 }
 ```
 
-GET http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
+GET https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
 
 Gir Content-type=filens mime type feks “application/pdf” og filen
 streames til klient
@@ -1037,7 +1037,7 @@ content-type og content-length.  Når overføringen er fullført og
 filopplastingen vellykket, så returneres statuskode 201.
 
 ```
-POST http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
+POST https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
 Content-Type: application/pdf
 Content-Length: 111111
 
@@ -1084,34 +1084,34 @@ Komplett eksempel
 Opprett sesjon:
 
 ```
-POST http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
+POST https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil
 Content-Length: 0
 X-Upload-Content-Type: image/jpeg
 X-Upload-Content-Length: 2000000
 
 Respons: 200 OK
 
-Location: http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
 ```
 
 Last opp første del:
 
 ```
-PUT http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
 Content-Length: 524288
 Content-Type: image/jpeg
 Content-Range: bytes 0-524287/2000000
 
 Respons: 200 OK
 
-Location: http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
 Range: bytes 0-524287
 ```
 
 Last opp siste del:
 
 ```
-PUT http://localhost:49708/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
 Content-Length: 524288
 Content-Type: image/jpeg
 Content-Range: bytes 524287-2000000/2000000
@@ -1301,11 +1301,11 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
             "_links": [
                 {
                     "rel": "self",
-                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
+                    "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
                 },
                 {
                     "rel": "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
-                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
+                    "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
                 }
             ]
         },
@@ -1318,11 +1318,11 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
             "_links": [
                 {
                     "rel": "self",
-                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
+                    "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
                 },
                 {
                     "rel": "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
-                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
+                    "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
                 }
             ]
         },
@@ -1335,11 +1335,11 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
             "_links": [
                 {
                     "rel": "self",
-                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
+                    "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
                 },
                 {
                     "rel": "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/",
-                    "href": "http://localhost:49708/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
+                    "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
                 }
             ]
         }
