@@ -574,7 +574,7 @@ separat med sine resurslenker.
 
 For å hindre at data blir oppdatert samtidig av forskjellige brukere
 og overskrevet med gamle data så må kjernen sjekke innkomne objekt og
-lagret objekt. ETag (http://en.wikipedia.org/wiki/HTTP_ETag) skal
+lagret objekt. ETag (https://en.wikipedia.org/wiki/HTTP_ETag) skal
 benyttes for å støtte «optimistic concurrency control». Om det oppstår
 konflikt så kan resultatkode 409 benyttes. Da må klient hente opp ny
 versjon fra arkivkjerne og gjøre fletting av data mellom server og
