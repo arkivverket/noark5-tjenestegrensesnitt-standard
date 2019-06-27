@@ -20,7 +20,7 @@ Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
 
 Arkivstruktur.Arkivenhet --[hidden] Arkivstruktur.SystemID
 
-Arkivstruktur.Mappe o-- "undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe "overmappe 0..1" o--> "undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Sakarkiv.Journalpost -* "avskrivning 0..*" Sakarkiv.Avskrivning
 package Arkivstruktur {
