@@ -158,19 +158,19 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                      |
-| --------- | -------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivskaper/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/          |
-| REST\_REL | self                                                           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underarkiv/     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overarkiv/      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/arkivstatus/         |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv/       |
+| **Verdi**                                                              |
+| ---------------------------------------------------------------------- |
+| self                                                                   |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/       |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivskaper/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv/       |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overarkiv/      |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underarkiv/     |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/arkivstatus/         |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/      |
 
 Table: Attributter
 
@@ -292,32 +292,32 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/          |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klassifikasjonssystem/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klassifikasjonssystem/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/                    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/forrigearkivdel/   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nestearkivdel/     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/arkivdelstatus/                |
-| REST\_REL | self                                                                     |
+| **Verdi**                                                                        |
+| -------------------------------------------------------------------------------- |
+| self                                                                             |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/                    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/forrigearkivdel/          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klassifikasjonssystem/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nestearkivdel/            |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv/                 |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/              |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klassifikasjonssystem/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/                 |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/             |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/arkivdelstatus/                |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/                |
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkkel
 også være tilgjengelig via Arkivdel-instanser.
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/          |
+| **Verdi**                                                       |
+| --------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/ |
 
 Merk at underliggende lister med Saksmappe og andre underentiteter er
 tilgjengelig via relasjonsnøkkel
@@ -416,10 +416,10 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                        |
-| --------- | ---------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-hendelseslogg/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/logg/             |
+| **Verdi**                                                                |
+| ------------------------------------------------------------------------ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-hendelseslogg/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/logg/             |
 
 Table: Attributter
 
@@ -467,13 +467,13 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                      |
-| --------- | -------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivskaper/    |
-| REST\_REL | self                                                           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv/       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/          |
+| **Verdi**                                                              |
+| ---------------------------------------------------------------------- |
+| self                                                                   |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivskaper/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv/       |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/ |
 
 Table: Attributter
 
@@ -525,40 +525,40 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/            |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/         |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/       |
-| REST\_REL | self                                                                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentbeskrivelse/   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/part/                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-part/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/plan/                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepart/            |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepart/         |
+| **Verdi**                                                                      |
+| ------------------------------------------------------------------------------ |
+| self                                                                           |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/                |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/                |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/         |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                 |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/         |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                  |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/              |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/                |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/  |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/            |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/             |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/             |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentbeskrivelse/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/      |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/      |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/           |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/             |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-part/                |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/                |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/            |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/        |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/part/                   |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/plan/                   |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/           |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/              |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepart/          |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepart/       |
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
 også være tilgjengelig via Registrering-instanser som har en
@@ -566,9 +566,9 @@ Saksmappe som foreldre.
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-journalpost/ |
+| **Verdi**                                                                |
+| ------------------------------------------------------------------------ |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-journalpost/ |
 
 Table: Attributter
 
@@ -632,21 +632,21 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                              |
-| --------- | ---------------------------------------------------------------------- |
-| REST\_REL | self                                                                   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumenttype/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentbeskrivelse/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/         |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentstatus/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentobjekt/      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/tilknyttetregistreringsom/   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/                |
+| **Verdi**                                                                      |
+| ------------------------------------------------------------------------------ |
+| self                                                                           |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/         |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/                |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentbeskrivelse/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentobjekt/      |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/             |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/        |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/           |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/              |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentstatus/              |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumenttype/                |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/tilknyttetregistreringsom/   |
 
 Table: Attributter
 
@@ -730,18 +730,18 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                              |
-| --------- | ---------------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentobjekt/      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentbeskrivelse/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/variantformat/               |
-| REST\_REL | self                                                                   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/         |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/format/                      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-konvertering/        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/konvertering/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/                    |
+| **Verdi**                                                                      |
+| ------------------------------------------------------------------------------ |
+| self                                                                           |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentbeskrivelse/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/         |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/                    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/konvertering/           |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentbeskrivelse/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dokumentobjekt/      |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-konvertering/        |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/format/                      |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/variantformat/               |
 
 Table: Attributter
 
@@ -789,10 +789,10 @@ Table: Restriksjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                     |
-| --------- | ----------------------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/elektronisksignatursikkerhetsnivaa/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/elektronisksignaturverifisert/      |
+| **Verdi**                                                                             |
+| ------------------------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/elektronisksignatursikkerhetsnivaa/ |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/elektronisksignaturverifisert/      |
 
 Table: Attributter
 
@@ -911,29 +911,29 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klasse/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underklasse/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overlasse/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klassifikasjonssystem/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/          |
-| REST\_REL | self                                                                     |
+| **Verdi**                                                                     |
+| ----------------------------------------------------------------------------- |
+| self                                                                          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klassifikasjonssystem/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/        |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                 |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klasse/             |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/     |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/              |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/       |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overlasse/             |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underklasse/           |
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
 også være tilgjengelig via Klasse-instanser.
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/          |
+| **Verdi**                                                       |
+| --------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/ |
 
 Table: Attributter
 
@@ -992,16 +992,16 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                         |
-| --------- | --------------------------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-sekundaerklassifikasjonssystem/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/sekundaerklassifikasjonssystem/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/klassifikasjonstype/                    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/                       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klasse/                         |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                          |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                            |
-| REST\_REL | self                                                                              |
+| **Verdi**                                                                                 |
+| ----------------------------------------------------------------------------------------- |
+| self                                                                                      |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                            |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivdel/                       |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klasse/                         |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-sekundaerklassifikasjonssystem/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/sekundaerklassifikasjonssystem/    |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/klassifikasjonstype/                    |
 
 Table: Attributter
 
@@ -1040,11 +1040,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                       |
-| --------- | --------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/konvertering/    |
-| REST\_REL | self                                                            |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-konvertering/ |
+| **Verdi**                                                               |
+| ----------------------------------------------------------------------- |
+| self                                                                    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/konvertering/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-konvertering/ |
 
 Table: Attributter
 
@@ -1101,13 +1101,13 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                      |
-| --------- | -------------------------------------------------------------- |
-| REST\_REL | self                                                           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/          |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/         |
+| **Verdi**                                                              |
+| ---------------------------------------------------------------------- |
+| self                                                                   |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/         |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/   |
 
 Table: Attributter
 
@@ -1175,49 +1175,49 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | self                                                                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/          |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overmappe/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/undermappe/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-journalpost/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/plan/                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/                 |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/part/                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-part/                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/                     |
+| **Verdi**                                                                     |
+| ----------------------------------------------------------------------------- |
+| self                                                                          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkivdel/              |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/        |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/                |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/        |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/                 |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/             |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/            |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/            |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/     |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-journalpost/        |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-kryssreferanse/     |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/              |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/            |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-part/               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/           |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-registrering/       |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overmappe/             |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/part/                  |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/plan/                  |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/              |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/          |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/undermappe/            |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/             |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/                  |
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
 også være tilgjengelig via Mappe-instanser.
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/          |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/   |
+| **Verdi**                                                              |
+| ---------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/        |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/ |
 
 Table: Attributter
 
@@ -1286,12 +1286,12 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                  |
-| --------- | ---------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/ |
-| REST\_REL | self                                                       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/merknadstype/    |
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| self                                                               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/merknad/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/ |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/merknadstype/    |
 
 Table: Attributter
 
@@ -1440,9 +1440,9 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                |
-| --------- | ------------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/    |
+| **Verdi**                                                                     |
+| ----------------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/nasjonalidentifikator/ |
 
 Table: Attributter
 
@@ -1464,11 +1464,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                  |
-| --------- | ---------------------------------------------------------- |
-| REST\_REL | self                                                       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/ |
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| self                                                               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/bygning/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-bygning/ |
 
 Table: Attributter
 
@@ -1512,11 +1512,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                    |
-| --------- | ------------------------------------------------------------ |
-| REST\_REL | self                                                         |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/ |
+| **Verdi**                                                            |
+| -------------------------------------------------------------------- |
+| self                                                                 |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/matrikkel/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/ |
 
 Table: Attributter
 
@@ -1570,11 +1570,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                                 |
-| --------- | ------------------------------------------------------------------------- |
-| REST\_REL | self                                                                      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/ |
+| **Verdi**                                                                 |
+| ------------------------------------------------------------------------- |
+| self                                                                      |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/foedselsnummer/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-foedselsnummer/ |
 
 Table: Attributter
 
@@ -1602,11 +1602,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                  |
-| --------- | ---------------------------------------------------------- |
-| REST\_REL | self                                                       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/ |
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| self                                                               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dnummer/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-dnummer/ |
 
 
 Table: Attributter
@@ -1634,11 +1634,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                               |
-| --------- | ------------------------------------------------------- |
-| REST\_REL | self                                                    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/plan/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/ |
+| **Verdi**                                                       |
+| --------------------------------------------------------------- |
+| self                                                            |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/ |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/plan/    |
 
 Table: Attributter
 
@@ -1673,9 +1673,9 @@ tilgjengelig fra [https://register.geonorge.no/epsg-koder].
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                          |
-| -------- | ------------------------------------------------------------------ |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/koordinatsystem/ |
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/koordinatsystem/ |
 
 Table: Attributter
 
@@ -1700,11 +1700,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                           |
-| --------- | ------------------------------------------------------------------- |
-| REST\_REL | self                                                                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/ |
+| **Verdi**                                                           |
+| ------------------------------------------------------------------- |
+| self                                                                |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/posisjon/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/ |
 
 Table: Attributter
 
@@ -1804,9 +1804,9 @@ M051
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                 |
-| -------- | --------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/arkivdelstatus/ |
+| **Verdi**                                                         |
+| ----------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/arkivdelstatus/ |
 
 Table: Attributter
 
@@ -1831,9 +1831,9 @@ M050
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                              |
-| -------- | ------------------------------------------------------ |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/arkivstatus/ |
+| **Verdi**                                                      |
+| -------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/arkivstatus/ |
 
 Table: Attributter
 
@@ -1856,9 +1856,9 @@ M619
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                    |
-| -------- | ------------------------------------------------------------ |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/avskrivningsmaate/ |
+| **Verdi**                                                            |
+| -------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/avskrivningsmaate/ |
 
 Table: Attributter
 
@@ -1888,9 +1888,9 @@ M300
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                 |
-| -------- | --------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/ |
+| **Verdi**                                                         |
+| ----------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/ |
 
 Table: Attributter
 
@@ -1914,9 +1914,9 @@ M054
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                 |
-| -------- | --------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentstatus/ |
+| **Verdi**                                                         |
+| ----------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentstatus/ |
 
 Table: Attributter
 
@@ -1939,9 +1939,9 @@ M083
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                               |
-| -------- | ------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/dokumenttype/ |
+| **Verdi**                                                       |
+| --------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/dokumenttype/ |
 
 Table: Attributter
 
@@ -1971,9 +1971,9 @@ elektroniskSignaturSikkerhetsnivaa
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                                     |
-| -------- | ----------------------------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/elektronisksignatursikkerhetsnivaa/ |
+| **Verdi**                                                                             |
+| ------------------------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/elektronisksignatursikkerhetsnivaa/ |
 
 Table: Attributter
 
@@ -2000,9 +2000,9 @@ M508
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                                |
-| -------- | ------------------------------------------------------------------------ |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/elektronisksignaturverifisert/ |
+| **Verdi**                                                                        |
+| -------------------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/elektronisksignaturverifisert/ |
 
 Table: Attributter
 
@@ -2021,9 +2021,9 @@ Table: Attributter
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                             |
-| -------- | ----------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/flytstatus/ |
+| **Verdi**                                                     |
+| ------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/flytstatus/ |
 
 Table: Attributter
 
@@ -2071,9 +2071,9 @@ eksempler.
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                         |
-| -------- | ------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/format/ |
+| **Verdi**                                                 |
+| --------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/format/ |
 
 Table: Attributter
 
@@ -2100,9 +2100,9 @@ Table: Attributter
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                 |
-| -------- | --------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/graderingskode/ |
+| **Verdi**                                                         |
+| ----------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/graderingskode/ |
 
 Table: Attributter
 
@@ -2123,9 +2123,9 @@ Table: Attributter
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                               |
-| -------- | ------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/hendelsetype/ |
+| **Verdi**                                                       |
+| --------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/hendelsetype/ |
 
 Table: Attributter
 
@@ -2151,9 +2151,9 @@ M082
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                  |
-| -------- | ---------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/journalposttype/ |
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/journalposttype/ |
 
 Table: Attributter
 
@@ -2178,9 +2178,9 @@ M053
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                |
-| -------- | -------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/journalstatus/ |
+| **Verdi**                                                        |
+| ---------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/journalstatus/ |
 
 Table: Attributter
 
@@ -2212,9 +2212,9 @@ M450
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                   |
-| -------- | ----------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/kassasjonsvedtak/ |
+| **Verdi**                                                           |
+| ------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/kassasjonsvedtak/ |
 
 Table: Attributter
 
@@ -2239,9 +2239,9 @@ M086
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                      |
-| -------- | -------------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/klassifikasjonstype/ |
+| **Verdi**                                                              |
+| ---------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/klassifikasjonstype/ |
 
 Table: Attributter
 
@@ -2271,9 +2271,9 @@ M087
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                         |
-| -------- | ----------------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/korrespondanseparttype/ |
+| **Verdi**                                                                 |
+| ------------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/korrespondanseparttype/ |
 
 Table: Attributter
 
@@ -2299,9 +2299,9 @@ https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2\#Offisielle\_koder
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                       |
-| -------- | ----------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/land/ |
+| **Verdi**                                               |
+| ------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/land/ |
 
 #### Mappetype
 
@@ -2313,9 +2313,9 @@ Table: Relasjonsnøkler
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                            |
-| -------- | ---------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/ |
+| **Verdi**                                                    |
+| ------------------------------------------------------------ |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/ |
 
 #### Merknadstype
 
@@ -2331,9 +2331,9 @@ M084
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                               |
-| -------- | ------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/merknadstype/ |
+| **Verdi**                                                       |
+| --------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/merknadstype/ |
 
 Table: Attributter
 
@@ -2360,9 +2360,9 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                             |
-| -------- | ----------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/postnummer/ |
+| **Verdi**                                                     |
+| ------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/postnummer/ |
 
 #### PresedensStatus
 
@@ -2379,9 +2379,9 @@ M056
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                  |
-| -------- | ---------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/presedensstatus/ |
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/presedensstatus/ |
 
 Table: Attributter
 
@@ -2400,9 +2400,9 @@ Table: Attributter
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                |
-| -------- | -------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/partrolle/ |
+| **Verdi**                                                    |
+| ------------------------------------------------------------ |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/partrolle/ |
 
 Table: Attributter
 
@@ -2428,9 +2428,9 @@ M052
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                             |
-| -------- | ----------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/saksstatus/ |
+| **Verdi**                                                     |
+| ------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/saksstatus/ |
 
 Table: Attributter
 
@@ -2459,9 +2459,9 @@ M503
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                    |
-| -------- | ------------------------------------------------------------ |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/skjermingdokument/ |
+| **Verdi**                                                            |
+| -------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/skjermingdokument/ |
 
 Table: Attributter
 
@@ -2485,9 +2485,9 @@ M502
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                    |
-| -------- | ------------------------------------------------------------ |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/skjermingmetadata/ |
+| **Verdi**                                                            |
+| -------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/skjermingmetadata/ |
 
 Table: Attributter
 
@@ -2520,9 +2520,9 @@ M089
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                |
-| -------- | -------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/slettingstype/ |
+| **Verdi**                                                        |
+| ---------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/slettingstype/ |
 
 Table: Attributter
 
@@ -2575,9 +2575,9 @@ ny kodeliste jfr NOARK 5 v3.1 krav
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                   |
-| -------- | ----------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangskategori/ |
+| **Verdi**                                                           |
+| ------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangskategori/ |
 
 Table: Attributter
 
@@ -2599,9 +2599,9 @@ Table: Attributter
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                      |
-| -------- | -------------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangsrestriksjon/ |
+| **Verdi**                                                              |
+| ---------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangsrestriksjon/ |
 
 Table: Attributter
 
@@ -2630,9 +2630,9 @@ Table: Attributter
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                            |
-| -------- | -------------------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/tilknyttetregistreringsom/ |
+| **Verdi**                                                                    |
+| ---------------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/tilknyttetregistreringsom/ |
 
 Table: Attributter
 
@@ -2655,9 +2655,9 @@ M700
 
 Table: Relasjonsnøkler
 
-| **Tag**  | **Verdi**                                                |
-| -------- | -------------------------------------------------------- |
-| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/variantformat/ |
+| **Verdi**                                                        |
+| ---------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/variantformat/ |
 
 Table: Attributter
 
@@ -2726,12 +2726,12 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                    |
-| --------- | ------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-avskrivning/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/avskrivningsmaate/ |
-| REST\_REL | self                                                         |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/avskrivning/       |
+| **Verdi**                                                            |
+| -------------------------------------------------------------------- |
+| self                                                                 |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/avskrivningsmaate/ |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/avskrivning/       |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-avskrivning/    |
 
 Table: Attributter
 
@@ -2776,12 +2776,12 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                  |
-| --------- | ---------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/flytstatus/      |
-| REST\_REL | self                                                       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/dokumentflyt/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-dokumentflyt/ |
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| self                                                               |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/flytstatus/      |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/dokumentflyt/    |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-dokumentflyt/ |
 
 Table: Attributter
 
@@ -2815,13 +2815,13 @@ Table: Restriksjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                  |
-| --------- | ---------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/enkeladresse/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-enkeladresse/ |
-| REST\_REL | self                                                       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/land/            |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/postnummer/      |
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| self                                                               |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/land/            |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/postnummer/      |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/enkeladresse/    |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-enkeladresse/ |
 
 Table: Attributter
 
@@ -2850,13 +2850,13 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                          |
-| --------- | ------------------------------------------------------------------ |
-| REST\_REL | self                                                               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/arkivnotat/      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-arkivnotat/   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/dokumentflyt/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-dokumentflyt/ |
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| self                                                               |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/arkivnotat/      |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-arkivnotat/   |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/dokumentflyt/    |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-dokumentflyt/ |
 
 Table: Attributter
 
@@ -2915,20 +2915,20 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                        |
-| --------- | ---------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/avskrivning/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-avskrivning/        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/presedens/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-presedens/          |
-| REST\_REL | self                                                             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/journalpost/           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-dokumentflyt/       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/journalstatus/         |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepart/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/journalposttype/       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepart/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/dokumentflyt/          |
+| **Verdi**                                                                |
+| ------------------------------------------------------------------------ |
+| self                                                                     |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/journalposttype/       |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/journalstatus/         |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/avskrivning/           |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/dokumentflyt/          |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/journalpost/           |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepart/    |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-avskrivning/        |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-dokumentflyt/       |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepart/ |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-presedens/          |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/presedens/             |
 
 Table: Attributter
 
@@ -2980,11 +2980,11 @@ Table: Restriksjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                        |
-| --------- | ---------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-kontaktinformasjon/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/kontaktinformasjon/    |
-| REST\_REL | self                                                             |
+| **Verdi**                                                                |
+| ------------------------------------------------------------------------ |
+| self                                                                     |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/kontaktinformasjon/    |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-kontaktinformasjon/ |
 
 Table: Attributter
 
@@ -3017,11 +3017,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                         |
-| --------- | ----------------------------------------------------------------- |
-| REST\_REL | self                                                              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/korrespondanseparttype/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepart/     |
+| **Verdi**                                                                 |
+| ------------------------------------------------------------------------- |
+| self                                                                      |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/korrespondanseparttype/ |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepart/     |
 
 Table: Attributter
 
@@ -3051,11 +3051,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                             |
-| --------- | --------------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepartenhet/    |
-| REST\_REL | self                                                                  |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepartenhet/ |
+| **Verdi**                                                                     |
+| ----------------------------------------------------------------------------- |
+| self                                                                          |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepartenhet/    |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepartenhet/ |
 
 Table: Attributter
 
@@ -3082,11 +3082,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                              |
-| --------- | ---------------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepartintern/    |
-| REST\_REL | self                                                                   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepartintern/ |
+| **Verdi**                                                                      |
+| ------------------------------------------------------------------------------ |
+| self                                                                           |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepartintern/    |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepartintern/ |
 
 Table: Attributter
 
@@ -3111,11 +3111,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                              |
-| --------- | ---------------------------------------------------------------------- |
-| REST\_REL | self                                                                   |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepartperson/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepartperson/ |
+| **Verdi**                                                                      |
+| ------------------------------------------------------------------------------ |
+| self                                                                           |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/korrespondansepartperson/    |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-korrespondansepartperson/ |
 
 Table: Attributter
 
@@ -3159,16 +3159,16 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                  |
-| --------- | ---------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/presedensstatus/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-presedens/    |
-| REST\_REL | self                                                       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/presedens/       |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/journalpost/     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-journalpost/  |
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| self                                                               |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/presedensstatus/ |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/journalpost/     |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-journalpost/  |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-presedens/    |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-saksmappe/    |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/presedens/       |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/       |
 
 Table: Attributter
 
@@ -3226,16 +3226,16 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                          |
-| --------- | ------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klasse/          |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/presedens/               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/sekundaerklassifikasjon/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/saksstatus/              |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-presedens/            |
-| REST\_REL | self                                                               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-journalpost/          |
+| **Verdi**                                                                  |
+| -------------------------------------------------------------------------- |
+| self                                                                       |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/               |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-klasse/          |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/presedens/               |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/sekundaerklassifikasjon/ |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/saksstatus/              |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-presedens/            |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-journalpost/          |
 
 Table: Attributter
 
@@ -3306,12 +3306,12 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                |
-| --------- | -------------------------------------------------------- |
-| REST\_REL | self                                                     |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/partrolle/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/part/      |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-part/   |
+| **Verdi**                                                    |
+| ------------------------------------------------------------ |
+| self                                                         |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/partrolle/ |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-part/   |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/part/      |
 
 Table: Attributter
 
@@ -3341,11 +3341,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                   |
-| --------- | ----------------------------------------------------------- |
-| REST\_REL | self                                                        |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-partenhet/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/partenhet/    |
+| **Verdi**                                                       |
+| --------------------------------------------------------------- |
+| self                                                            |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-partenhet/ |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/partenhet/    |
 
 Table: Attributter
 
@@ -3372,11 +3372,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                    |
-| --------- | ------------------------------------------------------------ |
-| REST\_REL | self                                                         |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/partperson/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-partperson/ |
+| **Verdi**                                                        |
+| ---------------------------------------------------------------- |
+| self                                                             |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/ny-partperson/ |
+| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/partperson/    |
 
 Table: Attributter
 
@@ -3444,13 +3444,13 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                     |
-| --------- | ------------------------------------------------------------- |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/bruker/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/ny-administrativenhet/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/ny-bruker/             |
-| REST\_REL | self                                                          |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/administrativenhet/    |
+| **Verdi**                                                             |
+| --------------------------------------------------------------------- |
+| self                                                                  |
+| https://rel.arkivverket.no/noark5/v4/api/admin/administrativenhet/    |
+| https://rel.arkivverket.no/noark5/v4/api/admin/bruker/                |
+| https://rel.arkivverket.no/noark5/v4/api/admin/ny-administrativenhet/ |
+| https://rel.arkivverket.no/noark5/v4/api/admin/ny-bruker/             |
 
 Table: Attributter
 
@@ -3496,13 +3496,13 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                     |
-| --------- | ------------------------------------------------------------- |
-| REST\_REL | self                                                          |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/ny-administrativenhet/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/bruker/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/administrativenhet/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/ny-bruker/             |
+| **Verdi**                                                             |
+| -----------------------p--------------------------------------------- |
+| self                                                                  |
+| https://rel.arkivverket.no/noark5/v4/api/admin/administrativenhet/    |
+| https://rel.arkivverket.no/noark5/v4/api/admin/bruker/                |
+| https://rel.arkivverket.no/noark5/v4/api/admin/ny-administrativenhet/ |
+| https://rel.arkivverket.no/noark5/v4/api/admin/ny-bruker/             |
 
 Table: Attributter
 
@@ -3538,13 +3538,13 @@ rolletilknytning
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                      |
-| --------- | -------------------------------------------------------------- |
-| REST\_REL | self                                                           |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/tilgang/                |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/ny-tilgang/             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangsrestriksjon/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangskategori/    |
+| **Verdi**                                                              |
+| ---------------------------------------------------------------------- |
+| self                                                                   |
+| https://rel.arkivverket.no/noark5/v4/api/admin/ny-tilgang/             |
+| https://rel.arkivverket.no/noark5/v4/api/admin/tilgang/                |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangskategori/    |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangsrestriksjon/ |
 
 Table: Attributter
 
@@ -3590,11 +3590,11 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                          |
-| --------- | ------------------------------------------------------------------ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/loggingogsporing/endringslogg/    |
-| REST\_REL | self                                                               |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/loggingogsporing/ny-endringslogg/ |
+| **Verdi**                                                                  |
+| -------------------------------------------------------------------------- |
+| self                                                                       |
+| https://rel.arkivverket.no/noark5/v4/api/loggingogsporing/endringslogg/    |
+| https://rel.arkivverket.no/noark5/v4/api/loggingogsporing/ny-endringslogg/ |
 
 Table: Attributter
 
@@ -3624,12 +3624,12 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Tag**   | **Verdi**                                                        |
-| --------- | ---------------------------------------------------------------- |
-| REST\_REL | self                                                             |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/hendelseslogg/    |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-hendelseslogg/ |
-| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/hendelsetype/          |
+| **Verdi**                                                                |
+| ------------------------------------------------------------------------ |
+| self                                                                     |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/hendelseslogg/    |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-hendelseslogg/ |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/hendelsetype/          |
 
 Table: Attributter
 
