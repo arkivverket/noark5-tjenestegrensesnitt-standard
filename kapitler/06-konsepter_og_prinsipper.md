@@ -59,6 +59,9 @@ Content-Type: application/vnd.noark5+json
         },
         "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/": {
             "href": "https://n5.example.com/api/sakarkiv"
+        },
+        "https://rel.arkivverket.no/noark5/v4/api/admin/system/": {
+            "href": "http://localhost:49708/api/admin/system/",
         }
     }
 }
@@ -132,6 +135,40 @@ samme href som «self» representerer entitetsrelasjonsnøkkelen til
   } ]
 }
 ```
+
+#### Systeminformasjon
+
+Når en tar GET mot href for relasjonsnøkkelen
+`http://rel.arkivverket.no/noark5/v4/api/admin/system/`, så får en informasjon
+om API-tjenersystemet.  Responsen inneholder følgende felter:
+
+ * `leverandoer` - tekststreng med navn på leverandør av
+               tjenestegrensesnittimplementasjonen.
+ * `produkt` - tekststreng med navn på produktet som leverer
+               tjenestegrensesnittet.
+ * `versjon` - tekststreng med versjon for produktet fra leverandøren.
+ * `versjonsdato` - tekststreng med dato for når produktet ble lansert
+               / programmet ble sist oppdatert.
+ * `protokollversjon` - tekststreng med versjon av
+               tjenestegrensesnittspesifikasjonen som støttes.
+               For dagens utgave vil verdien være '1.0 beta'.
+
+Responsen kan for eksempel se slik ut:
+
+```Python
+{
+  "leverandoer": "Hoffleverandøren",
+  "produkt": "Arkivsystemet Noark 5 kjerne",
+  "versjon": "0.1",
+  "versjonsdato": "2019-03-22",
+  "protokollversjon": "1.0 Beta"
+}
+```
+
+Det kan være en sikkerhetsmessig fordel å unngå å fortelle
+potensielle angripere hvilken versjon som kjører på maskinen.  Det
+kan derfor være lurt å kun gjøre dette endepunktet tilgjengelig for
+innloggede brukere.
 
 #### Finne objekter (Read)
 
