@@ -131,12 +131,12 @@ eksempel starte slik:
   "_links": [
     {
       "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/",
-      "href": "http://localhost:49708/api/arkivstruktur/arkiv{?$filter&$orderby&$top&$skip&$search}",
+      "href": "https://n5.example.com/api/arkivstruktur/arkiv{?$filter&$orderby&$top&$skip&$search}",
       "templated": true
     },
     {
       "rel": "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkiv/",
-      "href": "http://localhost:49708/api/arkivstruktur/ny-arkiv",
+      "href": "https://n5.example.com/api/arkivstruktur/ny-arkiv",
     },
     ...
   ]
