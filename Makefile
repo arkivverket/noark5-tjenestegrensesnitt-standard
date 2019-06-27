@@ -48,3 +48,10 @@ spesifikasjon.html: docbook images
 
 clean:
 	$(RM) $(IMG_PNG)
+
+md-to-rst:
+	cd kapitler; for f in [01]*.md; do \
+		pandoc --columns=200 --wrap=preserve -f $(PANDOC_TYPE) $$f -o $${f%.md}-new.rst; \
+		git mv $$f $${f%.md}.rst; \
+		mv $${f%.md}-new.rst $${f%.md}.rst; \
+	done
