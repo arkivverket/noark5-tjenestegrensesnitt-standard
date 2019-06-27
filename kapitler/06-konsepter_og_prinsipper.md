@@ -423,6 +423,16 @@ objekt i databasen, og er derfor uten «self»-relasjon.  Strukturen
 (uten "_links" og felt med verdi «null») kan brukes som utgangspunkt for en POST
 når et nytt objekt skal opprettes. 
 
+Attributter som henter verdier fra kodelister fylles inn med enten kun
+**kode**-verdien fra kodelisten eller både **kode** og **kodenavn**.
+Kodelisteverdiene kopieres fra kodelisten inn i instansen når
+attributten settes første gang eller endres, slik at fremtidige
+endringer i kodelister ikke påvirker verdier i eksisterende instanser.
+
+Kun kodelisteverdier der «inaktiv»-attributten ikke er satt til «true»
+skal brukes på nye instanser eller ved endring av kodelisteverdi på
+eksisterende instanser.
+
 Ved registrering av objektet så skal kjernen fylle ut systemID, opprettetAv og opprettetDato. OpprettetAv skal være personnavn, referanseOpprettetAv skal være en systemID. NB! Denne systemID-en kan være en entydig identifikator av brukeren i fagsystemet, slik at personen ikke nødvendigvis må være bruker i arkivkjernen. opprettetDato er datoen (eller dataTime) enheten er opprettet i fagsystemet.
 
 
@@ -430,19 +440,19 @@ Ved registrering av objektet så skal kjernen fylle ut systemID, opprettetAv og 
 {
     "mappetype": {
         "kode": "BYGG",
-        "beskrivelse": "Byggesak"
+        "kodenavn": "Byggesak"
     },
     "tittel": "angi tittel på mappe",
     "dokumentmedium": {
         "kode": "E",
-        "beskrivelse": "Elektronisk arkiv"
+        "kodenavn": "Elektronisk arkiv"
     },
     "_links": {
-        "https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium/": {
+        "https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/": {
             "href": "https://n5.example.com/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
             "templated": true
         },
-        "https://rel.arkivverket.no/noark5/v4/api/administrasjon/mappetype/": {
+        "https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/": {
             "href": "https://n5.example.com/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
             "templated": true
         }
@@ -463,12 +473,12 @@ Content-Type: application/vnd.noark5-v4+json
 {
     "mappetype": {
         "kode": "BYGG",
-        "beskrivelse": "Byggesak"
+        "kodenavn": "Byggesak"
     },
     "tittel", "Testvegen 32, ny enebolig",
     "dokumentmedium": {
         "kode": "E",
-        "beskrivelse": "Elektronisk arkiv"
+        "kodenavn": "Elektronisk arkiv"
     }
 }
 ```
@@ -486,12 +496,12 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
     "mappeID": "123456/2016",
     "mappetype": {
         "kode": "BYGG",
-        "beskrivelse": "Byggesak"
+        "kodenavn": "Byggesak"
     },
     "tittel", "Testvegen 32, ny enebolig",
     "dokumentmedium": {
         "kode": "E",
-        "beskrivelse": "Elektronisk arkiv"
+        "kodenavn": "Elektronisk arkiv"
     },
     "systemID": "515c45b5-e903-4320-a085-2a98813878ba",
     "opprettetDato": "2016-04-03T15:45:28.4985538+02:00",
@@ -540,19 +550,19 @@ hentes fra slik som mappetype og dokumentmedium.
 {
     "mappetype": {
         "kode": "BYGG",
-        "beskrivelse": "Byggesak"
+        "kodenavn": "Byggesak"
     },
     "tittel": "angi tittel på mappe",
     "dokumentmedium": {
         "kode": "E",
-        "beskrivelse": "Elektronisk arkiv"
+        "kodenavn": "Elektronisk arkiv"
     },
     "_links": {
-        "https://rel.arkivverket.no/noark5/v4/api/administrasjon/dokumentmedium/": {
+        "https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/": {
             "href": "https://n5.example.com/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
             "templated": true
         },
-        "https://rel.arkivverket.no/noark5/v4/api/administrasjon/mappetype/": {
+        "https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/": {
             "href": "https://n5.example.com/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
             "templated": true
         }
@@ -591,12 +601,12 @@ Content-Type: application/vnd.noark5-v4+json
     "mappeID": "123456/2016",
     "mappetype": {
         "kode": "BYGG",
-        "beskrivelse": "Byggesak"
+        "kodenavn": "Byggesak"
     },
     "tittel", "Testvegen 32, ny enebolig",
     "dokumentmedium": {
         "kode": "E",
-        "beskrivelse": "Elektronisk arkiv"
+        "kodenavn": "Elektronisk arkiv"
     },
     "systemID": "515c45b5-e903-4320-a085-2a98813878ba",
     "opprettetDato": "2016-04-03T15:45:28.4985538+02:00",
@@ -624,12 +634,12 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
     "mappeID": "123456/2016",
     "mappetype": {
         "kode": "BYGG",
-        "beskrivelse": "Byggesak"
+        "kodenavn": "Byggesak"
     },
     "tittel", "Testvegen 32, ny enebolig",
     "dokumentmedium": {
         "kode": "E",
-        "beskrivelse": "Elektronisk arkiv"
+        "kodenavn": "Elektronisk arkiv"
     },
     "gradering": {
         "graderingskode": {
@@ -699,12 +709,12 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
     "mappeID": "123456/2016",
     "mappetype": {
         "kode": "BYGG",
-        "beskrivelse": "Byggesak"
+        "kodenavn": "Byggesak"
     },
     "tittel", "Testvegen 33, ny enebolig",
     "dokumentmedium": {
         "kode": "E",
-        "beskrivelse": "Elektronisk arkiv"
+        "kodenavn": "Elektronisk arkiv"
     },
     "gradering": {
         "graderingskode": {
@@ -785,7 +795,10 @@ Content-Type: application/vnd.noark5-v4+json
 {
     "saksansvarlig": "Arne",
     "saksdato": "2017-12-08T00:00:00",
-    "saksstatus": { "kode": "R", "beskrivelse": "Opprettet av saksbehandler"}
+    "saksstatus": {
+        "kode": "R",
+	"kodenavn": "Opprettet av saksbehandler"
+    }
 }
 ```
 
@@ -798,7 +811,7 @@ saksmappe og ikke mappe.
     "saksansvarlig": "Henning",
     "saksstatus": {
         "kode": "R",
-        "beskrivelse": "Opprettet av saksbehandler"
+        "kodenavn": "Opprettet av saksbehandler"
     },
     "mappeID": "1/2014",
     "tittel": "klok testmappe 1",
@@ -985,11 +998,11 @@ rettigheter en bruker har? – Arkivverket må avklare dette
     "beskrivelse": "Lorem ipsum",
     "arkivdelstatus": {
         "kode": "",
-        "beskrivelse": ""
+        "kodenavn": ""
     },
     "dokumentmedium": {
         "kode": "",
-        "beskrivelse": ""
+        "kodenavn": ""
     },
     "avsluttetAv": "",
     "referanseAvsluttetAv": "",
@@ -998,7 +1011,7 @@ rettigheter en bruker har? – Arkivverket må avklare dette
     "kassasjon": {
         "kassasjonsvedtak": {
             "kode": "",
-            "beskrivelse": ""
+            "kodenavn": ""
         },
         "kassasjonshjemmel": "",
         "bevaringstid": "",
@@ -1012,7 +1025,7 @@ rettigheter en bruker har? – Arkivverket må avklare dette
     "sletting": {
         "slettingstype": {
             "kode": "SA",
-            "beskrivelse": "Sletting av hele innholdet i arkivdelen"
+            "kodenavn": "Sletting av hele innholdet i arkivdelen"
         },
         "slettedato": "2016-05-02T14:23:27.4065323+02:00",
         "slettetAv": "pålogget bruker"
@@ -1020,19 +1033,19 @@ rettigheter en bruker har? – Arkivverket må avklare dette
     "skjerming": {
         "tilgangsrestrisjon": {
             "kode": "",
-            "beskrivelse": ""
+            "kodenavn": ""
         },
         "skjermingshjemmel": "",
         "skjermingsdokument": {
             "kode": "",
-            "beskrivelse": ""
+            "kodenavn": ""
         },
         "skjermingsvarighet": ""
     },
     "gradering": {
         "graderingskode": {
             "kode": "",
-            "beskrivelse": ""
+            "kodenavn": ""
         },
         "graderingsdato": "0001-01-01T00:00:00",
 ```
@@ -1081,11 +1094,11 @@ GET https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
     "versjonsnummer": "1",
     "variantformat": {
         "kode": "A",
-        "beskrivelse": "Arkivformat"
+        "kodenavn": "Arkivformat"
     },
     "format": {
         "kode": "fmt/95",
-        "beskrivelse": "PDF/A - ISO 19005-1:2005"
+        "kodenavn": "PDF/A - ISO 19005-1:2005"
     },
     "referanseDokumentfil": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil",
     "_links": {
@@ -1246,11 +1259,11 @@ Respons: 201 Created
     "versjonsnummer": "1",
     "variantformat": {
         "kode": "A",
-        "beskrivelse": "Arkivformat"
+        "kodenavn": "Arkivformat"
     },
     "format": {
         "kode": "RA-JPEG",
-        "beskrivelse": "JPEG (ISO 10918-1:1994)"
+        "kodenavn": "JPEG (ISO 10918-1:1994)"
     },
     "filnavn": "portrait.jpeg",
     "filstoerrelse": 2000000,

@@ -1905,7 +1905,16 @@ støtter Admin-pakken:
 | https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangskategori/                   |
 | https://rel.arkivverket.no/noark5/v4/api/metadata/tilgangsrestriksjon/                |
 
-Felles skjema for alle kodelister og felles typer
+Felles skjema for alle kodelister og felles typer.
+
+Verdier fra kodelister henvises til både ved sin **kode** og ved sitt
+**kodenavn**, slik at alle verdier i en bestemt kodeliste må være
+unike.
+
+Alle kodelister har en bolsk attributt «inaktiv» som settes til «true»
+for historiske verdier som ikke lenger skal brukes.  Hvis «inaktiv»
+ikke er satt så er den «false».  Når verdien av «inaktiv» er «false»
+så skal den ikke sendes over i JSON til API-klient.
 
 ![Kodelister - (diagram)](./media/uml-kodelister-entiter.png)
 
@@ -1931,7 +1940,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
 | Aktiv periode           |             |              | A        |          |
 | Overlappingsperiode     |             |              | O        |          |
@@ -1958,7 +1967,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
 | Opprettet     |             |              | O        |          |
 | Avsluttet     |             |              | A        |          |
@@ -1983,7 +1992,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                  | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**              | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------- | ----------- | ------------ | -------- | -------- |
 | Besvart med brev          |             |              | BU       |          |
 | Besvart med e-post        |             |              | BE       |          |
@@ -2015,7 +2024,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Fysisk medium                           |             |              | F        |          |
 | Elektronisk arkiv                       |             |              | E        |          |
@@ -2041,7 +2050,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                           | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------- | ----------- | ------------ | -------- | -------- |
 | Dokumentet er under redigering     |             |              | B        |          |
 | Dokumentet er ferdigstilt          |             |              | F        |          |
@@ -2066,7 +2075,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**             | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------- | ----------- | ------------ | -------- | -------- |
 | Brev                 | Valgfri     |              | B        |          |
 | Rundskriv            | Valgfri     |              | R        |          |
@@ -2098,7 +2107,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                   | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Symmetrisk kryptert                            | Valgfri     |              | SK       |          |
 | Sendt med PKI/virksomhetssertifikat            | Valgfri     |              | V        |          |
@@ -2127,7 +2136,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------ | ----------- | ------------ | -------- | -------- |
 | Signatur påført, ikke verifisert     |             |              | I        |          |
 | Signatur påført og verifisert        |             |              | V        |          |
@@ -2148,7 +2157,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Godkjent                                            | Valgfri     |              | G        |          |
 | Ikke godkjent                                       | Valgfri     |              | I        |          |
@@ -2198,7 +2207,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                 | **Merknad**                                                                                                                                                              | **Multipl.** | **Kode**  | **Type** |
+| **Kodenavn**             | **Merknad**                                                                                                                                                              | **Multipl.** | **Kode**  | **Type** |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------- | -------- |
 | Ren tekst                | Som ren tekst: UTF-8 (ISO/IEC 10646-1:2000 Annex D) eller ISO 8859-1:1998, Latin 1. ISO 8859-1:1998, Latin 1 kan erstattes med ISO 8859-4:1998, Latin 4 for samiske tegn |              | [fmt/111](http://www.nationalarchives.gov.uk/PRONOM/fmt/111)   |          |
 | TIFF versjon 6           | TIFF - Tag Image File Format versjon 6, med de presiseringer som fremgår av forskriftens § 8-18                                                                          |              | [fmt/353](http://www.nationalarchives.gov.uk/PRONOM/fmt/353)  |          |
@@ -2227,7 +2236,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                 | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ---------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Strengt hemmelig (sikkerhetsgrad)        |             |              | SH       |          |
 | Hemmelig (sikkerhetsgrad)                |             |              | H        |          |
@@ -2250,7 +2259,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
 | Endringslogg        |             |              |          |          |
 | Søknad mottatt      |             |              |          |          |
@@ -2278,7 +2287,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                  | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                              | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Inngående dokument                        |             |              | I        |          |
 | Utgående dokument                         |             |              | U        |          |
@@ -2305,7 +2314,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Journalført                                         |             |              | J        |          |
 | Ferdigstilt fra saksbehandler                       |             |              | F        |          |
@@ -2339,7 +2348,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**        | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
 | Bevares             |             |              | B        |          |
 | Kasseres            |             |              | K        |          |
@@ -2366,7 +2375,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                               | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                           | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Gårds- og bruksnummer                  | Valgfri     |              | GBN      |          |
 | Funksjonsbasert, hierarkisk            | Valgfri     |              | FH       |          |
@@ -2398,7 +2407,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
 | Avsender                |             |              | EA       |          |
 | Mottaker                |             |              | EM       |          |
@@ -2458,7 +2467,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                   | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------ | ----------- | ------------ | -------- | -------- |
 | Merknad fra saksbehandler      | Valgfri     |              | MS       |          |
 | Merknad fra leder              | Valgfri     |              | ML       |          |
@@ -2485,7 +2494,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
 | Møteleder     | Valgfri     |              | M        |          |
 | Referent      | Valgfri     |              | R        |          |
@@ -2516,7 +2525,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | --------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Ferdig behandlet av utvalget            | Valgfri     |              | BE       |          |
 | Utsatt til nytt møte i samme utvalg     | Valgfri     |              | UT       |          |
@@ -2550,7 +2559,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                | **Merknad**                                                                                                                     | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**            | **Merknad**                                                                                                                     | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------- | -------- |
 | Møteinnkalling          |                                                                                                                                 |              | MI       |          |
 | Saksframlegg            |                                                                                                                                 |              | SF       |          |
@@ -2582,7 +2591,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                     | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------- | ----------- | ------------ | -------- | -------- |
 | Politisk sak                     |             |              | PS       |          |
 | Delegert møtesak                 |             |              | DS       |          |
@@ -2631,7 +2640,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
 | Gjeldende     |             |              | G        |          |
 | Foreldet      |             |              | F        |          |
@@ -2652,7 +2661,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
 | Klient        | Valgfri     |              | KLI      |          |
 | Pårørende     | Valgfri     |              | PÅ       |          |
@@ -2680,7 +2689,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                    | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------- | ----------- | ------------ | -------- | -------- |
 | Under behandling                |             |              | B        |          |
 | Avsluttet                       |             |              | A        |          |
@@ -2711,7 +2720,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------ | ----------- | ------------ | -------- | -------- |
 | Skjerming av hele dokumentet         |             |              | H        |          |
 | Skjerming av deler av dokumentet     |             |              | D        |          |
@@ -2737,7 +2746,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                                 | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Skjerming klasseID                                       |             |              | KID      |          |
 | Skjerming tittel klasse                                  |             |              | TKL      |          |
@@ -2772,7 +2781,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                    | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Sletting av produksjonsformat                   |             |              | SP       |          |
 | Sletting av tidligere versjon                   |             |              | SV       |          |
@@ -2827,7 +2836,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
 | arkivdel                |             |              | A        |          |
 | klasse                  |             |              | K        |          |
@@ -2851,7 +2860,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                           | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | -------------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Begrenset etter sikkerhetsinstruksen               |             |              | B        |          |
 | Konfidensielt etter sikkerhetsinstruksen           |             |              | K        |          |
@@ -2882,7 +2891,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**          | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ----------------- | ----------- | ------------ | -------- | -------- |
 | Hoveddokument     |             |              | H        |          |
 | Vedlegg           |             |              | V        |          |
@@ -2907,7 +2916,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                     | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------------------------------------------ | ----------- | ------------ | -------- | -------- |
 | Produksjonsformat                                |             |              | P        |          |
 | Arkivformat                                      |             |              | A        |          |
