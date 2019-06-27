@@ -10,9 +10,8 @@ class Arkivstruktur.Klassifikasjonssystem <Arkivenhet>
 class Arkivstruktur.Klasse <Arkivenhet>
 class Arkivstruktur.Mappe <Arkivenhet>
 class Arkivstruktur.Registrering <Arkivenhet>
-class Arkivstruktur.Basisregistrering <Registrering>
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>
-class Sakarkiv.Journalpost <Basisregistrering>
+class Sakarkiv.Journalpost <Registrering>
 class Sakarkiv.Saksmappe <Mappe>
 
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivskaper
@@ -40,8 +39,7 @@ Arkivstruktur.Klasse "+klasse 0..1" o-- "+registrering 0..*" Arkivstruktur.Regis
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Registrering "+registrering 1..*" o-- "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
 
-Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
-Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
+Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 
 !include kapitler/media/uml-class-endringslogg.iuml
 !include kapitler/media/uml-class-hendelseslogg.iuml

@@ -4,27 +4,21 @@ skinparam nodesep 180
 
 'FIXME dropped caption "class Klassediagram_forklaring"
 
-!include kapitler/media/uml-class-arkivenhet.iuml
 !include kapitler/media/uml-class-avskrivning.iuml
-!include kapitler/media/uml-class-basisregistrering.iuml
+!include kapitler/media/uml-class-registrering.iuml
 !include kapitler/media/uml-class-journalpost.iuml
 !include kapitler/media/uml-class-mappe.iuml
 !include kapitler/media/uml-class-registrering.iuml
 !include kapitler/media/uml-codelist-graderingskode.iuml
 !include kapitler/media/uml-datatype-gradering.iuml
 
-Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
-Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
-Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
-Arkivstruktur.Basisregistrering <|-- Sakarkiv.Journalpost
-
-Arkivstruktur.Arkivenhet --[hidden] Arkivstruktur.SystemID
+Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 
 Arkivstruktur.Mappe "overmappe 0..1" o--> "undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Sakarkiv.Journalpost -* "avskrivning 0..*" Sakarkiv.Avskrivning
 package Arkivstruktur {
-note left of Arkivstruktur.Basisregistrering : Dette er eksempel på en\nnote, som kan være\nknytta til en klasse (som\ndenne) eller kan være\n"løs"
+note left of Arkivstruktur.Registrering : Dette er eksempel på en\nnote, som kan være\nknytta til en klasse (som\ndenne) eller kan være\n"løs"
 }
 
 class Arkivstruktur.SystemID <<simple>> {

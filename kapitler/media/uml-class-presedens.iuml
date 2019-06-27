@@ -15,6 +15,6 @@ class Sakarkiv.Presedens {
   +avsluttetDato : datetime [0..1]
   +avsluttetAv : string [0..1]
   +referanseAvsluttetAv : SystemID [0..1]
-  +presedensStatus : Presedensstatus [0..1]
+  +presedensStatus : PresedensStatus [0..1]
 }
 @enduml

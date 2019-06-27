@@ -10,7 +10,6 @@ skinparam nodesep 180
 !include kapitler/media/uml-class-mappe.iuml
 !include kapitler/media/uml-class-merknad.iuml
 !include kapitler/media/uml-class-registrering.iuml
-!include kapitler/media/uml-class-basisregistrering.iuml
 !include kapitler/media/uml-class-dokumentbeskrivelse.iuml
 !include kapitler/media/uml-class-dokumentobjekt.iuml
 !include kapitler/media/uml-class-konvertering.iuml
@@ -33,8 +32,7 @@ Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mapp
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Merknad "+merknad 0..*" <-* Arkivstruktur.Mappe
 Arkivstruktur.Merknad "+merknad 0..*" <--* Arkivstruktur.Dokumentbeskrivelse
-Arkivstruktur.Basisregistrering -|> Arkivstruktur.Registrering
-Arkivstruktur.Merknad "+merknad 0..*" <--* Arkivstruktur.Basisregistrering
+Arkivstruktur.Merknad "+merknad 0..*" <--* Arkivstruktur.Registrering
 Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Dokumentbeskrivelse "+dokumentbeskrivelse 1" o--> "+dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
 Arkivstruktur.Dokumentobjekt *-> "+konvertering 0..*" Arkivstruktur.Konvertering

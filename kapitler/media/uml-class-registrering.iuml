@@ -7,5 +7,14 @@ class Arkivstruktur.Registrering <Arkivenhet> {
   +skjerming : Skjerming [0..1]
   +gradering : Gradering [0..1]
   +referanseArkivdel : SystemID [0..1]
+  +registreringsID : string [0..1]
+  +tittel : string
+  +offentligTittel : string [0..1]
+  +beskrivelse : string [0..1]
+  +noekkelord : string [0..*]
+  +forfatter : string [0..*]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +virksomhetsspesifikkeMetadata : any [0..1]
 }
 @enduml

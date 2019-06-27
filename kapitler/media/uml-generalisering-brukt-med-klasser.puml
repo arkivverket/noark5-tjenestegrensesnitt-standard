@@ -1,8 +1,8 @@
 @startuml
 'FIXME dropped caption "class Fig04_Generalisering"
-class Basisregistrering < Registrering >
-class Journalpost < Basisregistrering >
-class Moeteregistrering < Basisregistrering >
-Basisregistrering <|-- Journalpost
-Basisregistrering <|-- Moeteregistrering
+class Registrering < Arkivenhet >
+class Journalpost < Registrering >
+class Moeteregistrering < Registrering >
+Registrering <|-- Journalpost
+Registrering <|-- Moeteregistrering
 @enduml

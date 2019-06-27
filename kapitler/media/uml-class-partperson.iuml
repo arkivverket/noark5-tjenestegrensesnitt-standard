@@ -1,5 +1,5 @@
 @startuml
-class Sakarkiv.SakspartPerson <Sakspart> {
+class Sakarkiv.PartPerson <Part> {
   +personidentifikator : Personidentifikator [0..*]
   +navn : string
   +postadresse : EnkelAdresse [0..1]

@@ -45,11 +45,11 @@ til.
 
 GET https://n5.example.com/api
 
-Accept: application/vnd.noark5-v4+json
+Accept: application/vnd.noark5+json
 
 **Response**
 
-Content-Type: application/vnd.noark5-v4+json
+Content-Type: application/vnd.noark5+json
 
 ```Python
 {
@@ -341,7 +341,7 @@ Det kan se se ut som følger:
 Forespørsel:
 
 GET https://n5.example.com/api/arkivstruktur/mappe/
-Accept: application/vnd.noark5-v4+json
+Accept: application/vnd.noark5+json
 
 Respons:
 
@@ -467,7 +467,7 @@ url.
 
 POST til https://n5.example.com/api/arkivstruktur/Arkivdel/12345/ny-mappe
 
-Content-Type: application/vnd.noark5-v4+json
+Content-Type: application/vnd.noark5+json
 
 ```Python
 {
@@ -594,7 +594,7 @@ deretter oppdatere opbjektet med en PUT-forespørsel.
 
 PUT til https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
-Content-Type: application/vnd.noark5-v4+json
+Content-Type: application/vnd.noark5+json
 
 ```Python
 {
@@ -789,7 +789,7 @@ saksmappe.
 
 **PUT https://n5.example.com/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe**
 
-Content-Type: application/vnd.noark5-v4+json
+Content-Type: application/vnd.noark5+json
 
 ```Python
 {
@@ -1069,7 +1069,7 @@ Innholdstyper(Content-Type) som skal brukes:
 
 | Innholdstype (Content-Type)    |
 | ------------------------------ |
-| application/vnd.noark5-v4+json |
+| application/vnd.noark5+json    |
 
 Datoformat skal være angitt i tråd med definisjonen i Noark 5 krav
 5.12.7 (datoer uten klokkeslett) og 5.12.8 (datoer med klokkeslett),

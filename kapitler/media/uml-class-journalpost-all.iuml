@@ -1,5 +1,5 @@
 @startuml
-class Sakarkiv.Journalpost <Basisregistrering> {
+class Sakarkiv.Journalpost <Registrering> {
   +journalaar : integer [0..1]
   +journalsekvensnummer : integer [0..1]
   +journalpostnummer : integer [0..1]
@@ -18,7 +18,14 @@ class Sakarkiv.Journalpost <Basisregistrering> {
   +journalenhet : string [0..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 
-  -- Basisregistrering --
+  -- Registrering --
+  +arkivertDato : datetime [0..1]
+  +arkivertAv : string [0..1]
+  +referanseArkivertAv : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+  +referanseArkivdel : SystemID [0..1]
   +registreringID : string [0..1]
   +tittel : string
   +offentligTittel : string [0..1]
@@ -28,15 +35,6 @@ class Sakarkiv.Journalpost <Basisregistrering> {
   +dokumentmedium : Dokumentmedium [0..1]
   +oppbevaringssted : string [0..*]
   +virksomhetsspesifikkeMetadata : any [0..1]
-
-  -- Registrering --
-  +arkivertDato : datetime [0..1]
-  +arkivertAv : string [0..1]
-  +referanseArkivertAv : SystemID [0..1]
-  +kassasjon : Kassasjon [0..1]
-  +skjerming : Skjerming [0..1]
-  +gradering : Gradering [0..1]
-  +referanseArkivdel : SystemID [0..1]
 
   -- Arkivenhet --
   +systemID : SystemID [0..1]

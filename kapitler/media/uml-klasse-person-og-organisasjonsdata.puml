@@ -1,5 +1,4 @@
 @startuml
-class Sakarkiv.Journalpost <Basisregistrering>
 
 !include kapitler/media/uml-codelist-korrespondanseparttype.iuml
 !include kapitler/media/uml-class-korrespondansepart.iuml
@@ -7,7 +6,8 @@ class Sakarkiv.Journalpost <Basisregistrering>
 !include kapitler/media/uml-class-korrespondansepartperson.iuml
 !include kapitler/media/uml-class-korrespondansepartenhet.iuml
 
-Sakarkiv.Journalpost *- "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
+Arkivstruktur.Registrering *- "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
+Arkivstruktur.Registrering *-- "+part 0..*" Sakarkiv.Part
 Sakarkiv.Korrespondansepart <-[hidden]- Kodelister.Korrespondanseparttype
 Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartPerson
 Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartEnhet
@@ -34,16 +34,19 @@ Sakarkiv.KorrespondansepartPerson <-[hidden]-- Sakarkiv.EnkelAdresse
 Sakarkiv.KorrespondansepartEnhet <-[hidden]-- Sakarkiv.EnkelAdresse
 
 !include kapitler/media/uml-datatype-kontaktinformasjon.iuml
-!include kapitler/media/uml-class-saksmappe.iuml
-!include kapitler/media/uml-class-sakspart.iuml
-!include kapitler/media/uml-class-sakspartperson.iuml
-!include kapitler/media/uml-class-sakspartenhet.iuml
+!include kapitler/media/uml-class-part.iuml
+!include kapitler/media/uml-class-partperson.iuml
+!include kapitler/media/uml-class-partenhet.iuml
 
-Sakarkiv.Saksmappe *-- "+sakspart 0..*" Sakarkiv.Sakspart
-Sakarkiv.Sakspart <|-- Sakarkiv.SakspartPerson
-Sakarkiv.Sakspart <|-- Sakarkiv.SakspartEnhet
-Sakarkiv.Saksmappe <-[hidden]- Sakarkiv.Journalpost
-Sakarkiv.SakspartPerson <-[hidden]- Sakarkiv.Kontaktinformasjon
-Sakarkiv.SakspartEnhet <-[hidden]- Sakarkiv.Kontaktinformasjon
+class Sakarkiv.Saksmappe <Mappe>
+class Sakarkiv.Journalpost <Registrering>
+Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
+Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
+
+Arkivstruktur.Mappe *-- "+part 0..*" Sakarkiv.Part
+Sakarkiv.Part <|-- Sakarkiv.PartPerson
+Sakarkiv.Part <|-- Sakarkiv.PartEnhet
+Sakarkiv.PartPerson <-[hidden]- Sakarkiv.Kontaktinformasjon
+Sakarkiv.PartEnhet <-[hidden]- Sakarkiv.Kontaktinformasjon
 
 @enduml

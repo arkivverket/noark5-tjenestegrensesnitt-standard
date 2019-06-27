@@ -26,6 +26,9 @@ Sharing) slik det er beskrevet på https://www.w3.org/TR/cors/.
 
 I praksis betyr dette at alle kall hvor klienten sender en request header med 
 
-    Content-Type: application/vnd.noark5-v4+json
+    Content-Type: application/vnd.noark5+json
 
-så skal serveren støtte http metoden **OPTIONS** slik det er definert i CORS-standarden. Dette vil gjelder alle metodene hvor klienten sender inn data, men det er ikke nødvendig å støtte **OPTIONS** metoden på GET-forespørsler.
+så skal serveren støtte http metoden **OPTIONS** slik det er definert
+i CORS-standarden. Dette vil gjelder alle metodene hvor klienten
+sender inn data, men det er ikke nødvendig å støtte **OPTIONS**
+metoden på GET-forespørsler.

@@ -2,10 +2,9 @@
 skinparam classAttributeIconSize 0
 !include kapitler/media/uml-class-merknad.iuml
 class Arkivstruktur.Mappe <Arkivenhet>
-class Arkivstruktur.Basisregistrering <Registrering>
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>
 Arkivstruktur.Mappe *-- "+merknad 0..*" Arkivstruktur.Merknad
 Arkivstruktur.Mappe "+undermappe 0..*" --o "+overmappe 0..1" Arkivstruktur.Mappe
-Arkivstruktur.Basisregistrering *-- "+merknad 0..*" Arkivstruktur.Merknad
+Arkivstruktur.Registrering *-- "+merknad 0..*" Arkivstruktur.Merknad
 Arkivstruktur.Dokumentbeskrivelse *-- "+merknad 0..*" Arkivstruktur.Merknad
 @enduml
