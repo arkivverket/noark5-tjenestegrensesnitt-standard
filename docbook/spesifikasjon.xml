@@ -26,4 +26,5 @@
   <xi:include href="09-vedlegg_2_-_objektkatalog.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
   <xi:include href="10-vedlegg_3_-_ressurser_til_rest_api.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
   <xi:include href="11-vedlegg_4_-_kataloger_over_feltverdier.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="12-vedlegg_5_-_usynlige_tegn.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 </book>
