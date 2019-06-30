@@ -21,6 +21,8 @@ https://tools.ietf.org/html/rfc4634
 Bruken av PATCH for å oppdatere JSON er beskrevet i [IETF RFC
 7396 - JSON Merge Patch](https://tools.ietf.org/html/rfc7396).
 
+OpenID Connect er definert i https://openid.net/connect/.
+
 Spørsmål, innspill til videre utvikling og/eller feilretting kan
 sendes inn som mangelmeldinger via prosjektsiden på github,
 https://github.com/arkivverket/noark5-tjenestegrensesnitt-standard/.

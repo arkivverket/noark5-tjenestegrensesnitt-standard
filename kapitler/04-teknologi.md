@@ -9,15 +9,48 @@ format og oData for filtrering. Det ble innhentet informasjon om beste
 praksis og kommentarer fra Statens Vegvesen, Difi og Brønnøysund/Altinn
 i forbindelse med REST.
 
-## Autentisering
+## Autentisering og Autorisering
 
-NOARK5 kjerne må ha metoder for å autentisere brukere og gi de riktige
-tilganger til kjernen.
+Tjenestegrensesnittet skal ha en mekanisme for å autentisere brukere
+som styrer tilgang til autoriserte enkeltbrukere og brukere tilknyttet
+en autorisert administrativ enhet som beskrevet i Admin-delen av
+kapittel 7.
 
-Single Sign On bør støttes.
+Det er påkrevd å støtte OAuth2-profilen OpenID Connect med endepunktet
+`.well-known/openid-configuration` relativt til hoved-URL (hoved-URL
+er beskrevet i Oppkobling og ressurslenker i kapittel 6).  For
+eksempeltjenesten beskrevet i kapittel 6, betyr det at
+`https://n5.example.com/api/.well-known/openid-configuration` skal
+returnere informasjon om hvordan en bruker / klient kan logge seg på
+REST-API-et i tråd med OpenID Connect.
 
-For REST er Basic autentication minimum for autentisering og en bør
-støtte SAML 2.0 og OpenID Connect.
+REST-APIet kan tilby andre innloggingsmekanismer, som Kerberos og SAML
+2.0.  Innloggingsmekanismene som støttes skal annonseres i \_links på
+hoved-URL med relevante relasjonsnøkler.  Tilgang til hoved-URL for å
+liste opp innloggingsmeknismer krever ikke autentisering.
+
+Følgende relasjonsnøkler for innlogging er definert i denne versjonen
+av spesifikasjonen:
+
+| **Mekanisme**  | **Relasjonsnøkkel**                                     | Valgfri    |
+|----------------|---------------------------------------------------------|------------|
+| OpenID Connect | https://rel.arkivverket.no/noark5/v4/api/login/oidc/    | Nei        |
+| OAuth 2.0      | https://rel.arkivverket.no/noark5/v4/api/login/rfc6749/ | Nei        |
+| JSON Web Token | https://rel.arkivverket.no/noark5/v4/api/login/rfc7519/ | Ja         |
+| Kerberos       | https://rel.arkivverket.no/noark5/v4/api/login/rfc1510/ | Ja         |
+| SAML 2.0       | https://rel.arkivverket.no/noark5/v4/api/login/saml-20/ | Ja         |
+| Basic          | https://rel.arkivverket.no/noark5/v4/api/login/rfc7617/ | Ja         |
+
+En kan så gjennomføre en innlogging / autentisering ved å kontakte den
+oppgitte href for aktuell relasjonsnøkkel med aktuelle HTTP-hodefelt
+og HTTP kropp satt.  For OpenID Connect så skal href peke til
+`.well-known/openid-configuration`-URL beskrevet over.
+
+Basic Authentication bør ikke tilbys over ukryptert HTTP.  Hvis en
+tilbyr Basic Authentication i tråd med RFC 7617, så skal en for
+ikke-autentiserte HTTP-forespørsler returnere WWW-Authenticate med
+realm satt, slik RFC 7617 anbefaler, for å sikre at nettlesere spør
+brukeren om brukernavn og passord.
 
 ## CORS
 
