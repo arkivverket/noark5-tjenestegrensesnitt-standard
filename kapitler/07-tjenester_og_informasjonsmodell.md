@@ -7,7 +7,7 @@
 | ![](./media/uml-forklaring-om-notasjon-som-er-brukt.png) | ***Klassediagram*** brukes for å vise utvalgte klasser i en UML-modell. Klassediagram ***trenger ikke være fullstendige***, hverken mhp hvilke klasser som vises eller hvilke assosiasjoner som vises. For kompliserte modeller (som NOARK-modellen) trengs flere klassediagram for å vise hele modellen. |
 |![](./media/uml-klasse-konspetet-bruker-registrering-som-eksempel.png) |I et ***klassediagram*** vises en klasse som en firkantet boks. ***Klassenavnet*** står i øverste «etasje», og er i eksempelet Registrering. ***Klasseattributtene*** karakteriserer klassen, og listes opp en i nest øverste etasje (i eksempelet i alt 7, den første/øverste har navnet arkivertDato). Firkanten kan også ha flere frivillige etasjer for å vise mer informasjon. I klassen Registrering vises en «etasje» med notes (ofte brukt for ***klassedefinisjon***) |
 |![](./media/uml-assosiasjoner-brukt-med-klasser.png) | Klasser kan knyttes sammen med ***assosiasjoner***. Assosiasjoner vises som streker mellom to klasser. En assosiasjon der begge ender er knytta til samme klasse kalles ***selv-assosiasjon***. Eksempel: Mappe kan ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like klasser. En assosiasjon kan være ***aggregering***. Symbolet er en strek mellom to klasser med åpen diamant i ene enden. Eksempel: Ei Mappe ***har*** Registrering(er). En registrering er en selvstendig enhet, som «overlever» selv om Mappa blir sletta. |
-|![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Registrering som er en generalisering av Journalpost. En kan også si at Journalpost er en spesialisering av Registrering. I Registrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost. Dette leses som Journalpost ***er en*** Registrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Registrering er en spesialisering av Arkivenhet, selv om klassen Arkivenhet ikke finnes i diagrammet. |
+|![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Registrering som er en generalisering av Journalpost og Moeteregistrering. En kan også si at Journalpost er en spesialisering av Registrering. I Registrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost og Moeteregistrering. Dette leses som Journalpost ***er en*** Registrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Registrering er en spesialisering av Arkivenhet, selv om klassen Arkivenhet ikke finnes i diagrammet. |
 |![](./media/uml-komposisjon-brukt-med-klasser.png) | En assosiasjon kan også være ***komposisjon***. Symbolet er en strek mellom to klasser med lukka diamant i den ene enden. En Registrering ***har*** Korrespondansepart(er). En slik Korrespondansepart kan ikke eksistere uten at den er knytta til en Registrerign. Slettes («dør») Registreringen vil også korrespondanseparten bli sletta («vil dø»). Assosiasjonene forteller også hvilken vei de er ***navigerbare***. Symbolet for dette er piler i endene på streken. Eksempel: En registrering «vet» hvilke korrespondansepart(er) som tilhører registreringen, mens korrespondanseparten ikke vet hvilken registrering den tilhører.|
 |![](./media/uml-multiplisitet-brukt-med-klasser.png) | ***Multiplisiteten*** forteller hvor mange forekomster som kan inngå. Multiplisitet kan brukes i forbindelse med assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to prikker mellom (0..1). Det første tallet angir minimums-multiplisitet (så mange det minst må være), det andre tallet er maksimumsmultiplisitet (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..***) Mapper(er). Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).En klasseattributt har angitt multiplisitet med klammeparenteser (\[0..1\]). Klasseattributten noekkelord kan forekomme ingen eller en gang. Når det ikke er angitt multiplisitet, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en klasseID, og kan bare ha en. En tom tekststreng-verdi ("") og en tekststreng som kun inneholder usynlige tegn (definert som beskrevet i vedlegg 5) er likestilt med en manglende verdi, slik at ved multiplisiteten [1..1] betyr det at klasseID også må ha en verdi forskjellig fra tom streng.|
 |![](./media/uml-simple-datatyper-eller-primitiver.png) | Datatypene kan også være ***simple datatyper*** eller ***primitiver***. Disse brukes for å gi mulighet for restriksjoner også på primitivene. Epostadresse kan være modellert som en slik primitiv. Epost er en tekst-streng, men som i tillegg til å være tekst-streng også må oppfylle visse regler knytta til det å være gyldig epostadresse (bl.a. inneholde en og bare en forekomst av tegnet @). I eksempelet i figuren er SystemID en tekststreng (string) som i tillegg må oppfylle tilleggskrav. I store modeller kan det være hensiktsmessig å plassere ulike modell-elementer i ulike pakker. Da kan det også bli lettere for leseren å forstå modellen når han får vite hvilken pakke de ulike klassene er plassert i. Modellpakker kalles ofte ***navnerom*** (namespace) Dette kan angis foran klassenavnet, skilt fra klassenavnet med kolon (:). I eksempelet hører klassen SystemID til pakken/navnerommet Metadata og klassen string tilhører pakken/navnerommet BasicTypes.|
@@ -520,6 +520,7 @@ Table: Relasjoner
 | **Association** (Destination → Source)     | korrespondansepart 0..* Korrespondansepart               | Registrering         |             |
 | **Association** (Destination → Source)     | part 0..* Part                                           | Registrering         |             |
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | registrering 0..1 Registrering ||
+| **Generalization** (Source → Destination)  | Moeteregistrering                                         | Registrering      |             |
 | **Generalization** (Source → Destination)  | Journalpost                                              | Registrering      |             |
 | **Association** (Destination → Source)     | merknad 0..* Merknad                                     | Registrering      |             |
 
@@ -1085,7 +1086,7 @@ klasse, mappe og registrering. Referansen går en vei, dvs. den
 kan kun være en referanse til en arkivenhet. I og med at
 kryssreferanser knyttes til Mappe og Registrering, vil det si at
 Referanser også knyttes til alle utvidelsene (spesialiseringer) under
-disse (Saksmappe og Journalpost).
+disse (Saksmappe, Moetemappe og Journalpost, Moeteregistrering).
 
 Ved avlevering i tråd med XML-skjema for Noark 5 versjon 5 så droppes
 samtlige felt arvet fra Arkivenhet, da disse ikke har korresponderende
@@ -1170,6 +1171,7 @@ Table: Relasjoner
 | **Aggregation** (Destination → Source)     | nasjonalidentifikator 0..* Nasjonalidentifikator         | Mappe                  |             |
 | **Association** (Source → Destination)     | Mappe                                                    | merknad 0..* Merknad   |             |
 | **Association** (Source → Destination)     | Mappe                                                    | part 0..* Part         |             |
+| **Generalization** (Source → Destination)  | Moetemappe                                                | Mappe                  |             |
 | **Generalization** (Source → Destination)  | Saksmappe                                                | Mappe                  |             |
 | **Association** (Bi-Directional)           | kryssreferanse 0..* Kryssreferanse                       | mappe 0..1 Mappe       |             |
 
@@ -1196,6 +1198,7 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/              |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-matrikkel/          |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-merknad/            |
+| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-moeteregistrering/  |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-part/               |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-plan/               |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-posisjon/           |
@@ -1759,6 +1762,16 @@ støtter Sakarkiv-pakken:
 | https://rel.arkivverket.no/noark5/v4/api/metadata/presedensstatus/                    |
 | https://rel.arkivverket.no/noark5/v4/api/metadata/sakspartrolle/                      |
 | https://rel.arkivverket.no/noark5/v4/api/metadata/saksstatus/                         |
+
+Følgende relasjonsnøkler skal listes opp fra en implementasjon som
+støtter Moeter-pakken:
+
+| **Relasjonsnøkkel**                                                           |
+|-------------------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v4/api/metadata/moetedeltakerfunksjon/              |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/moeteregistreringsstatus/           |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/moeteregistreringstype/             |
+| https://rel.arkivverket.no/noark5/v4/api/metadata/moetesakstype/                      |
 
 Følgende relasjonsnøkler skal listes opp fra en implementasjon som
 støtter LoggingOgSporing-pakken:
@@ -3638,3 +3651,303 @@ Table: Attributter
 | hendelsetype     |             | \[1..1\]     |          | Hendelsetype |
 | beskrivelse      |             | \[0..1\]     |          | string       |
 | hendelseDato     |             | \[1..1\]     |          | datetime     |
+
+### MoeteOgUtvalgsbehandling
+
+![MoeteOgUtvalgsbehandling - (diagram)](./media/uml-moeter.png)
+
+#### MoetedeltakerFunksjon
+
+*Type:* ***Class «codelist»***
+
+*Arver:*
+
+Åpen kodeliste
+
+Definisjon: Funksjon eller rolle til personen som deltok på møtet
+
+M373
+moetedeltakerFunksjon
+
+Table: Relasjonsnøkler
+
+| **Tag**  | **Verdi**                                                        |
+| -------- | ---------------------------------------------------------------- |
+| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/moetedeltakerfunksjon/ |
+
+Table: Attributter
+
+| **Navn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| ------------- | ----------- | ------------ | -------- | -------- |
+| Møteleder     | Valgfri     |              | M        |          |
+| Referent      | Valgfri     |              | R        |          |
+
+#### Moeteregistreringsstatus
+
+*Type:* ***Class «codelist»***
+
+*Arver:*
+
+Åpen kodeliste
+
+Definisjon: Status til møteregistreringen. Kilde: (ingen)
+
+Kommentar: Valgfrie verdier, eksempler:
+
+ - "Ferdig behandlet av utvalget"
+ - "Utsatt til nytt møte i samme utvalg"
+ - "Sendt tilbake til foregående utvalg"
+
+M055 moeteregistreringsstatus
+
+Table: Relasjonsnøkler
+
+| **Tag**  | **Verdi**                                                           |
+| -------- | ------------------------------------------------------------------- |
+| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/moeteregistreringsstatus/ |
+
+Table: Attributter
+
+| **Navn**                                | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| --------------------------------------- | ----------- | ------------ | -------- | -------- |
+| Ferdig behandlet av utvalget            | Valgfri     |              | BE       |          |
+| Utsatt til nytt møte i samme utvalg     | Valgfri     |              | UT       |          |
+| Sendt tilbake til foregående utvalg     | Valgfri     |              | TB       |          |
+
+#### Moeteregistreringstype
+
+*Type:* ***Class «codelist»***
+
+*Arver:*
+
+Definisjon: Navn på type møteregistrering
+
+Kommentar: utvidet i forhold til forslagene i NOARK 5 Vedlegg 1
+
+Vedlegg 1 Metadatakatalog v 3.1, M085 lister følgende "aktuelle
+verdier":
+
+ - Møteinnkallelse
+ - Saksliste
+ - Saksframlegg
+ - Vedlegg til møtesak
+
+M085 moeteregistreringstype
+
+Table: Relasjonsnøkler
+
+| **Tag**  | **Verdi**                                                         |
+| -------- | ----------------------------------------------------------------- |
+| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/moeteregistreringstype/ |
+
+Table: Attributter
+
+| **Navn**                | **Merknad**                                                                                                                     | **Multipl.** | **Kode** | **Type** |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------- | -------- |
+| Møteinnkalling          |                                                                                                                                 |              | MI       |          |
+| Saksframlegg            |                                                                                                                                 |              | SF       |          |
+| Saksprotokoll           |                                                                                                                                 |              | SP       |          |
+| Møteprotokoll           |                                                                                                                                 |              | MP       |          |
+| Saksliste               |                                                                                                                                 |              | SL       |          |
+| Offentlig saksliste     | Offentlig saksliste, dvs en saksliste hvor informasjon (vanligvis kun i sakstittel) som skal unntas offentligheten, er skjermet |              | OL       |          |
+| Vedlegg til møtesak     |                                                                                                                                 |              | VL       |          |
+
+#### Moetesakstype
+
+*Type:* ***Class «codelist»***
+
+*Arver:*
+
+Åpen kodeliste
+
+Definisjon: Navn på type møtesak. Kilde: (ingen)
+
+Kommentar: (ingen)
+
+M088 moetesakstype
+
+Table: Relasjonsnøkler
+
+| **Tag**  | **Verdi**                                                |
+| -------- | -------------------------------------------------------- |
+| codeList | https://rel.arkivverket.no/noark5/v4/api/metadata/moetesakstype/ |
+
+Table: Attributter
+
+| **Navn**                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| -------------------------------- | ----------- | ------------ | -------- | -------- |
+| Politisk sak                     |             |              | PS       |          |
+| Delegert møtesak                 |             |              | DS       |          |
+| Referatsak                       |             |              | RS       |          |
+| Forespørsel (interpellasjon)     |             |              | FO       |          |
+
+#### Moetemappe
+
+*Type:* ***Class***
+
+*Arver:* ***Mappe***
+
+Samling med dokumenter og mapper relatert til et møte.
+
+En Mappe kan kun være knyttet til en Moetemappe, og ikke være knyttet
+til andre mappetyper (som Saksmappe) samtidig.  Mappetype kan
+identifiseres ved at «self»-relasjonen peker til Moetemappe-instansen.
+
+Table: Relasjoner
+
+| **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
+| ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
+| **Generalization** (Source → Destination)  | Moetemappe                                                | Mappe                  |             |
+| **Association** (Source → Destination)     | Moetemappe                                         | moetedeltaker 1..* Moetedeltaker | |
+| **Aggregation** (Bi-Directional)           | forrigemoetemappe 0..1 Moetemappe  | nestemoetemappe 0..1 Moetemappe | Referanse mellom møtemapper.   Brukes til å peke mellom påfølgnede utvalgsmøter.  M221(forrige)/M222(neste) |
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                          |
+| --------- | ------------------------------------------------------------------ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/moeter/moetemappe/                |
+| REST\_REL | self                                                               |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/moeter/ny-moetemappe/             |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/moeter/moetedeltaker/             |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/moetedeltakerfunksjon/   |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/moeter/forrigemoetemappe/         |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/moeter/nestemoetemappe/           |
+
+Table: Attributter
+
+| **Navn**                | **Merknad**                       | **Multipl.** | **Kode** | **Type** |
+| ----------------------- | --------------------------------- | ------------ | -------- | -------- |
+| moetenummer             | M008                              | \[1..1\]     |          | integer  |
+| utvalg                  | Navn på utvalget som avholdt møte.  M370 | \[1..1\] |       | string   |
+| moetedeltaker           |                                   | \[1..*\]     |          | Moetedeltaker |
+| moetedato               | M102                              | \[1..1\]     |          | date     |
+| moetested               | Sted hvor møtet ble avholdt. M371 | \[0..1\]     |          | string   |
+
+Her er et eksempel på en slik oppføring:
+
+FIXME fullfør eksemplet.
+
+```
+{
+  "systemID" : "1c172314-5325-11e9-8d01-002354090596",
+  "opprettetDato" : "1945-05-08T00:00+0100",
+  "opprettetAv" : "Jens Chr. Hauge",
+  "referanseOpprettetAv : "4b7470ec-5a93-11e9-a495-4f9d384d7910",
+  "oppdatertDato" : "1945-05-08T00:00+0100",
+  "oppdatertAv" : "Jens Chr. Hauge",
+  "referanseOppdatertAv : "4b7470ec-5a93-11e9-a495-4f9d384d7910",
+
+  "tittel : "Veien videre",
+
+  "moetenummer" : 1,
+  "utvalg" : "Underutvalget",
+  "moetedeltaker" : [
+     {
+       "systemID" : "ce0c4d68-5327-11e9-a584-f74bec9cef8c",
+       "moetedeltakerNavn" : "Jens Chr. Hauge",
+       "moetedeltakerFunksjon" : "M"
+     }
+  ],
+  "moetedato" : "1945-10-01+0200",
+  "moetested" : "Hulen",
+  "_links": {
+    "self": {
+      "href" : "http://localhost:49708/api/moeter/moetemappe/1c172314-5325-11e9-8d01-002354090596/"
+    },
+    "https://rel.arkivverket.no/noark5/v4/api/moeter/moetedeltaker/": {
+      "href" : "http://localhost:49708/api/moeter/moetemappe/1c172314-5325-11e9-8d01-002354090596/moetedeltaker/"
+    },
+    "https://rel.arkivverket.no/noark5/v4/api/metadata/moetedeltakerfunksjon/": {
+      "href" : "http://localhost:49708/api/metadata/moetedeltakerfunksjon/"
+    },
+    "https://rel.arkivverket.no/noark5/v4/api/moeter/moetemappe/": {
+      "href" : "http://localhost:49708/api/moeter/moetemappe/1c172314-5325-11e9-8d01-002354090596/"
+    },
+    "https://rel.arkivverket.no/noark5/v4/api/moeter/ny-moetedeltaker/": {
+      "href" : "http://localhost:49708/api/moeter/moetemappe/1c172314-5325-11e9-8d01-002354090596/ny-moetedeltaker/"
+    },
+    "https://rel.arkivverket.no/noark5/v4/api/moeter/ny-moetemappe/": {
+      "href" : "http://localhost:49708/api/moeter/moetemappe/1c172314-5325-11e9-8d01-002354090596/ny-moetemappe/"
+    }
+  }
+}
+```
+
+#### Moetedeltaker
+
+*Type:* ***Class «dataType»***
+
+*Arver:*
+
+Person som var tilstede på møtet, og hvilken rolle vedkommende hadde på møtet.
+
+Table: Relasjoner
+
+| **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
+| ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
+| **Association** (Source → Destination)    | Moetedeltaker                                      | moetedeltakerFunksjon MoetedeltakerFunksjon |             |
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                                     |
+| --------- | ----------------------------------------------------------------------------- |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/moeter/moetedeltaker/                        |
+| REST\_REL | self                                                                          |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/moetedeltakerfunksjon/              |
+
+Table: Attributter
+
+| **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**              |
+|-----------------------|---------------|---------------|-----------|-----------------------|
+| navn                  | M372          | \[1..1\]      |           | string                |
+| funksjon              | M373          | \[1..1\]      |           | MoetedeltakerFunksjon |
+
+#### Moeteregistrering
+
+*Type:* ***Class***
+
+*Arver:* ***Basisregistrering***
+
+Et dokument knyttet til et møte.
+
+En Registrering kan kun være knyttet til en Moeteregistrering, og ikke
+være knyttet til andre registreringstyper (som Journalsak) samtidig.
+registreringstype kan identifiseres ved at «self»-relasjonen peker til
+Moeteregistrering-instansen.
+
+Table: Relasjoner
+
+| **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
+| ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
+| **Generalization** (Source → Destination)  | Moeteregistrering                                         | Basisregistrering      |             |
+| **Aggregation** (Destination → Source)     | Moeteregistrering                                       | referanseAdministrativEnhet 1 AdministrativEnhet | |
+| **Aggregation** (Destination → Source)     | Moeteregistrering                                       | referanseSaksbehandler 1 Bruker | |
+| **Association** (Source → Destination)     | Moeteregistrering                                         | moeteregistreringstype 0..1 Moeteregistreringstype | Avleveres som M085 |
+| **Association** (Source → Destination)     | Moeteregistrering                                         | moetesakstype 0..1 Moetesakstype | Avleveres som M088 |
+| **Association** (Source → Destination)     | Moeteregistrering                                         | moeteregistreringsstatus 0..1 Moeteregistreringsstatus | Avleveres som M055 |
+| **Aggregation** (Bi-Directional)           | tilmoeteregistrering 0..* Moeteregistrering  | framoeteregistrering 0..* Moeteregistrering | Referanse mellom møterregistreringer.   Kan brukes til å knytte sammen dokumenter som tilhører samme "møtesak". M224(til)/M224(fra) |
+
+Table: Relasjonsnøkler
+
+| **Tag**   | **Verdi**                                                           |
+| --------- | ------------------------------------------------------------------- |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/moeter/moeteregistrering/          |
+| REST\_REL | self                                                                |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/moeter/ny-moeteregistrering/       |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/administrativenhet/          |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/admin/bruker/                      |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/moeteregistreringsstatus/ |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/moeteregistreringstype/   |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/metadata/moetesakstype/            |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/moeter/tilmoeteregistrering/       |
+| REST\_REL | https://rel.arkivverket.no/noark5/v4/api/moeter/framoeteregistrering/       |
+
+Table: Attributter
+
+| **Navn**                 | **Merknad**                       | **Multipl.** | **Kode** | **Type** |
+| ------------------------ | --------------------------------- | ------------ | -------- | -------- |
+| moeteregistreringstype   | M085                              | \[1..1\]     |          | Moeteregistreringstype |
+| moetesakstype            | M088                              | \[0..1\]     |          | Moetesakstype |
+| moeteregistreringsstatus | M055                              | \[0..1\]     |          | Moeteregistreringsstatus |
+| administrativEnhet       | Endres ikke direkte av bruker.  Kopieres fra AdministrativEnhet.administrativEnhetNavn av API-tjenesten når relasjonen referanseAdministrativEnhet oppdateres.  Det som ble kopiert skal ikke endres selv om  AdministrativEnhet endres.  M305 | \[0..1\]     |          | string |
+| saksbehandler            | Endres ikke direkte av bruker.  Kopieres fra Bruker.brukerNavn av API-tjenesten når relasjonen referanseSaksbehandler oppdateres.  Det som ble kopiert skal ikke endres selv om  Bruker endres.  M306                              | \[1..1\]     |          | string |

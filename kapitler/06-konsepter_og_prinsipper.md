@@ -881,7 +881,7 @@ det mangler påkrevde felter.
 
 Noen entiteter kan ha samme type entitet under seg, og slik danne et
 rekursivt hierarki av instanser.  Det gjelder Arkiv, Klasse og Mappe,
-og entiter som arver fra disse (som Saksmappe).
+og entiter som arver fra disse (som Saksmappe og Moetemappe).
 
 Da det ikke er i tråd med HATEOAS-prinsippene å la samme
 relasjonsnøkkel peke til flere ulike href-er, så må dette håndteres
