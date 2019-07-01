@@ -14,29 +14,13 @@ skinparam nodesep 180
 !include kapitler/media/uml-class-part.iuml
 !include kapitler/media/uml-class-journalpost.iuml
 !include kapitler/media/uml-class-korrespondansepart.iuml
-class MoeteOgUtvalgsbehandling.Moetemappe {
-  +moetenummer : string [0..1]
-  +utvalg : string
-  +moetedato : datetime
-  +moetested : string [0..1]
-  +referanseForrigeMoete : SystemID [0..1]
-  +referanseNesteMoete : SystemID [0..1]
-}
+!include kapitler/media/uml-datatype-moetedeltaker.iuml
+!include kapitler/media/uml-class-moetemappe.iuml
 !include kapitler/media/uml-class-registrering.iuml
 !include kapitler/media/uml-class-arkivnotat.iuml
 !include kapitler/media/uml-class-dokumentbeskrivelse.iuml
 !include kapitler/media/uml-class-dokumentobjekt.iuml
-class MoeteOgUtvalgsbehandling.Moeteregistrering {
-  +moeteregistreringstype : Moeteregistreringstype
-  +moetesakstype : Moetesakstype
-  +moeteregistreringsstatus : Moeteregistreringsstatus [0..1]
-  +administrativEnhet : string
-  +referanseAdministrativEnhet : SystemID [0..1]
-  +saksbehandler : string
-  +referanseSaksbehandler : SystemID [0..1]
-  +referanseTilMoeteregistrering : SystemID [0..1]
-  +referanseFraMoeteregistrering : SystemID [0..1]
-}
+!include kapitler/media/uml-class-moeteregistrering.iuml
 !include kapitler/media/uml-class-konvertering.iuml
 !include kapitler/media/uml-datatype-elektronisksignatur.iuml
 
@@ -56,6 +40,9 @@ Arkivstruktur.Klasse "+sekundaerklassifikasjon 0..*" <--o Sakarkiv.Saksmappe
 Arkivstruktur.Klasse "+klasse 0..*" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Mappe <|- MoeteOgUtvalgsbehandling.Moetemappe
+MoeteOgUtvalgsbehandling.Moetemappe "forrigemoetemappe 0..1" o-> "nestemoetemappe 0..1" MoeteOgUtvalgsbehandling.Moetemappe
+MoeteOgUtvalgsbehandling.Moetemappe --* "moetedeltaker 1..*" MoeteOgUtvalgsbehandling.Moetedeltaker
+
 Arkivstruktur.Mappe *--> "+part 0..*" Sakarkiv.Part
 Arkivstruktur.Mappe *-> "+merknad 0..*" Arkivstruktur.Merknad
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
@@ -67,6 +54,10 @@ Arkivstruktur.Dokumentbeskrivelse "+dokumentbeskrivelse 1" o--> "+dokumentobjekt
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 Arkivstruktur.Registrering <|-- MoeteOgUtvalgsbehandling.Moeteregistrering
+Admin.Bruker "referanseSaksbehandler" o- MoeteOgUtvalgsbehandling.Moeteregistrering
+Admin.AdministrativEnhet "referanseAdministrativEnhet" o- MoeteOgUtvalgsbehandling.Moeteregistrering
+MoeteOgUtvalgsbehandling.Moeteregistrering "framoeteregistrering 0..*" o-> "tilmoeteregistrering 0..*" MoeteOgUtvalgsbehandling.Moeteregistrering
+
 Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
 Arkivstruktur.Registrering *--> "+part 0..*" Sakarkiv.Part
 Arkivstruktur.Dokumentobjekt *--> "+konvertering 0..*" Arkivstruktur.Konvertering

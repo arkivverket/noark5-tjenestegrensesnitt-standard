@@ -1,5 +1,5 @@
 @startuml
-class Kodelister.Moeteregistreringstype <<codelist>> {
+class MoeteOgUtvalgsbehandling.Moeteregistreringstype <<codelist>> {
   +Møteinnkalling = MI
   +Saksframlegg = SF
   +Saksprotokoll = SP

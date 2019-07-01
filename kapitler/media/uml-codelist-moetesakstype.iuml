@@ -1,5 +1,5 @@
 @startuml
-class Kodelister.Moetesakstype <<codelist>> {
+class MoeteOgUtvalgsbehandling.Moetesakstype <<codelist>> {
   +Politisk sak = PS
   +Delegert møtesak = DS
   +Referatsak = RS
