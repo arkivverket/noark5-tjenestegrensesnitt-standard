@@ -1,0 +1,9 @@
+@startuml
+class MoeteOgUtvalgsbehandling.Moetemappe <Mappe> {
+  +moetenummer : integer
+  +utvalg : string
+  +moetedeltaker : Moetedeltaker [1..*]
+  +moetedato : date
+  +moetested : string [0..1]
+}
+@enduml

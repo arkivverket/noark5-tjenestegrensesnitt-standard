@@ -52,6 +52,9 @@ Arkivstruktur.Mappe *-- Arkivstruktur.Skjerming
 class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<VirksomhetsspesifikkeMetadata>> {
 }
 Arkivstruktur.Mappe *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
+class MoeteOgUtvalgsbehandling.Moetemappe <Mappe> {
+}
+Arkivstruktur.Mappe <|-- MoeteOgUtvalgsbehandling.Moetemappe
 class Sakarkiv.Saksmappe <Mappe> {
 }
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe

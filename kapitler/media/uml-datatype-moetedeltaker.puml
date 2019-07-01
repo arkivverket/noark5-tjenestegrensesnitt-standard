@@ -1,0 +1,15 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class MoeteOgUtvalgsbehandling.Moetedeltaker <<dataType>> {
+  +navn : string
+  +funksjon : MoetedeltakerFunksjon
+}
+class MoeteOgUtvalgsbehandling.MoetedeltakerFunksjon <<codelist>> {
+}
+MoeteOgUtvalgsbehandling.Moetedeltaker *-- "moetedeltakerFunksjon 1" MoeteOgUtvalgsbehandling.MoetedeltakerFunksjon
+class MoeteOgUtvalgsbehandling.Moetemappe <Mappe> {
+}
+MoeteOgUtvalgsbehandling.Moetemappe *-- "moetedeltaker 1..*" MoeteOgUtvalgsbehandling.Moetedeltaker
+MoeteOgUtvalgsbehandling.Moetemappe *-- MoeteOgUtvalgsbehandling.Moetedeltaker
+@enduml

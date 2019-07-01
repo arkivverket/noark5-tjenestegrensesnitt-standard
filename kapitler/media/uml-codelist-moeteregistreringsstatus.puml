@@ -1,0 +1,12 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class MoeteOgUtvalgsbehandling.Moeteregistreringsstatus <<codelist>> {
+  +Ferdig behandlet av utvalget = BE
+  +Utsatt til nytt møte i samme utvalg = UT
+  +Sendt tilbake til foregående utvalg = TB
+}
+class MoeteOgUtvalgsbehandling.Moeteregistrering <Registrering> {
+}
+MoeteOgUtvalgsbehandling.Moeteregistrering *-- "moeteregistreringsstatus 0..1" MoeteOgUtvalgsbehandling.Moeteregistreringsstatus
+@enduml

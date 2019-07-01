@@ -619,6 +619,55 @@ class LoggingOgSporing.Hendelseslogg <Endringslogg> {
   +hendelseDato : datetime [0..1] [1..1]
 }
 
+class MoeteOgUtvalgsbehandling.Moetedeltaker <<dataType>> {
+  +navn : string
+  +funksjon : MoetedeltakerFunksjon
+}
+
+class MoeteOgUtvalgsbehandling.MoetedeltakerFunksjon <<codelist>> {
+  +Møteleder = M
+  +Referent = R
+}
+
+class MoeteOgUtvalgsbehandling.Moetemappe <Mappe> {
+  +moetenummer : integer
+  +utvalg : string
+  +moetedeltaker : Moetedeltaker [1..*]
+  +moetedato : date
+  +moetested : string [0..1]
+}
+
+class MoeteOgUtvalgsbehandling.Moeteregistrering <Registrering> {
+  +moeteregistreringstype : Moeteregistreringstype
+  +moetesakstype : Moetesakstype [0..1]
+  +moeteregistreringsstatus : Moeteregistreringsstatus [0..1]
+  +administrativEnhet : string [0..1]
+  +saksbehandler : string
+}
+
+class MoeteOgUtvalgsbehandling.Moeteregistreringsstatus <<codelist>> {
+  +Ferdig behandlet av utvalget = BE
+  +Utsatt til nytt møte i samme utvalg = UT
+  +Sendt tilbake til foregående utvalg = TB
+}
+
+class MoeteOgUtvalgsbehandling.Moeteregistreringstype <<codelist>> {
+  +Møteinnkalling = MI
+  +Saksframlegg = SF
+  +Saksprotokoll = SP
+  +Møteprotokoll = MP
+  +Saksliste = SL
+  +Offentlig saksliste = OL
+  +Vedlegg til møtesak = VL
+}
+
+class MoeteOgUtvalgsbehandling.Moetesakstype <<codelist>> {
+  +Politisk sak = PS
+  +Delegert møtesak = DS
+  +Referatsak = RS
+  {field} +Forespørsel (interpellasjon) = FO
+}
+
 class Sakarkiv.Arkivnotat <Registrering> {
   +dokumentetsDato : datetime [0..1] [1..1]
   +mottattDato : datetime [0..1] [1..1]
@@ -717,6 +766,7 @@ class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<Virksomhetss
 }
 
 Admin.AdministrativEnhet "administrativenhet 0..*" *--> "bruker 0..*" Admin.Bruker
+Admin.AdministrativEnhet "referanseAdministrativEnhet 1" o-- MoeteOgUtvalgsbehandling.Moeteregistrering
 Admin.AdministrativEnhet *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Arkiv "arkiv 0..*" o--> "arkivskaper 1..*" Arkivstruktur.Arkivskaper
 Arkivstruktur.Arkiv "arkiv 1" o--> "arkivdel 0..*" Arkivstruktur.Arkivdel
@@ -741,6 +791,7 @@ Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
 Sakarkiv.Arkivnotat *-- "dokumentflyt 0..*" Sakarkiv.Dokumentflyt
+Admin.Bruker "referanseSaksbehandler 1" o-- MoeteOgUtvalgsbehandling.Moeteregistrering
 Admin.Bruker *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Dokumentbeskrivelse "dokumentbeskrivelse 1" o--> "dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
 Arkivstruktur.Dokumentbeskrivelse *-- "merknad 0..*" Arkivstruktur.Merknad
@@ -784,8 +835,17 @@ Arkivstruktur.Mappe *-- Arkivstruktur.Gradering
 Arkivstruktur.Mappe *-- Arkivstruktur.Kassasjon
 Arkivstruktur.Mappe *-- Arkivstruktur.Skjerming
 Arkivstruktur.Mappe *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
+Arkivstruktur.Mappe <|-- MoeteOgUtvalgsbehandling.Moetemappe
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Mappe o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
+MoeteOgUtvalgsbehandling.Moetedeltaker *-- "moetedeltakerFunksjon 1" MoeteOgUtvalgsbehandling.MoetedeltakerFunksjon
+MoeteOgUtvalgsbehandling.Moetemappe "nestemoetemappe 0..1" o--> "forrigemoetemappe 0..1" MoeteOgUtvalgsbehandling.Moetemappe
+MoeteOgUtvalgsbehandling.Moetemappe *-- "moetedeltaker 1..*" MoeteOgUtvalgsbehandling.Moetedeltaker
+MoeteOgUtvalgsbehandling.Moetemappe *-- MoeteOgUtvalgsbehandling.Moetedeltaker
+MoeteOgUtvalgsbehandling.Moeteregistrering "framoeteregistrering 0..*" o--> "tilmoeteregistrering 0..*" MoeteOgUtvalgsbehandling.Moeteregistrering
+MoeteOgUtvalgsbehandling.Moeteregistrering *-- "moeteregistreringsstatus 0..1" MoeteOgUtvalgsbehandling.Moeteregistreringsstatus
+MoeteOgUtvalgsbehandling.Moeteregistrering *-- "moeteregistreringstype 0..1" MoeteOgUtvalgsbehandling.Moeteregistreringstype
+MoeteOgUtvalgsbehandling.Moeteregistrering *-- "moetesakstype 0..1" MoeteOgUtvalgsbehandling.Moetesakstype
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Bygning
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel
@@ -815,6 +875,7 @@ Arkivstruktur.Registrering *-- Arkivstruktur.Skjerming
 Arkivstruktur.Registrering *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
+Arkivstruktur.Registrering <|-- MoeteOgUtvalgsbehandling.Moeteregistrering
 Arkivstruktur.Registrering o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
 Sakarkiv.Saksmappe *-- "sekundaerklassifikasjon 0..*" Arkivstruktur.Klasse
 string <|-- Kodelister.SystemID

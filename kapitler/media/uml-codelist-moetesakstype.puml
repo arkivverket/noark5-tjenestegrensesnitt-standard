@@ -1,0 +1,13 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class MoeteOgUtvalgsbehandling.Moetesakstype <<codelist>> {
+  +Politisk sak = PS
+  +Delegert møtesak = DS
+  +Referatsak = RS
+  {field} +Forespørsel (interpellasjon) = FO
+}
+class MoeteOgUtvalgsbehandling.Moeteregistrering <Registrering> {
+}
+MoeteOgUtvalgsbehandling.Moeteregistrering *-- "moetesakstype 0..1" MoeteOgUtvalgsbehandling.Moetesakstype
+@enduml

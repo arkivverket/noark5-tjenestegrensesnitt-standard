@@ -1,5 +1,5 @@
 @startuml
-class Kodelister.MoetedeltakerFunksjon <<codelist>> {
+class MoeteOgUtvalgsbehandling.MoetedeltakerFunksjon <<codelist>> {
   +Møteleder = M
   +Referent = R
 }
