@@ -1091,6 +1091,121 @@ Ved avlevering i tråd med XML-skjema for Noark 5 versjon 5 så droppes
 samtlige felt arvet fra Arkivenhet, da disse ikke har korresponderende
 felt i dette avleveringsformatet.
 
+Kryssreferanser opprettes med en POST-forespørsel og bruker ODATA $ref
+tilnærmingen.  Hvis det er mulig å lage en kryssreferanse fra en
+arkivenhet vil relasjonsnøkkelen
+`https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/`
+være en del av \_links. En klient kan sende en GET forespørsel til
+href-en assosiert med relasjonsnøkkelen
+`https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/`
+og skal da få tilbake en URL der klienten trenger bare å legge til
+self-URLen til arkivenheten det ønskes en kryssreferanse til.
+
+Avlevering av relasjonene i Kryssreferanse gjøres som M210, M212 og
+M219.
+
+Eksempelet under viser hvordan en klient kan opprette en kryssreferanse
+mellom en mappe identifisert med systemID
+(051b40e3-a0fe-4c02-acec-828d60c3a4ea) og en klasse identifisert med
+systemID (42ba4ead-75f5-4a7d-93f9-a9d66471adce).
+
+| **REL**                                                                   | **HREF**                                                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/ | https://n5.example.com/api/arkivstruktur/mappe/051b40e3-a0fe-4c02-acec-828d60c3a4ea/ny-kryssreferanse/ |
+
+Klienten sender en GET forespørsel til
+`https://n5.example.com/api/arkivstruktur/mappe/051b40e3-a0fe-4c02-acec-828d60c3a4ea/ny-kryssreferanse/`
+og får tilbake en URL
+
+```Python
+{
+    "url" : "https://n5.example.com/api/arkivstruktur/mappe/051b40e3-a0fe-4c02-acec-828d60c3a4ea/ny-kryssreferanse/$ref?$id="
+}
+```
+
+Klienten skal da legge til URL-adressen til den interne objektet
+kryssreferansen skal peke til.
+
+```
+POST https://n5.example.com/api/arkivstruktur/mappe/051b40e3-a0fe-4c02-acec-828d60c3a4ea/ny-kryssreferanse/$ref?$id=https://n5.example.com/api/arkivstruktur/klasse/42ba4ead-75f5-4a7d-93f9-a9d66471adce
+```
+
+Dersom opprettelse av kryssreferanse var vellykket returneres det en
+HTTP status 201 med følgende nyttelast:
+
+```Python
+{
+  "systemID": "852989ee-293d-41fe-b46a-fa3cdf607d74",
+  "opprettetDato": "2019-06-30T22:11:35.797+02:00",
+  "opprettetAv": "bruker@n5.example.com",
+  "oppdatertDato": "2019-06-30T22:11:35.797+02:00",
+  "oppdatertAv": "bruker@n5.example.com",
+  "_links": {
+      "self": {
+        "href": "https://n5.example.com/api/arkivstruktur/kryssreferanse/852989ee-293d-41fe-b46a-fa3cdf607d74/"
+      },
+      "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/kryssreferanse/": {
+        "href": "https://n5.example.com/api/arkivstruktur/kryssreferanse/852989ee-293d-41fe-b46a-fa3cdf607d74/"
+      },
+      "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/": {
+        "href": "https://n5.example.com/api/arkivstruktur/klasse/e66a8e49-d966-496d-a5ca-ad440001e9e1/"
+      }
+  }
+}
+```
+
+Opprettelse av kryssreferansen over gjenspeiles i nyttelasten når du
+henter mappen som har kryssreferansen. Dette vises i eksempelet under:
+
+```Python
+{
+  "systemID": "3c6caa91-af70-4bd8-9b0b-87601112d927",
+  "mappeID": "2019/1",
+  "tittel": "Søknad om barnehageplass til Marit Maritsen",
+  "offentligTittel": "Søknad om barnehageplass til ***** *****",
+  "dokumentmedium": "Elektronisk arkiv",
+  "opprettetDato": "2019-06-30T22:11:35.797+02:00",
+  "opprettetAv": "bruker@n5.example.com",
+  "oppdatertDato": "2019-06-30T22:11:35.797+02:00",
+  "oppdatertAv": "bruker@n5.example.com",
+  "kryssreferanser": [
+     {
+       "systemID": "852989ee-293d-41fe-b46a-fa3cdf607d74",
+       "opprettetDato": "2019-06-30T22:11:35.797+02:00",
+       "opprettetAv": "bruker@n5.example.com",
+       "_links": {
+         "self": {
+           "href": "https://n5.example.com/api/arkivstruktur/kryssreferanse/852989ee-293d-41fe-b46a-fa3cdf607d74/"
+         },
+         "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/kryssreferanse/": {
+           "href": "https://n5.example.com/api/arkivstruktur/kryssreferanse/852989ee-293d-41fe-b46a-fa3cdf607d74/"
+         },
+         "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/": {
+           "href": "https://n5.example.com/api/arkivstruktur/klasse/e66a8e49-d966-496d-a5ca-ad440001e9e1/"
+         }
+       }
+     }
+   ]
+   "_links": {
+      ....
+   }
+}
+```
+
+Merk: Det er ikke mulig å opprette duplikat kryssreferanser mellom to
+entiteter. Eventuelle forsøk på å opprette en duplikat kryssreferanse
+skal avvises med 400 (Bad Request).
+
+En kryssreferanse kan slettes med en DELETE-forespørsel til self URLen
+til kryssreferansen. Fra eksempelet over betyr det at kryssreferansen
+slettes med en DELETE mot
+`https://n5.example.com/api/arkivstruktur/kryssreferanse/852989ee-293d-41fe-b46a-fa3cdf607d74/`
+
+En kryssreferanse kan endres. En endringsforespørsel kan kun ende _til
+entiteten_. Det er ikke mulig å endre _fra entiteten_.  Klienten må
+bruke href som tilsvarer self relasjonsnøkkelen for kryssreferansen og
+legge til "$ref?$id=" etterfulgt at URLen til den nye arkivenheten.
+
 Table: Relasjoner
 
 | **Relasjon**                     | **Kilde**                          | **Mål**                             | **Merknad** |
@@ -1108,14 +1223,6 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/kryssreferanse/ |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/          |
 | https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/   |
-
-Table: Attributter
-
-| **Navn**                     | **Merknad** | **Multipl.** | **Kode** | **Type** |
-| ---------------------------- | ----------- | ------------ | -------- | -------- |
-| referanseTilMappe            | M210        | \[0..1\]     |          | SystemID |
-| referanseTilKlasse           | M219        | \[0..1\]     |          | SystemID |
-| referanseTilRegistrering     | M212        | \[0..1\]     |          | SystemID |
 
 #### Mappe
 
