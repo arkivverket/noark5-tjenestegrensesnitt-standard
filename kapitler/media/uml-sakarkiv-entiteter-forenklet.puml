@@ -10,19 +10,21 @@ class Sakarkiv.Saksmappe <Mappe> #pink
 class Sakarkiv.Presedens #pink
 class Sakarkiv.Journalpost <Registrering> #pink
 class Sakarkiv.Avskrivning #pink
+class Sakarkiv.Arkivnotat #pink
 class Sakarkiv.Dokumentflyt #pink
 
 Arkivstruktur.Klasse "+overklasse 0..1" o--> "+underklasse 0..*" Arkivstruktur.Klasse
-Arkivstruktur.Klasse "+klasse 0..1" o-> "+mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
-Sakarkiv.Saksmappe o--> "+sekundaerklassifikasjon 0..*" Arkivstruktur.Klasse
-Sakarkiv.Presedens "+presedens 0..*" <--o "+sak 0..*" Sakarkiv.Saksmappe
+Arkivstruktur.Klasse "+sekundaerklassifikasjon 0..*"  <--o Sakarkiv.Saksmappe
+Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 Sakarkiv.Presedens "+presedens 0..*" <--o "+journalpost 0..*" Sakarkiv.Journalpost
 Sakarkiv.Journalpost "+avskrivning 0..*" *--> Sakarkiv.Avskrivning
-Sakarkiv.Journalpost "+dokumentflyt 0..*" *--> Sakarkiv.Dokumentflyt
+Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <--* Sakarkiv.Journalpost
+Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <--* Sakarkiv.Arkivnotat
 Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
 @enduml

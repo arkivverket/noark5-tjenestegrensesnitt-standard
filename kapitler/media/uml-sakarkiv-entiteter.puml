@@ -6,9 +6,10 @@ class Arkivstruktur.Mappe <Arkivenhet>
 class Arkivstruktur.Registrering <Arkivenhet>
 class Sakarkiv.Journalpost <Registrering>
 class Sakarkiv.Saksmappe <Mappe>
+class Sakarkiv.Arkivnotat <Arkivenhet>
 
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
-Arkivstruktur.Mappe <|- Sakarkiv.Saksmappe
+Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
@@ -19,6 +20,8 @@ Sakarkiv.Journalpost "+journalpost 0..*" o--> "+presedens 0..*" Sakarkiv.Presede
 
 Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
 Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
-Sakarkiv.Journalpost *--> "+dokumentflyt 0..*\n" Sakarkiv.Dokumentflyt
+Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <--* Sakarkiv.Journalpost
+Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <--* Sakarkiv.Arkivnotat
+
 Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse 
 @enduml
