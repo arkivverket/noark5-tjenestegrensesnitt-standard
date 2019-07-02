@@ -138,7 +138,7 @@ def c2full(c):
 fieldnames = None # load2fieldmetadata("../noark5-tester/noark5-schema/v4.0/")
 
 print("@startuml")
-print("scale max 2048 width")
+print("scale max 4096 width")
 print("skinparam nodesep 100")
 print("hide members")
 
