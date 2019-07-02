@@ -61,7 +61,7 @@ Content-Type: application/vnd.noark5+json
             "href": "https://n5.example.com/api/sakarkiv"
         },
         "https://rel.arkivverket.no/noark5/v5/api/admin/system/": {
-            "href": "http://localhost:49708/api/admin/system/",
+            "href": "https://n5.example.com/api/admin/system/",
         }
     }
 }
