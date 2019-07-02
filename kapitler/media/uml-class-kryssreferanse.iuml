@@ -1,7 +1,4 @@
 @startuml
 class Arkivstruktur.Kryssreferanse <Arkivenhet> {
-  +referanseTilMappe : SystemID [0..1]
-  +referanseTilKlasse : SystemID [0..1]
-  +referanseTilRegistrering : SystemID [0..1]
 }
 @enduml
