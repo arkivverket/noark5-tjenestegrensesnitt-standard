@@ -2880,6 +2880,7 @@ Table: Relasjoner
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Association** (Source → Destination)   | Journalpost                                              | dokumentflyt 0..* Dokumentflyt |     |
+| **Association** (Source → Destination)   | Arkivnotat                                               | dokumentflyt 0..* Dokumentflyt |     |
 
 Table: Relasjonsnøkler
 
