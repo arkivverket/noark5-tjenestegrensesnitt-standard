@@ -2300,7 +2300,7 @@ Table: Attributter
 | Arkivert                                            |             |              | A        |          |
 | Utgår                                               |             |              | U        |          |
 | Midlertidig registrering av innkommet dokument      | anbefalt    |              | M        |          |
-| Saksbehandler har registrert innkommet dokument     | anbefalt    |              | S        |          |
+| Saksbehandler har registrert innkommet dokument     | Anbefalt. Dette gjelder hovedsaklig epost | | S | |
 | Reservert dokument                                  | Reservert dokument, dvs. egenprodusert dokument er under arbeid | | R |  |
 
 

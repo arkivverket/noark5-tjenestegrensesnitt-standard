@@ -1010,24 +1010,38 @@ Table: Resultatkoder ved oppdatering av referanser til objekt
 
 #### Slette objekter (Delete)
 
+I Noark 5 er kassasjon beskrevet i et eget kapittel, mens sletting er 
+omtalt i ulike krav spredt utover i ulike kapitler i standarden.
+
+Et viktig krav i Noark 5 er at arkiverte elektroniske dokumenter ikke
+skal kunne slettes. Et arkivert dokument (Journalstatus på Journalpost
+og Dokumentstatus på Dokumentbeskrivelse) har følgende kjente verdier:
+
+Journalført (J), Ferdigstilt fra saksbehandler (F), Godkjent av leder 
+(G), Ekspedert (E), Utgår (U), Midlertidig registrering av innkommet 
+dokument (M), Saksbehandler har registrert innkommet dokument (e-post)
+(S) og Reservert dokument (ikke ferdigstilt) (R).
+
+Dokumenter med status R (Reservert dokument) kan slettes. Dokumenter med
+status M (Midlertidig) kan benyttes ulikt i forskjellige organ /
+systemer, så disse kan eksempelvis ikke slettes om de er overført fra et
+fagsystem hvor de har status F og er satt opp til å få status M i
+Noark-systemet.
+
+For dokumenter som ikke er knyttet til Journalpost, må man se på verdier
+knyttet til Dokumentbeskrivelse og Dokumentstatus når man vurderer om et
+dokument kan slettes.
+
+Når det foreligger behov for autorisert kassasjon sender klienten en
+DELETE forespørsel på aktuell ressurs (URL). Alle ressurslenker med
+relasjonsnøkkel "self" kan potensielt slettes om autorisert bruker har
+nødvendige rettigheter. Respons har statuskode 204 hvis ressursen ble
+slettet.
+
 Klienten sender en DELETE forespørsel på aktuell ressurs(url). Alle
 ressurslenker med rel="self" kan potensielt slettes om bruker har
 nødvendige rettigheter. Respons gir statuskode 204 om ressursen er
 korrekt slettet.
-
-Et viktig krav i Noark 5 er at arkiverte elektroniske dokumenter ikke
-skal kunne slettes. Kontrollert sletting skal bare kunne foretas av
-autoriserte brukere i forbindelse med kassasjon
-
-Sletting av Arkivdel – Kan også gjøres med oppdatering av arkivdel hvor
-det legges inn informasjon om sletting.
-
-Sletting av Dokumentbeskrivelse – her er flere type sletting så må
-gjøres med oppdatering?
-
-De som ikke har sletting datatype, hvordan skal de merkes/fjernes?Krav
-om logging nok?Skal ikke være mulig å slette uansett hvor mye
-rettigheter en bruker har? – Arkivverket må avklare dette
 
 ```Python
 {
