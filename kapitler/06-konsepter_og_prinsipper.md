@@ -54,13 +54,13 @@ Content-Type: application/vnd.noark5+json
 ```Python
 {
     "_links": {
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/": {
             "href": "https://n5.example.com/api/arkivstruktur"
         },
-        "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/": {
+        "https://rel.arkivverket.no/noark5/v5/api/sakarkiv/": {
             "href": "https://n5.example.com/api/sakarkiv"
         },
-        "https://rel.arkivverket.no/noark5/v4/api/admin/system/": {
+        "https://rel.arkivverket.no/noark5/v5/api/admin/system/": {
             "href": "http://localhost:49708/api/admin/system/",
         }
     }
@@ -68,8 +68,8 @@ Content-Type: application/vnd.noark5+json
 ```
 
 Eksempelet viser at denne arkivkjernen støtter arkivstruktur
-(https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/) og sakarkiv
-(https://rel.arkivverket.no/noark5/v4/api/sakarkiv/).
+(https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/) og sakarkiv
+(https://rel.arkivverket.no/noark5/v5/api/sakarkiv/).
 Ved å følge **href** til disse relasjonsnøkler vil tilgjengelige ressurser
 innen disse områder annonseres på samme måte.
 
@@ -93,8 +93,8 @@ relevant for denne relasjonsnøkkelen.
 
 | Relasjonsnøkkel (rel)                          | Beskrivelse                                            |
 | ---------------------------------------------- | ------------------------------------------------------ |
-| https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ | Arkivkjerne støtter konformitetsnivå 1 arkivstruktur   |
-| https://rel.arkivverket.no/noark5/v4/api/sakarkiv/      | Arkivkjerne støtter konformitetsnivå for sakarkiv (2a) |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ | Arkivkjerne støtter konformitetsnivå 1 arkivstruktur   |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/      | Arkivkjerne støtter konformitetsnivå for sakarkiv (2a) |
 
 Relasjonsnøkler under de forskjellige konformitetsnivå listes ut i
 kapittel 7 sammen med beskrivelse av klasser.
@@ -127,7 +127,7 @@ samme href som «self» representerer entitetsrelasjonsnøkkelen til
       "self": {
         "href": "https://n5.example.com/api/sakarkiv/saksmappe/2624ed49-dc39-47d5-8966-52f9fdc75868/"
       },
-      "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/saksmappe/": {
+      "https://rel.arkivverket.no/noark5/v5/api/sakarkiv/saksmappe/": {
         "href": "https://n5.example.com/api/sakarkiv/saksmappe/2624ed49-dc39-47d5-8966-52f9fdc75868/"
       },
       ...
@@ -139,7 +139,7 @@ samme href som «self» representerer entitetsrelasjonsnøkkelen til
 #### Systeminformasjon
 
 Når en tar GET mot href for relasjonsnøkkelen
-`http://rel.arkivverket.no/noark5/v4/api/admin/system/`, så får en informasjon
+`http://rel.arkivverket.no/noark5/v5/api/admin/system/`, så får en informasjon
 om API-tjenersystemet.  Responsen inneholder følgende felter:
 
  * `leverandoer` - tekststreng med navn på leverandør av
@@ -184,11 +184,11 @@ i _links er alfabetisk sortert på «rel»-feltet i henhold til ASCII-verdi.
 ```Python
 {
     "_links": {
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/": {
             "href": "https://n5.example.com/api/arkivstruktur/arkiv{?$filter&$orderby&$top&$skip&$search}",
             "templated": true
         },
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-arkivskaper/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivskaper/": {
             "href": "https://n5.example.com/api/arkivstruktur/ny-arkivskaper"
         },
 ```
@@ -421,7 +421,7 @@ JSON-strukturen se slik ut:
     "self": {
       "href": "https://n5.example.com/api/arkivstruktur/arkiv/"
     },
-    "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/arkiv/": {
+    "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/": {
       "href": "https://n5.example.com/api/arkivstruktur/arkiv/"
     }
   }
@@ -447,7 +447,7 @@ For mappe og klasse som kan ha undermapper og underklasser så vil det være res
 
 For eksempel kan en opprette mapper på arkivdel, og da vil \_links under
 en arkivdel inneholde relasjonsnøkkelen
-rel="https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/"
+rel="https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/"
 om bruker har lov til å opprette mapper på denne arkivdelen. Den
 aktuelle ressurslenke kan være
 https://n5.example.com/api/arkivstruktur/Arkivdel/12345/ny-mappe .
@@ -485,11 +485,11 @@ Ved registrering av objektet så skal kjernen fylle ut systemID, opprettetAv og 
         "kodenavn": "Elektronisk arkiv"
     },
     "_links": {
-        "https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/": {
+        "https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/": {
             "href": "https://n5.example.com/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
             "templated": true
         },
-        "https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/": {
+        "https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/": {
             "href": "https://n5.example.com/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
             "templated": true
         }
@@ -548,10 +548,10 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         "self": {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba"
         },
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/": {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba",
         },
-        "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/": {
+        "https://rel.arkivverket.no/noark5/v5/api/sakarkiv/utvid-til-saksmappe/": {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe",
         },
 ```
@@ -578,7 +578,7 @@ mappe kan registreres sammen med registreringen av mappe.
 #### Preutfylling av objekt
 
 Ved å bruke GET på for eksempel ny-mappe
-(https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/ny-mappe/)
+(https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/)
 så kan arkivkjerne preutfylle og foreslå vanlige data for et objekt
 basert på pålogget bruker samt annonsere hvor diverse lovlige koder kan
 hentes fra slik som mappetype og dokumentmedium.
@@ -595,11 +595,11 @@ hentes fra slik som mappetype og dokumentmedium.
         "kodenavn": "Elektronisk arkiv"
     },
     "_links": {
-        "https://rel.arkivverket.no/noark5/v4/api/metadata/dokumentmedium/": {
+        "https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/": {
             "href": "https://n5.example.com/api/kodelister/Dokumentmedium{?$filter&$orderby&$top&$skip}",
             "templated": true
         },
-        "https://rel.arkivverket.no/noark5/v4/api/metadata/mappetype/": {
+        "https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/": {
             "href": "https://n5.example.com/api/kodelister/Mapetype{?$filter&$orderby&$top&$skip}",
             "templated": true
         }
@@ -695,10 +695,10 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         "self": {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba"
         },
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/": {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba"
         },
-        "https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/": {
+        "https://rel.arkivverket.no/noark5/v5/api/sakarkiv/utvid-til-saksmappe/": {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba/utvid-til-saksmappe"
         },
 ```
@@ -770,7 +770,7 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
         "self": {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba"
         },
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/mappe/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/": {
             "href": "https://n5.example.com/api/arkivstruktur/Mappe/515c45b5-e903-4320-a085-2a98813878ba"
         },
 	...
@@ -785,7 +785,7 @@ PATCH til https://n5.example.com/api/arkivstruktur/Dokumentbeskrivelse/1fa94a89-
 ```Python
 {
     "_links": {
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/registrering/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/": {
             "href": "https://n5.example.com/api/arkivstruktur/registrering/cf8e1d0d-e94d-4d07-b5ed-46ba2df0465e/dokumentbeskrivelse/"
          }
     }
@@ -815,7 +815,7 @@ Saksmappe.
 Ved uthenting av en mappe vil du få følgende relasjon tilbake:
 
 ```Python
-"https://rel.arkivverket.no/noark5/v4/api/sakarkiv/utvid-til-saksmappe/": {
+"https://rel.arkivverket.no/noark5/v5/api/sakarkiv/utvid-til-saksmappe/": {
     "href": "https://n5.example.com/api/sakarkiv/Saksmappe/1/utvid-til-saksmappe"
 }
 ```
@@ -888,19 +888,19 @@ relasjonsnøkkel peke til flere ulike href-er, så må dette håndteres
 litt annerledes enn relasjoner mellom entiteter av ulik type.  Listen
 over under-instanser til en gitt instans kan hentes ut ved å følge
 href for relasjonsnøkkelen
-https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underxx/, der
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/underxx/, der
 xx er navnet på entitet.  Eksempler på slike relasjonsnøkler
-https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underklasse/ og
-https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/undermappe/.
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/underklasse/ og
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/undermappe/.
 
 Av samme grunn er det ikke mulig å la foreldrerelasjonen gjenbruke
 entitetens relasjonsnøkkel.  En kan der finne foreldreinstans ved å
 følge href for relasjonsnøkkelen
-https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overxx/.
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overxx/.
 Eksempler på slike relasjonsnøkler
-https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overklasse/
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overklasse/
 og
-https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overmappe/.
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overmappe/.
 
 Kun relasjoner som eksisterer skal vises i relasjonslisten.
 JSON-listen over relasjoner for en klasseinstans midt i et slikt
@@ -911,13 +911,13 @@ hierarki kan for eksempel se slik ut:
   "self": {
     "href": "https://n5.example.com/api/arkivstruktur/klasse/7b3989b0-53d7-11e9-bd4e-17d6c4d53856/"
   },
-  "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/klasse/": {
+  "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/": {
     "href": "https://n5.example.com/api/arkivstruktur/klasse/7b3989b0-53d7-11e9-bd4e-17d6c4d53856/"
   },
-  "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/overklasse/": {
+  "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overklasse/": {
     "href": "https://n5.example.com/api/arkivstruktur/klasse/6787ba68-53d7-11e9-a583-8f084aaf5d19/"
   },
-  "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/underklasse/": {
+  "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/underklasse/": {
     "href": "https://n5.example.com/api/arkivstruktur/klasse/?$filter=overklasse eq 7b3989b0-53d7-11e9-bd4e-17d6c4d53856"
   },
   ...
@@ -1142,10 +1142,10 @@ GET https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
         "self": {
             "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785"
         },
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentobjekt/": {
             "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785"
         },
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/": {
             "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil"
         }
     }
@@ -1171,7 +1171,7 @@ resultatkoden 406, ikke resultatkode 200.
 **Overføre små filer**
 
 For å overføre en ny fil brukes POST til href til
-rel="https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/" med headere for
+rel="https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/" med headere for
 content-type og content-length.  Når overføringen er fullført og
 filopplastingen vellykket, så returneres statuskode 201.
 
@@ -1216,7 +1216,7 @@ overføringen er fullført der det returneres statuskode 201.
 For å starte en opplastingssesjon:
 
 1.  Send en POST til href til
-    rel="https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/"
+    rel="https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/"
 
     Headeren Content-Length settes til 0
     
@@ -1241,7 +1241,7 @@ Det er ikke mulig å overskrive filen tilhørende en eksisterende
 dokumentobjekt-entitet med en POST eller en PUT-forespørsel.  Hvis en
 fil må erstattes etter fullført opplasting så skal
 dokumentobjekt-entieten slettes og en ny POST/PUT utføres mot href til
-rel=https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/.
+rel=https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/.
 
 Når en filopplasting er vellykket, så returneres tilhørende
 dokumentobjekt som respons på avsluttende 200 OK / 201 Created.
@@ -1312,10 +1312,10 @@ Respons: 201 Created
         "self": {
             "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf"
         },
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/dokumentobjekt/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentobjekt/": {
             "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf"
         },
-        "https://rel.arkivverket.no/noark5/v4/api/arkivstruktur/fil/": {
+        "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/": {
             "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf/referanseFil"
         }
     }
@@ -1486,10 +1486,10 @@ Definisjonen over alle virksomhetsspesifikke metadatafelt som er kjent
 for API-tjenesten skal kunne hentes ut fra metadatadelen av API-et.
 API-et annonserer at virksomhetsspesifikke metadata støttes ved at det
 vil finnes en HREF/REL par under HREFen som tilsvarer RELen til
-https://rel.arkivverket.no/noark5/v4/api/metadata/.
+https://rel.arkivverket.no/noark5/v5/api/metadata/.
 
 Ved GET mot href for relasjonen
-https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/
+https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 så kan en hente ut listen over virksomhetsspesifikke metadatafelt som
 er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
 
@@ -1509,7 +1509,7 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
                 "self": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
                 },
-                "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/": {
+                "https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/4f8f7d94-4a43-11e9-ab36-002354090596"
                 }
             }
@@ -1524,7 +1524,7 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
                 "self": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
                 },
-                "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/": {
+                "https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/2f6e8634-4a45-11e9-844a-f3021c6321a6"
                 }
             }
@@ -1539,7 +1539,7 @@ er kjent for API-implementasjonen.  Den kan for eksempel se slik ut:
                 "self": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
                 },
-                "https://rel.arkivverket.no/noark5/v4/api/metadata/virksomhetsspesifikkeMetadata/": {
+                "https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/": {
                     "href": "https://n5.example.com/api/metadata/virksomhetsspesifikkeMetadata/25c93304-4a45-11e9-94b8-bf76fc1ca3ac"
                 }
             }
