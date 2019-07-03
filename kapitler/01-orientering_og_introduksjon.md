@@ -106,6 +106,8 @@ Denne spesifikasjonen faller inn under unntakene i den norske åndsverkslovens �
 
 ## Endringslogg for dette dokumentet
 
+
+
 | Versjon  | Dato       | Utført av           | Endring                            |
 | -------- | ---------- | ------------------- | ---------------------------------- |
-| 5.5v1.0  | 05.07.2019 | Anne S Knutsen      | Release av Tj.gr. 5.5v1.0          |
+| 5.5v1.0  | 05.07.2019 | Anne S Knutsen og Mona Danielsen      | Release av Tj.gr. 5.5v1.0 Detaljert historikk over endringer i spesifikasjonen kan hentes ut av git-depotet (se kapittel 2).|
