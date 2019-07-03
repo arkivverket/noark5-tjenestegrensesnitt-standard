@@ -15,11 +15,12 @@ skinparam nodesep 180
 
 Arkivstruktur.Part "+part 0..*" <--* Sakarkiv.Saksmappe
 Kodelister.PartRolle <-[hidden]--  Arkivstruktur.Part
-Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
-Sakarkiv.Journalpost "+journalpost 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
+Sakarkiv.Presedens "+presedens 0..*" <--o "+sak 0..*" Sakarkiv.Saksmappe
+Sakarkiv.Presedens "+presedens 0..*" <--o "+journalpost 0..*" Sakarkiv.Journalpost
+Sakarkiv.Journalpost *--> "+part 0..*" Arkivstruktur.Part
 Sakarkiv.Journalpost *--> "+korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
 Kodelister.Korrespondanseparttype <-[hidden]-- Arkivstruktur.Korrespondansepart
 Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
 Kodelister.Avskrivningsmaate  <-[hidden]- Sakarkiv.Avskrivning
-Sakarkiv.Journalpost *-> "+dokumentflyt 0..*" Sakarkiv.Dokumentflyt
+Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <-* Sakarkiv.Journalpost
 @enduml

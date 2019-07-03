@@ -9,9 +9,9 @@
 Arkivstruktur.Registrering *- "+korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
 Arkivstruktur.Registrering *-- "+part 0..*" Arkivstruktur.Part
 Arkivstruktur.Korrespondansepart <-[hidden]- Kodelister.Korrespondanseparttype
-Arkivstruktur.Korrespondansepart <|-- Sakarkiv.KorrespondansepartPerson
-Arkivstruktur.Korrespondansepart <|-- Sakarkiv.KorrespondansepartEnhet
-Arkivstruktur.Korrespondansepart <|-- Sakarkiv.KorrespondansepartIntern
+Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartPerson
+Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartEnhet
+Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartIntern
 
 note "ISO liste" as isoliste
 note "fra posten.no" as fraposten
@@ -38,13 +38,8 @@ Arkivstruktur.KorrespondansepartEnhet <-[hidden]-- Arkivstruktur.EnkelAdresse
 !include kapitler/media/uml-class-partperson.iuml
 !include kapitler/media/uml-class-partenhet.iuml
 
-class Sakarkiv.Saksmappe <Mappe>
-class Sakarkiv.Journalpost <Registrering>
-Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
-Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
-
 Arkivstruktur.Mappe *-- "+part 0..*" Arkivstruktur.Part
-Arkivstruktur.Part <|-- Sakarkiv.PartPerson
+Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
 Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
 Arkivstruktur.PartPerson <-[hidden]- Arkivstruktur.Kontaktinformasjon
 Arkivstruktur.PartEnhet <-[hidden]- Arkivstruktur.Kontaktinformasjon

@@ -6,22 +6,23 @@ class Arkivstruktur.Mappe <Arkivenhet>
 class Arkivstruktur.Registrering <Arkivenhet>
 class Sakarkiv.Journalpost <Registrering>
 class Sakarkiv.Saksmappe <Mappe>
-class Sakarkiv.Arkivnotat <Arkivenhet>
+class Sakarkiv.Arkivnotat <Registrering>
 
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
+Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
-Arkivstruktur.Mappe *-> "+part 0..*" Arkivstruktur.Part
-Arkivstruktur.Registrering *-> "+part 0..*" Arkivstruktur.Part
+Arkivstruktur.Mappe *--> "+part 0..*" Arkivstruktur.Part
+Arkivstruktur.Registrering *--> "+part 0..*" Arkivstruktur.Part
 Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*\n" Sakarkiv.Presedens
-Sakarkiv.Journalpost "+journalpost 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
+Sakarkiv.Presedens "+presedens 0..*" <--o  "+journalpost 0..*" Sakarkiv.Journalpost
 
 Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
 Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
-Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <--* Sakarkiv.Journalpost
-Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <--* Sakarkiv.Arkivnotat
+Sakarkiv.Journalpost *--> "+dokumentflyt 0..*" Sakarkiv.Dokumentflyt
+Sakarkiv.Arkivnotat *--> "+dokumentflyt 0..*" Sakarkiv.Dokumentflyt
 
 Arkivstruktur.Registrering "+registrering 1..*" o--> "+dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse 
 @enduml
