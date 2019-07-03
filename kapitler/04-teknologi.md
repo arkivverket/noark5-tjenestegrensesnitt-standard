@@ -1,7 +1,7 @@
 # Teknologi
 
-Prosjektet ble startet med et mål om å lage webservice grensesnitt for
-NOARK kjernen. Tidlig i prosjektet ble det ytret ønske fra
+Samdok ble startet med et mål om å lage webservice grensesnitt for
+Noark kjernen. Tidlig i prosjektet ble det ytret ønske fra
 arbeidsgruppen om å støtte nyere type tjenestegrensesnitt, og etter en
 vurdering i KommIT ble REST (Representational State Transfer) valgt med
 et tilnærmet HATEOAS (Hypermedia as the Engine og Application State)
@@ -13,8 +13,7 @@ i forbindelse med REST.
 
 Tjenestegrensesnittet skal ha en mekanisme for å autentisere brukere
 som styrer tilgang til autoriserte enkeltbrukere og brukere tilknyttet
-en autorisert administrativ enhet som beskrevet i Admin-delen av
-kapittel 7.
+en autorisert administrativ enhet som beskrevet i kapittel 7.2.4 - Admin.
 
 Det er påkrevd å støtte OAuth2-profilen OpenID Connect med endepunktet
 `.well-known/openid-configuration` relativt til hoved-URL (hoved-URL
@@ -27,7 +26,7 @@ REST-API-et i tråd med OpenID Connect.
 REST-APIet kan tilby andre innloggingsmekanismer, som Kerberos og SAML
 2.0.  Innloggingsmekanismene som støttes skal annonseres i \_links på
 hoved-URL med relevante relasjonsnøkler.  Tilgang til hoved-URL for å
-liste opp innloggingsmeknismer krever ikke autentisering.
+liste opp innloggingsmekanismer krever ikke autentisering.
 
 Følgende relasjonsnøkler for innlogging er definert i denne versjonen
 av spesifikasjonen:
