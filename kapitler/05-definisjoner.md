@@ -1,6 +1,6 @@
 # Definisjoner
 
-NOARK – Norsk Arkivstandard
+Noark – Norsk Arkivstandard
 
 UML – Unified Modeling Language
 
