@@ -1,6 +1,6 @@
 # Konformitet
 
-![](./media/logo-noark5-kjerne.png)
+![](./media/Noark5v5_px400.png)
 
 Bakgrunnen for konformitetsnivåene er behovet for å kunne gruppere krav
 i Noark standarden med aktuell modularitet i system som skal anskaffes.
