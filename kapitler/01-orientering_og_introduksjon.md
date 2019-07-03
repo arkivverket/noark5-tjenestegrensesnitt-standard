@@ -44,14 +44,14 @@ tjenestegrensesnittet er avsluttet i oktober 2014.
 
 ## Prosjektets hovedmål
 
-Mandatet for prosjektet var
+Mandatet for prosjektet i Samdoc var:
 
  - å etablere en plattformuavhengig informasjonsmodell i UML for
    arkivstrukturen i Noark 5
  - å definere CRUD tjenester (Create, Read, Update, Delete) for
    objektene i informasjonsmodellen
 
-Mål og begrunnelse for prosjektet var videre
+Mål og begrunnelse var videre:
 
   - sammen med arkivleverandørindustrien å utvikle og levere et
     tjenestegrensesnitt for Noark 5 som implementeres som et krav i
@@ -62,36 +62,31 @@ Mål og begrunnelse for prosjektet var videre
     bestillerne kan møtes og diskutere behov og utfordringer.
 
   - Et standardisert Noark 5 tjenestegrensesnitt skal bidra til gode,
-    sammenhengende digitale tjenester på tvers av virksomhetsgren­sene i
+    sammenhengende digitale tjenester på tvers av virksomhetsgrensene i
     offentlig sektor, støtte opp under offentlige virksomheters ønske om
     leverandøruavhengighet, samt fremme digitalisering og gi bedre
     tjenester.
+    
+I forbindelse med ferdigstilling av Noark 5.5.0 ble det besluttet at 
+tjenestegrenesnittet skulle viderutvikles, og få inn endringer som var 
+etterspurt etter betalanseringen.
 
 ## Prosjektets organisering
 
-Prosjekteiere: Riksarkivet, KS, KMD og Kartverket
-
-Styringsgruppe: SAMDOK sin strategigruppe Arkiv i e-forvaltning
+Prosjekteier: Arkivverket
 
 Prosjektgruppen har bestått av:
 
- - Hans Fredrik Berg (Riksarkivet), Rune Sandland (KommIT), Michael
-   Pande Rolfsen (KommIT), Anne Mette Dørum (KS), Line Richardsen
-   (KS), Tor Kjetil Nilsen (KommIT/Arkitektum as), Per Arne Aass
-   (Fredrikstad kommune), Atle Løvstakken (Bergen
-   Kommune). Prosjektleder Inger Berit Eidsten (KommIT/EKOR AS).
-
-Arbeidsgruppen har bestått av:
-
- - Fra prosjektgruppen: Hans Fredrik Berg (Riksarkivet), Tor Kjetil
-   Nilsen (KommIT), Rune Sandland (KommIT) Inger Berit Eidsten
-   (KommIT).
- - Fra leverandørene: ACOS - Trygve Håland, Ciber - Antony Lærdahl /
-   Kjetil Sahlberg, Evry - Ragnar Sturtzel, Gecko - Haakon Johannessen
-   / Steinar Herland, Documaster - Christian Lundvang / Dimitar
-   Ouzounov, Norconsult - Tor Olav Almås, Oppad - Thor Arne Johnsen,
-   Software Innovation - Bjørn Tore Eriksen, Visma - Harry Myrene.
- - Trondheim kommune: Jean-Philippe Caquet
+ - Arkivverket ved Øyvind Kruse, Hans Fredrik Berg, Mona Danielsen og 
+ Anne Sofie Knutsen. 
+ - Leverandør til prosjektet har vært Arkitektum AS
+ - Piloter: 
+   - Fredrikstad kommune i samarbeid med Evry og HK Data 
+   - NUUG ved Petter Reinholdtsen (Nikita)
+   - OsloMet ved Thomas Sødring (Nikita)
+ 
+ Noark leverandører har informert og involdert i prosjektet, og har kunne 
+ følge og bidra underveis via GitHub. 
  
 Denne spesifikasjonen faller inn under unntakene i den norske åndsverkslovens §
 9, og er ikke opphavsrettslig vernet.
