@@ -27,7 +27,7 @@ De ulike leverandørene behøver ikke utvide tjenestene, eller benytte egne gren
 
 ## Prosjekt for Noark 5 tjenestegrensesnitt 
 
-Prosjekt for Noark 5 Tjenestegrensesnitt ble satt igang av Riksarkivet 
+Prosjekt for Noark 5 Tjenestegrensesnitt ble satt i gang av Riksarkivet 
 og Kommunenes Sentralforbund høsten 2013, og et forslag til spesifikasjon 
 overlevert fra Samdok-prosjektet i september 2016 som en betaversjon.
 
@@ -72,7 +72,7 @@ Mål og begrunnelse var videre:
     tjenester.
     
 I forbindelse med ferdigstilling av Noark 5.5.0 ble det besluttet at 
-tjenestegrenesnittet skulle viderutvikles, og få inn endringer som var 
+tjenestegrenesnittet skulle videreutvikles, og få inn endringer som var 
 etterspurt etter betalanseringen.
 
 ## Prosjektets organisering
