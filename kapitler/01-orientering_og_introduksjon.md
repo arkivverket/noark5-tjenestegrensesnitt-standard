@@ -35,20 +35,24 @@ behøver ikke utvide tjenestene, eller benytte egne grensesnitt.
 
 ## Prosjekt for Noark 5 tjenestegrensesnitt 
 
-Tjenestegrensesnittet ble levert fra Samdok-prosjektet i betaversjon i september 2016, 
-og var i utgangspunktet et fungerende grensesnitt. Siden det ikke var utprøvd ble det 
-kalt en beta, og vi gikk ut fra at det ville komme innspill, kommentarer og feilmeldinger
-etterhvert som det ble tatt i bruk. Erfaringen ble at markedet var avventende, og at 
-ingen eller få tok det i bruk. Konsekvensen ble at tjenestegrensesnittet ble liggende 
-uendret i betaversjonen.
+Prosjekt for Noark 5 Tjenestegrensesnitt ble satt igang av Riksarkivet 
+og Kommunenes Sentralforbund høsten 2013, og et forslag til spesifikasjon 
+overlevert fra Samdok-prosjektet i september 2016 som en betaversjon.
 
 Sommeren 2017 innledet Arkivverket og Arkitektum AS (som utviklet betaversjonen) 
-et samarbeid med Fredrikstad kommune, Evry og HK Data om å kjøre en pilot for å teste og 
-ferdigstille tjenestegrensesnittet. Vi tok også imot invitasjon til samarbeid fra 
-Petter Reinholdtsen ved UiO og Thomas Sødring ved OsloMet, som hjalp oss med å legge 
-ut spesifikasjonen og alle åpne saker på GitHub. Prosessen med og diskusjonen rundt 
-det å videreutvikle og ferdigstille tjenestegrensesnittet er dermed åpent tilgjengelig 
-for alle interesserte. 
+et samarbeid med Fredrikstad kommune, Evry og HK Data om å kjøre en pilot (Proof 
+of Concept) for å verifisere betaversjonen. 
+
+I forbindelse med ferdigstilling av Noark 5.5.0 ble det også besluttet at 
+tjenestegrenesnittet skulle viderutvikles og forbedres. Prosjektet hadde oppstart 
+høsten 2018 og ny versjon skulle foreligge sommeren 2019. Det ble besluttet at 
+spesifikajson og alle åpne saker skulle publiseres på GitHub. Prosessen med og 
+diskusjonen rundt det å videreutvikle tjenestegrensesnittet ble dermed åpent 
+tilgjengelig for alle interesserte.
+
+Vi takket samtidig ja til invitasjon til samarbeid med NUUG ved Petter Reinholdtsen 
+og OsloMet ved Thomas Sødring. Det har testet Nikita mot Tjenestegrensittet betaversjon
+og versjon 1.0. Denne testingen har resultert i mange nyttige inspill og gode eksempler.  
 
 ## Prosjektets hovedmål
 
