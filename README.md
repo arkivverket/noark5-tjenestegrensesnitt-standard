@@ -1,4 +1,4 @@
-![](kapitler/media/logo-noark5-kjerne.png)
+![](kapitler/media/Noark5v5.png)
 
 Spesifikasjon for Noark 5 Tjenestegrensesnitt
 =============================================
