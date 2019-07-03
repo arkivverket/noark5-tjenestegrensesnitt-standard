@@ -27,4 +27,4 @@ Spørsmål, innspill til videre utvikling og/eller feilretting kan
 sendes inn som mangelmeldinger via prosjektsiden på github,
 https://github.com/arkivverket/noark5-tjenestegrensesnitt-standard/.
 Tidligere henvendelser og svar på disse er tilgjengelig fra denne
-nettsiden.
+nettsiden, samt detaljert historikk over endringer i spesifikasjonen.
