@@ -95,4 +95,4 @@ Denne spesifikasjonen faller inn under unntakene i den norske åndsverkslovens �
 
 | Versjon  | Dato       | Utført av           | Endring                            |
 | -------- | ---------- | ------------------- | ---------------------------------- |
-| 5.5v1.0  | 04.7.2019  |Anne S Knutsen og Mona Danielsen| Release av Tj.gr. 5.5v1.0 Detaljert historikk over endringer i spesifikasjonen kan hentes ut av git-depotet (se kapittel 2). |
+| 5.5v1.0  | 04.07.2019  |Anne S Knutsen og Mona Danielsen| Release av Tj.gr. 5.5v1.0, detaljert historikk over endringer i spesifikasjonen kan hentes ut av git-depotet (se kapittel 2). |
