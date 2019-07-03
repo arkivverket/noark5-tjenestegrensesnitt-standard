@@ -43,7 +43,7 @@ diskusjonen rundt det å videreutvikle tjenestegrensesnittet ble dermed åpent
 tilgjengelig for alle interesserte.
 
 Vi takket samtidig ja til invitasjon til samarbeid med NUUG ved Petter Reinholdtsen 
-og OsloMet ved Thomas Sødring. De har testet Nikita mot tjenestegrensesnittet betaversjon
+og OsloMet ved Thomas Sødring. De har testet Nikita mot tjenestegrensesnittets betaversjon
 og versjon 1.0. Denne testingen har resultert i mange nyttige innspill og gode eksempler.  
 
 ## Prosjektets hovedmål
