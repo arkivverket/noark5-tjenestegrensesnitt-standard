@@ -17,8 +17,8 @@ arkivdanning – også fagsystemer med saksbehandling.
 
 ## Noark tjenestegrensesnitt
 
-Noark 5-tjenestegrensesnittet (API) er en teknisk standard for kommunikasjon
-mellom saksbehandlingssystemer og Noark-løsninger. Formålet var å standardisere og
+Noark 5-tjenestegrensesnittet (API) er en spesifikasjon av en dataprotokoll for 
+maskinell kommunikasjon med Noark-løsninger. Formålet er å standardisere og 
 forenkle kommunikasjonen mellom de ulike systemene i forvaltningen. 
 
 Et utvidet standardisert grensesnitt vil legge til rette for gode,
