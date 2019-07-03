@@ -3,7 +3,7 @@
 ![](./media/logo-noark5-kjerne.png)
 
 Bakgrunnen for konformitetsnivåene er behovet for å kunne gruppere krav
-i NOARK standarden med aktuell modularitet i system som skal anskaffes.
+i Noark standarden med aktuell modularitet i system som skal anskaffes.
 Det vil også gjøre det enklere for leverandører å få godkjenning for
 sine implementasjoner.
 
