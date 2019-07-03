@@ -36,15 +36,15 @@ et samarbeid med Fredrikstad kommune, Evry og HK Data om å kjøre en pilot (Pro
 of Concept) for å verifisere betaversjonen. 
 
 I forbindelse med ferdigstilling av Noark 5.5.0 ble det også besluttet at 
-tjenestegrenesnittet skulle viderutvikles og forbedres. Prosjektet hadde oppstart 
+tjenestegrensesnittet skulle videreutvikles og forbedres. Prosjektet hadde oppstart 
 høsten 2018 og ny versjon skulle foreligge sommeren 2019. Det ble besluttet at 
-spesifikajson og alle åpne saker skulle publiseres på GitHub. Prosessen med og 
+spesifikasjonen og alle åpne saker skulle publiseres på GitHub. Prosessen med og 
 diskusjonen rundt det å videreutvikle tjenestegrensesnittet ble dermed åpent 
 tilgjengelig for alle interesserte.
 
 Vi takket samtidig ja til invitasjon til samarbeid med NUUG ved Petter Reinholdtsen 
-og OsloMet ved Thomas Sødring. Det har testet Nikita mot Tjenestegrensittet betaversjon
-og versjon 1.0. Denne testingen har resultert i mange nyttige inspill og gode eksempler.  
+og OsloMet ved Thomas Sødring. De har testet Nikita mot tjenestegrensesnittet betaversjon
+og versjon 1.0. Denne testingen har resultert i mange nyttige innspill og gode eksempler.  
 
 ## Prosjektets hovedmål
 
