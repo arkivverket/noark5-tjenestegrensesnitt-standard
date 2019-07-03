@@ -56,7 +56,7 @@ Arkivstruktur.Klasse "+sekundaerklassifikasjon 0..*" <--o Sakarkiv.Saksmappe
 Arkivstruktur.Klasse "+klasse 0..*" o--> "+mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Mappe <|- MoeteOgUtvalgsbehandling.Moetemappe
-Arkivstruktur.Mappe *--> "+part 0..*" Sakarkiv.Part
+Arkivstruktur.Mappe *--> "+part 0..*" Arkivstruktur.Part
 Arkivstruktur.Mappe *-> "+merknad 0..*" Arkivstruktur.Merknad
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Merknad "+merknad 0..*" <--* Arkivstruktur.Registrering
@@ -67,7 +67,7 @@ Arkivstruktur.Dokumentbeskrivelse "+dokumentbeskrivelse 1" o--> "+dokumentobjekt
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 Arkivstruktur.Registrering <|-- MoeteOgUtvalgsbehandling.Moeteregistrering
-Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
-Arkivstruktur.Registrering *--> "+part 0..*" Sakarkiv.Part
+Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
+Arkivstruktur.Registrering *--> "+part 0..*" Arkivstruktur.Part
 Arkivstruktur.Dokumentobjekt *--> "+konvertering 0..*" Arkivstruktur.Konvertering
 @enduml

@@ -2,5 +2,5 @@
 skinparam classAttributeIconSize 0
 'FIXME dropped caption "class Fig05_Komposisjon"
 !include kapitler/media/uml-class-registrering.iuml
-Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
+Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
 @enduml

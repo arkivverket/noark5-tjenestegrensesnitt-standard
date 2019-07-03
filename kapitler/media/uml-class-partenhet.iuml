@@ -1,5 +1,5 @@
 @startuml
-class Sakarkiv.PartEnhet <Part> {
+class Arkivstruktur.PartEnhet <Part> {
   +enhetsidentifikator : Enhetsidentifikator [0..1]
   +navn : string
   +forretningsadresse : EnkelAdresse [0..1]

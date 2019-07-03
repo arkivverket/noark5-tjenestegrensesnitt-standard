@@ -9,10 +9,10 @@ skinparam classAttributeIconSize 0
 !include kapitler/media/uml-class-avskrivning.iuml
 !include kapitler/media/uml-codelist-avskrivningsmaate.iuml
 
-Sakarkiv.Journalpost *-> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
-Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartPerson
-Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartEnhet
-Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartIntern
+Sakarkiv.Journalpost *-> "+korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
+Arkivstruktur.Korrespondansepart <|-- Sakarkiv.KorrespondansepartPerson
+Arkivstruktur.Korrespondansepart <|-- Sakarkiv.KorrespondansepartEnhet
+Arkivstruktur.Korrespondansepart <|-- Sakarkiv.KorrespondansepartIntern
 Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
 Sakarkiv.Avskrivning <-[hidden]- Kodelister.Avskrivningsmaate
 @enduml

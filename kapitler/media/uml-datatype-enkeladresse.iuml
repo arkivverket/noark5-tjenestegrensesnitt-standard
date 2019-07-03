@@ -1,5 +1,5 @@
 @startuml
-class Sakarkiv.EnkelAdresse <<dataType>> {
+class Arkivstruktur.EnkelAdresse <<dataType>> {
   +adresselinje1 : string [0..1]
   +adresselinje2 : string [0..1]
   +adresselinje3 : string [0..1]

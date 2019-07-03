@@ -13,7 +13,7 @@ skinparam nodesep 180
 
 Kodelister.FlytStatus <-[hidden]-- Sakarkiv.Dokumentflyt
 Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <--* Sakarkiv.Journalpost
-Sakarkiv.Korrespondansepart "+korrespondansepart 0..*" <--* Sakarkiv.Journalpost
+Arkivstruktur.Korrespondansepart "+korrespondansepart 0..*" <--* Sakarkiv.Journalpost
 Sakarkiv.Presedens "+presedens 0..*" <--o "+journalpost 0..*" Sakarkiv.Journalpost
 Sakarkiv.Journalpost *-> "+avskrivning 0..*" Sakarkiv.Avskrivning
 Sakarkiv.Journalpost <-[hidden]-- Kodelister.Journalposttype

@@ -6,32 +6,32 @@
 !include kapitler/media/uml-class-korrespondansepartperson.iuml
 !include kapitler/media/uml-class-korrespondansepartenhet.iuml
 
-Arkivstruktur.Registrering *- "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
-Arkivstruktur.Registrering *-- "+part 0..*" Sakarkiv.Part
-Sakarkiv.Korrespondansepart <-[hidden]- Kodelister.Korrespondanseparttype
-Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartPerson
-Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartEnhet
-Sakarkiv.Korrespondansepart <|-- Sakarkiv.KorrespondansepartIntern
+Arkivstruktur.Registrering *- "+korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
+Arkivstruktur.Registrering *-- "+part 0..*" Arkivstruktur.Part
+Arkivstruktur.Korrespondansepart <-[hidden]- Kodelister.Korrespondanseparttype
+Arkivstruktur.Korrespondansepart <|-- Sakarkiv.KorrespondansepartPerson
+Arkivstruktur.Korrespondansepart <|-- Sakarkiv.KorrespondansepartEnhet
+Arkivstruktur.Korrespondansepart <|-- Sakarkiv.KorrespondansepartIntern
 
 note "ISO liste" as isoliste
 note "fra posten.no" as fraposten
 class Kodelister.Land <<codelist>>
 class Kodelister.Postnummer <<codelist>>
-Sakarkiv.EnkelAdresse <-[hidden]- Kodelister.Land
+Arkivstruktur.EnkelAdresse <-[hidden]- Kodelister.Land
 Kodelister.Land .. isoliste
-Sakarkiv.EnkelAdresse <-[hidden]- Kodelister.Postnummer
+Arkivstruktur.EnkelAdresse <-[hidden]- Kodelister.Postnummer
 Kodelister.Postnummer .. fraposten
 
 !include kapitler/media/uml-class-administrativenhet.iuml
 !include kapitler/media/uml-class-bruker.iuml
 
-Sakarkiv.KorrespondansepartIntern <-[hidden]-- Admin.AdministrativEnhet
+Arkivstruktur.KorrespondansepartIntern <-[hidden]-- Admin.AdministrativEnhet
 Admin.AdministrativEnhet "+enhet 0..*" <--> "+bruker 0..*" Admin.Bruker
 
 !include kapitler/media/uml-datatype-enkeladresse.iuml
 
-Sakarkiv.KorrespondansepartPerson <-[hidden]-- Sakarkiv.EnkelAdresse
-Sakarkiv.KorrespondansepartEnhet <-[hidden]-- Sakarkiv.EnkelAdresse
+Arkivstruktur.KorrespondansepartPerson <-[hidden]-- Arkivstruktur.EnkelAdresse
+Arkivstruktur.KorrespondansepartEnhet <-[hidden]-- Arkivstruktur.EnkelAdresse
 
 !include kapitler/media/uml-datatype-kontaktinformasjon.iuml
 !include kapitler/media/uml-class-part.iuml
@@ -43,10 +43,10 @@ class Sakarkiv.Journalpost <Registrering>
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 
-Arkivstruktur.Mappe *-- "+part 0..*" Sakarkiv.Part
-Sakarkiv.Part <|-- Sakarkiv.PartPerson
-Sakarkiv.Part <|-- Sakarkiv.PartEnhet
-Sakarkiv.PartPerson <-[hidden]- Sakarkiv.Kontaktinformasjon
-Sakarkiv.PartEnhet <-[hidden]- Sakarkiv.Kontaktinformasjon
+Arkivstruktur.Mappe *-- "+part 0..*" Arkivstruktur.Part
+Arkivstruktur.Part <|-- Sakarkiv.PartPerson
+Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
+Arkivstruktur.PartPerson <-[hidden]- Arkivstruktur.Kontaktinformasjon
+Arkivstruktur.PartEnhet <-[hidden]- Arkivstruktur.Kontaktinformasjon
 
 @enduml

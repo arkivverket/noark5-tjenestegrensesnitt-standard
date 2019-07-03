@@ -1,5 +1,5 @@
 @startuml
-class Sakarkiv.Kontaktinformasjon <<dataType>> {
+class Arkivstruktur.Kontaktinformasjon <<dataType>> {
   +epostadresse : string [0..1]
   +mobiltelefon : string [0..1]
   +telefon : string [0..1]

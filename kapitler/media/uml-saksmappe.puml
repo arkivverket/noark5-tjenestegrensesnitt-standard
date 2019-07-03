@@ -9,6 +9,6 @@ class Arkivstruktur.Klasse <Arkivenhet>
 Arkivstruktur.Klasse "\n\n+sekundaerklassifikasjon 0..*"  <--o Sakarkiv.Saksmappe
 Arkivstruktur.Klasse "+overklasse 0..1" o--> "\n+underklasse 0..*" Arkivstruktur.Klasse
 Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
-Sakarkiv.Saksmappe *--> "+part 0..*" Sakarkiv.Part
+Sakarkiv.Saksmappe *--> "+part 0..*" Arkivstruktur.Part
 
 @enduml
