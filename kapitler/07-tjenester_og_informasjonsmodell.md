@@ -4,7 +4,7 @@
 
 |               |                 |
 | ------------- |---------------  |
-| ![](./media/uml-forklaring-om-notasjon-som-er-brukt.png) | ***Klassediagram*** brukes for å vise utvalgte klasser i en UML-modell. Klassediagram ***trenger ikke være fullstendige***, hverken mhp hvilke klasser som vises eller hvilke assosiasjoner som vises. For kompliserte modeller (som NOARK-modellen) trengs flere klassediagram for å vise hele modellen. |
+| ![](./media/uml-forklaring-om-notasjon-som-er-brukt.png) | ***Klassediagram*** brukes for å vise utvalgte klasser i en UML-modell. Klassediagram ***trenger ikke være fullstendige***, hverken mhp hvilke klasser som vises eller hvilke assosiasjoner som vises. For kompliserte modeller (som Noark-modellen) trengs flere klassediagram for å vise hele modellen. |
 |![](./media/uml-klasse-konspetet-bruker-registrering-som-eksempel.png) |I et ***klassediagram*** vises en klasse som en firkantet boks. ***Klassenavnet*** står i øverste «etasje», og er i eksempelet Registrering. ***Klasseattributtene*** karakteriserer klassen, og listes opp en i nest øverste etasje (i eksempelet i alt 7, den første/øverste har navnet arkivertDato). Firkanten kan også ha flere frivillige etasjer for å vise mer informasjon. I klassen Registrering vises en «etasje» med notes (ofte brukt for ***klassedefinisjon***) |
 |![](./media/uml-assosiasjoner-brukt-med-klasser.png) | Klasser kan knyttes sammen med ***assosiasjoner***. Assosiasjoner vises som streker mellom to klasser. En assosiasjon der begge ender er knytta til samme klasse kalles ***selv-assosiasjon***. Eksempel: Mappe kan ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like klasser. En assosiasjon kan være ***aggregering***. Symbolet er en strek mellom to klasser med åpen diamant i ene enden. Eksempel: Ei Mappe ***har*** Registrering(er). En registrering er en selvstendig enhet, som «overlever» selv om Mappa blir sletta. |
 |![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Registrering som er en generalisering av Journalpost. En kan også si at Journalpost er en spesialisering av Registrering. I Registrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost. Dette leses som Journalpost ***er en*** Registrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Registrering er en spesialisering av Arkivenhet, selv om klassen Arkivenhet ikke finnes i diagrammet. |
@@ -260,10 +260,10 @@ Arkivdeler kan brukes til å skille ut dokumenter som skal kasseres
 etter andre regler enn resten av dokumentene i mappen (f.eks. alle
 inngående dokumenter) eller registreringen (f.eks. alle
 vedlegg). Slike regler kan da knyttes til en egen arkivdel.  Se mer om
-dette i NOARK 5 v3.1 kapittel 5.10 Bevaring og kassasjon, om kassasjon
+dette i Noark 5 v3.1 kapittel 5.10 Bevaring og kassasjon, om kassasjon
 av dokumenttyper.  Det samme gjelder dokumenter som skal skjermes
 etter andre regler enn resten av dokumentene i mappen eller
-registreringen. Se mer under NOARK 5 v3.1 kapittel 6.6.1 Skjerming.
+registreringen. Se mer under Noark 5 v3.1 kapittel 6.6.1 Skjerming.
 
 Dessuten kan det være tilfeller hvor noen dokumenter i en mappe eller
 registrering er arkivert på papir, mens resten av dokumentene er
@@ -392,7 +392,7 @@ Table: Restriksjoner
 
 *Arver:* 
 
-En arkivenhet (se NOARK 5 v3.1 krav 5.1.2 og 5.1.3) skal kunne
+En arkivenhet (se Noark 5 v3.1 krav 5.1.2 og 5.1.3) skal kunne
 identifiseres entydig innenfor det arkivskapende organet. I et
 arkivuttrekk skal denne identifikasjonen hete systemID, og være
 entydig på tvers av alle uttrekk som organet produserer, dermed også
@@ -875,7 +875,7 @@ en betryggende måte.
 
 Inneholder vedtak om kassasjon. Kassasjonsvedtak bestemmer hvilket
 arkivmateriale som skal fjernes fra arkivet og tilintetgjøres. (Se
-NOARK 5 v3.1 eget kapittel: 5.10 Bevaring og kassasjon)
+Noark 5 v3.1 eget kapittel: 5.10 Bevaring og kassasjon)
 
 Metadata for bevaring og kassasjon skal grupperes inn i metadata for
 arkivdel, klasse, mappe, registrering og
@@ -1077,7 +1077,7 @@ Table: Attributter
 
 Alle arkivdokumenter som skal avleveres må være i arkivformat.
 Konvertering til arkivformat skal foretas senest ved avslutning av
-mappe (jf. NOARK 5 v3.1 krav 6.1.11). Systemet skal logge alle
+mappe (jf. Noark 5 v3.1 krav 6.1.11). Systemet skal logge alle
 konverteringer, og informasjon om dette skal tas med ved
 deponering/avlevering.
 
@@ -1269,7 +1269,7 @@ kryssreferanser knyttes til Mappe og Registrering, vil det si at
 Referanser også knyttes til alle utvidelsene (spesialiseringer) under
 disse (Saksmappe og Journalpost).
 
-Ved avlevering i tråd med XML-skjema for Noark 5 versjon 5 så droppes
+Ved avlevering i tråd med XML-skjema for Noark 5 versjon 5.0 så droppes
 samtlige felt arvet fra Arkivenhet, da disse ikke har korresponderende
 felt i dette avleveringsformatet.
 
@@ -1717,7 +1717,7 @@ Table: Attributter
 
 Skjerming benyttes til å skjerme registrerte opplysninger eller
 enkeltdokumenter. Skjermingen trer i kraft når en tilgangskode påføres
-den enkelte mappe, registrering eller det enkelte dokument. (Se NOARK
+den enkelte mappe, registrering eller det enkelte dokument. (Se Noark
 5 v3.1 eget kapittel: 6.6.1 Skjerming)
 
 Table: Attributter
@@ -1737,21 +1737,48 @@ Table: Attributter
 
 *Arver:* 
 
-Et viktig krav i Noark 5 er at arkiverte elektroniske dokumenter ikke
-skal kunne slettes.  Kontrollert sletting skal bare kunne foretas av
-autoriserte brukere i forbindelse med kassasjon, se NOARK 5 v3.1
-kapittel 5.10 Bevaring og kassasjon.
+I Noark 5 er kassasjon beskrevet i et eget kapittel, mens 
+sletting er omtalt i ulike krav spredt utover i ulike kapitler
+i standarden.
 
-Dessuten kan dokumenter slettes av autoriserte brukere dersom de er
-formelt avlevert til et arkivdepot, se NOARK 5 v3.1 kapittel 5.12
-Avlevering. Det understrekes at dette siste bare gjelder avleverte
-dokumenter, ikke dokumenter som bare er deponert til arkivdepotet.
+Et viktig krav i Noark 5 er at arkiverte elektroniske dokumenter 
+ikke skal kunne slettes. Et arkivert dokument (Journalstatus på 
+Journalpost og Dokumentstatus på Dokumentbeskrivelse) har følgende 
+kjente verdier:
+
+Journalført (J), Ferdigstilt fra saksbehandler (F), Godkjent av 
+leder (G), Ekspedert (E), Utgår (U), Midlertidig registrering av
+innkommet dokument (M), Saksbehandler har registrert innkommet 
+dokument (hovedsaklig e-post) (S) og Reservert dokument 
+(ikke ferdigstilt) (R).
+
+Dokumenter med status R (Reservert dokument) kan slettes. Dokumenter
+med status M (Midlertidig) kan benyttes ulikt i forskjellige 
+organ / systemer, så disse kan eksempelvis ikke slettes om 
+de er overført fra et fagsystem hvor de har status F og er satt
+opp til å få status M i Noark-systemet.
+
+For dokumenter som ikke er knyttet til Journalpost, må man 
+se på verdier knyttet til Dokumentbeskrivelse og Dokumentstatus
+når man vurderer om et dokument kan slettes.
+
+Når det foreligger behov for autorisert kassasjon sender 
+klienten en DELETE forespørsel på aktuell ressurs (URL).
+Alle ressurslenker med relasjonsnøkkel "self" kan potensielt
+slettes om autorisert bruker har nødvendige rettigheter. 
+Respons har statuskode 204 hvis ressursen ble slettet.
+
+Klienten sender en DELETE forespørsel på aktuell ressurs(url). 
+Alle ressurslenker med rel="self" kan potensielt slettes om 
+bruker har nødvendige rettigheter. Respons gir statuskode 
+204 om ressursen er korrekt slettet.
 
 Dersom et dokument er arkivert i mer enn én versjon, skal det være
 mulig å slette de eldre versjonene. Vanligvis er det bare den siste,
 ferdiggjorte versjon som skal arkiveres. Men det kan også være aktuelt
-å arkivere tidligere versjoner dersom disse har
-dokumentasjonsverdi. Det kan f.eks. være tilfelle dersom en leder har
+å arkivere tidligere versjoner dersom disse har dokumentasjonsverdi. 
+
+Det kan f.eks. være tilfelle dersom en leder har
 gjort vesentlige endringer i utkastet til en
 saksbehandler. Saksbehandlers utkast kan da arkiveres som en tidligere
 versjon av det ferdige dokumentet. Dette vil gi ekstra dokumentasjon
@@ -2589,8 +2616,8 @@ Table: Attributter
 | Ekspedert                                           |             |              | E        |          |
 | Arkivert                                            |             |              | A        |          |
 | Utgår                                               |             |              | U        |          |
-| Midlertidig registrering av innkommet dokument      | anbefalt    |              | M        |          |
-| Saksbehandler har registrert innkommet dokument     | Anbefalt. Dette gjelder hovedsaklig epost | | S | |
+| Midlertidig registrering av innkommet dokument      | Anbefalt    |              | M        |          |
+| Saksbehandler har registrert innkommet dokument     | Anbefalt. Dette gjelder hovedsaklig e-post | | S | |
 | Reservert dokument                                  | Reservert dokument, dvs. egenprodusert dokument er under arbeid | | R |  |
 
 
@@ -2967,7 +2994,7 @@ Table: Relasjoner
 
 Åpen kodeliste
 
-ny kodeliste jfr NOARK 5 v3.1 krav
+ny kodeliste jfr Noark 5 v3.1 krav
 6.6.32
 
 Table: Relasjonsnøkler
@@ -3591,7 +3618,7 @@ Table: Restriksjoner
 
 *Arver:* 
 
-definerer alle brukere som har eller har hatt interaksjon med
+Definerer alle brukere som har eller har hatt interaksjon med
 arkivkjernen. Fungerer som brukerregister til valg av saksbehandler i
 kjernen og bevarer alle brukere for ettertiden. Opprettes nye av kjernen
 når pålogget bruker ikke finnes fra før.
