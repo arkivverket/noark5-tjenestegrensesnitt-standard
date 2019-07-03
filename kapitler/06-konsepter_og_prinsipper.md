@@ -2,17 +2,19 @@
 
 ## Utforming av tjenester
 
-Mandatet til prosjektgruppen var å etablere CRUD tjenester (Create,
-Read, Update, Delete) for NOARK5 standarden. Både tjenestene og
-datastrukturer er modellert i UML.
+Mandatet til prosjektgruppen i Samdok var å etablere CRUD tjenester (Create,
+Read, Update, Delete) for Noark5 standarden. Både tjenestene og
+datastrukturer er modellert i UML. 
 
-De aller fleste objekter i NOARK trenger operasjoner/tjenester for å
+De aller fleste objekter i Noark trenger operasjoner/tjenester for å
 opprette objekt, finne objekter, oppdatere objekter og i noen spesielle
-tilfeller slette objekter. I noen av kravene i NOARK er det også
+tilfeller slette objekter. I noen av kravene i Noark er det også
 beskrevet egne tjenester som skal kunne utføres.
 
 Det er valgt å spesifisere REST for tjenestene. Prinsippene og eksempler
 følger under, og ytterligere detaljer kan en finne i vedlegg 3.
+
+Dette er videreført i det videre arbeidet med tjenestegrensesnittet.
 
 ### REST tjenestene
 
@@ -215,7 +217,7 @@ Filter parametre som skal støttes er:
 ##### Filtrering
 
 Filtrering støttes med $filter parameter. Nedenfor følger en del
-eksempeler på ulike filtreringer med de innebygde odata-operatorene.
+eksempler på ulike filtreringer med de innebygde oData-operatorene.
 Flere filtre kan kombineres med operatorene **and** og **or**.
 
 *Begynner med*
@@ -373,7 +375,7 @@ søkeresultatet/listen, «results» satt til en liste med instansene i
 listen, og «_links» til relevante relasjonsnøkler som «self» og
 «next».
 
-Det kan se se ut som følger:
+Det kan se ut som følger:
 
 Forespørsel:
 
@@ -443,7 +445,7 @@ Table: Resultatkoder ved navigering/søk
 
 Nye objekter opprettes fra andre objekter vha. ressurslenker. Slike ressurslenker, f.eks. .../ny-mappe, vises for de underobjekttypene som er aktuelle iht. datamodellen og tilgjengelige med den aktuelle brukerens rettigheter. GET-forespørsler kan benyttes for å få returnert en gyldig og delvis utfylt objektstruktur. POST-forespørsel oppretter nytt objekt. Opprettet objekt vil tilhøre objektet det opprettes fra.
 
-For mappe og klasse som kan ha undermapper og underklasser så vil det være ressurslenkene .../ny-mappe og .../ny-klasse som benyttes for å opprette undermapper og underklasser. Disse blir så tilgjengelige for uthenting med GET-forspørsel til .../undermappe og .../underklasse.
+For mappe og klasse som kan ha undermapper og underklasser så vil det være ressurslenkene .../ny-mappe og .../ny-klasse som benyttes for å opprette undermapper og underklasser. Disse blir så tilgjengelige for uthenting med GET-forespørsel til .../undermappe og .../underklasse.
 
 For eksempel kan en opprette mapper på arkivdel, og da vil \_links under
 en arkivdel inneholde relasjonsnøkkelen
@@ -453,7 +455,7 @@ aktuelle ressurslenke kan være
 https://n5.example.com/api/arkivstruktur/Arkivdel/12345/ny-mappe .
 Denne kan brukes til både GET og POST forespørsel.
 
-GET-forespørselen forhåndsutfyller en lovlig objektstruktur og gir
+GET-forespørselen forhånds utfyller en lovlig objektstruktur og gir
 relasjonslenker til aktuelle kodelister.  En slik forespørsel
 oppretter ikke noe objekt og returverdien refererer ikke heller til et
 objekt i databasen, og er derfor uten «self»-relasjon.  Strukturen
@@ -463,7 +465,7 @@ når et nytt objekt skal opprettes.
 Attributter som henter verdier fra kodelister fylles inn med enten kun
 **kode**-verdien fra kodelisten eller både **kode** og **kodenavn**.
 Kodelisteverdiene kopieres fra kodelisten inn i instansen når
-attributten settes første gang eller endres, slik at fremtidige
+attributt settes første gang eller endres, slik at fremtidige
 endringer i kodelister ikke påvirker verdier i eksisterende instanser.
 
 Kun kodelisteverdier der «inaktiv»-attributten ikke er satt til «true»
@@ -579,7 +581,7 @@ mappe kan registreres sammen med registreringen av mappe.
 
 Ved å bruke GET på for eksempel ny-mappe
 (https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/)
-så kan arkivkjerne preutfylle og foreslå vanlige data for et objekt
+så kan arkivkjerne pre-utfylle og foreslå vanlige data for et objekt
 basert på pålogget bruker samt annonsere hvor diverse lovlige koder kan
 hentes fra slik som mappetype og dokumentmedium.
 
@@ -627,7 +629,7 @@ konflikt så kan resultatkode 409 benyttes. Da må klient hente opp ny
 versjon fra arkivkjerne og gjøre fletting av data mellom server og
 klient. For å redusere risikoen for konflikt bør derfor klienten
 alltid hente en fersk utgave av objektet med en GET-forespørsel og
-deretter oppdatere opbjektet med en PUT-forespørsel.
+deretter oppdatere objektet med en PUT-forespørsel.
 
 PUT til https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc89c8
 
@@ -874,14 +876,14 @@ Resultatkoder ved utvidelse av objekt
 | 200        | OK					     |
 | 400	     | BadRequest - ugyldig forespørsel		     |
 
-Resultatkode 400 leveres dersom id til eksterende mappe er ugyldig eller
+Resultatkode 400 leveres dersom id til eksisterende mappe er ugyldig eller
 det mangler påkrevde felter.
 
 #### Rekursive entitetshierarkier
 
 Noen entiteter kan ha samme type entitet under seg, og slik danne et
 rekursivt hierarki av instanser.  Det gjelder Arkiv, Klasse og Mappe,
-og entiter som arver fra disse (som Saksmappe).
+og entiteter som arver fra disse (som Saksmappe).
 
 Da det ikke er i tråd med HATEOAS-prinsippene å la samme
 relasjonsnøkkel peke til flere ulike href-er, så må dette håndteres
@@ -935,7 +937,7 @@ hierarkiet, og underxx-relasjonen er kun til stede når instansen er
 
 Relasjoner kan angis ved tildelte attributter eller via plassering på
 gitt url. For eksempel ny mappe knyttes til arkivdel ved at url til ny
-mappe også inneholder hvilke arkivdel denne skal opprettes på. Egne
+mappe også inneholder hvilken arkivdel denne skal opprettes på. Egne
 attributter kan for eksempel være referanseForeldremappe for å lage
 undermapper.
 
@@ -1019,8 +1021,8 @@ og Dokumentstatus på Dokumentbeskrivelse) har følgende kjente verdier:
 
 Journalført (J), Ferdigstilt fra saksbehandler (F), Godkjent av leder 
 (G), Ekspedert (E), Utgår (U), Midlertidig registrering av innkommet 
-dokument (M), Saksbehandler har registrert innkommet dokument (e-post)
-(S) og Reservert dokument (ikke ferdigstilt) (R).
+dokument (M), Saksbehandler har registrert innkommet dokument 
+(hovedsaklig e-post) (S) og Reservert dokument (ikke ferdigstilt) (R).
 
 Dokumenter med status R (Reservert dokument) kan slettes. Dokumenter med
 status M (Midlertidig) kan benyttes ulikt i forskjellige organ /
@@ -1191,14 +1193,14 @@ filopplastingen vellykket, så returneres statuskode 201.
 
 Et dokumentobjekt opprettes før opplasting. Hvis noen av feltene
 «format», «mimeType», «filnavn», «sjekksum», «sjekksumAlgoritme» og
-«filstoerrelse» er fyllt inn ved opprettelsen skal tjeneren verifisere
+«filstoerrelse» er fylt inn ved opprettelsen skal tjeneren verifisere
 at verdiene i de angitte feltene stemmer når den komplette filen er
 lastet opp.  Tjeneren sjekker ved opplasting for felt som er
-forhåndsutfyllt også at mimeType er identisk med Content-Type,
+forhåndsutfylt også at mimeType er identisk med Content-Type,
 filstoerrelse er identisk med Content-Length (for komplett POST) eller
 X-Upload-Content-Length (for overføring i bolker med PUT) og at
 sjekksum stemmer overens med den overførte filen.  Hvis tjeneren etter
-opplasting ser at noen av verdiene avleded fra opplastet fil ikke
+opplasting ser at noen av verdiene avledet fra opplastet fil ikke
 stemmer overens med verdiene i dokumentobjekt-entiteten, så returneres
 statuskode 400 Bad Request. Hvis den opplastede filen har et format
 tjeneren ikke kjenner igjen, så settes format til 'UNKNOWN'. Når
@@ -1260,7 +1262,7 @@ rel=https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/.
 Når en filopplasting er vellykket, så returneres tilhørende
 dokumentobjekt som respons på avsluttende 200 OK / 201 Created.
 
-Dersom det skjer en feil under opplasting eller lagringsprossesen skal
+Dersom det skjer en feil under opplasting eller lagringsprosessen skal
 tjeneren returnere 422 Unprocessable Entity som svar.  Det er da
 klientens ansvar å slette relaterte dokumentbeskrivelse- og
 dokumentobjekt-entiteter ved hjelp av DELETE på entitetenes
@@ -1355,7 +1357,7 @@ Table: Resultatkoder for opplasting av filer
 
 ## Validering av data
 
-For de fleste objekter i NOARK5 så er det knyttet forskjellige krav til
+For de fleste objekter i Noark5 så er det knyttet forskjellige krav til
 hva som er lovlige verdier og strukturer. Disse kravene må implementeres
 i tjenestegrensesnitt/arkivkjerne som forretningsregler og sørge for at
 data er konsistente.
@@ -1415,9 +1417,9 @@ Virksomhetsspesifikke metadata er felt som kan brukes for å legge ved
 ekstra informasjon knyttet til enkelte objekter i
 arkivet. Virksomhetsspesifikke metadatafelter kan brukes til å utvide
 de arkivenhetene i Noark 5 som har feltet definert i sitt XML-skjema,
-det vil si *mappe*, *registrering* og *sakspart*. I tillegg kan de
-brukes på endel administrasjonsfelter som *bruker*.  Det er ingen
-teknisk begresning på hvilken entitet et gitt felt kan brukes på.  Det
+det vil si *mappe*, *registrering* og *part* (N5.4 bruker sakspart, N5.5 bruker part).
+I tillegg kan de brukes på endel administrasjonsfelter som *bruker*.  Det er ingen
+teknisk begrensning på hvilken entitet et gitt felt kan brukes på.  Det
 er opp til API-klienter og virksomheter å velge hvilke felt som gir
 mening for dem.
 
@@ -1448,7 +1450,7 @@ Her er en eksempelmappe med tre slike metadatafelt:
 }
 ```
 
-Metadatafelt har et navenrom-navn og en verdi. Navnerom-navnet er en
+Metadatafelt har et navnerom-navn og en verdi. Navnerom-navnet er en
 string inndelt i delstrenger skilt med bindestrek (-) og kolon (:).
 Kolon skiller navnerom og felt, mens bindestrek i navnerom skiller
 individuelle deler i navnet på navnerommet.  Feltene skal navngis på
@@ -1458,7 +1460,7 @@ vnd-&lt;enhet/leverandør>-&lt;versjon>:&lt;feltnavn> hvis feltet ikke
 er registrert hos Arkivverket.  Delstrengene som utgjør navn på
 navnerom og feltnavn består utelukkende av ASCII-tegnene for små
 bokstaver (a-z) samt siffer (0-9).  I stedet for de særnorske tegnene
-«æ», «ø» og «å» benyttes henholdvis «ae», «oe» og «aa».
+«æ», «ø» og «å» benyttes henholdsvis «ae», «oe» og «aa».
 
 Det anbefales å registrere felt i det sentrale registeret for å
 forenkle samhandling og bruk av samme feltdefinisjon på tvers av ulike
@@ -1491,8 +1493,8 @@ oppdaterer kun det ene feltet det forstår, så oppfordres det til
 gjenbruk av feltdefinisjoner og samkjøring mellom fagsystemer og andre
 som bruker virksomhetsspesifikke metadata.
 
-Det kan kun være èn *virksomhetsspesifikkeMetadata*-attributt
-tilknyttet entiter som støtter dette feltet.
+Det kan kun være en (1) *virksomhetsspesifikkeMetadata*-attributt
+tilknyttet entiteter som støtter dette feltet.
 
 ### Metadatakatalog for virksomhetsspesifikke metadata
 
