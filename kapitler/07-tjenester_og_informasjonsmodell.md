@@ -3632,7 +3632,7 @@ Table: Relasjoner
 Table: Relasjonsnøkler
 
 | **Verdi**                                                             |
-| -----------------------p--------------------------------------------- |
+| --------------------------------------------------------------------- |
 | self                                                                  |
 | https://rel.arkivverket.no/noark5/v5/api/admin/administrativenhet/    |
 | https://rel.arkivverket.no/noark5/v5/api/admin/bruker/                |
