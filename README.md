@@ -1,4 +1,4 @@
-![](kapitler/media/Noark5v5.png)
+![](kapitler/media/Noark5v5_px400.png)
 
 Spesifikasjon for Noark 5 Tjenestegrensesnitt
 =============================================
@@ -10,6 +10,7 @@ Ressurser
 ---------
 
 XML-skjema (XSD)
+
 http://skjema.kxml.no/arkivverket/noark5/v4.0/
 
 Metakat - Webversjon av datamodellen
