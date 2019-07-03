@@ -1,5 +1,5 @@
 @startuml
-class Sakarkiv.Korrespondansepart {
+class Arkivstruktur.Korrespondansepart {
   +systemID : SystemID [0..1]
   +korrespondanseparttype : Korrespondanseparttype
   +virksomhetsspesifikkeMetadata : any [0..1]

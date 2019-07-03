@@ -13,12 +13,12 @@ skinparam nodesep 180
 !include kapitler/media/uml-codelist-avskrivningsmaate.iuml
 !include kapitler/media/uml-class-dokumentflyt.iuml
 
-Sakarkiv.Part "+part 0..*" <--* Sakarkiv.Saksmappe
-Kodelister.PartRolle <-[hidden]--  Sakarkiv.Part
+Arkivstruktur.Part "+part 0..*" <--* Sakarkiv.Saksmappe
+Kodelister.PartRolle <-[hidden]--  Arkivstruktur.Part
 Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
 Sakarkiv.Journalpost "+journalpost 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
-Sakarkiv.Journalpost *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
-Kodelister.Korrespondanseparttype <-[hidden]-- Sakarkiv.Korrespondansepart
+Sakarkiv.Journalpost *--> "+korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
+Kodelister.Korrespondanseparttype <-[hidden]-- Arkivstruktur.Korrespondansepart
 Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
 Kodelister.Avskrivningsmaate  <-[hidden]- Sakarkiv.Avskrivning
 Sakarkiv.Journalpost *-> "+dokumentflyt 0..*" Sakarkiv.Dokumentflyt

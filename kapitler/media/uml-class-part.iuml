@@ -1,5 +1,5 @@
 @startuml
-class Sakarkiv.Part {
+class Arkivstruktur.Part {
   +systemID : SystemID [0..1]
   +partRolle : PartRolle
   +virksomhetsspesifikkeMetadata : any [0..1]

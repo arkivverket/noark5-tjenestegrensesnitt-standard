@@ -13,12 +13,12 @@ Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 
 Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "+overmappe 0..1" o--> "+undermappe 0..*" Arkivstruktur.Mappe
-Arkivstruktur.Mappe *-> "+part 0..*" Sakarkiv.Part
-Arkivstruktur.Registrering *-> "+part 0..*" Sakarkiv.Part
+Arkivstruktur.Mappe *-> "+part 0..*" Arkivstruktur.Part
+Arkivstruktur.Registrering *-> "+part 0..*" Arkivstruktur.Part
 Sakarkiv.Saksmappe "+sak 0..*" o--> "+presedens 0..*\n" Sakarkiv.Presedens
 Sakarkiv.Journalpost "+journalpost 0..*" o--> "+presedens 0..*" Sakarkiv.Presedens
 
-Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Sakarkiv.Korrespondansepart
+Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
 Sakarkiv.Journalpost *--> "+avskrivning 0..*" Sakarkiv.Avskrivning
 Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <--* Sakarkiv.Journalpost
 Sakarkiv.Dokumentflyt "+dokumentflyt 0..*" <--* Sakarkiv.Arkivnotat

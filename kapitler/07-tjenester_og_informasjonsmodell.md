@@ -811,6 +811,33 @@ Table: Restriksjoner
 | M622 verifisertDato: kan ikke endres | verifisertDato: kan ikke endres |
 | M623 verifisertAv: Kan ikke endres   |                                 |
 
+#### EnkelAdresse
+
+*Type:* ***Class «dataType»***
+
+*Arver:*
+
+Table: Relasjonsnøkler
+
+| **Verdi**                                                          |
+| ------------------------------------------------------------------ |
+| self                                                               |
+| https://rel.arkivverket.no/noark5/v5/api/metadata/land/            |
+| https://rel.arkivverket.no/noark5/v5/api/metadata/postnummer/      |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/enkeladresse/    |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-enkeladresse/ |
+
+Table: Attributter
+
+| **Navn**          | **Merknad** | **Multipl.** | **Kode** | **Type**   |
+| ----------------- | ----------- | ------------ | -------- | ---------- |
+| adresselinje1     |             | \[0..1\]     |          | string     |
+| adresselinje2     |             | \[0..1\]     |          | string     |
+| adresselinje3     |             | \[0..1\]     |          | string     |
+| postnr            |             | \[0..1\]     |          | Postnummer |
+| poststed          |             | \[1..1\]     |          | string     |
+| landkode          |             | \[0..1\]     |          | Land       |
+
 #### Gradering
 
 *Type:* ***Class «dataType»***
@@ -1020,6 +1047,28 @@ Table: Restriksjoner
 | ------------------------------------------------- | ----------- |
 | M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller  dokumentene arkivert | |
 
+#### Kontaktinformasjon
+
+*Type:* ***Class «dataType»***
+
+*Arver:*
+
+Table: Relasjonsnøkler
+
+| **Verdi**                                                                |
+| ------------------------------------------------------------------------ |
+| self                                                                     |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/kontaktinformasjon/    |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-kontaktinformasjon/ |
+
+Table: Attributter
+
+| **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| ---------------- | ----------- | ------------ | -------- | -------- |
+| epostadresse     |             | \[0..1\]     |          | string   |
+| mobiltelefon     |             | \[0..1\]     |          | string   |
+| telefon          |             | \[0..1\]     |          | string   |
+
 #### Konvertering
 
 *Type:* ***Class***
@@ -1067,6 +1116,139 @@ Table: Restriksjoner
 | M616 konvertertAv: Kan ikke endres        |             |
 | M712 konvertertFraFormat: Kan ikke endres |             |
 | M713 konvertertTilFormat: Kan ikke endres |             |
+
+#### Korrespondansepart
+
+*Type:* ***Class***
+
+*Arver:* 
+
+Korrespondansepart er obligatorisk, og skal forekomme en eller flere
+ganger i en journalpost.  Ved inngående dokumenter er det obligatorisk
+å registrere avsender(e), ved utgående dokumenter mottaker(e). Ved
+organinterne dokumenter som skal følges opp, må både avsender(e) og
+mottaker(e) registreres.
+
+Table: Relasjoner
+
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | KorrespondansepartEnhet                                  | Korrespondansepart     |             |
+| **Generalization** (Source → Destination)  | KorrespondansepartPerson                                 | Korrespondansepart     |             |
+| **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
+| **Association** (Destination → Source)     | korrespondansepart 1..* Korrespondansepart               | Registrering         |             |
+
+Table: Relasjonsnøkler
+
+| **Verdi**                                                                 |
+| ------------------------------------------------------------------------- |
+| self                                                                      |
+| https://rel.arkivverket.no/noark5/v5/api/metadata/korrespondanseparttype/ |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepart/     |
+
+Table: Attributter
+
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
+| korrespondanseparttype        | Definisjon: Type korrespondansepart . Kilde: Registreres automatisk knyttet til funksjonalitet i forbindelse med opprettelse av journalpost, kan også registreres  manuelt. Kommentarer: Korrespondansetype forekommer én gang innenfor objektet korrespondansepart, men denne kan forekomme flere ganger innenfor en journalpost. M087 | \[1..1\] | | Korrespondanseparttype|
+| virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen). Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
+
+Table: Restriksjoner
+
+| **Navn**                              | **Merknad** |
+| ------------------------------------- | ----------- |
+| M001 systemID: Skal ikke kunne endres |             |
+
+#### KorrespondansepartEnhet
+
+*Type:* ***Class***
+
+*Arver:* ***Korrespondansepart***
+
+Table: Relasjoner
+
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | KorrespondansepartEnhet                                  | Korrespondansepart     |             | 
+
+Table: Relasjonsnøkler
+
+| **Verdi**                                                                     |
+| ----------------------------------------------------------------------------- |
+| self                                                                          |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepartenhet/    |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepartenhet/ |
+
+Table: Attributter
+
+| **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
+| ----------------------- | ----------- | ------------ | -------- | ------------------ |
+| enhetsidentifikator     |             | \[0..1\]     |          | Enhetsidentifikator|
+| navn                    |             | \[1..1\]     |          | string             |
+| forretningsadresse      |             | \[0..1\]     |          | EnkelAdresse       |
+| postadresse             |             | \[0..1\]     |          | EnkelAdresse       |
+| kontaktinformasjon      |             | \[0..1\]     |          | Kontaktinformasjon |
+| kontaktperson           |             | \[0..1\]     |          | string             |
+
+#### KorrespondansepartIntern
+
+*Type:* ***Class***
+
+*Arver:* ***Korrespondansepart***
+
+Table: Relasjoner
+
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
+
+Table: Relasjonsnøkler
+
+| **Verdi**                                                                      |
+| ------------------------------------------------------------------------------ |
+| self                                                                           |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepartintern/    |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepartintern/ |
+
+Table: Attributter
+
+| **Navn**                        | **Merknad**                                   | **Multipl.** | **Kode** | **Type** |
+| ------------------------------- | --------------------------------------------- | ------------ | -------- | -------- |
+| administrativEnhet              |                                               | \[0..1\]     |          | string   |
+| referanseAdministrativEnhet     | referanse til AdministrativEnhet sin systemID | \[0..1\]     |          | SystemID |
+| saksbehandler                   |                                               | \[0..1\]     |          | string   |
+| referanseSaksbehandler          | referanse til Bruker sin systemID             | \[0..1\]     |          | SystemID |
+
+#### KorrespondansepartPerson
+
+*Type:* ***Class***
+
+*Arver:* ***Korrespondansepart***
+
+Table: Relasjoner
+
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | KorrespondansepartPerson                                 | Korrespondansepart     |             |
+
+Table: Relasjonsnøkler
+
+| **Verdi**                                                                      |
+| ------------------------------------------------------------------------------ |
+| self                                                                           |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepartperson/    |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepartperson/ |
+
+Table: Attributter
+
+| **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
+| ---------------------- | ----------- | ------------ | -------- | ------------------ |
+| personidentifikator    |             | \[0..*\]     |          | Personidentifikator|
+| navn                   |             | \[1..1\]     |          | string             |
+| postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
+| bostedsadresse         |             | \[0..1\]     |          | EnkelAdresse       |
+| kontaktinformasjon     |             | \[0..1\]     |          | Kontaktinformasjon |
 
 #### Kryssreferanse
 
@@ -1418,6 +1600,114 @@ Table: Restriksjoner
 | M001 systemID: Skal ikke kunne endres     |             |
 | M611 merknadsdato: Kan ikke endres        |             |
 | M612 merknadRegistrertAv: Kan ikke endres |             |
+
+#### Part
+
+*Type:* ***Class***
+
+*Arver:* 
+
+En eller flere virksomheter eller personer kan være knyttet til en
+mappe eller registrering som parter.
+
+Metadata for part skal kunne grupperes inn i metadata for mappe og
+registrering.  Part er valgfritt, og kan forekomme en eller flere
+ganger i tilknytning til en mappe og registrering.  Dersom det er mer
+enn én part, må metadataene grupperes sammen ved eksport og
+utveksling.
+
+Table: Relasjoner
+
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | PartPerson                                           | Part               |             |
+| **Generalization** (Source → Destination)  | PartEnhet                                            | Part               |             |
+| **Association** (Destination → Source)     | part 0..* Part                                     | Mappe                |             |
+| **Association** (Destination → Source)     | part 0..* Part                                     | Registrering         |             |
+
+Table: Relasjonsnøkler
+
+| **Verdi**                                                    |
+| ------------------------------------------------------------ |
+| self                                                         |
+| https://rel.arkivverket.no/noark5/v5/api/metadata/partrolle/ |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-part/   |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/part/      |
+
+Table: Attributter
+
+| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+|-----------|---------------|---------------|-----------|-----------|
+| systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
+| partRolle                 | Definisjon: Angivelse av rollen til parten . Kilde: Registreres manuelt eller automatisk fra fagsystem. Kommentarer: (ingen). Betingelser: Her er det mange tenkelige roller avhengig av type sak, f.eks. Klient, Pårørende, Formynder, Advokat. M303 | \[1..1\] | | PartRolle |
+| virksomhetsspesifikkeMetadata |  | \[0..1\] | | any |
+
+Table: Restriksjoner
+
+| **Navn**                              | **Merknad** |
+| ------------------------------------- | ----------- |
+| M001 systemID: Skal ikke kunne endres |             |
+
+#### PartEnhet
+
+*Type:* ***Class***
+
+*Arver:* ***Part***
+
+Table: Relasjoner
+
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | PartEnhet                                            | Part               |             |
+
+Table: Relasjonsnøkler
+
+| **Verdi**                                                       |
+| --------------------------------------------------------------- |
+| self                                                            |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-partenhet/ |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/partenhet/    |
+
+Table: Attributter
+
+| **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
+| ----------------------- | ----------- | ------------ | -------- | ------------------ |
+| enhetsidentifikator     |             | \[0..1\]     |          | Enhetsidentifikator|
+| navn                    |             | \[1..1\]     |          | string             |
+| forretningsadresse      |             | \[0..1\]     |          | EnkelAdresse       |
+| postadresse             |             | \[0..1\]     |          | EnkelAdresse       |
+| kontaktinformasjon      |             | \[0..1\]     |          | Kontaktinformasjon |
+| kontaktperson           |             | \[0..1\]     |          | string             |
+
+#### PartPerson
+
+*Type:* ***Class***
+
+*Arver:* ***Part***
+
+Table: Relasjoner
+
+| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Generalization** (Source → Destination)  | PartPerson                                           | Part               |             |
+
+Table: Relasjonsnøkler
+
+| **Verdi**                                                        |
+| ---------------------------------------------------------------- |
+| self                                                             |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-partperson/ |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/partperson/    |
+
+Table: Attributter
+
+| **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
+| ---------------------- | ----------- | ------------ | -------- | ------------------ |
+| personidentifikator    |             | \[0..*\]     |          | Personidentifikator|
+| navn                   |             | \[1..1\]     |          | string             |
+| postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
+| bostedsadresse         |             | \[0..1\]     |          | EnkelAdresse       |
+| kontaktinformasjon     |             | \[0..1\]     |          | Kontaktinformasjon |
 
 #### Skjerming
 
@@ -2915,33 +3205,6 @@ Table: Restriksjoner
 | M662 flytSendtDato: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres. | |
 | M665 flytFra: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres. | |
 
-#### EnkelAdresse
-
-*Type:* ***Class «dataType»***
-
-*Arver:*
-
-Table: Relasjonsnøkler
-
-| **Verdi**                                                          |
-| ------------------------------------------------------------------ |
-| self                                                               |
-| https://rel.arkivverket.no/noark5/v5/api/metadata/land/            |
-| https://rel.arkivverket.no/noark5/v5/api/metadata/postnummer/      |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/enkeladresse/    |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-enkeladresse/ |
-
-Table: Attributter
-
-| **Navn**          | **Merknad** | **Multipl.** | **Kode** | **Type**   |
-| ----------------- | ----------- | ------------ | -------- | ---------- |
-| adresselinje1     |             | \[0..1\]     |          | string     |
-| adresselinje2     |             | \[0..1\]     |          | string     |
-| adresselinje3     |             | \[0..1\]     |          | string     |
-| postnr            |             | \[0..1\]     |          | Postnummer |
-| poststed          |             | \[1..1\]     |          | string     |
-| landkode          |             | \[0..1\]     |          | Land       |
-
 #### Arkivnotat
 
 *Type:* ***Class***
@@ -3079,161 +3342,6 @@ Table: Restriksjoner
 | M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert. | |
 | M308 journalenhet: Er ikke lenger obligatorisk i Noark 5. Journalenhet er helt uavhengig av administrativ enhet. Kan f.eks. brukes som seleksjonskriterium ved produksjon av rapporter. Det anbefales ikke å knytte tilgangsrettigheter til journalenhet. | |
 | M309 utlaantTil: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller at dokumentene i en journalpost ble arkivert. |
-
-#### Kontaktinformasjon
-
-*Type:* ***Class «dataType»***
-
-*Arver:*
-
-Table: Relasjonsnøkler
-
-| **Verdi**                                                                |
-| ------------------------------------------------------------------------ |
-| self                                                                     |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/kontaktinformasjon/    |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-kontaktinformasjon/ |
-
-Table: Attributter
-
-| **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type** |
-| ---------------- | ----------- | ------------ | -------- | -------- |
-| epostadresse     |             | \[0..1\]     |          | string   |
-| mobiltelefon     |             | \[0..1\]     |          | string   |
-| telefon          |             | \[0..1\]     |          | string   |
-
-#### Korrespondansepart
-
-*Type:* ***Class***
-
-*Arver:* 
-
-Korrespondansepart er obligatorisk, og skal forekomme en eller flere
-ganger i en journalpost.  Ved inngående dokumenter er det obligatorisk
-å registrere avsender(e), ved utgående dokumenter mottaker(e). Ved
-organinterne dokumenter som skal følges opp, må både avsender(e) og
-mottaker(e) registreres.
-
-Table: Relasjoner
-
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | KorrespondansepartEnhet                                  | Korrespondansepart     |             |
-| **Generalization** (Source → Destination)  | KorrespondansepartPerson                                 | Korrespondansepart     |             |
-| **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
-| **Association** (Destination → Source)     | korrespondansepart 1..* Korrespondansepart               | Registrering         |             |
-
-Table: Relasjonsnøkler
-
-| **Verdi**                                                                 |
-| ------------------------------------------------------------------------- |
-| self                                                                      |
-| https://rel.arkivverket.no/noark5/v5/api/metadata/korrespondanseparttype/ |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepart/     |
-
-Table: Attributter
-
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
-|-----------|---------------|---------------|-----------|-----------|
-| systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
-| korrespondanseparttype        | Definisjon: Type korrespondansepart . Kilde: Registreres automatisk knyttet til funksjonalitet i forbindelse med opprettelse av journalpost, kan også registreres  manuelt. Kommentarer: Korrespondansetype forekommer én gang innenfor objektet korrespondansepart, men denne kan forekomme flere ganger innenfor en journalpost. M087 | \[1..1\] | | Korrespondanseparttype|
-| virksomhetsspesifikkeMetadata | Definisjon: Et overordnet metadataelement som kan inneholde egendefinerte metadata. Disse metadataene må da være spesifisert i et eller flere XML-skjema. Kilde: (ingen). Kommentar: (ingen). M711 virksomhetsspesifikkeMetadata | \[0..1\] | | any |
-
-Table: Restriksjoner
-
-| **Navn**                              | **Merknad** |
-| ------------------------------------- | ----------- |
-| M001 systemID: Skal ikke kunne endres |             |
-
-#### KorrespondansepartEnhet
-
-*Type:* ***Class***
-
-*Arver:* ***Korrespondansepart***
-
-Table: Relasjoner
-
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | KorrespondansepartEnhet                                  | Korrespondansepart     |             | 
-
-Table: Relasjonsnøkler
-
-| **Verdi**                                                                     |
-| ----------------------------------------------------------------------------- |
-| self                                                                          |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepartenhet/    |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepartenhet/ |
-
-Table: Attributter
-
-| **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
-| ----------------------- | ----------- | ------------ | -------- | ------------------ |
-| enhetsidentifikator     |             | \[0..1\]     |          | Enhetsidentifikator|
-| navn                    |             | \[1..1\]     |          | string             |
-| forretningsadresse      |             | \[0..1\]     |          | EnkelAdresse       |
-| postadresse             |             | \[0..1\]     |          | EnkelAdresse       |
-| kontaktinformasjon      |             | \[0..1\]     |          | Kontaktinformasjon |
-| kontaktperson           |             | \[0..1\]     |          | string             |
-
-#### KorrespondansepartIntern
-
-*Type:* ***Class***
-
-*Arver:* ***Korrespondansepart***
-
-Table: Relasjoner
-
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
-
-Table: Relasjonsnøkler
-
-| **Verdi**                                                                      |
-| ------------------------------------------------------------------------------ |
-| self                                                                           |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepartintern/    |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepartintern/ |
-
-Table: Attributter
-
-| **Navn**                        | **Merknad**                                   | **Multipl.** | **Kode** | **Type** |
-| ------------------------------- | --------------------------------------------- | ------------ | -------- | -------- |
-| administrativEnhet              |                                               | \[0..1\]     |          | string   |
-| referanseAdministrativEnhet     | referanse til AdministrativEnhet sin systemID | \[0..1\]     |          | SystemID |
-| saksbehandler                   |                                               | \[0..1\]     |          | string   |
-| referanseSaksbehandler          | referanse til Bruker sin systemID             | \[0..1\]     |          | SystemID |
-
-#### KorrespondansepartPerson
-
-*Type:* ***Class***
-
-*Arver:* ***Korrespondansepart***
-
-Table: Relasjoner
-
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | KorrespondansepartPerson                                 | Korrespondansepart     |             |
-
-Table: Relasjonsnøkler
-
-| **Verdi**                                                                      |
-| ------------------------------------------------------------------------------ |
-| self                                                                           |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepartperson/    |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepartperson/ |
-
-Table: Attributter
-
-| **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
-| ---------------------- | ----------- | ------------ | -------- | ------------------ |
-| personidentifikator    |             | \[0..*\]     |          | Personidentifikator|
-| navn                   |             | \[1..1\]     |          | string             |
-| postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
-| bostedsadresse         |             | \[0..1\]     |          | EnkelAdresse       |
-| kontaktinformasjon     |             | \[0..1\]     |          | Kontaktinformasjon |
 
 #### Presedens
 
@@ -3387,114 +3495,6 @@ Table: Restriksjoner
 | M012 sakssekvensnummer: Skal ikke kunne endres | |
 | M100 saksdato: Skal kunne endres manuelt inntil saksmappen avsluttes | |
 | M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert. | |
-
-#### Part
-
-*Type:* ***Class***
-
-*Arver:* 
-
-En eller flere virksomheter eller personer kan være knyttet til en
-mappe eller registrering som parter.
-
-Metadata for part skal kunne grupperes inn i metadata for mappe og
-registrering.  Part er valgfritt, og kan forekomme en eller flere
-ganger i tilknytning til en mappe og registrering.  Dersom det er mer
-enn én part, må metadataene grupperes sammen ved eksport og
-utveksling.
-
-Table: Relasjoner
-
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | PartPerson                                           | Part               |             |
-| **Generalization** (Source → Destination)  | PartEnhet                                            | Part               |             |
-| **Association** (Destination → Source)     | part 0..* Part                                     | Mappe                |             |
-| **Association** (Destination → Source)     | part 0..* Part                                     | Registrering         |             |
-
-Table: Relasjonsnøkler
-
-| **Verdi**                                                    |
-| ------------------------------------------------------------ |
-| self                                                         |
-| https://rel.arkivverket.no/noark5/v5/api/metadata/partrolle/ |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-part/   |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/part/      |
-
-Table: Attributter
-
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
-|-----------|---------------|---------------|-----------|-----------|
-| systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en nummerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
-| partRolle                 | Definisjon: Angivelse av rollen til parten . Kilde: Registreres manuelt eller automatisk fra fagsystem. Kommentarer: (ingen). Betingelser: Her er det mange tenkelige roller avhengig av type sak, f.eks. Klient, Pårørende, Formynder, Advokat. M303 | \[1..1\] | | PartRolle |
-| virksomhetsspesifikkeMetadata |  | \[0..1\] | | any |
-
-Table: Restriksjoner
-
-| **Navn**                              | **Merknad** |
-| ------------------------------------- | ----------- |
-| M001 systemID: Skal ikke kunne endres |             |
-
-#### PartEnhet
-
-*Type:* ***Class***
-
-*Arver:* ***Part***
-
-Table: Relasjoner
-
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | PartEnhet                                            | Part               |             |
-
-Table: Relasjonsnøkler
-
-| **Verdi**                                                       |
-| --------------------------------------------------------------- |
-| self                                                            |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-partenhet/ |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/partenhet/    |
-
-Table: Attributter
-
-| **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
-| ----------------------- | ----------- | ------------ | -------- | ------------------ |
-| enhetsidentifikator     |             | \[0..1\]     |          | Enhetsidentifikator|
-| navn                    |             | \[1..1\]     |          | string             |
-| forretningsadresse      |             | \[0..1\]     |          | EnkelAdresse       |
-| postadresse             |             | \[0..1\]     |          | EnkelAdresse       |
-| kontaktinformasjon      |             | \[0..1\]     |          | Kontaktinformasjon |
-| kontaktperson           |             | \[0..1\]     |          | string             |
-
-#### PartPerson
-
-*Type:* ***Class***
-
-*Arver:* ***Part***
-
-Table: Relasjoner
-
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Generalization** (Source → Destination)  | PartPerson                                           | Part               |             |
-
-Table: Relasjonsnøkler
-
-| **Verdi**                                                        |
-| ---------------------------------------------------------------- |
-| self                                                             |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-partperson/ |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/partperson/    |
-
-Table: Attributter
-
-| **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
-| ---------------------- | ----------- | ------------ | -------- | ------------------ |
-| personidentifikator    |             | \[0..*\]     |          | Personidentifikator|
-| navn                   |             | \[1..1\]     |          | string             |
-| postadresse            |             | \[0..1\]     |          | EnkelAdresse       |
-| bostedsadresse         |             | \[0..1\]     |          | EnkelAdresse       |
-| kontaktinformasjon     |             | \[0..1\]     |          | Kontaktinformasjon |
 
 ### Admin 
 
