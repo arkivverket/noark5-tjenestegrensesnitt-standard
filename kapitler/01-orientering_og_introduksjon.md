@@ -35,20 +35,20 @@ behøver ikke utvide tjenestene, eller benytte egne grensesnitt.
 
 ## Prosjekt for Noark 5 tjenestegrensesnitt 
 
-Prosjekt for Noark 5 tjenestegrensesnitt ble satt i gang av Riksarkivet
-og KS høsten 2013, og gjennomført i regi av KS KommIT. Blant
-initiativtakere til prosjektet var også K10 – det kommunale
-it-samarbeidet for landets 10 største kommuner.
+Tjenestegrensesnittet ble levert fra Samdok-prosjektet i betaversjon i september 2016, 
+og var i utgangspunktet et fungerende grensesnitt. Siden det ikke var utprøvd ble det 
+kalt en beta, og vi gikk ut fra at det ville komme innspill, kommentarer og feilmeldinger
+etterhvert som det ble tatt i bruk. Erfaringen ble at markedet var avventende, og at 
+ingen eller få tok det i bruk. Konsekvensen ble at tjenestegrensesnittet ble liggende 
+uendret i betaversjonen.
 
-Målsettingen for prosjektet har vært, sammen med arkivleverandørene, å
-utvide det standardiserte grensesnittet mot Noark 5 kjerne.
-Grensesnittet skal være tjenestebasert og bygge på erfaringene fra
-Noark-4 med tilhørende web services, GeoIntegrasjonsprosjektet og
-arkivleverandørenes utvidelser.
-
-Prosjektgruppen ble etablert i november 2013. Prosjektets arbeidsgruppe
-ble satt ned i januar 2014 og arbeidet med versjon 0.9 av
-tjenestegrensesnittet er avsluttet i oktober 2014.
+Sommeren 2017 innledet Arkivverket og Arkitektum AS (som utviklet betaversjonen) 
+et samarbeid med Fredrikstad kommune, Evry og HK Data om å kjøre en pilot for å teste og 
+ferdigstille tjenestegrensesnittet. Vi tok også imot invitasjon til samarbeid fra 
+Petter Reinholdtsen ved UiO og Thomas Sødring ved OsloMet, som hjalp oss med å legge 
+ut spesifikasjonen og alle åpne saker på GitHub. Prosessen med og diskusjonen rundt 
+det å videreutvikle og ferdigstille tjenestegrensesnittet er dermed åpent tilgjengelig 
+for alle interesserte. 
 
 ## Prosjektets hovedmål
 
