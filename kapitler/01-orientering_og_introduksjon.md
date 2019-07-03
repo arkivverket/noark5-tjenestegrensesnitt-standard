@@ -27,20 +27,24 @@ De ulike leverandørene behøver ikke utvide tjenestene, eller benytte egne gren
 
 ## Prosjekt for Noark 5 tjenestegrensesnitt 
 
-Prosjekt for Noark 5 tjenestegrensesnitt ble satt i gang av Riksarkivet
-og KS høsten 2013, og gjennomført i regi av KS KommIT. Blant
-initiativtakere til prosjektet var også K10 – det kommunale
-it-samarbeidet for landets 10 største kommuner.
+Prosjekt for Noark 5 Tjenestegrensesnitt ble satt igang av Riksarkivet 
+og Kommunenes Sentralforbund høsten 2013, og et forslag til spesifikasjon 
+overlevert fra Samdok-prosjektet i september 2016 som en betaversjon.
 
-Målsettingen for prosjektet har vært, sammen med arkivleverandørene, å
-utvide det standardiserte grensesnittet mot Noark 5 kjerne.
-Grensesnittet skal være tjenestebasert og bygge på erfaringene fra
-Noark-4 med tilhørende web services, GeoIntegrasjonsprosjektet og
-arkivleverandørenes utvidelser.
+Sommeren 2017 innledet Arkivverket og Arkitektum AS (som utviklet betaversjonen) 
+et samarbeid med Fredrikstad kommune, Evry og HK Data om å kjøre en pilot (Proof 
+of Concept) for å verifisere betaversjonen. 
 
-Prosjektgruppen ble etablert i november 2013. Prosjektets arbeidsgruppe
-ble satt ned i januar 2014 og arbeidet med versjon 0.9 av
-tjenestegrensesnittet er avsluttet i oktober 2014.
+I forbindelse med ferdigstilling av Noark 5.5.0 ble det også besluttet at 
+tjenestegrenesnittet skulle viderutvikles og forbedres. Prosjektet hadde oppstart 
+høsten 2018 og ny versjon skulle foreligge sommeren 2019. Det ble besluttet at 
+spesifikajson og alle åpne saker skulle publiseres på GitHub. Prosessen med og 
+diskusjonen rundt det å videreutvikle tjenestegrensesnittet ble dermed åpent 
+tilgjengelig for alle interesserte.
+
+Vi takket samtidig ja til invitasjon til samarbeid med NUUG ved Petter Reinholdtsen 
+og OsloMet ved Thomas Sødring. Det har testet Nikita mot Tjenestegrensittet betaversjon
+og versjon 1.0. Denne testingen har resultert i mange nyttige inspill og gode eksempler.  
 
 ## Prosjektets hovedmål
 
