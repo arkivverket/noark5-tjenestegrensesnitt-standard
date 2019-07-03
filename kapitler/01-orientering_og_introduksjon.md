@@ -108,14 +108,4 @@ Denne spesifikasjonen faller inn under unntakene i den norske åndsverkslovens �
 
 | Versjon  | Dato       | Utført av           | Endring                            |
 | -------- | ---------- | ------------------- | ---------------------------------- |
-| 0.9      | 26.08.2014 | Tor Kjetil Nilsen   | Første versjon                     |
-| 0.9.1    | 09.10.2014 | Inger Berit Eidsten | Lagt inn kapittel om Orientering og introduksjon |
-| 0.9.2    | 10.10.2014 | Tor Kjetil Nilsen   | Flyttet kapittel om avgrensninger og utvidelser til Vedlegg 5 Endringslogg fra NOARK 5 v3.1 |
-| 0.9.3    | 30.10.2014 | Tor Kjetil Nilsen   | Oppdatert fra UML modell og eksempler |
-| 0.9.4    | 06.11.2014 | Tor Kjetil Nilsen   | Oppdatert bilde for oppdatering av mappe, fjernet kommentarer |
-| 0.9.5    | 06.05.2015 | Tor Kjetil Nilsen   | Overskriftsnummerering, fjernet SOAP webservice, gått tilbake på relasjon til sakspart og korrespondansepart |
-| 0.9.6    | 08.07.2015 | Tor Kjetil Nilsen   | Oppdatert etter konklusjoner på intern høring |
-| 0.9.7    | 14.01.2016 | Tor Kjetil Nilsen   | Oppdatert etter konklusjoner på høringskommentarer |
-| 0.9.8    | 03.05.2016 | Tor Kjetil Nilsen   | Oppdatert etter konklusjoner på høringskommentarer |
-| 0.9.8.1  | 31.05.2016 | Tor Kjetil Nilsen   | Oppdatert med flere filtereksempler, kapittel for filopplasting og feilrettinger |
-| 1.0 beta | 01.07.2016 | Tor Kjetil Nilsen   | Oppdatert etter avklaringsmøter – overlevering fra SAMDOK til Arkivverket |
+| 5.5v1.0  | 05.07.2019 | Anne S Knutsen      | Release av Tj.gr. 5.5v1.0          |
