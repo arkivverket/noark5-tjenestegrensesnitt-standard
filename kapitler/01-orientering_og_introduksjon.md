@@ -85,8 +85,9 @@ Prosjektgruppen har bestått av:
    - NUUG ved Petter Reinholdtsen (Nikita)
    - OsloMet ved Thomas Sødring (Nikita)
  
- Noark leverandører har informert og involdert i prosjektet, og har kunne 
- følge og bidra underveis via GitHub. 
+Noark leverandører er blitt informert og involvert i prosjektet, og har via 
+GitHub hatt mulighet til følge med og bidra underveis i videreutviklingen 
+av tjenestegrensesnittet. 
  
 Denne spesifikasjonen faller inn under unntakene i den norske åndsverkslovens §
 9, og er ikke opphavsrettslig vernet.
