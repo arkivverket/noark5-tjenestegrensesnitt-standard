@@ -17,21 +17,13 @@ arkivdanning – også fagsystemer med saksbehandling.
 
 ## Noark tjenestegrensesnitt
 
-Teknisk grensesnitt mot kjernen er en del av standarden. Noark-4 Web
-Services ble utarbeidet i 2006 etter initiativ fra KS, og som et
-resultat av behov hos kommunene. Formålet var å standardisere og
-forenkle kommunikasjonen mellom de ulike systemene i forvaltningen.
+Noark 5-tjenestegrensesnittet (API) er en teknisk standard for kommunikasjon
+mellom saksbehandlingssystemer og Noark-løsninger. Formålet var å standardisere og
+forenkle kommunikasjonen mellom de ulike systemene i forvaltningen. 
 
-Statens Kartverk og KS gjennomførte i GeoIntegrasjonsprosjektet en
-revisjon av Noark-4 Web Services. Tjenestene i Noark-4 Web services er
-avgrenset ut fra behovene fagsystemene har for å arkivere og gjenfinne
-data.
-
-I nåværende form, og sett i lys av avgrensningene, mangler Noark
-tjenestegrensesnittet funksjonalitet. Et utvidet standardisert
-grensesnitt vil legge til rette for gode, sammenhengende tjenester på
-tvers av virksomhetsgrensene i offentlig sektor. De ulike leverandørene
-behøver ikke utvide tjenestene, eller benytte egne grensesnitt.
+Et utvidet standardisert grensesnitt vil legge til rette for gode,
+sammenhengende tjenester på tvers av virksomhetsgrensene i offentlig sektor. 
+De ulike leverandørene behøver ikke utvide tjenestene, eller benytte egne grensesnitt.
 
 ## Prosjekt for Noark 5 tjenestegrensesnitt 
 
