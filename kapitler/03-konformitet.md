@@ -29,5 +29,5 @@ Konformitetsnivåer er:
 For å være konform med standarden på aktuelle nivå må implementasjonen
 støtte alle obligatoriske krav som er angitt for nivået.
 
-Se [Vedlegg 1](vedlegg-1--konformitetskrav) for liste over tester og
+Se [Vedlegg 1 - Konformitetskrav](https://github.com/arkivverket/noark5-tjenestegrensesnitt-standard/blob/master/kapitler/08-vedlegg_1_-_konformitetskrav.md) for liste over tester og
 krav som gjelder for de ulike nivåene.
