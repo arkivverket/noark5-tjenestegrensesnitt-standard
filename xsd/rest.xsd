@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rest="http://www.kxml.no/rest/1.0" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" targetNamespace="http://www.kxml.no/rest/1.0" elementFormDefault="qualified">
+  <!-- Generert av MetaTrans(1.1.0.0) - 11.07.2016 16.10.26-->
+  <xs:element name="Link" type="rest:LinkType"/>
+  <xs:complexType name="LinkListe">
+    <xs:sequence>
+      <xs:element name="link" type="rest:LinkType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LinkType" sawsdl:modelReference="http://kommit.metakat.no/Objekttype/Index/EAID_88781F8A_4EBD_45bd_B32F_8B1A762C005D">
+    <xs:sequence>
+      <xs:element name="rel" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="href" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="templated" type="xs:boolean" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="type" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="deprecation" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="name" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="title" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbstraktResource" type="rest:AbstraktResourceType"/>
+  <xs:complexType name="AbstraktResourceListe">
+    <xs:sequence>
+      <xs:element name="abstraktresource" type="rest:AbstraktResourceType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbstraktResourceType" abstract="true" sawsdl:modelReference="http://kommit.metakat.no/Objekttype/Index/EAID_8693BC7F_445F_4817_9523_02F95A60B184">
+    <xs:sequence>
+      <xs:element name="_links" type="rest:LinkListe" nillable="true" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

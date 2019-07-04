@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sa="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:as="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur" xmlns:rest="http://www.kxml.no/rest/1.0" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/sakarkiv" elementFormDefault="qualified" version="1.0">
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata.xsd"/>
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/arkivstruktur" schemaLocation="arkivstruktur.xsd"/>
+  <xs:import namespace="http://www.kxml.no/rest/1.0" schemaLocation="rest.xsd"/>
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" schemaLocation="vsm.xsd"/>
+  <xs:element name="Arkivnotat" type="sa:ArkivnotatType"/>
+  <xs:complexType name="ArkivnotatListe">
+    <xs:sequence>
+      <xs:element name="arkivnotat" type="sa:ArkivnotatType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArkivnotatType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_B3E08AC1_18DC_4169_BD43_A627DF47AD7B">
+    <xs:complexContent>
+      <xs:extension base="as:RegistreringType">
+        <xs:sequence>
+          <xs:element name="dokumentetsDato" minOccurs="0" maxOccurs="1" type="xs:date"/>
+          <xs:element name="mottattDato" minOccurs="0" maxOccurs="1" type="xs:dateTime"/>
+          <xs:element name="sendtDato" minOccurs="0" maxOccurs="1" type="xs:dateTime"/>
+          <xs:element name="forfallsdato" minOccurs="0" maxOccurs="1" type="xs:dateTime"/>
+          <xs:element name="offentlighetsvurdertDato" minOccurs="0" maxOccurs="1" type="xs:date"/>
+          <xs:element name="antallVedlegg" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+          <xs:element name="utlaantDato" minOccurs="0" maxOccurs="1" type="xs:date"/>
+          <xs:element name="utlaantTil" minOccurs="0" maxOccurs="1" type="xs:string"/>
+          <xs:element name="referanseUtlaantTil" minOccurs="0" maxOccurs="1" type="n5mdk:SystemIDType"/>
+          <xs:element name="journalenhet" minOccurs="0" maxOccurs="1" type="xs:string"/>
+          <xs:element name="dokumentflyt" minOccurs="0" maxOccurs="1" nillable="true" type="sa:DokumentflytListe"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Avskrivning" type="sa:AvskrivningType"/>
+  <xs:complexType name="AvskrivningListe">
+    <xs:sequence>
+      <xs:element name="avskrivning" type="sa:AvskrivningType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AvskrivningType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_606345AE_2C2F_4533_925A_73D939A623E5">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="avskrivningsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="avskrevetAv" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="referanseAvskrevetAv" minOccurs="1" maxOccurs="1" type="n5mdk:SystemIDType"/>
+          <xs:element name="avskrivningsmaate" minOccurs="1" maxOccurs="1" type="n5mdk:AvskrivningsmaateType"/>
+          <xs:element name="referanseAvskrivesAvJournalpost" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="referanseAvskrivesAvKorrespondansepart" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dokumentflyt" type="sa:DokumentflytType"/>
+  <xs:complexType name="DokumentflytListe">
+    <xs:sequence>
+      <xs:element name="dokumentflyt" type="sa:DokumentflytType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DokumentflytType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_A9253724_60C1_4922_B026_C4075DE1CFFD">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="flytTil" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="referanseFlytTil" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="flytFra" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="referanseFlytFra" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="flytMottattDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
+          <xs:element name="flytSendtDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
+          <xs:element name="flytStatus" minOccurs="1" maxOccurs="1" type="n5mdk:FlytStatusType"/>
+          <xs:element name="flytMerknad" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="prosessStatus" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:ProsessStatusType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Journalpost" type="sa:JournalpostType"/>
+  <xs:complexType name="JournalpostListe">
+    <xs:sequence>
+      <xs:element name="journalpost" type="sa:JournalpostType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JournalpostType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_EA66ABBF_7124_485c_AB57_BC5159EB8F56">
+    <xs:complexContent>
+      <xs:extension base="as:RegistreringType">
+        <xs:sequence>
+          <xs:element name="journalaar" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+          <xs:element name="journalsekvensnummer" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+          <xs:element name="journalpostnummer" minOccurs="1" maxOccurs="1" type="xs:integer"/>
+          <xs:element name="journalposttype" minOccurs="1" maxOccurs="1" type="n5mdk:JournalposttypeType"/>
+          <xs:element name="journalstatus" minOccurs="1" maxOccurs="1" type="n5mdk:JournalstatusType"/>
+          <xs:element name="journaldato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="dokumentetsDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="mottattDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="sendtDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="forfallsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="offentlighetsvurdertDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="antallVedlegg" minOccurs="0" maxOccurs="1" nillable="true" type="xs:integer"/>
+          <xs:element name="utlaantDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="utlaantTil" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="referanseUtlaantTil" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="journalenhet" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="elektroniskSignatur" minOccurs="0" maxOccurs="1" nillable="true" type="as:ElektroniskSignaturType"/>
+          <xs:element name="dokumentflyt" minOccurs="0" maxOccurs="1" nillable="true" type="sa:DokumentflytListe"/>
+          <xs:element name="avskrivning" minOccurs="0" maxOccurs="1" nillable="true" type="sa:AvskrivningListe"/>
+          <xs:element name="presedens" minOccurs="0" maxOccurs="1" nillable="true" type="sa:PresedensListe"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Presedens" type="sa:PresedensType"/>
+  <xs:complexType name="PresedensListe">
+    <xs:sequence>
+      <xs:element name="presedens" type="sa:PresedensType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PresedensType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_5F5293CC_0BBC_4bc4_80B0_197D669CEE41">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="presedensDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="opprettetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <xs:element name="opprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="referanseOpprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="tittel" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="presedensHjemmel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="rettskildefaktor" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="presedensGodkjentDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <xs:element name="presedensGodkjentAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="referansePresedensGodkjentAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <xs:element name="avsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="referanseAvsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="presedensStatus" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:PresedensstatusType"/>
+          <xs:element name="journalpost" minOccurs="0" maxOccurs="1" nillable="true" type="sa:JournalpostListe"/>
+          <xs:element name="sak" minOccurs="0" maxOccurs="1" nillable="true" type="sa:SaksmappeListe"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Saksmappe" type="sa:SaksmappeType"/>
+  <xs:complexType name="SaksmappeListe">
+    <xs:sequence>
+      <xs:element name="saksmappe" type="sa:SaksmappeType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SaksmappeType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_4E164406_1372_47bf_AD28_ACB355CB6A06">
+    <xs:complexContent>
+      <xs:extension base="as:MappeType">
+        <xs:sequence>
+          <xs:element name="saksaar" minOccurs="0" maxOccurs="1" nillable="true" type="xs:integer"/>
+          <xs:element name="sakssekvensnummer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:integer"/>
+          <xs:element name="saksdato" minOccurs="1" maxOccurs="1" type="xs:date"/>
+          <xs:element name="administrativEnhet" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="referanseAdministrativEnhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="saksansvarlig" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="referanseSaksansvarlig" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="journalenhet" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="saksstatus" minOccurs="1" maxOccurs="1" type="n5mdk:SaksstatusType"/>
+          <xs:element name="utlaantDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="utlaantTil" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="referanseUtlaantTil" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="presedens" minOccurs="0" maxOccurs="1" nillable="true" type="sa:PresedensListe"/>
+          <xs:element name="sekundaerklassifikasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KlasseListe"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

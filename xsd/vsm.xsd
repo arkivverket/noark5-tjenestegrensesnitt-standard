@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is a template for the virksomhetsspesifikkeMetadata element. -->
+<!-- The default type of virksomhetsspesifikkeMetadata is 'any'. -->
+<!-- However, if you import your custom metadata schemas here, -->
+<!-- and extend the virksomhetsspesifikkeMetadata element with your types, -->
+<!-- then you can easily use your own schema types inside the metadata field. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vsm="http://www.arkivverket.no/standarder/noark5/tj/vsm" elementFormDefault="qualified" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/vsm" version="1.0">
+  <!-- Remember to include the xmlns attribute to your schemas in the schema header -->
+  <!-- Example of two custom schemas imported in the header:  -->
+  <!--
+xmlns:vnd-nikita="http://nikita.oslomet.no/felter" 
+xmlns:ppt-v1="http://ppt-system.no/v1" 
+-->
+  <!-- import your schemas so you can use them later in the file -->
+  <!--
+  <xs:import schemaLocation="vsm\pptsystem.xsd" namespace="http://ppt-system.no/v1" />
+  <xs:import schemaLocation="vsm\nikita-felter.xsd" namespace="http://nikita.oslomet.no/felter" />
+-->
+  <!-- then extend virksomhetsspesifikkeMetadata with your fields -->
+  <!-- 
+  <xs:element name="virksomhetsspesifikkeMetadata">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="ppt-v1:henvisningdato" />
+          <xs:element ref="ppt-v1:skoleaar" />
+          <xs:element ref="vnd-nikita:eksempelfelt" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+  -->
+</xs:schema>

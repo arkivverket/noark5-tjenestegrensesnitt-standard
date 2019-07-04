@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:adm="http://www.arkivverket.no/standarder/noark5/tj/admin" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" xmlns:rest="http://www.kxml.no/rest/1.0" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/admin" elementFormDefault="qualified" version="1.0">
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata.xsd"/>
+  <xs:import namespace="http://www.kxml.no/rest/1.0" schemaLocation="rest.xsd"/>
+  <xs:element name="AdministrativEnhet" type="adm:AdministrativEnhetType"/>
+  <xs:complexType name="AdministrativEnhetListe">
+    <xs:sequence>
+      <xs:element name="administrativenhet" type="adm:AdministrativEnhetType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AdministrativEnhetType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_F8FC5C7B_09FA_43c4_A43B_4C186571FA5B">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="administrativEnhetNavn" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="kortnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="opprettetDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
+          <xs:element name="opprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <xs:element name="administrativEnhetsstatus" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="referanseOverordnetEnhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType"/>
+          <xs:element name="bruker" minOccurs="0" maxOccurs="1" nillable="true" type="adm:BrukerListe"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Bruker" type="adm:BrukerType"/>
+  <xs:complexType name="BrukerListe">
+    <xs:sequence>
+      <xs:element name="bruker" type="adm:BrukerType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BrukerType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_7B480C69_7D92_4dc6_ADF1_A67E28FBA87F">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="brukerNavn" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="opprettetDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
+          <xs:element name="opprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
+          <xs:element name="kortnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType"/>
+          <xs:element name="enhet" minOccurs="0" maxOccurs="1" nillable="true" type="adm:AdministrativEnhetListe"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Tilgang" type="adm:TilgangType"/>
+  <xs:complexType name="TilgangListe">
+    <xs:sequence>
+      <xs:element name="tilgang" type="adm:TilgangType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TilgangType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_C01D4569_8A2B_4d8a_857E_5EFD2F49B7B2">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="rolle" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="tilgangskategori" minOccurs="1" maxOccurs="1" type="n5mdk:TilgangskategoriType"/>
+          <xs:element name="referanseArkivenhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="tilgangsrestriksjon" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:TilgangsrestriksjonType"/>
+          <xs:element name="les" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
+          <xs:element name="ny" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
+          <xs:element name="endre" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
+          <xs:element name="slett" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ls="http://www.arkivverket.no/standarder/noark5/tj/loggingogsporing" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:rest="http://www.kxml.no/rest/1.0" xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/tj/metadata" targetNamespace="http://www.arkivverket.no/standarder/noark5/tj/loggingogsporing" elementFormDefault="qualified" version="1.0">
+  <xs:import namespace="http://www.kxml.no/rest/1.0" schemaLocation="rest.xsd"/>
+  <xs:import namespace="http://www.arkivverket.no/standarder/noark5/tj/metadata" schemaLocation="metadata.xsd"/>
+  <xs:element name="Endringslogg" type="ls:EndringsloggType"/>
+  <xs:complexType name="EndringsloggListe">
+    <xs:sequence>
+      <xs:element name="endringslogg" type="ls:EndringsloggType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EndringsloggType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_206A0182_7246_4497_BA49_89AA859D9E9A">
+    <xs:complexContent>
+      <xs:extension base="rest:AbstraktResourceType">
+        <xs:sequence>
+          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="referanseArkivenhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="referanseMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="endretDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
+          <xs:element name="endretAv" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="referanseEndretAv" minOccurs="1" maxOccurs="1" type="n5mdk:SystemIDType"/>
+          <xs:element name="tidligereVerdi" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="nyVerdi" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

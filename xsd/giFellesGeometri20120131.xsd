@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" xmlns:planbasisns="http://rep.geointegrasjon.no/Plan/Basis/xml.schema/2012.01.31" xmlns:planfellesns="http://rep.geointegrasjon.no/Plan/Felles/xml.schema/2012.01.31" xmlns:planutvidetns="http://rep.geointegrasjon.no/Plan/Utvidet/xml.schema/2012.01.31" xmlns:felleskontaktns="http://rep.geointegrasjon.no/Felles/Kontakt/xml.schema/2012.01.31" xmlns:fellesadressens="http://rep.geointegrasjon.no/Felles/Adresse/xml.schema/2012.01.31" xmlns:fellesgeometrins="http://rep.geointegrasjon.no/Felles/Geometri/xml.schema/2012.01.31" xmlns:felleskodelistens="http://rep.geointegrasjon.no/Felles/Kodeliste/xml.schema/2012.01.31" xmlns:fellesfilterns="http://rep.geointegrasjon.no/Felles/Filter/xml.schema/2012.01.31" xmlns:skjemabyggesakns="http://rep.geointegrasjon.no/Skjema/Byggesak/xml.schema/2012.01.31" xmlns:fellestekniskns="http://rep.geointegrasjon.no/Felles/Teknisk/xml.schema/2012.01.31" xmlns:kartbasisns="http://rep.geointegrasjon.no/Kart/Basis/xml.schema/2012.01.31" xmlns:arkivfellesns="http://rep.geointegrasjon.no/Arkiv/Felles/xml.schema/2012.01.31" xmlns:arkivkjernens="http://rep.geointegrasjon.no/Arkiv/Kjerne/xml.schema/2012.01.31" xmlns:arkivdokumentns="http://rep.geointegrasjon.no/Arkiv/Dokument/xml.schema/2012.01.31" xmlns:sakfaserns="http://rep.geointegrasjon.no/Sak/Faser/xml.schema/2012.01.31" xmlns:sakskjemans="http://rep.geointegrasjon.no/Sak/Skjema/xml.schema/2012.01.31" xmlns:matrikkelfellesns="http://rep.geointegrasjon.no/Matrikkel/Felles/xml.schema/2012.01.31" xmlns:matrikkelutvidetns="http://rep.geointegrasjon.no/Matrikkel/Utvidet/xml.schema/2012.01.31" xmlns:matrikkelbasisns="http://rep.geointegrasjon.no/Matrikkel/Basis/xml.schema/2012.01.31" elementFormDefault="qualified" version="2012.01.31 - GeoIntegrasjon v1.1.0">
+	<xs:import namespace="http://rep.geointegrasjon.no/Felles/Kodeliste/xml.schema/2012.01.31" schemaLocation="http://rep.geointegrasjon.no/Felles/Kodeliste/xml.schema/2012.01.31/giFellesKodeliste20120131.xsd"/>
+	<xs:element name="KoordinatsystemKodeListe" type="tns:KoordinatsystemKodeListe"/>
+	<xs:complexType name="KoordinatsystemKodeListe">
+		<xs:sequence>
+			<xs:element name="liste" type="tns:KoordinatsystemKode" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="KoordinatsystemKode" type="tns:KoordinatsystemKode"/>
+	<xs:complexType name="KoordinatsystemKode">
+		<xs:complexContent>
+			<xs:extension base="felleskodelistens:Kode">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="FlateListe" type="tns:FlateListe"/>
+	<xs:complexType name="FlateListe">
+		<xs:sequence>
+			<xs:element name="liste" type="tns:Flate" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Flate" type="tns:Flate"/>
+	<xs:complexType name="Flate">
+		<xs:complexContent>
+			<xs:extension base="tns:Geometri">
+				<xs:sequence>
+					<xs:element name="indreAvgrensning" type="tns:RingListe" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="ytreAvgrensning" type="tns:Ring" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Geometri" type="tns:Geometri"/>
+	<xs:complexType name="Geometri">
+		<xs:sequence>
+			<xs:element name="koordinatsystem" type="tns:KoordinatsystemKode" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="KoordinatListe" type="tns:KoordinatListe"/>
+	<xs:complexType name="KoordinatListe">
+		<xs:sequence>
+			<xs:element name="liste" type="tns:Koordinat" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Koordinat" type="tns:Koordinat"/>
+	<xs:complexType name="Koordinat">
+		<xs:sequence>
+			<xs:element name="x" type="xs:double" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="y" type="xs:double" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="z" type="xs:double" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Kurve" type="tns:Kurve"/>
+	<xs:complexType name="Kurve">
+		<xs:complexContent>
+			<xs:extension base="tns:Geometri">
+				<xs:sequence>
+					<xs:element name="linje" type="tns:KoordinatListe" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PunktListe" type="tns:PunktListe"/>
+	<xs:complexType name="PunktListe">
+		<xs:sequence>
+			<xs:element name="liste" type="tns:Punkt" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Punkt" type="tns:Punkt"/>
+	<xs:complexType name="Punkt">
+		<xs:complexContent>
+			<xs:extension base="tns:Geometri">
+				<xs:sequence>
+					<xs:element name="posisjon" type="tns:Koordinat" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="RingListe" type="tns:RingListe"/>
+	<xs:complexType name="RingListe">
+		<xs:sequence>
+			<xs:element name="liste" type="tns:Ring" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Ring" type="tns:Ring"/>
+	<xs:complexType name="Ring">
+		<xs:sequence>
+			<xs:element name="lukketKurve" type="tns:KoordinatListe" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="BboxListe" type="tns:BboxListe"/>
+	<xs:complexType name="BboxListe">
+		<xs:sequence>
+			<xs:element name="liste" type="tns:Bbox" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Bbox" type="tns:Bbox"/>
+	<xs:complexType name="Bbox">
+		<xs:complexContent>
+			<xs:extension base="tns:Geometri">
+				<xs:sequence>
+					<xs:element name="nedreVenstre" type="tns:Koordinat" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="oevreHoeyre" type="tns:Koordinat" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="OmraadeListe" type="tns:OmraadeListe"/>
+	<xs:complexType name="OmraadeListe">
+		<xs:sequence>
+			<xs:element name="liste" type="tns:Omraade" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Omraade" type="tns:Omraade"/>
+	<xs:complexType name="Omraade">
+		<xs:sequence>
+			<xs:element name="punkt" type="tns:Punkt" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="flate" type="tns:Flate" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
