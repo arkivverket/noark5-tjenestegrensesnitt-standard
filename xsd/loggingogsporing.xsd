@@ -12,14 +12,31 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="referanseArkivenhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="referanseMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="endretDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
-          <xs:element name="endretAv" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="referanseEndretAv" minOccurs="1" maxOccurs="1" type="n5mdk:SystemIDType"/>
-          <xs:element name="tidligereVerdi" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="nyVerdi" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="systemID" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="referanseArkivenhet" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="referanseMetadata" minOccurs="0" type="xs:string"/>
+          <xs:element name="endretDato" type="xs:dateTime"/>
+          <xs:element name="endretAv" type="xs:string"/>
+          <xs:element name="referanseEndretAv" type="n5mdk:SystemIDType"/>
+          <xs:element name="tidligereVerdi" minOccurs="0" type="xs:string"/>
+          <xs:element name="nyVerdi" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Hendelseslogg" type="ls:HendelsesloggType"/>
+  <xs:complexType name="HendelsesloggListe">
+    <xs:sequence>
+      <xs:element name="hendelseslogg" type="ls:HendelsesloggType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HendelsesloggType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_B3CF7F82_2466_4073_9B2E_5DDC637D0A49">
+    <xs:complexContent>
+      <xs:extension base="ls:EndringsloggType">
+        <xs:sequence>
+          <xs:element name="hendelsetype" type="n5mdk:HendelsetypeType"/>
+          <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
+          <xs:element name="hendelseDato" type="xs:dateTime"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

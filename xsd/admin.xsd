@@ -12,16 +12,16 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="administrativEnhetNavn" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="kortnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="opprettetDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
-          <xs:element name="opprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="administrativEnhetsstatus" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="referanseOverordnetEnhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType"/>
-          <xs:element name="bruker" minOccurs="0" maxOccurs="1" nillable="true" type="adm:BrukerListe"/>
+          <xs:element name="systemID" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="administrativEnhetNavn" type="xs:string"/>
+          <xs:element name="kortnavn" minOccurs="0" type="xs:string"/>
+          <xs:element name="opprettetDato" type="xs:dateTime"/>
+          <xs:element name="opprettetAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="avsluttetDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="administrativEnhetsstatus" type="xs:string"/>
+          <xs:element name="referanseOverordnetEnhet" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" type="xs:anyType"/>
+          <xs:element name="bruker" minOccurs="0" type="adm:BrukerListe"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -36,14 +36,14 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="brukerNavn" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="opprettetDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
-          <xs:element name="opprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="kortnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType"/>
-          <xs:element name="enhet" minOccurs="0" maxOccurs="1" nillable="true" type="adm:AdministrativEnhetListe"/>
+          <xs:element name="systemID" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="brukerNavn" type="xs:string"/>
+          <xs:element name="opprettetDato" type="xs:dateTime"/>
+          <xs:element name="opprettetAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="avsluttetDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="kortnavn" minOccurs="0" type="xs:string"/>
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" type="xs:anyType"/>
+          <xs:element name="enhet" minOccurs="0" type="adm:AdministrativEnhetListe"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -58,15 +58,15 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="rolle" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="tilgangskategori" minOccurs="1" maxOccurs="1" type="n5mdk:TilgangskategoriType"/>
-          <xs:element name="referanseArkivenhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="tilgangsrestriksjon" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:TilgangsrestriksjonType"/>
-          <xs:element name="les" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
-          <xs:element name="ny" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
-          <xs:element name="endre" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
-          <xs:element name="slett" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
+          <xs:element name="systemID" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="rolle" type="xs:string"/>
+          <xs:element name="tilgangskategori" type="n5mdk:TilgangskategoriType"/>
+          <xs:element name="referanseArkivenhet" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="tilgangsrestriksjon" minOccurs="0" type="n5mdk:TilgangsrestriksjonType"/>
+          <xs:element name="les" type="xs:boolean"/>
+          <xs:element name="ny" type="xs:boolean"/>
+          <xs:element name="endre" type="xs:boolean"/>
+          <xs:element name="slett" type="xs:boolean"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

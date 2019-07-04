@@ -9,8 +9,8 @@
   <xs:element name="ByggIdent" type="tns:ByggIdent"/>
   <xs:complexType name="ByggIdent">
     <xs:sequence>
-      <xs:element name="bygningsNummer" type="xs:integer" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="endringsloepenummer" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="bygningsNummer" type="xs:integer"/>
+      <xs:element name="endringsloepenummer" type="xs:integer" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MatrikkelnummerListe" type="tns:MatrikkelnummerListe"/>
@@ -22,11 +22,11 @@
   <xs:element name="Matrikkelnummer" type="tns:Matrikkelnummer"/>
   <xs:complexType name="Matrikkelnummer">
     <xs:sequence>
-      <xs:element name="kommunenummer" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="gaardsnummer" type="xs:integer" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="bruksnummer" type="xs:integer" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="festenummer" type="xs:integer" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="seksjonsnummer" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="kommunenummer" type="xs:string"/>
+      <xs:element name="gaardsnummer" type="xs:integer"/>
+      <xs:element name="bruksnummer" type="xs:integer"/>
+      <xs:element name="festenummer" type="xs:integer" minOccurs="0"/>
+      <xs:element name="seksjonsnummer" type="xs:integer" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

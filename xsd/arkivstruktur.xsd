@@ -18,17 +18,17 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="tittel" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="arkivstatus" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:ArkivstatusType"/>
-          <xs:element name="dokumentmedium" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:DokumentmediumType"/>
-          <xs:element name="oppbevaringssted" minOccurs="0" maxOccurs="unbounded" nillable="true" type="xs:string"/>
-          <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="avsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseAvsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="arkivskaper" minOccurs="1" maxOccurs="1" type="as:ArkivskaperListe"/>
-          <xs:element name="arkivdel" minOccurs="0" maxOccurs="1" nillable="true" type="as:ArkivdelListe"/>
-          <xs:element name="underarkiv" type="as:ArkivListe" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="tittel" type="xs:string"/>
+          <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
+          <xs:element name="arkivstatus" minOccurs="0" type="n5mdk:ArkivstatusType"/>
+          <xs:element name="dokumentmedium" minOccurs="0" type="n5mdk:DokumentmediumType"/>
+          <xs:element name="oppbevaringssted" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+          <xs:element name="avsluttetDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="avsluttetAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseAvsluttetAv" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="arkivskaper" type="as:ArkivskaperListe"/>
+          <xs:element name="arkivdel" minOccurs="0" type="as:ArkivdelListe"/>
+          <xs:element name="underarkiv" type="as:ArkivListe" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -43,26 +43,26 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="tittel" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="arkivdelstatus" minOccurs="1" maxOccurs="1" type="n5mdk:ArkivdelstatusType"/>
-          <xs:element name="dokumentmedium" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:DokumentmediumType"/>
-          <xs:element name="oppbevaringssted" minOccurs="0" maxOccurs="unbounded" nillable="true" type="xs:string"/>
-          <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="avsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseAvsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="arkivperiodeStartDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
-          <xs:element name="arkivperiodeSluttDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
-          <xs:element name="referanseForloeper" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="referanseArvtaker" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="kassasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KassasjonType"/>
-          <xs:element name="skjerming" minOccurs="0" maxOccurs="1" nillable="true" type="as:SkjermingType"/>
-          <xs:element name="gradering" minOccurs="0" maxOccurs="1" nillable="true" type="as:GraderingType"/>
-          <xs:element name="mappe" minOccurs="0" maxOccurs="1" nillable="true" type="as:MappeListe"/>
-          <xs:element name="arkiv" minOccurs="1" maxOccurs="1" type="as:ArkivType"/>
-          <xs:element name="klassifikasjonssystem" minOccurs="0" maxOccurs="1" nillable="true" type="as:KlassifikasjonssystemType"/>
-          <xs:element name="sekundaerklassifikasjonssystem" minOccurs="0" maxOccurs="1" nillable="true" type="as:KlassifikasjonssystemListe"/>
-          <xs:element name="registrering" minOccurs="0" maxOccurs="1" nillable="true" type="as:RegistreringListe"/>
+          <xs:element name="tittel" type="xs:string"/>
+          <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
+          <xs:element name="arkivdelstatus" type="n5mdk:ArkivdelstatusType"/>
+          <xs:element name="dokumentmedium" minOccurs="0" type="n5mdk:DokumentmediumType"/>
+          <xs:element name="oppbevaringssted" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+          <xs:element name="avsluttetDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="avsluttetAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseAvsluttetAv" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="arkivperiodeStartDato" minOccurs="0" type="xs:date"/>
+          <xs:element name="arkivperiodeSluttDato" minOccurs="0" type="xs:date"/>
+          <xs:element name="referanseForloeper" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="referanseArvtaker" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="kassasjon" minOccurs="0" type="as:KassasjonType"/>
+          <xs:element name="skjerming" minOccurs="0" type="as:SkjermingType"/>
+          <xs:element name="gradering" minOccurs="0" type="as:GraderingType"/>
+          <xs:element name="mappe" minOccurs="0" type="as:MappeListe"/>
+          <xs:element name="arkiv" type="as:ArkivType"/>
+          <xs:element name="klassifikasjonssystem" minOccurs="0" type="as:KlassifikasjonssystemType"/>
+          <xs:element name="sekundaerklassifikasjonssystem" minOccurs="0" type="as:KlassifikasjonssystemListe"/>
+          <xs:element name="registrering" minOccurs="0" type="as:RegistreringListe"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -77,14 +77,14 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="oppdatertDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="opprettetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="opprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="oppdatertAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseOppdatertAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="referanseOpprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="logg" minOccurs="0" maxOccurs="1" nillable="true" type="as:HendelsesloggListe"/>
+          <xs:element name="systemID" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="oppdatertDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="opprettetDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="opprettetAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="oppdatertAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseOppdatertAv" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="referanseOpprettetAv" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="logg" minOccurs="0" type="ls:HendelsesloggListe"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -99,10 +99,10 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="arkivskaperID" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="arkivskaperNavn" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="arkiv" minOccurs="0" maxOccurs="1" nillable="true" type="as:ArkivListe"/>
+          <xs:element name="arkivskaperID" type="xs:string"/>
+          <xs:element name="arkivskaperNavn" type="xs:string"/>
+          <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
+          <xs:element name="arkiv" minOccurs="0" type="as:ArkivListe"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -117,22 +117,22 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="dokumenttype" minOccurs="1" maxOccurs="1" type="n5mdk:DokumenttypeType"/>
-          <xs:element name="dokumentstatus" minOccurs="1" maxOccurs="1" type="n5mdk:DokumentstatusType"/>
-          <xs:element name="tittel" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="forfatter" minOccurs="0" maxOccurs="unbounded" nillable="true" type="xs:string"/>
-          <xs:element name="dokumentmedium" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:DokumentmediumType"/>
-          <xs:element name="oppbevaringssted" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="kassasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KassasjonType"/>
-          <xs:element name="utfoertKassasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:UtfoertKassasjonType"/>
-          <xs:element name="skjerming" minOccurs="0" maxOccurs="1" nillable="true" type="as:DokumentskjermingType"/>
-          <xs:element name="gradering" minOccurs="0" maxOccurs="1" nillable="true" type="as:GraderingType"/>
-          <xs:element name="elektroniskSignatur" minOccurs="0" maxOccurs="1" nillable="true" type="as:ElektroniskSignaturType"/>
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType"/>
-          <xs:element name="merknad" minOccurs="0" maxOccurs="1" nillable="true" type="as:MerknadListe"/>
-          <xs:element name="dokumentlink" minOccurs="1" maxOccurs="1" type="as:DokumentlinkListe"/>
-          <xs:element name="dokumentobjekt" minOccurs="0" maxOccurs="1" nillable="true" type="as:DokumentobjektListe"/>
+          <xs:element name="dokumenttype" type="n5mdk:DokumenttypeType"/>
+          <xs:element name="dokumentstatus" type="n5mdk:DokumentstatusType"/>
+          <xs:element name="tittel" type="xs:string"/>
+          <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
+          <xs:element name="forfatter" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+          <xs:element name="dokumentmedium" minOccurs="0" type="n5mdk:DokumentmediumType"/>
+          <xs:element name="oppbevaringssted" minOccurs="0" type="xs:string"/>
+          <xs:element name="kassasjon" minOccurs="0" type="as:KassasjonType"/>
+          <xs:element name="utfoertKassasjon" minOccurs="0" type="as:UtfoertKassasjonType"/>
+          <xs:element name="skjerming" minOccurs="0" type="as:DokumentskjermingType"/>
+          <xs:element name="gradering" minOccurs="0" type="as:GraderingType"/>
+          <xs:element name="elektroniskSignatur" minOccurs="0" type="as:ElektroniskSignaturType"/>
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" type="xs:anyType"/>
+          <xs:element name="merknad" minOccurs="0" type="as:MerknadListe"/>
+          <xs:element name="dokumentlink" type="as:DokumentlinkListe"/>
+          <xs:element name="dokumentobjekt" minOccurs="0" type="as:DokumentobjektListe"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -147,13 +147,13 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="tilknyttetRegistreringSom" minOccurs="1" maxOccurs="1" type="n5mdk:TilknyttetRegistreringSomType"/>
-          <xs:element name="dokumentnummer" minOccurs="1" maxOccurs="1" type="xs:integer"/>
-          <xs:element name="tilknyttetDato" minOccurs="1" maxOccurs="1" type="xs:date"/>
-          <xs:element name="tilknyttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseTilknyttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="registrering" minOccurs="0" maxOccurs="1" nillable="true" type="as:RegistreringType"/>
-          <xs:element name="dokumentbeskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="as:DokumentbeskrivelseType"/>
+          <xs:element name="tilknyttetRegistreringSom" type="n5mdk:TilknyttetRegistreringSomType"/>
+          <xs:element name="dokumentnummer" type="xs:integer"/>
+          <xs:element name="tilknyttetDato" type="xs:date"/>
+          <xs:element name="tilknyttetAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseTilknyttetAv" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="registrering" minOccurs="0" type="as:RegistreringType"/>
+          <xs:element name="dokumentbeskrivelse" minOccurs="0" type="as:DokumentbeskrivelseType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -168,21 +168,21 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="versjonsnummer" minOccurs="1" maxOccurs="1" type="xs:integer"/>
-          <xs:element name="variantformat" minOccurs="1" maxOccurs="1" type="n5mdk:VariantformatType"/>
-          <xs:element name="format" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:FormatType"/>
-          <xs:element name="formatDetaljer" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="opprettetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="opprettetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseDokumentfil" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="filnavn" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="sjekksum" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="mimeType" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="sjekksumAlgoritme" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="filstoerrelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="elektroniskSignatur" minOccurs="0" maxOccurs="1" nillable="true" type="as:ElektroniskSignaturType"/>
-          <xs:element name="konvertering" minOccurs="0" maxOccurs="1" nillable="true" type="as:KonverteringListe"/>
-          <xs:element name="dokumentbeskrivelse" minOccurs="1" maxOccurs="1" type="as:DokumentbeskrivelseType"/>
+          <xs:element name="versjonsnummer" type="xs:integer"/>
+          <xs:element name="variantformat" type="n5mdk:VariantformatType"/>
+          <xs:element name="format" minOccurs="0" type="n5mdk:FormatType"/>
+          <xs:element name="formatDetaljer" minOccurs="0" type="xs:string"/>
+          <xs:element name="opprettetDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="opprettetAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseDokumentfil" minOccurs="0" type="xs:string"/>
+          <xs:element name="filnavn" minOccurs="0" type="xs:string"/>
+          <xs:element name="sjekksum" minOccurs="0" type="xs:string"/>
+          <xs:element name="mimeType" minOccurs="0" type="xs:string"/>
+          <xs:element name="sjekksumAlgoritme" minOccurs="0" type="xs:string"/>
+          <xs:element name="filstoerrelse" minOccurs="0" type="xs:string"/>
+          <xs:element name="elektroniskSignatur" minOccurs="0" type="as:ElektroniskSignaturType"/>
+          <xs:element name="konvertering" minOccurs="0" type="as:KonverteringListe"/>
+          <xs:element name="dokumentbeskrivelse" type="as:DokumentbeskrivelseType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -195,11 +195,11 @@
   </xs:complexType>
   <xs:complexType name="DokumentskjermingType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_8BF12B7D_B42F_4b43_B36F_644DB4AD2D96">
     <xs:sequence>
-      <xs:element name="tilgangsrestriksjon" minOccurs="1" maxOccurs="1" type="n5mdk:TilgangsrestriksjonType"/>
-      <xs:element name="skjermingshjemmel" minOccurs="1" maxOccurs="1" type="xs:string"/>
-      <xs:element name="skjermingDokument" minOccurs="1" maxOccurs="1" type="n5mdk:SkjermingDokumentType"/>
-      <xs:element name="skjermingsvarighet" minOccurs="0" maxOccurs="1" nillable="true" type="xs:integer"/>
-      <xs:element name="skjermingOpphoererDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+      <xs:element name="tilgangsrestriksjon" type="n5mdk:TilgangsrestriksjonType"/>
+      <xs:element name="skjermingshjemmel" type="xs:string"/>
+      <xs:element name="skjermingDokument" type="n5mdk:SkjermingDokumentType"/>
+      <xs:element name="skjermingsvarighet" minOccurs="0" type="xs:integer"/>
+      <xs:element name="skjermingOpphoererDato" minOccurs="0" type="xs:date"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ElektroniskSignatur" type="as:ElektroniskSignaturType"/>
@@ -212,11 +212,11 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="elektroniskSignaturSikkerhetsnivaa" minOccurs="1" maxOccurs="1" type="n5mdk:ElektroniskSignaturSikkerhetsnivaaType"/>
-          <xs:element name="elektroniskSignaturVerifisert" minOccurs="1" maxOccurs="1" type="n5mdk:ElektroniskSignaturVerifisertType"/>
-          <xs:element name="verifisertDato" minOccurs="1" maxOccurs="1" type="xs:date"/>
-          <xs:element name="verifisertAv" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="referanseVerifisertAv" minOccurs="1" maxOccurs="1" type="n5mdk:SystemIDType"/>
+          <xs:element name="elektroniskSignaturSikkerhetsnivaa" type="n5mdk:ElektroniskSignaturSikkerhetsnivaaType"/>
+          <xs:element name="elektroniskSignaturVerifisert" type="n5mdk:ElektroniskSignaturVerifisertType"/>
+          <xs:element name="verifisertDato" type="xs:date"/>
+          <xs:element name="verifisertAv" type="xs:string"/>
+          <xs:element name="referanseVerifisertAv" type="n5mdk:SystemIDType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -231,12 +231,12 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="adresselinje1" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="adresselinje2" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="adresselinje3" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="postnr" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:PostnummerType"/>
-          <xs:element name="poststed" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="landkode" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:LandType"/>
+          <xs:element name="adresselinje1" minOccurs="0" type="xs:string"/>
+          <xs:element name="adresselinje2" minOccurs="0" type="xs:string"/>
+          <xs:element name="adresselinje3" minOccurs="0" type="xs:string"/>
+          <xs:element name="postnr" minOccurs="0" type="n5mdk:PostnummerType"/>
+          <xs:element name="poststed" type="xs:string"/>
+          <xs:element name="landkode" minOccurs="0" type="n5mdk:LandType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -251,30 +251,13 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="graderingskode" minOccurs="1" maxOccurs="1" type="n5mdk:GraderingskodeType"/>
-          <xs:element name="graderingsdato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
-          <xs:element name="gradertAv" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="referanseGradertAv" minOccurs="1" maxOccurs="1" type="n5mdk:SystemIDType"/>
-          <xs:element name="nedgraderingsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="nedgradertAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseNedgradertAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Hendelseslogg" type="as:HendelsesloggType"/>
-  <xs:complexType name="HendelsesloggListe">
-    <xs:sequence>
-      <xs:element name="hendelseslogg" type="as:HendelsesloggType" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="HendelsesloggType" sawsdl:modelReference="http://arkivverket.metakat.no/Objekttype/Index/EAID_B3CF7F82_2466_4073_9B2E_5DDC637D0A49">
-    <xs:complexContent>
-      <xs:extension base="ls:EndringsloggType">
-        <xs:sequence>
-          <xs:element name="hendelsetype" minOccurs="1" maxOccurs="1" type="n5mdk:HendelsetypeType"/>
-          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="hendelseDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
+          <xs:element name="graderingskode" type="n5mdk:GraderingskodeType"/>
+          <xs:element name="graderingsdato" type="xs:dateTime"/>
+          <xs:element name="gradertAv" type="xs:string"/>
+          <xs:element name="referanseGradertAv" type="n5mdk:SystemIDType"/>
+          <xs:element name="nedgraderingsdato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="nedgradertAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseNedgradertAv" minOccurs="0" type="n5mdk:SystemIDType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -289,10 +272,10 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="kassasjonsvedtak" minOccurs="1" maxOccurs="1" type="n5mdk:KassasjonsvedtakType"/>
-          <xs:element name="kassasjonshjemmel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="bevaringstid" minOccurs="1" maxOccurs="1" type="xs:integer"/>
-          <xs:element name="kassasjonsdato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="kassasjonsvedtak" type="n5mdk:KassasjonsvedtakType"/>
+          <xs:element name="kassasjonshjemmel" minOccurs="0" type="xs:string"/>
+          <xs:element name="bevaringstid" type="xs:integer"/>
+          <xs:element name="kassasjonsdato" minOccurs="0" type="xs:date"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -307,21 +290,21 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="klasseID" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="tittel" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="noekkelord" minOccurs="0" maxOccurs="unbounded" nillable="true" type="xs:string"/>
-          <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="avsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseAvsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="skjerming" minOccurs="0" maxOccurs="1" nillable="true" type="as:SkjermingType"/>
-          <xs:element name="kassasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KassasjonType"/>
-          <xs:element name="skjermetKlasse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean"/>
-          <xs:element name="klassifikasjonssystem" minOccurs="0" maxOccurs="1" nillable="true" type="as:KlassifikasjonssystemType"/>
-          <xs:element name="registrering" minOccurs="0" maxOccurs="1" nillable="true" type="as:RegistreringListe"/>
-          <xs:element name="mappe" minOccurs="0" maxOccurs="1" nillable="true" type="as:MappeListe"/>
-          <xs:element name="kryssreferanse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KryssreferanseListe"/>
-          <xs:element name="underklasse" type="as:KlasseListe" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="klasseID" type="xs:string"/>
+          <xs:element name="tittel" type="xs:string"/>
+          <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
+          <xs:element name="noekkelord" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+          <xs:element name="avsluttetDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="avsluttetAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseAvsluttetAv" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="skjerming" minOccurs="0" type="as:SkjermingType"/>
+          <xs:element name="kassasjon" minOccurs="0" type="as:KassasjonType"/>
+          <xs:element name="skjermetKlasse" minOccurs="0" type="xs:boolean"/>
+          <xs:element name="klassifikasjonssystem" minOccurs="0" type="as:KlassifikasjonssystemType"/>
+          <xs:element name="registrering" minOccurs="0" type="as:RegistreringListe"/>
+          <xs:element name="mappe" minOccurs="0" type="as:MappeListe"/>
+          <xs:element name="kryssreferanse" minOccurs="0" type="as:KryssreferanseListe"/>
+          <xs:element name="underklasse" type="as:KlasseListe" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -336,14 +319,14 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="klassifikasjonstype" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:KlassifikasjonstypeType"/>
-          <xs:element name="tittel" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="avsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseAvsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="klasse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KlasseListe"/>
-          <xs:element name="arkivdel" minOccurs="1" maxOccurs="1" type="as:ArkivdelListe"/>
+          <xs:element name="klassifikasjonstype" minOccurs="0" type="n5mdk:KlassifikasjonstypeType"/>
+          <xs:element name="tittel" type="xs:string"/>
+          <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
+          <xs:element name="avsluttetDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="avsluttetAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseAvsluttetAv" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="klasse" minOccurs="0" type="as:KlasseListe"/>
+          <xs:element name="arkivdel" type="as:ArkivdelListe"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -358,9 +341,9 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="epostadresse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="mobiltelefon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="telefon" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="epostadresse" minOccurs="0" type="xs:string"/>
+          <xs:element name="mobiltelefon" minOccurs="0" type="xs:string"/>
+          <xs:element name="telefon" minOccurs="0" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -375,14 +358,14 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="konvertertDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
-          <xs:element name="konvertertAv" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="konvertertFraFormat" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="konvertertTilFormat" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="konverteringsverktoey" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="konverteringskommentar" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseKonvertertAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="systemID" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="konvertertDato" type="xs:dateTime"/>
+          <xs:element name="konvertertAv" type="xs:string"/>
+          <xs:element name="konvertertFraFormat" type="xs:string"/>
+          <xs:element name="konvertertTilFormat" type="xs:string"/>
+          <xs:element name="konverteringsverktoey" minOccurs="0" type="xs:string"/>
+          <xs:element name="konverteringskommentar" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseKonvertertAv" minOccurs="0" type="n5mdk:SystemIDType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -397,10 +380,10 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="korrespondanseparttype" minOccurs="1" maxOccurs="1" type="n5mdk:KorrespondanseparttypeType"/>
-          <xs:element name="skjermetKorrespondansepart" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean"/>
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType"/>
+          <xs:element name="systemID" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="korrespondanseparttype" type="n5mdk:KorrespondanseparttypeType"/>
+          <xs:element name="skjermetKorrespondansepart" minOccurs="0" type="xs:boolean"/>
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" type="xs:anyType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -415,12 +398,12 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktKorrespondansepartType">
         <xs:sequence>
-          <xs:element name="enhetsidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnhetsidentifikatorType"/>
-          <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="forretningsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType"/>
-          <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType"/>
-          <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KontaktinformasjonType"/>
-          <xs:element name="kontaktperson" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="enhetsidentifikator" minOccurs="0" type="as:EnhetsidentifikatorType"/>
+          <xs:element name="navn" type="xs:string"/>
+          <xs:element name="forretningsadresse" minOccurs="0" type="as:EnkelAdresseType"/>
+          <xs:element name="postadresse" minOccurs="0" type="as:EnkelAdresseType"/>
+          <xs:element name="kontaktinformasjon" minOccurs="0" type="as:KontaktinformasjonType"/>
+          <xs:element name="kontaktperson" minOccurs="0" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -435,10 +418,10 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktKorrespondansepartType">
         <xs:sequence>
-          <xs:element name="administrativEnhet" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseAdministrativEnhet" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="saksbehandler" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseSaksbehandler" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
+          <xs:element name="administrativEnhet" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseAdministrativEnhet" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="saksbehandler" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseSaksbehandler" minOccurs="0" type="n5mdk:SystemIDType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -453,11 +436,11 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktKorrespondansepartType">
         <xs:sequence>
-          <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType"/>
-          <xs:element name="bostedsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType"/>
-          <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KontaktinformasjonType"/>
-          <xs:element name="personidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktPersonidentifikatorListe"/>
+          <xs:element name="navn" type="xs:string"/>
+          <xs:element name="postadresse" minOccurs="0" type="as:EnkelAdresseType"/>
+          <xs:element name="bostedsadresse" minOccurs="0" type="as:EnkelAdresseType"/>
+          <xs:element name="kontaktinformasjon" minOccurs="0" type="as:KontaktinformasjonType"/>
+          <xs:element name="personidentifikator" minOccurs="0" type="as:AbstraktPersonidentifikatorListe"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -472,12 +455,12 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="referanseTilMappe" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="referanseTilKlasse" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="referanseTilRegistrering" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="mappe" minOccurs="0" maxOccurs="1" nillable="true" type="as:MappeType"/>
-          <xs:element name="registrering" minOccurs="0" maxOccurs="1" nillable="true" type="as:RegistreringType"/>
-          <xs:element name="klasse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KlasseType"/>
+          <xs:element name="referanseTilMappe" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="referanseTilKlasse" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="referanseTilRegistrering" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="mappe" minOccurs="0" type="as:MappeType"/>
+          <xs:element name="registrering" minOccurs="0" type="as:RegistreringType"/>
+          <xs:element name="klasse" minOccurs="0" type="as:KlasseType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -492,31 +475,31 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="mappeID" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="mappetype" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:MappetypeType"/>
-          <xs:element name="tittel" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="offentligTittel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="noekkelord" minOccurs="0" maxOccurs="unbounded" nillable="true" type="xs:string"/>
-          <xs:element name="dokumentmedium" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:DokumentmediumType"/>
-          <xs:element name="oppbevaringssted" minOccurs="0" maxOccurs="unbounded" nillable="true" type="xs:string"/>
-          <xs:element name="avsluttetDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="avsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseAvsluttetAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="kassasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KassasjonType"/>
-          <xs:element name="skjerming" minOccurs="0" maxOccurs="1" nillable="true" type="as:SkjermingType"/>
-          <xs:element name="gradering" minOccurs="0" maxOccurs="1" nillable="true" type="as:GraderingType"/>
-          <xs:element name="referanseForelderMappe" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="skjermetTittel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean"/>
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType"/>
-          <xs:element name="merknad" minOccurs="0" maxOccurs="1" nillable="true" type="as:MerknadListe"/>
-          <xs:element name="registrering" minOccurs="0" maxOccurs="1" nillable="true" type="as:RegistreringListe"/>
-          <xs:element name="klasse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KlasseType"/>
-          <xs:element name="nasjonalidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktNasjonalidentifikatorListe"/>
-          <xs:element name="kryssreferanse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KryssreferanseListe"/>
-          <xs:element name="arkivdel" minOccurs="0" maxOccurs="1" nillable="true" type="as:ArkivdelType"/>
-          <xs:element name="part" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktPartListe"/>
-          <xs:element name="undermappe" type="as:MappeListe" nillable="true" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="mappeID" minOccurs="0" type="xs:string"/>
+          <xs:element name="mappetype" minOccurs="0" type="n5mdk:MappetypeType"/>
+          <xs:element name="tittel" type="xs:string"/>
+          <xs:element name="offentligTittel" minOccurs="0" type="xs:string"/>
+          <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
+          <xs:element name="noekkelord" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+          <xs:element name="dokumentmedium" minOccurs="0" type="n5mdk:DokumentmediumType"/>
+          <xs:element name="oppbevaringssted" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+          <xs:element name="avsluttetDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="avsluttetAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseAvsluttetAv" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="kassasjon" minOccurs="0" type="as:KassasjonType"/>
+          <xs:element name="skjerming" minOccurs="0" type="as:SkjermingType"/>
+          <xs:element name="gradering" minOccurs="0" type="as:GraderingType"/>
+          <xs:element name="referanseForelderMappe" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="skjermetTittel" minOccurs="0" type="xs:boolean"/>
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" type="xs:anyType"/>
+          <xs:element name="merknad" minOccurs="0" type="as:MerknadListe"/>
+          <xs:element name="registrering" minOccurs="0" type="as:RegistreringListe"/>
+          <xs:element name="klasse" minOccurs="0" type="as:KlasseType"/>
+          <xs:element name="nasjonalidentifikator" minOccurs="0" type="as:AbstraktNasjonalidentifikatorListe"/>
+          <xs:element name="kryssreferanse" minOccurs="0" type="as:KryssreferanseListe"/>
+          <xs:element name="arkivdel" minOccurs="0" type="as:ArkivdelType"/>
+          <xs:element name="part" minOccurs="0" type="as:AbstraktPartListe"/>
+          <xs:element name="undermappe" type="as:MappeListe" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -531,13 +514,13 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="merknadstekst" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="merknadstype" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:MerknadstypeType"/>
-          <xs:element name="merknadsdato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
-          <xs:element name="merknadRegistrertAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseMerknadRegistrertAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="skjermetMerknad" minOccurs="1" maxOccurs="1" type="xs:boolean"/>
+          <xs:element name="systemID" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="merknadstekst" type="xs:string"/>
+          <xs:element name="merknadstype" minOccurs="0" type="n5mdk:MerknadstypeType"/>
+          <xs:element name="merknadsdato" type="xs:dateTime"/>
+          <xs:element name="merknadRegistrertAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseMerknadRegistrertAv" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="skjermetMerknad" type="xs:boolean"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -552,10 +535,10 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="partRolle" minOccurs="1" maxOccurs="1" type="n5mdk:PartRolleType"/>
-          <xs:element name="skjermetPart" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean"/>
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType"/>
+          <xs:element name="systemID" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="partRolle" type="n5mdk:PartRolleType"/>
+          <xs:element name="skjermetPart" minOccurs="0" type="xs:boolean"/>
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" type="xs:anyType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -570,12 +553,12 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktPartType">
         <xs:sequence>
-          <xs:element name="enhetsidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="forretningsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType"/>
-          <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType"/>
-          <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KontaktinformasjonType"/>
-          <xs:element name="kontaktperson" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="enhetsidentifikator" minOccurs="0" type="xs:string"/>
+          <xs:element name="navn" type="xs:string"/>
+          <xs:element name="forretningsadresse" minOccurs="0" type="as:EnkelAdresseType"/>
+          <xs:element name="postadresse" minOccurs="0" type="as:EnkelAdresseType"/>
+          <xs:element name="kontaktinformasjon" minOccurs="0" type="as:KontaktinformasjonType"/>
+          <xs:element name="kontaktperson" minOccurs="0" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -590,11 +573,11 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktPartType">
         <xs:sequence>
-          <xs:element name="navn" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="postadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType"/>
-          <xs:element name="bostedsadresse" minOccurs="0" maxOccurs="1" nillable="true" type="as:EnkelAdresseType"/>
-          <xs:element name="kontaktinformasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KontaktinformasjonType"/>
-          <xs:element name="personidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktPersonidentifikatorListe"/>
+          <xs:element name="navn" type="xs:string"/>
+          <xs:element name="postadresse" minOccurs="0" type="as:EnkelAdresseType"/>
+          <xs:element name="bostedsadresse" minOccurs="0" type="as:EnkelAdresseType"/>
+          <xs:element name="kontaktinformasjon" minOccurs="0" type="as:KontaktinformasjonType"/>
+          <xs:element name="personidentifikator" minOccurs="0" type="as:AbstraktPersonidentifikatorListe"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -609,31 +592,32 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktArkivenhetType">
         <xs:sequence>
-          <xs:element name="arkivertDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:dateTime"/>
-          <xs:element name="registreringsID" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="arkivertAv" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="tittel" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="offentligTittel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="referanseArkivertAv" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
-          <xs:element name="kassasjon" minOccurs="0" maxOccurs="1" nillable="true" type="as:KassasjonType"/>
-          <xs:element name="noekkelord" minOccurs="0" maxOccurs="unbounded" nillable="true" type="xs:string"/>
-          <xs:element name="skjerming" minOccurs="0" maxOccurs="1" nillable="true" type="as:SkjermingType"/>
-          <xs:element name="forfatter" minOccurs="0" maxOccurs="unbounded" nillable="true" type="xs:string"/>
-          <xs:element name="gradering" minOccurs="0" maxOccurs="1" nillable="true" type="as:GraderingType"/>
-          <xs:element name="dokumentmedium" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:DokumentmediumType"/>
-          <xs:element name="referanseArkivdel" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="oppbevaringssted" minOccurs="0" maxOccurs="unbounded" nillable="true" type="xs:string"/>
-          <xs:element name="skjermetTittel" minOccurs="0" maxOccurs="1" nillable="true" type="xs:boolean"/>
-          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="xs:anyType"/>
-          <xs:element name="klasse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KlasseType"/>
-          <xs:element name="korrespondansepart" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktKorrespondansepartListe"/>
-          <xs:element name="nasjonalidentifikator" minOccurs="0" maxOccurs="1" nillable="true" type="as:AbstraktNasjonalidentifikatorListe"/>
-          <xs:element name="merknad" minOccurs="0" maxOccurs="1" nillable="true" type="as:MerknadListe"/>
-          <xs:element name="mappe" minOccurs="0" maxOccurs="1" nillable="true" type="as:MappeType"/>
-          <xs:element name="dokumentlink" minOccurs="0" maxOccurs="1" nillable="true" type="as:DokumentlinkListe"/>
-          <xs:element name="kryssreferanse" minOccurs="0" maxOccurs="1" nillable="true" type="as:KryssreferanseListe"/>
-          <xs:element name="arkivdel" minOccurs="0" maxOccurs="1" nillable="true" type="as:ArkivdelType"/>
+          <xs:element name="arkivertDato" minOccurs="0" type="xs:dateTime"/>
+          <xs:element name="registreringsID" minOccurs="0" type="xs:string"/>
+          <xs:element name="arkivertAv" minOccurs="0" type="xs:string"/>
+          <xs:element name="tittel" type="xs:string"/>
+          <xs:element name="offentligTittel" minOccurs="0" type="xs:string"/>
+          <xs:element name="referanseArkivertAv" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
+          <xs:element name="kassasjon" minOccurs="0" type="as:KassasjonType"/>
+          <xs:element name="noekkelord" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+          <xs:element name="skjerming" minOccurs="0" type="as:SkjermingType"/>
+          <xs:element name="forfatter" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+          <xs:element name="gradering" minOccurs="0" type="as:GraderingType"/>
+          <xs:element name="dokumentmedium" minOccurs="0" type="n5mdk:DokumentmediumType"/>
+          <xs:element name="referanseArkivdel" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="oppbevaringssted" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+          <xs:element name="skjermetTittel" minOccurs="0" type="xs:boolean"/>
+          <xs:element name="virksomhetsspesifikkeMetadata" minOccurs="0" type="xs:anyType"/>
+          <xs:element name="klasse" minOccurs="0" type="as:KlasseType"/>
+          <xs:element name="korrespondansepart" minOccurs="0" type="as:AbstraktKorrespondansepartListe"/>
+          <xs:element name="nasjonalidentifikator" minOccurs="0" type="as:AbstraktNasjonalidentifikatorListe"/>
+          <xs:element name="merknad" minOccurs="0" type="as:MerknadListe"/>
+          <xs:element name="mappe" minOccurs="0" type="as:MappeType"/>
+          <xs:element name="dokumentlink" minOccurs="0" type="as:DokumentlinkListe"/>
+          <xs:element name="kryssreferanse" minOccurs="0" type="as:KryssreferanseListe"/>
+          <xs:element name="part" minOccurs="0" type="as:AbstraktPartListe"/>
+          <xs:element name="arkivdel" minOccurs="0" type="as:ArkivdelType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -648,11 +632,11 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="tilgangsrestriksjon" minOccurs="1" maxOccurs="1" type="n5mdk:TilgangsrestriksjonType"/>
-          <xs:element name="skjermingshjemmel" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="skjermingMetadata" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SkjermingMetadataListe"/>
-          <xs:element name="skjermingsvarighet" minOccurs="0" maxOccurs="1" nillable="true" type="xs:integer"/>
-          <xs:element name="skjermingOpphoererDato" minOccurs="0" maxOccurs="1" nillable="true" type="xs:date"/>
+          <xs:element name="tilgangsrestriksjon" type="n5mdk:TilgangsrestriksjonType"/>
+          <xs:element name="skjermingshjemmel" type="xs:string"/>
+          <xs:element name="skjermingMetadata" minOccurs="0" type="n5mdk:SkjermingMetadataListe"/>
+          <xs:element name="skjermingsvarighet" minOccurs="0" type="xs:integer"/>
+          <xs:element name="skjermingOpphoererDato" minOccurs="0" type="xs:date"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -667,9 +651,9 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="kassertDato" minOccurs="1" maxOccurs="1" type="xs:dateTime"/>
-          <xs:element name="kassertAv" minOccurs="1" maxOccurs="1" type="xs:string"/>
-          <xs:element name="referanseKassertAv" minOccurs="1" maxOccurs="1" type="n5mdk:SystemIDType"/>
+          <xs:element name="kassertDato" type="xs:dateTime"/>
+          <xs:element name="kassertAv" type="xs:string"/>
+          <xs:element name="referanseKassertAv" type="n5mdk:SystemIDType"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -684,7 +668,7 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktNasjonalidentifikatorType">
         <xs:sequence>
-          <xs:element name="byggidentifikator" minOccurs="1" maxOccurs="1" type="matrikkelfellesns:ByggIdent"/>
+          <xs:element name="byggidentifikator" type="matrikkelfellesns:ByggIdent"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -699,7 +683,7 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktPersonidentifikatorType">
         <xs:sequence>
-          <xs:element name="dNummer" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="dNummer" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -714,7 +698,7 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktNasjonalidentifikatorType">
         <xs:sequence>
-          <xs:element name="organisasjonsnummer" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="organisasjonsnummer" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -729,7 +713,7 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktPersonidentifikatorType">
         <xs:sequence>
-          <xs:element name="foedselsnummer" minOccurs="1" maxOccurs="1" type="xs:string"/>
+          <xs:element name="foedselsnummer" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -744,7 +728,7 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktNasjonalidentifikatorType">
         <xs:sequence>
-          <xs:element name="matrikkelnummer" minOccurs="1" maxOccurs="1" type="matrikkelfellesns:Matrikkelnummer"/>
+          <xs:element name="matrikkelnummer" type="matrikkelfellesns:Matrikkelnummer"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -759,8 +743,8 @@
     <xs:complexContent>
       <xs:extension base="rest:AbstraktResourceType">
         <xs:sequence>
-          <xs:element name="systemID" minOccurs="0" maxOccurs="1" nillable="true" type="n5mdk:SystemIDType"/>
-          <xs:element name="beskrivelse" minOccurs="0" maxOccurs="1" nillable="true" type="xs:string"/>
+          <xs:element name="systemID" minOccurs="0" type="n5mdk:SystemIDType"/>
+          <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -788,7 +772,7 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktNasjonalidentifikatorType">
         <xs:sequence>
-          <xs:element name="planidentifikator" minOccurs="1" maxOccurs="1" type="planfellesns:NasjonalArealplanId"/>
+          <xs:element name="planidentifikator" type="planfellesns:NasjonalArealplanId"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -803,7 +787,7 @@
     <xs:complexContent>
       <xs:extension base="as:AbstraktNasjonalidentifikatorType">
         <xs:sequence>
-          <xs:element name="plassering" minOccurs="1" maxOccurs="1" type="fellesgeometrins:Punkt"/>
+          <xs:element name="plassering" type="fellesgeometrins:Punkt"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

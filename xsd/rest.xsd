@@ -9,13 +9,13 @@
   </xs:complexType>
   <xs:complexType name="LinkType" sawsdl:modelReference="http://kommit.metakat.no/Objekttype/Index/EAID_88781F8A_4EBD_45bd_B32F_8B1A762C005D">
     <xs:sequence>
-      <xs:element name="rel" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="href" type="xs:string" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="templated" type="xs:boolean" nillable="true" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="type" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="deprecation" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="name" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="title" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="rel" type="xs:string"/>
+      <xs:element name="href" type="xs:string"/>
+      <xs:element name="templated" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="deprecation" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="title" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AbstraktResource" type="rest:AbstraktResourceType"/>
@@ -26,7 +26,7 @@
   </xs:complexType>
   <xs:complexType name="AbstraktResourceType" abstract="true" sawsdl:modelReference="http://kommit.metakat.no/Objekttype/Index/EAID_8693BC7F_445F_4817_9523_02F95A60B184">
     <xs:sequence>
-      <xs:element name="_links" type="rest:LinkListe" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="_links" type="rest:LinkListe" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

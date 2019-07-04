@@ -15,7 +15,7 @@
     <xs:complexContent>
       <xs:extension base="tns:Administrativenhetsnummer">
         <xs:sequence>
-          <xs:element name="fylkesnummer" type="xs:string" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="fylkesnummer" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -25,7 +25,7 @@
     <xs:complexContent>
       <xs:extension base="tns:Administrativenhetsnummer">
         <xs:sequence>
-          <xs:element name="kommunenummer" type="xs:string" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="kommunenummer" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -39,8 +39,8 @@
   <xs:element name="NasjonalArealplanId" type="tns:NasjonalArealplanId"/>
   <xs:complexType name="NasjonalArealplanId">
     <xs:sequence>
-      <xs:element name="nummer" type="tns:Administrativenhetsnummer" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="planidentifikasjon" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="nummer" type="tns:Administrativenhetsnummer"/>
+      <xs:element name="planidentifikasjon" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Stat" type="tns:Stat"/>
@@ -48,7 +48,7 @@
     <xs:complexContent>
       <xs:extension base="tns:Administrativenhetsnummer">
         <xs:sequence>
-          <xs:element name="landskode" type="xs:string" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="landskode" type="xs:string"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

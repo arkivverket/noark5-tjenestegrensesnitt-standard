@@ -26,8 +26,8 @@
     <xs:complexContent>
       <xs:extension base="tns:Geometri">
         <xs:sequence>
-          <xs:element name="indreAvgrensning" type="tns:RingListe" minOccurs="0" maxOccurs="1"/>
-          <xs:element name="ytreAvgrensning" type="tns:Ring" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="indreAvgrensning" type="tns:RingListe" minOccurs="0"/>
+          <xs:element name="ytreAvgrensning" type="tns:Ring"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -35,7 +35,7 @@
   <xs:element name="Geometri" type="tns:Geometri"/>
   <xs:complexType name="Geometri">
     <xs:sequence>
-      <xs:element name="koordinatsystem" type="tns:KoordinatsystemKode" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="koordinatsystem" type="tns:KoordinatsystemKode"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="KoordinatListe" type="tns:KoordinatListe"/>
@@ -47,9 +47,9 @@
   <xs:element name="Koordinat" type="tns:Koordinat"/>
   <xs:complexType name="Koordinat">
     <xs:sequence>
-      <xs:element name="x" type="xs:double" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="y" type="xs:double" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="z" type="xs:double" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="x" type="xs:double"/>
+      <xs:element name="y" type="xs:double"/>
+      <xs:element name="z" type="xs:double" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Kurve" type="tns:Kurve"/>
@@ -57,7 +57,7 @@
     <xs:complexContent>
       <xs:extension base="tns:Geometri">
         <xs:sequence>
-          <xs:element name="linje" type="tns:KoordinatListe" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="linje" type="tns:KoordinatListe" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -73,7 +73,7 @@
     <xs:complexContent>
       <xs:extension base="tns:Geometri">
         <xs:sequence>
-          <xs:element name="posisjon" type="tns:Koordinat" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="posisjon" type="tns:Koordinat"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -87,7 +87,7 @@
   <xs:element name="Ring" type="tns:Ring"/>
   <xs:complexType name="Ring">
     <xs:sequence>
-      <xs:element name="lukketKurve" type="tns:KoordinatListe" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="lukketKurve" type="tns:KoordinatListe" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BboxListe" type="tns:BboxListe"/>
@@ -101,8 +101,8 @@
     <xs:complexContent>
       <xs:extension base="tns:Geometri">
         <xs:sequence>
-          <xs:element name="nedreVenstre" type="tns:Koordinat" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="oevreHoeyre" type="tns:Koordinat" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="nedreVenstre" type="tns:Koordinat"/>
+          <xs:element name="oevreHoeyre" type="tns:Koordinat"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -116,8 +116,8 @@
   <xs:element name="Omraade" type="tns:Omraade"/>
   <xs:complexType name="Omraade">
     <xs:sequence>
-      <xs:element name="punkt" type="tns:Punkt" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="flate" type="tns:Flate" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="punkt" type="tns:Punkt" minOccurs="0"/>
+      <xs:element name="flate" type="tns:Flate" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
