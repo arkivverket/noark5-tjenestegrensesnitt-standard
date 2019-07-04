@@ -10,8 +10,4 @@ Ressurser
 ---------
 
 XML-skjema (XSD)
-
-http://skjema.kxml.no/arkivverket/noark5/v4.0/
-
-Metakat - Webversjon av datamodellen
-http://arkivverket.metakat.no/
+https://github.com/arkivverket/noark5-tjenestegrensesnitt-standard/tree/master/xsd
