@@ -32,7 +32,9 @@ spesifikasjon: spesifikasjon.pdf
 spesifikasjon.pdf: docbook images
 	#xmlto --with-fop pdf docbook/spesifikasjon.xml
 	#xmlto --with-dblatex pdf docbook/spesifikasjon.xml
-	dblatex $(DBLATEX_OPTS) -o spesifikasjon.pdf docbook/spesifikasjon.xml
+	dblatex $(DBLATEX_OPTS) -o spesifikasjon-kropp.pdf docbook/spesifikasjon.xml
+	pdftk docbook/spesifikasjon-forside.pdf spesifikasjon-kropp.pdf cat \
+		output spesifikasjon.pdf
 html: spesifikasjon.html
 spesifikasjon.html: docbook images
 	xmlto html-nochunks docbook/spesifikasjon.xml
