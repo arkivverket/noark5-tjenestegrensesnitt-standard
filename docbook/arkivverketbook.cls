@@ -9,14 +9,14 @@
 %\usepackage{showframe}% http://ctan.org/pkg/showframe
 
 % Insert Arkivverket logo at the top of every page
-\usepackage{graphicx}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\setlength\headheight{82.0pt}
-\addtolength{\textheight}{-82.0pt}
-\chead{\includegraphics[width=\headwidth]{media/arkivverket-logo.png}}
+%\usepackage{graphicx}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%\setlength\headheight{82.0pt}
+%\addtolength{\textheight}{-82.0pt}
+%\chead{\includegraphics[width=\headwidth]{media/arkivverket-logo.png}}
 
 \makeatletter
 
