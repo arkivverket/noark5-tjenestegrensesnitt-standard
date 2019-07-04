@@ -12,5 +12,6 @@ sider](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noar
 Ressurser
 ---------
 Prosjektet vedlikeholdes på https://github.com/arkivverket/noark5-tjenestegrensesnitt-standard
+
 XML-skjema (XSD)
 https://github.com/arkivverket/noark5-tjenestegrensesnitt-standard/tree/master/xsd
