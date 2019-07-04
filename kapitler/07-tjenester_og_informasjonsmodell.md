@@ -260,10 +260,10 @@ Arkivdeler kan brukes til å skille ut dokumenter som skal kasseres
 etter andre regler enn resten av dokumentene i mappen (f.eks. alle
 inngående dokumenter) eller registreringen (f.eks. alle
 vedlegg). Slike regler kan da knyttes til en egen arkivdel.  Se mer om
-dette i Noark 5 v3.1 kapittel 5.10 Bevaring og kassasjon, om kassasjon
+dette i Noark 5 v5.0 kapittel 6.1 Bevaring og kassasjon, om kassasjon
 av dokumenttyper.  Det samme gjelder dokumenter som skal skjermes
 etter andre regler enn resten av dokumentene i mappen eller
-registreringen. Se mer under Noark 5 v3.1 kapittel 6.6.1 Skjerming.
+registreringen. Se mer under Noark 5 v5.0 kapittel 2.8.1 Skjerming.
 
 Dessuten kan det være tilfeller hvor noen dokumenter i en mappe eller
 registrering er arkivert på papir, mens resten av dokumentene er
@@ -392,7 +392,7 @@ Table: Restriksjoner
 
 *Arver:* 
 
-En arkivenhet (se Noark 5 v3.1 krav 5.1.2 og 5.1.3) skal kunne
+En arkivenhet (se Noark 5 v5.0 krav 2.2.2) skal kunne
 identifiseres entydig innenfor det arkivskapende organet. I et
 arkivuttrekk skal denne identifikasjonen hete systemID, og være
 entydig på tvers av alle uttrekk som organet produserer, dermed også
@@ -875,7 +875,7 @@ en betryggende måte.
 
 Inneholder vedtak om kassasjon. Kassasjonsvedtak bestemmer hvilket
 arkivmateriale som skal fjernes fra arkivet og tilintetgjøres. (Se
-Noark 5 v3.1 eget kapittel: 5.10 Bevaring og kassasjon)
+Noark 5 v5.0 eget kapittel: 6.1 Bevaring og kassasjon)
 
 Metadata for bevaring og kassasjon skal grupperes inn i metadata for
 arkivdel, klasse, mappe, registrering og
@@ -1077,7 +1077,7 @@ Table: Attributter
 
 Alle arkivdokumenter som skal avleveres må være i arkivformat.
 Konvertering til arkivformat skal foretas senest ved avslutning av
-mappe (jf. Noark 5 v3.1 krav 6.1.11). Systemet skal logge alle
+mappe (jf. Noark 5 v5.0 krav 2.7.1). Systemet skal logge alle
 konverteringer, og informasjon om dette skal tas med ved
 deponering/avlevering.
 
@@ -1718,7 +1718,7 @@ Table: Attributter
 Skjerming benyttes til å skjerme registrerte opplysninger eller
 enkeltdokumenter. Skjermingen trer i kraft når en tilgangskode påføres
 den enkelte mappe, registrering eller det enkelte dokument. (Se Noark
-5 v3.1 eget kapittel: 6.6.1 Skjerming)
+5 v5.0 eget kapittel: 2.8.1 Skjerming)
 
 Table: Attributter
 
@@ -2994,7 +2994,7 @@ Table: Relasjoner
 
 Åpen kodeliste
 
-ny kodeliste jfr Noark 5 v3.1 krav
+ny kodeliste jfr Noark 5 v3.1 krav    
 6.6.32
 
 Table: Relasjonsnøkler
