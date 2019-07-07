@@ -3575,7 +3575,7 @@ Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Association** (Bi-Directional)         | bruker 0..* Bruker                                       | enhet 0..* AdministrativEnhet |      |
+| **Association** (Bi-Directional)         | bruker 0..* Bruker                                       | administrativenhet 0..* AdministrativEnhet |      |
 
 Table: Relasjonsnøkler
 
