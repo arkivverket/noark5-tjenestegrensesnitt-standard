@@ -1136,7 +1136,7 @@ Table: Relasjoner
 | **Generalization** (Source → Destination)  | KorrespondansepartEnhet                                  | Korrespondansepart     |             |
 | **Generalization** (Source → Destination)  | KorrespondansepartPerson                                 | Korrespondansepart     |             |
 | **Generalization** (Source → Destination)  | KorrespondansepartIntern                                 | Korrespondansepart     |             |
-| **Association** (Destination → Source)     | korrespondansepart 1..* Korrespondansepart               | Registrering         |             |
+| **Association** (Destination → Source)     | korrespondansepart 0..* Korrespondansepart               | Registrering         |             |
 
 Table: Relasjonsnøkler
 
