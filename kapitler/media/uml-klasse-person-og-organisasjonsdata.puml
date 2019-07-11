@@ -1,5 +1,9 @@
 @startuml
 
+class Arkivstruktur.Mappe <Arkivenhet>
+class Arkivstruktur.Registrering <Arkivenhet>
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>
+
 !include kapitler/media/uml-codelist-korrespondanseparttype.iuml
 !include kapitler/media/uml-class-korrespondansepart.iuml
 !include kapitler/media/uml-class-korrespondansepartintern.iuml
@@ -43,5 +47,7 @@ Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
 Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
 Arkivstruktur.PartPerson <-[hidden]- Arkivstruktur.Kontaktinformasjon
 Arkivstruktur.PartEnhet <-[hidden]- Arkivstruktur.Kontaktinformasjon
+
+Arkivstruktur.Dokumentbeskrivelse *-- "+part 0..*" Arkivstruktur.Part
 
 @enduml

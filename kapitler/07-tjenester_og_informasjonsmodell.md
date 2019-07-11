@@ -629,6 +629,7 @@ Table: Relasjoner
 | **Generalization** (Source → Destination)  | Dokumentbeskrivelse                                      | Arkivenhet             |             |
 | **Association** (Source → Destination)     | Dokumentbeskrivelse                                      | merknad 0..* Merknad   |             |
 | **Aggregation** (Bi-Directional)           | dokumentobjekt 0..* Dokumentobjekt                       | dokumentbeskrivelse 1 Dokumentbeskrivelse | |
+| **Association** (Source → Destination)     | Dokumentbeskrivelse                                      | part 0..* Part         |             |
 
 Table: Relasjonsnøkler
 
@@ -1624,6 +1625,7 @@ Table: Relasjoner
 | **Generalization** (Source → Destination)  | PartEnhet                                            | Part               |             |
 | **Association** (Destination → Source)     | part 0..* Part                                     | Mappe                |             |
 | **Association** (Destination → Source)     | part 0..* Part                                     | Registrering         |             |
+| **Association** (Source → Destination)     | Dokumentbeskrivelse                                | part 0..* Part       |             |
 
 Table: Relasjonsnøkler
 
