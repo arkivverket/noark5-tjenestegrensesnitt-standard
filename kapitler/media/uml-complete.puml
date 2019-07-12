@@ -1,0 +1,777 @@
+@startuml
+scale max 4096 width
+skinparam nodesep 100
+hide members
+class Admin.AdministrativEnhet {
+  +systemID : SystemID [0..1]
+  +administrativEnhetNavn : string
+  +kortnavn : string [0..1]
+  +opprettetDato : datetime
+  +opprettetAv : string [0..1]
+  +avsluttetDato : datetime [0..1]
+  +administrativEnhetsstatus : string
+  +referanseOverordnetEnhet : SystemID [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+
+class Admin.Bruker {
+  +systemID : SystemID [0..1]
+  +brukerNavn : string
+  +opprettetDato : datetime
+  +opprettetAv : string [0..1]
+  +avsluttetDato : datetime [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+  +kortnavn : string [0..1]
+}
+
+class Admin.Tilgang {
+  +systemID : SystemID [0..1]
+  +rolle : string
+  +tilgangskategori : Tilgangskategori
+  +referanseArkivenhet : SystemID [0..1]
+  +tilgangsrestriksjon : Tilgangsrestriksjon [0..1]
+  +les : boolean
+  +ny : boolean
+  +endre : boolean
+  +slett : boolean
+}
+
+class Arkivstruktur.Arkiv <Arkivenhet> {
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +arkivstatus : Arkivstatus [0..1]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+}
+
+class Arkivstruktur.Arkivdel <Arkivenhet> {
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +arkivdelstatus : Arkivdelstatus
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +arkivperiodeStartDato : date [0..1]
+  +arkivperiodeSluttDato : date [0..1]
+  +referanseForloeper : SystemID [0..1]
+  +referanseArvtaker : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +utfoertKassasjon : UtfoertKassasjon [0..1]
+  +sletting : Sletting [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+}
+
+class Arkivstruktur.Arkivenhet {
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+}
+
+class Arkivstruktur.Arkivskaper <Arkivenhet> {
+  +arkivskaperID : string
+  +arkivskaperNavn : string
+  +beskrivelse : string [0..1]
+}
+
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
+  +dokumenttype : Dokumenttype
+  +dokumentstatus : Dokumentstatus
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +forfatter : string [0..*]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..1]
+  +tilknyttetRegistreringSom : TilknyttetRegistreringSom
+  +dokumentnummer : integer
+  +tilknyttetDato : date
+  +tilknyttetAv : string [0..1]
+  +referanseTilknyttetAv : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +utfoertKassasjon : UtfoertKassasjon [0..1]
+  +sletting : Sletting [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+  +elektroniskSignatur : ElektroniskSignatur [0..1]
+  +eksternReferanse : string [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+
+class Arkivstruktur.Dokumentobjekt <Arkivenhet> {
+  +versjonsnummer : integer
+  +variantformat : Variantformat
+  +format : Format [0..1]
+  +formatDetaljer : string [0..1]
+  +referanseDokumentfil : string [0..1]
+  +filnavn : string [0..1]
+  +sjekksum : string [0..1]
+  +mimeType : string [0..1]
+  +sjekksumAlgoritme : string [0..1]
+  +filstoerrelse : integer [0..1]
+  +elektroniskSignatur : ElektroniskSignatur [0..1]
+}
+
+class Arkivstruktur.ElektroniskSignatur <<dataType>> {
+  +elektroniskSignaturSikkerhetsnivaa : ElektroniskSignaturSikkerhetsnivaa
+  +elektroniskSignaturVerifisert : ElektroniskSignaturVerifisert
+  +verifisertDato : date
+  +verifisertAv : string
+  +referanseVerifisertAv : SystemID [0..1]
+}
+
+class Arkivstruktur.EnkelAdresse <<dataType>> {
+  +adresselinje1 : string [0..1]
+  +adresselinje2 : string [0..1]
+  +adresselinje3 : string [0..1]
+  +postnr : Postnummer [0..1]
+  +poststed : string
+  +landkode : Land [0..1]
+}
+
+class Arkivstruktur.Gradering <<dataType>> {
+  +graderingskode : Graderingskode
+  +graderingsdato : datetime
+  +gradertAv : string
+  +referanseGradertAv : SystemID
+  +nedgraderingsdato : datetime [0..1]
+  +nedgradertAv : string [0..1]
+  +referanseNedgradertAv : SystemID [0..1]
+}
+
+class Arkivstruktur.Kassasjon <<dataType>> {
+  +kassasjonsvedtak : Kassasjonsvedtak
+  +kassasjonshjemmel : string [0..1]
+  +bevaringstid : integer
+  +kassasjonsdato : date
+}
+
+class Arkivstruktur.Klasse <Arkivenhet> {
+  +klasseID : string
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +noekkelord : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +skjerming : Skjerming [0..1]
+  +kassasjon : Kassasjon [0..1]
+}
+
+class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
+  +klassifikasjonstype : Klassifikasjonstype [0..1]
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+}
+
+class Arkivstruktur.Kontaktinformasjon <<dataType>> {
+  +epostadresse : string [0..1]
+  +mobiltelefon : string [0..1]
+  +telefon : string [0..1]
+}
+
+class Arkivstruktur.Konvertering {
+  +systemID : SystemID [0..1]
+  +konvertertDato : datetime
+  +konvertertAv : string
+  +konvertertFraFormat : string
+  +konvertertTilFormat : string
+  +konverteringsverktoey : string [0..1]
+  +konverteringskommentar : string [0..1]
+}
+
+class Arkivstruktur.Korrespondansepart {
+  +systemID : SystemID [0..1]
+  +korrespondanseparttype : Korrespondanseparttype
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+
+class Arkivstruktur.KorrespondansepartEnhet <Korrespondansepart> {
+  +enhetsidentifikator : Enhetsidentifikator [0..1]
+  +navn : string
+  +forretningsadresse : EnkelAdresse [0..1]
+  +postadresse : EnkelAdresse [0..1]
+  +kontaktinformasjon : Kontaktinformasjon [0..1]
+  +kontaktperson : string [0..1]
+}
+
+class Arkivstruktur.KorrespondansepartIntern <Korrespondansepart> {
+  +administrativEnhet : string [0..1]
+  +referanseAdministrativEnhet : SystemID [0..1]
+  +saksbehandler : string [0..1]
+  +referanseSaksbehandler : SystemID [0..1]
+}
+
+class Arkivstruktur.KorrespondansepartPerson <Korrespondansepart> {
+  +personidentifikator : Personidentifikator [0..*]
+  +navn : string
+  +postadresse : EnkelAdresse [0..1]
+  +bostedsadresse : EnkelAdresse [0..1]
+  +kontaktinformasjon : Kontaktinformasjon [0..1]
+}
+
+class Arkivstruktur.Kryssreferanse <Arkivenhet> {
+}
+
+class Arkivstruktur.Mappe <Arkivenhet> {
+  +mappeID : string [0..1]
+  +mappetype : Mappetype [0..1]
+  +tittel : string
+  +offentligTittel : string [0..1]
+  +beskrivelse : string [0..1]
+  +noekkelord : string [0..*]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+  +referanseForelderMappe : SystemID [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+
+class Arkivstruktur.Merknad {
+  +systemID : SystemID [0..1]
+  +merknadstekst : string
+  +merknadstype : Merknadstype [0..1]
+  +merknadsdato : datetime
+  +merknadRegistrertAv : string [0..1]
+  +referanseMerknadRegistrertAv : SystemID [0..1]
+}
+
+class Arkivstruktur.NasjonaleIdentifikatorer.Bygning <Nasjonalidentifikator> {
+  +bygningsnummer : integer
+  +endringsloepenummer : integer [0..1]
+}
+
+class Arkivstruktur.NasjonaleIdentifikatorer.DNummer <Personidentifikator> {
+  +dNummer : string
+}
+
+class Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator <Nasjonalidentifikator> {
+  +organisasjonsnummer : string
+}
+
+class Arkivstruktur.NasjonaleIdentifikatorer.Foedselsnummer <Personidentifikator> {
+  +foedselsnummer : string
+}
+
+class Arkivstruktur.NasjonaleIdentifikatorer.Koordinatsystem <<codelist>> {
+  +UTM32N = EPSG:32632
+  +WGS84 = EPSG:4326
+}
+
+class Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel <Nasjonalidentifikator> {
+  +kommunenummer : string
+  +gaardsnummer : integer
+  +bruksnummer : integer
+  +festenummer : string [0..1]
+  +seksjonsnummer : string [0..1]
+}
+
+class Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator {
+  +systemID : SystemID
+}
+
+class Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <Nasjonalidentifikator> {
+}
+
+class Arkivstruktur.NasjonaleIdentifikatorer.Plan <Nasjonalidentifikator> {
+  +kommunenummer : string [0..1]
+  +fylkesnummer : string [0..1]
+  +landkode : Land [0..1]
+  +planidentifikasjon : string
+}
+
+class Arkivstruktur.NasjonaleIdentifikatorer.Posisjon <Nasjonalidentifikator> {
+  +koordinatsystem : Koordinatsystem
+  +x : decimal
+  +y : decimal
+  +z : decimal [0..1]
+}
+
+class Arkivstruktur.Part {
+  +systemID : SystemID [0..1]
+  +partRolle : PartRolle
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+
+class Arkivstruktur.PartEnhet <Part> {
+  +enhetsidentifikator : Enhetsidentifikator [0..1]
+  +navn : string
+  +forretningsadresse : EnkelAdresse [0..1]
+  +postadresse : EnkelAdresse [0..1]
+  +kontaktinformasjon : Kontaktinformasjon [0..1]
+  +kontaktperson : string [0..1]
+}
+
+class Arkivstruktur.PartPerson <Part> {
+  +personidentifikator : Personidentifikator [0..*]
+  +navn : string
+  +postadresse : EnkelAdresse [0..1]
+  +bostedsadresse : EnkelAdresse [0..1]
+  +kontaktinformasjon : Kontaktinformasjon [0..1]
+}
+
+class Arkivstruktur.Registrering <Arkivenhet> {
+  +arkivertDato : datetime [0..1]
+  +arkivertAv : string [0..1]
+  +referanseArkivertAv : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+  +referanseArkivdel : SystemID [0..1]
+  +registreringsID : string [0..1]
+  +tittel : string
+  +offentligTittel : string [0..1]
+  +beskrivelse : string [0..1]
+  +noekkelord : string [0..*]
+  +forfatter : string [0..*]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+
+class Arkivstruktur.Skjerming <<dataType>> {
+  +tilgangsrestriksjon : Tilgangsrestriksjon
+  +skjermingshjemmel : string
+  +skjermingMetadata : SkjermingMetadata [0..*]
+  +skjermingDokument : SkjermingDokument [0..1]
+  +skjermingsvarighet : integer [0..1]
+  +skjermingOpphoererDato : date [0..1]
+}
+
+class Arkivstruktur.Sletting <<dataType>> {
+  +slettingstype : Slettingstype
+  +slettetDato : datetime
+  +slettetAv : string
+  +referanseSlettetAv : SystemID
+}
+
+class Arkivstruktur.UtfoertKassasjon <<dataType>> {
+  +kassertDato : datetime
+  +kassertAv : string
+  +referanseKassertAv : SystemID [1..1 1
+}
+
+class Kodelister.Arkivdelstatus <<codelist>> {
+  +Aktiv periode = A
+  +Overlappingsperiode = O
+  +Avsluttet periode = P
+  +Uaktuelle mapper = U
+}
+
+class Kodelister.Arkivstatus <<codelist>> {
+  +Opprettet = O
+  +Avsluttet = A
+}
+
+class Kodelister.Avskrivningsmaate <<codelist>> {
+  +Besvart med brev = BU
+  +Besvart med e-post = BE
+  +Besvart på telefon = TLF
+  +Tatt til etterretning = TE
+  +Tatt til orientering = TO
+  +Besvart med notat = BN
+  +Saken ble avsluttet = SA
+}
+
+class Kodelister.Dokumentmedium <<codelist>> {
+  +Fysisk medium = F
+  +Elektronisk arkiv = E
+  +Blandet fysisk og elektronisk arkiv = B
+}
+
+class Kodelister.Dokumentstatus <<codelist>> {
+  +Dokumentet er under redigering = B
+  +Dokumentet er ferdigstilt = F
+}
+
+class Kodelister.Dokumenttype <<codelist>> {
+  +Brev = B
+  +Rundskriv = R
+  +Faktura = F
+  +Ordrebekreftelse = O
+}
+
+class Kodelister.ElektroniskSignaturSikkerhetsnivaa <<codelist>> {
+  +Symmetrisk kryptert = SK
+  +Sendt med PKI/virksomhetssertifikat = V
+  +Sendt med PKI/"person standard"-sertifikat = PS
+  +Sendt med PKI/"person høy"-sertifikat = PH
+}
+
+class Kodelister.ElektroniskSignaturVerifisert <<codelist>> {
+  +Signatur påført, ikke verifisert = I
+  +Signatur påført og verifisert = V
+}
+
+class Kodelister.FlytStatus <<codelist>> {
+  +Godkjent = G
+  +Ikke godkjent = I
+  +Sendt tilbake til saksbehandler med kommentarer = S
+}
+
+class Kodelister.Format <<codelist>> {
+  +Ren tekst = fmt/111
+  +TIFF versjon 6 = fmt/353
+  +PDF/A 1a - ISO 19005-1:2005 = fmt/95
+  +PDF/A 1b - ISO 19005-1:2005 = fmt/354
+  +XML = fmt/101
+  +JPEG = fmt/42
+  +SOSI = av/1
+  +MPEG-2 = x-fmt/386
+  +MP3 = fmt/134
+  +PNG = fmt/11
+}
+
+class Kodelister.Graderingskode <<codelist>> {
+  {field} +Strengt hemmelig (sikkerhetsgrad) = SH
+  {field} +Hemmelig (sikkerhetsgrad) = H
+  {field} +Konfidensielt (sikkerhetsgrad) = K
+  {field} +Begrenset (sikkerhetsgrad) = B
+  {field} +Fortrolig (beskyttelsesgrad) = F
+  {field} +Strengt fortrolig (beskyttelsesgrad) = SF
+}
+
+class Kodelister.Hendelsetype <<codelist>> {
+  +Endringslogg
+  +Søknad mottatt
+  +Søknad komplett
+  +Vedtak
+}
+
+class Kodelister.Journalposttype <<codelist>> {
+  +Inngående dokument = I
+  +Utgående dokument = U
+  +Organinternt dokument for oppfølging = N
+  +Organinternt dokument uten oppfølging = X
+  +Saksframlegg = S
+}
+
+class Kodelister.Journalstatus <<codelist>> {
+  +Journalført = J
+  +Ferdigstilt fra saksbehandler = F
+  +Godkjent av leder = G
+  +Ekspedert = E
+  +Arkivert = A
+  +Utgår = U
+  +Midlertidig registrering av innkommet dokument = M
+  +Saksbehandler har registrert innkommet dokument = S
+  +Reservert dokument = R
+}
+
+class Kodelister.Kassasjonsvedtak <<codelist>> {
+  +Bevares = B
+  +Kasseres = K
+  +Vurderes senere = G
+}
+
+class Kodelister.Klassifikasjonstype <<codelist>> {
+  +Gårds- og bruksnummer = GBN
+  +Funksjonsbasert, hierarkisk = FH
+  +Emnebasert, hierarkisk arkivnøkkel = EH
+  +Emnebasert, ett nivå = E1
+  +K-koder = KK
+  +Mangefasettert, ikke hierarki = MF
+  +Objektbasert = UO
+  +Fødselsnummer = PNR
+}
+
+class Kodelister.Korrespondanseparttype <<codelist>> {
+  +Avsender = EA
+  +Mottaker = EM
+  +Kopimottaker = EK
+  +Gruppemottaker = GM
+  +Intern avsender = IA
+  +Intern mottaker = IM
+  +Intern kopimottaker = IK
+  +Medavsender = IS
+}
+
+class Kodelister.Land <<codelist>> {
+}
+
+class Kodelister.Mappetype <<codelist>> {
+}
+
+class Kodelister.Merknadstype <<codelist>> {
+  +Merknad fra saksbehandler = MS
+  +Merknad fra leder = ML
+  +Merknad fra arkivansvarlig = MA
+}
+
+class Kodelister.PartRolle <<codelist>> {
+  +Klient = KLI
+  +Pårørende = PÅ
+  +Formynder = FORM
+  +Advokat = ADV
+}
+
+class Kodelister.Postnummer <<codelist>> {
+}
+
+class Kodelister.PresedensStatus <<codelist>> {
+  +Gjeldende = G
+  +Foreldet = F
+}
+
+class Kodelister.Saksstatus <<codelist>> {
+  +Under behandling = B
+  +Avsluttet = A
+  +Utgår = U
+  +Opprettet av saksbehandler = R
+  +Avsluttet av saksbehandler = S
+  +Unntatt prosesstyring = P
+  +Ferdig fra saksbehandler = F
+}
+
+class Kodelister.SkjermingDokument <<codelist>> {
+  +Skjerming av hele dokumentet = H
+  +Skjerming av deler av dokumentet = D
+}
+
+class Kodelister.SkjermingMetadata <<codelist>> {
+  +Skjerming klasseID = KID
+  +Skjerming tittel klasse = TKL
+  +Skjerming tittel mappe - unntatt første linje = TM1
+  +Skjerming tittel mappe - utvalgte ord = TMO
+  +Skjerming navn part i sak = NPS
+  +Skjerming tittel registrering - unntatt første linje = TR1
+  +Skjerming tittel registrering - utvalgte ord = TRO
+  +Skjerming navn avsender = NA
+  +Skjerming navn mottaker = NM
+  +Skjerming tittel dokumentbeskrivelse = TD
+  +Skjerming merknadstekst = MT
+  +Midlertidig skjerming = M
+}
+
+class Kodelister.Slettingstype <<codelist>> {
+  +Sletting av produksjonsformat = SP
+  +Sletting av tidligere versjon = SV
+  +Sletting av variant med sladdet informasjon = SS
+  +Sletting av hele innholdet i arkivdelen = SA
+}
+
+class Kodelister.SystemID <string> <<simple>> {
+}
+
+class Kodelister.Tilgangskategori <<codelist>> {
+  +arkivdel = A
+  +klasse = K
+  +mappe = M
+  +registrering = R
+  +dokumentbeskrivelse = D
+}
+
+class Kodelister.Tilgangsrestriksjon <<codelist>> {
+  +Begrenset etter sikkerhetsinstruksen = B
+  +Konfidensielt etter sikkerhetsinstruksen = K
+  +Hemmelig etter sikkerhetsinstruksen = H
+  +Fortrolig etter beskyttelsesinstruksen = F
+  +Strengt fortrolig etter beskyttelsesinstruksen = SF
+  +Unntatt etter offentlighetsloven § 5 = 5
+  +Unntatt etter offentlighetsloven § 5a = 5a
+  +Unntatt etter offentlighetsloven § 6 = 6
+  +Unntatt etter offentlighetsloven § 11 = 11
+  +Midlertidig sperret = XX
+  +Personalsaker = P
+  +Klientsaker = KL
+}
+
+class Kodelister.TilknyttetRegistreringSom <<codelist>> {
+  +Hoveddokument = H
+  +Vedlegg = V
+}
+
+class Kodelister.Variantformat <<codelist>> {
+  +Produksjonsformat = P
+  +Arkivformat = A
+  +Dokument hvor deler av innholdet er skjermet = O
+}
+
+class LoggingOgSporing.Endringslogg {
+  +systemID : SystemID [0..1]
+  +referanseArkivenhet : SystemID [0..1]
+  +referanseMetadata : string [0..1]
+  +endretDato : datetime
+  +endretAv : string
+  +referanseEndretAv : SystemID
+  +tidligereVerdi : string [0..1]
+  +nyVerdi : string [0..1]
+}
+
+class LoggingOgSporing.Hendelseslogg <Endringslogg> {
+  +hendelsetype : Hendelsetype
+  +beskrivelse : string [0..1]
+  +hendelseDato : datetime
+}
+
+class Sakarkiv.Arkivnotat <Registrering> {
+  +dokumentetsDato : date [0..1]
+  +mottattDato : datetime [0..1]
+  +sendtDato : datetime [0..1]
+  +forfallsdato : date [0..1]
+  +offentlighetsvurdertDato : date [0..1]
+  +antallVedlegg : integer [0..1]
+  +utlaantDato : date [0..1]
+  +utlaantTil : string [0..1]
+  +referanseUtlaantTil : SystemID [0..1]
+}
+
+class Sakarkiv.Avskrivning {
+  +systemID : SystemID [0..1]
+  +avskrivningsdato : date
+  +avskrevetAv : string
+  +referanseAvskrevetAv : SystemID [0..1]
+  +avskrivningsmaate : Avskrivningsmaate
+  +referanseAvskrivesAvJournalpost : SystemID [0..1]
+  +referanseAvskrivesAvKorrespondansepart : SystemID [0..1]
+}
+
+class Sakarkiv.Dokumentflyt {
+  +systemID : SystemID [0..1]
+  +flytTil : string
+  +referanseFlytTil : SystemID [0..1]
+  +flytFra : string
+  +referanseFlytFra : SystemID [0..1]
+  +flytMottattDato : datetime
+  +flytSendtDato : datetime
+  +flytStatus : FlytStatus
+  +flytMerknad : string [0..1]
+}
+
+class Sakarkiv.Journalpost <Registrering> {
+  +journalaar : integer [0..1]
+  +journalsekvensnummer : integer [0..1]
+  +journalpostnummer : integer
+  +journalposttype : Journalposttype
+  +journalstatus : Journalstatus
+  +journaldato : date
+  +dokumentetsDato : date [0..1]
+  +mottattDato : datetime [0..1]
+  +sendtDato : date [0..1]
+  +forfallsdato : date [0..1]
+  +offentlighetsvurdertDato : date [0..1]
+  +antallVedlegg : integer [0..1]
+  +utlaantDato : date [0..1]
+  +utlaantTil : string [0..1]
+  +referanseUtlaantTil : SystemID [0..1]
+  +journalenhet : string [0..1]
+  +elektroniskSignatur : ElektroniskSignatur [0..1]
+}
+
+class Sakarkiv.Presedens {
+  +systemID : SystemID [0..1]
+  +presedensDato : date
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +presedensHjemmel : string [0..1]
+  +rettskildefaktor : string
+  +presedensGodkjentDato : datetime [0..1]
+  +presedensGodkjentAv : string [0..1]
+  +referansePresedensGodkjentAv : SystemID [0..1]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +presedensStatus : PresedensStatus [0..1]
+}
+
+class Sakarkiv.Saksmappe <Mappe> {
+  +saksaar : integer
+  +sakssekvensnummer : integer
+  +saksdato : date
+  +administrativEnhet : string [0..1]
+  +referanseAdministrativEnhet : SystemID [0..1]
+  +saksansvarlig : string
+  +referanseSaksansvarlig : SystemID [0..1]
+  +journalenhet : string [0..1]
+  +saksstatus : Saksstatus
+  +utlaantDato : date [0..1]
+  +utlaantTil : string [0..1]
+  +referanseUtlaantTil : SystemID [0..1]
+}
+
+Admin.AdministrativEnhet "administrativenhet 0..*" *--> "bruker 0..*" Admin.Bruker
+Admin.AdministrativEnhet "enhet 0..*" *--> "bruker 0..*" Admin.Bruker
+Arkivstruktur.Arkiv "arkiv 0..*" o--> "arkivskaper 1..*" Arkivstruktur.Arkivskaper
+Arkivstruktur.Arkiv "arkiv 1" o--> "arkivdel 0..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Arkiv "overarkiv 0..1" o-- "underarkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Arkivdel "arkivdel 1..*" o--> "klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Arkivdel "nestearkivdel 0..1" o--> "forrigearkivdel 0..1" Arkivstruktur.Arkivdel
+Arkivstruktur.Arkivdel o-- "sekundaerklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Arkivenhet "0..1" o-- "logg 0..*" LoggingOgSporing.Hendelseslogg
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkiv
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivdel
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivskaper
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klasse
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
+Sakarkiv.Avskrivning "avskrivning 0..*" *-- Sakarkiv.Journalpost
+Arkivstruktur.Dokumentbeskrivelse "dokumentbeskrivelse 1" o--> "dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
+Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Arkivnotat
+Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Journalpost
+Arkivstruktur.Dokumentobjekt o-- "konvertering 0..*" Arkivstruktur.Konvertering
+LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
+Arkivstruktur.Klasse "klasse 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+Arkivstruktur.Klasse "klasse 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Klasse "klasse 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Klasse "overklasse 0..1" o-- "underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klasse "sekundaerklassifikasjon 0..*" *-- Sakarkiv.Saksmappe
+Arkivstruktur.Klassifikasjonssystem "klassifikasjonssystem 0..1" o--> "klasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartEnhet
+Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartIntern
+Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartPerson
+Arkivstruktur.Mappe "mappe 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Mappe "overmappe 0..1" o-- "undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe --* "part 0..*" Arkivstruktur.Part
+Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
+Arkivstruktur.Mappe o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
+Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Mappe
+Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Registrering
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Bygning
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Plan
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Posisjon
+Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Mappe
+Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
+Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
+Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.DNummer
+Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Foedselsnummer
+Sakarkiv.Presedens "presedens 0..*" *--> "journalpost 0..*" Sakarkiv.Journalpost
+Sakarkiv.Presedens "presedens 0..*" *--> "saksmappe 0..*" Sakarkiv.Saksmappe
+Arkivstruktur.Registrering "registrering 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Registrering --* "korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
+Arkivstruktur.Registrering --* "korrespondansepart 1..*" Arkivstruktur.Korrespondansepart
+Arkivstruktur.Registrering --* "merknad 0..*" Arkivstruktur.Merknad
+Arkivstruktur.Registrering --* "part 0..*" Arkivstruktur.Part
+Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
+Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
+Arkivstruktur.Registrering o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
+string <|-- Kodelister.SystemID
+@enduml
