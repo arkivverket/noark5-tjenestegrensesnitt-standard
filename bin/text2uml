@@ -183,6 +183,22 @@ for c in sorted(classes.keys(), key=lambda x: classes[x]['fullname']):
         iuml.write(entry)
         iuml.write("@enduml\n")
 
+    filename = 'kapitler/media/uml-%s-%s.puml' % (stereotype.lower(), c.lower())
+    with open(filename, "w") as puml:
+        puml.write("@startuml\n")
+        puml.write("skinparam nodesep 100\n")
+        puml.write(entry)
+        for link in sorted(links.keys()):
+            rel = list(link)
+            if c != rel[0] and c != rel[-1]:
+                continue
+            rel[0] = c2full(rel[0])
+            rel[-1] = c2full(rel[-1])
+            print
+            puml.write(" ".join(rel))
+            puml.write("\n")
+        puml.write("@enduml\n")
+
     print(entry)
 
 for link in sorted(links.keys()):
