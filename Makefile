@@ -16,6 +16,9 @@ kapitler/media/uml-complete.puml: bin/text2uml kapitler/07-tjenester_og_informas
 .puml.png:
 	plantuml -p < $^ > $@.new && mv $@.new $@
 
+.puml.svg:
+	plantuml -svg -p < $^ > $@.new && mv $@.new $@
+
 # Draft Docbook based PDF building.  Remove colwidth to let the
 # docbook processors calculate columns widths.  Can pandoc be told to
 # not set colwidth?
@@ -49,7 +52,7 @@ spesifikasjon.html: docbook images
 	pandoc -f $(PANDOC_TYPE) -t latex $^ -o $@
 
 .PHONY: docbook
-.SUFFIXES: .md .pdf .docx .puml .png
+.SUFFIXES: .md .pdf .docx .puml .png .svg
 
 clean:
 	$(RM) $(IMG_PNG)
