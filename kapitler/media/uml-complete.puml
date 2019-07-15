@@ -1,3 +1,5 @@
+/* error: unknown relation *NoteLink* in line 627 */
+/* error: unknown relation NoteLink in line 2783 */
 @startuml
 scale max 4096 width
 skinparam nodesep 100
