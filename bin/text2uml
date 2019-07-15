@@ -61,7 +61,9 @@ def process(link, f):
 
 with open('kapitler/07-tjenester_og_informasjonsmodell.md') as f:
     tablename = None
+    linenum = 0
     for line in f:
+        linenum += 1
         line = line.strip()
         m = re.match('^### (.*)$', line)
         if m:
@@ -114,19 +116,25 @@ with open('kapitler/07-tjenester_og_informasjonsmodell.md') as f:
         if 'Relasjoner' == tablename and re.match('\| .* \| ', line):
             f = re.split(' *\| *', line)[1:]
 #            print(f)
-            if '**Generalization** (Source → Destination)' == f[0] :
+            if '**Relasjon**' == f[0]:
+                pass # header
+            elif re.match('-----*', f[0]):
+                pass # header
+            elif '**Generalization** (Source → Destination)' == f[0] :
                 process('<|--', f[1:])
-            if '**Aggregation** (Bi-Directional)' == f[0] :
+            elif '**Aggregation** (Bi-Directional)' == f[0] :
                 process('o-->', f[1:])
-            if '**Aggregation** (Destination → Source)' == f[0] :
+            elif '**Aggregation** (Destination → Source)' == f[0] :
                 process('o--', f[1:])
-            if '**Association** (Source → Destination)' == f[0] :
+            elif '**Association** (Source → Destination)' == f[0] :
                 process('*--', f[1:])
             # FIXME check if these two are correct
-            if '**Association** (Bi-Directional)' == f[0] :
+            elif '**Association** (Bi-Directional)' == f[0] :
                 process('*-->', f[1:])
-            if '**Association** (Destination → Source)' == f[0] :
+            elif '**Association** (Destination → Source)' == f[0] :
                 process('--*', f[1:])
+            else:
+                print("/* error: unknown relation %s in line %d */" % (f[0], linenum))
 
 def c2full(c):
     if c in classes:
