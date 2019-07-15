@@ -1480,7 +1480,6 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-bygning/            |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-dnummer/            |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-foedselsnummer/     |
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-journalpost/        |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/     |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/              |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-matrikkel/          |
@@ -1505,6 +1504,7 @@ Table: Relasjonsnøkler
 
 | **Verdi**                                                              |
 | ---------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-journalpost/             |
 | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-saksmappe/        |
 | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/utvid-til-saksmappe/ |
 
