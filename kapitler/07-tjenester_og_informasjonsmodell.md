@@ -949,7 +949,7 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/     |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/              |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-registrering/       |
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overlasse/             |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overklasse/            |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/          |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/underklasse/           |
 
