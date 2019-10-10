@@ -552,7 +552,8 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/               |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-matrikkel/           |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-merknad/             |
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-part/                |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-partenhet/           |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-partperson/          |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-plan/                |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-posisjon/            |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-registrering/        |
@@ -1487,7 +1488,8 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/              |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-matrikkel/          |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-merknad/            |
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-part/               |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-partenhet/          |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-partperson/         |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-plan/               |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-posisjon/           |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-registrering/       |
@@ -1634,9 +1636,8 @@ Table: Relasjonsnøkler
 | **Verdi**                                                    |
 | ------------------------------------------------------------ |
 | self                                                         |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/part/ |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/partrolle/ |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-part/   |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/part/      |
 
 Table: Attributter
 
@@ -1669,8 +1670,8 @@ Table: Relasjonsnøkler
 | **Verdi**                                                       |
 | --------------------------------------------------------------- |
 | self                                                            |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-partenhet/ |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/partenhet/    |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-partenhet/ |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/partenhet/    |
 
 Table: Attributter
 
@@ -1700,8 +1701,8 @@ Table: Relasjonsnøkler
 | **Verdi**                                                        |
 | ---------------------------------------------------------------- |
 | self                                                             |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-partperson/ |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/partperson/    |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-partperson/ |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/partperson/    |
 
 Table: Attributter
 
