@@ -48,5 +48,6 @@ Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 Arkivstruktur.Registrering *--> "+korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
 Arkivstruktur.Registrering *--> "+part 0..*" Arkivstruktur.Part
+Arkivstruktur.Dokumentbeskrivelse *--> "+part 0..*" Arkivstruktur.Part
 Arkivstruktur.Dokumentobjekt *--> "+konvertering 0..*" Arkivstruktur.Konvertering
 @enduml
