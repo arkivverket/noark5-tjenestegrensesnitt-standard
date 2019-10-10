@@ -141,7 +141,7 @@ samme href som «self» representerer entitetsrelasjonsnøkkelen til
 #### Systeminformasjon
 
 Når en tar GET mot href for relasjonsnøkkelen
-`http://rel.arkivverket.no/noark5/v5/api/admin/system/`, så får en informasjon
+`https://rel.arkivverket.no/noark5/v5/api/admin/system/`, så får en informasjon
 om API-tjenersystemet.  Responsen inneholder følgende felter:
 
  * `leverandoer` - tekststreng med navn på leverandør av
