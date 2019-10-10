@@ -534,6 +534,7 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/    |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/foedselsnummer/         |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/                 |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepart/     |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/kryssreferanse/         |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/                  |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/matrikkel/              |
@@ -544,6 +545,9 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-dnummer/             |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-dokumentbeskrivelse/ |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-foedselsnummer/      |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartenhet/  |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartintern/ |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartperson/ |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/      |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/               |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-matrikkel/           |
@@ -557,8 +561,6 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/posisjon/               |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/           |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/              |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepart/          |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepart/       |
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
 også være tilgjengelig via Registrering-instanser som har en
@@ -1143,8 +1145,8 @@ Table: Relasjonsnøkler
 | **Verdi**                                                                 |
 | ------------------------------------------------------------------------- |
 | self                                                                      |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepart/|
 | https://rel.arkivverket.no/noark5/v5/api/metadata/korrespondanseparttype/ |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepart/     |
 
 Table: Attributter
 
@@ -1177,8 +1179,8 @@ Table: Relasjonsnøkler
 | **Verdi**                                                                     |
 | ----------------------------------------------------------------------------- |
 | self                                                                          |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepartenhet/    |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepartenhet/ |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartenhet/    |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartenhet/ |
 
 Table: Attributter
 
@@ -1208,8 +1210,8 @@ Table: Relasjonsnøkler
 | **Verdi**                                                                      |
 | ------------------------------------------------------------------------------ |
 | self                                                                           |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepartintern/    |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepartintern/ |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartintern/    |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartintern/ |
 
 Table: Attributter
 
@@ -1237,8 +1239,8 @@ Table: Relasjonsnøkler
 | **Verdi**                                                                      |
 | ------------------------------------------------------------------------------ |
 | self                                                                           |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepartperson/    |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepartperson/ |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartperson/    |
+| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartperson/ |
 
 Table: Attributter
 
@@ -3321,10 +3323,8 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/avskrivning/           |
 | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/dokumentflyt/          |
 | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/journalpost/           |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/korrespondansepart/    |
 | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-avskrivning/        |
 | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-dokumentflyt/       |
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-korrespondansepart/ |
 | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-presedens/          |
 | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/presedens/             |
 
