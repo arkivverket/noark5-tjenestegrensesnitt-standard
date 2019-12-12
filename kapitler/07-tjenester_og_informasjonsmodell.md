@@ -627,7 +627,6 @@ Table: Relasjoner
 
 | **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
 | ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| *NoteLink*                               | Dokumentbeskrivelse                                      | \<anonymous\>          |             |
 | **Aggregation** (Bi-Directional)           | dokumentbeskrivelse 0..* Dokumentbeskrivelse             | registrering 1..* Registrering |     |
 | **Generalization** (Source → Destination)  | Dokumentbeskrivelse                                      | Arkivenhet             |             |
 | **Association** (Source → Destination)     | Dokumentbeskrivelse                                      | merknad 0..* Merknad   |             |
@@ -2780,12 +2779,6 @@ Table: Attributter
 
 Postens postnummer liste
 http://adressesok.posten.no/nb/postal\_codes/search
-
-Table: Relasjoner
-
-| **Relasjon** | **Kilde**  | **Mål**       | **Merknad** |
-| ------------ | ---------- | ------------- | ----------- |
-| NoteLink     | Postnummer | \<anonymous\> |             |
 
 Table: Relasjonsnøkler
 
