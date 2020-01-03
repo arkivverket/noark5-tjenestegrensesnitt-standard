@@ -1388,7 +1388,7 @@ verdi av beskrivelse er ikke standardisert:
 ```
 {
   "feil": {
-    "kode": 404
+    "kode": 404,
     "beskrivelse": "Not Found: arkivstruktur/arkivdel/9d5bda48-52b5-11e9-abc0-002354090596/"
   }
 }
