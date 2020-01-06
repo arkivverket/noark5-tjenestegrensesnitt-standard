@@ -1954,8 +1954,8 @@ Table: Attributter
 | kommunenummer       |             | \[1..1\]     |          | string          |
 | gaardsnummer        |             | \[1..1\]     |          | integer         |
 | bruksnummer         |             | \[1..1\]     |          | integer         |
-| festenummer         |             | \[0..1\]     |          | string          |
-| seksjonsnummer      |             | \[0..1\]     |          | string          |
+| festenummer         |             | \[0..1\]     |          | integer         |
+| seksjonsnummer      |             | \[0..1\]     |          | integer         |
 
 ##### Personidentifikator
 
