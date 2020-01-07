@@ -979,6 +979,7 @@ Table: Attributter
 | referanseAvsluttetAv  |               | \[0..1\]      |           | SystemID |
 | skjerming             |               | \[0..1\]      |           | Skjerming |
 | kassasjon             |               | \[0..1\]      |           | Kassasjon |
+| gradering             |               | \[0..1\]      |           | Gradering |
 
 Table: Restriksjoner
 
