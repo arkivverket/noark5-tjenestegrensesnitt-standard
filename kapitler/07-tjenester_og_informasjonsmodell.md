@@ -2186,7 +2186,7 @@ støtter Sakarkiv-pakken:
 | https://rel.arkivverket.no/noark5/v5/api/metadata/land/                               |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/postnummer/                         |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/presedensstatus/                    |
-| https://rel.arkivverket.no/noark5/v5/api/metadata/sakspartrolle/                      |
+| https://rel.arkivverket.no/noark5/v5/api/metadata/partrolle/                          |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/saksstatus/                         |
 
 Følgende relasjonsnøkler skal listes opp fra en implementasjon som
