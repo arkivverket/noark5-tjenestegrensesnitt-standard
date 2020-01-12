@@ -2474,7 +2474,7 @@ Kodeverdier for formater hentes fra PRONOM-registeret over formater fra
 det britiske nasjonalarkivet.  Informasjon om PRONOM er tilgjengelig
 fra deres nettsider, `https://www.nationalarchives.gov.uk/PRONOM/`.
 Slike formatkoder består at et prefiks "fmt" eller "x-fmt", en
-skråstrek og et heltall, for eksempel "fmt/111" (ren tekst) og
+skråstrek og et heltall, for eksempel "fmt/13" (PNG) og
 "x-fmt/18" (CSV).
 
 Ved bruk av formater som ikke har fått PRONOM-kode, bør det brukes en
@@ -2508,7 +2508,8 @@ Table: Attributter
 
 | **Kodenavn**             | **Merknad**                                                                                                                                                              | **Multipl.** | **Kode**  | **Type** |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------- | -------- |
-| Ren tekst                | Som ren tekst: UTF-8 (ISO/IEC 10646-1:2000 Annex D) eller ISO 8859-1:1998, Latin 1. ISO 8859-1:1998, Latin 1 kan erstattes med ISO 8859-4:1998, Latin 4 for samiske tegn |              | [fmt/111](http://www.nationalarchives.gov.uk/PRONOM/fmt/111)   |          |
+| Ukjent format            | Formatet er ikke gjenkjent eller mangler i listen over kjente formater. |              | av/0   |          |
+| Ren tekst                | Som ren tekst: UTF-8 (ISO/IEC 10646-1:2000 Annex D) eller ISO 8859-1:1998, Latin 1. ISO 8859-1:1998, Latin 1 kan erstattes med ISO 8859-4:1998, Latin 4 for samiske tegn |              | [x-fmt/111](http://www.nationalarchives.gov.uk/PRONOM/x-fmt/111)   |          |
 | TIFF versjon 6           | TIFF - Tag Image File Format versjon 6, med de presiseringer som fremgår av forskriftens § 8-18                                                                          |              | [fmt/353](http://www.nationalarchives.gov.uk/PRONOM/fmt/353)  |          |
 | PDF/A 1a - ISO 19005-1:2005 | PDF/A - ISO 19005-1:2005, versjon 1a («Conformance Level» A). PDF/A erstatter Adobe PDF, jf. forskriftens § 8-20 tredje ledd.                           |              | [fmt/95](http://www.nationalarchives.gov.uk/PRONOM/fmt/95) |          |
 | PDF/A 1b - ISO 19005-1:2005 | PDF/A - ISO 19005-1:2005, versjon 1b («Conformance Level» B). PDF/A erstatter Adobe PDF, jf. forskriftens § 8-20 tredje ledd.                           |              | [fmt/354](http://www.nationalarchives.gov.uk/PRONOM/fmt/354) |          |
