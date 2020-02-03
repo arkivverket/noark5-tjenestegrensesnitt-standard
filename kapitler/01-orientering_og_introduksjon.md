@@ -92,6 +92,9 @@ Prosjektgruppen har bestått av:
 Noark leverandører er blitt informert og involvert i prosjektet, og har via 
 GitHub hatt mulighet til følge med og bidra underveis i videreutviklingen 
 av tjenestegrensesnittet. 
+
+Fra 2020-02-03 består redaksjon for spesifikasjonen av Mona Danielsen,
+Anne Sofie Knutsen, Thomas Sødring og Petter Reinholdtsen.
  
 Denne spesifikasjonen faller inn under unntakene i den norske åndsverkslovens §
 9, og er ikke opphavsrettslig vernet.
