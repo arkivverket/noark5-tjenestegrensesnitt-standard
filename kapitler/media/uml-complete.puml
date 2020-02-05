@@ -1,5 +1,3 @@
-/* error: unknown relation *NoteLink* in line 627 */
-/* error: unknown relation NoteLink in line 2783 */
 @startuml
 scale max 4096 width
 skinparam nodesep 100
@@ -95,7 +93,7 @@ class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
   +oppbevaringssted : string [0..1]
   +tilknyttetRegistreringSom : TilknyttetRegistreringSom
   +dokumentnummer : integer
-  +tilknyttetDato : date
+  +tilknyttetDato : datetime
   +tilknyttetAv : string [0..1]
   +referanseTilknyttetAv : SystemID [0..1]
   +kassasjon : Kassasjon [0..1]
@@ -280,8 +278,8 @@ class Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel <Nasjonalidentifikator> {
   +kommunenummer : string
   +gaardsnummer : integer
   +bruksnummer : integer
-  +festenummer : string [0..1]
-  +seksjonsnummer : string [0..1]
+  +festenummer : integer [0..1]
+  +seksjonsnummer : integer [0..1]
 }
 
 class Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator {
@@ -759,6 +757,7 @@ Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Plan
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Posisjon
+Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Mappe
 Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
 Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
@@ -769,7 +768,6 @@ Sakarkiv.Presedens "presedens 0..*" *--> "saksmappe 0..*" Sakarkiv.Saksmappe
 Arkivstruktur.Registrering "registrering 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Registrering --* "korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
-Arkivstruktur.Registrering --* "korrespondansepart 1..*" Arkivstruktur.Korrespondansepart
 Arkivstruktur.Registrering --* "merknad 0..*" Arkivstruktur.Merknad
 Arkivstruktur.Registrering --* "part 0..*" Arkivstruktur.Part
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat

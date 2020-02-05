@@ -3,7 +3,7 @@ class Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel <Nasjonalidentifikator> {
   +kommunenummer : string
   +gaardsnummer : integer
   +bruksnummer : integer
-  +festenummer : string [0..1]
-  +seksjonsnummer : string [0..1]
+  +festenummer : integer [0..1]
+  +seksjonsnummer : integer [0..1]
 }
 @enduml
