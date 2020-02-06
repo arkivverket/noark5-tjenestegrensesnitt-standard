@@ -1591,7 +1591,7 @@ XSD](https://www.w3.org/TR/xmlschema-2/#built-in-datatypes):
 
 Det er ingen begresning på hvilke verdier som kan lages i integer og
 decimal, dvs.  de har ingen fast bitlengde og oppløsning.  Det er
-heller ingen begresning på lengden på streng og uri.
+heller ingen begrensning på lengden på streng og uri.
 
 For mapper som støtter virksomhetsspesifikke metadata, så skal GET på
 ny-mappe returnere feltet virksomhetsspesifikkeMetadata, der verdien
