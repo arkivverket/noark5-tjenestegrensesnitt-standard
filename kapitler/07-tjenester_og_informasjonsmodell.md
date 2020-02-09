@@ -2840,7 +2840,7 @@ Table: Attributter
 | **Kodenavn**  | **Merknad** | **Multipl.** | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
 | Klient        | Valgfri     |              | KLI      |          |
-| Pårørende     | Valgfri     |              | PÅ       |          |
+| Pårørende     | Valgfri     |              | PAA      |          |
 | Formynder     | Valgfri     |              | FORM     |          |
 | Advokat       | Valgfri     |              | ADV      |          |
 
