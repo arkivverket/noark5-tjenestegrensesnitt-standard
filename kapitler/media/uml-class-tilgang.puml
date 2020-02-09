@@ -1,0 +1,14 @@
+@startuml
+skinparam nodesep 100
+class Admin.Tilgang {
+  +systemID : SystemID [0..1]
+  +rolle : string
+  +tilgangskategori : Tilgangskategori
+  +referanseArkivenhet : SystemID [0..1]
+  +tilgangsrestriksjon : Tilgangsrestriksjon [0..1]
+  +les : boolean
+  +ny : boolean
+  +endre : boolean
+  +slett : boolean
+}
+@enduml

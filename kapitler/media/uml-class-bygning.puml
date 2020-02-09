@@ -1,0 +1,8 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.NasjonaleIdentifikatorer.Bygning <Nasjonalidentifikator> {
+  +bygningsnummer : integer
+  +endringsloepenummer : integer [0..1]
+}
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Bygning
+@enduml

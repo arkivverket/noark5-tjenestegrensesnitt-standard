@@ -1,0 +1,13 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Konvertering {
+  +systemID : SystemID [0..1]
+  +konvertertDato : datetime
+  +konvertertAv : string
+  +konvertertFraFormat : string
+  +konvertertTilFormat : string
+  +konverteringsverktoey : string [0..1]
+  +konverteringskommentar : string [0..1]
+}
+Arkivstruktur.Dokumentobjekt o-- "konvertering 0..*" Arkivstruktur.Konvertering
+@enduml

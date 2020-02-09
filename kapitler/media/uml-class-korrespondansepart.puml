@@ -1,0 +1,12 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Korrespondansepart {
+  +systemID : SystemID [0..1]
+  +korrespondanseparttype : Korrespondanseparttype
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+Arkivstruktur.Korrespondansepart "korrespondansepart 0..*" *-- Arkivstruktur.Registrering
+Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartEnhet
+Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartIntern
+Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartPerson
+@enduml

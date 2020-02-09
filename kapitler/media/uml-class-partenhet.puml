@@ -1,0 +1,12 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.PartEnhet <Part> {
+  +enhetsidentifikator : Enhetsidentifikator [0..1]
+  +navn : string
+  +forretningsadresse : EnkelAdresse [0..1]
+  +postadresse : EnkelAdresse [0..1]
+  +kontaktinformasjon : Kontaktinformasjon [0..1]
+  +kontaktperson : string [0..1]
+}
+Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
+@enduml

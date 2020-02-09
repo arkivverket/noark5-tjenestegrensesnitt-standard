@@ -1,0 +1,10 @@
+@startuml
+skinparam nodesep 100
+class LoggingOgSporing.Hendelseslogg <Endringslogg> {
+  +hendelsetype : Hendelsetype
+  +beskrivelse : string [0..1]
+  +hendelseDato : datetime
+}
+Arkivstruktur.Arkivenhet "0..1" o-- "logg 0..*" LoggingOgSporing.Hendelseslogg
+LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
+@enduml

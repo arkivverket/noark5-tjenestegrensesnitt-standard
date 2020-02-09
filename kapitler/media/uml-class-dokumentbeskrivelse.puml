@@ -1,0 +1,30 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
+  +dokumenttype : Dokumenttype
+  +dokumentstatus : Dokumentstatus
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +forfatter : string [0..*]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..1]
+  +tilknyttetRegistreringSom : TilknyttetRegistreringSom
+  +dokumentnummer : integer
+  +tilknyttetDato : datetime
+  +tilknyttetAv : string [0..1]
+  +referanseTilknyttetAv : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +utfoertKassasjon : UtfoertKassasjon [0..1]
+  +sletting : Sletting [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+  +elektroniskSignatur : ElektroniskSignatur [0..1]
+  +eksternReferanse : string [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Dokumentbeskrivelse "dokumentbeskrivelse 1" o--> "dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
+Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Part {
+  +systemID : SystemID [0..1]
+  +partRolle : PartRolle
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Mappe
+Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Registrering
+Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
+Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
+@enduml

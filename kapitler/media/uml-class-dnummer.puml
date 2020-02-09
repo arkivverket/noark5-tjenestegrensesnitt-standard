@@ -1,0 +1,7 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.NasjonaleIdentifikatorer.DNummer <Personidentifikator> {
+  +dNummer : string
+}
+Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.DNummer
+@enduml

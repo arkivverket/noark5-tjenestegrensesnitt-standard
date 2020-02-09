@@ -1,0 +1,22 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Klasse <Arkivenhet> {
+  +klasseID : string
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +noekkelord : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +skjerming : Skjerming [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +gradering : Gradering [0..1]
+}
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klasse
+Arkivstruktur.Klasse "klasse 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+Arkivstruktur.Klasse "klasse 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Klasse "klasse 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Klasse "overklasse 0..1" o-- "underklasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Klasse "sekundaerklassifikasjon 0..*" *-- Sakarkiv.Saksmappe
+Arkivstruktur.Klassifikasjonssystem "klassifikasjonssystem 0..1" o--> "klasse 0..*" Arkivstruktur.Klasse
+@enduml

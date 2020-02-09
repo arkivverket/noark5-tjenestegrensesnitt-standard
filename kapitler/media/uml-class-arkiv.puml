@@ -1,0 +1,17 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Arkiv <Arkivenhet> {
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +arkivstatus : Arkivstatus [0..1]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+}
+Arkivstruktur.Arkiv "arkiv 0..*" o--> "arkivskaper 1..*" Arkivstruktur.Arkivskaper
+Arkivstruktur.Arkiv "arkiv 1" o--> "arkivdel 0..*" Arkivstruktur.Arkivdel
+Arkivstruktur.Arkiv "overarkiv 0..1" o-- "underarkiv 0..*" Arkivstruktur.Arkiv
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkiv
+@enduml

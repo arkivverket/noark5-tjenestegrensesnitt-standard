@@ -1,0 +1,21 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Arkivenhet {
+  +systemID : SystemID [0..1]
+  +oppdatertDato : datetime [0..1]
+  +opprettetDato : datetime [0..1]
+  +opprettetAv : string [0..1]
+  +oppdatertAv : string [0..1]
+  +referanseOppdatertAv : SystemID [0..1]
+  +referanseOpprettetAv : SystemID [0..1]
+}
+Arkivstruktur.Arkivenhet "0..1" o-- "logg 0..*" LoggingOgSporing.Hendelseslogg
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkiv
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivdel
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivskaper
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klasse
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
+@enduml

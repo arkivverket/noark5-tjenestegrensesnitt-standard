@@ -1,0 +1,16 @@
+@startuml
+skinparam nodesep 100
+class Sakarkiv.Dokumentflyt {
+  +systemID : SystemID [0..1]
+  +flytTil : string
+  +referanseFlytTil : SystemID [0..1]
+  +flytFra : string
+  +referanseFlytFra : SystemID [0..1]
+  +flytMottattDato : datetime
+  +flytSendtDato : datetime
+  +flytStatus : FlytStatus
+  +flytMerknad : string [0..1]
+}
+Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Arkivnotat
+Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Journalpost
+@enduml

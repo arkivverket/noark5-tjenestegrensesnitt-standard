@@ -1,0 +1,16 @@
+@startuml
+skinparam nodesep 100
+class Admin.AdministrativEnhet {
+  +systemID : SystemID [0..1]
+  +administrativEnhetNavn : string
+  +kortnavn : string [0..1]
+  +opprettetDato : datetime
+  +opprettetAv : string [0..1]
+  +avsluttetDato : datetime [0..1]
+  +administrativEnhetsstatus : string
+  +referanseOverordnetEnhet : SystemID [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+Admin.AdministrativEnhet "administrativenhet 0..*" *--> "bruker 0..*" Admin.Bruker
+Admin.AdministrativEnhet "enhet 0..*" *--> "bruker 0..*" Admin.Bruker
+@enduml

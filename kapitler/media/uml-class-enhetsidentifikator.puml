@@ -1,0 +1,7 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator <Nasjonalidentifikator> {
+  +organisasjonsnummer : string
+}
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
+@enduml

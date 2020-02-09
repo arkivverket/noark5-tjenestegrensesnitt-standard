@@ -1,0 +1,31 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Mappe <Arkivenhet> {
+  +mappeID : string [0..1]
+  +mappetype : Mappetype [0..1]
+  +tittel : string
+  +offentligTittel : string [0..1]
+  +beskrivelse : string [0..1]
+  +noekkelord : string [0..*]
+  +dokumentmedium : Dokumentmedium [0..1]
+  +oppbevaringssted : string [0..*]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+  +kassasjon : Kassasjon [0..1]
+  +skjerming : Skjerming [0..1]
+  +gradering : Gradering [0..1]
+  +referanseForelderMappe : SystemID [0..1]
+  +virksomhetsspesifikkeMetadata : any [0..1]
+}
+Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
+Arkivstruktur.Klasse "klasse 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe "mappe 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Mappe "overmappe 0..1" o-- "undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
+Arkivstruktur.Mappe o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
+Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Mappe
+Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Mappe
+@enduml
