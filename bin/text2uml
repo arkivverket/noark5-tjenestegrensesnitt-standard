@@ -128,11 +128,13 @@ with open('kapitler/07-tjenester_og_informasjonsmodell.md') as f:
                 process('o--', f[1:])
             elif '**Association** (Source → Destination)' == f[0] :
                 process('*--', f[1:])
-            # FIXME check if these two are correct
+            elif '**Association** (Destination → Source)' == f[0] :
+                # Swap order to normalise relations and avoid
+                # duplicate links
+                process('*--', f[2:0:-1])
+            # FIXME check if this one are correct
             elif '**Association** (Bi-Directional)' == f[0] :
                 process('*-->', f[1:])
-            elif '**Association** (Destination → Source)' == f[0] :
-                process('--*', f[1:])
             else:
                 print("/* error: unknown relation %s in line %d */" % (f[0], linenum))
 
