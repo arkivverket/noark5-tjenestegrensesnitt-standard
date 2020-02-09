@@ -740,13 +740,13 @@ Arkivstruktur.Klasse "klasse 0..1" o--> "registrering 0..*" Arkivstruktur.Regist
 Arkivstruktur.Klasse "overklasse 0..1" o-- "underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "sekundaerklassifikasjon 0..*" *-- Sakarkiv.Saksmappe
 Arkivstruktur.Klassifikasjonssystem "klassifikasjonssystem 0..1" o--> "klasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Korrespondansepart "korrespondansepart 0..*" *-- Arkivstruktur.Registrering
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartEnhet
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartIntern
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartPerson
 Arkivstruktur.Mappe "mappe 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "overmappe 0..1" o-- "undermappe 0..*" Arkivstruktur.Mappe
-Arkivstruktur.Mappe --* "part 0..*" Arkivstruktur.Part
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Mappe o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
 Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
@@ -760,6 +760,7 @@ Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Posisjon
 Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Mappe
+Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Registrering
 Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
 Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
 Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.DNummer
@@ -768,9 +769,6 @@ Sakarkiv.Presedens "presedens 0..*" *--> "journalpost 0..*" Sakarkiv.Journalpost
 Sakarkiv.Presedens "presedens 0..*" *--> "saksmappe 0..*" Sakarkiv.Saksmappe
 Arkivstruktur.Registrering "registrering 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
-Arkivstruktur.Registrering --* "korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
-Arkivstruktur.Registrering --* "merknad 0..*" Arkivstruktur.Merknad
-Arkivstruktur.Registrering --* "part 0..*" Arkivstruktur.Part
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 Arkivstruktur.Registrering o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
