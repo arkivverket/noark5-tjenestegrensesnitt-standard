@@ -1,0 +1,14 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Merknad {
+  +systemID : SystemID [0..1]
+  +merknadstekst : string
+  +merknadstype : Merknadstype [0..1]
+  +merknadsdato : datetime
+  +merknadRegistrertAv : string [0..1]
+  +referanseMerknadRegistrertAv : SystemID [0..1]
+}
+Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Mappe
+Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Registrering
+@enduml

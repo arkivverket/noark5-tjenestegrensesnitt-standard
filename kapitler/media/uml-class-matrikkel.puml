@@ -1,0 +1,11 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel <Nasjonalidentifikator> {
+  +kommunenummer : string
+  +gaardsnummer : integer
+  +bruksnummer : integer
+  +festenummer : integer [0..1]
+  +seksjonsnummer : integer [0..1]
+}
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
+  +klassifikasjonstype : Klassifikasjonstype [0..1]
+  +tittel : string
+  +beskrivelse : string [0..1]
+  +avsluttetDato : datetime [0..1]
+  +avsluttetAv : string [0..1]
+  +referanseAvsluttetAv : SystemID [0..1]
+}
+Arkivstruktur.Arkivdel "arkivdel 1..*" o--> "klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Arkivdel o-- "sekundaerklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
+Arkivstruktur.Klassifikasjonssystem "klassifikasjonssystem 0..1" o--> "klasse 0..*" Arkivstruktur.Klasse
+@enduml

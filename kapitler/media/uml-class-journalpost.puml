@@ -1,0 +1,26 @@
+@startuml
+skinparam nodesep 100
+class Sakarkiv.Journalpost <Registrering> {
+  +journalaar : integer [0..1]
+  +journalsekvensnummer : integer [0..1]
+  +journalpostnummer : integer
+  +journalposttype : Journalposttype
+  +journalstatus : Journalstatus
+  +journaldato : date
+  +dokumentetsDato : date [0..1]
+  +mottattDato : datetime [0..1]
+  +sendtDato : date [0..1]
+  +forfallsdato : date [0..1]
+  +offentlighetsvurdertDato : date [0..1]
+  +antallVedlegg : integer [0..1]
+  +utlaantDato : date [0..1]
+  +utlaantTil : string [0..1]
+  +referanseUtlaantTil : SystemID [0..1]
+  +journalenhet : string [0..1]
+  +elektroniskSignatur : ElektroniskSignatur [0..1]
+}
+Sakarkiv.Avskrivning "avskrivning 0..*" *-- Sakarkiv.Journalpost
+Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Journalpost
+Sakarkiv.Presedens "presedens 0..*" *--> "journalpost 0..*" Sakarkiv.Journalpost
+Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
+@enduml

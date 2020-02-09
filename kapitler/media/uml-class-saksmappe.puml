@@ -1,0 +1,20 @@
+@startuml
+skinparam nodesep 100
+class Sakarkiv.Saksmappe <Mappe> {
+  +saksaar : integer
+  +sakssekvensnummer : integer
+  +saksdato : date
+  +administrativEnhet : string [0..1]
+  +referanseAdministrativEnhet : SystemID [0..1]
+  +saksansvarlig : string
+  +referanseSaksansvarlig : SystemID [0..1]
+  +journalenhet : string [0..1]
+  +saksstatus : Saksstatus
+  +utlaantDato : date [0..1]
+  +utlaantTil : string [0..1]
+  +referanseUtlaantTil : SystemID [0..1]
+}
+Arkivstruktur.Klasse "sekundaerklassifikasjon 0..*" *-- Sakarkiv.Saksmappe
+Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
+Sakarkiv.Presedens "presedens 0..*" *--> "saksmappe 0..*" Sakarkiv.Saksmappe
+@enduml

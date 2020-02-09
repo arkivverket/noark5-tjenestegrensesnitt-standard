@@ -1,0 +1,10 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.NasjonaleIdentifikatorer.Plan <Nasjonalidentifikator> {
+  +kommunenummer : string [0..1]
+  +fylkesnummer : string [0..1]
+  +landkode : Land [0..1]
+  +planidentifikasjon : string
+}
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Plan
+@enduml

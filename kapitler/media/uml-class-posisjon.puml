@@ -1,0 +1,10 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.NasjonaleIdentifikatorer.Posisjon <Nasjonalidentifikator> {
+  +koordinatsystem : Koordinatsystem
+  +x : decimal
+  +y : decimal
+  +z : decimal [0..1]
+}
+Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Posisjon
+@enduml

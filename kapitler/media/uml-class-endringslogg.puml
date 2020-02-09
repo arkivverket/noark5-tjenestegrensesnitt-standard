@@ -1,0 +1,14 @@
+@startuml
+skinparam nodesep 100
+class LoggingOgSporing.Endringslogg {
+  +systemID : SystemID [0..1]
+  +referanseArkivenhet : SystemID [0..1]
+  +referanseMetadata : string [0..1]
+  +endretDato : datetime
+  +endretAv : string
+  +referanseEndretAv : SystemID
+  +tidligereVerdi : string [0..1]
+  +nyVerdi : string [0..1]
+}
+LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
+@enduml

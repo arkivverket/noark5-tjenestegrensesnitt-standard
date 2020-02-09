@@ -1,0 +1,11 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.KorrespondansepartPerson <Korrespondansepart> {
+  +personidentifikator : Personidentifikator [0..*]
+  +navn : string
+  +postadresse : EnkelAdresse [0..1]
+  +bostedsadresse : EnkelAdresse [0..1]
+  +kontaktinformasjon : Kontaktinformasjon [0..1]
+}
+Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartPerson
+@enduml

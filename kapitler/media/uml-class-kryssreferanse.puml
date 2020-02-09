@@ -1,0 +1,8 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Kryssreferanse <Arkivenhet> {
+}
+Arkivstruktur.Klasse "klasse 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+Arkivstruktur.Mappe "mappe 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+Arkivstruktur.Registrering "registrering 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+@enduml

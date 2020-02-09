@@ -1,0 +1,10 @@
+@startuml
+skinparam nodesep 100
+class Arkivstruktur.Arkivskaper <Arkivenhet> {
+  +arkivskaperID : string
+  +arkivskaperNavn : string
+  +beskrivelse : string [0..1]
+}
+Arkivstruktur.Arkiv "arkiv 0..*" o--> "arkivskaper 1..*" Arkivstruktur.Arkivskaper
+Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivskaper
+@enduml

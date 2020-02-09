@@ -127,6 +127,8 @@ funksjon for "arkivering uten journalføring".
 
 #### Arkiv
 
+![](./media/uml-class-arkiv.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Arkivenhet***
@@ -211,6 +213,8 @@ Table: Restriksjoner
 | tittel_M020          | tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert |
 
 #### Arkivdel
+
+![](./media/uml-class-arkivdel.png)
 
 *Type:* ***Class***
 
@@ -388,6 +392,8 @@ Table: Restriksjoner
 
 #### Arkivenhet
 
+![](./media/uml-class-arkivenhet.png)
+
 *Type:* ***Class***
 
 *Arver:* 
@@ -444,6 +450,8 @@ Table: Restriksjoner
 
 #### Arkivskaper
 
+![](./media/uml-class-arkivskaper.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Arkivenhet***
@@ -484,6 +492,8 @@ Table: Attributter
 | beskrivelse | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string |
 
 #### Registrering
+
+![](./media/uml-class-registrering.png)
 
 *Type:* ***Class***
 
@@ -613,6 +623,8 @@ Table: Restriksjoner
 
 #### Dokumentbeskrivelse
 
+![](./media/uml-class-dokumentbeskrivelse.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Arkivenhet***
@@ -699,6 +711,8 @@ Table: Restriksjoner
 
 
 #### Dokumentobjekt
+
+![](./media/uml-class-dokumentobjekt.png)
 
 *Type:* ***Class***
 
@@ -906,6 +920,8 @@ Table: Attributter
 
 #### Klasse
 
+![](./media/uml-class-klasse.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Arkivenhet***
@@ -992,6 +1008,8 @@ Table: Restriksjoner
 
 #### Klassifikasjonssystem
 
+![](./media/uml-class-klassifikasjonssystem.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Arkivenhet***
@@ -1075,6 +1093,8 @@ Table: Attributter
 
 #### Konvertering
 
+![](./media/uml-class-konvertering.png)
+
 *Type:* ***Class***
 
 *Arver:* 
@@ -1123,6 +1143,8 @@ Table: Restriksjoner
 
 #### Korrespondansepart
 
+![](./media/uml-class-korrespondansepart.png)
+
 *Type:* ***Class***
 
 *Arver:* 
@@ -1166,6 +1188,8 @@ Table: Restriksjoner
 
 #### KorrespondansepartEnhet
 
+![](./media/uml-class-korrespondansepartenhet.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Korrespondansepart***
@@ -1197,6 +1221,8 @@ Table: Attributter
 
 #### KorrespondansepartIntern
 
+![](./media/uml-class-korrespondansepartintern.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Korrespondansepart***
@@ -1225,6 +1251,8 @@ Table: Attributter
 | referanseSaksbehandler          | referanse til Bruker sin systemID             | \[0..1\]     |          | SystemID |
 
 #### KorrespondansepartPerson
+
+![](./media/uml-class-korrespondansepartperson.png)
 
 *Type:* ***Class***
 
@@ -1255,6 +1283,8 @@ Table: Attributter
 | kontaktinformasjon     |             | \[0..1\]     |          | Kontaktinformasjon |
 
 #### Kryssreferanse
+
+![](./media/uml-class-kryssreferanse.png)
 
 *Type:* ***Class***
 
@@ -1412,6 +1442,8 @@ Table: Relasjonsnøkler
 
 #### Mappe
 
+![](./media/uml-class-mappe.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Arkivenhet***
@@ -1560,6 +1592,8 @@ Table: Restriksjoner
 
 #### Merknad
 
+![](./media/uml-class-merknad.png)
+
 *Type:* ***Class***
 
 *Arver:* 
@@ -1608,6 +1642,8 @@ Table: Restriksjoner
 
 #### Part
 
+![](./media/uml-class-part.png)
+
 *Type:* ***Class***
 
 *Arver:* 
@@ -1655,6 +1691,8 @@ Table: Restriksjoner
 
 #### PartEnhet
 
+![](./media/uml-class-partenhet.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Part***
@@ -1685,6 +1723,8 @@ Table: Attributter
 | kontaktperson           |             | \[0..1\]     |          | string             |
 
 #### PartPerson
+
+![](./media/uml-class-partperson.png)
 
 *Type:* ***Class***
 
@@ -1837,6 +1877,8 @@ Table: Restriksjoner
 
 #### NasjonaleIdentifikatorer 
 
+![](./media/uml-class-nasjonalidentifikator.png)
+
 ![Nasjonale identifikatorer - (diagram)](./media/uml-bruken-av-nasjonalidentifikator.png)
 
 Nasjonale identifikatorer gjør tjenestegrensesnittet kompatibelt med
@@ -1881,6 +1923,8 @@ Table: Attributter
 
 ##### Bygning
 
+![](./media/uml-class-bygning.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Nasjonalidentifikator***
@@ -1908,6 +1952,8 @@ Table: Attributter
 
 ##### Enhetsidentifikator
 
+![](./media/uml-class-enhetsidentifikator.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Nasjonalidentifikator***
@@ -1925,6 +1971,8 @@ Table: Attributter
 | organisasjonsnummer     |             | \[1..1\]     |          | string   |
 
 ##### Matrikkel
+
+![](./media/uml-class-matrikkel.png)
 
 *Type:* ***Class***
 
@@ -1959,6 +2007,8 @@ Table: Attributter
 
 ##### Personidentifikator
 
+![](./media/uml-class-personidentifikator.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Nasjonalidentifikator***
@@ -1987,6 +2037,8 @@ Table: Relasjoner
 
 ##### Foedselsnummer
 
+![](./media/uml-class-foedselsnummer.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Personidentifikator***
@@ -2013,6 +2065,8 @@ Table: Attributter
 
 
 ##### DNummer
+
+![](./media/uml-class-dnummer.png)
 
 *Type:* ***Class***
 
@@ -2045,6 +2099,8 @@ Table: Attributter
 | dNummer  |             | \[1..1\]     |          | string   |
 
 ##### Plan
+
+![](./media/uml-class-plan.png)
 
 *Type:* ***Class***
 
@@ -2114,6 +2170,8 @@ Table: Attributter
 | WGS84                   |             |              | EPSG:4326  |          |
 
 ##### Posisjon
+
+![](./media/uml-class-posisjon.png)
 
 *Type:* ***Class***
 
@@ -3136,6 +3194,8 @@ Utvidelse for sakarkiv metadata
 
 #### Avskrivning
 
+![](./media/uml-class-avskrivning.png)
+
 *Type:* ***Class***
 
 *Arver:* 
@@ -3186,6 +3246,8 @@ Table: Restriksjoner
 | M618 avskrevetAv: Kan ikke endres      |             |
 
 #### Dokumentflyt
+
+![](./media/uml-class-dokumentflyt.png)
 
 *Type:* ***Class***
 
@@ -3242,6 +3304,8 @@ Table: Restriksjoner
 
 #### Arkivnotat
 
+![](./media/uml-class-arkivnotat.png)
+
 *Type:* ***Class***
 
 *Arver:* ***Registrering***
@@ -3279,6 +3343,8 @@ Table: Attributter
 | referanseUtlaantTil      | M309          | \[0..1\]      |           | SystemID  |
 
 #### Journalpost
+
+![](./media/uml-class-journalpost.png)
 
 *Type:* ***Class***
 
@@ -3378,6 +3444,8 @@ Table: Restriksjoner
 
 #### Presedens
 
+![](./media/uml-class-presedens.png)
+
 *Type:* ***Class***
 
 *Arver:* 
@@ -3453,6 +3521,8 @@ Table: Restriksjoner
 | M603 avsluttetAv: Skal ikke kunne endres. Obligatorisk dersom arkivenheten er avsluttet.           |             |
 
 #### Saksmappe
+
+![](./media/uml-class-saksmappe.png)
 
 *Type:* ***Class***
 
@@ -3573,6 +3643,8 @@ brukere etter innlogging:
 
 #### AdministrativEnhet
 
+![](./media/uml-class-administrativenhet.png)
+
 *Type:* ***Class***
 
 *Arver:* 
@@ -3619,6 +3691,8 @@ Table: Restriksjoner
 | Ny - navn skal ikke endres. Hvis enhet får nytt navn så opprettes ny enhet med ny systemID. Den gamle kan da settes avsluttet dato på. |             |
 
 #### Bruker
+
+![](./media/uml-class-bruker.png)
 
 *Type:* ***Class***
 
@@ -3670,6 +3744,8 @@ Table: Restriksjoner
 
 #### Tilgang
 
+![](./media/uml-class-tilgang.png)
+
 *Type:* ***Class***
 
 *Arver:* 
@@ -3719,6 +3795,8 @@ Skjema for logging og sporing
 
 #### Endringslogg
 
+![](./media/uml-class-endringslogg.png)
+
 *Type:* ***Class***
 
 *Arver:* 
@@ -3751,6 +3829,8 @@ Table: Attributter
 | nyVerdi                 | M685                              | \[0..1\]     |          | string   |
 
 #### Hendelseslogg
+
+![](./media/uml-class-hendelseslogg.png)
 
 *Type:* ***Class***
 
