@@ -101,7 +101,12 @@ with open('kapitler/07-tjenester_og_informasjonsmodell.md') as f:
             f = re.split(' *\| *', line)[1:-1]
 #            print("'", f)
 #            print(len(f))
-            assert 5 == len(f)
+            if 5 != len(f):
+                msg = "' error: number of columns in line %s is %d, not 5" % (
+                    linenum, len(f),
+                )
+                print(msg)
+                raise ValueError(msg)
             if -1 == f[0].find('**Navn**') \
                and -1 == f[0].find('**Kodenavn**') \
                and -1 == f[0].find('--'):
@@ -136,7 +141,7 @@ with open('kapitler/07-tjenester_og_informasjonsmodell.md') as f:
             elif '**Association** (Bi-Directional)' == f[0] :
                 process('*-->', f[1:])
             else:
-                print("/* error: unknown relation %s in line %d */" % (f[0], linenum))
+                print("' error: unknown relation %s in line %d" % (f[0], linenum))
 
 def c2full(c):
     if c in classes:
