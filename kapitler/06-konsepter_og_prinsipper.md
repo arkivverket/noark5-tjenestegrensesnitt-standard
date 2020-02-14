@@ -1203,7 +1203,7 @@ sjekksum stemmer overens med den overførte filen.  Hvis tjeneren etter
 opplasting ser at noen av verdiene avledet fra opplastet fil ikke
 stemmer overens med verdiene i dokumentobjekt-entiteten, så returneres
 statuskode 400 Bad Request. Hvis den opplastede filen har et format
-tjeneren ikke kjenner igjen, så settes format til 'UNKNOWN'. Når
+tjeneren ikke kjenner igjen, så settes formatkoden til 'av/0'. Når
 filopplasting er fullført setter tjeneren de feltene i dokumentobjekt
 som ikke var satt ved oppretting av dokumentobjekt-entiteten, det vil
 si utleder «format», «mimeType», «filnavn», «sjekksum», og
