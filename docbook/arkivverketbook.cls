@@ -20,6 +20,40 @@
 
 \makeatletter
 
+%
+% Customize the titlepage: remove the date, place the publisher name, and
+% load a specific file for the verso page, containing some legal notices
+%
+\def\maketitle{%
+  \titlerecto%
+  \titleverso}
+
+\def\titlerecto{\begin{titlepage}%
+  \null\vfil
+  \vskip 40\p@
+  \begin{center}%
+    {\LARGE \@title \par}%
+    \vskip 1em%
+    {\Large
+     \lineskip .75em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 0.5em%
+    \includegraphics[height=45em,keepaspectratio=true]{media/Noark5v5.png}%
+    \vskip 0.5em%
+    {\large \DBKpublishername \par}
+    \vskip .75em%
+    {\large \DBKpublisheraddress \par}%
+  \end{center}\par
+  \vfil\null
+  \end{titlepage}}%
+
+\def\titleverso{%
+  \def\titlepagefile{titlepg.input.tex}
+  \IfFileExists{\titlepagefile}{\input{\titlepagefile}}{}
+}%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % From

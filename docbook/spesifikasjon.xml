@@ -5,7 +5,21 @@
 
 <book id="index" lang="nb">
   <bookinfo>
-  <title>Noark 5 Tjenestegrensesnitt</title>
+  <title>Tjenestegrensesnitt versjon 1.0</title>
+  <subtitle>Noark 5 versjon 5.0</subtitle>
+  <pubdate>2019-07-05</pubdate>
+    <edition>1</edition>
+    <releaseinfo>git-utgaven</releaseinfo>
+    <authorgroup>
+      <author>
+	<surname>Avdeling for Dokumentasjonsforvaltning</surname>
+      </author>
+    </authorgroup>
+    <publisher>
+      <publishername>Arkivverket</publishername>
+      <address><city>Oslo</city></address>
+    </publisher>
+
     <legalnotice>
       <para>Denne spesifikasjonen faller inn under unntakene i
       åndsverkslovens § 9, og er ikke opphavsrettslig vernet.</para>
