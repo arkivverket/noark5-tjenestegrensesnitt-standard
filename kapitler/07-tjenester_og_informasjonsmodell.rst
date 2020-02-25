@@ -3362,7 +3362,6 @@ innenfor året, f.eks. 2011/3869.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/undermappe/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/
- * - https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
@@ -3400,12 +3399,6 @@ også være tilgjengelig via Mappe-instanser.
    - [0..1] [1..1]
    -
    - string
- * - mappetype
-   - angir mappetype som blant annet kan brukes som hint til hva som
-     ligger i virksomhetsspesifikkemetadata
-   - [0..1]
-   -
-   - Mappetype
  * - tittel
    - Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres
      manuelt eller hentes automatisk fra innholdet i
@@ -4784,8 +4777,6 @@ Arkivstruktur-pakken:
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-klassifikasjonstype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/koordinatsystem/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-koordinatsystem/
- * - https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/
- * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-mappetype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/merknadstype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-merknadstype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/skjermingdokument/
@@ -5645,21 +5636,6 @@ blant annet `https://no.wikipedia.org/wiki/ISO\_3166-1\_alfa-2 <https://no.wikip
 
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/land/
-
-Mappetype
-^^^^^^^^^
-
-*Type:* **Class «codelist»**
-
-*Arver:*
-
-Åpen kodeliste
-
-.. list-table:: Relasjonsnøkler
-   :header-rows: 1
-
- * - **Verdi**
- * - https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/
 
 Merknadstype
 ^^^^^^^^^^^^
