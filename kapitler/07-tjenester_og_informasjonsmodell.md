@@ -1500,7 +1500,6 @@ Table: Relasjonsnøkler
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/          |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/undermappe/            |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/             |
-| https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/                  |
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
 også være tilgjengelig via Mappe-instanser.
@@ -1518,7 +1517,6 @@ Table: Attributter
 | **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | mappeID                       | Definisjon: Entydig identifikasjon av mappen innenfor det arkivet mappen tilhører. Kilde: Registreres automatisk av systemet etter interne regler. Kommentar: Ulike arkiver innenfor samme arkivsystem, kan inneholde en eller flere av de samme kodene. Koden kan være rent numerisk, men kan også ha en logisk oppbygning. Er en videreføring av kombinasjonen saksår og sakssekvensnummer (oftest bare kalt &quot;saksnummer&quot;) i Noark 4, som fortsatt er obligatorisk identifikasjon på saksmappe. I slike tilfeller skal verdien i mappeID også kopieres til de to metadataelementene M011 saksaar og M012 sakssekvensnummer i saksmappen. M003 | \[0..1\] | | string |
-| mappetype                     | angir mappetype som blant annet kan brukes som hint til hva som ligger i virksomhetsspesifikkemetadata| \[0..1\] | | Mappetype |
 | tittel                        | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
 | offentligTittel               | Definisjon: Offentlig tittel på arkivenheten, ord som skal skjermes er fjernet fra innholdet i tittelen (erstattet med \*\*\*\*\*\*) . Kommentarer: I løpende og offentlig journaler skal også offentligTittel være med dersom ord i tittelfeltet skal skjermes. M025 | \[0..1\] | | string | 
 | beskrivelse                   | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt) M021 | \[0..1\] | | string | 
@@ -2163,7 +2161,6 @@ Arkivstruktur-pakken:
 | https://rel.arkivverket.no/noark5/v5/api/metadata/graderingskode/                     |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/kassasjonsvedtak/                   |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/klassifikasjonstype/                |
-| https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/                          |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/merknadstype/                       |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/skjermingdokument/                  |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/skjermingmetadata/                  |
@@ -2731,20 +2728,6 @@ Table: Relasjonsnøkler
 | **Verdi**                                               |
 | ------------------------------------------------------- |
 | https://rel.arkivverket.no/noark5/v5/api/metadata/land/ |
-
-#### Mappetype
-
-*Type:* ***Class «codelist»***
-
-*Arver:* 
-
-Åpen kodeliste
-
-Table: Relasjonsnøkler
-
-| **Verdi**                                                    |
-| ------------------------------------------------------------ |
-| https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/ |
 
 #### Merknadstype
 
