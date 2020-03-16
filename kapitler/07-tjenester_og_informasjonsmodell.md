@@ -60,7 +60,6 @@ støtter Arkivstruktur-pakken:
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivskaper/           |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/   |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentobjekt/        |
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/hendelseslogg/         |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/                |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klassifikasjonssystem/ |
 | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/                 |
@@ -402,10 +401,10 @@ identiske arkivenheter har ulik systemID.
 
 Table: Relasjoner
 
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
+| **Relasjon**                                 | **Kilde**                                                | **Mål**                | **Merknad** |
+| -------------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
 | **Generalization** (Source → Destination)  | Arkivdel                                                 | Arkivenhet             |             |
-| **Aggregation** (Destination → Source)     | logg 0..* Hendelseslogg                                  | 0..1 Arkivenhet        |             |
+| **Aggregation** (Destination → Source)     | endringslogg 0..* Endringslogg                           | 0..1 Arkivenhet        |             |
 | **Generalization** (Source → Destination)  | Klassifikasjonssystem                                    | Arkivenhet             |             |
 | **Generalization** (Source → Destination)  | Arkiv                                                    | Arkivenhet             |             |
 | **Generalization** (Source → Destination)  | Mappe                                                    | Arkivenhet             |             |
@@ -416,10 +415,10 @@ Table: Relasjoner
 
 Table: Relasjonsnøkler
 
-| **Verdi**                                                                |
-| ------------------------------------------------------------------------ |
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-hendelseslogg/ |
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/logg/             |
+| **Verdi**                                                                   |
+| --------------------------------------------------------------------------- |
+| https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-endringslogg/  |
+| https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/     |
 
 Table: Attributter
 
@@ -3708,9 +3707,10 @@ liste over relasjonsnøkler til de ulike entitetene som er
 tilgjengelig.  Følgende relasjonsnøkler skal listes opp fra en
 implementasjon som støtter LoggingOgSporing-pakken:
 
-| **Relasjonsnøkkel**                                                   |
-|-----------------------------------------------------------------------|
-| https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/       |
+| **Relasjonsnøkkel**                                                      |
+|--------------------------------------------------------------------------|
+| https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/  |
+| https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/hendelseslogg/ |
 
 Skjema for logging og sporing
 
@@ -3722,11 +3722,16 @@ Skjema for logging og sporing
 
 *Arver:* 
 
+Relasjonen tilbake aktuell Arkivenhet bruker relasjonsnøkkel for
+relevant under-entitet, og det er derfor ikke egen relasjonsnøkkel for
+denne relasjonen.
+
 Table: Relasjoner
 
-| **Relasjon**                              | **Kilde**                    | **Mål**          | **Merknad** |
-| ----------------------------------------- | ---------------------------- | ---------------- | ----------- |
-| **Generalization** (Source → Destination) | Hendelseslogg                | Endringslogg     |             |     
+| **Relasjon**                                | **Kilde**                      | **Mål**         | **Merknad** |
+| ------------------------------------------- | ------------------------------ | --------------- | ----------- |
+| **Aggregation** (Destination → Source)    | endringslogg 0..* Endringslogg | 0..1 Arkivenhet |             |
+| **Generalization** (Source → Destination) | Hendelseslogg                  | Endringslogg    |             |
 
 Table: Relasjonsnøkler
 
@@ -3757,19 +3762,18 @@ Table: Attributter
 
 Table: Relasjoner
 
-| **Relasjon**                             | **Kilde**                                                | **Mål**                | **Merknad** |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------- | ----------- |
-| **Aggregation** (Destination → Source)     | logg 0..* Hendelseslogg                                  | 0..1 Arkivenhet        |             |
-| **Generalization** (Source → Destination)  | Hendelseslogg                                            | Endringslogg           |             |
+| **Relasjon**                                | **Kilde**                                                | **Mål**                    | **Merknad** |
+| ------------------------------------------- | -------------------------------------------------------- | -------------------------- | ----------- |
+| **Generalization** (Source → Destination) | Hendelseslogg                                            | Endringslogg               |             |
 
 Table: Relasjonsnøkler
 
-| **Verdi**                                                                |
-| ------------------------------------------------------------------------ |
-| self                                                                     |
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/hendelseslogg/    |
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-hendelseslogg/ |
-| https://rel.arkivverket.no/noark5/v5/api/metadata/hendelsetype/          |
+| **Verdi**                                                                   |
+| --------------------------------------------------------------------------- |
+| self                                                                        |
+| https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/hendelseslogg/    |
+| https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-hendelseslogg/ |
+| https://rel.arkivverket.no/noark5/v5/api/metadata/hendelsetype/             |
 
 Table: Attributter
 
