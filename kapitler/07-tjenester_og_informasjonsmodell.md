@@ -3741,13 +3741,13 @@ Table: Attributter
 | **Navn**                | **Merknad**                       | **Multipl.** | **Kode** | **Type** |
 | ----------------------- | --------------------------------- | ------------ | -------- | -------- |
 | systemID                |                                   | \[0..1\]     |          | SystemID |
-| referanseArkivenhet     |                                   | \[0..1\]     |          | SystemID |
-| referanseMetadata       |                                   | \[0..1\]     |          | string   |
-| endretDato              |                                   | \[1..1\]     |          | datetime |
-| endretAv                |                                   | \[1..1\]     |          | string   |
+| referanseArkivenhet     | M680                              | \[0..1\]     |          | SystemID |
+| referanseMetadata       | M681                              | \[0..1\]     |          | string   |
+| endretDato              | M682                              | \[1..1\]     |          | datetime |
+| endretAv                | M683                              | \[1..1\]     |          | string   |
 | referanseEndretAv       | referanse til Bruker sin systemID | \[1..1\]     |          | SystemID |
-| tidligereVerdi          |                                   | \[0..1\]     |          | string   |
-| nyVerdi                 |                                   | \[0..1\]     |          | string   |
+| tidligereVerdi          | M684                              | \[0..1\]     |          | string   |
+| nyVerdi                 | M685                              | \[0..1\]     |          | string   |
 
 #### Hendelseslogg
 
