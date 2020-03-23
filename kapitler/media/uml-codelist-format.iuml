@@ -1,6 +1,7 @@
 @startuml
 class Kodelister.Format <<codelist>> {
-  +Ren tekst = fmt/111
+  +Ukjent format = av/0
+  +Ren tekst = x-fmt/111
   +TIFF versjon 6 = fmt/353
   +PDF/A 1a - ISO 19005-1:2005 = fmt/95
   +PDF/A 1b - ISO 19005-1:2005 = fmt/354
