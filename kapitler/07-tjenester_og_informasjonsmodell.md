@@ -1371,7 +1371,7 @@ henter mappen som har kryssreferansen. Dette vises i eksempelet under:
          }
        }
      }
-   ]
+   ],
    "_links": {
       ....
    }
