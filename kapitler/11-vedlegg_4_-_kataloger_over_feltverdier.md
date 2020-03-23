@@ -1,4 +1,4 @@
-# Vedlegg 4 - Kataloger over felles og velkjente feltverdier
+# Kataloger over felles og velkjente feltverdier
 
 For å sikre samvirke på tvers av systemer og leveradører, så er det
 nyttig med felles kataloger med verdier for kodelister og

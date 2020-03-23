@@ -1,4 +1,4 @@
-# Vedlegg 5 - Usynlige tegn
+# Usynlige tegn
 
 I denne versjonen av tjenestegrensesnitt-spesifikasjonen anses
 følgende tegn hentet fra Unicode i kategoriene «Space Separator» og

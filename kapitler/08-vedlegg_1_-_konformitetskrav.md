@@ -1,4 +1,4 @@
-# Vedlegg 1 – Konformitetskrav
+# Konformitetskrav
 
 Kravene i Noark5 v3.1 og v4.0 er lagt inn i konformitetsnivå for å gjøre
 det enklere å dokumentere løsning og anskaffe med korrekte krav. En del

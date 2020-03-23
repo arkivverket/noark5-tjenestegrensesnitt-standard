@@ -31,6 +31,7 @@ docbook: kapitler/*.md
 		-o docbook/$$(basename $$m .md).xml; \
 		sed -i 's/ colwidth="[0-9]*\*"//' docbook/$$(basename $$m .md).xml ; \
 	done
+	sed -i -e 's%<chapter%<appendix%' -e 's%</chapter%</appendix%' docbook/*-vedlegg*.xml
 DBLATEX_OPTS = \
 	-T simple \
 	-p docbook/pdf.xsl
