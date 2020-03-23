@@ -9,7 +9,7 @@
 |![](./media/uml-assosiasjoner-brukt-med-klasser.png) | Klasser kan knyttes sammen med ***assosiasjoner***. Assosiasjoner vises som streker mellom to klasser. En assosiasjon der begge ender er knytta til samme klasse kalles ***selv-assosiasjon***. Eksempel: Mappe kan ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like klasser. En assosiasjon kan være ***aggregering***. Symbolet er en strek mellom to klasser med åpen diamant i ene enden. Eksempel: Ei Mappe ***har*** Registrering(er). En registrering er en selvstendig enhet, som «overlever» selv om Mappa blir sletta. |
 |![](./media/uml-generalisering-brukt-med-klasser.png) | Assosiasjoner kan være ***generalisering/spesialisering***. Symbolet er en strek med en trekant i ene enden. Eksempel er Registrering som er en generalisering av Journalpost. En kan også si at Journalpost er en spesialisering av Registrering. I Registrering legges alle felles-kjennetegnene. Felleskjennetegnene arves så ned på Journalpost. Dette leses som Journalpost ***er en*** Registrering. Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor se at Registrering er en spesialisering av Arkivenhet, selv om klassen Arkivenhet ikke finnes i diagrammet. |
 |![](./media/uml-komposisjon-brukt-med-klasser.png) | En assosiasjon kan også være ***komposisjon***. Symbolet er en strek mellom to klasser med lukka diamant i den ene enden. En Registrering ***har*** Korrespondansepart(er). En slik Korrespondansepart kan ikke eksistere uten at den er knytta til en Registrering. Slettes («dør») Registreringen vil også korrespondanseparten bli sletta («vil dø»). Assosiasjonene forteller også hvilken vei de er ***navigerbare***. Symbolet for dette er piler i endene på streken. Eksempel: En registrering «vet» hvilke korrespondansepart(er) som tilhører registreringen, mens korrespondanseparten ikke vet hvilken registrering den tilhører.|
-|![](./media/uml-multiplisitet-brukt-med-klasser.png) | ***Multiplisiteten*** forteller hvor mange forekomster som kan inngå. Multiplisitet kan brukes i forbindelse med assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to prikker mellom (0..1). Det første tallet angir minimums-multiplisitet (så mange det minst må være), det andre tallet er maksimumsmultiplisitet (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..***) Mapper(er). Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).En klasseattributt har angitt multiplisitet med klammeparenteser (\[0..1\]). Klasseattributten noekkelord kan forekomme ingen eller en gang. Når det ikke er angitt multiplisitet, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en klasseID, og kan bare ha en. En tom tekststreng-verdi ("") og en tekststreng som kun inneholder usynlige tegn (definert som beskrevet i vedlegg 5) er likestilt med en manglende verdi, slik at ved multiplisiteten [1..1] betyr det at klasseID også må ha en verdi forskjellig fra tom streng.|
+|![](./media/uml-multiplisitet-brukt-med-klasser.png) | ***Forekomst*** forteller hvor mange forekomster som kan inngå. Forekomst kan brukes i forbindelse med assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to prikker mellom (0..1). Det første tallet angir minimums-forekomst (så mange det minst må være), det andre tallet er maksimumsforekomst (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..***) Mapper(er). Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).En klasseattributt har angitt forekomst med klammeparenteser (\[0..1\]). Klasseattributten noekkelord kan forekomme ingen eller en gang. Når det ikke er angitt forekomst, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en klasseID, og kan bare ha en. En tom tekststreng-verdi ("") og en tekststreng som kun inneholder usynlige tegn (definert som beskrevet i vedlegg 5) er likestilt med en manglende verdi, slik at ved forekomst [1..1] betyr det at klasseID også må ha en verdi forskjellig fra tom streng.|
 |![](./media/uml-simple-datatyper-eller-primitiver.png) | Datatypene kan også være ***simple datatyper*** eller ***primitiver***. Disse brukes for å gi mulighet for restriksjoner også på primitivene. Epostadresse kan være modellert som en slik primitiv. Epost er en tekst-streng, men som i tillegg til å være tekst-streng også må oppfylle visse regler knytta til det å være gyldig epostadresse (bl.a. inneholde en og bare en forekomst av tegnet @). I eksempelet i figuren er SystemID en tekststreng (string) som i tillegg må oppfylle tilleggskrav. I store modeller kan det være hensiktsmessig å plassere ulike modell-elementer i ulike pakker. Da kan det også bli lettere for leseren å forstå modellen når han får vite hvilken pakke de ulike klassene er plassert i. Modellpakker kalles ofte ***navnerom*** (namespace) Dette kan angis foran klassenavnet, skilt fra klassenavnet med kolon (:). I eksempelet hører klassen SystemID til pakken/navnerommet Metadata og klassen string tilhører pakken/navnerommet BasicTypes.|
 
 ## Noark5v5
@@ -174,7 +174,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**            | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**            | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |---------------------|---------------|---------------|-----------|-----------|
 | tittel              | Definisjon: Tittel eller navn på arkivenheten Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string |
 | beskrivelse         | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string |
@@ -327,7 +327,7 @@ spesifikke under-entitetene.
 
 Table: Attributter
 
-| **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**              | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------------------|---------------|---------------|-----------|-----------|
 | tittel                | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
 | beskrivelse           | Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde: Registreres manuelt. Kommentarer: Tilsvarende attributt finnes ikke i Noark 4 (men noen tabeller hadde egne attributter for merknad som kunne brukes som et beskrivelsesfelt). M021 | \[0..1\] | | string | 
@@ -423,7 +423,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**             | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**             | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |----------------------|---------------|---------------|-----------|-----------|
 | systemID             | M001 Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså *systemID* være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en numerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Registreres automatisk av systemet. Skal ikke kunne endres. Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal *systemID* være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. | \[0..1\] | | SystemID |
 | oppdatertDato        |               | \[0..1\] | | datetime |
@@ -477,7 +477,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | arkivskaperID | Definisjon: Unik ID for arkivskaperen. Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentar: Kan være organisasjonsnummer (Brønnøysundregistrene) eller annen identifikasjon avtalt med arkivdepotet. M006 | \[1..1\]  | | string | 
 | arkivskaperNavn | Definisjon: Navn på organisasjonen som har skapt arkivet . Kilde: Registreres manuelt ved opprettelsen av arkivet. Kommentarer: (ingen). M023 | \[1..1\] | | string | 
@@ -575,7 +575,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                      | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**                      | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-------------------------------|---------------|---------------|-----------|-----------|
 | arkivertDato                  | Definisjon. Dato og klokkeslett når alle dokumentene som er tilknyttet registreringen ble arkivert . Kilde: Registreres automatisk ved utførelse av en funksjon som markerer at dokumentene er arkivert. For journalposter kan dette knyttes til endring av journalstatus. Kommentarer: Arkivering innebærer at dokumentene blir &quot;frosset&quot;, dvs. sperret for all videre redigering/endring M604 | \[0..1\] | | datetime |
 | arkivertAv                    | Definisjon: Navn på person som arkiverte dokumentet og frøs det for all videre redigering . Kilde: Registreres automatisk ved utførelse av en funksjon som markerer at dokumentene er arkivert. For journalposter kan dette knyttes til endring av journalstatus. Kommentarer: (ingen) M605 | \[0..1\] | | string |
@@ -653,7 +653,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | dokumenttype                  | Definisjon: Navn på type dokument . Kilde: Registreres automatisk av systemet eller  manuelt. Kommentarer: (ingen). M083 | \[1..1\] | | Dokumenttype |
 | dokumentstatus                | Definisjon: Status til dokumentet . Kilde: Kan endres automatisk ved endring i saksstatus eller journalstatus. Kommentarer: Dokumentbeskrivelser som avleveres skal ha status &quot;Dokumentet er ferdigstilt&quot;. M054 | \[1..1\] | | Dokumentstatus |
@@ -748,7 +748,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**             | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**             | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |----------------------|---------------|---------------|-----------|-----------|
 | versjonsnummer       | Definisjon: Identifikasjon av versjoner innenfor ett og samme dokument.  Første versjon får nummer 0, deretter påfølgende heltall i stigende rekkefølge (1, 2, 3, ...). Det er ok med "hull" i versjonsnummer-sekvensen, da dette dokumenterer hvilke tidligere versjoner av dokumentet som er fjernet.  Kilde: Registreres automatisk når en ny versjon arkiveres. Kommentarer: Versjonsnummer gjelder bare arkiverte versjoner. Annen versjons-håndtering ligger i komplett Noark, og genererer ikke metadata skal følge med i et arkivuttrekk. M005 | \[1..1\] | | integer |
 | variantformat        | Definisjon: Angivelse av hvilken variant et dokument forekommer i . Kilde: Registreres automatisk når dokumentet arkiveres. Kommentarer: (ingen). M700 | \[1..1\] | | Variantformat |
@@ -799,7 +799,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | elektroniskSignaturSikkerhetsnivaa | Definisjon: Angivelse av hvilket sikkerhetsnivå som ble brukt ved forsendelse og mottak av elektroniske dokumenter. Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk signatur. Kommentarer: (ingen). M507 elektroniskSignaturSikkerhetsnivaa | \[1..1\] | | ElektroniskSignaturSikkerhetsnivaa |
 | elektroniskSignaturVerifisert     | Definisjon: Angivelse av om et dokument er mottatt med elektronisk signatur, og om signaturen er verifisert. Kilde: Registreres automatisk knyttet til funksjonalitet for elektronisk signatur. Kommentarer: Dersom signaturen er verifisert, skal det logges hvem som verifiserte den og når det skjedde. M508 | \[1..1\] | | ElektroniskSignaturVerifisert |
@@ -832,7 +832,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**          | **Merknad** | **Multipl.** | **Kode** | **Type**   |
+| **Navn**          | **Merknad** | **Forek.**   | **Kode** | **Type**   |
 | ----------------- | ----------- | ------------ | -------- | ---------- |
 | adresselinje1     |             | \[0..1\]     |          | string     |
 | adresselinje2     |             | \[0..1\]     |          | string     |
@@ -853,7 +853,7 @@ forekomme en gang
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | graderingskode        | Definisjon: Angivelse av at dokumentene er gradert i henhold til sikkerhetsloven eller beskyttelsesinstruksen. Kilde: Registreres manuelt ved valg fra liste, kan også registres automatisk. Kommentarer: Dokumenter gradert &quot;Strengt hemmelig&quot;, &quot;Hemmelig&quot;, &quot;Konfidensielt&quot; og &quot;Strengt fortrolig&quot; skal føres i en egen journal som i sin helhet er unntatt fra innsyn. M506 gradering | \[1..1\] | | Graderingskode |
 | graderingsdato        | Definisjon: Dato og klokkeslett når et dokument ble gradert . Kilde: Registreres automatisk ved gradering. Kommentarer: (ingen). M624 | \[1..1\] | | datetime|
@@ -897,7 +897,7 @@ klasse, mappe, registrering og dokumentbeskrivelse.
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | kassasjonsvedtak | Definisjon:Handling som skal utføres ved bevaringstidens slutt. Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres manuelt. Kommentarer: (ingen). M450 | \[1..1\] | | Kassasjonsvedtak |
 | kassasjonshjemmel | Definisjon: Angivelse av hjemmel for kassasjon . Kilde: Registreres manuelt ved opprettelse av arkivdel eller klasse. Arves til underliggende enheter, men kan endres  manuelt. Kommentarer: Hjemmel kan f.eks. være Riksarkivarens bevarings- og kassasjons-vedtak. M453 | \[0..1\] | | string | 
@@ -967,7 +967,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**              | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------------------|---------------|---------------|-----------|-----------|
 | klasseID              | Definisjon: Entydig identifikasjon av klassen innenfor klassifikasjonssystemet. Andre klassifikasjonssystemer innenfor samme arkivsystem kan imidlertid inneholde en eller flere av de samme identifikasjonene. Identifikasjonen kan være rent nummerisk, men kan også være alfanumerisk og ha et logisk meningsinnhold. Merk at klasseID er identisk med begrepene ordningsverdi og arkivkode i Noark 4. Kilde: Alle klasser i et klassifikasjonssystem opprettes vanligvis når et arkivsystem tas i bruk. Men enkelte løsninger kan tillate at det opprettes nye klasser ved behov (mest aktuelt ved objektbasert klassifikasjon). Kommentarer: Eksempel på klasseID og tittel i tre nivåer fra statens arkivnøkkel (emne-/funksjonsbasert klassifikasjonssystem): 2 Stillinger og personell, 2.3 Lønn og pensjon, 2.3.6 Arbeidsgiveravgift. Ved personbasert klassifikasjonssystem, kan f.eks. fødselsnummer og navn utgjøre klasseID og tittel. M002 | \[1..1\] | | string | 
 | tittel                | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | | string | 
@@ -1036,7 +1036,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | klassifikasjonstype  | Definisjon: Type klassifikasjonssystem . Kilde: Registreres manuelt ved opprettelse av klassifikasjonssystem Kommentarer: (ingen) M086 | \[0..1\] | | Klassifikasjonstype|
 | tittel               | Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha samme tittel som klassen. Kan også hentes automatisk fra et fagsystem. Kommentarer: For saksmappe og journalpost vil dette tilsvare &quot;Sakstittel&quot; og &quot;Dokumentbeskrivelse&quot;. Disse navnene kan beholdes i grensesnittet. M020 | \[1..1\] | |string | 
@@ -1067,7 +1067,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Navn**         | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ---------------- | ----------- | ------------ | -------- | -------- |
 | epostadresse     |             | \[0..1\]     |          | string   |
 | mobiltelefon     |             | \[0..1\]     |          | string   |
@@ -1101,7 +1101,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**               | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**               | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |------------------------|---------------|---------------|-----------|-----------|
 | systemID               | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en numerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
 | konvertertDato         | Definisjon: Dato og klokkeslett for når et dokument ble konvertert fra et format til et annet . Kilde: Registreres automatisk ved konvertering. Kommentarer: (ingen). M615 | \[1..1\] | | datetime |
@@ -1152,7 +1152,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en numerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
 | korrespondanseparttype        | Definisjon: Type korrespondansepart . Kilde: Registreres automatisk knyttet til funksjonalitet i forbindelse med opprettelse av journalpost, kan også registreres  manuelt. Kommentarer: Korrespondansetype forekommer én gang innenfor objektet korrespondansepart, men denne kan forekomme flere ganger innenfor en journalpost. M087 | \[1..1\] | | Korrespondanseparttype|
@@ -1186,7 +1186,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
+| **Navn**                | **Merknad** | **Forek.**   | **Kode** | **Type**           |
 | ----------------------- | ----------- | ------------ | -------- | ------------------ |
 | enhetsidentifikator     |             | \[0..1\]     |          | Enhetsidentifikator|
 | navn                    |             | \[1..1\]     |          | string             |
@@ -1217,7 +1217,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                        | **Merknad**                                   | **Multipl.** | **Kode** | **Type** |
+| **Navn**                        | **Merknad**                                   | **Forek.**   | **Kode** | **Type** |
 | ------------------------------- | --------------------------------------------- | ------------ | -------- | -------- |
 | administrativEnhet              |                                               | \[0..1\]     |          | string   |
 | referanseAdministrativEnhet     | referanse til AdministrativEnhet sin systemID | \[0..1\]     |          | SystemID |
@@ -1246,7 +1246,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
+| **Navn**               | **Merknad** | **Forek.**   | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
 | personidentifikator    |             | \[0..*\]     |          | Personidentifikator|
 | navn                   |             | \[1..1\]     |          | string             |
@@ -1515,7 +1515,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | mappeID                       | Definisjon: Entydig identifikasjon av mappen innenfor det arkivet mappen tilhører. Kilde: Registreres automatisk av systemet etter interne regler. Kommentar: Ulike arkiver innenfor samme arkivsystem, kan inneholde en eller flere av de samme kodene. Koden kan være rent numerisk, men kan også ha en logisk oppbygning. Er en videreføring av kombinasjonen saksår og sakssekvensnummer (oftest bare kalt &quot;saksnummer&quot;) i Noark 4, som fortsatt er obligatorisk identifikasjon på saksmappe. I slike tilfeller skal verdien i mappeID også kopieres til de to metadataelementene M011 saksaar og M012 sakssekvensnummer i saksmappen. M003 | \[0..1\] | | string |
 | mappetype                     | angir mappetype som blant annet kan brukes som hint til hva som ligger i virksomhetsspesifikkemetadata| \[0..1\] | | Mappetype |
@@ -1589,7 +1589,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                     | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**                     | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |------------------------------|---------------|---------------|-----------|-----------|
 | systemID                     | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en numerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
 | merknadstekst                | Definisjon: Merknad fra saksbehandler, leder eller arkivpersonale. Kilde: Registreres manuelt. Kommentarer: Merknaden bør gjelde selve saksbehandlingen eller forhold arkiveringen av dokumentene som tilhører arkivenheten. M310 | \[1..1\] | |string | 
@@ -1641,7 +1641,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en numerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
 | partRolle                 | Definisjon: Angivelse av rollen til parten . Kilde: Registreres manuelt eller automatisk fra fagsystem. Kommentarer: (ingen). Betingelser: Her er det mange tenkelige roller avhengig av type sak, f.eks. Klient, Pårørende, Formynder, Advokat. M303 | \[1..1\] | | PartRolle |
@@ -1675,7 +1675,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type**           |
+| **Navn**                | **Merknad** | **Forek.**   | **Kode** | **Type**           |
 | ----------------------- | ----------- | ------------ | -------- | ------------------ |
 | enhetsidentifikator     |             | \[0..1\]     |          | Enhetsidentifikator|
 | navn                    |             | \[1..1\]     |          | string             |
@@ -1706,7 +1706,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**               | **Merknad** | **Multipl.** | **Kode** | **Type**           |
+| **Navn**               | **Merknad** | **Forek.**   | **Kode** | **Type**           |
 | ---------------------- | ----------- | ------------ | -------- | ------------------ |
 | personidentifikator    |             | \[0..*\]     |          | Personidentifikator|
 | navn                   |             | \[1..1\]     |          | string             |
@@ -1727,7 +1727,7 @@ den enkelte mappe, registrering eller det enkelte dokument. (Se Noark
 
 Table: Attributter
 
-| **Navn**              | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**              | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------------------|---------------|---------------|-----------|-----------|
 | tilgangsrestriksjon   | Definisjon: Angivelse av at dokumentene som tilhører arkivenheten ikke er offentlig tilgjengelig i henhold til offentlighetsloven eller av en annen grunn . Kilde: Registreres manuelt ved valg fra liste, kan også registres automatisk. Kommentarer: (ingen). M500 | \[1..1\] | | Tilgangsrestriksjon|
 | skjermingshjemmel     | Definisjon: Henvisning til hjemmel (paragraf) i offentlighetsloven, sikkerhetsloven eller beskyttelsesinstruksen . Kilde: Registreres automatisk på grunnlag av valgt tilgangskode, kan overstyres manuelt. Kommentarer: (ingen) M501 | \[1..1\] | | string | 
@@ -1795,7 +1795,7 @@ skje før det produseres et arkivuttrekk.
 
 Table: Attributter
 
-| **Navn**           | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**           | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |--------------------|---------------|---------------|-----------|-----------|
 | slettingstype      | Definisjon: Navn på hvilket objekt som er slettet . Kilde: (ingen). Kommentarer: Siste versjon av et dokument skal vanligvis ikke kunne slettes. Sletting av innholdet i en arkivdel skal bare kunne utføres av autorisert personale. M089 | \[1..1\] | | Slettingstype |
 | slettetDato        | Definisjon: Dato og klokkeslett når et dokument ble slettet . Kilde: Registreres automatisk når en tidligere versjon eller en variant av et dokument slettes. Kommentarer: Informasjon om sletting av dokumenter i produksjonsformat skal ikke avleveres. Sletting må ikke blandes sammen med kassasjon. M613 | \[1..1\] | |datetime|
@@ -1822,7 +1822,7 @@ grupperes inn i arkivdel.
 
 Table: Attributter
 
-| **Navn**           | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**           | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |--------------------|---------------|---------------|-----------|-----------|
 | kassertDato        | Definisjon: Dato og klokkeslett når kassasjonen ble utført . Kilde: Registreres automatisk når kassasjon utføres. Kommentarer: (ingen). M630 | \[1..1\] | | datetime |
 | kassertAv          | Definisjon: Navn på person som har utført kassasjonen . Kilde: Registreres automatisk når kassasjon utføres. Kommentarer: (ingen). M631 | \[1..1\] | | string | 
@@ -1875,7 +1875,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**        | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Navn**        | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | --------------- | ----------- | ------------ | -------- | -------- |
 | systemID        |             | \[1..1\]     |          | SystemID |
 
@@ -1901,7 +1901,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**              | **Merknad**                   | **Multipl.** | **Kode** | **Type**  |
+| **Navn**              | **Merknad**                   | **Forek.**   | **Kode** | **Type**  |
 | --------------------- | ----------------------------- | ------------ | -------- | --------- |
 | bygningsnummer        | Som registrert i Matrikkelen. | \[1..1\]     |          | integer   |
 | endringsloepenummer   | Som registrert i Matrikkelen. | \[0..1\]     |          | integer   |
@@ -1920,7 +1920,7 @@ Table: Relasjoner
 
 Table: Attributter
 
-| **Navn**                | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Navn**                | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
 | organisasjonsnummer     |             | \[1..1\]     |          | string   |
 
@@ -1949,7 +1949,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**            | **Merknad** | **Multipl.** | **Kode** | **Type**        |
+| **Navn**            | **Merknad** | **Forek.**   | **Kode** | **Type**        |
 | ------------------- | ----------- | ------------ | -------- | --------------- |
 | kommunenummer       |             | \[1..1\]     |          | string          |
 | gaardsnummer        |             | \[1..1\]     |          | integer         |
@@ -2007,7 +2007,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**       | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Navn**       | **Merknad** | **Forek.**   | **Kode** | **Type** |
 |----------------|-------------|--------------|----------|----------|
 | foedselsnummer |             | \[1..1\]     |          | string   |
 
@@ -2040,7 +2040,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn** | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Navn** | **Merknad** | **Forek.**   | **Kode** | **Type** |
 |----------|-------------|--------------|----------|----------|
 | dNummer  |             | \[1..1\]     |          | string   |
 
@@ -2071,7 +2071,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**              | **Merknad** | **Multipl.** | **Kode** | **Type**            |
+| **Navn**              | **Merknad** | **Forek.**   | **Kode** | **Type**            |
 | --------------------- | ----------- | ------------ | -------- | ------------------- |
 | kommunenummer         |             | \[0..1\]     |          | string              |
 | fylkesnummer          |             | \[0..1\]     |          | string              |
@@ -2108,7 +2108,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                | **Merknad** | **Multipl.** | **Kode**   | **Type** |
+| **Navn**                | **Merknad** | **Forek.**   | **Kode**   | **Type** |
 | ----------------------- | ----------- | ------------ | ---------- | -------- |
 | UTM32N                  |             |              | EPSG:32632 |          |
 | WGS84                   |             |              | EPSG:4326  |          |
@@ -2137,7 +2137,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**       | **Merknad**                     | **Multipl.** | **Kode** | **Type**        |
+| **Navn**       | **Merknad**                     | **Forek.**   | **Kode** | **Type**        |
 | -------------- | ------------------------------- | ------------ | -------- | --------------- |
 | koordinatsystem|                                 | \[1..1\]     |          | Koordinatsystem |
 | x              | øst-vest/breddegrad             | \[1..1\]     |          | decimal         |
@@ -2239,7 +2239,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**            | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
 | Aktiv periode           |             |              | A        |          |
 | Overlappingsperiode     |             |              | O        |          |
@@ -2266,7 +2266,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**  | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**  | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
 | Opprettet     |             |              | O        |          |
 | Avsluttet     |             |              | A        |          |
@@ -2291,7 +2291,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**              | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**              | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------------------- | ----------- | ------------ | -------- | -------- |
 | Besvart med brev          |             |              | BU       |          |
 | Besvart med e-post        |             |              | BE       |          |
@@ -2323,7 +2323,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                            | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                            | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | --------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Fysisk medium                           |             |              | F        |          |
 | Elektronisk arkiv                       |             |              | E        |          |
@@ -2349,7 +2349,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                       | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ---------------------------------- | ----------- | ------------ | -------- | -------- |
 | Dokumentet er under redigering     |             |              | B        |          |
 | Dokumentet er ferdigstilt          |             |              | F        |          |
@@ -2374,7 +2374,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**         | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**         | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | -------------------- | ----------- | ------------ | -------- | -------- |
 | Brev                 | Valgfri     |              | B        |          |
 | Rundskriv            | Valgfri     |              | R        |          |
@@ -2406,7 +2406,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                                   | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                   | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ---------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Symmetrisk kryptert                            | Valgfri     |              | SK       |          |
 | Sendt med PKI/virksomhetssertifikat            | Valgfri     |              | V        |          |
@@ -2435,7 +2435,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                         | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------------------------------ | ----------- | ------------ | -------- | -------- |
 | Signatur påført, ikke verifisert     |             |              | I        |          |
 | Signatur påført og verifisert        |             |              | V        |          |
@@ -2456,7 +2456,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                        | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | --------------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Godkjent                                            | Valgfri     |              | G        |          |
 | Ikke godkjent                                       | Valgfri     |              | I        |          |
@@ -2506,7 +2506,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**             | **Merknad**                                                                                                                                                              | **Multipl.** | **Kode**  | **Type** |
+| **Kodenavn**             | **Merknad**                                                                                                                                                              | **Forek.**   | **Kode**  | **Type** |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------- | -------- |
 | Ukjent format            | Formatet er ikke gjenkjent eller mangler i listen over kjente formater. |              | av/0   |          |
 | Ren tekst                | Som ren tekst: UTF-8 (ISO/IEC 10646-1:2000 Annex D) eller ISO 8859-1:1998, Latin 1. ISO 8859-1:1998, Latin 1 kan erstattes med ISO 8859-4:1998, Latin 4 for samiske tegn |              | [x-fmt/111](http://www.nationalarchives.gov.uk/PRONOM/x-fmt/111)   |          |
@@ -2536,7 +2536,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                             | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ---------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Strengt hemmelig (sikkerhetsgrad)        |             |              | SH       |          |
 | Hemmelig (sikkerhetsgrad)                |             |              | H        |          |
@@ -2559,7 +2559,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**        | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**        | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
 | Endringslogg        |             |              |          |          |
 | Søknad mottatt      |             |              |          |          |
@@ -2587,7 +2587,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                              | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                              | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ----------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Inngående dokument                        |             |              | I        |          |
 | Utgående dokument                         |             |              | U        |          |
@@ -2614,7 +2614,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                                        | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                        | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | --------------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Journalført                                         |             |              | J        |          |
 | Ferdigstilt fra saksbehandler                       |             |              | F        |          |
@@ -2648,7 +2648,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**        | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**        | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
 | Bevares             |             |              | B        |          |
 | Kasseres            |             |              | K        |          |
@@ -2675,7 +2675,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                           | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                           | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | -------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Gårds- og bruksnummer                  | Valgfri     |              | GBN      |          |
 | Funksjonsbasert, hierarkisk            | Valgfri     |              | FH       |          |
@@ -2707,7 +2707,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**            | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
 | Avsender                |             |              | EA       |          |
 | Mottaker                |             |              | EM       |          |
@@ -2767,7 +2767,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                   | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                   | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------------------------ | ----------- | ------------ | -------- | -------- |
 | Merknad fra saksbehandler      | Valgfri     |              | MS       |          |
 | Merknad fra leder              | Valgfri     |              | ML       |          |
@@ -2817,7 +2817,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**  | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**  | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
 | Gjeldende     |             |              | G        |          |
 | Foreldet      |             |              | F        |          |
@@ -2838,7 +2838,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**  | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**  | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------- | ----------- | ------------ | -------- | -------- |
 | Klient        | Valgfri     |              | KLI      |          |
 | Pårørende     | Valgfri     |              | PAA      |          |
@@ -2866,7 +2866,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                    | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                    | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------------------------- | ----------- | ------------ | -------- | -------- |
 | Under behandling                |             |              | B        |          |
 | Avsluttet                       |             |              | A        |          |
@@ -2897,7 +2897,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                         | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                         | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------------------------------ | ----------- | ------------ | -------- | -------- |
 | Skjerming av hele dokumentet         |             |              | H        |          |
 | Skjerming av deler av dokumentet     |             |              | D        |          |
@@ -2923,7 +2923,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                                             | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                             | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | -------------------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Skjerming klasseID                                       |             |              | KID      |          |
 | Skjerming tittel klasse                                  |             |              | TKL      |          |
@@ -2958,7 +2958,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                                    | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                    | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ----------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Sletting av produksjonsformat                   |             |              | SP       |          |
 | Sletting av tidligere versjon                   |             |              | SV       |          |
@@ -3013,7 +3013,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**            | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**            | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ----------------------- | ----------- | ------------ | -------- | -------- |
 | arkivdel                |             |              | A        |          |
 | klasse                  |             |              | K        |          |
@@ -3037,7 +3037,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                                       | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                       | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | -------------------------------------------------- | ----------- | ------------ | -------- | -------- |
 | Begrenset etter sikkerhetsinstruksen               |             |              | B        |          |
 | Konfidensielt etter sikkerhetsinstruksen           |             |              | K        |          |
@@ -3068,7 +3068,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**      | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**      | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ----------------- | ----------- | ------------ | -------- | -------- |
 | Hoveddokument     |             |              | H        |          |
 | Vedlegg           |             |              | V        |          |
@@ -3093,7 +3093,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Kodenavn**                                     | **Merknad** | **Multipl.** | **Kode** | **Type** |
+| **Kodenavn**                                     | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------------------------------------------ | ----------- | ------------ | -------- | -------- |
 | Produksjonsformat                                |             |              | P        |          |
 | Arkivformat                                      |             |              | A        |          |
@@ -3167,7 +3167,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | systemID                               | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en numerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID | 
 | avskrivningsdato                       | Definisjon: Dato et dokument ble avskrevet . Kilde: Registreres automatisk nå avskrivning foretas. Kommentar: (ingen). M617 | \[1..1\] ||date| 
@@ -3218,7 +3218,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | systemID          | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en numerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 | \[0..1\] | | SystemID |
 | flytTil           | Definisjon: Person som har mottatt for godkjennelse et dokument som har vært sendt på flyt . Kilde: Registreres automatisk av funksjonalitet knyttet til arbeidsflyt. Kommentar: (ingen). M660 flytTil | \[1..1\] | | string | 
@@ -3266,7 +3266,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                 | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**                 | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |--------------------------|---------------|---------------|-----------|-----------|
 | dokumentetsDato          | M103          | \[0..1\]      |           | date      |
 | mottattDato              | M104          | \[0..1\]      |           | datetime  |
@@ -3336,7 +3336,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | journalaar                | Definisjon: Viser året journalposten ble opprettet . Kilde: Registreres automatisk når journalposten opprettes. Kommentar: (ingen). M013 journalaar | \[0..1\] | | integer|
 | journalsekvensnummer     | Definisjon: Viser rekkefølgen når journalposten ble opprettet under året . Kilde: Registreres automatisk når journalposten opprettes. Kommentar: Kombinasjonen journalaar og sekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. Noen rapporter er sortert på denne kombinasjonen, f.eks. løpende- og offentlig journal. Dersom journalaar og sekvensnummer ikke brukes, må kronologiske utskrifter sorteres etter andre kriterier (f.eks. journalpostens opprettetDato). I Noark 4 skal sekvensnummeret vises før journalaar (f.eks. 25367/2011) for at det ikke skal blandes sammen med saksnummeret som har året først. M014 journalsekvensnummer | \[0..1\] |  | integer|
@@ -3421,7 +3421,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | systemID                     | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en numerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 systemID | \[0..1\] | | SystemID |
 | presedensDato                | Definisjon: Datoen på presedensen . Kilde: Registreres manuelt ved opprettelse av presedens, men bør også kunne hentes automatisk fra M103 dokumentetsDato på journalposten presedensen opprettes på. Kommentar: (ingen). M111 presedensDato | \[1..1\] | |date|
@@ -3488,7 +3488,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | saksaar                | Definisjon: Inngår i M003 mappeID. Viser året saksmappen ble opprettet. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Se kommentar under M012 sakssekvensnummer. M011 saksaar | \[1..1\] | | integer|
 | sakssekvensnummer      | Definisjon: Inngår i M003 mappeID. Viser rekkefølgen når saksmappen ble opprettet innenfor året. Kilde: Registreres automatisk når saksmappen opprettes. Kommentar: Kombinasjonen saksaar og sakssekvensnummer er ikke obligatorisk, men anbefales brukt i sakarkiver. M012 sakssekvensnummer | \[1..1\] | | integer|
@@ -3595,7 +3595,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en numerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet. Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 systemID | \[0..1\] | | SystemID | 
 | administrativEnhetNavn        | Definisjon: Navn på administrativ enhet . Kilde: Registreres manuelt av administrator. Kommentar: Navn på administrativ enhet vil registreres flere steder i arkivstrukturen, f.eks. sammen med saksansvarlig eller saksbehandler på saksmappe eller journalpost. Administrasjonsstrukturen inngår ikke i arkivstrukturen. M583 administrativEnhetNavn | \[1..1\] | |string | 
@@ -3647,7 +3647,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**  | **Merknad**   | **Multipl.**  | **Kode**  | **Type**  |
+| **Navn**  | **Merknad**   | **Forek.**    | **Kode**  | **Type**  |
 |-----------|---------------|---------------|-----------|-----------|
 | systemID                      | Definisjon: Entydig identifikasjon av arkivenheten innenfor det arkivskapende organet. Dersom organet har flere arkivsystemer, skal altså systemID være gjennomgående entydig. Systemidentifikasjonen vil som oftest være en numerisk kode uten noe logisk meningsinnhold. Identifikasjonen trenger ikke å være synlig for brukerne. Kilde: Registreres automatisk av systemet Kommentarer: Alle referanser fra en arkivenhet til en annen skal peke til arkivenhetens systemidentifikasjon. Dette gjelder også referanser fra en arkivdel til en annen, f.eks. mellom to arkivperioder som avleveres på forskjellig tidspunkt. I et arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan være duplisert i et arkivuttrekk dersom samme dokumentfil er knyttet til flere forskjellige registreringer. M001 systemID | \[0..1\] | | SystemID |
 | brukerNavn                    | Definisjon: Navn på bruker av en Noark 5-løsning . Kilde: Registreres manuelt av administrator. Kommentar: Navn på bruker vil registreres mange steder i arkivstrukturen, f.eks. som saksansvarlig eller saksbehandler, og ved forskjellige typer logging. Brukeradministrasjon inngår ikke i arkivstrukturen. M580 brukerNavn | \[1..1\] | |string | 
@@ -3689,7 +3689,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                | **Merknad**                                           | **Multipl.** | **Kode** | **Type**            |
+| **Navn**                | **Merknad**                                           | **Forek.**   | **Kode** | **Type**            |
 | ----------------------- | ----------------------------------------------------- | ------------ | -------- | ------------------- |
 | systemID                |                                                       | \[0..1\]     |          | SystemID            |
 | rolle                   | Sammenlignes feks med rolle gitt i AD eller lignende. | \[1..1\]     |          | string              |
@@ -3739,7 +3739,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**                | **Merknad**                       | **Multipl.** | **Kode** | **Type** |
+| **Navn**                | **Merknad**                       | **Forek.**   | **Kode** | **Type** |
 | ----------------------- | --------------------------------- | ------------ | -------- | -------- |
 | systemID                |                                   | \[0..1\]     |          | SystemID |
 | referanseArkivenhet     | M680                              | \[0..1\]     |          | SystemID |
@@ -3774,7 +3774,7 @@ Table: Relasjonsnøkler
 
 Table: Attributter
 
-| **Navn**         | **Merknad** | **Multipl.** | **Kode** | **Type**     |
+| **Navn**         | **Merknad** | **Forek.**   | **Kode** | **Type**     |
 | ---------------- | ----------- | ------------ | -------- | ------------ |
 | hendelsetype     |             | \[1..1\]     |          | Hendelsetype |
 | beskrivelse      |             | \[0..1\]     |          | string       |
