@@ -2609,6 +2609,10 @@ Table: Attributter
 
 *Arver:* 
 
+Åpen kodeliste
+
+Definisjon: Hva slags type hendelse som er logget.
+
 Table: Relasjonsnøkler
 
 | **Verdi**                                                       |
@@ -2619,10 +2623,10 @@ Table: Attributter
 
 | **Kodenavn**        | **Merknad** | **Forek.**   | **Kode** | **Type** |
 | ------------------- | ----------- | ------------ | -------- | -------- |
-| Endringslogg        |             |              |          |          |
-| Søknad mottatt      |             |              |          |          |
-| Søknad komplett     |             |              |          |          |
-| Vedtak              |             |              |          |          |
+| Opprettet           |             |              | C        |          |
+| Lest                |             |              | R        |          |
+| Endret              |             |              | U        |          |
+| Slettet             |             |              | D        |          |
 
 #### Journalposttype
 
