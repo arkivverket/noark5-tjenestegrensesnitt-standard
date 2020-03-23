@@ -409,11 +409,11 @@ I dette eksemplet er det sideinndeling med 2 elementer per side, kun
 to av tre søkeresultater returneres i første omgang, og en
 «next»-lenke til resten av sideresultatet.
 
-Når en forespurt listeressurs fra databasen er tom returneres medlem
-«count» satt til 0, intet medlem «results», samt relevante
-relasjonsnøkler i «_links» inkludert en «self»-relasjon tilbake til
-forespørselen som produserte den tomme listen.  Hvis en søker etter
-listen over arkiv og det ikke finnes noen arkiv, så kan
+Når en forespurt listeressurs fra databasen er tom returneres
+statuskode 200, medlem «count» satt til 0, intet medlem «results»,
+samt relevante relasjonsnøkler i «_links» inkludert en «self»-relasjon
+tilbake til forespørselen som produserte den tomme listen.  Hvis en
+søker etter listen over arkiv og det ikke finnes noen arkiv, så kan
 JSON-strukturen se slik ut:
 
 ```Python
