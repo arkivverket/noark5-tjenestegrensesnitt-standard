@@ -3,8 +3,8 @@ class Arkivstruktur.Konvertering {
   +systemID : SystemID [0..1]
   +konvertertDato : datetime
   +konvertertAv : string
-  +konvertertFraFormat : string
-  +konvertertTilFormat : string
+  +konvertertFraFormat : Format
+  +konvertertTilFormat : Format
   +konverteringsverktoey : string [0..1]
   +konverteringskommentar : string [0..1]
 }

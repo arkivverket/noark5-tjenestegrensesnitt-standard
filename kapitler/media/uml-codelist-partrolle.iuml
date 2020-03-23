@@ -1,7 +1,7 @@
 @startuml
 class Kodelister.PartRolle <<codelist>> {
   +Klient = KLI
-  +Pårørende = PÅ
+  +Pårørende = PAA
   +Formynder = FORM
   +Advokat = ADV
 }
