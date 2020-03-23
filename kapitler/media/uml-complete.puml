@@ -710,7 +710,6 @@ class Sakarkiv.Saksmappe <Mappe> {
 }
 
 Admin.AdministrativEnhet "administrativenhet 0..*" *--> "bruker 0..*" Admin.Bruker
-Admin.AdministrativEnhet "enhet 0..*" *--> "bruker 0..*" Admin.Bruker
 Arkivstruktur.Arkiv "arkiv 0..*" o--> "arkivskaper 1..*" Arkivstruktur.Arkivskaper
 Arkivstruktur.Arkiv "arkiv 1" o--> "arkivdel 0..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkiv "overarkiv 0..1" o-- "underarkiv 0..*" Arkivstruktur.Arkiv
