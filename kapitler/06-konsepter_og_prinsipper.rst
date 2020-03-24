@@ -81,19 +81,21 @@ innen disse områder annonseres på samme måte.
 
 **Resultatkoder**
 
-+------------+------------------------------------+
-| Statuskode | Beskrivelse                        |
-+============+====================================+
-| 200        | OK                                 |
-+------------+------------------------------------+
-| 400        | BadRequest - ugyldig forespørsel   |
-+------------+------------------------------------+
-| 403        | Forbidden - ingen tilgang          |
-+------------+------------------------------------+
-| 404        | NotFound - ikke funnet             |
-+------------+------------------------------------+
-| 501        | NotImplemented - ikke implementert |
-+------------+------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - Statuskode
+   - Beskrivelse
+ * - 200
+   - OK
+ * - 400
+   - BadRequest - ugyldig forespørsel
+ * - 403
+   - Forbidden - ingen tilgang
+ * - 404
+   - NotFound - ikke funnet
+ * - 501
+   - NotImplemented - ikke implementert
 
 **href** kan være hva som helst og trenger ikke følge noe fast mønster
 for oppbygning av url. Mens **rel** (relasjonsnøkkelen) har faste verdier
@@ -103,26 +105,30 @@ relevant for denne relasjonsnøkkelen.
 
 **Relasjonsnøkler på rotnivå**
 
-+---------------------------------------------------------+--------------------------------------------------------+
-| Relasjonsnøkkel (rel)                                   | Beskrivelse                                            |
-+=========================================================+========================================================+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ | Arkivkjerne støtter konformitetsnivå 1 arkivstruktur   |
-+---------------------------------------------------------+--------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/      | Arkivkjerne støtter konformitetsnivå for sakarkiv (2a) |
-+---------------------------------------------------------+--------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - Relasjonsnøkkel (rel)
+   - Beskrivelse
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/
+   - Arkivkjerne støtter konformitetsnivå 1 arkivstruktur
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/
+   - Arkivkjerne støtter konformitetsnivå for sakarkiv (2a)
 
 Relasjonsnøkler under de forskjellige konformitetsnivå listes ut i
 kapittel 7 sammen med beskrivelse av klasser.
 
 **Spesielle relasjonsnøkler**
 
-+-----------------------+----------------------------------------------------------------------------------+
-| Relasjonsnøkkel (rel) | Beskrivelse                                                                      |
-+=======================+==================================================================================+
-| self                  | Brukes for å identifisere en ressurs, og kan brukes til oppdatering og sletting. |
-+-----------------------+----------------------------------------------------------------------------------+
-| next                  | Brukes for å angi neste side ved serverstyrt resultatoppdeling                   |
-+-----------------------+----------------------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - Relasjonsnøkkel (rel)
+   - Beskrivelse
+ * - self
+   - Brukes for å identifisere en ressurs, og kan brukes til oppdatering og sletting.
+ * - next
+   - Brukes for å angi neste side ved serverstyrt resultatoppdeling
 
 Ressurser bør kun gjøres tilgjengelig i API når pålogget bruker har
 tilgang til disse. Hvis en bruker ikke har tilgang til å avslutte en
@@ -331,43 +337,53 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 
 *Mapper med merknader som har merknadstype B*
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| Eksempel                                                        | Forklaring                                                      | Nivå                                                            |
-+=================================================================+=================================================================+=================================================================+
-| ../arkivstruktur/mappe/?$expand=merknad&$filter=merknad/any(m:  | Mapper med merknader som har merknadstype B                     | utvidet                                                         |
-| m/merknadstype/kode eq 'B')                                     |                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| ../arkivdel/1235/mappe?$top=2&$filter=contains(‘testmappe’,     | De to første mapper hvor testmappe er en del av tittel sortert  | basis                                                           |
-| tittel) eq true $orderby=oppdatertDato desc                     | synkende på oppdatertDato                                       |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq '12/2'    | Mappe med klassering på eiendom                                 | utvidet                                                         |
-| and klasse/klassifikasjonssystem/klassifikasjonstype/kode eq    |                                                                 |                                                                 |
-| 'GBNR'                                                          |                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq           | Mappe med klassering på fødselsnr                               | utvidet                                                         |
-| '12345678901' and                                               |                                                                 |                                                                 |
-| klasse/klassifikasjonssystem/klassifikasjonstype/kode eq 'PNR'  |                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq           | Mappe med klassering på organisasjonsnr                         | utvidet                                                         |
-| '123456789' and                                                 |                                                                 |                                                                 |
-| klasse/klassifikasjonssystem/klassifikasjonstype/kode eq 'ORG'  |                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| ../api/sakarkiv/Saksmappe/?$filter=part/any(s:s/Default.PartPer | Saksmapper med part(PartPerson) med gitt fødselsnummer          | utvidet                                                         |
-| sonType/foedselsnummer                                          |                                                                 |                                                                 |
-| eq '12334566')                                                  |                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| ../api/sakarkiv/Saksmappe/?$filter=part/any(s:s/Default.PartEnh | Part med organisasjonsnummer                                    | utvidet                                                         |
-| etType/organisasjonsnummer                                      |                                                                 |                                                                 |
-| eq '12334566')                                                  |                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| ..api/sakarkiv/journalpost/?$filter=korrespondansepart/any(s:s/ | Korrespondansepart med fødselsnummer                            | utvidet                                                         |
-| Default.KorrespondansepartPersonType/foedselsnummer             |                                                                 |                                                                 |
-| eq '12334566')                                                  |                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| ..api/arkivstruktur/mappe/?$filter=nasjonalidentifikator/any(i: | Nasjonal identifikator med bygningsnr                           | utvidet                                                         |
-| i/Default.BygningType/byggidentifikator/bygningsNummer eq       |                                                                 |                                                                 |
-| '12345678')                                                     |                                                                 |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------------------+
+.. list-table::
+   :widths: 8 4 1
+   :header-rows: 1
+
+ * - Eksempel
+   - Forklaring
+   - Nivå
+ * - ../arkivstruktur/mappe/?$expand=merknad&$filter=merknad/any(m:
+     m/merknadstype/kode eq 'B')
+   - Mapper med merknader som har merknadstype B
+   - utvidet
+ * - ../arkivdel/1235/mappe?$top=2&$filter=contains(‘testmappe’,
+     tittel) eq true $orderby=oppdatertDato desc
+   - De to første mapper hvor testmappe er en del av tittel sortert
+     synkende på oppdatertDato
+   - basis
+ * - ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq '12/2' and
+     klasse/klassifikasjonssystem/klassifikasjonstype/kode eq 'GBNR'
+   - Mappe med klassering på eiendom
+   - utvidet
+ * - ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq
+     '12345678901' and
+     klasse/klassifikasjonssystem/klassifikasjonstype/kode eq 'PNR'
+   - Mappe med klassering på fødselsnr
+   - utvidet
+ * - ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq '123456789'
+     and klasse/klassifikasjonssystem/klassifikasjonstype/kode eq 'ORG'
+   - Mappe med klassering på organisasjonsnr
+   - utvidet
+ * - ../api/sakarkiv/Saksmappe/?$filter=part/any(s:
+     s/Default.PartPersonType/foedselsnummer eq '12334566')
+   - Saksmapper med part(PartPerson) med gitt fødselsnummer
+   - utvidet
+ * - ../api/sakarkiv/Saksmappe/?$filter=part/any(s:
+     s/Default.PartEnhetType/organisasjonsnummer eq '12334566')
+   - Part med organisasjonsnummer
+   - utvidet
+ * - ..api/sakarkiv/journalpost/?$filter=korrespondansepart/any(s:
+     s/Default.KorrespondansepartPersonType/foedselsnummer eq
+     '12334566')
+   - Korrespondansepart med fødselsnummer
+   - utvidet
+ * - ..api/arkivstruktur/mappe/?$filter=nasjonalidentifikator/any(i:
+     i/Default.BygningType/byggidentifikator/bygningsNummer eq
+     '12345678')
+   - Nasjonal identifikator med bygningsnr
+   - utvidet
 
 **Søk**
 
@@ -399,13 +415,16 @@ må returnere en next link som gir neste siden.
 Any eller All brukes for å filtrere på navigerbare objekter. Det kan
 være begrensninger på hvor mange nivå/dybde en arkivkjerne støtter.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Eksempel:                                                                                                                                                |
-+==========================================================================================================================================================+
-| https://n5.example.com/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| https://n5.example.com/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i: i/Default.BygningType/byggidentifikator/bygningsNummer eq '12345678') |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - Eksempel:
+ * - https://n5.example.com/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i:
+     i/Default.BygningType/byggidentifikator/bygningsNummer eq
+     '12345678')
+ * - https://n5.example.com/api/sakarkiv/saksmappe?$filter=nasjonalidentifikator/any(i:
+     i/Default.BygningType/byggidentifikator/bygningsNummer eq
+     '12345678')
 
 **Resultat med underobjekter**
 
@@ -484,23 +503,24 @@ JSON-strukturen se slik ut:
      }
    }
 
-.. table:: Resultatkoder ved navigering/søk
+.. list-table:: Resultatkoder ved navigering/søk
+   :widths: 1 3
+   :header-rows: 1
 
-   +------------+-----------------------------------------------+
-   | Statuskode | Beskrivelse                                   |
-   +============+===============================================+
-   | 200        | OK                                            |
-   +------------+-----------------------------------------------+
-   | 400        | BadRequest - ugyldig forespørsel              |
-   +------------+-----------------------------------------------+
-   | 403        | Forbidden - ingen tilgang                     |
-   +------------+-----------------------------------------------+
-   | 404        | NotFound - ikke funnet                        |
-   +------------+-----------------------------------------------+
-   | 500        | InternalServerError – generell feil på server |
-   +------------+-----------------------------------------------+
-   | 501        | NotImplemented - ikke implementert            |
-   +------------+-----------------------------------------------+
+ * - Statuskode
+   - Beskrivelse
+ * - 200
+   - OK
+ * - 400
+   - BadRequest - ugyldig forespørsel
+ * - 403
+   - Forbidden - ingen tilgang
+ * - 404
+   - NotFound - ikke funnet
+ * - 500
+   - InternalServerError – generell feil på server
+ * - 501
+   - NotImplemented - ikke implementert
 
 Opprette objekter (Create)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -621,27 +641,28 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
 
 Figur 2 respons fra opprett mappe (eksempel avkortet for liste over links)
 
-.. table:: Resultatkoder ved oppretting av objekt
+.. list-table:: Resultatkoder ved oppretting av objekt
+   :widths: 1 3
+   :header-rows: 1
 
-   +------------+-----------------------------------------------+
-   | Statuskode | Beskrivelse                                   |
-   +============+===============================================+
-   | 200        | OK                                            |
-   +------------+-----------------------------------------------+
-   | 201        | Created - opprettet                           |
-   +------------+-----------------------------------------------+
-   | 400        | BadRequest - ugyldig forespørsel              |
-   +------------+-----------------------------------------------+
-   | 403        | Forbidden - ingen tilgang                     |
-   +------------+-----------------------------------------------+
-   | 404        | NotFound - ikke funnet                        |
-   +------------+-----------------------------------------------+
-   | 409        | Conflict – objektet kan være endret av andre  |
-   +------------+-----------------------------------------------+
-   | 500        | InternalServerError – generell feil på server |
-   +------------+-----------------------------------------------+
-   | 501        | NotImplemented - ikke implementert            |
-   +------------+-----------------------------------------------+
+ * - Statuskode
+   - Beskrivelse
+ * - 200
+   - OK
+ * - 201
+   - Created - opprettet
+ * - 400
+   - BadRequest - ugyldig forespørsel
+ * - 403
+   - Forbidden - ingen tilgang
+ * - 404
+   - NotFound - ikke funnet
+ * - 409
+   - Conflict – objektet kan være endret av andre
+ * - 500
+   - InternalServerError – generell feil på server
+ * - 501
+   - NotImplemented - ikke implementert
 
 Heleide objekter(komposisjoner) kan opprettes sammen med hovedobjektet
 og inngår i dens lovlige objektstruktur. For eksempel merknad på en
@@ -866,25 +887,26 @@ PATCH til https://n5.example.com/api/arkivstruktur/Dokumentbeskrivelse/1fa94a89-
        }
    }
 
-.. table:: Resultatkoder ved oppdatering av objekt
+.. list-table:: Resultatkoder ved oppdatering av objekt
+   :widths: 1 3
+   :header-rows: 1
 
-   +------------+-----------------------------------------------+
-   | Statuskode | Beskrivelse                                   |
-   +============+===============================================+
-   | 200        | OK                                            |
-   +------------+-----------------------------------------------+
-   | 400        | BadRequest - ugyldig forespørsel              |
-   +------------+-----------------------------------------------+
-   | 403        | Forbidden - ingen tilgang                     |
-   +------------+-----------------------------------------------+
-   | 404        | NotFound - ikke funnet                        |
-   +------------+-----------------------------------------------+
-   | 409        | Conflict – objektet kan være endret av andre  |
-   +------------+-----------------------------------------------+
-   | 500        | InternalServerError – generell feil på server |
-   +------------+-----------------------------------------------+
-   | 501        | NotImplemented - ikke implementert            |
-   +------------+-----------------------------------------------+
+ * - Statuskode
+   - Beskrivelse
+ * - 200
+   - OK
+ * - 400
+   - BadRequest - ugyldig forespørsel
+ * - 403
+   - Forbidden - ingen tilgang
+ * - 404
+   - NotFound - ikke funnet
+ * - 409
+   - Conflict – objektet kan være endret av andre
+ * - 500
+   - InternalServerError – generell feil på server
+ * - 501
+   - NotImplemented - ikke implementert
 
 Utvid objekter til andre typer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -950,15 +972,16 @@ saksmappe og ikke mappe.
                "href": "https://n5.example.com/api/sakarkiv/saksmappe/1"
            },
 
-Resultatkoder ved utvidelse av objekt
+.. list-table:: Resultatkoder ved utvidelse av objekt
+   :widths: 1 3
+   :header-rows: 1
 
-+------------+----------------------------------+
-| Statuskode | Beskrivelse                      |
-+============+==================================+
-| 200        | OK                               |
-+------------+----------------------------------+
-| 400        | BadRequest - ugyldig forespørsel |
-+------------+----------------------------------+
+ * - Statuskode
+   - Beskrivelse
+ * - 200
+   - OK
+ * - 400
+   - BadRequest - ugyldig forespørsel
 
 Resultatkode 400 leveres dersom id til eksisterende mappe er ugyldig eller
 det mangler påkrevde felter.
@@ -1083,27 +1106,28 @@ https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/092e497a-a528-4121-
 
 Resultatkode 204 – NoContent
 
-.. table:: Resultatkoder ved oppdatering av referanser til objekt
+.. list-table:: Resultatkoder ved oppdatering av referanser til objekt
+   :widths: 1 3
+   :header-rows: 1
 
-   +------------+-----------------------------------------------+
-   | Statuskode | Beskrivelse                                   |
-   +============+===============================================+
-   | 200        | OK                                            |
-   +------------+-----------------------------------------------+
-   | 204        | NoContent                                     |
-   +------------+-----------------------------------------------+
-   | 400        | BadRequest - ugyldig forespørsel              |
-   +------------+-----------------------------------------------+
-   | 403        | Forbidden - ingen tilgang                     |
-   +------------+-----------------------------------------------+
-   | 404        | NotFound - ikke funnet                        |
-   +------------+-----------------------------------------------+
-   | 409        | Conflict - objektet kan være endret av andre  |
-   +------------+-----------------------------------------------+
-   | 500        | InternalServerError – generell feil på server |
-   +------------+-----------------------------------------------+
-   | 501        | NotImplemented - ikke implementert            |
-   +------------+-----------------------------------------------+
+ * - Statuskode
+   - Beskrivelse
+ * - 200
+   - OK
+ * - 204
+   - NoContent
+ * - 400
+   - BadRequest - ugyldig forespørsel
+ * - 403
+   - Forbidden - ingen tilgang
+ * - 404
+   - NotFound - ikke funnet
+ * - 409
+   - Conflict - objektet kan være endret av andre
+ * - 500
+   - InternalServerError – generell feil på server
+ * - 501
+   - NotImplemented - ikke implementert
 
 Slette objekter (Delete)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1199,27 +1223,28 @@ korrekt slettet.
            },
            "graderingsdato": "0001-01-01T00:00:00",
 
-.. table:: Resultatkoder ved sletting av objekt
+.. list-table:: Resultatkoder ved sletting av objekt
+   :widths: 1 3
+   :header-rows: 1
 
-   +------------+-----------------------------------------------+
-   | Statuskode | Beskrivelse                                   |
-   +============+===============================================+
-   | 200        | OK                                            |
-   +------------+-----------------------------------------------+
-   | 204        | NoContent – slettet ok                        |
-   +------------+-----------------------------------------------+
-   | 400        | BadRequest - ugyldig forespørsel              |
-   +------------+-----------------------------------------------+
-   | 403        | Forbidden - ingen tilgang                     |
-   +------------+-----------------------------------------------+
-   | 404        | NotFound - ikke funnet                        |
-   +------------+-----------------------------------------------+
-   | 409        | Conflict - objektet kan være endret av andre  |
-   +------------+-----------------------------------------------+
-   | 500        | InternalServerError – generell feil på server |
-   +------------+-----------------------------------------------+
-   | 501        | NotImplemented - ikke implementert            |
-   +------------+-----------------------------------------------+
+ * - Statuskode
+   - Beskrivelse
+ * - 200
+   - OK
+ * - 204
+   - NoContent – slettet ok
+ * - 400
+   - BadRequest - ugyldig forespørsel
+ * - 403
+   - Forbidden - ingen tilgang
+ * - 404
+   - NotFound - ikke funnet
+ * - 409
+   - Conflict - objektet kan være endret av andre
+ * - 500
+   - InternalServerError – generell feil på server
+ * - 501
+   - NotImplemented - ikke implementert
 
 .. _overfringsformat:
 
@@ -1228,11 +1253,11 @@ Overføringsformat
 
 Innholdstyper(Content-Type) som skal brukes:
 
-+-----------------------------+
-| Innholdstype (Content-Type) |
-+=============================+
-| application/vnd.noark5+json |
-+-----------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - Innholdstype (Content-Type)
+ * - application/vnd.noark5+json
 
 Datoformat skal være angitt i tråd med definisjonen i Noark 5 krav
 5.12.7 (datoer uten klokkeslett) og 5.12.8 (datoer med klokkeslett),
@@ -1451,35 +1476,36 @@ Last opp siste del:
        }
    }
 
-.. table:: Resultatkoder for opplasting av filer
+.. list-table:: Resultatkoder for opplasting av filer
+   :widths: 1 3
+   :header-rows: 1
 
-   +------------+-----------------------------------------------+
-   | Statuskode | Beskrivelse                                   |
-   +============+===============================================+
-   | 200        | OK                                            |
-   +------------+-----------------------------------------------+
-   | 201        | Created - opprettet                           |
-   +------------+-----------------------------------------------+
-   | 204        | NoContent – slettet ok                        |
-   +------------+-----------------------------------------------+
-   | 400        | BadRequest - ugyldig forespørsel              |
-   +------------+-----------------------------------------------+
-   | 403        | Forbidden - ingen tilgang                     |
-   +------------+-----------------------------------------------+
-   | 404        | NotFound - ikke funnet                        |
-   +------------+-----------------------------------------------+
-   | 409        | Conflict - objektet kan være endret av andre  |
-   +------------+-----------------------------------------------+
-   | 415        | UnsupportedMediaType – filtypen støttes ikke  |
-   +------------+-----------------------------------------------+
-   | 422        | Unprocessable Entity                          |
-   +------------+-----------------------------------------------+
-   | 500        | InternalServerError – generell feil på server |
-   +------------+-----------------------------------------------+
-   | 501        | NotImplemented - ikke implementert            |
-   +------------+-----------------------------------------------+
-   | 503        | ServiceUnavailable – tjeneste utilgjengelig   |
-   +------------+-----------------------------------------------+
+ * - Statuskode
+   - Beskrivelse
+ * - 200
+   - OK
+ * - 201
+   - Created - opprettet
+ * - 204
+   - NoContent – slettet ok
+ * - 400
+   - BadRequest - ugyldig forespørsel
+ * - 403
+   - Forbidden - ingen tilgang
+ * - 404
+   - NotFound - ikke funnet
+ * - 409
+   - Conflict - objektet kan være endret av andre
+ * - 415
+   - UnsupportedMediaType – filtypen støttes ikke
+ * - 422
+   - Unprocessable Entity
+ * - 500
+   - InternalServerError – generell feil på server
+ * - 501
+   - NotImplemented - ikke implementert
+ * - 503
+   - ServiceUnavailable – tjeneste utilgjengelig
 
 Validering av data
 ------------------
@@ -1524,13 +1550,17 @@ verdi av beskrivelse er ikke standardisert:
      }
    }
 
-+-----------------------+-----------------------------------------------------------------------------+
-| Felt                  | Beskrivelse                                                                 |
-+=======================+=============================================================================+
-| kode                  | Feilkoden, samme som HTTP statuskoden til feilmeldingen                     |
-+-----------------------+-----------------------------------------------------------------------------+
-| beskrivelse (valgfri) | En kort melding som beskriver feilen. Disse verdiene er ikke standardisert. |
-+-----------------------+-----------------------------------------------------------------------------+
+.. list-table::
+   :widths: 1 3
+   :header-rows: 1
+
+ * - Felt
+   - Beskrivelse
+ * - kode
+   - Feilkoden, samme som HTTP statuskoden til feilmeldingen
+ * - beskrivelse (valgfri)
+   - En kort melding som beskriver feilen. Disse verdiene er ikke
+     standardisert.
 
 Identifikatorer
 ---------------
@@ -1702,46 +1732,61 @@ er kjent for API-implementasjonen. Den kan for eksempel se slik ut:
 
 En slik metadataoppføring består av følgende felt:
 
-+--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| **Navn**                                                     | **Beskrivelse**                                                                                                                       |
-+==============================================================+=======================================================================================================================================+
-| systemID                                                     | en UUID som identifiserer metadatafeltet. Denne UUID-verdien er unik internt i hver API-instans, men trenger ikke være lik for samme  |
-|                                                              | feltnavn på tvers av API-instanser.                                                                                                   |
-+--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| navn                                                         | navn på formen «<type>-<versjon>:<feltnavn>» eller «vnd-<enhet/leverandør>-<versjon>:<feltnavn>». Navnet skal kun forekomme en gang i |
-|                                                              | metadatalisten.                                                                                                                       |
-+--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| type                                                         | feltets type, se liste over tilgjengelige typer i tabellen under.                                                                     |
-+--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| beskrivelse (valgfri)                                        | beskrivelse / definisjon av feltets innhold.                                                                                          |
-+--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| kilde (valgfri)                                              | en URL med nærmere beskrivelse av feltets innhold.                                                                                    |
-+--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| utdatert (valgfri)                                           | en boolsk verdi som sier om feltet kan brukes på nye oppføringer. Feltet skal kun vises hvis verdien er «true». Hvis verdien er       |
-|                                                              | «true», så skal POST til for eksempel *ny-entitet* avvise forsøk på å sette feltet.                                                   |
-+--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+.. list-table::
+   :widths: 1 4
+   :header-rows: 1
+
+ * - **Navn**
+   - **Beskrivelse**
+ * - systemID
+   - en UUID som identifiserer metadatafeltet. Denne UUID-verdien er
+     unik internt i hver API-instans, men trenger ikke være lik for
+     samme feltnavn på tvers av API-instanser.
+ * - navn
+   - navn på formen «<type>-<versjon>:<feltnavn>» eller «vnd-<enhet /
+     leverandør>-<versjon>:<feltnavn>». Navnet skal kun forekomme en
+     gang i metadatalisten.
+ * - type
+   - feltets type, se liste over tilgjengelige typer i tabellen under.
+ * - beskrivelse (valgfri)
+   - beskrivelse / definisjon av feltets innhold.
+ * - kilde (valgfri)
+   - en URL med nærmere beskrivelse av feltets innhold.
+ * - utdatert (valgfri)
+   - en boolsk verdi som sier om feltet kan brukes på nye
+     oppføringer. Feltet skal kun vises hvis verdien er «true». Hvis
+     verdien er «true», så skal POST til for eksempel *ny-entitet*
+     avvise forsøk på å sette feltet.
 
 Følgende typer er tilgjengelige for virksomhetsspesifikke metadata.
 Alle typene er kompatible med datatyper tilgjengelig i `XML Skjema /
 XSD <https://www.w3.org/TR/xmlschema-2/#built-in-datatypes>`__:
 
-+----------+----------------------------------------------------------------------------------------------------------------------------------+
-| **Type** | **Beskrivelse**                                                                                                                  |
-+==========+==================================================================================================================================+
-| boolean  | En boolsk verdi, sann eller usann. Gyldige verdier er true og false, dvs. lik JSON-notasjon for samme felttype.                  |
-+----------+----------------------------------------------------------------------------------------------------------------------------------+
-| date     | En datoverdi. Syntaksen er beskrevet i del 6.1.1.8 (Overføringsformat).                                                          |
-+----------+----------------------------------------------------------------------------------------------------------------------------------+
-| datetime | En dato og tidspunkt-verdi. Syntaksen er beskrevet i del 6.1.1.8 (Overføringsformat).                                            |
-+----------+----------------------------------------------------------------------------------------------------------------------------------+
-| integer  | En heltallsverdi. Syntaksen er i tråd med JSON-typen «number» uten desimalpunktum og fraksjoner.                                 |
-+----------+----------------------------------------------------------------------------------------------------------------------------------+
-| decimal  | En desimaltallsverdi. Syntaksen er i tråd med JSON-typen «number».                                                               |
-+----------+----------------------------------------------------------------------------------------------------------------------------------+
-| string   | UTF-8-sekvens med tegn.                                                                                                          |
-+----------+----------------------------------------------------------------------------------------------------------------------------------+
-| uri      | Verdien samsvarer med syntaksen til en URI definert i IETF RFC 2396 og endret av IETF RFC 2732. Dette er en undertype av string. |
-+----------+----------------------------------------------------------------------------------------------------------------------------------+
+.. list-table::
+   :widths: 1 13
+   :header-rows: 1
+
+ * - **Type**
+   - **Beskrivelse**
+ * - boolean
+   - En boolsk verdi, sann eller usann. Gyldige verdier er true og
+     false, dvs. lik JSON-notasjon for samme felttype.
+ * - date
+   - En datoverdi. Syntaksen er beskrevet i del 6.1.1.8 (Overføringsformat).
+ * - datetime
+   - En dato og tidspunkt-verdi. Syntaksen er beskrevet i del 6.1.1.8
+     (Overføringsformat).
+ * - integer
+   - En heltallsverdi. Syntaksen er i tråd med JSON-typen «number»
+     uten desimalpunktum og fraksjoner.
+ * - decimal
+   - En desimaltallsverdi. Syntaksen er i tråd med JSON-typen
+     «number».
+ * - string
+   - UTF-8-sekvens med tegn.
+ * - uri
+   - Verdien samsvarer med syntaksen til en URI definert i IETF RFC
+     2396 og endret av IETF RFC 2732. Dette er en undertype av string.
 
 Det er ingen begresning på hvilke verdier som kan lages i integer og
 decimal, dvs. de har ingen fast bitlengde og oppløsning. Det er
