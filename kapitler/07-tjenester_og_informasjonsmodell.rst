@@ -4,64 +4,98 @@ Tjenester og informasjonsmodell
 Om UML og notasjon som er benyttet
 ----------------------------------
 
-+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| |image0|                                                                                  | **Klassediagram** brukes for å vise utvalgte klasser i en UML-modell. Klassediagram **trenger ikke være  |
-|                                                                                           | fullstendige**, hverken mhp hvilke klasser som vises eller hvilke assosiasjoner som vises. For           |
-|                                                                                           | kompliserte modeller (som Noark-modellen) trengs flere klassediagram for å vise hele modellen.           |
-+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| |image1|                                                                                  | I et **klassediagram** vises en klasse som en firkantet boks. **Klassenavnet** står i øverste «etasje»,  |
-|                                                                                           | og er i eksempelet Registrering. **Klasseattributtene** karakteriserer klassen, og listes opp en i nest  |
-|                                                                                           | øverste etasje (i eksempelet i alt 7, den første/øverste har navnet arkivertDato). Firkanten kan også ha |
-|                                                                                           | flere frivillige etasjer for å vise mer informasjon. I klassen Registrering vises en «etasje» med notes  |
-|                                                                                           | (ofte brukt for **klassedefinisjon**)                                                                    |
-+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| |image2|                                                                                  | Klasser kan knyttes sammen med **assosiasjoner**. Assosiasjoner vises som streker mellom to klasser. En  |
-|                                                                                           | assosiasjon der begge ender er knytta til samme klasse kalles **selv-assosiasjon**. Eksempel: Mappe kan  |
-|                                                                                           | ha undermappe med samme struktur som mappa selv. Dette brukes der en trenger et hierarki av like         |
-|                                                                                           | klasser. En assosiasjon kan være **aggregering**. Symbolet er en strek mellom to klasser med åpen        |
-|                                                                                           | diamant i ene enden. Eksempel: Ei Mappe **har** Registrering(er). En registrering er en selvstendig      |
-|                                                                                           | enhet, som «overlever» selv om Mappa blir sletta.                                                        |
-+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| |image3|                                                                                  | Assosiasjoner kan være **generalisering/spesialisering**. Symbolet er en strek med en trekant i ene      |
-|                                                                                           | enden. Eksempel er Registrering som er en generalisering av Journalpost. En kan også si at Journalpost   |
-|                                                                                           | er en spesialisering av Registrering. I Registrering legges alle felles-kjennetegnene.                   |
-|                                                                                           | Felleskjennetegnene arves så ned på Journalpost. Dette leses som Journalpost **er en** Registrering.     |
-|                                                                                           | Dersom en klasse er en spesialisering av en annen klasse som ikke er tatt med i diagrammet, skrives ofte |
-|                                                                                           | navnet på den generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I eksempelet kan vi derfor  |
-|                                                                                           | se at Registrering er en spesialisering av Arkivenhet, selv om klassen Arkivenhet ikke finnes i          |
-|                                                                                           | diagrammet.                                                                                              |
-+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| |image4|                                                                                  | En assosiasjon kan også være **komposisjon**. Symbolet er en strek mellom to klasser med lukka diamant i |
-|                                                                                           | den ene enden. En Registrering **har** Korrespondansepart(er). En slik Korrespondansepart kan ikke       |
-|                                                                                           | eksistere uten at den er knytta til en Registrering. Slettes («dør») Registreringen vil også             |
-|                                                                                           | korrespondanseparten bli sletta («vil dø»). Assosiasjonene forteller også hvilken vei de er              |
-|                                                                                           | **navigerbare**. Symbolet for dette er piler i endene på streken. Eksempel: En registrering «vet» hvilke |
-|                                                                                           | korrespondansepart(er) som tilhører registreringen, mens korrespondanseparten ikke vet hvilken           |
-|                                                                                           | registrering den tilhører.                                                                               |
-+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| |image5|                                                                                  | **Forekomst** forteller hvor mange forekomster som kan inngå. Forekomst kan brukes i forbindelse med     |
-|                                                                                           | assosiasjoner og også på klasseattributter. Dette vises med minst ett tall, men ofte to tall med to      |
-|                                                                                           | prikker mellom (0..1). Det første tallet angir minimums-forekomst (så mange det minst må være), det      |
-|                                                                                           | andre tallet er maksimumsforekomst (så mange det maksimalt kan være). Eksempel: En Mappe kan høre til    |
-|                                                                                           | ingen eller en (0..1) Klasse, mens en Klasse kan «ha» ingen eller flere (0..***) Mapper(er).             |
-|                                                                                           | Stjernesymbol brukes til å angi «mange» (ubestemt tall større enn 1).En klasseattributt har angitt       |
-|                                                                                           | forekomst med klammeparenteser ([0..1]). Klasseattributten noekkelord kan forekomme ingen eller en gang. |
-|                                                                                           | Når det ikke er angitt forekomst, skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en       |
-|                                                                                           | klasseID, og kan bare ha en. En tom tekststreng-verdi ("") og en tekststreng som kun inneholder usynlige |
-|                                                                                           | tegn (definert som beskrevet i vedlegg 5) er likestilt med en manglende verdi, slik at ved forekomst     |
-|                                                                                           | [1..1] betyr det at klasseID også må ha en verdi forskjellig fra tom streng.                             |
-+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-| |image6|                                                                                  | Datatypene kan også være **simple datatyper** eller **primitiver**. Disse brukes for å gi mulighet for   |
-|                                                                                           | restriksjoner også på primitivene. Epostadresse kan være modellert som en slik primitiv. Epost er en     |
-|                                                                                           | tekst-streng, men som i tillegg til å være tekst-streng også må oppfylle visse regler knytta til det å   |
-|                                                                                           | være gyldig epostadresse (bl.a. inneholde en og bare en forekomst av tegnet @). I eksempelet i figuren   |
-|                                                                                           | er SystemID en tekststreng (string) som i tillegg må oppfylle tilleggskrav. I store modeller kan det     |
-|                                                                                           | være hensiktsmessig å plassere ulike modell-elementer i ulike pakker. Da kan det også bli lettere for    |
-|                                                                                           | leseren å forstå modellen når han får vite hvilken pakke de ulike klassene er plassert i. Modellpakker   |
-|                                                                                           | kalles ofte **navnerom** (namespace) Dette kan angis foran klassenavnet, skilt fra klassenavnet med      |
-|                                                                                           | kolon (:). I eksempelet hører klassen SystemID til pakken/navnerommet Metadata og klassen string         |
-|                                                                                           | tilhører pakken/navnerommet BasicTypes.                                                                  |
-+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+.. list-table::
+   :widths: 1 3
+   :header-rows: 0
+
+ * - |image0|
+   - **Klassediagram** brukes for å vise utvalgte klasser i en
+     UML-modell. Klassediagram **trenger ikke være fullstendige**,
+     hverken mhp hvilke klasser som vises eller hvilke assosiasjoner
+     som vises. For kompliserte modeller (som Noark-modellen) trengs
+     flere klassediagram for å vise hele modellen.
+ * - |image1|
+   - I et **klassediagram** vises en klasse som en firkantet
+     boks. **Klassenavnet** står i øverste «etasje», og er i
+     eksempelet Registrering. **Klasseattributtene** karakteriserer
+     klassen, og listes opp en i nest øverste etasje (i eksempelet i
+     alt 7, den første/øverste har navnet arkivertDato). Firkanten kan
+     også ha flere frivillige etasjer for å vise mer informasjon. I
+     klassen Registrering vises en «etasje» med notes (ofte brukt for
+     **klassedefinisjon**)
+ * - |image2|
+   - Klasser kan knyttes sammen med **assosiasjoner**. Assosiasjoner
+     vises som streker mellom to klasser. En assosiasjon der begge
+     ender er knytta til samme klasse kalles
+     **selv-assosiasjon**. Eksempel: Mappe kan ha undermappe med samme
+     struktur som mappa selv. Dette brukes der en trenger et hierarki
+     av like klasser. En assosiasjon kan være
+     **aggregering**. Symbolet er en strek mellom to klasser med åpen
+     diamant i ene enden. Eksempel: Ei Mappe **har**
+     Registrering(er). En registrering er en selvstendig enhet, som
+     «overlever» selv om Mappa blir sletta.
+ * - |image3|
+   - Assosiasjoner kan være
+     **generalisering/spesialisering**. Symbolet er en strek med en
+     trekant i ene enden. Eksempel er Registrering som er en
+     generalisering av Journalpost. En kan også si at Journalpost er
+     en spesialisering av Registrering. I Registrering legges alle
+     felles-kjennetegnene.  Felleskjennetegnene arves så ned på
+     Journalpost. Dette leses som Journalpost **er en** Registrering.
+     Dersom en klasse er en spesialisering av en annen klasse som ikke
+     er tatt med i diagrammet, skrives ofte navnet på den
+     generaliserte klassen i øvre høyre hjørne av klasse-firkanten. I
+     eksempelet kan vi derfor se at Registrering er en spesialisering
+     av Arkivenhet, selv om klassen Arkivenhet ikke finnes i
+     diagrammet.
+ * - |image4|
+   - En assosiasjon kan også være **komposisjon**. Symbolet er en
+     strek mellom to klasser med lukka diamant i den ene enden. En
+     Registrering **har** Korrespondansepart(er). En slik
+     Korrespondansepart kan ikke eksistere uten at den er knytta til
+     en Registrering. Slettes («dør») Registreringen vil også
+     korrespondanseparten bli sletta («vil dø»). Assosiasjonene
+     forteller også hvilken vei de er **navigerbare**. Symbolet for
+     dette er piler i endene på streken. Eksempel: En registrering
+     «vet» hvilke korrespondansepart(er) som tilhører registreringen,
+     mens korrespondanseparten ikke vet hvilken registrering den
+     tilhører.
+ * - |image5|
+   - **Forekomst** forteller hvor mange forekomster som kan
+     inngå. Forekomst kan brukes i forbindelse med assosiasjoner og
+     også på klasseattributter. Dette vises med minst ett tall, men
+     ofte to tall med to prikker mellom (0..1). Det første tallet
+     angir minimums-forekomst (så mange det minst må være), det andre
+     tallet er maksimumsforekomst (så mange det maksimalt kan
+     være). Eksempel: En Mappe kan høre til ingen eller en (0..1)
+     Klasse, mens en Klasse kan «ha» ingen eller flere (0..***)
+     Mapper(er).  Stjernesymbol brukes til å angi «mange» (ubestemt
+     tall større enn 1).En klasseattributt har angitt forekomst med
+     klammeparenteser ([0..1]). Klasseattributten noekkelord kan
+     forekomme ingen eller en gang.  Når det ikke er angitt forekomst,
+     skal dette oftest tolkes som (1..1). En Klasse skal alltid ha en
+     klasseID, og kan bare ha en. En tom tekststreng-verdi ("") og en
+     tekststreng som kun inneholder usynlige tegn (definert som
+     beskrevet i vedlegg 5) er likestilt med en manglende verdi, slik
+     at ved forekomst [1..1] betyr det at klasseID også må ha en verdi
+     forskjellig fra tom streng.
+ * - |image6|
+   - Datatypene kan også være **simple datatyper** eller
+     **primitiver**. Disse brukes for å gi mulighet for restriksjoner
+     også på primitivene. Epostadresse kan være modellert som en slik
+     primitiv. Epost er en tekst-streng, men som i tillegg til å være
+     tekst-streng også må oppfylle visse regler knytta til det å være
+     gyldig epostadresse (bl.a. inneholde en og bare en forekomst av
+     tegnet @). I eksempelet i figuren er SystemID en tekststreng
+     (string) som i tillegg må oppfylle tilleggskrav. I store modeller
+     kan det være hensiktsmessig å plassere ulike modell-elementer i
+     ulike pakker. Da kan det også bli lettere for leseren å forstå
+     modellen når han får vite hvilken pakke de ulike klassene er
+     plassert i. Modellpakker kalles ofte **navnerom** (namespace)
+     Dette kan angis foran klassenavnet, skilt fra klassenavnet med
+     kolon (:). I eksempelet hører klassen SystemID til
+     pakken/navnerommet Metadata og klassen string tilhører
+     pakken/navnerommet BasicTypes.
 
 Noark5v5
 --------
@@ -120,38 +154,29 @@ eksempel starte slik:
 Følgende relasjonsnøkler skal listes opp fra en implementasjon som
 støtter Arkivstruktur-pakken:
 
-+-------------------------------------------------------------------------------+
-| **Relasjonsnøkkel**                                                           |
-+===============================================================================+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/                 |
-+-------------------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivdel/              |
-+-------------------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivskaper/           |
-+-------------------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/   |
-+-------------------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentobjekt/        |
-+-------------------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/                |
-+-------------------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klassifikasjonssystem/ |
-+-------------------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/                 |
-+-------------------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/          |
-+-------------------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - **Relasjonsnøkkel**
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivdel/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivskaper/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentobjekt/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klassifikasjonssystem/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/
 
 Følgende relasjonsnøkler skal tilsvarende listes opp for privilegerte
 brukere etter innlogging:
 
-+------------------------------------------------------------------------+
-| **Relasjonsnøkkel**                                                    |
-+========================================================================+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkiv/       |
-+------------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivskaper/ |
-+------------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - **Relasjonsnøkkel**
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkiv/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivskaper/
 
 Basis skjema for arkivstruktur og indre kjerne
 
@@ -275,188 +300,196 @@ nedenfor. Et arkiv skal inneholde en eller flere arkivdeler. Dersom
 arkivet består av underarkiver, skal arkivdel være knyttet til det
 laveste nivået av disse.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 3 3 1
+   :header-rows: 1
 
-   +-------------------------------------------+-------------------------------+----------------------+-------------+
-   | **Relasjon**                              | **Kilde**                     | **Mål**              | **Merknad** |
-   +===========================================+===============================+======================+=============+
-   | **Aggregation** (Destination → Source)    | underarkiv 0..\* Arkiv        | overarkiv 0..1 Arkiv |             |
-   +-------------------------------------------+-------------------------------+----------------------+-------------+
-   | **Generalization** (Source → Destination) | Arkiv                         | Arkivenhet           |             |
-   +-------------------------------------------+-------------------------------+----------------------+-------------+
-   | **Aggregation** (Bi-Directional)          | arkivskaper 1..\* Arkivskaper | arkiv 0..\* Arkiv    |             |
-   +-------------------------------------------+-------------------------------+----------------------+-------------+
-   | **Aggregation** (Bi-Directional)          | arkivdel 0..\* Arkivdel       | arkiv 1 Arkiv        |             |
-   +-------------------------------------------+-------------------------------+----------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Aggregation** (Destination → Source)
+   - underarkiv 0..* Arkiv
+   - overarkiv 0..1 Arkiv
+   -
+ * - **Generalization** (Source → Destination)
+   - Arkiv
+   - Arkivenhet
+   -
+ * - **Aggregation** (Bi-Directional)
+   - arkivskaper 1..* Arkivskaper
+   - arkiv 0..* Arkiv
+   -
+ * - **Aggregation** (Bi-Directional)
+   - arkivdel 0..* Arkivdel
+   - arkiv 1 Arkiv
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +------------------------------------------------------------------------+
-   | **Verdi**                                                              |
-   +========================================================================+
-   | self                                                                   |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/          |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivdel/       |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivskaper/    |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkiv/       |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivdel/    |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivskaper/ |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overarkiv/      |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/underarkiv/     |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/arkivstatus/         |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/      |
-   +------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivdel/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivskaper/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkiv/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivdel/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivskaper/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overarkiv/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/underarkiv/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
 
-   +--------------------------------------------------------+----------------------------------------+----------------------------------------+-----------------------------+-----------------------------+
-   | **Navn**                                               | **Merknad**                            | **Forek.**                             | **Kode**                    | **Type**                    |
-   +========================================================+========================================+========================================+=============================+=============================+
-   | tittel                                                 | Definisjon: Tittel eller navn på       | [1..1]                                 |                             | string                      |
-   |                                                        | arkivenheten Kilde: Registreres        |                                        |                             |                             |
-   |                                                        | manuelt eller hentes automatisk fra    |                                        |                             |                             |
-   |                                                        | innholdet i arkivdokumentet. Ja fra    |                                        |                             |                             |
-   |                                                        | klassetittel dersom alle mapper skal   |                                        |                             |                             |
-   |                                                        | ha samme tittel som klassen. Kan også  |                                        |                             |                             |
-   |                                                        | hentes automatisk fra et fagsystem.    |                                        |                             |                             |
-   |                                                        | Kommentarer: For saksmappe og          |                                        |                             |                             |
-   |                                                        | journalpost vil dette tilsvare         |                                        |                             |                             |
-   |                                                        | "Sakstittel" og "Dokumentbeskrivelse". |                                        |                             |                             |
-   |                                                        | Disse navnene kan beholdes i           |                                        |                             |                             |
-   |                                                        | grensesnittet. M020                    |                                        |                             |                             |
-   +--------------------------------------------------------+----------------------------------------+----------------------------------------+-----------------------------+-----------------------------+
-   | beskrivelse                                            | Definisjon: Tekstlig beskrivelse av    | [0..1]                                 |                             | string                      |
-   |                                                        | arkivenheten. Kilde: Registreres       |                                        |                             |                             |
-   |                                                        | manuelt. Kommentarer: Tilsvarende      |                                        |                             |                             |
-   |                                                        | attributt finnes ikke i Noark 4 (men   |                                        |                             |                             |
-   |                                                        | noen tabeller hadde egne attributter   |                                        |                             |                             |
-   |                                                        | for merknad som kunne brukes som et    |                                        |                             |                             |
-   |                                                        | beskrivelsesfelt). M021                |                                        |                             |                             |
-   +--------------------------------------------------------+----------------------------------------+----------------------------------------+-----------------------------+-----------------------------+
-   | arkivstatus                                            | Definisjon: Status til arkivet .       | [0..1]                                 |                             | Arkivstatus                 |
-   |                                                        | Kilde: Registreres manuelt når arkivet |                                        |                             |                             |
-   |                                                        | opprettes eller ved skifte av status.  |                                        |                             |                             |
-   |                                                        | Kommentarer: (ingen) M050              |                                        |                             |                             |
-   +--------------------------------------------------------+----------------------------------------+----------------------------------------+-----------------------------+-----------------------------+
-   | dokumentmedium                                         | Definisjon: Angivelse av om            | [0..1]                                 |                             | Dokumentmedium              |
-   |                                                        | arkivenheten inneholder fysiske        |                                        |                             |                             |
-   |                                                        | dokumenter, elektroniske dokumenter    |                                        |                             |                             |
-   |                                                        | eller en blanding av fysiske og        |                                        |                             |                             |
-   |                                                        | elektroniske dokumenter. Kilde: Arves  |                                        |                             |                             |
-   |                                                        | fra overordnet nivå, kan overstyres    |                                        |                             |                             |
-   |                                                        | manuelt. Kommentarer: Obligatorisk ved |                                        |                             |                             |
-   |                                                        | blanding av fysisk og elektronisk      |                                        |                             |                             |
-   |                                                        | arkiv. Er hele arkivet enten fysisk    |                                        |                             |                             |
-   |                                                        | eller elektronisk, er det              |                                        |                             |                             |
-   |                                                        | tilstrekkelig med verdi på arkivnivå.  |                                        |                             |                             |
-   |                                                        | Er en hel arkivdel enten fysisk eller  |                                        |                             |                             |
-   |                                                        | elektronisk, er det tilstrekkelig å    |                                        |                             |                             |
-   |                                                        | angi det på arkivdelnivå. Dersom       |                                        |                             |                             |
-   |                                                        | underordnede arkivdeler inneholder     |                                        |                             |                             |
-   |                                                        | både fysiske og elektroniske           |                                        |                             |                             |
-   |                                                        | dokumenter, må informasjon om dette    |                                        |                             |                             |
-   |                                                        | arves nedover i hierarkiet. Se også    |                                        |                             |                             |
-   |                                                        | kommentar til M208 referanseArkivdel.  |                                        |                             |                             |
-   |                                                        | M300                                   |                                        |                             |                             |
-   +--------------------------------------------------------+----------------------------------------+----------------------------------------+-----------------------------+-----------------------------+
-   | oppbevaringssted                                       | Definisjon: Stedet hvor de fysiske     | [0..*]                                 |                             | string                      |
-   |                                                        | dokumentene oppbevares. Kan være       |                                        |                             |                             |
-   |                                                        | angivelse av rom, hylle, skap osv.     |                                        |                             |                             |
-   |                                                        | Overordnede arkivdeler (f.eks. en      |                                        |                             |                             |
-   |                                                        | arkivdel) kan oppbevares på flere      |                                        |                             |                             |
-   |                                                        | steder. Kilde: Arves fra overordnet    |                                        |                             |                             |
-   |                                                        | nivå, kan overstyres manuelt.          |                                        |                             |                             |
-   |                                                        | Kommentarer: Fysiske dokumenters       |                                        |                             |                             |
-   |                                                        | plassering skal ellers gå fram av      |                                        |                             |                             |
-   |                                                        | arkivstrukturen. Fysiske dokumenter i  |                                        |                             |                             |
-   |                                                        | et sakarkiv skal i utgangspunktet være |                                        |                             |                             |
-   |                                                        | ordnet i overordnede omslag (f.eks.    |                                        |                             |                             |
-   |                                                        | hengemapper) etter stigende klasseID.  |                                        |                             |                             |
-   |                                                        | Innenfor hver av disse skal omslagene  |                                        |                             |                             |
-   |                                                        | skal dokumentene ligge i fysiske       |                                        |                             |                             |
-   |                                                        | saksmapper som er ordnet etter         |                                        |                             |                             |
-   |                                                        | stigende mappeID. Innenfor saksmappene |                                        |                             |                             |
-   |                                                        | skal dokumentene være ordnet etter     |                                        |                             |                             |
-   |                                                        | stigende journalpostnummer             |                                        |                             |                             |
-   |                                                        | ("dokumentnummer"). Vedlegg skal       |                                        |                             |                             |
-   |                                                        | legges sammen med tilhørende           |                                        |                             |                             |
-   |                                                        | hoveddokument. M301                    |                                        |                             |                             |
-   +--------------------------------------------------------+----------------------------------------+----------------------------------------+-----------------------------+-----------------------------+
-   | avsluttetDato                                          | Definisjon: Dato og klokkeslett når    | [0..1]                                 |                             | datetime                    |
-   |                                                        | arkivenheten ble avsluttet/lukket .    |                                        |                             |                             |
-   |                                                        | Kilde: Registreres automatisk av       |                                        |                             |                             |
-   |                                                        | systemet når enheten avsluttes.        |                                        |                             |                             |
-   |                                                        | Kommentarer: (ingen). M602             |                                        |                             |                             |
-   +--------------------------------------------------------+----------------------------------------+----------------------------------------+-----------------------------+-----------------------------+
-   | avsluttetAv                                            | Definisjon: Navn på person som         | [0..1]                                 |                             | string                      |
-   |                                                        | avsluttet/lukket arkivenheten. Kilde:  |                                        |                             |                             |
-   |                                                        | Registreres automatisk av systemet ved |                                        |                             |                             |
-   |                                                        | opprettelse av enheten. Kommentarer:   |                                        |                             |                             |
-   |                                                        | (ingen) M603                           |                                        |                             |                             |
-   +--------------------------------------------------------+----------------------------------------+----------------------------------------+-----------------------------+-----------------------------+
-   | referanseAvsluttetAv                                   | referanse til Bruker sin systemID      | [0..1]                                 |                             | SystemID                    |
-   +--------------------------------------------------------+----------------------------------------+----------------------------------------+-----------------------------+-----------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - tittel
+   - Definisjon: Tittel eller navn på arkivenheten Kilde: Registreres
+     manuelt eller hentes automatisk fra innholdet i
+     arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha
+     samme tittel som klassen. Kan også hentes automatisk fra et
+     fagsystem.  Kommentarer: For saksmappe og journalpost vil dette
+     tilsvare "Sakstittel" og "Dokumentbeskrivelse".  Disse navnene
+     kan beholdes i grensesnittet. M020
+   - [1..1]
+   -
+   - string
+ * - beskrivelse
+   - Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde:
+     Registreres manuelt. Kommentarer: Tilsvarende attributt finnes
+     ikke i Noark 4 (men noen tabeller hadde egne attributter for
+     merknad som kunne brukes som et beskrivelsesfelt). M021
+   - [0..1]
+   -
+   - string
+ * - arkivstatus
+   - Definisjon: Status til arkivet .  Kilde: Registreres manuelt når
+     arkivet opprettes eller ved skifte av status.  Kommentarer:
+     (ingen) M050
+   - [0..1]
+   -
+   - Arkivstatus
+ * - dokumentmedium
+   - Definisjon: Angivelse av om arkivenheten inneholder fysiske
+     dokumenter, elektroniske dokumenter eller en blanding av fysiske
+     og elektroniske dokumenter. Kilde: Arves fra overordnet nivå, kan
+     overstyres manuelt. Kommentarer: Obligatorisk ved blanding av
+     fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller
+     elektronisk, er det tilstrekkelig med verdi på arkivnivå.  Er en
+     hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig
+     å angi det på arkivdelnivå. Dersom underordnede arkivdeler
+     inneholder både fysiske og elektroniske dokumenter, må
+     informasjon om dette arves nedover i hierarkiet. Se også
+     kommentar til M208 referanseArkivdel.  M300
+   - [0..1]
+   -
+   - Dokumentmedium
+ * - oppbevaringssted
+   - Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan
+     være angivelse av rom, hylle, skap osv.  Overordnede arkivdeler
+     (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves
+     fra overordnet nivå, kan overstyres manuelt.  Kommentarer:
+     Fysiske dokumenters plassering skal ellers gå fram av
+     arkivstrukturen. Fysiske dokumenter i et sakarkiv skal i
+     utgangspunktet være ordnet i overordnede omslag (f.eks.
+     hengemapper) etter stigende klasseID.  Innenfor hver av disse
+     skal omslagene skal dokumentene ligge i fysiske saksmapper som er
+     ordnet etter stigende mappeID. Innenfor saksmappene skal
+     dokumentene være ordnet etter stigende journalpostnummer
+     ("dokumentnummer"). Vedlegg skal legges sammen med tilhørende
+     hoveddokument. M301
+   - [0..*]
+   -
+   - string
+ * - avsluttetDato
+   - Definisjon: Dato og klokkeslett når arkivenheten ble
+     avsluttet/lukket .  Kilde: Registreres automatisk av systemet når
+     enheten avsluttes.  Kommentarer: (ingen). M602
+   - [0..1]
+   -
+   - datetime
+ * - avsluttetAv
+   - Definisjon: Navn på person som avsluttet/lukket
+     arkivenheten. Kilde: Registreres automatisk av systemet ved
+     opprettelse av enheten. Kommentarer: (ingen) M603
+   - [0..1]
+   -
+   - string
+ * - referanseAvsluttetAv
+   - referanse til Bruker sin systemID
+   - [0..1]
+   -
+   - SystemID
 
-.. table:: Restriksjoner
+.. list-table:: Restriksjoner
+   :header-rows: 1
 
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | **Navn**                                                                                                          | **Merknad**                                                                      |
-   +===================================================================================================================+==================================================================================+
-   | 5.2.1 En Noark 5-løsning skal kunne bestå av ett eller flere selvstendige Arkiv                                   |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.2 Det skal være mulig å opprette ingen, ett eller flere Arkiv for en Arkivskaper (virksomhet) og det skal     |                                                                                  |
-   | være mulig å angi at flere arkivskapere sammen skaper ett Arkiv.                                                  |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.3 Et Arkiv skal bestå av en eller flere arkivdeler og en Arkivdel skal inngå i (kun) ett Arkiv.               |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.4 Dersom Arkiv er registrert som ”Avsluttet”, skal det ikke være mulig å legge til flere underliggende        |                                                                                  |
-   | Arkivdeler.                                                                                                       |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.5 Når en tjeneste/funksjon sletter et helt Arkiv med alle underliggende nivå, skal dette logges.              |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.6 Det skal ikke være mulig å endre dato for opprettelse av Arkiv.                                             |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.7 Det skal ikke være mulig å slette dato for opprettelse av Arkiv.                                            |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.8 Det skal ikke være mulig å slette dato for avslutning av Arkiv.                                             |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.9 Det skal være mulig å definere statusverdier for Arkiv. Følgende verdier er anbefalt: Opprettet, Avsluttet  |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.10 Et Arkiv bør kunne inndeles i et hierarki (skissert i modellen ved bruk av egenrelasjon) av Underarkiver.  | Merknad: Det bør være mulig med ett eller flere nivåer under Arkiv, f.eks. for å |
-   |                                                                                                                   | representere fysiske delarkiver. Dette kan være aktuelt for virksomheter som har |
-   |                                                                                                                   | arkiver fysisk plassert på flere forskjellige steder.                            |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.11 Systemet bør ha en tjeneste/funksjon for å angi et Arkiv som Underarkiv til et Arkiv.                      |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.12 Et Underarkiv skal kun opprettes og endres gjennom Administrasjonssystemet for Noark 5.                    |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | Ny - Når arkivet settes "Avsluttet" så skal avsluttetDato og avsluttetAv registreres                              |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.13.4 Et Arkiv og arkivets metadata skal kun opprettes gjennom Administratorfunksjonen for Noark 5 kjerne.       |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.13.5 Et Underarkiv skal kun defineres og endres gjennom Administratorfunksjonen for Noark 5 kjerne.             |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | avsluttetAv_M603A                                                                                                 | avsluttetAv: Skal ikke kunne endres                                              |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | avsluttetAv_M603B                                                                                                 | avsluttetAv: Obligatorisk dersom arkivenheten er avsluttet.                      |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | avsluttetDato_M602A                                                                                               | avsluttetDato: Skal ikke kunne endres.                                           |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | avsluttetDato_M602B                                                                                               | avsluttetDato: Obligatorisk dersom arkivenheten er avsluttet.                    |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | tittel_M020                                                                                                       | tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller         |
-   |                                                                                                                   | dokumentene arkivert                                                             |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+ * - **Navn**
+   - **Merknad**
+ * - 5.2.1 En Noark 5-løsning skal kunne bestå av ett eller flere
+     selvstendige Arkiv
+   -
+ * - 5.2.2 Det skal være mulig å opprette ingen, ett eller flere Arkiv
+     for en Arkivskaper (virksomhet) og det skal være mulig å angi at
+     flere arkivskapere sammen skaper ett Arkiv.
+   -
+ * - 5.2.3 Et Arkiv skal bestå av en eller flere arkivdeler og en
+     Arkivdel skal inngå i (kun) ett Arkiv.
+   -
+ * - 5.2.4 Dersom Arkiv er registrert som ”Avsluttet”, skal det ikke
+     være mulig å legge til flere underliggende Arkivdeler.
+   -
+ * - 5.2.5 Når en tjeneste/funksjon sletter et helt Arkiv med alle
+     underliggende nivå, skal dette logges.
+   -
+ * - 5.2.6 Det skal ikke være mulig å endre dato for opprettelse av Arkiv.
+   -
+ * - 5.2.7 Det skal ikke være mulig å slette dato for opprettelse av Arkiv.
+   -
+ * - 5.2.8 Det skal ikke være mulig å slette dato for avslutning av Arkiv.
+   -
+ * - 5.2.9 Det skal være mulig å definere statusverdier for
+     Arkiv. Følgende verdier er anbefalt: Opprettet, Avsluttet
+   -
+ * - 5.2.10 Et Arkiv bør kunne inndeles i et hierarki (skissert i
+     modellen ved bruk av egenrelasjon) av Underarkiver.
+   - Merknad: Det bør være mulig med ett eller flere nivåer under
+     Arkiv, f.eks. for å representere fysiske delarkiver. Dette kan
+     være aktuelt for virksomheter som har arkiver fysisk plassert på
+     flere forskjellige steder.
+ * - 5.2.11 Systemet bør ha en tjeneste/funksjon for å angi et Arkiv
+     som Underarkiv til et Arkiv.
+   -
+ * - 5.2.12 Et Underarkiv skal kun opprettes og endres gjennom
+     Administrasjonssystemet for Noark 5.
+   -
+ * - Ny - Når arkivet settes "Avsluttet" så skal avsluttetDato og
+     avsluttetAv registreres
+   -
+ * - 5.13.4 Et Arkiv og arkivets metadata skal kun opprettes gjennom
+     Administratorfunksjonen for Noark 5 kjerne.
+   -
+ * - 5.13.5 Et Underarkiv skal kun defineres og endres gjennom
+     Administratorfunksjonen for Noark 5 kjerne.
+   -
+ * - avsluttetAv M603A
+   - avsluttetAv: Skal ikke kunne endres
+ * - avsluttetAv M603B
+   - avsluttetAv: Obligatorisk dersom arkivenheten er avsluttet.
+ * - avsluttetDato M602A
+   - avsluttetDato: Skal ikke kunne endres.
+ * - avsluttetDato M602B
+   - avsluttetDato: Obligatorisk dersom arkivenheten er avsluttet.
+ * - tittel M020
+   - tittel: Skal normalt ikke kunne endres etter at enheten er
+     lukket, eller dokumentene arkivert
 
 Arkivdel
 ^^^^^^^^
@@ -529,77 +562,74 @@ registreringene og dokumentbeskrivelsene vil indirekte også tilhøre
 arkivdelen som er utgangspunktet for den hierarkiske arkivstrukturen,
 men arv herfra blir overstyrt.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 5 4 4
+   :header-rows: 1
 
-   +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-   | **Relasjon**                                    | **Kilde**                                       | **Mål**                                         | **Merknad**                                     |
-   +=================================================+=================================================+=================================================+=================================================+
-   | **Generalization** (Source → Destination)       | Arkivdel                                        | Arkivenhet                                      |                                                 |
-   +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-   | **Aggregation** (Bi-Directional)                | arkivdel 0..\* Arkivdel                         | arkiv 1 Arkiv                                   |                                                 |
-   +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-   | **Aggregation** (Bi-Directional)                | forrigearkivdel 0..1 Arkivdel                   | nestearkivdel 0..1 Arkivdel                     | SystemID for forrige/neste Arkivdel avleveres   |
-   |                                                 |                                                 |                                                 | som                                             |
-   |                                                 |                                                 |                                                 | referanseForloeper(M202)/referanseArvtaker(M203 |
-   |                                                 |                                                 |                                                 | ).                                              |
-   +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-   | **Aggregation** (Bi-Directional)                | klassifikasjonssystem 0..1                      | arkivdel 1..\* Arkivdel                         |                                                 |
-   |                                                 | Klassifikasjonssystem                           |                                                 |                                                 |
-   +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-   | **Aggregation** (Bi-Directional)                | registrering 0..\* Registrering                 | arkivdel 0..1 Arkivdel                          |                                                 |
-   +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-   | **Aggregation** (Bi-Directional)                | mappe 0..\* Mappe                               | arkivdel 0..1 Arkivdel                          |                                                 |
-   +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-   | **Aggregation** (Destination → Source)          | sekundaerklassifikasjonssystem 0..\*            | Arkivdel                                        |                                                 |
-   |                                                 | Klassifikasjonssystem                           |                                                 |                                                 |
-   +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Generalization** (Source → Destination)
+   - Arkivdel
+   - Arkivenhet
+   -
+ * - **Aggregation** (Bi-Directional)
+   - arkivdel 0..* Arkivdel
+   - arkiv 1 Arkiv
+   -
+ * - **Aggregation** (Bi-Directional)
+   - forrigearkivdel 0..1 Arkivdel
+   - nestearkivdel 0..1 Arkivdel
+   - SystemID for forrige/neste Arkivdel avleveres som
+     referanseForloeper(M202) / referanseArvtaker(M203).
+ * - **Aggregation** (Bi-Directional)
+   - klassifikasjonssystem 0..1
+     Klassifikasjonssystem
+   - arkivdel 1..* Arkivdel
+   -
+ * - **Aggregation** (Bi-Directional)
+   - registrering 0..* Registrering
+   - arkivdel 0..1 Arkivdel
+   -
+ * - **Aggregation** (Bi-Directional)
+   - mappe 0..* Mappe
+   - arkivdel 0..1 Arkivdel
+   -
+ * - **Aggregation** (Destination → Source)
+   - sekundaerklassifikasjonssystem 0..*
+     Klassifikasjonssystem
+   - Arkivdel
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +----------------------------------------------------------------------------------+
-   | **Verdi**                                                                        |
-   +==================================================================================+
-   | self                                                                             |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/                    |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivdel/                 |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/forrigearkivdel/          |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klassifikasjonssystem/    |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/                    |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/nestearkivdel/            |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkiv/                 |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivdel/              |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-klassifikasjonssystem/ |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/                 |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-registrering/          |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/             |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/arkivdelstatus/                |
-   +----------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/                |
-   +----------------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivdel/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/forrigearkivdel/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klassifikasjonssystem/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/nestearkivdel/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkiv/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivdel/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-klassifikasjonssystem/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-registrering/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivdelstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkkel
 også være tilgjengelig via Arkivdel-instanser.
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +-----------------------------------------------------------------+
-   | **Verdi**                                                       |
-   +=================================================================+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-saksmappe/ |
-   +-----------------------------------------------------------------+
+ * - **Verdi**
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-saksmappe/
 
 Merk at underliggende lister med Saksmappe og andre underentiteter er
 tilgjengelig via relasjonsnøkkel
@@ -607,223 +637,271 @@ tilgjengelig via relasjonsnøkkel
 dermed er det ikke egne relasjonsnøkler for å hente ut lister med de
 spesifikke under-entitetene.
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
 
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | **Navn**                                                   | **Merknad**                           | **Forek.**                            | **Kode**                   | **Type**                   |
-   +============================================================+=======================================+=======================================+============================+============================+
-   | tittel                                                     | Definisjon: Tittel eller navn på      | [1..1]                                |                            | string                     |
-   |                                                            | arkivenheten. Kilde: Registreres      |                                       |                            |                            |
-   |                                                            | manuelt eller hentes automatisk fra   |                                       |                            |                            |
-   |                                                            | innholdet i arkivdokumentet. Ja fra   |                                       |                            |                            |
-   |                                                            | klassetittel dersom alle mapper skal  |                                       |                            |                            |
-   |                                                            | ha samme tittel som klassen. Kan også |                                       |                            |                            |
-   |                                                            | hentes automatisk fra et fagsystem.   |                                       |                            |                            |
-   |                                                            | Kommentarer: For saksmappe og         |                                       |                            |                            |
-   |                                                            | journalpost vil dette tilsvare        |                                       |                            |                            |
-   |                                                            | "Sakstittel" og                       |                                       |                            |                            |
-   |                                                            | "Dokumentbeskrivelse". Disse navnene  |                                       |                            |                            |
-   |                                                            | kan beholdes i grensesnittet. M020    |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | beskrivelse                                                | Definisjon: Tekstlig beskrivelse av   | [0..1]                                |                            | string                     |
-   |                                                            | arkivenheten. Kilde: Registreres      |                                       |                            |                            |
-   |                                                            | manuelt. Kommentarer: Tilsvarende     |                                       |                            |                            |
-   |                                                            | attributt finnes ikke i Noark 4 (men  |                                       |                            |                            |
-   |                                                            | noen tabeller hadde egne attributter  |                                       |                            |                            |
-   |                                                            | for merknad som kunne brukes som et   |                                       |                            |                            |
-   |                                                            | beskrivelsesfelt). M021               |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | arkivdelstatus                                             | Definisjon: Status til den            | [1..1]                                |                            | Arkivdelstatus             |
-   |                                                            | arkivperioden som arkivdelen omfatter |                                       |                            |                            |
-   |                                                            | . Kilde: Registreres manuelt når      |                                       |                            |                            |
-   |                                                            | arkivdelen opprettes eller ved skifte |                                       |                            |                            |
-   |                                                            | av status. Kommentarer: Arkivdeler    |                                       |                            |                            |
-   |                                                            | som avleveres skal ha status          |                                       |                            |                            |
-   |                                                            | 'Avsluttet periode'. M051             |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | dokumentmedium                                             | Definisjon: Angivelse av om           | [0..1]                                |                            | Dokumentmedium             |
-   |                                                            | arkivenheten inneholder fysiske       |                                       |                            |                            |
-   |                                                            | dokumenter, elektroniske dokumenter   |                                       |                            |                            |
-   |                                                            | eller en blanding av fysiske og       |                                       |                            |                            |
-   |                                                            | elektroniske dokumenter. Kilde: Arves |                                       |                            |                            |
-   |                                                            | fra overordnet nivå, kan overstyres   |                                       |                            |                            |
-   |                                                            | manuelt. Kommentarer: Obligatorisk    |                                       |                            |                            |
-   |                                                            | ved blanding av fysisk og elektronisk |                                       |                            |                            |
-   |                                                            | arkiv. Er hele arkivet enten fysisk   |                                       |                            |                            |
-   |                                                            | eller elektronisk, er det             |                                       |                            |                            |
-   |                                                            | tilstrekkelig med verdi på arkivnivå. |                                       |                            |                            |
-   |                                                            | Er en hel arkivdel enten fysisk eller |                                       |                            |                            |
-   |                                                            | elektronisk, er det tilstrekkelig å   |                                       |                            |                            |
-   |                                                            | angi det på arkivdelnivå. Dersom      |                                       |                            |                            |
-   |                                                            | underordnede arkivdeler inneholder    |                                       |                            |                            |
-   |                                                            | både fysiske og elektroniske          |                                       |                            |                            |
-   |                                                            | dokumenter, må informasjon om dette   |                                       |                            |                            |
-   |                                                            | arves nedover i hierarkiet. Se også   |                                       |                            |                            |
-   |                                                            | kommentar til M208 referanseArkivdel. |                                       |                            |                            |
-   |                                                            | M300                                  |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | oppbevaringssted                                           | Definisjon: Stedet hvor de fysiske    | [0..*]                                |                            | string                     |
-   |                                                            | dokumentene oppbevares. Kan være      |                                       |                            |                            |
-   |                                                            | angivelse av rom, hylle, skap osv.    |                                       |                            |                            |
-   |                                                            | Overordnede arkivdeler (f.eks. en     |                                       |                            |                            |
-   |                                                            | arkivdel) kan oppbevares på flere     |                                       |                            |                            |
-   |                                                            | steder. Kilde: Arves fra overordnet   |                                       |                            |                            |
-   |                                                            | nivå, kan overstyres manuelt.         |                                       |                            |                            |
-   |                                                            | Kommentarer: Fysiske dokumenters      |                                       |                            |                            |
-   |                                                            | plassering skal ellers gå fram av     |                                       |                            |                            |
-   |                                                            | arkivstrukturen. Fysiske dokumenter i |                                       |                            |                            |
-   |                                                            | et sakarkiv skal iutgangspunktet være |                                       |                            |                            |
-   |                                                            | ordnet i overordnede omslag (f.eks.   |                                       |                            |                            |
-   |                                                            | hengemapper) etter stigende klasseID. |                                       |                            |                            |
-   |                                                            | Innenfor hver av disse skal omslagene |                                       |                            |                            |
-   |                                                            | skal dokumentene ligge i fysiske      |                                       |                            |                            |
-   |                                                            | saksmapper som er ordnet etter        |                                       |                            |                            |
-   |                                                            | stigende mappeID. Innenfor            |                                       |                            |                            |
-   |                                                            | saksmappene skal dokumentene være     |                                       |                            |                            |
-   |                                                            | ordnet etter stigende                 |                                       |                            |                            |
-   |                                                            | journalpostnummer ("dokumentnummer"). |                                       |                            |                            |
-   |                                                            | Vedlegg skal legges sammen med        |                                       |                            |                            |
-   |                                                            | tilhørende hoveddokument. M301        |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | avsluttetDato                                              | Definisjon: Dato og klokkeslett når   | [0..1]                                |                            | datetime                   |
-   |                                                            | arkivenheten ble avsluttet/lukket .   |                                       |                            |                            |
-   |                                                            | Kilde: Registreres automatisk av      |                                       |                            |                            |
-   |                                                            | systemet når enheten avsluttes.       |                                       |                            |                            |
-   |                                                            | Kommentarer: (ingen) M602             |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | avsluttetAv                                                | Definisjon: Navn på person som        | [0..1]                                |                            | string                     |
-   |                                                            | avsluttet/lukket arkivenheten. Kilde: |                                       |                            |                            |
-   |                                                            | Registreres automatisk av systemet    |                                       |                            |                            |
-   |                                                            | ved opprettelse av enheten.           |                                       |                            |                            |
-   |                                                            | Kommentarer: (ingen) M603             |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | referanseAvsluttetAv                                       |                                       | [0..1]                                |                            | SystemID                   |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | arkivperiodeStartDato                                      | Definisjon: Dato for starten av en    | [0..1]                                |                            | date                       |
-   |                                                            | arkivperiode . Kilde: Settes          |                                       |                            |                            |
-   |                                                            | automatisk til samme dato som M600    |                                       |                            |                            |
-   |                                                            | opprettetDato. Kommentarer: Det kan   |                                       |                            |                            |
-   |                                                            | tenkes tilfeller hvor startdatoen     |                                       |                            |                            |
-   |                                                            | ikke er identisk med datoen           |                                       |                            |                            |
-   |                                                            | arkivdelen ble opprettet M107         |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | arkivperiodeSluttDato                                      | Definisjon: Dato for slutten av en    | [0..1]                                |                            | date                       |
-   |                                                            | arkivperiode . Kilde: Settes          |                                       |                            |                            |
-   |                                                            | automatisk til samme dato som M602    |                                       |                            |                            |
-   |                                                            | avsluttetDato. Kommentarer: Det kan   |                                       |                            |                            |
-   |                                                            | forekomme tilfeller hvor sluttdatoen  |                                       |                            |                            |
-   |                                                            | ikke er identisk med datoen           |                                       |                            |                            |
-   |                                                            | arkivdelen ble avsluttet. M108        |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | referanseForloeper                                         | M202                                  | [0..1]                                |                            | SystemID                   |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | referanseArvtaker                                          | M203                                  | [0..1]                                |                            | SystemID                   |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | kassasjon                                                  |                                       | [0..1]                                |                            | Kassasjon                  |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | utfoertKassasjon                                           |                                       | [0..1]                                |                            | UtfoertKassasjon           |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | sletting                                                   |                                       | [0..1]                                |                            | Sletting                   |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | skjerming                                                  |                                       | [0..1]                                |                            | Skjerming                  |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | gradering                                                  |                                       | [0..1]                                |                            | Gradering                  |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - tittel
+   - Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres
+     manuelt eller hentes automatisk fra innholdet i
+     arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha
+     samme tittel som klassen. Kan også hentes automatisk fra et
+     fagsystem.  Kommentarer: For saksmappe og journalpost vil dette
+     tilsvare "Sakstittel" og "Dokumentbeskrivelse". Disse navnene kan
+     beholdes i grensesnittet. M020
+   - [1..1]
+   -
+   - string
+ * - beskrivelse
+   - Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde:
+     Registreres manuelt. Kommentarer: Tilsvarende attributt finnes
+     ikke i Noark 4 (men noen tabeller hadde egne attributter for
+     merknad som kunne brukes som et beskrivelsesfelt). M021
+   - [0..1]
+   -
+   - string
+ * - arkivdelstatus
+   - Definisjon: Status til den arkivperioden som arkivdelen omfatter
+     . Kilde: Registreres manuelt når arkivdelen opprettes eller ved
+     skifte av status. Kommentarer: Arkivdeler som avleveres skal ha
+     status 'Avsluttet periode'. M051
+   - [1..1]
+   -
+   - Arkivdelstatus
+ * - dokumentmedium
+   - Definisjon: Angivelse av om arkivenheten inneholder fysiske
+     dokumenter, elektroniske dokumenter eller en blanding av fysiske
+     og elektroniske dokumenter. Kilde: Arves fra overordnet nivå, kan
+     overstyres manuelt. Kommentarer: Obligatorisk ved blanding av
+     fysisk og elektronisk arkiv. Er hele arkivet enten fysisk eller
+     elektronisk, er det tilstrekkelig med verdi på arkivnivå.  Er en
+     hel arkivdel enten fysisk eller elektronisk, er det tilstrekkelig
+     å angi det på arkivdelnivå. Dersom underordnede arkivdeler
+     inneholder både fysiske og elektroniske dokumenter, må
+     informasjon om dette arves nedover i hierarkiet. Se også
+     kommentar til M208 referanseArkivdel.  M300
+   - [0..1]
+   -
+   - Dokumentmedium
+ * - oppbevaringssted
+   - Definisjon: Stedet hvor de fysiske dokumentene oppbevares. Kan
+     være angivelse av rom, hylle, skap osv.  Overordnede arkivdeler
+     (f.eks. en arkivdel) kan oppbevares på flere steder. Kilde: Arves
+     fra overordnet nivå, kan overstyres manuelt.  Kommentarer:
+     Fysiske dokumenters plassering skal ellers gå fram av
+     arkivstrukturen. Fysiske dokumenter i et sakarkiv skal
+     iutgangspunktet være ordnet i overordnede omslag (f.eks.
+     hengemapper) etter stigende klasseID.  Innenfor hver av disse
+     skal omslagene skal dokumentene ligge i fysiske saksmapper som er
+     ordnet etter stigende mappeID. Innenfor saksmappene skal
+     dokumentene være ordnet etter stigende journalpostnummer
+     ("dokumentnummer").  Vedlegg skal legges sammen med tilhørende
+     hoveddokument. M301
+   - [0..*]
+   -
+   - string
+ * - avsluttetDato
+   - Definisjon: Dato og klokkeslett når arkivenheten ble
+     avsluttet/lukket .  Kilde: Registreres automatisk av systemet når
+     enheten avsluttes.  Kommentarer: (ingen) M602
+   - [0..1]
+   -
+   - datetime
+ * - avsluttetAv
+   - Definisjon: Navn på person som avsluttet/lukket
+     arkivenheten. Kilde: Registreres automatisk av systemet ved
+     opprettelse av enheten.  Kommentarer: (ingen) M603
+   - [0..1]
+   -
+   - string
+ * - referanseAvsluttetAv
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - arkivperiodeStartDato
+   - Definisjon: Dato for starten av en arkivperiode . Kilde: Settes
+     automatisk til samme dato som M600 opprettetDato. Kommentarer:
+     Det kan tenkes tilfeller hvor startdatoen ikke er identisk med
+     datoen arkivdelen ble opprettet M107
+   - [0..1]
+   -
+   - date
+ * - arkivperiodeSluttDato
+   - Definisjon: Dato for slutten av en arkivperiode . Kilde: Settes
+     automatisk til samme dato som M602 avsluttetDato. Kommentarer:
+     Det kan forekomme tilfeller hvor sluttdatoen ikke er identisk med
+     datoen arkivdelen ble avsluttet. M108
+   - [0..1]
+   -
+   - date
+ * - referanseForloeper
+   - M202
+   - [0..1]
+   -
+   - SystemID
+ * - referanseArvtaker
+   - M203
+   - [0..1]
+   -
+   - SystemID
+ * - kassasjon
+   -
+   - [0..1]
+   -
+   - Kassasjon
+ * - utfoertKassasjon
+   -
+   - [0..1]
+   -
+   - UtfoertKassasjon
+ * - sletting
+   -
+   - [0..1]
+   -
+   - Sletting
+ * - skjerming
+   -
+   - [0..1]
+   -
+   - Skjerming
+ * - gradering
+   -
+   - [0..1]
+   -
+   - Gradering
 
-.. table:: Restriksjoner
+.. list-table:: Restriksjoner
+   :header-rows: 1
 
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | **Navn**                                                                                                          | **Merknad**                                                                      |
-   +===================================================================================================================+==================================================================================+
-   | 5.2.13 En Arkivdel kan ha registrert ingen eller ett preferert Klassifikasjonssystem og et Klassifikasjonssystem  |                                                                                  |
-   | kan inngå i ingen, en eller flere Arkivdel(er).                                                                   |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.14 En Arkivdel kan ha registrert ingen eller en Skjerming og en Skjerming kan inngå i ingen, en eller flere   |                                                                                  |
-   | Arkivdeler                                                                                                        |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.15 En Arkivdel kan ha registrert ingen eller en Bevaring og kassasjon og en Bevaring og kassasjon kan inngå i |                                                                                  |
-   | ingen, en eller flere Arkivdeler.                                                                                 |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.16 En Arkivdel kan ha tilknyttet (inneholde) ingen, en eller flere Mapper.                                    |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.17 Når en tjeneste/funksjon sletter en Arkivdel, skal dette logges.                                           |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.18 Det skal finnes en tjeneste/funksjon for å ajourholde primært Klassifikasjonssystem for en Arkivdel.       |                                                                                  |
-   | (referanseKlassifikasjonssystem)                                                                                  |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.19 Dersom Arkivdel er registrert som avsluttet (avsluttetDato er satt) skal det ikke være mulig å legge til   |                                                                                  |
-   | flere tilhørende Mapper eller Registreringer                                                                      |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.20 En arkivdel skal inneholde informasjon om hvilken status arkivperioden har.                                | Autoriserte brukere skal kunne endre statusverdier. Obligatoriske verdier er: 1. |
-   |                                                                                                                   | Aktiv periode 2. Overlappingsperiode 3. Avsluttet periode Andre verdier kan      |
-   |                                                                                                                   | brukes ved behov.                                                                |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.21 En arkivdel skal inneholde dato for når arkivperioden starter.                                             |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.22 En avsluttet arkivdel skal inneholde dato for når perioden ble avsluttet.                                  |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.2.23 En arkivdel skal inneholde informasjon om de tilhørende dokumentene er fysiske eller elektroniske.         |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | Ny - arkivdel kan ha liste med enten klassifikasjonssystem eller mapper                                           |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | Ny - Når arkivdel settes "Avsluttet" så skal avsluttetDato og avsluttetAv registreres                             |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.10.1 En Arkivdel skal kunne ha registrert ingen eller ett Kassasjonsvedtak og et Kassasjonsvedtak kan inngå i   |                                                                                  |
-   | ingen, en eller flere Arkivdeler.                                                                                 |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.10.8 Det skal finnes en tjeneste/funksjon for å ajourholde kassasjonsvedtak, kassasjonshjemmel og bevaringstid  |                                                                                  |
-   | for en Arkivdel.                                                                                                  |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.10.9 Metadata om bevaring og kassasjon på en Arkivdel skal kunne arves til Mappe, Registrering og               |                                                                                  |
-   | Dokumentbeskrivelse.                                                                                              |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.10.10 Dersom arv av metadata om bevaring og kassasjon skal skje fra arkivdel, skal dette overstyre arv av       |                                                                                  |
-   | metadata fra klassene.                                                                                            |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.10.16 Det skal være mulig å slå av funksjonen for arv fra klasser og arkivdeler, slik at metadata om bevaring   |                                                                                  |
-   | og kassasjon ikke arves til underliggende mapper.                                                                 |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.11.1 En arkivdel skal kunne inneholde en tekstlig beskrivelse av hvilke prinsipper den skal periodiseres etter. |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.11.2 En arkivdel skal inneholde referanser til eventuelle forløpere og arvtakere.                               |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.11.4 En arkivdel som inneholder en overlappingsperiode, skal være sperret for tilføyelse av nyopprettede        |                                                                                  |
-   | mapper. Men eksisterende mapper i en overlappingsperiode skal være åpne for nye registreringer                    |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.11.5 Dersom en ny registrering føyes til en mappe som tilhører en arkivdel i overlappingsperiode, skal mappen   |                                                                                  |
-   | automatisk overføres til arkivdelens arvtaker.                                                                    |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.11.6 En arkivdel som inneholder en avsluttet arkivperiode, skal være sperret for tilføyelse av nye mapper. Alle |                                                                                  |
-   | mapper skal være lukket, slik at heller ingen registreringer og dokumenter kan føyes til.                         |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.11.7 Det skal være umulig å avslutte en arkivdel i overlappingsperiode dersom den fremdeles inneholder åpne     |                                                                                  |
-   | mapper.                                                                                                           |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.11.13 Dersom dokumentene i en arkivdel er ikke-elektroniske (fysiske), skal det også være mulig å registrere    |                                                                                  |
-   | oppbevaringssted.                                                                                                 |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 5.13.6 En Arkivdel og arkivdelens metadata skal kun opprettes og endres gjennom Administratorfunksjonen for Noark |                                                                                  |
-   | 5 kjerne.                                                                                                         |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 6.6.9 - 6.6.19 rettighetsangivelser                                                                               |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 6.6.25 Det skal finnes en tjeneste/funksjon for å ajourholde opplysninger om skjermingskode (skjermingsgrad,      |                                                                                  |
-   | skjermingshjemmel og skjermingsvarighet) for en verdi av Arkivdel, klasse, Mappe, Registrering og                 |                                                                                  |
-   | Dokumentbeskrivelse                                                                                               |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | 6.6.26 Skjerming bør kunne arves til mappe, journalpost, dokumentbeskrivelse og dokumentobjekt. Arvede verdier    |                                                                                  |
-   | skal kunne overstyres.                                                                                            |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert                |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | M107 arkivperiodeStartDato: Skal kunne endres manuelt                                                             |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | M108 arkivperiodeSluttDato: Skal kunne endres manuelt                                                             |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | M601 avsluttetDato: Skal ikke kunne endres. Obligatorisk dersom arkivdelen er avsluttet.                          |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | M603 avsluttetAv: Skal ikke kunne endres. Obligatorisk dersom arkivenheten er avsluttet.                          |                                                                                  |
-   +-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+ * - **Navn**
+   - **Merknad**
+ * - 5.2.13 En Arkivdel kan ha registrert ingen eller ett preferert
+     Klassifikasjonssystem og et Klassifikasjonssystem kan inngå i
+     ingen, en eller flere Arkivdel(er).
+   -
+ * - 5.2.14 En Arkivdel kan ha registrert ingen eller en Skjerming og
+     en Skjerming kan inngå i ingen, en eller flere Arkivdeler
+   -
+ * - 5.2.15 En Arkivdel kan ha registrert ingen eller en Bevaring og
+     kassasjon og en Bevaring og kassasjon kan inngå i ingen, en eller
+     flere Arkivdeler.
+   -
+ * - 5.2.16 En Arkivdel kan ha tilknyttet (inneholde) ingen, en eller
+     flere Mapper.
+   -
+ * - 5.2.17 Når en tjeneste/funksjon sletter en Arkivdel, skal dette
+     logges.
+   -
+ * - 5.2.18 Det skal finnes en tjeneste/funksjon for å ajourholde
+     primært Klassifikasjonssystem for en Arkivdel.
+     (referanseKlassifikasjonssystem)
+   -
+ * - 5.2.19 Dersom Arkivdel er registrert som avsluttet (avsluttetDato
+     er satt) skal det ikke være mulig å legge til flere tilhørende
+     Mapper eller Registreringer
+   -
+ * - 5.2.20 En arkivdel skal inneholde informasjon om hvilken status
+     arkivperioden har.
+   - Autoriserte brukere skal kunne endre statusverdier. Obligatoriske
+     verdier er:
+
+     - Aktiv periode
+     - Overlappingsperiode
+     - Avsluttet periode
+
+     Andre verdier kan brukes ved behov.
+ * - 5.2.21 En arkivdel skal inneholde dato for når arkivperioden starter.
+   -
+ * - 5.2.22 En avsluttet arkivdel skal inneholde dato for når perioden
+     ble avsluttet.
+   -
+ * - 5.2.23 En arkivdel skal inneholde informasjon om de tilhørende
+     dokumentene er fysiske eller elektroniske.
+   -
+ * - Ny - arkivdel kan ha liste med enten klassifikasjonssystem eller
+     mapper
+   -
+ * - Ny - Når arkivdel settes "Avsluttet" så skal avsluttetDato og
+     avsluttetAv registreres
+   -
+ * - 5.10.1 En Arkivdel skal kunne ha registrert ingen eller ett
+     Kassasjonsvedtak og et Kassasjonsvedtak kan inngå i ingen, en
+     eller flere Arkivdeler.
+   -
+ * - 5.10.8 Det skal finnes en tjeneste/funksjon for å ajourholde
+     kassasjonsvedtak, kassasjonshjemmel og bevaringstid for en
+     Arkivdel.
+   -
+ * - 5.10.9 Metadata om bevaring og kassasjon på en Arkivdel skal
+     kunne arves til Mappe, Registrering og Dokumentbeskrivelse.
+   -
+ * - 5.10.10 Dersom arv av metadata om bevaring og kassasjon skal skje
+     fra arkivdel, skal dette overstyre arv av metadata fra klassene.
+   -
+ * - 5.10.16 Det skal være mulig å slå av funksjonen for arv fra
+     klasser og arkivdeler, slik at metadata om bevaring og kassasjon
+     ikke arves til underliggende mapper.
+   -
+ * - 5.11.1 En arkivdel skal kunne inneholde en tekstlig beskrivelse
+     av hvilke prinsipper den skal periodiseres etter.
+   -
+ * - 5.11.2 En arkivdel skal inneholde referanser til eventuelle
+     forløpere og arvtakere.
+   -
+ * - 5.11.4 En arkivdel som inneholder en overlappingsperiode, skal
+     være sperret for tilføyelse av nyopprettede mapper. Men
+     eksisterende mapper i en overlappingsperiode skal være åpne for
+     nye registreringer
+   -
+ * - 5.11.5 Dersom en ny registrering føyes til en mappe som tilhører
+     en arkivdel i overlappingsperiode, skal mappen automatisk
+     overføres til arkivdelens arvtaker.
+   -
+ * - 5.11.6 En arkivdel som inneholder en avsluttet arkivperiode, skal
+     være sperret for tilføyelse av nye mapper. Alle mapper skal være
+     lukket, slik at heller ingen registreringer og dokumenter kan
+     føyes til.
+   -
+ * - 5.11.7 Det skal være umulig å avslutte en arkivdel i
+     overlappingsperiode dersom den fremdeles inneholder åpne mapper.
+   -
+ * - 5.11.13 Dersom dokumentene i en arkivdel er ikke-elektroniske
+     (fysiske), skal det også være mulig å registrere
+     oppbevaringssted.
+   -
+ * - 5.13.6 En Arkivdel og arkivdelens metadata skal kun opprettes og
+     endres gjennom Administratorfunksjonen for Noark 5 kjerne.
+   -
+ * - 6.6.9 - 6.6.19 rettighetsangivelser
+   -
+ * - 6.6.25 Det skal finnes en tjeneste/funksjon for å ajourholde
+     opplysninger om skjermingskode (skjermingsgrad, skjermingshjemmel
+     og skjermingsvarighet) for en verdi av Arkivdel, klasse, Mappe,
+     Registrering og Dokumentbeskrivelse
+   -
+ * - 6.6.26 Skjerming bør kunne arves til mappe, journalpost,
+     dokumentbeskrivelse og dokumentobjekt. Arvede verdier skal kunne
+     overstyres.
+   -
+ * - M020 tittel: Skal normalt ikke kunne endres etter at enheten er
+     lukket, eller dokumentene arkivert
+   -
+ * - M107 arkivperiodeStartDato: Skal kunne endres manuelt
+   -
+ * - M108 arkivperiodeSluttDato: Skal kunne endres manuelt
+   -
+ * - M601 avsluttetDato: Skal ikke kunne endres. Obligatorisk dersom
+     arkivdelen er avsluttet.
+   -
+ * - M603 avsluttetAv: Skal ikke kunne endres. Obligatorisk dersom
+     arkivenheten er avsluttet.
+   -
 
 Arkivenhet
 ^^^^^^^^^^
