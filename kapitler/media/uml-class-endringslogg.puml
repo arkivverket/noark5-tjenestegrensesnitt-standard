@@ -10,5 +10,6 @@ class LoggingOgSporing.Endringslogg {
   +tidligereVerdi : string [0..1]
   +nyVerdi : string [0..1]
 }
+Arkivstruktur.Arkivenhet "0..1" o-- "endringslogg 0..*" LoggingOgSporing.Endringslogg
 LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
 @enduml

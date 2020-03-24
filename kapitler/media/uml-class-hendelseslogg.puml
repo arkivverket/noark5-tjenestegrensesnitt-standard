@@ -5,6 +5,5 @@ class LoggingOgSporing.Hendelseslogg <Endringslogg> {
   +beskrivelse : string [0..1]
   +hendelseDato : datetime
 }
-Arkivstruktur.Arkivenhet "0..1" o-- "logg 0..*" LoggingOgSporing.Hendelseslogg
 LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
 @enduml

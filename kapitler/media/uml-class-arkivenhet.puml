@@ -9,7 +9,7 @@ class Arkivstruktur.Arkivenhet {
   +referanseOppdatertAv : SystemID [0..1]
   +referanseOpprettetAv : SystemID [0..1]
 }
-Arkivstruktur.Arkivenhet "0..1" o-- "logg 0..*" LoggingOgSporing.Hendelseslogg
+Arkivstruktur.Arkivenhet "0..1" o-- "endringslogg 0..*" LoggingOgSporing.Endringslogg
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkiv
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivskaper

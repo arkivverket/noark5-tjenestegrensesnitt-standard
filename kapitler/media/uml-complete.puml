@@ -450,10 +450,10 @@ class Kodelister.Graderingskode <<codelist>> {
 }
 
 class Kodelister.Hendelsetype <<codelist>> {
-  +Endringslogg
-  +Søknad mottatt
-  +Søknad komplett
-  +Vedtak
+  +Opprettet = C
+  +Lest = R
+  +Endret = U
+  +Slettet = D
 }
 
 class Kodelister.Journalposttype <<codelist>> {
@@ -719,7 +719,7 @@ Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "registrering 0..*" Arkivstruktur.Re
 Arkivstruktur.Arkivdel "arkivdel 1..*" o--> "klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Arkivdel "nestearkivdel 0..1" o--> "forrigearkivdel 0..1" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivdel o-- "sekundaerklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
-Arkivstruktur.Arkivenhet "0..1" o-- "logg 0..*" LoggingOgSporing.Hendelseslogg
+Arkivstruktur.Arkivenhet "0..1" o-- "endringslogg 0..*" LoggingOgSporing.Endringslogg
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkiv
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivdel
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivskaper
