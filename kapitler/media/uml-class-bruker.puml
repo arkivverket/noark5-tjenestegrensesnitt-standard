@@ -10,5 +10,4 @@ class Admin.Bruker {
   +kortnavn : string [0..1]
 }
 Admin.AdministrativEnhet "administrativenhet 0..*" *--> "bruker 0..*" Admin.Bruker
-Admin.AdministrativEnhet "enhet 0..*" *--> "bruker 0..*" Admin.Bruker
 @enduml
