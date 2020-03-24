@@ -112,8 +112,16 @@ Denne spesifikasjonen faller inn under unntakene i den norske åndsverkslovens �
 Endringslogg for dette dokumentet
 ---------------------------------
 
-+---------+------------+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| Versjon | Dato       | Utført av                        | Endring                                                                                                                       |
-+=========+============+==================================+===============================================================================================================================+
-| 5.5v1.0 | 04.07.2019 | Anne S Knutsen og Mona Danielsen | Release av Tj.gr. 5.5v1.0, detaljert historikk over endringer i spesifikasjonen kan hentes ut av git-depotet (se kapittel 2). |
-+---------+------------+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+.. list-table::
+   :widths: 2 3 10 14
+   :header-rows: 1
+
+ * - Versjon
+   - Dato
+   - Utført av
+   - Endring
+ * - 5.5v1.0
+   - 04.07.2019
+   - Anne S Knutsen og Mona Danielsen
+   - Release av Tj.gr. 5.5v1.0, detaljert historikk over endringer i
+     spesifikasjonen kan hentes ut av git-depotet (se kapittel 2).

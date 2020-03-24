@@ -33,21 +33,31 @@ liste opp innloggingsmekanismer krever ikke autentisering.
 Følgende relasjonsnøkler for innlogging er definert i denne versjonen
 av spesifikasjonen:
 
-+----------------+---------------------------------------------------------+---------+
-| **Mekanisme**  | **Relasjonsnøkkel**                                     | Valgfri |
-+================+=========================================================+=========+
-| OpenID Connect | https://rel.arkivverket.no/noark5/v5/api/login/oidc/    | Nei     |
-+----------------+---------------------------------------------------------+---------+
-| OAuth 2.0      | https://rel.arkivverket.no/noark5/v5/api/login/rfc6749/ | Nei     |
-+----------------+---------------------------------------------------------+---------+
-| JSON Web Token | https://rel.arkivverket.no/noark5/v5/api/login/rfc7519/ | Ja      |
-+----------------+---------------------------------------------------------+---------+
-| Kerberos       | https://rel.arkivverket.no/noark5/v5/api/login/rfc1510/ | Ja      |
-+----------------+---------------------------------------------------------+---------+
-| SAML 2.0       | https://rel.arkivverket.no/noark5/v5/api/login/saml-20/ | Ja      |
-+----------------+---------------------------------------------------------+---------+
-| Basic          | https://rel.arkivverket.no/noark5/v5/api/login/rfc7617/ | Ja      |
-+----------------+---------------------------------------------------------+---------+
+.. list-table::
+   :widths: 2 5 1
+   :header-rows: 1
+
+ * - **Mekanisme**
+   - **Relasjonsnøkkel**
+   - Valgfri
+ * - OpenID Connect
+   - https://rel.arkivverket.no/noark5/v5/api/login/oidc/
+   - Nei
+ * - OAuth 2.0
+   - https://rel.arkivverket.no/noark5/v5/api/login/rfc6749/
+   - Nei
+ * - JSON Web Token
+   - https://rel.arkivverket.no/noark5/v5/api/login/rfc7519/
+   - Ja
+ * - Kerberos
+   - https://rel.arkivverket.no/noark5/v5/api/login/rfc1510/
+   - Ja
+ * - SAML 2.0
+   - https://rel.arkivverket.no/noark5/v5/api/login/saml-20/
+   - Ja
+ * - Basic
+   - https://rel.arkivverket.no/noark5/v5/api/login/rfc7617/
+   - Ja
 
 En kan så gjennomføre en innlogging / autentisering ved å kontakte den
 oppgitte href for aktuell relasjonsnøkkel med aktuelle HTTP-hodefelt
