@@ -1,0 +1,92 @@
+#!/usr/bin/python3
+
+import csv
+import glob
+import json
+import re
+
+import docutils.nodes
+import docutils.parsers.rst
+import docutils.utils
+import docutils.frontend
+
+class RstVisitor(docutils.nodes.NodeVisitor):
+    req = []
+
+    def visit_table(self, node: docutils.nodes.reference) -> None:
+        """Called for "table" nodes."""
+        self.entry = {}
+        self.header = {}
+        print()
+        print(".. list-table::")
+        print("   :header-rows: 1")
+        print()
+
+    def visit_row(self, node: docutils.nodes.reference) -> None:
+        """Called for "table row" nodes."""
+        first = "*"
+        while node.children:
+            #print("C:", node.children)
+            value = str(node.children.pop(0))
+            #print("Value:", value)
+            value = str(value) \
+                .replace('\n', 'xxx') \
+                .replace('<bullet_list bullet="-">', '\n') \
+                .replace('</bullet_list>', '\n') \
+                .replace('<list_item><paragraph>', '- ') \
+                .replace('</paragraph></list_item>', '\n') \
+                .replace('<entry>', '') \
+                .replace('</entry>', '') \
+                .replace('<entry/>', '') \
+                .replace('</paragraph><paragraph>', '\n\n') \
+                .replace('<paragraph>', '') \
+                .replace('</paragraph>', '\n') \
+                .replace('xxx', '\n')
+            value = value \
+                .replace('<strong>', '**') \
+                .replace('</strong>', '**') \
+                .replace('<emphasis>', '*') \
+                .replace('</emphasis>', '*')
+            value = value.strip()
+            value = re.sub(r'<reference refuri="[^"]*">([^<]*)</reference>',
+                           r'\1', value)
+            value = re.sub(r'<reference name="[^"]*" refuri="([^"]*)">([^<]*)</reference>',
+                           r'`\2<\1>`_', value)
+            value = re.sub(r'<substitution_reference refname="[^"]*">([^<]*)</substitution_reference>',
+                           r'|\1|', value)
+            print(" %s - %s" % (first, value.replace("\n", "\n     ")))
+            first = " "
+
+    def depart_table(self, node: docutils.nodes.Node) -> None:
+        """Called when leaving a table."""
+        print()
+        pass
+
+    def unknown_visit(self, node: docutils.nodes.Node) -> None:
+        """Called for all other node types."""
+        pass
+
+    def unknown_departure(self, node: docutils.nodes.Node) -> None:
+        """Called for all other node types."""
+        pass
+
+def parse_rst(text: str) -> docutils.nodes.document:
+    parser = docutils.parsers.rst.Parser()
+    components = (docutils.parsers.rst.Parser,)
+    settings = docutils.frontend.OptionParser(components=components).get_default_values()
+    document = docutils.utils.new_document('<rst-doc>', settings=settings)
+    parser.parse(text, document)
+    return document
+
+def main():
+    for filepath in sorted(glob.glob('kapitler/[01]*.rst')):
+        #print("Processing %s" % filepath)
+        with open(filepath, 'r', encoding='utf-8') as fh:
+            content = fh.read()
+            doc = parse_rst(content)
+            visitor = RstVisitor(doc)
+            doc.walkabout(visitor)
+    return 0
+
+if __name__ == '__main__':
+    exit(main())
