@@ -1,4 +1,5 @@
-# Definisjoner
+Definisjoner
+============
 
 Noark – Norsk Arkivstandard
 
@@ -15,4 +16,3 @@ CRUD – forkortelse for Create, Read, Update, Delete
 eTag – entity tag
 
 HATEOAS – Hypermedia as the Engine of Application State
-
