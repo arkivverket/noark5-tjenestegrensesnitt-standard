@@ -85,7 +85,7 @@ innen disse områder annonseres på samme måte.
 | 404        | NotFound - ikke funnet             |
 | 501        | NotImplemented - ikke implementert |
 
-­­­**href** kan være hva som helst og trenger ikke følge noe fast mønster
+**href** kan være hva som helst og trenger ikke følge noe fast mønster
 for oppbygning av url. Mens **rel** (relasjonsnøkkelen) har faste verdier
 som beskriver hva ressursen kan brukes til. Denne kan klienten også åpne
 for å vise beskrivelse, eksempel på bruk, statuskoder og annet som er
