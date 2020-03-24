@@ -126,7 +126,7 @@ funksjon for "arkivering uten journalføring".
 
 #### Arkiv
 
-![](./media/uml-class-arkiv.png)
+![](./media/uml-class-arkiv.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -213,7 +213,7 @@ Table: Restriksjoner
 
 #### Arkivdel
 
-![](./media/uml-class-arkivdel.png)
+![](./media/uml-class-arkivdel.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -391,7 +391,7 @@ Table: Restriksjoner
 
 #### Arkivenhet
 
-![](./media/uml-class-arkivenhet.png)
+![](./media/uml-class-arkivenhet.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -449,7 +449,7 @@ Table: Restriksjoner
 
 #### Arkivskaper
 
-![](./media/uml-class-arkivskaper.png)
+![](./media/uml-class-arkivskaper.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -492,7 +492,7 @@ Table: Attributter
 
 #### Registrering
 
-![](./media/uml-class-registrering.png)
+![](./media/uml-class-registrering.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -622,7 +622,7 @@ Table: Restriksjoner
 
 #### Dokumentbeskrivelse
 
-![](./media/uml-class-dokumentbeskrivelse.png)
+![](./media/uml-class-dokumentbeskrivelse.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -711,7 +711,7 @@ Table: Restriksjoner
 
 #### Dokumentobjekt
 
-![](./media/uml-class-dokumentobjekt.png)
+![](./media/uml-class-dokumentobjekt.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -919,7 +919,7 @@ Table: Attributter
 
 #### Klasse
 
-![](./media/uml-class-klasse.png)
+![](./media/uml-class-klasse.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1007,7 +1007,7 @@ Table: Restriksjoner
 
 #### Klassifikasjonssystem
 
-![](./media/uml-class-klassifikasjonssystem.png)
+![](./media/uml-class-klassifikasjonssystem.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1092,7 +1092,7 @@ Table: Attributter
 
 #### Konvertering
 
-![](./media/uml-class-konvertering.png)
+![](./media/uml-class-konvertering.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1142,7 +1142,7 @@ Table: Restriksjoner
 
 #### Korrespondansepart
 
-![](./media/uml-class-korrespondansepart.png)
+![](./media/uml-class-korrespondansepart.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1187,7 +1187,7 @@ Table: Restriksjoner
 
 #### KorrespondansepartEnhet
 
-![](./media/uml-class-korrespondansepartenhet.png)
+![](./media/uml-class-korrespondansepartenhet.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1220,7 +1220,7 @@ Table: Attributter
 
 #### KorrespondansepartIntern
 
-![](./media/uml-class-korrespondansepartintern.png)
+![](./media/uml-class-korrespondansepartintern.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1251,7 +1251,7 @@ Table: Attributter
 
 #### KorrespondansepartPerson
 
-![](./media/uml-class-korrespondansepartperson.png)
+![](./media/uml-class-korrespondansepartperson.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1283,7 +1283,7 @@ Table: Attributter
 
 #### Kryssreferanse
 
-![](./media/uml-class-kryssreferanse.png)
+![](./media/uml-class-kryssreferanse.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1441,7 +1441,7 @@ Table: Relasjonsnøkler
 
 #### Mappe
 
-![](./media/uml-class-mappe.png)
+![](./media/uml-class-mappe.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1591,7 +1591,7 @@ Table: Restriksjoner
 
 #### Merknad
 
-![](./media/uml-class-merknad.png)
+![](./media/uml-class-merknad.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1641,7 +1641,7 @@ Table: Restriksjoner
 
 #### Part
 
-![](./media/uml-class-part.png)
+![](./media/uml-class-part.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1690,7 +1690,7 @@ Table: Restriksjoner
 
 #### PartEnhet
 
-![](./media/uml-class-partenhet.png)
+![](./media/uml-class-partenhet.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1723,7 +1723,7 @@ Table: Attributter
 
 #### PartPerson
 
-![](./media/uml-class-partperson.png)
+![](./media/uml-class-partperson.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1922,7 +1922,7 @@ Table: Attributter
 
 ##### Bygning
 
-![](./media/uml-class-bygning.png)
+![](./media/uml-class-bygning.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1951,7 +1951,7 @@ Table: Attributter
 
 ##### Enhetsidentifikator
 
-![](./media/uml-class-enhetsidentifikator.png)
+![](./media/uml-class-enhetsidentifikator.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -1971,7 +1971,7 @@ Table: Attributter
 
 ##### Matrikkel
 
-![](./media/uml-class-matrikkel.png)
+![](./media/uml-class-matrikkel.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -2006,7 +2006,7 @@ Table: Attributter
 
 ##### Personidentifikator
 
-![](./media/uml-class-personidentifikator.png)
+![](./media/uml-class-personidentifikator.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -2036,7 +2036,7 @@ Table: Relasjoner
 
 ##### Foedselsnummer
 
-![](./media/uml-class-foedselsnummer.png)
+![](./media/uml-class-foedselsnummer.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -2065,7 +2065,7 @@ Table: Attributter
 
 ##### DNummer
 
-![](./media/uml-class-dnummer.png)
+![](./media/uml-class-dnummer.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -2099,7 +2099,7 @@ Table: Attributter
 
 ##### Plan
 
-![](./media/uml-class-plan.png)
+![](./media/uml-class-plan.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -2170,7 +2170,7 @@ Table: Attributter
 
 ##### Posisjon
 
-![](./media/uml-class-posisjon.png)
+![](./media/uml-class-posisjon.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3197,7 +3197,7 @@ Utvidelse for sakarkiv metadata
 
 #### Avskrivning
 
-![](./media/uml-class-avskrivning.png)
+![](./media/uml-class-avskrivning.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3250,7 +3250,7 @@ Table: Restriksjoner
 
 #### Dokumentflyt
 
-![](./media/uml-class-dokumentflyt.png)
+![](./media/uml-class-dokumentflyt.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3307,7 +3307,7 @@ Table: Restriksjoner
 
 #### Arkivnotat
 
-![](./media/uml-class-arkivnotat.png)
+![](./media/uml-class-arkivnotat.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3347,7 +3347,7 @@ Table: Attributter
 
 #### Journalpost
 
-![](./media/uml-class-journalpost.png)
+![](./media/uml-class-journalpost.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3447,7 +3447,7 @@ Table: Restriksjoner
 
 #### Presedens
 
-![](./media/uml-class-presedens.png)
+![](./media/uml-class-presedens.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3525,7 +3525,7 @@ Table: Restriksjoner
 
 #### Saksmappe
 
-![](./media/uml-class-saksmappe.png)
+![](./media/uml-class-saksmappe.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3646,7 +3646,7 @@ brukere etter innlogging:
 
 #### AdministrativEnhet
 
-![](./media/uml-class-administrativenhet.png)
+![](./media/uml-class-administrativenhet.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3695,7 +3695,7 @@ Table: Restriksjoner
 
 #### Bruker
 
-![](./media/uml-class-bruker.png)
+![](./media/uml-class-bruker.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3747,7 +3747,7 @@ Table: Restriksjoner
 
 #### Tilgang
 
-![](./media/uml-class-tilgang.png)
+![](./media/uml-class-tilgang.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3799,7 +3799,7 @@ Skjema for logging og sporing
 
 #### Endringslogg
 
-![](./media/uml-class-endringslogg.png)
+![](./media/uml-class-endringslogg.png){ width=50% }
 
 *Type:* ***Class***
 
@@ -3839,7 +3839,7 @@ Table: Attributter
 
 #### Hendelseslogg
 
-![](./media/uml-class-hendelseslogg.png)
+![](./media/uml-class-hendelseslogg.png){ width=50% }
 
 *Type:* ***Class***
 
