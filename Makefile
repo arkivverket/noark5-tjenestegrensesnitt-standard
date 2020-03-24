@@ -3,7 +3,7 @@
 IMG_PUML := $(wildcard kapitler/media/*.puml)
 IMG_PNG := $(IMG_PUML:.puml=.png)
 
-PANDOC_TYPE = markdown_github+table_captions+auto_identifiers+implicit_figures
+PANDOC_TYPE = markdown_github+table_captions+auto_identifiers+implicit_figures+link_attributes
 
 all: spesifikasjon.pdf spesifikasjon.html
 pdf: spesifikasjon.pdf
