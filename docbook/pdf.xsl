@@ -12,6 +12,9 @@
 <xsl:param name="page.margin.bottom">0.55in</xsl:param>
 <xsl:param name="latex.class.options">a4paper,openright,twoside</xsl:param>
 
+<!-- Place figure titles at the top -->
+<xsl:param name="figure.title.top">1</xsl:param>
+
 <!-- Place table titles at the top -->
 <xsl:param name="table.title.top">1</xsl:param>
 
