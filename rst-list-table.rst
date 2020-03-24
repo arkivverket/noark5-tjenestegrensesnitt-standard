@@ -5,106 +5,40 @@
    - **Kilde**
    - **Mål**
    - **Merknad**
- * - **Aggregation** (Bi-Directional)
-   - arkivskaper 1..* Arkivskaper
-   - arkiv 0..* Arkiv
-   -
- * - **Generalization** (Source → Destination)
-   - Arkivskaper
-   - Arkivenhet
-   -
-
-
-.. list-table::
-   :header-rows: 1
-
- * - **Verdi**
- * - self
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivskaper/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkiv/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivskaper/
-
-
-.. list-table::
-   :header-rows: 1
-
- * - **Navn**
-   - **Merknad**
-   - **Forek.**
-   - **Kode**
-   - **Type**
- * - arkivskaperID
-   - Definisjon: Unik ID for arkivskaperen.
-     Kilde: Registreres manuelt ved opprettelsen
-     av arkivet. Kommentar: Kan være
-     organisasjonsnummer (Brønnøysundregistrene)
-     eller annen identifikasjon avtalt med
-     arkivdepotet. M006
-   - [1..1]
-   -
-   - string
- * - arkivskaperNavn
-   - Definisjon: Navn på organisasjonen som har
-     skapt arkivet . Kilde: Registreres manuelt
-     ved opprettelsen av arkivet. Kommentarer:
-     (ingen). M023
-   - [1..1]
-   -
-   - string
- * - beskrivelse
-   - Definisjon: Tekstlig beskrivelse av
-     arkivenheten. Kilde: Registreres manuelt.
-     Kommentarer: Tilsvarende attributt finnes
-     ikke i Noark 4 (men noen tabeller hadde egne
-     attributter for merknad som kunne brukes som
-     et beskrivelsesfelt). M021
-   - [0..1]
-   -
-   - string
-
-
-.. list-table::
-   :header-rows: 1
-
- * - **Relasjon**
-   - **Kilde**
-   - **Mål**
-   - **Merknad**
  * - **Generalization** (Source → Destination)
    - Registrering
    - Arkivenhet
    -
  * - **Aggregation** (Bi-Directional)
-   - registrering 0..* Registrering
+   - registrering 0..\* Registrering
    - mappe 0..1 Mappe
    -
  * - **Aggregation** (Bi-Directional)
-   - registrering 0..* Registrering
+   - registrering 0..\* Registrering
    - arkivdel 0..1 Arkivdel
    -
  * - **Aggregation** (Bi-Directional)
-   - registrering 0..* Registrering
+   - registrering 0..\* Registrering
    - klasse 0..1 Klasse
    -
  * - **Aggregation** (Bi-Directional)
-   - dokumentbeskrivelse 0..* Dokumentbeskrivelse
-   - registrering 1..* Registrering
+   - dokumentbeskrivelse 0..\* Dokumentbeskrivelse
+   - registrering 1..\* Registrering
    -
  * - **Aggregation** (Destination → Source)
-   - nasjonalidentifikator 0..* Nasjonalidentifikator
+   - nasjonalidentifikator 0..\* Nasjonalidentifikator
    - Registrering
    -
  * - **Association** (Destination → Source)
-   - korrespondansepart 0..* Korrespondansepart
+   - korrespondansepart 0..\* Korrespondansepart
    - Registrering
    -
  * - **Association** (Destination → Source)
-   - part 0..* Part
+   - part 0..\* Part
    - Registrering
    -
  * - **Association** (Bi-Directional)
-   - kryssreferanse 0..* Kryssreferanse
+   - kryssreferanse 0..\* Kryssreferanse
    - registrering 0..1 Registrering
    -
  * - **Generalization** (Source → Destination)
@@ -112,7 +46,7 @@
    - Registrering
    -
  * - **Association** (Destination → Source)
-   - merknad 0..* Merknad
+   - merknad 0..\* Merknad
    - Registrering
    -
 
@@ -314,7 +248,7 @@
      for søking og gjenfinning.
      Noekkelord skal ikke erstatte
      klassifikasjon. M022
-   - [0..*]
+   - [0..\*]
    -
    - string
  * - forfatter
@@ -342,7 +276,7 @@
      personnavn eventuelt erstattes
      med en kilde (f.eks. et system).
      M024
-   - [0..*]
+   - [0..\*]
    -
    - string
  * - dokumentmedium
@@ -398,7 +332,7 @@
      ("dokumentnummer"). Vedlegg skal
      legges sammen med tilhørende
      hoveddokument. M301
-   - [0..*]
+   - [0..\*]
    -
    - string
  * - virksomhetsspesifikkeMetadata
@@ -447,8 +381,8 @@
    - **Mål**
    - **Merknad**
  * - **Aggregation** (Bi-Directional)
-   - dokumentbeskrivelse 0..* Dokumentbeskrivelse
-   - registrering 1..* Registrering
+   - dokumentbeskrivelse 0..\* Dokumentbeskrivelse
+   - registrering 1..\* Registrering
    -
  * - **Generalization** (Source → Destination)
    - Dokumentbeskrivelse
@@ -456,15 +390,15 @@
    -
  * - **Association** (Source → Destination)
    - Dokumentbeskrivelse
-   - merknad 0..* Merknad
+   - merknad 0..\* Merknad
    -
  * - **Aggregation** (Bi-Directional)
-   - dokumentobjekt 0..* Dokumentobjekt
+   - dokumentobjekt 0..\* Dokumentobjekt
    - dokumentbeskrivelse 1 Dokumentbeskrivelse
    -
  * - **Association** (Source → Destination)
    - Dokumentbeskrivelse
-   - part 0..* Part
+   - part 0..\* Part
    -
 
 
@@ -554,7 +488,7 @@
      forfatter. Her kan personnavn eventuelt
      erstattes med en kilde (f.eks. et system).
      M024
-   - [0..*]
+   - [0..\*]
    -
    - string
  * - dokumentmedium
@@ -747,11 +681,11 @@
    - **Mål**
    - **Merknad**
  * - **Aggregation** (Bi-Directional)
-   - dokumentobjekt 0..* Dokumentobjekt
+   - dokumentobjekt 0..\* Dokumentobjekt
    - dokumentbeskrivelse 1 Dokumentbeskrivelse
    -
  * - **Aggregation** (Destination → Source)
-   - konvertering 0..* Konvertering
+   - konvertering 0..\* Konvertering
    - Dokumentobjekt
    -
 
@@ -1193,7 +1127,7 @@
    - **Mål**
    - **Merknad**
  * - **Aggregation** (Destination → Source)
-   - underklasse 0..* Klasse
+   - underklasse 0..\* Klasse
    - overklasse 0..1 Klasse
    -
  * - **Generalization** (Source → Destination)
@@ -1201,23 +1135,23 @@
    - Arkivenhet
    -
  * - **Aggregation** (Bi-Directional)
-   - klasse 0..* Klasse
+   - klasse 0..\* Klasse
    - klassifikasjonssystem 0..1 Klassifikasjonssystem
    -
  * - **Aggregation** (Bi-Directional)
-   - mappe 0..* Mappe
+   - mappe 0..\* Mappe
    - klasse 0..1 Klasse
    -
  * - **Association** (Bi-Directional)
-   - kryssreferanse 0..* Kryssreferanse
+   - kryssreferanse 0..\* Kryssreferanse
    - klasse 0..1 Klasse
    -
  * - **Association** (Source → Destination)
    - Saksmappe
-   - sekundaerklassifikasjon 0..* Klasse
+   - sekundaerklassifikasjon 0..\* Klasse
    -
  * - **Aggregation** (Bi-Directional)
-   - registrering 0..* Registrering
+   - registrering 0..\* Registrering
    - klasse 0..1 Klasse
    -
 
@@ -1327,7 +1261,7 @@
      for søking og gjenfinning. Noekkelord
      skal ikke erstatte klassifikasjon.
      M022
-   - [0..*]
+   - [0..\*]
    -
    - string
  * - avsluttetDato
@@ -1396,18 +1330,18 @@
    - **Merknad**
  * - **Aggregation** (Bi-Directional)
    - klassifikasjonssystem 0..1 Klassifikasjonssystem
-   - arkivdel 1..* Arkivdel
+   - arkivdel 1..\* Arkivdel
    -
  * - **Generalization** (Source → Destination)
    - Klassifikasjonssystem
    - Arkivenhet
    -
  * - **Aggregation** (Destination → Source)
-   - sekundaerklassifikasjonssystem 0..* Klassifikasjonssystem
+   - sekundaerklassifikasjonssystem 0..\* Klassifikasjonssystem
    - Arkivdel
    -
  * - **Aggregation** (Bi-Directional)
-   - klasse 0..* Klasse
+   - klasse 0..\* Klasse
    - klassifikasjonssystem 0..1 Klassifikasjonssystem
    -
 
@@ -1541,7 +1475,7 @@
    - **Mål**
    - **Merknad**
  * - **Aggregation** (Destination → Source)
-   - konvertering 0..* Konvertering
+   - konvertering 0..\* Konvertering
    - Dokumentobjekt
    -
 
@@ -1688,7 +1622,7 @@
    - Korrespondansepart
    -
  * - **Association** (Destination → Source)
-   - korrespondansepart 0..* Korrespondansepart
+   - korrespondansepart 0..\* Korrespondansepart
    - Registrering
    -
 
@@ -1915,7 +1849,7 @@
    - **Type**
  * - personidentifikator
    -
-   - [0..*]
+   - [0..\*]
    -
    - Personidentifikator
  * - navn
@@ -1957,15 +1891,15 @@
    - **Mål**
    - **Merknad**
  * - **Association** (Bi-Directional)
-   - kryssreferanse 0..* Kryssreferanse
+   - kryssreferanse 0..\* Kryssreferanse
    - registrering 0..1 Registrering
    -
  * - **Association** (Bi-Directional)
-   - kryssreferanse 0..* Kryssreferanse
+   - kryssreferanse 0..\* Kryssreferanse
    - klasse 0..1 Klasse
    -
  * - **Association** (Bi-Directional)
-   - kryssreferanse 0..* Kryssreferanse
+   - kryssreferanse 0..\* Kryssreferanse
    - mappe 0..1 Mappe
    -
 
@@ -1989,11 +1923,11 @@
    - **Mål**
    - **Merknad**
  * - **Aggregation** (Bi-Directional)
-   - mappe 0..* Mappe
+   - mappe 0..\* Mappe
    - arkivdel 0..1 Arkivdel
    -
  * - **Aggregation** (Bi-Directional)
-   - mappe 0..* Mappe
+   - mappe 0..\* Mappe
    - klasse 0..1 Klasse
    -
  * - **Generalization** (Source → Destination)
@@ -2001,31 +1935,31 @@
    - Arkivenhet
    -
  * - **Aggregation** (Destination → Source)
-   - undermappe 0..* Mappe
+   - undermappe 0..\* Mappe
    - overmappe 0..1 Mappe
    -
  * - **Aggregation** (Bi-Directional)
-   - registrering 0..* Registrering
+   - registrering 0..\* Registrering
    - mappe 0..1 Mappe
    -
  * - **Aggregation** (Destination → Source)
-   - nasjonalidentifikator 0..* Nasjonalidentifikator
+   - nasjonalidentifikator 0..\* Nasjonalidentifikator
    - Mappe
    -
  * - **Association** (Source → Destination)
    - Mappe
-   - merknad 0..* Merknad
+   - merknad 0..\* Merknad
    -
  * - **Association** (Source → Destination)
    - Mappe
-   - part 0..* Part
+   - part 0..\* Part
    -
  * - **Generalization** (Source → Destination)
    - Saksmappe
    - Mappe
    -
  * - **Association** (Bi-Directional)
-   - kryssreferanse 0..* Kryssreferanse
+   - kryssreferanse 0..\* Kryssreferanse
    - mappe 0..1 Mappe
    -
 
@@ -2156,7 +2090,7 @@
      forbedre mulighetene for søking og
      gjenfinning. Noekkelord skal ikke erstatte
      klassifikasjon. M022
-   - [0..*]
+   - [0..\*]
    -
    - string
  * - dokumentmedium
@@ -2199,7 +2133,7 @@
      journalpostnummer ("dokumentnummer").
      Vedlegg skal legges sammen med tilhørende
      hoveddokument. M301
-   - [0..*]
+   - [0..\*]
    -
    - string
  * - avsluttetDato
@@ -2311,15 +2245,15 @@
    - **Merknad**
  * - **Association** (Source → Destination)
    - Mappe
-   - merknad 0..* Merknad
+   - merknad 0..\* Merknad
    -
  * - **Association** (Source → Destination)
    - Registrering
-   - merknad 0..* Merknad
+   - merknad 0..\* Merknad
    -
  * - **Association** (Source → Destination)
    - Dokumentbeskrivelse
-   - merknad 0..* Merknad
+   - merknad 0..\* Merknad
    -
 
 
@@ -2446,16 +2380,16 @@
    - Part
    -
  * - **Association** (Destination → Source)
-   - part 0..* Part
+   - part 0..\* Part
    - Mappe
    -
  * - **Association** (Destination → Source)
-   - part 0..* Part
+   - part 0..\* Part
    - Registrering
    -
  * - **Association** (Source → Destination)
    - Dokumentbeskrivelse
-   - part 0..* Part
+   - part 0..\* Part
    -
 
 
@@ -2622,7 +2556,7 @@
    - **Type**
  * - personidentifikator
    -
-   - [0..*]
+   - [0..\*]
    -
    - Personidentifikator
  * - navn
@@ -2700,7 +2634,7 @@
      metadata ovenfor skjermes, må bare
      brukes inntil skjermingsbehovet er
      vurdert. M502
-   - [0..*]
+   - [0..\*]
    -
    - SkjermingMetadata
  * - skjermingDokument
@@ -2848,11 +2782,11 @@
    - **Mål**
    - **Merknad**
  * - **Aggregation** (Destination → Source)
-   - nasjonalidentifikator 0..* Nasjonalidentifikator
+   - nasjonalidentifikator 0..\* Nasjonalidentifikator
    - Mappe
    -
  * - **Aggregation** (Destination → Source)
-   - nasjonalidentifikator 0..* Nasjonalidentifikator
+   - nasjonalidentifikator 0..\* Nasjonalidentifikator
    - Registrering
    -
  * - **Generalization** (Source → Destination)
@@ -4577,7 +4511,7 @@
    - **Merknad**
  * - **Association** (Source → Destination)
    - Journalpost
-   - avskrivning 0..* Avskrivning
+   - avskrivning 0..\* Avskrivning
    -
 
 
@@ -4694,11 +4628,11 @@
    - **Merknad**
  * - **Association** (Source → Destination)
    - Journalpost
-   - dokumentflyt 0..* Dokumentflyt
+   - dokumentflyt 0..\* Dokumentflyt
    -
  * - **Association** (Source → Destination)
    - Arkivnotat
-   - dokumentflyt 0..* Dokumentflyt
+   - dokumentflyt 0..\* Dokumentflyt
    -
 
 
@@ -4840,7 +4774,7 @@
    -
  * - **Association** (Source → Destination)
    - Arkivnotat
-   - dokumentflyt 0..* Dokumentflyt
+   - dokumentflyt 0..\* Dokumentflyt
    -
 
 
@@ -4918,16 +4852,16 @@
    - **Mål**
    - **Merknad**
  * - **Association** (Bi-Directional)
-   - journalpost 0..* Journalpost
-   - presedens 0..* Presedens
+   - journalpost 0..\* Journalpost
+   - presedens 0..\* Presedens
    -
  * - **Association** (Source → Destination)
    - Journalpost
-   - dokumentflyt 0..* Dokumentflyt
+   - dokumentflyt 0..\* Dokumentflyt
    -
  * - **Association** (Source → Destination)
    - Journalpost
-   - avskrivning 0..* Avskrivning
+   - avskrivning 0..\* Avskrivning
    -
  * - **Generalization** (Source → Destination)
    - Journalpost
@@ -5188,12 +5122,12 @@
    - **Mål**
    - **Merknad**
  * - **Association** (Bi-Directional)
-   - journalpost 0..* Journalpost
-   - presedens 0..* Presedens
+   - journalpost 0..\* Journalpost
+   - presedens 0..\* Presedens
    -
  * - **Association** (Bi-Directional)
-   - saksmappe 0..* Saksmappe
-   - presedens 0..* Presedens
+   - saksmappe 0..\* Saksmappe
+   - presedens 0..\* Presedens
    -
 
 
@@ -5415,11 +5349,11 @@
    -
  * - **Association** (Source → Destination)
    - Saksmappe
-   - sekundaerklassifikasjon 0..* Klasse
+   - sekundaerklassifikasjon 0..\* Klasse
    -
  * - **Association** (Bi-Directional)
-   - saksmappe 0..* Saksmappe
-   - presedens 0..* Presedens
+   - saksmappe 0..\* Saksmappe
+   - presedens 0..\* Presedens
    -
 
 
@@ -5651,8 +5585,8 @@
    - **Mål**
    - **Merknad**
  * - **Association** (Bi-Directional)
-   - bruker 0..* Bruker
-   - administrativenhet 0..* AdministrativEnhet
+   - bruker 0..\* Bruker
+   - administrativenhet 0..\* AdministrativEnhet
    -
 
 
@@ -5808,8 +5742,8 @@
    - **Mål**
    - **Merknad**
  * - **Association** (Bi-Directional)
-   - bruker 0..* Bruker
-   - administrativenhet 0..* AdministrativEnhet
+   - bruker 0..\* Bruker
+   - administrativenhet 0..\* AdministrativEnhet
    -
 
 
@@ -6015,7 +5949,7 @@
    - **Mål**
    - **Merknad**
  * - **Aggregation** (Destination → Source)
-   - endringslogg 0..* Endringslogg
+   - endringslogg 0..\* Endringslogg
    - 0..1 Arkivenhet
    -
  * - **Generalization** (Source → Destination)

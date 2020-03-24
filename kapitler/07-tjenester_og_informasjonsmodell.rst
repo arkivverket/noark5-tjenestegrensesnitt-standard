@@ -68,7 +68,7 @@ Om UML og notasjon som er benyttet
      angir minimums-forekomst (så mange det minst må være), det andre
      tallet er maksimumsforekomst (så mange det maksimalt kan
      være). Eksempel: En Mappe kan høre til ingen eller en (0..1)
-     Klasse, mens en Klasse kan «ha» ingen eller flere (0..***)
+     Klasse, mens en Klasse kan «ha» ingen eller flere (0..\*)
      Mapper(er).  Stjernesymbol brukes til å angi «mange» (ubestemt
      tall større enn 1).En klasseattributt har angitt forekomst med
      klammeparenteser ([0..1]). Klasseattributten noekkelord kan
@@ -309,7 +309,7 @@ laveste nivået av disse.
    - **Mål**
    - **Merknad**
  * - **Aggregation** (Destination → Source)
-   - underarkiv 0..* Arkiv
+   - underarkiv 0..\* Arkiv
    - overarkiv 0..1 Arkiv
    -
  * - **Generalization** (Source → Destination)
@@ -317,11 +317,11 @@ laveste nivået av disse.
    - Arkivenhet
    -
  * - **Aggregation** (Bi-Directional)
-   - arkivskaper 1..* Arkivskaper
-   - arkiv 0..* Arkiv
+   - arkivskaper 1..\* Arkivskaper
+   - arkiv 0..\* Arkiv
    -
  * - **Aggregation** (Bi-Directional)
-   - arkivdel 0..* Arkivdel
+   - arkivdel 0..\* Arkivdel
    - arkiv 1 Arkiv
    -
 
@@ -405,7 +405,7 @@ laveste nivået av disse.
      dokumentene være ordnet etter stigende journalpostnummer
      ("dokumentnummer"). Vedlegg skal legges sammen med tilhørende
      hoveddokument. M301
-   - [0..*]
+   - [0..\*]
    -
    - string
  * - avsluttetDato
@@ -575,7 +575,7 @@ men arv herfra blir overstyrt.
    - Arkivenhet
    -
  * - **Aggregation** (Bi-Directional)
-   - arkivdel 0..* Arkivdel
+   - arkivdel 0..\* Arkivdel
    - arkiv 1 Arkiv
    -
  * - **Aggregation** (Bi-Directional)
@@ -586,18 +586,18 @@ men arv herfra blir overstyrt.
  * - **Aggregation** (Bi-Directional)
    - klassifikasjonssystem 0..1
      Klassifikasjonssystem
-   - arkivdel 1..* Arkivdel
+   - arkivdel 1..\* Arkivdel
    -
  * - **Aggregation** (Bi-Directional)
-   - registrering 0..* Registrering
+   - registrering 0..\* Registrering
    - arkivdel 0..1 Arkivdel
    -
  * - **Aggregation** (Bi-Directional)
-   - mappe 0..* Mappe
+   - mappe 0..\* Mappe
    - arkivdel 0..1 Arkivdel
    -
  * - **Aggregation** (Destination → Source)
-   - sekundaerklassifikasjonssystem 0..*
+   - sekundaerklassifikasjonssystem 0..\*
      Klassifikasjonssystem
    - Arkivdel
    -
@@ -702,7 +702,7 @@ spesifikke under-entitetene.
      dokumentene være ordnet etter stigende journalpostnummer
      ("dokumentnummer").  Vedlegg skal legges sammen med tilhørende
      hoveddokument. M301
-   - [0..*]
+   - [0..\*]
    -
    - string
  * - avsluttetDato
@@ -933,7 +933,7 @@ identiske arkivenheter har ulik systemID.
    - Arkivenhet
    -
  * - **Aggregation** (Destination → Source)
-   - endringslogg 0..* Endringslogg
+   - endringslogg 0..\* Endringslogg
    - 0..1 Arkivenhet
    -
  * - **Generalization** (Source → Destination)
@@ -1085,8 +1085,8 @@ obligatorisk i arkivuttrekk.
    - **Mål**
    - **Merknad**
  * - **Aggregation** (Bi-Directional)
-   - arkivskaper 1..* Arkivskaper
-   - arkiv 0..* Arkiv
+   - arkivskaper 1..\* Arkivskaper
+   - arkiv 0..\* Arkiv
    -
  * - **Generalization** (Source → Destination)
    - Arkivskaper
