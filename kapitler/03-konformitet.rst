@@ -1,6 +1,7 @@
-# Konformitet
+Konformitet
+===========
 
-![](./media/Noark5v5_px400.png)
+|image0|
 
 Bakgrunnen for konformitetsnivåene er behovet for å kunne gruppere krav
 i Noark standarden med aktuell modularitet i system som skal anskaffes.
@@ -20,14 +21,17 @@ særskilt.
 
 Konformitetsnivåer er:
 
-  - Nivå 0 – Basiskrav
-  - Nivå 1 – Arkivstruktur - obligatoriske krav
-  - Nivå 1.1 – Arkivstruktur - valgfrie krav
-  - Nivå 2a – Sakarkiv – obligatoriske krav
-  - Nivå 2.1a – Sakarkiv - valgfrie krav
+-  Nivå 0 – Basiskrav
+-  Nivå 1 – Arkivstruktur - obligatoriske krav
+-  Nivå 1.1 – Arkivstruktur - valgfrie krav
+-  Nivå 2a – Sakarkiv – obligatoriske krav
+-  Nivå 2.1a – Sakarkiv - valgfrie krav
 
 For å være konform med standarden på aktuelle nivå må implementasjonen
 støtte alle obligatoriske krav som er angitt for nivået.
 
-Se [Vedlegg 1 - Konformitetskrav](https://github.com/arkivverket/noark5-tjenestegrensesnitt-standard/blob/master/kapitler/08-vedlegg_1_-_konformitetskrav.md) for liste over tester og
+Se `Vedlegg 1 - Konformitetskrav <https://github.com/arkivverket/noark5-tjenestegrensesnitt-standard/blob/master/kapitler/08-vedlegg_1_-_konformitetskrav.md>`__ for liste over tester og
 krav som gjelder for de ulike nivåene.
+
+.. |image0| image:: ./media/Noark5v5_px400.png
+
