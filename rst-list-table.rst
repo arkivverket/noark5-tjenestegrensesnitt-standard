@@ -5,170 +5,14 @@
    - **Kilde**
    - **Mål**
    - **Merknad**
- * - **Generalization** (Source → Destination)
-   - Arkivdel
-   - Arkivenhet
-   - 
- * - **Aggregation** (Destination → Source)
-   - endringslogg 0..* Endringslogg
-   - 0..1 Arkivenhet
-   - 
- * - **Generalization** (Source → Destination)
-   - Klassifikasjonssystem
-   - Arkivenhet
-   - 
- * - **Generalization** (Source → Destination)
-   - Arkiv
-   - Arkivenhet
-   - 
- * - **Generalization** (Source → Destination)
-   - Mappe
-   - Arkivenhet
-   - 
- * - **Generalization** (Source → Destination)
-   - Klasse
-   - Arkivenhet
-   - 
- * - **Generalization** (Source → Destination)
-   - Arkivskaper
-   - Arkivenhet
-   - 
- * - **Generalization** (Source → Destination)
-   - Registrering
-   - Arkivenhet
-   - 
- * - **Generalization** (Source → Destination)
-   - Dokumentbeskrivelse
-   - Arkivenhet
-   - 
-
-
-.. list-table::
-   :header-rows: 1
-
- * - **Verdi**
- * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-endringslogg/
- * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/
-
-
-.. list-table::
-   :header-rows: 1
-
- * - **Navn**
-   - **Merknad**
-   - **Forek.**
-   - **Kode**
-   - **Type**
- * - systemID
-   - M001 Entydig identifikasjon av
-     arkivenheten innenfor det
-     arkivskapende organet. Dersom organet
-     har flere arkivsystemer, skal altså
-     *systemID* være gjennomgående
-     entydig. Systemidentifikasjonen vil
-     som oftest være en numerisk kode uten
-     noe logisk meningsinnhold.
-     Identifikasjonen trenger ikke å være
-     synlig for brukerne. Registreres
-     automatisk av systemet. Skal ikke
-     kunne endres. Alle referanser fra en
-     arkivenhet til en annen skal peke til
-     arkivenhetens systemidentifikasjon.
-     Dette gjelder også referanser fra en
-     arkivdel til en annen, f.eks. mellom
-     to arkivperioder som avleveres på
-     forskjellig tidspunkt. I et
-     arkivuttrekk skal *systemID* være
-     entydig (unik). Dokumentobjekt har
-     ingen systemidentifikasjon fordi
-     enheten kan være duplisert i et
-     arkivuttrekk dersom samme dokumentfil
-     er knyttet til flere forskjellige
-     registreringer.
-   - [0..1]
-   - 
-   - SystemID
- * - oppdatertDato
-   - 
-   - [0..1]
-   - 
-   - datetime
- * - opprettetDato
-   - Definisjon: Dato og klokkeslett når
-     arkivenheten ble
-     opprettet/registrert. Kilde:
-     Registreres automatisk av systemet
-     ved opprettelse av enheten.
-     Kommentarer: (ingen). M600
-   - [0..1]
-   - 
-   - datetime
- * - opprettetAv
-   - Definisjon: Navn på person som
-     opprettet/registrerte arkivenheten.
-     Kilde: Registreres automatisk av
-     systemet ved opprettelse av enheten.
-     Kommentarer: (ingen). M601
-   - [0..1]
-   - 
-   - string
- * - oppdatertAv
-   - Definisjon: Navn på person som
-     oppdaterte arkivenheten. Kilde:
-     Registreres automatisk av systemet
-     ved oppdatering av enheten
-   - [0..1]
-   - 
-   - string
- * - referanseOppdatertAv
-   - Definisjon: SystemID på person som
-     oppdaterte arkivenheten. Kilde:
-     Registreres automatisk av systemet
-     ved oppdatering av enheten
-   - [0..1]
-   - 
-   - SystemID
- * - referanseOpprettetAv
-   - Definisjon: SystemID på person som
-     opprettet/registrerte arkivenheten.
-     Kilde: Registreres automatisk av
-     systemet ved opprettelse av enheten
-   - [0..1]
-   - 
-   - SystemID
-
-
-.. list-table::
-   :header-rows: 1
-
- * - **Navn**
-   - **Merknad**
- * - Ny - Ved oppretting av Arkivenhet fyller API-tjenesten inn systemID, opprettetAv og opprettetDato. Dette gjelder også alle underentiteter. Disse attributtene
-     trenger derfor ikke sendes inn ved oppretting.
-   - 
- * - M001 systemID: Skal ikke kunne endres
-   - 
- * - M600 opprettetDato: Skal ikke kunne endres
-   - 
- * - M601 opprettetAv: Skal ikke kunne endres
-   - 
-
-
-.. list-table::
-   :header-rows: 1
-
- * - **Relasjon**
-   - **Kilde**
-   - **Mål**
-   - **Merknad**
  * - **Aggregation** (Bi-Directional)
    - arkivskaper 1..* Arkivskaper
    - arkiv 0..* Arkiv
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Arkivskaper
    - Arkivenhet
-   - 
+   -
 
 
 .. list-table::
@@ -198,7 +42,7 @@
      eller annen identifikasjon avtalt med
      arkivdepotet. M006
    - [1..1]
-   - 
+   -
    - string
  * - arkivskaperNavn
    - Definisjon: Navn på organisasjonen som har
@@ -206,7 +50,7 @@
      ved opprettelsen av arkivet. Kommentarer:
      (ingen). M023
    - [1..1]
-   - 
+   -
    - string
  * - beskrivelse
    - Definisjon: Tekstlig beskrivelse av
@@ -216,7 +60,7 @@
      attributter for merknad som kunne brukes som
      et beskrivelsesfelt). M021
    - [0..1]
-   - 
+   -
    - string
 
 
@@ -230,47 +74,47 @@
  * - **Generalization** (Source → Destination)
    - Registrering
    - Arkivenhet
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - registrering 0..* Registrering
    - mappe 0..1 Mappe
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - registrering 0..* Registrering
    - arkivdel 0..1 Arkivdel
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - registrering 0..* Registrering
    - klasse 0..1 Klasse
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - dokumentbeskrivelse 0..* Dokumentbeskrivelse
    - registrering 1..* Registrering
-   - 
+   -
  * - **Aggregation** (Destination → Source)
    - nasjonalidentifikator 0..* Nasjonalidentifikator
    - Registrering
-   - 
+   -
  * - **Association** (Destination → Source)
    - korrespondansepart 0..* Korrespondansepart
    - Registrering
-   - 
+   -
  * - **Association** (Destination → Source)
    - part 0..* Part
    - Registrering
-   - 
+   -
  * - **Association** (Bi-Directional)
    - kryssreferanse 0..* Kryssreferanse
    - registrering 0..1 Registrering
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Journalpost
    - Registrering
-   - 
+   -
  * - **Association** (Destination → Source)
    - merknad 0..* Merknad
    - Registrering
-   - 
+   -
 
 
 .. list-table::
@@ -344,7 +188,7 @@
      dvs. sperret for all videre
      redigering/endring M604
    - [0..1]
-   - 
+   -
    - datetime
  * - arkivertAv
    - Definisjon: Navn på person som
@@ -358,32 +202,32 @@
      journalstatus. Kommentarer:
      (ingen) M605
    - [0..1]
-   - 
+   -
    - string
  * - referanseArkivertAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - kassasjon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Kassasjon
  * - skjerming
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Skjerming
  * - gradering
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Gradering
  * - referanseArkivdel
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - registreringsID
    - Definisjon: Entydig
@@ -406,7 +250,7 @@
      denne formen for andre deler av
      arkivet. M004
    - [0..1]
-   - 
+   -
    - string
  * - tittel
    - Definisjon: Tittel eller navn på
@@ -428,7 +272,7 @@
      kompatible med Noark 5 versjon 4.
      M020
    - [1..1]
-   - 
+   -
    - string
  * - offentligTittel
    - Definisjon: Offentlig tittel på
@@ -442,7 +286,7 @@
      ord i tittelfeltet skal skjermes.
      M025
    - [0..1]
-   - 
+   -
    - string
  * - beskrivelse
    - Definisjon: Tekstlig beskrivelse
@@ -454,7 +298,7 @@
      merknad som kunne brukes som et
      beskrivelsesfelt). M021
    - [0..1]
-   - 
+   -
    - string
  * - noekkelord
    - Definisjon: Nøkkeord eller
@@ -471,7 +315,7 @@
      Noekkelord skal ikke erstatte
      klassifikasjon. M022
    - [0..*]
-   - 
+   -
    - string
  * - forfatter
    - Definisjon: Navn på person (eller
@@ -499,7 +343,7 @@
      med en kilde (f.eks. et system).
      M024
    - [0..*]
-   - 
+   -
    - string
  * - dokumentmedium
    - Definisjon: Angivelse av om
@@ -526,7 +370,7 @@
      kommentar til M208
      referanseArkivdel. M300
    - [0..1]
-   - 
+   -
    - Dokumentmedium
  * - oppbevaringssted
    - Definisjon: Stedet hvor de
@@ -555,12 +399,12 @@
      legges sammen med tilhørende
      hoveddokument. M301
    - [0..*]
-   - 
+   -
    - string
  * - virksomhetsspesifikkeMetadata
-   - 
+   -
    - [0..1]
-   - 
+   -
    - any
 
 
@@ -570,29 +414,29 @@
  * - **Navn**
    - **Merknad**
  * - 5.5.2 Hvis Mappenivået er benyttet, skal en Registrering tilhøre (kun) en Mappe og en Mappe kan inneholde ingen, en eller flere Registreringer.
-   - 
+   -
  * - 5.5.3 Hvis Mappenivået ikke er benyttet, skal Registrering tilhøre (kun) én Arkivdel og en Arkivdel kan inneholde ingen, én eller flere Registreringer.
-   - 
+   -
  * - 5.5.4 Hvis Mappenivået ikke er benyttet, skal Registrering tilhøre kun en Klasse og en Klasse kan inngå i ingen, en eller flere Registreringer.
-   - 
+   -
  * - 5.5.5 En Registrering skal kunne inneholde ingen, en eller flere Dokumentbeskrivelser og en Dokumentbeskrivelse skal inngå i en eller flere Registreringer.
-   - 
+   -
  * - Ny - Etter at registrering er registrert så skal kjernen fylle ut systemID, opprettetAv og opprettetDato
-   - 
+   -
  * - Ny - Når registrering arkiveres så skal arkivertDato og arkivertAv/referanseArkivertAv registreres
-   - 
+   -
  * - M604 arkivertDato: Kan ikke endres
-   - 
+   -
  * - M605 arkivertAv: Kan ikke endres
-   - 
+   -
  * - 5.5.7 En Registrering skal kunne utvides til en Journalpost.
-   - 
+   -
  * - M004 registreringsID: Skal normalt ikke kunne endres. Ved flytting til en annen mappe, kan endring av registreringsID forekomme.
-   - 
+   -
  * - M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert
-   - 
+   -
  * - M025 offentligTittel: Obligatorisk i arkivuttrekk dersom tittelen inneholder ord som skal skjermes, jf. M504 skjermingMetadata.
-   - 
+   -
 
 
 .. list-table::
@@ -605,23 +449,23 @@
  * - **Aggregation** (Bi-Directional)
    - dokumentbeskrivelse 0..* Dokumentbeskrivelse
    - registrering 1..* Registrering
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Dokumentbeskrivelse
    - Arkivenhet
-   - 
+   -
  * - **Association** (Source → Destination)
    - Dokumentbeskrivelse
    - merknad 0..* Merknad
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - dokumentobjekt 0..* Dokumentobjekt
    - dokumentbeskrivelse 1 Dokumentbeskrivelse
-   - 
+   -
  * - **Association** (Source → Destination)
    - Dokumentbeskrivelse
    - part 0..* Part
-   - 
+   -
 
 
 .. list-table::
@@ -656,7 +500,7 @@
      Registreres automatisk av systemet eller
      manuelt. Kommentarer: (ingen). M083
    - [1..1]
-   - 
+   -
    - Dokumenttype
  * - dokumentstatus
    - Definisjon: Status til dokumentet . Kilde:
@@ -665,7 +509,7 @@
      Dokumentbeskrivelser som avleveres skal ha
      status "Dokumentet er ferdigstilt". M054
    - [1..1]
-   - 
+   -
    - Dokumentstatus
  * - tittel
    - Definisjon: Tittel eller navn på
@@ -679,7 +523,7 @@
      og "Dokumentbeskrivelse". Disse navnene kan
      beholdes i grensesnittet. M020
    - [1..1]
-   - 
+   -
    - string
  * - beskrivelse
    - Definisjon: Tekstlig beskrivelse av
@@ -689,7 +533,7 @@
      attributter for merknad som kunne brukes som
      et beskrivelsesfelt). M021
    - [0..1]
-   - 
+   -
    - string
  * - forfatter
    - Definisjon: Navn på person (eller eventuelt
@@ -711,7 +555,7 @@
      erstattes med en kilde (f.eks. et system).
      M024
    - [0..*]
-   - 
+   -
    - string
  * - dokumentmedium
    - Definisjon: Angivelse av om arkivenheten
@@ -731,7 +575,7 @@
      nedover i hierarkiet. Se også kommentar til
      M208 referanseArkivdel. M300
    - [0..1]
-   - 
+   -
    - Dokumentmedium
  * - oppbevaringssted
    - Definisjon: Stedet hvor de fysiske
@@ -754,7 +598,7 @@
      Vedlegg skal legges sammen med tilhørende
      hoveddokument. M301
    - [0..1]
-   - 
+   -
    - string
  * - tilknyttetRegistreringSom
    - Definisjon: Angivelse av hvilken "rolle"
@@ -763,7 +607,7 @@
      manuelt når et dokument blir tilknyttet en
      registrering Kommentarer: (ingen). M217
    - [1..1]
-   - 
+   -
    - TilknyttetRegistreringSom
  * - dokumentnummer
    - Definisjon: Identifikasjon av dokumentene
@@ -774,7 +618,7 @@
      brukergrensesnittet. Normalt skal
      hoveddokument vises før vedleggene. M007
    - [1..1]
-   - 
+   -
    - integer
  * - tilknyttetDato
    - Definisjon: Datoen et dokument ble knyttet
@@ -782,7 +626,7 @@
      automatisk nå tilknytning foretas.
      Kommentarer: (ingen). M620
    - [1..1]
-   - 
+   -
    - datetime
  * - tilknyttetAv
    - Definisjon: Navn på person som knyttet et
@@ -790,42 +634,42 @@
      Registreres automatisk når tilknytning
      foretas. Kommentarer: (ingen). M621
    - [0..1]
-   - 
+   -
    - string
  * - referanseTilknyttetAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - kassasjon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Kassasjon
  * - utfoertKassasjon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - UtfoertKassasjon
  * - sletting
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Sletting
  * - skjerming
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Skjerming
  * - gradering
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Gradering
  * - elektroniskSignatur
-   - 
+   -
    - [0..1]
-   - 
+   -
    - ElektroniskSignatur
  * - eksternReferanse
    - Ekstern referanse på innkommende dokumenter.
@@ -835,7 +679,7 @@
      kan avleveres som
      virksomhetsspesifikeMetadata.
    - [0..1]
-   - 
+   -
    - string
  * - virksomhetsspesifikkeMetadata
    - Definisjon: Et overordnet metadataelement
@@ -845,7 +689,7 @@
      (ingen).Kommentar: (ingen). M711
      virksomhetsspesifikkeMetadata
    - [0..1]
-   - 
+   -
    - any
 
 
@@ -856,43 +700,43 @@
    - **Merknad**
  * - 5.13.17 Autoriserte brukere skal kunne slette en arkivert inaktiv dokumentversjon. Den siste,
      endelige versjonen skal ikke kunne slettes.
-   - 
+   -
  * - 5.13.18 Det skal være mulig å søke fram dokumenter som er arkivert i flere versjoner
-   - 
+   -
  * - 5.13.19 Det bør være mulig å utføre sletting av mange inaktive dokumentversjoner samtidig, f.eks.
      alle inaktive dokumentversjoner som funnet etter et søk.
-   - 
+   -
  * - 5.13.20 Sletting av arkiverte inaktive dokumentversjoner skal logges.
-   - 
+   -
  * - 5.13.21 Autoriserte brukere skal kunne slette en arkivert dokumentvariant. Det opprinnelige
      dokumentet skal ikke kunne slettes.
-   - 
+   -
  * - 5.13.22 Det skal være mulig å søke fram arkiverte dokumentvarianter.
-   - 
+   -
  * - 5.13.23 Det bør være mulig å slette mange dokumentvarianter samtidig, f.eks. alle
      dokumentvarianter som er funnet etter et søk.
-   - 
+   -
  * - 5.13.24 Sletting av arkiverte dokumentvarianter skal logges.
-   - 
+   -
  * - 5.13.25 Autoriserte brukere skal kunne slette et arkivert dokument i produksjonsformat dersom
      dokumentet er blitt konvertert til arkivformat. Dokumentet i arkivformat skal ikke kunne slettes.
-   - 
+   -
  * - 5.13.26 Det skal være mulig å søke fram dokumenter arkivert i produksjonsformat.
-   - 
+   -
  * - 5.13.27 Det bør være mulig å slette mange produksjonsformater samtidig, f.eks. alle
      produksjonsformater som er funnet etter et søk.
-   - 
+   -
  * - 5.13.28 Sletting av arkiverte produksjonsformater skal logges
-   - 
+   -
  * - M007 dokumentnummer: Skal ikke kunne endres
-   - 
+   -
  * - M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene
      arkivert
-   - 
+   -
  * - M620 tilknyttetDato: Kan ikke endres
-   - 
+   -
  * - M621 tilknyttetAv: Kan ikke endres
-   - 
+   -
 
 
 .. list-table::
@@ -905,11 +749,11 @@
  * - **Aggregation** (Bi-Directional)
    - dokumentobjekt 0..* Dokumentobjekt
    - dokumentbeskrivelse 1 Dokumentbeskrivelse
-   - 
+   -
  * - **Aggregation** (Destination → Source)
    - konvertering 0..* Konvertering
    - Dokumentobjekt
-   - 
+   -
 
 
 .. list-table::
@@ -955,7 +799,7 @@
      ikke metadata skal følge med i et
      arkivuttrekk. M005
    - [1..1]
-   - 
+   -
    - integer
  * - variantformat
    - Definisjon: Angivelse av hvilken
@@ -964,7 +808,7 @@
      dokumentet arkiveres. Kommentarer:
      (ingen). M700
    - [1..1]
-   - 
+   -
    - Variantformat
  * - format
    - Definisjon: Dokumentets format .
@@ -972,7 +816,7 @@
      dokumentet arkiveres. Kommentarer:
      Faste verdier bestemmes senere. M701
    - [0..1]
-   - 
+   -
    - Format
  * - formatDetaljer
    - Definisjon: Nærmere spesifikasjon av
@@ -980,7 +824,7 @@
      om komprimering . Kilde: (ingen).
      Kommentarer: (ingen). M702
    - [0..1]
-   - 
+   -
    - string
  * - referanseDokumentfil
    - Definisjon: Referanse til filen som
@@ -999,12 +843,12 @@
      gjør det mulig å identifisere riktig
      fil i et arkivuttrekk. M218
    - [0..1]
-   - 
+   -
    - string
  * - filnavn
    - veFilnavn i n4
    - [0..1]
-   - 
+   -
    - string
  * - sjekksum
    - Definisjon: En verdi som beregnes ut
@@ -1015,12 +859,12 @@
      for avlevering. Kommentarer: (ingen).
      M705
    - [0..1]
-   - 
+   -
    - string
  * - mimeType
    - veMimeType i n4
    - [0..1]
-   - 
+   -
    - string
  * - sjekksumAlgoritme
    - Definisjon: Algoritmen som er brukt
@@ -1029,7 +873,7 @@
      med eksport for avlevering.
      Kommentarer: (ingen). M706
    - [0..1]
-   - 
+   -
    - string
  * - filstoerrelse
    - Definisjon: Størrelsen i bytes på
@@ -1039,12 +883,12 @@
      avlevering. Kommentarer: (ingen).
      M707
    - [0..1]
-   - 
+   -
    - integer
  * - elektroniskSignatur
-   - 
+   -
    - [0..1]
-   - 
+   -
    - ElektroniskSignatur
 
 
@@ -1055,11 +899,11 @@
    - **Merknad**
  * - 5.13.13 Det skal finnes en tjeneste/funksjon som gjør at arkivadministrator kan sette opp regler for når (hvilke statuser) arkivdokumenter skal konverteres til
      arkivformat.
-   - 
+   -
  * - 5.13.14 Det skal være konfigurerbart om dokumenter skal konverteres til arkivformat når status på dokumentbeskrivelse settes til ”Dokumentet er ferdigstilt”.
-   - 
+   -
  * - 5.13.15 Det skal være konfigurerbart om alle eller spesielt merkede versjoner skal konverteres til arkivformat.
-   - 
+   -
  * - 5.13.16 Det skal finnes en tjeneste/funksjon og rapportering for filformattesting av dokumentene som er lagret i kjernen.
    - Rapporten skal gi oversikt over
      hvilke mapper, registreringer
@@ -1067,32 +911,32 @@
      ikke inneholder dokumenter lagret
      i godkjent arkivformat.
  * - M001 systemID: Skal ikke kunne endres
-   - 
+   -
  * - M005 versjonsnummer: Skal ikke endres
-   - 
+   -
  * - M005 versjonsnummer: Den eldste versjonen skal ha det laveste nummeret. Dersom arkiverte versjoner er slettet (gjelder ikke siste versjon), vil dette skape
      "huller" i nummerrekkefølgen.
-   - 
+   -
  * - M600 opprettetDato: Skal ikke kunne endres
-   - 
+   -
  * - M601 opprettetAv: Skal ikke kunne endres
-   - 
+   -
  * - M700 veriantformat: Kan ikke endres
-   - 
+   -
  * - M701 format: Kan ikke endres
-   - 
+   -
  * - M702 formatDetaljer: Kan ikke endres
-   - 
+   -
  * - M705 sjekksum: Kan ikke endres.
-   - 
+   -
  * - M705 sjekksum: Sjekksummen skal være heksadesimal uten noen formatteringstegn.
-   - 
+   -
  * - M706 sjekksumAlgoritme: Kan ikke endres
-   - 
+   -
  * - M706 sjekksumAlgoritme: Algoritmen som skal brukes inntil videre er SHA-256, med verdi presentert i hexadesimal form. Obligatorisk verdi: «SHA-256»
-   - 
+   -
  * - M707 filstoerrelse: Kan ikke endres
-   - 
+   -
 
 
 .. list-table::
@@ -1121,7 +965,7 @@
      Kommentarer: (ingen). M507
      elektroniskSignaturSikkerhetsnivaa
    - [1..1]
-   - 
+   -
    - ElektroniskSignaturSikkerhetsni
      vaa
  * - elektroniskSignaturVerifisert
@@ -1134,7 +978,7 @@
      hvem som verifiserte den og når det skjedde.
      M508
    - [1..1]
-   - 
+   -
    - ElektroniskSignaturVerifisert
  * - verifisertDato
    - Definisjon: Dato en elektronisk signatur ble
@@ -1142,7 +986,7 @@
      når verifisering utføres. Kommentarer:
      (ingen). M622
    - [1..1]
-   - 
+   -
    - date
  * - verifisertAv
    - Definisjon: Navn på person som har
@@ -1150,12 +994,12 @@
      Registreres automatisk når verifisering
      utføres. Kommentarer: (ingen). M623
    - [1..1]
-   - 
+   -
    - string
  * - referanseVerifisertAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
 
 
@@ -1167,7 +1011,7 @@
  * - M622 verifisertDato: kan ikke endres
    - verifisertDato: kan ikke endres
  * - M623 verifisertAv: Kan ikke endres
-   - 
+   -
 
 
 .. list-table::
@@ -1190,34 +1034,34 @@
    - **Kode**
    - **Type**
  * - adresselinje1
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - adresselinje2
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - adresselinje3
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - postnr
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Postnummer
  * - poststed
-   - 
+   -
    - [1..1]
-   - 
+   -
    - string
  * - landkode
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Land
 
 
@@ -1241,7 +1085,7 @@
      i sin helhet er unntatt fra innsyn. M506
      gradering
    - [1..1]
-   - 
+   -
    - Graderingskode
  * - graderingsdato
    - Definisjon: Dato og klokkeslett når et
@@ -1249,19 +1093,19 @@
      automatisk ved gradering. Kommentarer:
      (ingen). M624
    - [1..1]
-   - 
+   -
    - datetime
  * - gradertAv
    - Definisjon: Navn på person som foretok
      graderingen . Kilde: Registreres automatisk
      ved gradering. Kommentarer: (ingen). M625
    - [1..1]
-   - 
+   -
    - string
  * - referanseGradertAv
-   - 
+   -
    - [1..1]
-   - 
+   -
    - SystemID
  * - nedgraderingsdato
    - Definisjon: Dato og klokkeslett når et
@@ -1269,7 +1113,7 @@
      automatisk ved nedgradering. Kommentarer:
      (ingen). M626
    - [0..1]
-   - 
+   -
    - datetime
  * - nedgradertAv
    - Definisjon: Navn på person som foretok
@@ -1277,12 +1121,12 @@
      automatisk ved nedgradering. Kommentarer:
      (ingen). M627
    - [0..1]
-   - 
+   -
    - string
  * - referanseNedgradertAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
 
 
@@ -1302,7 +1146,7 @@
      kan endres manuelt. Kommentarer: (ingen).
      M450
    - [1..1]
-   - 
+   -
    - Kassasjonsvedtak
  * - kassasjonshjemmel
    - Definisjon: Angivelse av hjemmel for
@@ -1313,7 +1157,7 @@
      være Riksarkivarens bevarings- og
      kassasjons-vedtak. M453
    - [0..1]
-   - 
+   -
    - string
  * - bevaringstid
    - Definisjon: Antall år dokumentene som
@@ -1326,7 +1170,7 @@
      være når en mappe avsluttes. Men andre
      regler kan være aktuelle. M451
    - [1..1]
-   - 
+   -
    - integer
  * - kassasjonsdato
    - Definisjon: Dato for når dokumentene som
@@ -1337,7 +1181,7 @@
      eller registreres manuelt. Kommentarer:
      (ingen). M452
    - [1..1]
-   - 
+   -
    - date
 
 
@@ -1351,31 +1195,31 @@
  * - **Aggregation** (Destination → Source)
    - underklasse 0..* Klasse
    - overklasse 0..1 Klasse
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Klasse
    - Arkivenhet
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - klasse 0..* Klasse
    - klassifikasjonssystem 0..1 Klassifikasjonssystem
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - mappe 0..* Mappe
    - klasse 0..1 Klasse
-   - 
+   -
  * - **Association** (Bi-Directional)
    - kryssreferanse 0..* Kryssreferanse
    - klasse 0..1 Klasse
-   - 
+   -
  * - **Association** (Source → Destination)
    - Saksmappe
    - sekundaerklassifikasjon 0..* Klasse
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - registrering 0..* Registrering
    - klasse 0..1 Klasse
-   - 
+   -
 
 
 .. list-table::
@@ -1441,7 +1285,7 @@
      kan f.eks. fødselsnummer og navn
      utgjøre klasseID og tittel. M002
    - [1..1]
-   - 
+   -
    - string
  * - tittel
    - Definisjon: Tittel eller navn på
@@ -1457,7 +1301,7 @@
      "Dokumentbeskrivelse". Disse navnene
      kan beholdes i grensesnittet. M020
    - [1..1]
-   - 
+   -
    - string
  * - beskrivelse
    - Definisjon: Tekstlig beskrivelse av
@@ -1468,7 +1312,7 @@
      for merknad som kunne brukes som et
      beskrivelsesfelt). M021
    - [0..1]
-   - 
+   -
    - string
  * - noekkelord
    - Definisjon: Nøkkeord eller stikkord
@@ -1484,7 +1328,7 @@
      skal ikke erstatte klassifikasjon.
      M022
    - [0..*]
-   - 
+   -
    - string
  * - avsluttetDato
    - Definisjon: Dato og klokkeslett når
@@ -1493,7 +1337,7 @@
      systemet når enheten avsluttes.
      Kommentarer: (ingen). M602
    - [0..1]
-   - 
+   -
    - datetime
  * - avsluttetAv
    - Definisjon: Navn på person som
@@ -1502,27 +1346,27 @@
      ved opprettelse av enheten.
      Kommentarer: (ingen). M603
    - [0..1]
-   - 
+   -
    - string
  * - referanseAvsluttetAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - skjerming
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Skjerming
  * - kassasjon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Kassasjon
  * - gradering
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Gradering
 
 
@@ -1532,15 +1376,15 @@
  * - **Navn**
    - **Merknad**
  * - Ny - Kan ha enten underklasse eller mappe eller registrering
-   - 
+   -
  * - M002 klasseID: Skal ikke kunne endres
-   - 
+   -
  * - M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert
-   - 
+   -
  * - M602 avsluttetDato: Skal ikke kunne endres
-   - 
+   -
  * - M602 avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.
-   - 
+   -
 
 
 .. list-table::
@@ -1553,19 +1397,19 @@
  * - **Aggregation** (Bi-Directional)
    - klassifikasjonssystem 0..1 Klassifikasjonssystem
    - arkivdel 1..* Arkivdel
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Klassifikasjonssystem
    - Arkivenhet
-   - 
+   -
  * - **Aggregation** (Destination → Source)
    - sekundaerklassifikasjonssystem 0..* Klassifikasjonssystem
    - Arkivdel
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - klasse 0..* Klasse
    - klassifikasjonssystem 0..1 Klassifikasjonssystem
-   - 
+   -
 
 
 .. list-table::
@@ -1596,7 +1440,7 @@
      av klassifikasjonssystem Kommentarer:
      (ingen) M086
    - [0..1]
-   - 
+   -
    - Klassifikasjonstype
  * - tittel
    - Definisjon: Tittel eller navn på
@@ -1610,7 +1454,7 @@
      og "Dokumentbeskrivelse". Disse navnene kan
      beholdes i grensesnittet. M020
    - [1..1]
-   - 
+   -
    - string
  * - beskrivelse
    - Definisjon: Tekstlig beskrivelse av
@@ -1620,7 +1464,7 @@
      attributter for merknad som kunne brukes som
      et beskrivelsesfelt). M021
    - [0..1]
-   - 
+   -
    - string
  * - avsluttetDato
    - Definisjon: Dato og klokkeslett når
@@ -1628,7 +1472,7 @@
      Registreres automatisk av systemet når
      enheten avsluttes. Kommentarer: (ingen) M602
    - [0..1]
-   - 
+   -
    - datetime
  * - avsluttetAv
    - Definisjon: Navn på person som
@@ -1637,12 +1481,12 @@
      opprettelse av enheten. Kommentarer:
      (ingen). M603
    - [0..1]
-   - 
+   -
    - string
  * - referanseAvsluttetAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
 
 
@@ -1652,7 +1496,7 @@
  * - **Navn**
    - **Merknad**
  * - M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert
-   - 
+   -
 
 
 .. list-table::
@@ -1673,19 +1517,19 @@
    - **Kode**
    - **Type**
  * - epostadresse
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - mobiltelefon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - telefon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
 
 
@@ -1699,7 +1543,7 @@
  * - **Aggregation** (Destination → Source)
    - konvertering 0..* Konvertering
    - Dokumentobjekt
-   - 
+   -
 
 
 .. list-table::
@@ -1748,7 +1592,7 @@
      dokumentfil er knyttet til flere
      forskjellige registreringer. M001
    - [0..1]
-   - 
+   -
    - SystemID
  * - konvertertDato
    - Definisjon: Dato og klokkeslett for
@@ -1758,7 +1602,7 @@
      konvertering. Kommentarer: (ingen).
      M615
    - [1..1]
-   - 
+   -
    - datetime
  * - konvertertAv
    - Definisjon: Person eller system som
@@ -1767,7 +1611,7 @@
      konvertering. Kommentarer: (ingen).
      M616
    - [1..1]
-   - 
+   -
    - string
  * - konvertertFraFormat
    - Definisjon: Formatet dokumentet
@@ -1779,7 +1623,7 @@
      arkivformat. Faste verdier bestemmes
      senere. M712
    - [1..1]
-   - 
+   -
    - Format
  * - konvertertTilFormat
    - Definisjon: Formatet dokumentet fikk
@@ -1788,7 +1632,7 @@
      konvertering. Kommentarer: Faste
      verdier bestemmes senere. M713
    - [1..1]
-   - 
+   -
    - Format
  * - konverteringsverktoey
    - Definisjon: Navn på det IT-verktøyet
@@ -1796,14 +1640,14 @@
      konverteringen . Kilde: (ingen).
      Kommentarer: (ingen). M714
    - [0..1]
-   - 
+   -
    - string
  * - konverteringskommentar
    - Definisjon: Kommentarer til
      konverteringen . Kilde:
      (ingen).Kommentarer: (ingen). M715
    - [0..1]
-   - 
+   -
    - string
 
 
@@ -1813,15 +1657,15 @@
  * - **Navn**
    - **Merknad**
  * - M001 systemID: Skal ikke kunne endres
-   - 
+   -
  * - M615 konvertertdato: Kan ikke endres
-   - 
+   -
  * - M616 konvertertAv: Kan ikke endres
-   - 
+   -
  * - M712 konvertertFraFormat: Kan ikke endres
-   - 
+   -
  * - M713 konvertertTilFormat: Kan ikke endres
-   - 
+   -
 
 
 .. list-table::
@@ -1834,19 +1678,19 @@
  * - **Generalization** (Source → Destination)
    - KorrespondansepartEnhet
    - Korrespondansepart
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - KorrespondansepartPerson
    - Korrespondansepart
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - KorrespondansepartIntern
    - Korrespondansepart
-   - 
+   -
  * - **Association** (Destination → Source)
    - korrespondansepart 0..* Korrespondansepart
    - Registrering
-   - 
+   -
 
 
 .. list-table::
@@ -1890,7 +1734,7 @@
      dokumentfil er knyttet til flere
      forskjellige registreringer. M001
    - [0..1]
-   - 
+   -
    - SystemID
  * - korrespondanseparttype
    - Definisjon: Type korrespondansepart . Kilde:
@@ -1902,7 +1746,7 @@
      korrespondansepart, men denne kan forekomme
      flere ganger innenfor en journalpost. M087
    - [1..1]
-   - 
+   -
    - Korrespondanseparttype
  * - virksomhetsspesifikkeMetadata
    - Definisjon: Et overordnet metadataelement
@@ -1912,7 +1756,7 @@
      Kommentar: (ingen). M711
      virksomhetsspesifikkeMetadata
    - [0..1]
-   - 
+   -
    - any
 
 
@@ -1922,7 +1766,7 @@
  * - **Navn**
    - **Merknad**
  * - M001 systemID: Skal ikke kunne endres
-   - 
+   -
 
 
 .. list-table::
@@ -1935,7 +1779,7 @@
  * - **Generalization** (Source → Destination)
    - KorrespondansepartEnhet
    - Korrespondansepart
-   - 
+   -
 
 
 .. list-table::
@@ -1956,34 +1800,34 @@
    - **Kode**
    - **Type**
  * - enhetsidentifikator
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Enhetsidentifikator
  * - navn
-   - 
+   -
    - [1..1]
-   - 
+   -
    - string
  * - forretningsadresse
-   - 
+   -
    - [0..1]
-   - 
+   -
    - EnkelAdresse
  * - postadresse
-   - 
+   -
    - [0..1]
-   - 
+   -
    - EnkelAdresse
  * - kontaktinformasjon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Kontaktinformasjon
  * - kontaktperson
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
 
 
@@ -1997,7 +1841,7 @@
  * - **Generalization** (Source → Destination)
    - KorrespondansepartIntern
    - Korrespondansepart
-   - 
+   -
 
 
 .. list-table::
@@ -2018,24 +1862,24 @@
    - **Kode**
    - **Type**
  * - administrativEnhet
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - referanseAdministrativEnhet
    - referanse til AdministrativEnhet sin systemID
    - [0..1]
-   - 
+   -
    - SystemID
  * - saksbehandler
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - referanseSaksbehandler
    - referanse til Bruker sin systemID
    - [0..1]
-   - 
+   -
    - SystemID
 
 
@@ -2049,7 +1893,7 @@
  * - **Generalization** (Source → Destination)
    - KorrespondansepartPerson
    - Korrespondansepart
-   - 
+   -
 
 
 .. list-table::
@@ -2070,29 +1914,29 @@
    - **Kode**
    - **Type**
  * - personidentifikator
-   - 
+   -
    - [0..*]
-   - 
+   -
    - Personidentifikator
  * - navn
-   - 
+   -
    - [1..1]
-   - 
+   -
    - string
  * - postadresse
-   - 
+   -
    - [0..1]
-   - 
+   -
    - EnkelAdresse
  * - bostedsadresse
-   - 
+   -
    - [0..1]
-   - 
+   -
    - EnkelAdresse
  * - kontaktinformasjon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Kontaktinformasjon
 
 
@@ -2115,15 +1959,15 @@
  * - **Association** (Bi-Directional)
    - kryssreferanse 0..* Kryssreferanse
    - registrering 0..1 Registrering
-   - 
+   -
  * - **Association** (Bi-Directional)
    - kryssreferanse 0..* Kryssreferanse
    - klasse 0..1 Klasse
-   - 
+   -
  * - **Association** (Bi-Directional)
    - kryssreferanse 0..* Kryssreferanse
    - mappe 0..1 Mappe
-   - 
+   -
 
 
 .. list-table::
@@ -2147,43 +1991,43 @@
  * - **Aggregation** (Bi-Directional)
    - mappe 0..* Mappe
    - arkivdel 0..1 Arkivdel
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - mappe 0..* Mappe
    - klasse 0..1 Klasse
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Mappe
    - Arkivenhet
-   - 
+   -
  * - **Aggregation** (Destination → Source)
    - undermappe 0..* Mappe
    - overmappe 0..1 Mappe
-   - 
+   -
  * - **Aggregation** (Bi-Directional)
    - registrering 0..* Registrering
    - mappe 0..1 Mappe
-   - 
+   -
  * - **Aggregation** (Destination → Source)
    - nasjonalidentifikator 0..* Nasjonalidentifikator
    - Mappe
-   - 
+   -
  * - **Association** (Source → Destination)
    - Mappe
    - merknad 0..* Merknad
-   - 
+   -
  * - **Association** (Source → Destination)
    - Mappe
    - part 0..* Part
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Saksmappe
    - Mappe
-   - 
+   -
  * - **Association** (Bi-Directional)
    - kryssreferanse 0..* Kryssreferanse
    - mappe 0..1 Mappe
-   - 
+   -
 
 
 .. list-table::
@@ -2257,14 +2101,14 @@
      metadataelementene M011 saksaar og M012
      sakssekvensnummer i saksmappen. M003
    - [0..1]
-   - 
+   -
    - string
  * - mappetype
    - angir mappetype som blant annet kan brukes
      som hint til hva som ligger i
      virksomhetsspesifikkemetadata
    - [0..1]
-   - 
+   -
    - Mappetype
  * - tittel
    - Definisjon: Tittel eller navn på
@@ -2278,7 +2122,7 @@
      og "Dokumentbeskrivelse". Disse navnene kan
      beholdes i grensesnittet. M020
    - [1..1]
-   - 
+   -
    - string
  * - offentligTittel
    - Definisjon: Offentlig tittel på
@@ -2289,7 +2133,7 @@
      offentligTittel være med dersom ord i
      tittelfeltet skal skjermes. M025
    - [0..1]
-   - 
+   -
    - string
  * - beskrivelse
    - Definisjon: Tekstlig beskrivelse av
@@ -2299,7 +2143,7 @@
      attributter for merknad som kunne brukes som
      et beskrivelsesfelt) M021
    - [0..1]
-   - 
+   -
    - string
  * - noekkelord
    - Definisjon: Nøkkeord eller stikkord som
@@ -2313,7 +2157,7 @@
      gjenfinning. Noekkelord skal ikke erstatte
      klassifikasjon. M022
    - [0..*]
-   - 
+   -
    - string
  * - dokumentmedium
    - Definisjon: Angivelse av om arkivenheten
@@ -2333,7 +2177,7 @@
      nedover i hierarkiet. Se også kommentar til
      M208 referanseArkivdel. M300
    - [0..1]
-   - 
+   -
    - Dokumentmedium
  * - oppbevaringssted
    - Definisjon: Stedet hvor de fysiske
@@ -2356,7 +2200,7 @@
      Vedlegg skal legges sammen med tilhørende
      hoveddokument. M301
    - [0..*]
-   - 
+   -
    - string
  * - avsluttetDato
    - Definisjon: Dato og klokkeslett når
@@ -2365,7 +2209,7 @@
      enheten avsluttes. Kommentarer: (ingen).
      M602
    - [0..1]
-   - 
+   -
    - datetime
  * - avsluttetAv
    - Definisjon: Navn på person som
@@ -2374,32 +2218,32 @@
      opprettelse av enheten. Kommentarer: (ingen)
      M603
    - [0..1]
-   - 
+   -
    - string
  * - referanseAvsluttetAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - kassasjon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Kassasjon
  * - skjerming
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Skjerming
  * - gradering
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Gradering
  * - referanseForelderMappe
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - virksomhetsspesifikkeMetadata
    - Definisjon: Et overordnet metadataelement
@@ -2409,7 +2253,7 @@
      Kommentar: (ingen) M711
      virksomhetsspesifikkeMetadata
    - [0..1]
-   - 
+   -
    - any
 
 
@@ -2419,43 +2263,43 @@
  * - **Navn**
    - **Merknad**
  * - 5.4.1 En mappe skal kunne være av forskjellig type.
-   - 
+   -
  * - 5.4.5 En Mappe bør kunne inngå i andre Mapper i et hierarki.
-   - 
+   -
  * - 5.4.6 En Mappe skal kunne bestå av ingen, en eller flere Registreringer og en Registrering kan inngå i (kun) en Mappe.
-   - 
+   -
  * - 5.4.7 Dersom en Mappe er registrert som avsluttet (avsluttetDato) skal det ikke være mulig å legge flere Registreringer til Mappen.
-   - 
+   -
  * - 5.4.8 En Mappe skal kunne utvides til en Saksmappe
-   - 
+   -
  * - 5.4.14 Dersom det er angitt et primært klassifikasjonssystem for Arkivdel, skal alle Mapper i arkivdelen ha verdier fra dette klassifikasjonssystemet som primær klasse.
-   - 
+   -
  * - 5.4.19 Det bør finnes en tjeneste/funksjon for å legge opp og ajourholde undermapper for en Mappe (mappehierarki).
-   - 
+   -
  * - 6.1.1 Det skal finnes en tjeneste/funksjon for å avslutte en Mappe (dvs. at avsluttetDato settes).
-   - 
+   -
  * - 6.1.2 For en Mappe som er avsluttet skal det ikke være mulig å endre følgende metadata: tittel ,dokumentmedium
-   - 
+   -
  * - 6.1.17 Det skal ikke være mulig å slette en Mappe som er avsluttet.
-   - 
+   -
  * - Ny - Etter at mappe er registrert så skal kjernen fylle ut systemID, opprettetAv og opprettetDato
-   - 
+   -
  * - Ny - Når mappe avsluttes så skal avsluttetDato og avsluttetAv registreres
-   - 
+   -
  * - Ny - Mappe kan enten være tilknyttet arkivdel eller referanseForelderMappe eller klasse
-   - 
+   -
  * - M003 mappeID: Skal ikke kunne endres
-   - 
+   -
  * - M025 offentligTittel: Obligatorisk i arkivuttrekk dersom tittelen inneholder ord som skal skjermes, jf. M504 skjermingMetadata.
-   - 
+   -
  * - M602 avsluttetDato: Skal ikke kunne endres.
-   - 
+   -
  * - M602 avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.
-   - 
+   -
  * - M603 avsluttetAv: Skal ikke kunne endres.
-   - 
+   -
  * - M603 avsluttetAv: Obligatorisk dersom arkivenheten er avsluttet.
-   - 
+   -
 
 
 .. list-table::
@@ -2468,15 +2312,15 @@
  * - **Association** (Source → Destination)
    - Mappe
    - merknad 0..* Merknad
-   - 
+   -
  * - **Association** (Source → Destination)
    - Registrering
    - merknad 0..* Merknad
-   - 
+   -
  * - **Association** (Source → Destination)
    - Dokumentbeskrivelse
    - merknad 0..* Merknad
-   - 
+   -
 
 
 .. list-table::
@@ -2528,7 +2372,7 @@
      dokumentfil er knyttet til flere
      forskjellige registreringer. M001
    - [0..1]
-   - 
+   -
    - SystemID
  * - merknadstekst
    - Definisjon: Merknad fra
@@ -2540,13 +2384,13 @@
      arkiveringen av dokumentene som
      tilhører arkivenheten. M310
    - [1..1]
-   - 
+   -
    - string
  * - merknadstype
    - Definisjon: Navn på type merknad.
      M084
    - [0..1]
-   - 
+   -
    - Merknadstype
  * - merknadsdato
    - Definisjon: Dato og klokkeslett
@@ -2555,7 +2399,7 @@
      systemet. Kommentarer: (ingen).
      M611
    - [1..1]
-   - 
+   -
    - datetime
  * - merknadRegistrertAv
    - Definisjon: Navn på person som
@@ -2564,12 +2408,12 @@
      systemet. Kommentarer: (ingen).
      M612
    - [0..1]
-   - 
+   -
    - string
  * - referanseMerknadRegistrertAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
 
 
@@ -2579,11 +2423,11 @@
  * - **Navn**
    - **Merknad**
  * - M001 systemID: Skal ikke kunne endres
-   - 
+   -
  * - M611 merknadsdato: Kan ikke endres
-   - 
+   -
  * - M612 merknadRegistrertAv: Kan ikke endres
-   - 
+   -
 
 
 .. list-table::
@@ -2596,23 +2440,23 @@
  * - **Generalization** (Source → Destination)
    - PartPerson
    - Part
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - PartEnhet
    - Part
-   - 
+   -
  * - **Association** (Destination → Source)
    - part 0..* Part
    - Mappe
-   - 
+   -
  * - **Association** (Destination → Source)
    - part 0..* Part
    - Registrering
-   - 
+   -
  * - **Association** (Source → Destination)
    - Dokumentbeskrivelse
    - part 0..* Part
-   - 
+   -
 
 
 .. list-table::
@@ -2656,7 +2500,7 @@
      dokumentfil er knyttet til flere
      forskjellige registreringer. M001
    - [0..1]
-   - 
+   -
    - SystemID
  * - partRolle
    - Definisjon: Angivelse av rollen til parten .
@@ -2666,12 +2510,12 @@
      roller avhengig av type sak, f.eks. Klient,
      Pårørende, Formynder, Advokat. M303
    - [1..1]
-   - 
+   -
    - PartRolle
  * - virksomhetsspesifikkeMetadata
-   - 
+   -
    - [0..1]
-   - 
+   -
    - any
 
 
@@ -2681,7 +2525,7 @@
  * - **Navn**
    - **Merknad**
  * - M001 systemID: Skal ikke kunne endres
-   - 
+   -
 
 
 .. list-table::
@@ -2694,7 +2538,7 @@
  * - **Generalization** (Source → Destination)
    - PartEnhet
    - Part
-   - 
+   -
 
 
 .. list-table::
@@ -2715,34 +2559,34 @@
    - **Kode**
    - **Type**
  * - enhetsidentifikator
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Enhetsidentifikator
  * - navn
-   - 
+   -
    - [1..1]
-   - 
+   -
    - string
  * - forretningsadresse
-   - 
+   -
    - [0..1]
-   - 
+   -
    - EnkelAdresse
  * - postadresse
-   - 
+   -
    - [0..1]
-   - 
+   -
    - EnkelAdresse
  * - kontaktinformasjon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Kontaktinformasjon
  * - kontaktperson
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
 
 
@@ -2756,7 +2600,7 @@
  * - **Generalization** (Source → Destination)
    - PartPerson
    - Part
-   - 
+   -
 
 
 .. list-table::
@@ -2777,29 +2621,29 @@
    - **Kode**
    - **Type**
  * - personidentifikator
-   - 
+   -
    - [0..*]
-   - 
+   -
    - Personidentifikator
  * - navn
-   - 
+   -
    - [1..1]
-   - 
+   -
    - string
  * - postadresse
-   - 
+   -
    - [0..1]
-   - 
+   -
    - EnkelAdresse
  * - bostedsadresse
-   - 
+   -
    - [0..1]
-   - 
+   -
    - EnkelAdresse
  * - kontaktinformasjon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Kontaktinformasjon
 
 
@@ -2821,7 +2665,7 @@
      liste, kan også registres automatisk.
      Kommentarer: (ingen). M500
    - [1..1]
-   - 
+   -
    - Tilgangsrestriksjon
  * - skjermingshjemmel
    - Definisjon: Henvisning til hjemmel
@@ -2832,7 +2676,7 @@
      valgt tilgangskode, kan overstyres
      manuelt. Kommentarer: (ingen) M501
    - [1..1]
-   - 
+   -
    - string
  * - skjermingMetadata
    - Definisjon: Angivelse av hvilke
@@ -2857,7 +2701,7 @@
      brukes inntil skjermingsbehovet er
      vurdert. M502
    - [0..*]
-   - 
+   -
    - SkjermingMetadata
  * - skjermingDokument
    - Definisjon: Angivelse av at hele
@@ -2871,7 +2715,7 @@
      Her må all informasjon som skal
      skjermes, være "sladdet". M503
    - [0..1]
-   - 
+   -
    - SkjermingDokument
  * - skjermingsvarighet
    - Definisjon: Antall år skjermingen
@@ -2885,7 +2729,7 @@
      skal være mulig med andre regler.
      M504
    - [0..1]
-   - 
+   -
    - integer
  * - skjermingOpphoererDato
    - Definisjon: Datoen skjermingen skal
@@ -2894,7 +2738,7 @@
      skjermingsvarighet. Kommentarer:
      (ingen). M505
    - [0..1]
-   - 
+   -
    - date
 
 
@@ -2915,7 +2759,7 @@
      arkivdel skal bare kunne utføres av
      autorisert personale. M089
    - [1..1]
-   - 
+   -
    - Slettingstype
  * - slettetDato
    - Definisjon: Dato og klokkeslett når et
@@ -2928,7 +2772,7 @@
      avleveres. Sletting må ikke blandes
      sammen med kassasjon. M613
    - [1..1]
-   - 
+   -
    - datetime
  * - slettetAv
    - Definisjon: Navn på person som har
@@ -2940,12 +2784,12 @@
      Sletting må ikke blandes sammen med
      kassasjon. M614
    - [1..1]
-   - 
+   -
    - string
  * - referanseSlettetAv
-   - 
+   -
    - [1..1]
-   - 
+   -
    - SystemID
 
 
@@ -2971,17 +2815,17 @@
  * - kassertDato
    - Definisjon: Dato og klokkeslett når kassasjonen ble utført . Kilde: Registreres automatisk når kassasjon utføres. Kommentarer: (ingen). M630
    - [1..1]
-   - 
+   -
    - datetime
  * - kassertAv
    - Definisjon: Navn på person som har utført kassasjonen . Kilde: Registreres automatisk når kassasjon utføres. Kommentarer: (ingen). M631
    - [1..1]
-   - 
+   -
    - string
  * - referanseKassertAv
-   - 
+   -
    - [1..1\ 1
-   - 
+   -
    - SystemID
 
 
@@ -3006,35 +2850,35 @@
  * - **Aggregation** (Destination → Source)
    - nasjonalidentifikator 0..* Nasjonalidentifikator
    - Mappe
-   - 
+   -
  * - **Aggregation** (Destination → Source)
    - nasjonalidentifikator 0..* Nasjonalidentifikator
    - Registrering
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Bygning
    - Nasjonalidentifikator
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Enhetsidentifikator
    - Nasjonalidentifikator
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Matrikkel
    - Nasjonalidentifikator
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Plan
    - Nasjonalidentifikator
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Posisjon
    - Nasjonalidentifikator
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Personidentifikator
    - Nasjonalidentifikator
-   - 
+   -
 
 
 .. list-table::
@@ -3053,9 +2897,9 @@
    - **Kode**
    - **Type**
  * - systemID
-   - 
+   -
    - [1..1]
-   - 
+   -
    - SystemID
 
 
@@ -3069,7 +2913,7 @@
  * - **Generalization** (Source → Destination)
    - Bygning
    - Nasjonalidentifikator
-   - 
+   -
 
 
 .. list-table::
@@ -3092,12 +2936,12 @@
  * - bygningsnummer
    - Som registrert i Matrikkelen.
    - [1..1]
-   - 
+   -
    - integer
  * - endringsloepenummer
    - Som registrert i Matrikkelen.
    - [0..1]
-   - 
+   -
    - integer
 
 
@@ -3111,7 +2955,7 @@
  * - **Generalization** (Source → Destination)
    - Enhetsidentifikator
    - Nasjonalidentifikator
-   - 
+   -
 
 
 .. list-table::
@@ -3123,9 +2967,9 @@
    - **Kode**
    - **Type**
  * - organisasjonsnummer
-   - 
+   -
    - [1..1]
-   - 
+   -
    - string
 
 
@@ -3139,7 +2983,7 @@
  * - **Generalization** (Source → Destination)
    - Matrikkel
    - Nasjonalidentifikator
-   - 
+   -
 
 
 .. list-table::
@@ -3160,29 +3004,29 @@
    - **Kode**
    - **Type**
  * - kommunenummer
-   - 
+   -
    - [1..1]
-   - 
+   -
    - string
  * - gaardsnummer
-   - 
+   -
    - [1..1]
-   - 
+   -
    - integer
  * - bruksnummer
-   - 
+   -
    - [1..1]
-   - 
+   -
    - integer
  * - festenummer
-   - 
+   -
    - [0..1]
-   - 
+   -
    - integer
  * - seksjonsnummer
-   - 
+   -
    - [0..1]
-   - 
+   -
    - integer
 
 
@@ -3196,15 +3040,15 @@
  * - **Generalization** (Source → Destination)
    - Personidentifikator
    - Nasjonalidentifikator
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Foedselsnummer
    - Personidentifikator
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - DNummer
    - Personidentifikator
-   - 
+   -
 
 
 .. list-table::
@@ -3217,7 +3061,7 @@
  * - **Generalization** (Source → Destination)
    - Foedselsnummer
    - Personidentifikator
-   - 
+   -
 
 
 .. list-table::
@@ -3238,9 +3082,9 @@
    - **Kode**
    - **Type**
  * - foedselsnummer
-   - 
+   -
    - [1..1]
-   - 
+   -
    - string
 
 
@@ -3254,7 +3098,7 @@
  * - **Generalization** (Source → Destination)
    - DNummer
    - Personidentifikator
-   - 
+   -
 
 
 .. list-table::
@@ -3275,9 +3119,9 @@
    - **Kode**
    - **Type**
  * - dNummer
-   - 
+   -
    - [1..1]
-   - 
+   -
    - string
 
 
@@ -3291,7 +3135,7 @@
  * - **Generalization** (Source → Destination)
    - Plan
    - Nasjonalidentifikator
-   - 
+   -
 
 
 .. list-table::
@@ -3312,24 +3156,24 @@
    - **Kode**
    - **Type**
  * - kommunenummer
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - fylkesnummer
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - landkode
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Land
  * - planidentifikasjon
-   - 
+   -
    - [1..1]
-   - 
+   -
    - string
 
 
@@ -3358,15 +3202,15 @@
    - **Kode**
    - **Type**
  * - UTM32N
-   - 
-   - 
+   -
+   -
    - EPSG:32632
-   - 
+   -
  * - WGS84
-   - 
-   - 
+   -
+   -
    - EPSG:4326
-   - 
+   -
 
 
 .. list-table::
@@ -3379,7 +3223,7 @@
  * - **Generalization** (Source → Destination)
    - Posisjon
    - Nasjonalidentifikator
-   - 
+   -
 
 
 .. list-table::
@@ -3400,24 +3244,24 @@
    - **Kode**
    - **Type**
  * - koordinatsystem
-   - 
+   -
    - [1..1]
-   - 
+   -
    - Koordinatsystem
  * - x
    - øst-vest/breddegrad
    - [1..1]
-   - 
+   -
    - decimal
  * - y
    - nord-sør/lengdegrad
    - [1..1]
-   - 
+   -
    - decimal
  * - z
    - høyde, kun noen koordinatsystem
    - [0..1]
-   - 
+   -
    - decimal
 
 
@@ -3492,25 +3336,25 @@
    - **Kode**
    - **Type**
  * - Aktiv periode
-   - 
-   - 
+   -
+   -
    - A
-   - 
+   -
  * - Overlappingsperiode
-   - 
-   - 
+   -
+   -
    - O
-   - 
+   -
  * - Avsluttet periode
-   - 
-   - 
+   -
+   -
    - P
-   - 
+   -
  * - Uaktuelle mapper
-   - 
-   - 
+   -
+   -
    - U
-   - 
+   -
 
 
 .. list-table::
@@ -3529,15 +3373,15 @@
    - **Kode**
    - **Type**
  * - Opprettet
-   - 
-   - 
+   -
+   -
    - O
-   - 
+   -
  * - Avsluttet
-   - 
-   - 
+   -
+   -
    - A
-   - 
+   -
 
 
 .. list-table::
@@ -3556,40 +3400,40 @@
    - **Kode**
    - **Type**
  * - Besvart med brev
-   - 
-   - 
+   -
+   -
    - BU
-   - 
+   -
  * - Besvart med e-post
-   - 
-   - 
+   -
+   -
    - BE
-   - 
+   -
  * - Besvart på telefon
-   - 
-   - 
+   -
+   -
    - TLF
-   - 
+   -
  * - Tatt til etterretning
-   - 
-   - 
+   -
+   -
    - TE
-   - 
+   -
  * - Tatt til orientering
-   - 
-   - 
+   -
+   -
    - TO
-   - 
+   -
  * - Besvart med notat
-   - 
-   - 
+   -
+   -
    - BN
-   - 
+   -
  * - Saken ble avsluttet
-   - 
-   - 
+   -
+   -
    - SA
-   - 
+   -
 
 
 .. list-table::
@@ -3608,20 +3452,20 @@
    - **Kode**
    - **Type**
  * - Fysisk medium
-   - 
-   - 
+   -
+   -
    - F
-   - 
+   -
  * - Elektronisk arkiv
-   - 
-   - 
+   -
+   -
    - E
-   - 
+   -
  * - Blandet fysisk og elektronisk arkiv
-   - 
-   - 
+   -
+   -
    - B
-   - 
+   -
 
 
 .. list-table::
@@ -3640,15 +3484,15 @@
    - **Kode**
    - **Type**
  * - Dokumentet er under redigering
-   - 
-   - 
+   -
+   -
    - B
-   - 
+   -
  * - Dokumentet er ferdigstilt
-   - 
-   - 
+   -
+   -
    - F
-   - 
+   -
 
 
 .. list-table::
@@ -3668,24 +3512,24 @@
    - **Type**
  * - Brev
    - Valgfri
-   - 
+   -
    - B
-   - 
+   -
  * - Rundskriv
    - Valgfri
-   - 
+   -
    - R
-   - 
+   -
  * - Faktura
    - Valgfri
-   - 
+   -
    - F
-   - 
+   -
  * - Ordrebekreftelse
    - Valgfri
-   - 
+   -
    - O
-   - 
+   -
 
 
 .. list-table::
@@ -3705,24 +3549,24 @@
    - **Type**
  * - Symmetrisk kryptert
    - Valgfri
-   - 
+   -
    - SK
-   - 
+   -
  * - Sendt med PKI/virksomhetssertifikat
    - Valgfri
-   - 
+   -
    - V
-   - 
+   -
  * - Sendt med PKI/"person standard"-sertifikat
    - Valgfri
-   - 
+   -
    - PS
-   - 
+   -
  * - Sendt med PKI/"person høy"-sertifikat
    - Valgfri
-   - 
+   -
    - PH
-   - 
+   -
 
 
 .. list-table::
@@ -3741,15 +3585,15 @@
    - **Kode**
    - **Type**
  * - Signatur påført, ikke verifisert
-   - 
-   - 
+   -
+   -
    - I
-   - 
+   -
  * - Signatur påført og verifisert
-   - 
-   - 
+   -
+   -
    - V
-   - 
+   -
 
 
 .. list-table::
@@ -3769,19 +3613,19 @@
    - **Type**
  * - Godkjent
    - Valgfri
-   - 
+   -
    - G
-   - 
+   -
  * - Ikke godkjent
    - Valgfri
-   - 
+   -
    - I
-   - 
+   -
  * - Sendt tilbake til saksbehandler med kommentarer
    - Valgfri
-   - 
+   -
    - S
-   - 
+   -
 
 
 .. list-table::
@@ -3803,9 +3647,9 @@
    - Formatet er ikke gjenkjent eller
      mangler i listen over kjente
      formater.
-   - 
+   -
    - av/0
-   - 
+   -
  * - Ren tekst
    - Som ren tekst: UTF-8 (ISO/IEC
      10646-1:2000 Annex D) eller ISO
@@ -3813,70 +3657,70 @@
      8859-1:1998, Latin 1 kan erstattes
      med ISO 8859-4:1998, Latin 4 for
      samiske tegn
-   - 
+   -
    - `x-fmt/111<http://www.nationalarchives.gov.uk/PRONOM/x-fmt/111>`_
-   - 
+   -
  * - TIFF versjon 6
    - TIFF - Tag Image File Format versjon
      6, med de presiseringer som fremgår
      av forskriftens § 8-18
-   - 
+   -
    - `fmt/353<http://www.nationalarchives.gov.uk/PRONOM/fmt/353>`_
-   - 
+   -
  * - PDF/A 1a - ISO 19005-1:2005
    - PDF/A - ISO 19005-1:2005, versjon 1a
      («Conformance Level» A). PDF/A
      erstatter Adobe PDF, jf. forskriftens
      § 8-20 tredje ledd.
-   - 
+   -
    - `fmt/95<http://www.nationalarchives.gov.uk/PRONOM/fmt/95>`_
-   - 
+   -
  * - PDF/A 1b - ISO 19005-1:2005
    - PDF/A - ISO 19005-1:2005, versjon 1b
      («Conformance Level» B). PDF/A
      erstatter Adobe PDF, jf. forskriftens
      § 8-20 tredje ledd.
-   - 
+   -
    - `fmt/354<http://www.nationalarchives.gov.uk/PRONOM/fmt/354>`_
-   - 
+   -
  * - XML
    - XML - Extensible Markup Language
      versjon 1.0, med de presiseringer som
      fremgår av forskriftens § 8-19
-   - 
+   -
    - `fmt/101<http://www.nationalarchives.gov.uk/PRONOM/fmt/101>`_
-   - 
+   -
  * - JPEG
    - JPEG 1.00 som beskrevet i ISO
      10918-1:1994
-   - 
+   -
    - `fmt/42<http://www.nationalarchives.gov.uk/PRONOM/fmt/42>`_
-   - 
+   -
  * - SOSI
    - SOSI versjon 2.2 (1995) eller nyere
-   - 
+   -
    - av/1
-   - 
+   -
  * - MPEG-2
    - MPEG-2 (ISO 13818-2.)
-   - 
+   -
    - `x-fmt/386<http://www.nationalarchives.gov.uk/PRONOM/x-fmt/386>`_
-   - 
+   -
  * - MP3
    - lyd: MP3 (ISO 11172-3), PCM eller
      PCM-basert Wave. Valget mellom disse
      lydformatene skal i hvert tilfelle
      være avtalt med Arkivverket før
      deponering eller avlevering
-   - 
+   -
    - `fmt/134<http://www.nationalarchives.gov.uk/PRONOM/fmt/134>`_
-   - 
+   -
  * - PNG
    - PNG 1.2 som beskrevet i ISO / IEC
      15948
-   - 
+   -
    - `fmt/11<http://www.nationalarchives.gov.uk/PRONOM/fmt/13>`_
-   - 
+   -
 
 
 .. list-table::
@@ -3895,35 +3739,35 @@
    - **Kode**
    - **Type**
  * - Strengt hemmelig (sikkerhetsgrad)
-   - 
-   - 
+   -
+   -
    - SH
-   - 
+   -
  * - Hemmelig (sikkerhetsgrad)
-   - 
-   - 
+   -
+   -
    - H
-   - 
+   -
  * - Konfidensielt (sikkerhetsgrad)
-   - 
-   - 
+   -
+   -
    - K
-   - 
+   -
  * - Begrenset (sikkerhetsgrad)
-   - 
-   - 
+   -
+   -
    - B
-   - 
+   -
  * - Fortrolig (beskyttelsesgrad)
-   - 
-   - 
+   -
+   -
    - F
-   - 
+   -
  * - Strengt fortrolig (beskyttelsesgrad)
-   - 
-   - 
+   -
+   -
    - SF
-   - 
+   -
 
 
 .. list-table::
@@ -3942,25 +3786,25 @@
    - **Kode**
    - **Type**
  * - Opprettet
-   - 
-   - 
+   -
+   -
    - C
-   - 
+   -
  * - Lest
-   - 
-   - 
+   -
+   -
    - R
-   - 
+   -
  * - Endret
-   - 
-   - 
+   -
+   -
    - U
-   - 
+   -
  * - Slettet
-   - 
-   - 
+   -
+   -
    - D
-   - 
+   -
 
 
 .. list-table::
@@ -3979,30 +3823,30 @@
    - **Kode**
    - **Type**
  * - Inngående dokument
-   - 
-   - 
+   -
+   -
    - I
-   - 
+   -
  * - Utgående dokument
-   - 
-   - 
+   -
+   -
    - U
-   - 
+   -
  * - Organinternt dokument for oppfølging
-   - 
-   - 
+   -
+   -
    - N
-   - 
+   -
  * - Organinternt dokument uten oppfølging
-   - 
-   - 
+   -
+   -
    - X
-   - 
+   -
  * - Saksframlegg
-   - 
-   - 
+   -
+   -
    - S
-   - 
+   -
 
 
 .. list-table::
@@ -4021,50 +3865,50 @@
    - **Kode**
    - **Type**
  * - Journalført
-   - 
-   - 
+   -
+   -
    - J
-   - 
+   -
  * - Ferdigstilt fra saksbehandler
-   - 
-   - 
+   -
+   -
    - F
-   - 
+   -
  * - Godkjent av leder
-   - 
-   - 
+   -
+   -
    - G
-   - 
+   -
  * - Ekspedert
-   - 
-   - 
+   -
+   -
    - E
-   - 
+   -
  * - Arkivert
-   - 
-   - 
+   -
+   -
    - A
-   - 
+   -
  * - Utgår
-   - 
-   - 
+   -
+   -
    - U
-   - 
+   -
  * - Midlertidig registrering av innkommet dokument
    - Anbefalt
-   - 
+   -
    - M
-   - 
+   -
  * - Saksbehandler har registrert innkommet dokument
    - Anbefalt. Dette gjelder hovedsakelig e-post
-   - 
+   -
    - S
-   - 
+   -
  * - Reservert dokument
    - Reservert dokument, dvs. egenprodusert dokument er under arbeid
-   - 
+   -
    - R
-   - 
+   -
 
 
 .. list-table::
@@ -4083,20 +3927,20 @@
    - **Kode**
    - **Type**
  * - Bevares
-   - 
-   - 
+   -
+   -
    - B
-   - 
+   -
  * - Kasseres
-   - 
-   - 
+   -
+   -
    - K
-   - 
+   -
  * - Vurderes senere
-   - 
-   - 
+   -
+   -
    - G
-   - 
+   -
 
 
 .. list-table::
@@ -4116,44 +3960,44 @@
    - **Type**
  * - Gårds- og bruksnummer
    - Valgfri
-   - 
+   -
    - GBN
-   - 
+   -
  * - Funksjonsbasert, hierarkisk
    - Valgfri
-   - 
+   -
    - FH
-   - 
+   -
  * - Emnebasert, hierarkisk arkivnøkkel
    - Valgfri
-   - 
+   -
    - EH
-   - 
+   -
  * - Emnebasert, ett nivå
    - Valgfri
-   - 
+   -
    - E1
-   - 
+   -
  * - K-koder
    - Valgfri
-   - 
+   -
    - KK
-   - 
+   -
  * - Mangefasettert, ikke hierarki
    - Valgfri
-   - 
+   -
    - MF
-   - 
+   -
  * - Objektbasert
    - Valgfri
-   - 
+   -
    - UO
-   - 
+   -
  * - Fødselsnummer
    - Valgfri
-   - 
+   -
    - PNR
-   - 
+   -
 
 
 .. list-table::
@@ -4172,45 +4016,45 @@
    - **Kode**
    - **Type**
  * - Avsender
-   - 
-   - 
+   -
+   -
    - EA
-   - 
+   -
  * - Mottaker
-   - 
-   - 
+   -
+   -
    - EM
-   - 
+   -
  * - Kopimottaker
-   - 
-   - 
+   -
+   -
    - EK
-   - 
+   -
  * - Gruppemottaker
-   - 
-   - 
+   -
+   -
    - GM
-   - 
+   -
  * - Intern avsender
-   - 
-   - 
+   -
+   -
    - IA
-   - 
+   -
  * - Intern mottaker
-   - 
-   - 
+   -
+   -
    - IM
-   - 
+   -
  * - Intern kopimottaker
-   - 
-   - 
+   -
+   -
    - IK
-   - 
+   -
  * - Medavsender
-   - 
-   - 
+   -
+   -
    - IS
-   - 
+   -
 
 
 .. list-table::
@@ -4244,19 +4088,19 @@
    - **Type**
  * - Merknad fra saksbehandler
    - Valgfri
-   - 
+   -
    - MS
-   - 
+   -
  * - Merknad fra leder
    - Valgfri
-   - 
+   -
    - ML
-   - 
+   -
  * - Merknad fra arkivansvarlig
    - Valgfri
-   - 
+   -
    - MA
-   - 
+   -
 
 
 .. list-table::
@@ -4282,15 +4126,15 @@
    - **Kode**
    - **Type**
  * - Gjeldende
-   - 
-   - 
+   -
+   -
    - G
-   - 
+   -
  * - Foreldet
-   - 
-   - 
+   -
+   -
    - F
-   - 
+   -
 
 
 .. list-table::
@@ -4310,24 +4154,24 @@
    - **Type**
  * - Klient
    - Valgfri
-   - 
+   -
    - KLI
-   - 
+   -
  * - Pårørende
    - Valgfri
-   - 
+   -
    - PAA
-   - 
+   -
  * - Formynder
    - Valgfri
-   - 
+   -
    - FORM
-   - 
+   -
  * - Advokat
    - Valgfri
-   - 
+   -
    - ADV
-   - 
+   -
 
 
 .. list-table::
@@ -4346,40 +4190,40 @@
    - **Kode**
    - **Type**
  * - Under behandling
-   - 
-   - 
+   -
+   -
    - B
-   - 
+   -
  * - Avsluttet
-   - 
-   - 
+   -
+   -
    - A
-   - 
+   -
  * - Utgår
-   - 
-   - 
+   -
+   -
    - U
-   - 
+   -
  * - Opprettet av saksbehandler
    - anbefalt
-   - 
+   -
    - R
-   - 
+   -
  * - Avsluttet av saksbehandler
    - anbefalt
-   - 
+   -
    - S
-   - 
+   -
  * - Unntatt prosesstyring
    - anbefalt
-   - 
+   -
    - P
-   - 
+   -
  * - Ferdig fra saksbehandler
-   - 
-   - 
+   -
+   -
    - F
-   - 
+   -
 
 
 .. list-table::
@@ -4398,15 +4242,15 @@
    - **Kode**
    - **Type**
  * - Skjerming av hele dokumentet
-   - 
-   - 
+   -
+   -
    - H
-   - 
+   -
  * - Skjerming av deler av dokumentet
-   - 
-   - 
+   -
+   -
    - D
-   - 
+   -
 
 
 .. list-table::
@@ -4425,65 +4269,65 @@
    - **Kode**
    - **Type**
  * - Skjerming klasseID
-   - 
-   - 
+   -
+   -
    - KID
-   - 
+   -
  * - Skjerming tittel klasse
-   - 
-   - 
+   -
+   -
    - TKL
-   - 
+   -
  * - Skjerming tittel mappe - unntatt første linje
-   - 
-   - 
+   -
+   -
    - TM1
-   - 
+   -
  * - Skjerming tittel mappe - utvalgte ord
-   - 
-   - 
+   -
+   -
    - TMO
-   - 
+   -
  * - Skjerming navn part i sak
-   - 
-   - 
+   -
+   -
    - NPS
-   - 
+   -
  * - Skjerming tittel registrering - unntatt første linje
-   - 
-   - 
+   -
+   -
    - TR1
-   - 
+   -
  * - Skjerming tittel registrering - utvalgte ord
-   - 
-   - 
+   -
+   -
    - TRO
-   - 
+   -
  * - Skjerming navn avsender
-   - 
-   - 
+   -
+   -
    - NA
-   - 
+   -
  * - Skjerming navn mottaker
-   - 
-   - 
+   -
+   -
    - NM
-   - 
+   -
  * - Skjerming tittel dokumentbeskrivelse
-   - 
-   - 
+   -
+   -
    - TD
-   - 
+   -
  * - Skjerming merknadstekst
-   - 
-   - 
+   -
+   -
    - MT
-   - 
+   -
  * - Midlertidig skjerming
-   - 
-   - 
+   -
+   -
    - M
-   - 
+   -
 
 
 .. list-table::
@@ -4502,25 +4346,25 @@
    - **Kode**
    - **Type**
  * - Sletting av produksjonsformat
-   - 
-   - 
+   -
+   -
    - SP
-   - 
+   -
  * - Sletting av tidligere versjon
-   - 
-   - 
+   -
+   -
    - SV
-   - 
+   -
  * - Sletting av variant med sladdet informasjon
-   - 
-   - 
+   -
+   -
    - SS
-   - 
+   -
  * - Sletting av hele innholdet i arkivdelen
-   - 
-   - 
+   -
+   -
    - SA
-   - 
+   -
 
 
 .. list-table::
@@ -4533,7 +4377,7 @@
  * - **Generalization** (Source → Destination)
    - SystemID
    - string
-   - 
+   -
 
 
 .. list-table::
@@ -4552,30 +4396,30 @@
    - **Kode**
    - **Type**
  * - arkivdel
-   - 
-   - 
+   -
+   -
    - A
-   - 
+   -
  * - klasse
-   - 
-   - 
+   -
+   -
    - K
-   - 
+   -
  * - mappe
-   - 
-   - 
+   -
+   -
    - M
-   - 
+   -
  * - registrering
-   - 
-   - 
+   -
+   -
    - R
-   - 
+   -
  * - dokumentbeskrivelse
-   - 
-   - 
+   -
+   -
    - D
-   - 
+   -
 
 
 .. list-table::
@@ -4594,65 +4438,65 @@
    - **Kode**
    - **Type**
  * - Begrenset etter sikkerhetsinstruksen
-   - 
-   - 
+   -
+   -
    - B
-   - 
+   -
  * - Konfidensielt etter sikkerhetsinstruksen
-   - 
-   - 
+   -
+   -
    - K
-   - 
+   -
  * - Hemmelig etter sikkerhetsinstruksen
-   - 
-   - 
+   -
+   -
    - H
-   - 
+   -
  * - Fortrolig etter beskyttelsesinstruksen
-   - 
-   - 
+   -
+   -
    - F
-   - 
+   -
  * - Strengt fortrolig etter beskyttelsesinstruksen
-   - 
-   - 
+   -
+   -
    - SF
-   - 
+   -
  * - Unntatt etter offentlighetsloven § 5
-   - 
-   - 
+   -
+   -
    - 5
-   - 
+   -
  * - Unntatt etter offentlighetsloven § 5a
-   - 
-   - 
+   -
+   -
    - 5a
-   - 
+   -
  * - Unntatt etter offentlighetsloven § 6
-   - 
-   - 
+   -
+   -
    - 6
-   - 
+   -
  * - Unntatt etter offentlighetsloven § 11
-   - 
-   - 
+   -
+   -
    - 11
-   - 
+   -
  * - Midlertidig sperret
-   - 
-   - 
+   -
+   -
    - XX
-   - 
+   -
  * - Personalsaker
-   - 
-   - 
+   -
+   -
    - P
-   - 
+   -
  * - Klientsaker
-   - 
-   - 
+   -
+   -
    - KL
-   - 
+   -
 
 
 .. list-table::
@@ -4671,15 +4515,15 @@
    - **Kode**
    - **Type**
  * - Hoveddokument
-   - 
-   - 
+   -
+   -
    - H
-   - 
+   -
  * - Vedlegg
-   - 
-   - 
+   -
+   -
    - V
-   - 
+   -
 
 
 .. list-table::
@@ -4698,20 +4542,20 @@
    - **Kode**
    - **Type**
  * - Produksjonsformat
-   - 
-   - 
+   -
+   -
    - P
-   - 
+   -
  * - Arkivformat
-   - 
-   - 
+   -
+   -
    - A
-   - 
+   -
  * - Dokument hvor deler av innholdet er skjermet
-   - 
-   - 
+   -
+   -
    - O
-   - 
+   -
 
 
 .. list-table::
@@ -4734,7 +4578,7 @@
  * - **Association** (Source → Destination)
    - Journalpost
    - avskrivning 0..* Avskrivning
-   - 
+   -
 
 
 .. list-table::
@@ -4779,14 +4623,14 @@
      dokumentfil er knyttet til flere
      forskjellige registreringer. M001
    - [0..1]
-   - 
+   -
    - SystemID
  * - avskrivningsdato
    - Definisjon: Dato et dokument ble avskrevet .
      Kilde: Registreres automatisk nå avskrivning
      foretas. Kommentar: (ingen). M617
    - [1..1]
-   - 
+   -
    - date
  * - avskrevetAv
    - Definisjon: Navn på person som har foretatt
@@ -4794,12 +4638,12 @@
      nå avskrivning foretas. Kommentar: (ingen).
      M618
    - [1..1]
-   - 
+   -
    - string
  * - referanseAvskrevetAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - avskrivningsmaate
    - Definisjon: Måten en journalpost har blitt
@@ -4807,7 +4651,7 @@
      når konvertering utføres. Kommentar:
      (ingen). M619 avskrivningsmaate
    - [1..1]
-   - 
+   -
    - Avskrivningsmaate
  * - referanseAvskrivesAvJournalpost
    - Definisjon: Referanse til en eller flere
@@ -4816,7 +4660,7 @@
      eller automatisk ved avskrivning. Kommentar:
      (ingen). M215
    - [0..1]
-   - 
+   -
    - SystemID
  * - referanseAvskrivesAvKorresponda
      nsepart
@@ -4824,7 +4668,7 @@
      korrespondansepart som har avskrevet
      journalposten
    - [0..1]
-   - 
+   -
    - SystemID
 
 
@@ -4834,11 +4678,11 @@
  * - **Navn**
    - **Merknad**
  * - M001 systemID: Skal ikke kunne endres
-   - 
+   -
  * - M617 avskrivningsdato: Kan ikke endres
-   - 
+   -
  * - M618 avskrevetAv: Kan ikke endres
-   - 
+   -
 
 
 .. list-table::
@@ -4851,11 +4695,11 @@
  * - **Association** (Source → Destination)
    - Journalpost
    - dokumentflyt 0..* Dokumentflyt
-   - 
+   -
  * - **Association** (Source → Destination)
    - Arkivnotat
    - dokumentflyt 0..* Dokumentflyt
-   - 
+   -
 
 
 .. list-table::
@@ -4900,7 +4744,7 @@
      dokumentfil er knyttet til flere
      forskjellige registreringer. M001
    - [0..1]
-   - 
+   -
    - SystemID
  * - flytTil
    - Definisjon: Person som har mottatt for
@@ -4909,12 +4753,12 @@
      funksjonalitet knyttet til arbeidsflyt.
      Kommentar: (ingen). M660 flytTil
    - [1..1]
-   - 
+   -
    - string
  * - referanseFlytTil
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - flytFra
    - Definisjon: Person som har sendt et dokument
@@ -4922,12 +4766,12 @@
      funksjonalitet knyttet til arbeidsflyt.
      Kommentar: (ingen). M665 flytFra
    - [1..1]
-   - 
+   -
    - string
  * - referanseFlytFra
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - flytMottattDato
    - Definisjon: Dato og klokkeslett et dokument
@@ -4935,7 +4779,7 @@
      automatisk av funksjonalitet knyttet til
      arbeidsflyt. Kommentar: (ingen). M661
      flytMottattDato
-   - 
+   -
    - [1..1]
    - datetime
  * - flytSendtDato
@@ -4945,7 +4789,7 @@
      knyttet til arbeidsflyt. Kommentar: (ingen).
      M662 flytSendtDato
    - [1..1]
-   - 
+   -
    - datetime
  * - flytStatus
    - Definisjon: Godkjennelse/ikke godkjennelse
@@ -4954,7 +4798,7 @@
      knyttet til arbeidsflyt. Kommentar: (ingen).
      M663 flytStatus
    - [1..1]
-   - 
+   -
    - FlytStatus
  * - flytMerknad
    - Definisjon: Merknad eller kommentar til et
@@ -4962,7 +4806,7 @@
      Registreres manuelt. Kommentar: (ingen).
      M664 flytMerknad
    - [0..1]
-   - 
+   -
    - string
 
 
@@ -4972,15 +4816,15 @@
  * - **Navn**
    - **Merknad**
  * - M001 systemID: Skal ikke kunne endres
-   - 
+   -
  * - M660 flytTil: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres
-   - 
+   -
  * - M661 flytMottattDato: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
-   - 
+   -
  * - M662 flytSendtDato: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
-   - 
+   -
  * - M665 flytFra: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
-   - 
+   -
 
 
 .. list-table::
@@ -4993,11 +4837,11 @@
  * - **Generalization** (Source → Destination)
    - Arkivnotat
    - Registrering
-   - 
+   -
  * - **Association** (Source → Destination)
    - Arkivnotat
    - dokumentflyt 0..* Dokumentflyt
-   - 
+   -
 
 
 .. list-table::
@@ -5022,47 +4866,47 @@
  * - dokumentetsDato
    - M103
    - [0..1]
-   - 
+   -
    - date
  * - mottattDato
    - M104
    - [0..1]
-   - 
+   -
    - datetime
  * - sendtDato
    - M105
    - [0..1]
-   - 
+   -
    - datetime
  * - forfallsdato
    - M109
    - [0..1]
-   - 
+   -
    - date
  * - offentlighetsvurdertDato
    - M110
    - [0..1]
-   - 
+   -
    - date
  * - antallVedlegg
    - M304
    - [0..1]
-   - 
+   -
    - integer
  * - utlaantDato
    - M106
    - [0..1]
-   - 
+   -
    - date
  * - utlaantTil
    - M309
    - [0..1]
-   - 
+   -
    - string
  * - referanseUtlaantTil
    - M309
    - [0..1]
-   - 
+   -
    - SystemID
 
 
@@ -5076,19 +4920,19 @@
  * - **Association** (Bi-Directional)
    - journalpost 0..* Journalpost
    - presedens 0..* Presedens
-   - 
+   -
  * - **Association** (Source → Destination)
    - Journalpost
    - dokumentflyt 0..* Dokumentflyt
-   - 
+   -
  * - **Association** (Source → Destination)
    - Journalpost
    - avskrivning 0..* Avskrivning
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Journalpost
    - Registrering
-   - 
+   -
 
 
 .. list-table::
@@ -5121,7 +4965,7 @@
      når journalposten opprettes. Kommentar:
      (ingen). M013 journalaar
    - [0..1]
-   - 
+   -
    - integer
  * - journalsekvensnummer
    - Definisjon: Viser rekkefølgen når
@@ -5142,7 +4986,7 @@
      som har året først. M014
      journalsekvensnummer
    - [0..1]
-   - 
+   -
    - integer
  * - journalpostnummer
    - Definisjon: Inngår i M004 journalpostID.
@@ -5157,7 +5001,7 @@
      identifisere journalpostenes rekkefølge
      innenfor saksmappen. M015 journalpostnummer
    - [1..1]
-   - 
+   -
    - integer
  * - journalposttype
    - Definisjon: Navn på type journalpost .
@@ -5166,7 +5010,7 @@
      dokumenttype" i Noark 4. M082
      journalposttype
    - [1..1]
-   - 
+   -
    - Journalposttype
  * - journalstatus
    - Definisjon: Status til journalposten, dvs.
@@ -5178,7 +5022,7 @@
      som avleveres skal ha status "Arkivert"
      eller "Utgår". M053 journalstatus
    - [1..1]
-   - 
+   -
    - Journalstatus
  * - journaldato
    - Definisjon: Datoen journalposten er
@@ -5189,7 +5033,7 @@
      journalposten arkiveres. Kommentar: (ingen).
      M101 journaldato
    - [1..1]
-   - 
+   -
    - date
  * - dokumentetsDato
    - Definisjon: Dato som er påført selve
@@ -5199,7 +5043,7 @@
      utgående og organinterne dokumenter. M103
      dokumentetsDato
    - [0..1]
-   - 
+   -
    - date
  * - mottattDato
    - Definisjon: Dato et eksternt dokument ble
@@ -5209,7 +5053,7 @@
      mottattDato ikke behøver å være identisk med
      M600 opprettetDato. M104 mottattDato
    - [0..1]
-   - 
+   -
    - datetime
  * - sendtDato
    - Definisjon: Dato et internt produsert
@@ -5218,7 +5062,7 @@
      systemet ved elektronisk kommunikasjon.
      Kommentar: (ingen). M105 sendtDato
    - [0..1]
-   - 
+   -
    - date
  * - forfallsdato
    - Definisjon: Dato som angir fristen for når
@@ -5228,7 +5072,7 @@
      betingelse i det inngående dokumentet. M109
      forfallsdato
    - [0..1]
-   - 
+   -
    - date
  * - offentlighetsvurdertDato
    - Definisjon: Datoen da offentlighetsvurdering
@@ -5241,7 +5085,7 @@
      et litt senere tidspunkt. M110
      offentlighetsvurdertDato
    - [0..1]
-   - 
+   -
    - date
  * - antallVedlegg
    - Definisjon: Antall fysiske vedlegg til et
@@ -5249,7 +5093,7 @@
      manuelt. Kommentar: (ingen). M304
      antallVedlegg
    - [0..1]
-   - 
+   -
    - integer
  * - utlaantDato
    - Definisjon: Dato når en fysisk saksmappe
@@ -5262,7 +5106,7 @@
      utlån av fysiske dokumenter. M106
      utlaantDato
    - [0..1]
-   - 
+   -
    - date
  * - utlaantTil
    - Definisjon: Navnet på person som har lånt en
@@ -5270,12 +5114,12 @@
      manuelt ved utlån. Kommentar: (ingen). M309
      utlaantTil
    - [0..1]
-   - 
+   -
    - string
  * - referanseUtlaantTil
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - journalenhet
    - Definisjon: Navn på enhet som har det
@@ -5287,12 +5131,12 @@
      manuelt. Kommentar: (ingen). M308
      journalenhet
    - [0..1]
-   - 
+   -
    - string
  * - elektroniskSignatur
-   - 
+   -
    - [0..1]
-   - 
+   -
    - ElektroniskSignatur
 
 
@@ -5302,38 +5146,38 @@
  * - **Navn**
    - **Merknad**
  * - 5.5.8 En journalpost skal kunne defineres til å være av forskjellig type, se M082journalposttype.
-   - 
+   -
  * - 5.5.10 En Journalpost skal ha registrert en Saksansvar (dvs. administrativ enhet, Saksbehandler og eventuelt journalenhet) og en Saksansvar skal kunne inngå i ingen,
      en eller flere Journalposter.
-   - 
+   -
  * - 5.5.12 Det bør finnes en tjeneste/funksjon for å ajourholde Journalenhet på en Registrering (Journalpost).
-   - 
+   -
  * - 5.5.13 Det skal finnes en tjeneste/funksjon for å ajourholde Administrativ enhet og Saksbehandler på en Registrering (Journalpost).
-   - 
+   -
  * - 5.5.14 Det skal finnes en tjeneste/funksjon for å ajourholde Korrespondansepart på en Journalpost.
-   - 
+   -
  * - M013 journalaar: Skal ikke kunne endres.
-   - 
+   -
  * - M014 journalsekvensnummer: Skal ikke kunne endres.
-   - 
+   -
  * - M015 journalpostnummer: Skal normalt ikke endres, men ved flytting til en annen saksmappe kan journalposten få et nytt nummer (fordi det inngår i en annen
      nummerrekkefølge i denne mappen).
-   - 
+   -
  * - M101 journaldato: Skal kunne endres manuelt inntil arkivering.
-   - 
+   -
  * - M103 dokumentetsDato: Skal kunne endres manuelt inntil arkivering.
-   - 
+   -
  * - M104 mottattDato: Skal ikke kunne endres ved automatisk registrering, dato for mottak av fysiske dokumenter skal kunne endres inntil arkivering.
-   - 
+   -
  * - M105 sendtDato: Skal ikke kunne endres ved automatisk registrering, dato for forsendelse av fysiske dokumenter skal kunne endres inntil arkivering.
-   - 
+   -
  * - M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert.
-   - 
+   -
  * - M308 journalenhet: Er ikke lenger obligatorisk i Noark 5. Journalenhet er helt uavhengig av administrativ enhet. Kan f.eks. brukes som seleksjonskriterium ved
      produksjon av rapporter. Det anbefales ikke å knytte tilgangsrettigheter til journalenhet.
-   - 
+   -
  * - M309 utlaantTil: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller at dokumentene i en journalpost ble arkivert.
-   - 
+   -
 
 
 .. list-table::
@@ -5346,11 +5190,11 @@
  * - **Association** (Bi-Directional)
    - journalpost 0..* Journalpost
    - presedens 0..* Presedens
-   - 
+   -
  * - **Association** (Bi-Directional)
    - saksmappe 0..* Saksmappe
    - presedens 0..* Presedens
-   - 
+   -
 
 
 .. list-table::
@@ -5399,7 +5243,7 @@
      dokumentfil er knyttet til flere
      forskjellige registreringer. M001 systemID
    - [0..1]
-   - 
+   -
    - SystemID
  * - presedensDato
    - Definisjon: Datoen på presedensen . Kilde:
@@ -5409,7 +5253,7 @@
      journalposten presedensen opprettes på.
      Kommentar: (ingen). M111 presedensDato
    - [1..1]
-   - 
+   -
    - date
  * - opprettetDato
    - Definisjon: Dato og klokkeslett når
@@ -5418,7 +5262,7 @@
      ved opprettelse av enheten. Kommentarer:
      (ingen). M600 opprettetDato
    - [0..1]
-   - 
+   -
    - datetime
  * - opprettetAv
    - Definisjon: Navn på person som
@@ -5427,12 +5271,12 @@
      opprettelse av enheten. Kommentarer:
      (ingen). M601 opprettetAv
    - [0..1]
-   - 
+   -
    - string
  * - referanseOpprettetAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - tittel
    - Definisjon: Tittel eller navn på
@@ -5446,7 +5290,7 @@
      og "Dokumentbeskrivelse". Disse navnene kan
      beholdes i grensesnittet. M020 tittel
    - [1..1]
-   - 
+   -
    - string
  * - beskrivelse
    - Definisjon: Tekstlig beskrivelse av
@@ -5456,7 +5300,7 @@
      attributter for merknad som kunne brukes som
      et beskrivelsesfelt). M021 beskrivelse
    - [0..1]
-   - 
+   -
    - string
  * - presedensHjemmel
    - Definisjon: Lovparagrafen som saken eller
@@ -5465,7 +5309,7 @@
      presedens. Kommentar: (ingen). M311
      presedensHjemmel
    - [0..1]
-   - 
+   -
    - string
  * - rettskildefaktor
    - Definisjon: En argumentkilde som brukes til
@@ -5481,7 +5325,7 @@
      rettsoppfatninger, reelle hensyn, folkerett,
      EU-/ EØS-rett mv. M312 rettskildefaktor
    - [1..1]
-   - 
+   -
    - string
  * - presedensGodkjentDato
    - Definisjon:Dato og klokkeslett for når
@@ -5490,7 +5334,7 @@
      for å godkjenne presedenser .Kommentar:
      (ingen). M628 presedensGodkjentDato
    - [0..1]
-   - 
+   -
    - datetime
  * - presedensGodkjentAv
    - Definisjon: Navn på person som har godkjent
@@ -5499,12 +5343,12 @@
      godkjenne presedenser. Kommentar: (ingen).
      M629 presedensGodkjentAv
    - [0..1]
-   - 
+   -
    - string
  * - referansePresedensGodkjentAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - avsluttetDato
    - Definisjon: Dato og klokkeslett når
@@ -5513,7 +5357,7 @@
      enheten avsluttes. Kommentarer: (ingen).
      M602 avsluttetDato
    - [0..1]
-   - 
+   -
    - datetime
  * - avsluttetAv
    - Definisjon: Navn på person som
@@ -5522,12 +5366,12 @@
      opprettelse av enheten Kommentarer: (ingen).
      M603 avsluttetAv
    - [0..1]
-   - 
+   -
    - string
  * - referanseAvsluttetAv
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - presedensStatus
    - Definisjon: Informasjon om presedensen er
@@ -5535,7 +5379,7 @@
      Registreres manuelt ved foreldelse.
      Kommentar: (ingen) M056 presedensStatus
    - [0..1]
-   - 
+   -
    - PresedensStatus
 
 
@@ -5545,17 +5389,17 @@
  * - **Navn**
    - **Merknad**
  * - M001 systemID: Skal ikke kunne endres
-   - 
+   -
  * - M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert
-   - 
+   -
  * - M600 opprettetDato: Skal ikke kunne endres
-   - 
+   -
  * - M601 opprettetAv: Skal ikke kunne endres
-   - 
+   -
  * - M602 avsluttetDato: Skal ikke kunne endres. Obligatorisk dersom arkivdelen er avsluttet.
-   - 
+   -
  * - M603 avsluttetAv: Skal ikke kunne endres. Obligatorisk dersom arkivenheten er avsluttet.
-   - 
+   -
 
 
 .. list-table::
@@ -5568,15 +5412,15 @@
  * - **Generalization** (Source → Destination)
    - Saksmappe
    - Mappe
-   - 
+   -
  * - **Association** (Source → Destination)
    - Saksmappe
    - sekundaerklassifikasjon 0..* Klasse
-   - 
+   -
  * - **Association** (Bi-Directional)
    - saksmappe 0..* Saksmappe
    - presedens 0..* Presedens
-   - 
+   -
 
 
 .. list-table::
@@ -5608,7 +5452,7 @@
      opprettes. Kommentar: Se kommentar under
      M012 sakssekvensnummer. M011 saksaar
    - [1..1]
-   - 
+   -
    - integer
  * - sakssekvensnummer
    - Definisjon: Inngår i M003 mappeID. Viser
@@ -5619,7 +5463,7 @@
      er ikke obligatorisk, men anbefales brukt i
      sakarkiver. M012 sakssekvensnummer
    - [1..1]
-   - 
+   -
    - integer
  * - saksdato
    - Definisjon: Datoen saken er opprettet .
@@ -5627,7 +5471,7 @@
      M600 opprettetDato. Kommentar: (ingen). M100
      saksdato
    - [1..1]
-   - 
+   -
    - date
  * - administrativEnhet
    - Definisjon: Navn på avdeling, kontor eller
@@ -5643,12 +5487,12 @@
      aktuelt ved organinterne dokumenter som skal
      følges opp. M305 administrativEnhet
    - [0..1]
-   - 
+   -
    - string
  * - referanseAdministrativEnhet
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - saksansvarlig
    - Definisjon: Navn på person som er
@@ -5659,12 +5503,12 @@
      manuelt. Kommentar: (ingen). M306
      saksansvarlig
    - [1..1]
-   - 
+   -
    - string
  * - referanseSaksansvarlig
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - journalenhet
    - Definisjon: Navn på enhet som har det
@@ -5676,7 +5520,7 @@
      manuelt. Kommentar: (ingen). M308
      journalenhet
    - [0..1]
-   - 
+   -
    - string
  * - saksstatus
    - Definisjon: Status til saksmappen, dvs. hvor
@@ -5687,7 +5531,7 @@
      som avleveres skal ha status "Avsluttet"
      eller "Utgår". M052 saksstatus
    - [1..1]
-   - 
+   -
    - Saksstatus
  * - utlaantDato
    - Definisjon: Dato når en fysisk saksmappe
@@ -5700,7 +5544,7 @@
      utlån av fysiske dokumenter. M106
      utlaantDato
    - [0..1]
-   - 
+   -
    - date
  * - utlaantTil
    - Definisjon: Navnet på person som har lånt en
@@ -5708,12 +5552,12 @@
      manuelt ved utlån. Kommentar: (ingen). M309
      utlaantTil
    - [0..1]
-   - 
+   -
    - string
  * - referanseUtlaantTil
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
 
 
@@ -5727,58 +5571,58 @@
      sekvensnummer for saksmappene innenfor året.
  * - 5.4.10 En Saksmappe skal kunne ha registrert ingen, en eller flere Sekundaerklassering og en
      Sekundaerklassering tilhører kun en Saksmappe og kun en Klasse.
-   - 
+   -
  * - 5.4.11 En Saksmappe bør kunne ha registrert ingen eller en Journalenhet og en Journalenhet kan
      inngå i ingen, en eller flere Saksmapper.
-   - 
+   -
  * - 5.4.12 En Saksmappe skal kunne ha registrert ingen eller en Administrativ enhet og en
      Administrativ enhet kan inngå i ingen, en eller flere Saksmapper.
-   - 
+   -
  * - 6.1.3 Det skal finnes en tjeneste/funksjon for å sette Status på en Saksmappe.
-   - 
+   -
  * - 6.1.4 Følgende statusverdier er obligatorisk for Saksmappe: Under behandling, Avsluttet, Utgår
-   - 
+   -
  * - 6.1.5 Følgende statusverdier er anbefalt for Saksmappe: Opprettet av saksbehandler, Avsluttet av
      saksbehandler, Unntatt prosesstyring
-   - 
+   -
  * - 6.1.6 Når status på Saksmappe settes til Avsluttet, skal avsluttetDato settes automatisk.
-   - 
+   -
  * - 6.1.7 Det skal ikke være mulig å avslutte en Saksmappe uten at det er angitt en primær
      klassifikasjon (Klasse).
-   - 
+   -
  * - 6.1.8 Det skal ikke være mulig å avslutte en Saksmappe som inneholder Registreringer som ikke er
      avsluttet
-   - 
+   -
  * - 6.1.11 Det skal ikke være mulig å avslutte en Saksmappe uten at alle dokumenter på
      registreringene i mappen er lagret i arkivformat
-   - 
+   -
  * - 6.1.12 Det skal ikke være mulig å avslutte en Saksmappe uten at alle restanser på Registreringer
      er avskrevet
-   - 
+   -
  * - 6.1.13 Når statusen til en Saksmappe settes til avsluttet, skal det på mappenivå ikke være mulig
      å endre metadataene: saksdato, administrativEnhet , saksansvarlig
-   - 
+   -
  * - 6.1.14 Når statusen til en Saksmappe settes til avsluttet, bør det på Saksmappe fortsatt være
      mulig å endre de øvrige metadataene. Endringer skal logges
-   - 
+   -
  * - 6.1.15 En avsluttet Saksmappe bør kunne åpnes igjen av autoriserte roller og personer. Det skal
      være mulig å parameterstyre hvem som er autorisert for å åpne en mappe. Åpning av mappe skal
      logges.
-   - 
+   -
  * - 6.1.18 Det skal ikke være mulig å slette en Saksmappe som inneholder eller har inneholdt
      Journalposter med status ekspedert, journalført eller arkivert
-   - 
+   -
  * - 6.2.1 Det skal finnes en tjeneste/funksjon for å ajourholde utlån av en Saksmappe.
-   - 
+   -
  * - M011 saksaar: Skal ikke kunne endres
-   - 
+   -
  * - M012 sakssekvensnummer: Skal ikke kunne endres
-   - 
+   -
  * - M100 saksdato: Skal kunne endres manuelt inntil saksmappen avsluttes
-   - 
+   -
  * - M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller
      etter at dokumentene i en journalpost ble arkivert.
-   - 
+   -
 
 
 .. list-table::
@@ -5809,7 +5653,7 @@
  * - **Association** (Bi-Directional)
    - bruker 0..* Bruker
    - administrativenhet 0..* AdministrativEnhet
-   - 
+   -
 
 
 .. list-table::
@@ -5855,7 +5699,7 @@
      dokumentfil er knyttet til flere
      forskjellige registreringer. M001 systemID
    - [0..1]
-   - 
+   -
    - SystemID
  * - administrativEnhetNavn
    - Definisjon: Navn på administrativ enhet .
@@ -5868,12 +5712,12 @@
      inngår ikke i arkivstrukturen. M583
      administrativEnhetNavn
    - [1..1]
-   - 
+   -
    - string
  * - kortnavn
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - opprettetDato
    - Definisjon: Dato og klokkeslett når
@@ -5882,7 +5726,7 @@
      ved opprettelse av enheten. Kommentarer:
      (ingen). M600 opprettetDato
    - [1..1]
-   - 
+   -
    - datetime
  * - opprettetAv
    - Definisjon: Navn på person som
@@ -5891,7 +5735,7 @@
      opprettelse av enheten. Kommentarer:
      (ingen). M601 opprettetAv
    - [0..1]
-   - 
+   -
    - string
  * - avsluttetDato
    - Definisjon: Dato og klokkeslett når
@@ -5900,7 +5744,7 @@
      enheten avsluttes. Kommentarer: (ingen).
      M602 avsluttetDato
    - [0..1]
-   - 
+   -
    - datetime
  * - administrativEnhetsstatus
    - Definisjon: Status til den administrative
@@ -5912,7 +5756,7 @@
      arkivstrukturen M584
      administrativEnhetsstatus
    - [1..1]
-   - 
+   -
    - string
  * - referanseOverordnetEnhet
    - Definisjon: Referanse til enhet som er
@@ -5923,7 +5767,7 @@
      til referanseOverordnetEnhet for å samsvare
      med M585 referanseOverordnetEnhet
    - [0..1]
-   - 
+   -
    - SystemID
  * - virksomhetsspesifikkeMetadata
    - Definisjon: Et overordnet metadataelement
@@ -5933,7 +5777,7 @@
      Kommentar: (ingen). M711
      virksomhetsspesifikkeMetadata
    - [0..1]
-   - 
+   -
    - any
 
 
@@ -5943,17 +5787,17 @@
  * - **Navn**
    - **Merknad**
  * - M001 systemID: Skal ikke kunne endres
-   - 
+   -
  * - M600 opprettetDato: Skal ikke kunne endres
-   - 
+   -
  * - M601 opprettetAv: Skal ikke kunne endres
-   - 
+   -
  * - M602a avsluttetDato: Skal ikke kunne endres.
-   - 
+   -
  * - M602b avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.
-   - 
+   -
  * - Ny - navn skal ikke endres. Hvis enhet får nytt navn så opprettes ny enhet med ny systemID. Den gamle kan da settes avsluttet dato på.
-   - 
+   -
 
 
 .. list-table::
@@ -5966,7 +5810,7 @@
  * - **Association** (Bi-Directional)
    - bruker 0..* Bruker
    - administrativenhet 0..* AdministrativEnhet
-   - 
+   -
 
 
 .. list-table::
@@ -6012,7 +5856,7 @@
      dokumentfil er knyttet til flere
      forskjellige registreringer. M001 systemID
    - [0..1]
-   - 
+   -
    - SystemID
  * - brukerNavn
    - Definisjon: Navn på bruker av en Noark
@@ -6024,7 +5868,7 @@
      logging. Brukeradministrasjon inngår ikke i
      arkivstrukturen. M580 brukerNavn
    - [1..1]
-   - 
+   -
    - string
  * - opprettetDato
    - Definisjon: Dato og klokkeslett når
@@ -6033,7 +5877,7 @@
      ved opprettelse av enheten. Kommentarer:
      (ingen). M600 opprettetDato
    - [1..1]
-   - 
+   -
    - datetime
  * - opprettetAv
    - Definisjon: Navn på person som
@@ -6042,7 +5886,7 @@
      opprettelse av enheten. Kommentarer:
      (ingen). M601 opprettetAv
    - [0..1]
-   - 
+   -
    - string
  * - avsluttetDato
    - Definisjon: Dato og klokkeslett når
@@ -6051,7 +5895,7 @@
      enheten avsluttes. Kommentarer: (ingen).
      M602 avsluttetDato
    - [0..1]
-   - 
+   -
    - datetime
  * - virksomhetsspesifikkeMetadata
    - Definisjon: Et overordnet metadataelement
@@ -6061,12 +5905,12 @@
      Kommentar: (ingen).M711
      virksomhetsspesifikkeMetadata
    - [0..1]
-   - 
+   -
    - any
  * - kortnavn
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
 
 
@@ -6076,17 +5920,17 @@
  * - **Navn**
    - **Merknad**
  * - M001 systemID: Skal ikke kunne endres
-   - 
+   -
  * - M600 opprettetDato: Skal ikke kunne endres
-   - 
+   -
  * - M601 opprettetAv: Skal ikke kunne endres
-   - 
+   -
  * - M602a avsluttetDato: Skal ikke kunne endres
-   - 
+   -
  * - M602b avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.
-   - 
+   -
  * - Ny - navn skal ikke endres. Hvis person får nytt navn så opprettes ny bruker med ny systemID
-   - 
+   -
 
 
 .. list-table::
@@ -6109,49 +5953,49 @@
    - **Kode**
    - **Type**
  * - systemID
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - rolle
    - Sammenlignes feks med rolle gitt i AD eller lignende.
    - [1..1]
-   - 
+   -
    - string
  * - tilgangskategori
-   - 
+   -
    - [1..1]
-   - 
+   -
    - Tilgangskategori
  * - referanseArkivenhet
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - tilgangsrestriksjon
-   - 
+   -
    - [0..1]
-   - 
+   -
    - Tilgangsrestriksjon
  * - les
-   - 
+   -
    - [1..1]
-   - 
+   -
    - boolean
  * - ny
-   - 
+   -
    - [1..1]
-   - 
+   -
    - boolean
  * - endre
-   - 
+   -
    - [1..1]
-   - 
+   -
    - boolean
  * - slett
-   - 
+   -
    - [1..1]
-   - 
+   -
    - boolean
 
 
@@ -6173,11 +6017,11 @@
  * - **Aggregation** (Destination → Source)
    - endringslogg 0..* Endringslogg
    - 0..1 Arkivenhet
-   - 
+   -
  * - **Generalization** (Source → Destination)
    - Hendelseslogg
    - Endringslogg
-   - 
+   -
 
 
 .. list-table::
@@ -6198,44 +6042,44 @@
    - **Kode**
    - **Type**
  * - systemID
-   - 
+   -
    - [0..1]
-   - 
+   -
    - SystemID
  * - referanseArkivenhet
    - M680
    - [0..1]
-   - 
+   -
    - SystemID
  * - referanseMetadata
    - M681
    - [0..1]
-   - 
+   -
    - string
  * - endretDato
    - M682
    - [1..1]
-   - 
+   -
    - datetime
  * - endretAv
    - M683
    - [1..1]
-   - 
+   -
    - string
  * - referanseEndretAv
    - referanse til Bruker sin systemID
    - [1..1]
-   - 
+   -
    - SystemID
  * - tidligereVerdi
    - M684
    - [0..1]
-   - 
+   -
    - string
  * - nyVerdi
    - M685
    - [0..1]
-   - 
+   -
    - string
 
 
@@ -6249,7 +6093,7 @@
  * - **Generalization** (Source → Destination)
    - Hendelseslogg
    - Endringslogg
-   - 
+   -
 
 
 .. list-table::
@@ -6271,17 +6115,17 @@
    - **Kode**
    - **Type**
  * - hendelsetype
-   - 
+   -
    - [1..1]
-   - 
+   -
    - Hendelsetype
  * - beskrivelse
-   - 
+   -
    - [0..1]
-   - 
+   -
    - string
  * - hendelseDato
-   - 
+   -
    - [1..1]
-   - 
+   -
    - datetime

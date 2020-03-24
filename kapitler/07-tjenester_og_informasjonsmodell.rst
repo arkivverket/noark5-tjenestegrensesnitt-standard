@@ -920,116 +920,142 @@ på tvers av alle systemer organet benytter. Også arkivenheter som
 dupliseres i et arkivuttrekk, skal identifiseres entydig, slik at
 identiske arkivenheter har ulik systemID.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 5 4 4
+   :header-rows: 1
 
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Relasjon**                              | **Kilde**                       | **Mål**         | **Merknad** |
-   +===========================================+=================================+=================+=============+
-   | **Generalization** (Source → Destination) | Arkivdel                        | Arkivenhet      |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Aggregation** (Destination → Source)    | endringslogg 0..\* Endringslogg | 0..1 Arkivenhet |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Generalization** (Source → Destination) | Klassifikasjonssystem           | Arkivenhet      |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Generalization** (Source → Destination) | Arkiv                           | Arkivenhet      |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Generalization** (Source → Destination) | Mappe                           | Arkivenhet      |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Generalization** (Source → Destination) | Klasse                          | Arkivenhet      |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Generalization** (Source → Destination) | Arkivskaper                     | Arkivenhet      |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Generalization** (Source → Destination) | Registrering                    | Arkivenhet      |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Generalization** (Source → Destination) | Dokumentbeskrivelse             | Arkivenhet      |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Generalization** (Source → Destination)
+   - Arkivdel
+   - Arkivenhet
+   -
+ * - **Aggregation** (Destination → Source)
+   - endringslogg 0..* Endringslogg
+   - 0..1 Arkivenhet
+   -
+ * - **Generalization** (Source → Destination)
+   - Klassifikasjonssystem
+   - Arkivenhet
+   -
+ * - **Generalization** (Source → Destination)
+   - Arkiv
+   - Arkivenhet
+   -
+ * - **Generalization** (Source → Destination)
+   - Mappe
+   - Arkivenhet
+   -
+ * - **Generalization** (Source → Destination)
+   - Klasse
+   - Arkivenhet
+   -
+ * - **Generalization** (Source → Destination)
+   - Arkivskaper
+   - Arkivenhet
+   -
+ * - **Generalization** (Source → Destination)
+   - Registrering
+   - Arkivenhet
+   -
+ * - **Generalization** (Source → Destination)
+   - Dokumentbeskrivelse
+   - Arkivenhet
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +----------------------------------------------------------------------------+
-   | **Verdi**                                                                  |
-   +============================================================================+
-   | https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-endringslogg/ |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/    |
-   +----------------------------------------------------------------------------+
+ * - **Verdi**
+ * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-endringslogg/
+ * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
 
-   +----------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | **Navn**                                                 | **Merknad**                           | **Forek.**                            | **Kode**                   | **Type**                   |
-   +==========================================================+=======================================+=======================================+============================+============================+
-   | systemID                                                 | M001 Entydig identifikasjon av        | [0..1]                                |                            | SystemID                   |
-   |                                                          | arkivenheten innenfor det             |                                       |                            |                            |
-   |                                                          | arkivskapende organet. Dersom organet |                                       |                            |                            |
-   |                                                          | har flere arkivsystemer, skal altså   |                                       |                            |                            |
-   |                                                          | *systemID* være gjennomgående         |                                       |                            |                            |
-   |                                                          | entydig. Systemidentifikasjonen vil   |                                       |                            |                            |
-   |                                                          | som oftest være en numerisk kode uten |                                       |                            |                            |
-   |                                                          | noe logisk meningsinnhold.            |                                       |                            |                            |
-   |                                                          | Identifikasjonen trenger ikke å være  |                                       |                            |                            |
-   |                                                          | synlig for brukerne. Registreres      |                                       |                            |                            |
-   |                                                          | automatisk av systemet. Skal ikke     |                                       |                            |                            |
-   |                                                          | kunne endres. Alle referanser fra en  |                                       |                            |                            |
-   |                                                          | arkivenhet til en annen skal peke til |                                       |                            |                            |
-   |                                                          | arkivenhetens systemidentifikasjon.   |                                       |                            |                            |
-   |                                                          | Dette gjelder også referanser fra en  |                                       |                            |                            |
-   |                                                          | arkivdel til en annen, f.eks. mellom  |                                       |                            |                            |
-   |                                                          | to arkivperioder som avleveres på     |                                       |                            |                            |
-   |                                                          | forskjellig tidspunkt. I et           |                                       |                            |                            |
-   |                                                          | arkivuttrekk skal *systemID* være     |                                       |                            |                            |
-   |                                                          | entydig (unik). Dokumentobjekt har    |                                       |                            |                            |
-   |                                                          | ingen systemidentifikasjon fordi      |                                       |                            |                            |
-   |                                                          | enheten kan være duplisert i et       |                                       |                            |                            |
-   |                                                          | arkivuttrekk dersom samme dokumentfil |                                       |                            |                            |
-   |                                                          | er knyttet til flere forskjellige     |                                       |                            |                            |
-   |                                                          | registreringer.                       |                                       |                            |                            |
-   +----------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | oppdatertDato                                            |                                       | [0..1]                                |                            | datetime                   |
-   +----------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | opprettetDato                                            | Definisjon: Dato og klokkeslett når   | [0..1]                                |                            | datetime                   |
-   |                                                          | arkivenheten ble                      |                                       |                            |                            |
-   |                                                          | opprettet/registrert. Kilde:          |                                       |                            |                            |
-   |                                                          | Registreres automatisk av systemet    |                                       |                            |                            |
-   |                                                          | ved opprettelse av enheten.           |                                       |                            |                            |
-   |                                                          | Kommentarer: (ingen). M600            |                                       |                            |                            |
-   +----------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | opprettetAv                                              | Definisjon: Navn på person som        | [0..1]                                |                            | string                     |
-   |                                                          | opprettet/registrerte arkivenheten.   |                                       |                            |                            |
-   |                                                          | Kilde: Registreres automatisk av      |                                       |                            |                            |
-   |                                                          | systemet ved opprettelse av enheten.  |                                       |                            |                            |
-   |                                                          | Kommentarer: (ingen). M601            |                                       |                            |                            |
-   +----------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | oppdatertAv                                              | Definisjon: Navn på person som        | [0..1]                                |                            | string                     |
-   |                                                          | oppdaterte arkivenheten. Kilde:       |                                       |                            |                            |
-   |                                                          | Registreres automatisk av systemet    |                                       |                            |                            |
-   |                                                          | ved oppdatering av enheten            |                                       |                            |                            |
-   +----------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | referanseOppdatertAv                                     | Definisjon: SystemID på person som    | [0..1]                                |                            | SystemID                   |
-   |                                                          | oppdaterte arkivenheten. Kilde:       |                                       |                            |                            |
-   |                                                          | Registreres automatisk av systemet    |                                       |                            |                            |
-   |                                                          | ved oppdatering av enheten            |                                       |                            |                            |
-   +----------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | referanseOpprettetAv                                     | Definisjon: SystemID på person som    | [0..1]                                |                            | SystemID                   |
-   |                                                          | opprettet/registrerte arkivenheten.   |                                       |                            |                            |
-   |                                                          | Kilde: Registreres automatisk av      |                                       |                            |                            |
-   |                                                          | systemet ved opprettelse av enheten   |                                       |                            |                            |
-   +----------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   - M001 Entydig identifikasjon av arkivenheten innenfor det
+     arkivskapende organet. Dersom organet har flere arkivsystemer,
+     skal altså *systemID* være gjennomgående
+     entydig. Systemidentifikasjonen vil som oftest være en numerisk
+     kode uten noe logisk meningsinnhold.  Identifikasjonen trenger
+     ikke å være synlig for brukerne. Registreres automatisk av
+     systemet. Skal ikke kunne endres. Alle referanser fra en
+     arkivenhet til en annen skal peke til arkivenhetens
+     systemidentifikasjon.  Dette gjelder også referanser fra en
+     arkivdel til en annen, f.eks. mellom to arkivperioder som
+     avleveres på forskjellig tidspunkt. I et arkivuttrekk skal
+     *systemID* være entydig (unik). Dokumentobjekt har ingen
+     systemidentifikasjon fordi enheten kan være duplisert i et
+     arkivuttrekk dersom samme dokumentfil er knyttet til flere
+     forskjellige registreringer.
+   - [0..1]
+   -
+   - SystemID
+ * - oppdatertDato
+   -
+   - [0..1]
+   -
+   - datetime
+ * - opprettetDato
+   - Definisjon: Dato og klokkeslett når arkivenheten ble
+     opprettet/registrert. Kilde: Registreres automatisk av systemet
+     ved opprettelse av enheten.  Kommentarer: (ingen). M600
+   - [0..1]
+   -
+   - datetime
+ * - opprettetAv
+   - Definisjon: Navn på person som opprettet/registrerte
+     arkivenheten.  Kilde: Registreres automatisk av systemet ved
+     opprettelse av enheten.  Kommentarer: (ingen). M601
+   - [0..1]
+   -
+   - string
+ * - oppdatertAv
+   - Definisjon: Navn på person som oppdaterte arkivenheten. Kilde:
+     Registreres automatisk av systemet ved oppdatering av enheten
+   - [0..1]
+   -
+   - string
+ * - referanseOppdatertAv
+   - Definisjon: SystemID på person som oppdaterte
+     arkivenheten. Kilde: Registreres automatisk av systemet ved
+     oppdatering av enheten
+   - [0..1]
+   -
+   - SystemID
+ * - referanseOpprettetAv
+   - Definisjon: SystemID på person som opprettet/registrerte
+     arkivenheten.  Kilde: Registreres automatisk av systemet ved
+     opprettelse av enheten
+   - [0..1]
+   -
+   - SystemID
 
-.. table:: Restriksjoner
+.. list-table:: Restriksjoner
+   :header-rows: 1
 
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | **Navn**                                                                                                                                                         | **Merknad**                       |
-   +==================================================================================================================================================================+===================================+
-   | Ny - Ved oppretting av Arkivenhet fyller API-tjenesten inn systemID, opprettetAv og opprettetDato. Dette gjelder også alle underentiteter. Disse attributtene    |                                   |
-   | trenger derfor ikke sendes inn ved oppretting.                                                                                                                   |                                   |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | M001 systemID: Skal ikke kunne endres                                                                                                                            |                                   |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | M600 opprettetDato: Skal ikke kunne endres                                                                                                                       |                                   |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | M601 opprettetAv: Skal ikke kunne endres                                                                                                                         |                                   |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
+ * - **Navn**
+   - **Merknad**
+ * - Ny - Ved oppretting av Arkivenhet fyller API-tjenesten inn
+     systemID, opprettetAv og opprettetDato. Dette gjelder også alle
+     underentiteter. Disse attributtene trenger derfor ikke sendes inn
+     ved oppretting.
+   -
+ * - M001 systemID: Skal ikke kunne endres
+   -
+ * - M600 opprettetDato: Skal ikke kunne endres
+   -
+ * - M601 opprettetAv: Skal ikke kunne endres
+   -
 
 Arkivskaper
 ^^^^^^^^^^^
@@ -1050,56 +1076,65 @@ I en Noark 5-løsning skal det altså være mulig å knytte en eller flere
 arkivskapere til ett arkiv. Informasjon om arkivskapere er
 obligatorisk i arkivuttrekk.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 5 4 4
+   :header-rows: 1
 
-   +-------------------------------------------+-------------------------------+-------------------+-------------+
-   | **Relasjon**                              | **Kilde**                     | **Mål**           | **Merknad** |
-   +===========================================+===============================+===================+=============+
-   | **Aggregation** (Bi-Directional)          | arkivskaper 1..\* Arkivskaper | arkiv 0..\* Arkiv |             |
-   +-------------------------------------------+-------------------------------+-------------------+-------------+
-   | **Generalization** (Source → Destination) | Arkivskaper                   | Arkivenhet        |             |
-   +-------------------------------------------+-------------------------------+-------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Aggregation** (Bi-Directional)
+   - arkivskaper 1..* Arkivskaper
+   - arkiv 0..* Arkiv
+   -
+ * - **Generalization** (Source → Destination)
+   - Arkivskaper
+   - Arkivenhet
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +------------------------------------------------------------------------+
-   | **Verdi**                                                              |
-   +========================================================================+
-   | self                                                                   |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/          |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivskaper/    |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkiv/       |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivskaper/ |
-   +------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivskaper/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkiv/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivskaper/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | arkivskaperID                   | Definisjon: Unik ID for arkivskaperen.       | [1..1]                                       |                                 | string                          |
-   |                                 | Kilde: Registreres manuelt ved opprettelsen  |                                              |                                 |                                 |
-   |                                 | av arkivet. Kommentar: Kan være              |                                              |                                 |                                 |
-   |                                 | organisasjonsnummer (Brønnøysundregistrene)  |                                              |                                 |                                 |
-   |                                 | eller annen identifikasjon avtalt med        |                                              |                                 |                                 |
-   |                                 | arkivdepotet. M006                           |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | arkivskaperNavn                 | Definisjon: Navn på organisasjonen som har   | [1..1]                                       |                                 | string                          |
-   |                                 | skapt arkivet . Kilde: Registreres manuelt   |                                              |                                 |                                 |
-   |                                 | ved opprettelsen av arkivet. Kommentarer:    |                                              |                                 |                                 |
-   |                                 | (ingen). M023                                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | beskrivelse                     | Definisjon: Tekstlig beskrivelse av          | [0..1]                                       |                                 | string                          |
-   |                                 | arkivenheten. Kilde: Registreres manuelt.    |                                              |                                 |                                 |
-   |                                 | Kommentarer: Tilsvarende attributt finnes    |                                              |                                 |                                 |
-   |                                 | ikke i Noark 4 (men noen tabeller hadde egne |                                              |                                 |                                 |
-   |                                 | attributter for merknad som kunne brukes som |                                              |                                 |                                 |
-   |                                 | et beskrivelsesfelt). M021                   |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - arkivskaperID
+   - Definisjon: Unik ID for arkivskaperen.  Kilde: Registreres
+     manuelt ved opprettelsen av arkivet. Kommentar: Kan være
+     organisasjonsnummer (Brønnøysundregistrene) eller annen
+     identifikasjon avtalt med arkivdepotet. M006
+   - [1..1]
+   -
+   - string
+ * - arkivskaperNavn
+   - Definisjon: Navn på organisasjonen som har skapt arkivet . Kilde:
+     Registreres manuelt ved opprettelsen av arkivet. Kommentarer:
+     (ingen). M023
+   - [1..1]
+   -
+   - string
+ * - beskrivelse
+   - Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde:
+     Registreres manuelt.  Kommentarer: Tilsvarende attributt finnes
+     ikke i Noark 4 (men noen tabeller hadde egne attributter for
+     merknad som kunne brukes som et beskrivelsesfelt). M021
+   - [0..1]
+   -
+   - string
 
 Registrering
 ^^^^^^^^^^^^
