@@ -14,7 +14,7 @@
 
 ## Noark5v5
 
-![Noark5 kjerne arkivstruktur (diagram){ width=80% } Diagrammet viser pakkene som inngår i arkivstruktur kjernen.](./media/uml-pakker-som-inngaar-i-loesninger-geointegrasjon-eksempel.png)
+![Noark5 kjerne arkivstruktur (diagram) Diagrammet viser pakkene som inngår i arkivstruktur kjernen.](./media/uml-pakker-som-inngaar-i-loesninger-geointegrasjon-eksempel.png){ width=80% }
 
 ![Noark5 spesialisering sakarkiv - (diagram) Diagrammet viser oversikt over spesialiseringen sakarkiv.](./media/uml-pakker-som-inngaar-i-loesninger-sakarkiv-eksempel.png){ width=80% }
 
