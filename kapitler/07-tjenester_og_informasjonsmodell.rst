@@ -2046,39 +2046,55 @@ EnkelAdresse
 
 *Arver:*
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +--------------------------------------------------------------------+
-   | **Verdi**                                                          |
-   +====================================================================+
-   | self                                                               |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/land/            |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/postnummer/      |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/enkeladresse/    |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-enkeladresse/ |
-   +--------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/land/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/postnummer/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/enkeladresse/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-enkeladresse/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 11 10 2 2 11
+   :header-rows: 1
 
-   +---------------+-------------+------------+----------+------------+
-   | **Navn**      | **Merknad** | **Forek.** | **Kode** | **Type**   |
-   +===============+=============+============+==========+============+
-   | adresselinje1 |             | [0..1]     |          | string     |
-   +---------------+-------------+------------+----------+------------+
-   | adresselinje2 |             | [0..1]     |          | string     |
-   +---------------+-------------+------------+----------+------------+
-   | adresselinje3 |             | [0..1]     |          | string     |
-   +---------------+-------------+------------+----------+------------+
-   | postnr        |             | [0..1]     |          | Postnummer |
-   +---------------+-------------+------------+----------+------------+
-   | poststed      |             | [1..1]     |          | string     |
-   +---------------+-------------+------------+----------+------------+
-   | landkode      |             | [0..1]     |          | Land       |
-   +---------------+-------------+------------+----------+------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - adresselinje1
+   -
+   - [0..1]
+   -
+   - string
+ * - adresselinje2
+   -
+   - [0..1]
+   -
+   - string
+ * - adresselinje3
+   -
+   - [0..1]
+   -
+   - string
+ * - postnr
+   -
+   - [0..1]
+   -
+   - Postnummer
+ * - poststed
+   -
+   - [1..1]
+   -
+   - string
+ * - landkode
+   -
+   - [0..1]
+   -
+   - Land
 
 Gradering
 ^^^^^^^^^
@@ -2091,45 +2107,62 @@ Metadata for gradering skal grupperes inn i metadata for mappe,
 registrering og dokumentbeskrivelse. Gradering er valgfritt, og kan
 forekomme en gang
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 11 10 2 2 11
+   :header-rows: 1
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | graderingskode                  | Definisjon: Angivelse av at dokumentene er   | [1..1]                                       |                                 | Graderingskode                  |
-   |                                 | gradert i henhold til sikkerhetsloven eller  |                                              |                                 |                                 |
-   |                                 | beskyttelsesinstruksen. Kilde: Registreres   |                                              |                                 |                                 |
-   |                                 | manuelt ved valg fra liste, kan også         |                                              |                                 |                                 |
-   |                                 | registres automatisk. Kommentarer:           |                                              |                                 |                                 |
-   |                                 | Dokumenter gradert "Strengt hemmelig",       |                                              |                                 |                                 |
-   |                                 | "Hemmelig", "Konfidensielt" og "Strengt      |                                              |                                 |                                 |
-   |                                 | fortrolig" skal føres i en egen journal som  |                                              |                                 |                                 |
-   |                                 | i sin helhet er unntatt fra innsyn. M506     |                                              |                                 |                                 |
-   |                                 | gradering                                    |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | graderingsdato                  | Definisjon: Dato og klokkeslett når et       | [1..1]                                       |                                 | datetime                        |
-   |                                 | dokument ble gradert . Kilde: Registreres    |                                              |                                 |                                 |
-   |                                 | automatisk ved gradering. Kommentarer:       |                                              |                                 |                                 |
-   |                                 | (ingen). M624                                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | gradertAv                       | Definisjon: Navn på person som foretok       | [1..1]                                       |                                 | string                          |
-   |                                 | graderingen . Kilde: Registreres automatisk  |                                              |                                 |                                 |
-   |                                 | ved gradering. Kommentarer: (ingen). M625    |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseGradertAv              |                                              | [1..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | nedgraderingsdato               | Definisjon: Dato og klokkeslett når et       | [0..1]                                       |                                 | datetime                        |
-   |                                 | dokument ble nedgradert . Kilde: Registreres |                                              |                                 |                                 |
-   |                                 | automatisk ved nedgradering. Kommentarer:    |                                              |                                 |                                 |
-   |                                 | (ingen). M626                                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | nedgradertAv                    | Definisjon: Navn på person som foretok       | [0..1]                                       |                                 | string                          |
-   |                                 | nedgraderingen . Kilde: Registreres          |                                              |                                 |                                 |
-   |                                 | automatisk ved nedgradering. Kommentarer:    |                                              |                                 |                                 |
-   |                                 | (ingen). M627                                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseNedgradertAv           |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - graderingskode
+   - Definisjon: Angivelse av at dokumentene er gradert i henhold til
+     sikkerhetsloven eller beskyttelsesinstruksen. Kilde: Registreres
+     manuelt ved valg fra liste, kan også registres automatisk.
+     Kommentarer: Dokumenter gradert "Strengt hemmelig", "Hemmelig",
+     "Konfidensielt" og "Strengt fortrolig" skal føres i en egen
+     journal som i sin helhet er unntatt fra innsyn. M506 gradering
+   - [1..1]
+   -
+   - Graderingskode
+ * - graderingsdato
+   - Definisjon: Dato og klokkeslett når et dokument ble
+     gradert. Kilde: Registreres automatisk ved
+     gradering. Kommentarer: (ingen). M624
+   - [1..1]
+   -
+   - datetime
+ * - gradertAv
+   - Definisjon: Navn på person som foretok graderingen. Kilde:
+     Registreres automatisk ved gradering. Kommentarer: (ingen). M625
+   - [1..1]
+   -
+   - string
+ * - referanseGradertAv
+   -
+   - [1..1]
+   -
+   - SystemID
+ * - nedgraderingsdato
+   - Definisjon: Dato og klokkeslett når et dokument ble nedgradert.
+     Kilde: Registreres automatisk ved nedgradering. Kommentarer:
+     (ingen). M626
+   - [0..1]
+   -
+   - datetime
+ * - nedgradertAv
+   - Definisjon: Navn på person som foretok nedgraderingen . Kilde:
+     Registreres automatisk ved nedgradering. Kommentarer:
+     (ingen). M627
+   - [0..1]
+   -
+   - string
+ * - referanseNedgradertAv
+   -
+   - [0..1]
+   -
+   - SystemID
 
 Kassasjon
 ^^^^^^^^^
@@ -2164,44 +2197,51 @@ om kassasjon til arkivenheter hvor alle tilordnede dokumenter skal
 bevares. Kassasjon kan altså være knyttet en gang til arkivdel,
 klasse, mappe, registrering og dokumentbeskrivelse.
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 11 10 2 2 11
+   :header-rows: 1
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | kassasjonsvedtak                | Definisjon:Handling som skal utføres ved     | [1..1]                                       |                                 | Kassasjonsvedtak                |
-   |                                 | bevaringstidens slutt. Kilde: Registreres    |                                              |                                 |                                 |
-   |                                 | manuelt ved opprettelse av arkivdel eller    |                                              |                                 |                                 |
-   |                                 | klasse. Arves til underliggende enheter, men |                                              |                                 |                                 |
-   |                                 | kan endres manuelt. Kommentarer: (ingen).    |                                              |                                 |                                 |
-   |                                 | M450                                         |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | kassasjonshjemmel               | Definisjon: Angivelse av hjemmel for         | [0..1]                                       |                                 | string                          |
-   |                                 | kassasjon . Kilde: Registreres manuelt ved   |                                              |                                 |                                 |
-   |                                 | opprettelse av arkivdel eller klasse. Arves  |                                              |                                 |                                 |
-   |                                 | til underliggende enheter, men kan endres    |                                              |                                 |                                 |
-   |                                 | manuelt. Kommentarer: Hjemmel kan f.eks.     |                                              |                                 |                                 |
-   |                                 | være Riksarkivarens bevarings- og            |                                              |                                 |                                 |
-   |                                 | kassasjons-vedtak. M453                      |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | bevaringstid                    | Definisjon: Antall år dokumentene som        | [1..1]                                       |                                 | integer                         |
-   |                                 | tilhører denne arkivdelen skal bevares.      |                                              |                                 |                                 |
-   |                                 | Kilde: Registreres manuelt ved opprettelse   |                                              |                                 |                                 |
-   |                                 | av arkivdel eller klasse. Arves til          |                                              |                                 |                                 |
-   |                                 | underliggende enheter, men kan endres        |                                              |                                 |                                 |
-   |                                 | manuelt. Kommentarer: Tidspunktet for når    |                                              |                                 |                                 |
-   |                                 | bevaringstiden starter å løpe, vil vanligvis |                                              |                                 |                                 |
-   |                                 | være når en mappe avsluttes. Men andre       |                                              |                                 |                                 |
-   |                                 | regler kan være aktuelle. M451               |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | kassasjonsdato                  | Definisjon: Dato for når dokumentene som     | [1..1]                                       |                                 | date                            |
-   |                                 | tilhører denne arkivenheten skal kunne       |                                              |                                 |                                 |
-   |                                 | kasseres, eller vurderes for bevaring og     |                                              |                                 |                                 |
-   |                                 | kassasjon på ny . Kilde: Datoen beregnes     |                                              |                                 |                                 |
-   |                                 | automatisk på grunnlag av M451 Bevaringstid, |                                              |                                 |                                 |
-   |                                 | eller registreres manuelt. Kommentarer:      |                                              |                                 |                                 |
-   |                                 | (ingen). M452                                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - kassasjonsvedtak
+   - Definisjon:Handling som skal utføres ved bevaringstidens
+     slutt. Kilde: Registreres manuelt ved opprettelse av arkivdel
+     eller klasse. Arves til underliggende enheter, men kan endres
+     manuelt. Kommentarer: (ingen).  M450
+   - [1..1]
+   -
+   - Kassasjonsvedtak
+ * - kassasjonshjemmel
+   - Definisjon: Angivelse av hjemmel for kassasjon . Kilde:
+     Registreres manuelt ved opprettelse av arkivdel eller
+     klasse. Arves til underliggende enheter, men kan endres
+     manuelt. Kommentarer: Hjemmel kan f.eks.  være Riksarkivarens
+     bevarings- og kassasjons-vedtak. M453
+   - [0..1]
+   -
+   - string
+ * - bevaringstid
+   - Definisjon: Antall år dokumentene som tilhører denne arkivdelen
+     skal bevares.  Kilde: Registreres manuelt ved opprettelse av
+     arkivdel eller klasse. Arves til underliggende enheter, men kan
+     endres manuelt. Kommentarer: Tidspunktet for når bevaringstiden
+     starter å løpe, vil vanligvis være når en mappe avsluttes. Men
+     andre regler kan være aktuelle. M451
+   - [1..1]
+   -
+   - integer
+ * - kassasjonsdato
+   - Definisjon: Dato for når dokumentene som tilhører denne
+     arkivenheten skal kunne kasseres, eller vurderes for bevaring og
+     kassasjon på ny . Kilde: Datoen beregnes automatisk på grunnlag
+     av M451 Bevaringstid, eller registreres manuelt. Kommentarer:
+     (ingen). M452
+   - [1..1]
+   -
+   - date
 
 Klasse
 ^^^^^^
