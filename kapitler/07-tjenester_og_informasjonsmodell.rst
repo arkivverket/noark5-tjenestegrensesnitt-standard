@@ -370,7 +370,7 @@ laveste nivået av disse.
    -
    - string
  * - arkivstatus
-   - Definisjon: Status til arkivet .  Kilde: Registreres manuelt når
+   - Definisjon: Status til arkivet.  Kilde: Registreres manuelt når
      arkivet opprettes eller ved skifte av status.  Kommentarer:
      (ingen) M050
    - [0..1]
@@ -410,7 +410,7 @@ laveste nivået av disse.
    - string
  * - avsluttetDato
    - Definisjon: Dato og klokkeslett når arkivenheten ble
-     avsluttet/lukket .  Kilde: Registreres automatisk av systemet når
+     avsluttet/lukket.  Kilde: Registreres automatisk av systemet når
      enheten avsluttes.  Kommentarer: (ingen). M602
    - [0..1]
    -
@@ -666,10 +666,10 @@ spesifikke under-entitetene.
    -
    - string
  * - arkivdelstatus
-   - Definisjon: Status til den arkivperioden som arkivdelen omfatter
-     . Kilde: Registreres manuelt når arkivdelen opprettes eller ved
-     skifte av status. Kommentarer: Arkivdeler som avleveres skal ha
-     status 'Avsluttet periode'. M051
+   - Definisjon: Status til den arkivperioden som arkivdelen
+     omfatter. Kilde: Registreres manuelt når arkivdelen opprettes
+     eller ved skifte av status. Kommentarer: Arkivdeler som avleveres
+     skal ha status 'Avsluttet periode'. M051
    - [1..1]
    -
    - Arkivdelstatus
@@ -707,7 +707,7 @@ spesifikke under-entitetene.
    - string
  * - avsluttetDato
    - Definisjon: Dato og klokkeslett når arkivenheten ble
-     avsluttet/lukket .  Kilde: Registreres automatisk av systemet når
+     avsluttet/lukket.  Kilde: Registreres automatisk av systemet når
      enheten avsluttes.  Kommentarer: (ingen) M602
    - [0..1]
    -
@@ -725,7 +725,7 @@ spesifikke under-entitetene.
    -
    - SystemID
  * - arkivperiodeStartDato
-   - Definisjon: Dato for starten av en arkivperiode . Kilde: Settes
+   - Definisjon: Dato for starten av en arkivperiode. Kilde: Settes
      automatisk til samme dato som M600 opprettetDato. Kommentarer:
      Det kan tenkes tilfeller hvor startdatoen ikke er identisk med
      datoen arkivdelen ble opprettet M107
@@ -733,7 +733,7 @@ spesifikke under-entitetene.
    -
    - date
  * - arkivperiodeSluttDato
-   - Definisjon: Dato for slutten av en arkivperiode . Kilde: Settes
+   - Definisjon: Dato for slutten av en arkivperiode. Kilde: Settes
      automatisk til samme dato som M602 avsluttetDato. Kommentarer:
      Det kan forekomme tilfeller hvor sluttdatoen ikke er identisk med
      datoen arkivdelen ble avsluttet. M108
@@ -1121,7 +1121,7 @@ obligatorisk i arkivuttrekk.
    -
    - string
  * - arkivskaperNavn
-   - Definisjon: Navn på organisasjonen som har skapt arkivet . Kilde:
+   - Definisjon: Navn på organisasjonen som har skapt arkivet. Kilde:
      Registreres manuelt ved opprettelsen av arkivet. Kommentarer:
      (ingen). M023
    - [1..1]
@@ -1277,7 +1277,7 @@ Saksmappe som foreldre.
    - **Type**
  * - arkivertDato
    - Definisjon. Dato og klokkeslett når alle dokumentene som er
-     tilknyttet registreringen ble arkivert . Kilde: Registreres
+     tilknyttet registreringen ble arkivert. Kilde: Registreres
      automatisk ved utførelse av en funksjon som markerer at
      dokumentene er arkivert. For journalposter kan dette knyttes til
      endring av journalstatus.  Kommentarer: Arkivering innebærer at
@@ -1288,7 +1288,7 @@ Saksmappe som foreldre.
    - datetime
  * - arkivertAv
    - Definisjon: Navn på person som arkiverte dokumentet og frøs det
-     for all videre redigering .  Kilde: Registreres automatisk ved
+     for all videre redigering.  Kilde: Registreres automatisk ved
      utførelse av en funksjon som markerer at dokumentene er
      arkivert. For journalposter kan dette knyttes til endring av
      journalstatus. Kommentarer: (ingen) M605
@@ -1349,7 +1349,7 @@ Saksmappe som foreldre.
  * - offentligTittel
    - Definisjon: Offentlig tittel på arkivenheten, ord som skal
      skjermes er fjernet fra innholdet i tittelen (erstattet med
-     ******) . Kilde: (ingen).  Kommentarer: I løpende og offentlig
+     ******). Kilde: (ingen).  Kommentarer: I løpende og offentlig
      journaler skal også offentligTittel være med dersom ord i
      tittelfeltet skal skjermes.  M025
    - [0..1]
@@ -1543,13 +1543,13 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
    - **Kode**
    - **Type**
  * - dokumenttype
-   - Definisjon: Navn på type dokument . Kilde: Registreres automatisk
+   - Definisjon: Navn på type dokument. Kilde: Registreres automatisk
      av systemet eller manuelt. Kommentarer: (ingen). M083
    - [1..1]
    -
    - Dokumenttype
  * - dokumentstatus
-   - Definisjon: Status til dokumentet . Kilde: Kan endres automatisk
+   - Definisjon: Status til dokumentet. Kilde: Kan endres automatisk
      ved endring i saksstatus eller journalstatus. Kommentarer:
      Dokumentbeskrivelser som avleveres skal ha status "Dokumentet er
      ferdigstilt". M054
@@ -1852,7 +1852,7 @@ Disse ikke har korresponderende felt i avleveringsformatet.
    -
    - Variantformat
  * - format
-   - Definisjon: Dokumentets format .  Kilde: Registreres automatisk
+   - Definisjon: Dokumentets format.  Kilde: Registreres automatisk
      når dokumentet arkiveres. Kommentarer: Faste verdier bestemmes
      senere. M701
    - [0..1]
@@ -1860,14 +1860,14 @@ Disse ikke har korresponderende felt i avleveringsformatet.
    - Format
  * - formatDetaljer
    - Definisjon: Nærmere spesifikasjon av dokuments format,
-     f.eks. informasjon om komprimering . Kilde: (ingen).
+     f.eks. informasjon om komprimering. Kilde: (ingen).
      Kommentarer: (ingen). M702
    - [0..1]
    -
    - string
  * - referanseDokumentfil
    - Definisjon: Referanse til filen som inneholder det elektroniske
-     dokumentet som dokumentobjektet beskriver . Kilde: Registreres
+     dokumentet som dokumentobjektet beskriver. Kilde: Registreres
      automatisk når et dokument tilknyttes en registrering, når det
      arkiveres flere versjoner av et dokument, når det lages en egen
      variant av dokumentet og når dokumentet konverteres til nye
@@ -2010,7 +2010,7 @@ ElektroniskSignatur
    -
    - ElektroniskSignaturVerifisert
  * - verifisertDato
-   - Definisjon: Dato en elektronisk signatur ble verifisert . Kilde:
+   - Definisjon: Dato en elektronisk signatur ble verifisert. Kilde:
      Registreres automatisk når verifisering utføres. Kommentarer:
      (ingen). M622
    - [1..1]
@@ -2152,7 +2152,7 @@ forekomme en gang
    -
    - datetime
  * - nedgradertAv
-   - Definisjon: Navn på person som foretok nedgraderingen . Kilde:
+   - Definisjon: Navn på person som foretok nedgraderingen. Kilde:
      Registreres automatisk ved nedgradering. Kommentarer:
      (ingen). M627
    - [0..1]
@@ -2215,7 +2215,7 @@ klasse, mappe, registrering og dokumentbeskrivelse.
    -
    - Kassasjonsvedtak
  * - kassasjonshjemmel
-   - Definisjon: Angivelse av hjemmel for kassasjon . Kilde:
+   - Definisjon: Angivelse av hjemmel for kassasjon. Kilde:
      Registreres manuelt ved opprettelse av arkivdel eller
      klasse. Arves til underliggende enheter, men kan endres
      manuelt. Kommentarer: Hjemmel kan f.eks.  være Riksarkivarens
@@ -2236,7 +2236,7 @@ klasse, mappe, registrering og dokumentbeskrivelse.
  * - kassasjonsdato
    - Definisjon: Dato for når dokumentene som tilhører denne
      arkivenheten skal kunne kasseres, eller vurderes for bevaring og
-     kassasjon på ny . Kilde: Datoen beregnes automatisk på grunnlag
+     kassasjon på ny. Kilde: Datoen beregnes automatisk på grunnlag
      av M451 Bevaringstid, eller registreres manuelt. Kommentarer:
      (ingen). M452
    - [1..1]
@@ -2516,7 +2516,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
    - **Kode**
    - **Type**
  * - klassifikasjonstype
-   - Definisjon: Type klassifikasjonssystem .  Kilde: Registreres
+   - Definisjon: Type klassifikasjonssystem.  Kilde: Registreres
      manuelt ved opprettelse av klassifikasjonssystem Kommentarer:
      (ingen) M086
    - [0..1]
@@ -2543,7 +2543,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
    - string
  * - avsluttetDato
    - Definisjon: Dato og klokkeslett når arkivenheten ble
-     avsluttet/lukket . Kilde: Registreres automatisk av systemet når
+     avsluttet/lukket. Kilde: Registreres automatisk av systemet når
      enheten avsluttes. Kommentarer: (ingen) M602
    - [0..1]
    -
@@ -2625,112 +2625,111 @@ mappe (jf. Noark 5 v5.0 krav 2.7.1). Systemet skal logge alle
 konverteringer, og informasjon om dette skal tas med ved
 deponering/avlevering.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 3 3 1
+   :header-rows: 1
 
-   +----------------------------------------+---------------------------------+----------------+-------------+
-   | **Relasjon**                           | **Kilde**                       | **Mål**        | **Merknad** |
-   +========================================+=================================+================+=============+
-   | **Aggregation** (Destination → Source) | konvertering 0..\* Konvertering | Dokumentobjekt |             |
-   +----------------------------------------+---------------------------------+----------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Aggregation** (Destination → Source)
+   - konvertering 0..\* Konvertering
+   - Dokumentobjekt
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +-------------------------------------------------------------------------+
-   | **Verdi**                                                               |
-   +=========================================================================+
-   | self                                                                    |
-   +-------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/konvertering/    |
-   +-------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-konvertering/ |
-   +-------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/konvertering/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-konvertering/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
 
-   +--------------------------------------------------------------+--------------------------------------+--------------------------------------+---------------------------+---------------------------+
-   | **Navn**                                                     | **Merknad**                          | **Forek.**                           | **Kode**                  | **Type**                  |
-   +==============================================================+======================================+======================================+===========================+===========================+
-   | systemID                                                     | Definisjon: Entydig identifikasjon   | [0..1]                               |                           | SystemID                  |
-   |                                                              | av arkivenheten innenfor det         |                                      |                           |                           |
-   |                                                              | arkivskapende organet. Dersom        |                                      |                           |                           |
-   |                                                              | organet har flere arkivsystemer,     |                                      |                           |                           |
-   |                                                              | skal altså systemID være             |                                      |                           |                           |
-   |                                                              | gjennomgående entydig.               |                                      |                           |                           |
-   |                                                              | Systemidentifikasjonen vil som       |                                      |                           |                           |
-   |                                                              | oftest være en numerisk kode uten    |                                      |                           |                           |
-   |                                                              | noe logisk meningsinnhold.           |                                      |                           |                           |
-   |                                                              | Identifikasjonen trenger ikke å være |                                      |                           |                           |
-   |                                                              | synlig for brukerne. Kilde:          |                                      |                           |                           |
-   |                                                              | Registreres automatisk av systemet.  |                                      |                           |                           |
-   |                                                              | Kommentarer: Alle referanser fra en  |                                      |                           |                           |
-   |                                                              | arkivenhet til en annen skal peke    |                                      |                           |                           |
-   |                                                              | til arkivenhetens                    |                                      |                           |                           |
-   |                                                              | systemidentifikasjon. Dette gjelder  |                                      |                           |                           |
-   |                                                              | også referanser fra en arkivdel til  |                                      |                           |                           |
-   |                                                              | en annen, f.eks. mellom to           |                                      |                           |                           |
-   |                                                              | arkivperioder som avleveres på       |                                      |                           |                           |
-   |                                                              | forskjellig tidspunkt. I et          |                                      |                           |                           |
-   |                                                              | arkivuttrekk skal systemID være      |                                      |                           |                           |
-   |                                                              | entydig (unik). Dokumentobjekt har   |                                      |                           |                           |
-   |                                                              | ingen systemidentifikasjon fordi     |                                      |                           |                           |
-   |                                                              | enheten kan være duplisert i et      |                                      |                           |                           |
-   |                                                              | arkivuttrekk dersom samme            |                                      |                           |                           |
-   |                                                              | dokumentfil er knyttet til flere     |                                      |                           |                           |
-   |                                                              | forskjellige registreringer. M001    |                                      |                           |                           |
-   +--------------------------------------------------------------+--------------------------------------+--------------------------------------+---------------------------+---------------------------+
-   | konvertertDato                                               | Definisjon: Dato og klokkeslett for  | [1..1]                               |                           | datetime                  |
-   |                                                              | når et dokument ble konvertert fra   |                                      |                           |                           |
-   |                                                              | et format til et annet . Kilde:      |                                      |                           |                           |
-   |                                                              | Registreres automatisk ved           |                                      |                           |                           |
-   |                                                              | konvertering. Kommentarer: (ingen).  |                                      |                           |                           |
-   |                                                              | M615                                 |                                      |                           |                           |
-   +--------------------------------------------------------------+--------------------------------------+--------------------------------------+---------------------------+---------------------------+
-   | konvertertAv                                                 | Definisjon: Person eller system som  | [1..1]                               |                           | string                    |
-   |                                                              | har foretatt konverteringen . Kilde: |                                      |                           |                           |
-   |                                                              | Registreres automatisk ved           |                                      |                           |                           |
-   |                                                              | konvertering. Kommentarer: (ingen).  |                                      |                           |                           |
-   |                                                              | M616                                 |                                      |                           |                           |
-   +--------------------------------------------------------------+--------------------------------------+--------------------------------------+---------------------------+---------------------------+
-   | konvertertFraFormat                                          | Definisjon: Formatet dokumentet      | [1..1]                               |                           | Format                    |
-   |                                                              | hadde før det ble konvertert .       |                                      |                           |                           |
-   |                                                              | Kilde: Registreres automatisk ved    |                                      |                           |                           |
-   |                                                              | konvertering. Kommentarer: Dette vil |                                      |                           |                           |
-   |                                                              | vanligvis være produksjonsformatet,  |                                      |                           |                           |
-   |                                                              | men kan også være et annet           |                                      |                           |                           |
-   |                                                              | arkivformat. Faste verdier bestemmes |                                      |                           |                           |
-   |                                                              | senere. M712                         |                                      |                           |                           |
-   +--------------------------------------------------------------+--------------------------------------+--------------------------------------+---------------------------+---------------------------+
-   | konvertertTilFormat                                          | Definisjon: Formatet dokumentet fikk | [1..1]                               |                           | Format                    |
-   |                                                              | etter konvertering . Kilde:          |                                      |                           |                           |
-   |                                                              | Registreres automatisk ved           |                                      |                           |                           |
-   |                                                              | konvertering. Kommentarer: Faste     |                                      |                           |                           |
-   |                                                              | verdier bestemmes senere. M713       |                                      |                           |                           |
-   +--------------------------------------------------------------+--------------------------------------+--------------------------------------+---------------------------+---------------------------+
-   | konverteringsverktoey                                        | Definisjon: Navn på det IT-verktøyet | [0..1]                               |                           | string                    |
-   |                                                              | som ble brukt til å foreta           |                                      |                           |                           |
-   |                                                              | konverteringen . Kilde: (ingen).     |                                      |                           |                           |
-   |                                                              | Kommentarer: (ingen). M714           |                                      |                           |                           |
-   +--------------------------------------------------------------+--------------------------------------+--------------------------------------+---------------------------+---------------------------+
-   | konverteringskommentar                                       | Definisjon: Kommentarer til          | [0..1]                               |                           | string                    |
-   |                                                              | konverteringen . Kilde:              |                                      |                           |                           |
-   |                                                              | (ingen).Kommentarer: (ingen). M715   |                                      |                           |                           |
-   +--------------------------------------------------------------+--------------------------------------+--------------------------------------+---------------------------+---------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   - Definisjon: Entydig identifikasjon av arkivenheten innenfor det
+     arkivskapende organet. Dersom organet har flere arkivsystemer,
+     skal altså systemID være gjennomgående entydig.
+     Systemidentifikasjonen vil som oftest være en numerisk kode uten
+     noe logisk meningsinnhold.  Identifikasjonen trenger ikke å være
+     synlig for brukerne. Kilde: Registreres automatisk av systemet.
+     Kommentarer: Alle referanser fra en arkivenhet til en annen skal
+     peke til arkivenhetens systemidentifikasjon. Dette gjelder også
+     referanser fra en arkivdel til en annen, f.eks. mellom to
+     arkivperioder som avleveres på forskjellig tidspunkt. I et
+     arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt
+     har ingen systemidentifikasjon fordi enheten kan være duplisert i
+     et arkivuttrekk dersom samme dokumentfil er knyttet til flere
+     forskjellige registreringer. M001
+   - [0..1]
+   -
+   - SystemID
+ * - konvertertDato
+   - Definisjon: Dato og klokkeslett for når et dokument ble
+     konvertert fra et format til et annet. Kilde: Registreres
+     automatisk ved konvertering. Kommentarer: (ingen).  M615
+   - [1..1]
+   -
+   - datetime
+ * - konvertertAv
+   - Definisjon: Person eller system som har foretatt
+     konverteringen. Kilde: Registreres automatisk ved
+     konvertering. Kommentarer: (ingen).  M616
+   - [1..1]
+   -
+   - string
+ * - konvertertFraFormat
+   - Definisjon: Formatet dokumentet hadde før det ble konvertert.
+     Kilde: Registreres automatisk ved konvertering. Kommentarer:
+     Dette vil vanligvis være produksjonsformatet, men kan også være
+     et annet arkivformat. Faste verdier bestemmes senere. M712
+   - [1..1]
+   -
+   - Format
+ * - konvertertTilFormat
+   - Definisjon: Formatet dokumentet fikk etter konvertering. Kilde:
+     Registreres automatisk ved konvertering. Kommentarer: Faste
+     verdier bestemmes senere. M713
+   - [1..1]
+   -
+   - Format
+ * - konverteringsverktoey
+   - Definisjon: Navn på det IT-verktøyet som ble brukt til å foreta
+     konverteringen. Kilde: (ingen).  Kommentarer: (ingen). M714
+   - [0..1]
+   -
+   - string
+ * - konverteringskommentar
+   - Definisjon: Kommentarer til konverteringen. Kilde:
+     (ingen).Kommentarer: (ingen). M715
+   - [0..1]
+   -
+   - string
 
-.. table:: Restriksjoner
+.. list-table:: Restriksjoner
+   :header-rows: 1
 
-   +-------------------------------------------+-------------+
-   | **Navn**                                  | **Merknad** |
-   +===========================================+=============+
-   | M001 systemID: Skal ikke kunne endres     |             |
-   +-------------------------------------------+-------------+
-   | M615 konvertertdato: Kan ikke endres      |             |
-   +-------------------------------------------+-------------+
-   | M616 konvertertAv: Kan ikke endres        |             |
-   +-------------------------------------------+-------------+
-   | M712 konvertertFraFormat: Kan ikke endres |             |
-   +-------------------------------------------+-------------+
-   | M713 konvertertTilFormat: Kan ikke endres |             |
-   +-------------------------------------------+-------------+
+ * - **Navn**
+   - **Merknad**
+ * - M001 systemID: Skal ikke kunne endres
+   -
+ * - M615 konvertertdato: Kan ikke endres
+   -
+ * - M616 konvertertAv: Kan ikke endres
+   -
+ * - M712 konvertertFraFormat: Kan ikke endres
+   -
+ * - M713 konvertertTilFormat: Kan ikke endres
+   -
 
 Korrespondansepart
 ^^^^^^^^^^^^^^^^^^
@@ -2747,84 +2746,92 @@ ganger i en journalpost. Ved inngående dokumenter er det obligatorisk
 organinterne dokumenter som skal følges opp, må både avsender(e) og
 mottaker(e) registreres.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 3 3 1
+   :header-rows: 1
 
-   +-------------------------------------------+---------------------------------------------+--------------------+-------------+
-   | **Relasjon**                              | **Kilde**                                   | **Mål**            | **Merknad** |
-   +===========================================+=============================================+====================+=============+
-   | **Generalization** (Source → Destination) | KorrespondansepartEnhet                     | Korrespondansepart |             |
-   +-------------------------------------------+---------------------------------------------+--------------------+-------------+
-   | **Generalization** (Source → Destination) | KorrespondansepartPerson                    | Korrespondansepart |             |
-   +-------------------------------------------+---------------------------------------------+--------------------+-------------+
-   | **Generalization** (Source → Destination) | KorrespondansepartIntern                    | Korrespondansepart |             |
-   +-------------------------------------------+---------------------------------------------+--------------------+-------------+
-   | **Association** (Destination → Source)    | korrespondansepart 0..\* Korrespondansepart | Registrering       |             |
-   +-------------------------------------------+---------------------------------------------+--------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Generalization** (Source → Destination)
+   - KorrespondansepartEnhet
+   - Korrespondansepart
+   -
+ * - **Generalization** (Source → Destination)
+   - KorrespondansepartPerson
+   - Korrespondansepart
+   -
+ * - **Generalization** (Source → Destination)
+   - KorrespondansepartIntern
+   - Korrespondansepart
+   -
+ * - **Association** (Destination → Source)
+   - korrespondansepart 0..\* Korrespondansepart
+   - Registrering
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +----------------------------------------------------------------------------+
-   | **Verdi**                                                                  |
-   +============================================================================+
-   | self                                                                       |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepart/ |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/korrespondanseparttype/  |
-   +----------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepart/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/korrespondanseparttype/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 6 10 1 1 4
+   :header-rows: 1
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | systemID                        | Definisjon: Entydig identifikasjon av        | [0..1]                                       |                                 | SystemID                        |
-   |                                 | arkivenheten innenfor det arkivskapende      |                                              |                                 |                                 |
-   |                                 | organet. Dersom organet har flere            |                                              |                                 |                                 |
-   |                                 | arkivsystemer, skal altså systemID være      |                                              |                                 |                                 |
-   |                                 | gjennomgående entydig.                       |                                              |                                 |                                 |
-   |                                 | Systemidentifikasjonen vil som oftest være   |                                              |                                 |                                 |
-   |                                 | en numerisk kode uten noe logisk             |                                              |                                 |                                 |
-   |                                 | meningsinnhold. Identifikasjonen trenger     |                                              |                                 |                                 |
-   |                                 | ikke å være synlig for brukerne. Kilde:      |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet           |                                              |                                 |                                 |
-   |                                 | Kommentarer: Alle referanser fra en          |                                              |                                 |                                 |
-   |                                 | arkivenhet til en annen skal peke til        |                                              |                                 |                                 |
-   |                                 | arkivenhetens systemidentifikasjon. Dette    |                                              |                                 |                                 |
-   |                                 | gjelder også referanser fra en arkivdel til  |                                              |                                 |                                 |
-   |                                 | en annen, f.eks. mellom to arkivperioder som |                                              |                                 |                                 |
-   |                                 | avleveres på forskjellig tidspunkt. I et     |                                              |                                 |                                 |
-   |                                 | arkivuttrekk skal systemID være entydig      |                                              |                                 |                                 |
-   |                                 | (unik). Dokumentobjekt har ingen             |                                              |                                 |                                 |
-   |                                 | systemidentifikasjon fordi enheten kan være  |                                              |                                 |                                 |
-   |                                 | duplisert i et arkivuttrekk dersom samme     |                                              |                                 |                                 |
-   |                                 | dokumentfil er knyttet til flere             |                                              |                                 |                                 |
-   |                                 | forskjellige registreringer. M001            |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | korrespondanseparttype          | Definisjon: Type korrespondansepart . Kilde: | [1..1]                                       |                                 | Korrespondanseparttype          |
-   |                                 | Registreres automatisk knyttet til           |                                              |                                 |                                 |
-   |                                 | funksjonalitet i forbindelse med opprettelse |                                              |                                 |                                 |
-   |                                 | av journalpost, kan også registreres         |                                              |                                 |                                 |
-   |                                 | manuelt. Kommentarer: Korrespondansetype     |                                              |                                 |                                 |
-   |                                 | forekommer én gang innenfor objektet         |                                              |                                 |                                 |
-   |                                 | korrespondansepart, men denne kan forekomme  |                                              |                                 |                                 |
-   |                                 | flere ganger innenfor en journalpost. M087   |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | virksomhetsspesifikkeMetadata   | Definisjon: Et overordnet metadataelement    | [0..1]                                       |                                 | any                             |
-   |                                 | som kan inneholde egendefinerte metadata.    |                                              |                                 |                                 |
-   |                                 | Disse metadataene må da være spesifisert i   |                                              |                                 |                                 |
-   |                                 | et eller flere XML-skjema. Kilde: (ingen).   |                                              |                                 |                                 |
-   |                                 | Kommentar: (ingen). M711                     |                                              |                                 |                                 |
-   |                                 | virksomhetsspesifikkeMetadata                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   - Definisjon: Entydig identifikasjon av arkivenheten innenfor det
+     arkivskapende organet. Dersom organet har flere arkivsystemer,
+     skal altså systemID være gjennomgående entydig.
+     Systemidentifikasjonen vil som oftest være en numerisk kode uten
+     noe logisk meningsinnhold. Identifikasjonen trenger ikke å være
+     synlig for brukerne. Kilde: Registreres automatisk av systemet
+     Kommentarer: Alle referanser fra en arkivenhet til en annen skal
+     peke til arkivenhetens systemidentifikasjon. Dette gjelder også
+     referanser fra en arkivdel til en annen, f.eks. mellom to
+     arkivperioder som avleveres på forskjellig tidspunkt. I et
+     arkivuttrekk skal systemID være entydig (unik). Dokumentobjekt
+     har ingen systemidentifikasjon fordi enheten kan være duplisert i
+     et arkivuttrekk dersom samme dokumentfil er knyttet til flere
+     forskjellige registreringer. M001
+   - [0..1]
+   -
+   - SystemID
+ * - korrespondanseparttype
+   - Definisjon: Type korrespondansepart. Kilde: Registreres
+     automatisk knyttet til funksjonalitet i forbindelse med
+     opprettelse av journalpost, kan også registreres
+     manuelt. Kommentarer: Korrespondansetype forekommer én gang
+     innenfor objektet korrespondansepart, men denne kan forekomme
+     flere ganger innenfor en journalpost. M087
+   - [1..1]
+   -
+   - Korrespondanseparttype
+ * - virksomhetsspesifikkeMetadata
+   - Definisjon: Et overordnet metadataelement som kan inneholde
+     egendefinerte metadata.  Disse metadataene må da være spesifisert
+     i et eller flere XML-skjema. Kilde: (ingen).  Kommentar:
+     (ingen). M711 virksomhetsspesifikkeMetadata
+   - [0..1]
+   -
+   - any
 
-.. table:: Restriksjoner
+.. list-table:: Restriksjoner
+   :header-rows: 1
 
-   +---------------------------------------+-------------+
-   | **Navn**                              | **Merknad** |
-   +=======================================+=============+
-   | M001 systemID: Skal ikke kunne endres |             |
-   +---------------------------------------+-------------+
+ * - **Navn**
+   - **Merknad**
+ * - M001 systemID: Skal ikke kunne endres
+   -
 
 KorrespondansepartEnhet
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -2835,43 +2842,66 @@ KorrespondansepartEnhet
 
 *Arver:* **Korrespondansepart**
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 3 3 1
+   :header-rows: 1
 
-   +-------------------------------------------+-------------------------+--------------------+-------------+
-   | **Relasjon**                              | **Kilde**               | **Mål**            | **Merknad** |
-   +===========================================+=========================+====================+=============+
-   | **Generalization** (Source → Destination) | KorrespondansepartEnhet | Korrespondansepart |             |
-   +-------------------------------------------+-------------------------+--------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Generalization** (Source → Destination)
+   - KorrespondansepartEnhet
+   - Korrespondansepart
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +------------------------------------------------------------------------------------+
-   | **Verdi**                                                                          |
-   +====================================================================================+
-   | self                                                                               |
-   +------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartenhet/    |
-   +------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartenhet/ |
-   +------------------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartenhet/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartenhet/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
 
-   +---------------------+-------------+------------+----------+---------------------+
-   | **Navn**            | **Merknad** | **Forek.** | **Kode** | **Type**            |
-   +=====================+=============+============+==========+=====================+
-   | enhetsidentifikator |             | [0..1]     |          | Enhetsidentifikator |
-   +---------------------+-------------+------------+----------+---------------------+
-   | navn                |             | [1..1]     |          | string              |
-   +---------------------+-------------+------------+----------+---------------------+
-   | forretningsadresse  |             | [0..1]     |          | EnkelAdresse        |
-   +---------------------+-------------+------------+----------+---------------------+
-   | postadresse         |             | [0..1]     |          | EnkelAdresse        |
-   +---------------------+-------------+------------+----------+---------------------+
-   | kontaktinformasjon  |             | [0..1]     |          | Kontaktinformasjon  |
-   +---------------------+-------------+------------+----------+---------------------+
-   | kontaktperson       |             | [0..1]     |          | string              |
-   +---------------------+-------------+------------+----------+---------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - enhetsidentifikator
+   -
+   - [0..1]
+   -
+   - Enhetsidentifikator
+ * - navn
+   -
+   - [1..1]
+   -
+   - string
+ * - forretningsadresse
+   -
+   - [0..1]
+   -
+   - EnkelAdresse
+ * - postadresse
+   -
+   - [0..1]
+   -
+   - EnkelAdresse
+ * - kontaktinformasjon
+   -
+   - [0..1]
+   -
+   - Kontaktinformasjon
+ * - kontaktperson
+   -
+   - [0..1]
+   -
+   - string
 
 KorrespondansepartIntern
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2882,39 +2912,57 @@ KorrespondansepartIntern
 
 *Arver:* **Korrespondansepart**
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 3 3 1
+   :header-rows: 1
 
-   +-------------------------------------------+--------------------------+--------------------+-------------+
-   | **Relasjon**                              | **Kilde**                | **Mål**            | **Merknad** |
-   +===========================================+==========================+====================+=============+
-   | **Generalization** (Source → Destination) | KorrespondansepartIntern | Korrespondansepart |             |
-   +-------------------------------------------+--------------------------+--------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Generalization** (Source → Destination)
+   - KorrespondansepartIntern
+   - Korrespondansepart
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +-------------------------------------------------------------------------------------+
-   | **Verdi**                                                                           |
-   +=====================================================================================+
-   | self                                                                                |
-   +-------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartintern/    |
-   +-------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartintern/ |
-   +-------------------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartintern/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartintern/
 
-.. table:: Attributter
 
-   +-----------------------------+-----------------------------------------------+------------+----------+----------+
-   | **Navn**                    | **Merknad**                                   | **Forek.** | **Kode** | **Type** |
-   +=============================+===============================================+============+==========+==========+
-   | administrativEnhet          |                                               | [0..1]     |          | string   |
-   +-----------------------------+-----------------------------------------------+------------+----------+----------+
-   | referanseAdministrativEnhet | referanse til AdministrativEnhet sin systemID | [0..1]     |          | SystemID |
-   +-----------------------------+-----------------------------------------------+------------+----------+----------+
-   | saksbehandler               |                                               | [0..1]     |          | string   |
-   +-----------------------------+-----------------------------------------------+------------+----------+----------+
-   | referanseSaksbehandler      | referanse til Bruker sin systemID             | [0..1]     |          | SystemID |
-   +-----------------------------+-----------------------------------------------+------------+----------+----------+
+.. list-table:: Attributter
+   :widths: 6 10 1 1 4
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - administrativEnhet
+   -
+   - [0..1]
+   -
+   - string
+ * - referanseAdministrativEnhet
+   - referanse til AdministrativEnhet sin systemID
+   - [0..1]
+   -
+   - SystemID
+ * - saksbehandler
+   -
+   - [0..1]
+   -
+   - string
+ * - referanseSaksbehandler
+   - referanse til Bruker sin systemID
+   - [0..1]
+   -
+   - SystemID
 
 KorrespondansepartPerson
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2925,41 +2973,61 @@ KorrespondansepartPerson
 
 *Arver:* **Korrespondansepart**
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 3 3 1
+   :header-rows: 1
 
-   +-------------------------------------------+--------------------------+--------------------+-------------+
-   | **Relasjon**                              | **Kilde**                | **Mål**            | **Merknad** |
-   +===========================================+==========================+====================+=============+
-   | **Generalization** (Source → Destination) | KorrespondansepartPerson | Korrespondansepart |             |
-   +-------------------------------------------+--------------------------+--------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Generalization** (Source → Destination)
+   - KorrespondansepartPerson
+   - Korrespondansepart
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +-------------------------------------------------------------------------------------+
-   | **Verdi**                                                                           |
-   +=====================================================================================+
-   | self                                                                                |
-   +-------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartperson/    |
-   +-------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartperson/ |
-   +-------------------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartperson/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartperson/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
 
-   +---------------------+-------------+------------+----------+---------------------+
-   | **Navn**            | **Merknad** | **Forek.** | **Kode** | **Type**            |
-   +=====================+=============+============+==========+=====================+
-   | personidentifikator |             | [0..*]     |          | Personidentifikator |
-   +---------------------+-------------+------------+----------+---------------------+
-   | navn                |             | [1..1]     |          | string              |
-   +---------------------+-------------+------------+----------+---------------------+
-   | postadresse         |             | [0..1]     |          | EnkelAdresse        |
-   +---------------------+-------------+------------+----------+---------------------+
-   | bostedsadresse      |             | [0..1]     |          | EnkelAdresse        |
-   +---------------------+-------------+------------+----------+---------------------+
-   | kontaktinformasjon  |             | [0..1]     |          | Kontaktinformasjon  |
-   +---------------------+-------------+------------+----------+---------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - personidentifikator
+   -
+   - [0..\*]
+   -
+   - Personidentifikator
+ * - navn
+   -
+   - [1..1]
+   -
+   - string
+ * - postadresse
+   -
+   - [0..1]
+   -
+   - EnkelAdresse
+ * - bostedsadresse
+   -
+   - [0..1]
+   -
+   - EnkelAdresse
+ * - kontaktinformasjon
+   -
+   - [0..1]
+   -
+   - Kontaktinformasjon
 
 Kryssreferanse
 ^^^^^^^^^^^^^^
