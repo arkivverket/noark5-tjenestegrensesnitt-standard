@@ -2057,7 +2057,7 @@ EnkelAdresse
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-enkeladresse/
 
 .. list-table:: Attributter
-   :widths: 11 10 2 2 11
+   :widths: 6 10 1 1 4
    :header-rows: 1
 
  * - **Navn**
@@ -2108,7 +2108,7 @@ registrering og dokumentbeskrivelse. Gradering er valgfritt, og kan
 forekomme en gang
 
 .. list-table:: Attributter
-   :widths: 11 10 2 2 11
+   :widths: 6 10 1 1 4
    :header-rows: 1
 
  * - **Navn**
@@ -2198,7 +2198,7 @@ bevares. Kassasjon kan altså være knyttet en gang til arkivdel,
 klasse, mappe, registrering og dokumentbeskrivelse.
 
 .. list-table:: Attributter
-   :widths: 11 10 2 2 11
+   :widths: 6 10 1 1 4
    :header-rows: 1
 
  * - **Navn**
@@ -2269,171 +2269,179 @@ eller arkivkode i Noark-4. Identifikasjoner fra overordnede klasser skal
 arves nedover i hierarkiet, slik at det er lett å si hvilket nivå en
 befinner seg på.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 3 3 1
+   :header-rows: 1
 
-   +-------------------------------------------+-------------------------------------+--------------------------------------------------+-------------+
-   | **Relasjon**                              | **Kilde**                           | **Mål**                                          | **Merknad** |
-   +===========================================+=====================================+==================================================+=============+
-   | **Aggregation** (Destination → Source)    | underklasse 0..\* Klasse            | overklasse 0..1 Klasse                           |             |
-   +-------------------------------------------+-------------------------------------+--------------------------------------------------+-------------+
-   | **Generalization** (Source → Destination) | Klasse                              | Arkivenhet                                       |             |
-   +-------------------------------------------+-------------------------------------+--------------------------------------------------+-------------+
-   | **Aggregation** (Bi-Directional)          | klasse 0..\* Klasse                 | klassifikasjonssystem 0..1 Klassifikasjonssystem |             |
-   +-------------------------------------------+-------------------------------------+--------------------------------------------------+-------------+
-   | **Aggregation** (Bi-Directional)          | mappe 0..\* Mappe                   | klasse 0..1 Klasse                               |             |
-   +-------------------------------------------+-------------------------------------+--------------------------------------------------+-------------+
-   | **Association** (Bi-Directional)          | kryssreferanse 0..\* Kryssreferanse | klasse 0..1 Klasse                               |             |
-   +-------------------------------------------+-------------------------------------+--------------------------------------------------+-------------+
-   | **Association** (Source → Destination)    | Saksmappe                           | sekundaerklassifikasjon 0..\* Klasse             |             |
-   +-------------------------------------------+-------------------------------------+--------------------------------------------------+-------------+
-   | **Aggregation** (Bi-Directional)          | registrering 0..\* Registrering     | klasse 0..1 Klasse                               |             |
-   +-------------------------------------------+-------------------------------------+--------------------------------------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Aggregation** (Destination → Source)
+   - underklasse 0..\* Klasse
+   - overklasse 0..1 Klasse
+   -
+ * - **Generalization** (Source → Destination)
+   - Klasse
+   - Arkivenhet
+   -
+ * - **Aggregation** (Bi-Directional)
+   - klasse 0..\* Klasse
+   - klassifikasjonssystem 0..1 Klassifikasjonssystem
+   -
+ * - **Aggregation** (Bi-Directional)
+   - mappe 0..\* Mappe
+   - klasse 0..1 Klasse
+   -
+ * - **Association** (Bi-Directional)
+   - kryssreferanse 0..\* Kryssreferanse
+   - klasse 0..1 Klasse
+   -
+ * - **Association** (Source → Destination)
+   - Saksmappe
+   - sekundaerklassifikasjon 0..\* Klasse
+   -
+ * - **Aggregation** (Bi-Directional)
+   - registrering 0..\* Registrering
+   - klasse 0..1 Klasse
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :widths: 4 3 3 1
+   :header-rows: 1
 
-   +-------------------------------------------------------------------------------+
-   | **Verdi**                                                                     |
-   +===============================================================================+
-   | self                                                                          |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/                |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klassifikasjonssystem/ |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/kryssreferanse/        |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/                 |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-klasse/             |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/     |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/              |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-registrering/       |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overklasse/            |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/          |
-   +-------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/underklasse/           |
-   +-------------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klassifikasjonssystem/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/kryssreferanse/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-klasse/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-registrering/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overklasse/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/underklasse/
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
 også være tilgjengelig via Klasse-instanser.
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :widths: 4 3 3 1
+   :header-rows: 1
 
-   +-----------------------------------------------------------------+
-   | **Verdi**                                                       |
-   +=================================================================+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-saksmappe/ |
-   +-----------------------------------------------------------------+
+ * - **Verdi**
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-saksmappe/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
 
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | **Navn**                                                   | **Merknad**                           | **Forek.**                            | **Kode**                   | **Type**                   |
-   +============================================================+=======================================+=======================================+============================+============================+
-   | klasseID                                                   | Definisjon: Entydig identifikasjon av | [1..1]                                |                            | string                     |
-   |                                                            | klassen innenfor                      |                                       |                            |                            |
-   |                                                            | klassifikasjonssystemet. Andre        |                                       |                            |                            |
-   |                                                            | klassifikasjonssystemer innenfor      |                                       |                            |                            |
-   |                                                            | samme arkivsystem kan imidlertid      |                                       |                            |                            |
-   |                                                            | inneholde en eller flere av de samme  |                                       |                            |                            |
-   |                                                            | identifikasjonene. Identifikasjonen   |                                       |                            |                            |
-   |                                                            | kan være rent nummerisk, men kan også |                                       |                            |                            |
-   |                                                            | være alfanumerisk og ha et logisk     |                                       |                            |                            |
-   |                                                            | meningsinnhold. Merk at klasseID er   |                                       |                            |                            |
-   |                                                            | identisk med begrepene ordningsverdi  |                                       |                            |                            |
-   |                                                            | og arkivkode i Noark 4. Kilde: Alle   |                                       |                            |                            |
-   |                                                            | klasser i et klassifikasjonssystem    |                                       |                            |                            |
-   |                                                            | opprettes vanligvis når et            |                                       |                            |                            |
-   |                                                            | arkivsystem tas i bruk. Men enkelte   |                                       |                            |                            |
-   |                                                            | løsninger kan tillate at det          |                                       |                            |                            |
-   |                                                            | opprettes nye klasser ved behov (mest |                                       |                            |                            |
-   |                                                            | aktuelt ved objektbasert              |                                       |                            |                            |
-   |                                                            | klassifikasjon). Kommentarer:         |                                       |                            |                            |
-   |                                                            | Eksempel på klasseID og tittel i tre  |                                       |                            |                            |
-   |                                                            | nivåer fra statens arkivnøkkel        |                                       |                            |                            |
-   |                                                            | (emne-/funksjonsbasert                |                                       |                            |                            |
-   |                                                            | klassifikasjonssystem): 2 Stillinger  |                                       |                            |                            |
-   |                                                            | og personell, 2.3 Lønn og pensjon,    |                                       |                            |                            |
-   |                                                            | 2.3.6 Arbeidsgiveravgift. Ved         |                                       |                            |                            |
-   |                                                            | personbasert klassifikasjonssystem,   |                                       |                            |                            |
-   |                                                            | kan f.eks. fødselsnummer og navn      |                                       |                            |                            |
-   |                                                            | utgjøre klasseID og tittel. M002      |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | tittel                                                     | Definisjon: Tittel eller navn på      | [1..1]                                |                            | string                     |
-   |                                                            | arkivenheten. Kilde: Registreres      |                                       |                            |                            |
-   |                                                            | manuelt eller hentes automatisk fra   |                                       |                            |                            |
-   |                                                            | innholdet i arkivdokumentet. Ja fra   |                                       |                            |                            |
-   |                                                            | klassetittel dersom alle mapper skal  |                                       |                            |                            |
-   |                                                            | ha samme tittel som klassen. Kan også |                                       |                            |                            |
-   |                                                            | hentes automatisk fra et fagsystem.   |                                       |                            |                            |
-   |                                                            | Kommentarer: For saksmappe og         |                                       |                            |                            |
-   |                                                            | journalpost vil dette tilsvare        |                                       |                            |                            |
-   |                                                            | "Sakstittel" og                       |                                       |                            |                            |
-   |                                                            | "Dokumentbeskrivelse". Disse navnene  |                                       |                            |                            |
-   |                                                            | kan beholdes i grensesnittet. M020    |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | beskrivelse                                                | Definisjon: Tekstlig beskrivelse av   | [0..1]                                |                            | string                     |
-   |                                                            | arkivenheten. Kilde: Registreres      |                                       |                            |                            |
-   |                                                            | manuelt. Kommentarer: Tilsvarende     |                                       |                            |                            |
-   |                                                            | attributt finnes ikke i Noark 4 (men  |                                       |                            |                            |
-   |                                                            | noen tabeller hadde egne attributter  |                                       |                            |                            |
-   |                                                            | for merknad som kunne brukes som et   |                                       |                            |                            |
-   |                                                            | beskrivelsesfelt). M021               |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | noekkelord                                                 | Definisjon: Nøkkeord eller stikkord   | [0..*]                                |                            | string                     |
-   |                                                            | som beskriver innholdet i enheten.    |                                       |                            |                            |
-   |                                                            | Kilde: Registreres vanligvis ved      |                                       |                            |                            |
-   |                                                            | oppslag fra liste (f.eks. en          |                                       |                            |                            |
-   |                                                            | tesaurus). Kan også registreres       |                                       |                            |                            |
-   |                                                            | automatisk på grunnlag av             |                                       |                            |                            |
-   |                                                            | dokumentinnhold eller integrering med |                                       |                            |                            |
-   |                                                            | fagsystem. Kommentarer: Noekkelord    |                                       |                            |                            |
-   |                                                            | kan brukes for å forbedre mulighetene |                                       |                            |                            |
-   |                                                            | for søking og gjenfinning. Noekkelord |                                       |                            |                            |
-   |                                                            | skal ikke erstatte klassifikasjon.    |                                       |                            |                            |
-   |                                                            | M022                                  |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | avsluttetDato                                              | Definisjon: Dato og klokkeslett når   | [0..1]                                |                            | datetime                   |
-   |                                                            | arkivenheten ble avsluttet/lukket .   |                                       |                            |                            |
-   |                                                            | Kilde: Registreres automatisk av      |                                       |                            |                            |
-   |                                                            | systemet når enheten avsluttes.       |                                       |                            |                            |
-   |                                                            | Kommentarer: (ingen). M602            |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | avsluttetAv                                                | Definisjon: Navn på person som        | [0..1]                                |                            | string                     |
-   |                                                            | avsluttet/lukket arkivenheten. Kilde: |                                       |                            |                            |
-   |                                                            | Registreres automatisk av systemet    |                                       |                            |                            |
-   |                                                            | ved opprettelse av enheten.           |                                       |                            |                            |
-   |                                                            | Kommentarer: (ingen). M603            |                                       |                            |                            |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | referanseAvsluttetAv                                       |                                       | [0..1]                                |                            | SystemID                   |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | skjerming                                                  |                                       | [0..1]                                |                            | Skjerming                  |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | kassasjon                                                  |                                       | [0..1]                                |                            | Kassasjon                  |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
-   | gradering                                                  |                                       | [0..1]                                |                            | Gradering                  |
-   +------------------------------------------------------------+---------------------------------------+---------------------------------------+----------------------------+----------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - klasseID
+   - Definisjon: Entydig identifikasjon av klassen innenfor
+     klassifikasjonssystemet. Andre klassifikasjonssystemer innenfor
+     samme arkivsystem kan imidlertid inneholde en eller flere av de
+     samme identifikasjonene. Identifikasjonen kan være rent
+     nummerisk, men kan også være alfanumerisk og ha et logisk
+     meningsinnhold. Merk at klasseID er identisk med begrepene
+     ordningsverdi og arkivkode i Noark 4. Kilde: Alle klasser i et
+     klassifikasjonssystem opprettes vanligvis når et arkivsystem tas
+     i bruk. Men enkelte løsninger kan tillate at det opprettes nye
+     klasser ved behov (mest aktuelt ved objektbasert
+     klassifikasjon). Kommentarer: Eksempel på klasseID og tittel i
+     tre nivåer fra statens arkivnøkkel (emne-/funksjonsbasert
+     klassifikasjonssystem): 2 Stillinger og personell, 2.3 Lønn og
+     pensjon, 2.3.6 Arbeidsgiveravgift. Ved personbasert
+     klassifikasjonssystem, kan f.eks. fødselsnummer og navn utgjøre
+     klasseID og tittel. M002
+   - [1..1]
+   -
+   - string
+ * - tittel
+   - Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres
+     manuelt eller hentes automatisk fra innholdet i
+     arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha
+     samme tittel som klassen. Kan også hentes automatisk fra et
+     fagsystem.  Kommentarer: For saksmappe og journalpost vil dette
+     tilsvare "Sakstittel" og "Dokumentbeskrivelse". Disse navnene kan
+     beholdes i grensesnittet. M020
+   - [1..1]
+   -
+   - string
+ * - beskrivelse
+   - Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde:
+     Registreres manuelt. Kommentarer: Tilsvarende attributt finnes
+     ikke i Noark 4 (men noen tabeller hadde egne attributter for
+     merknad som kunne brukes som et beskrivelsesfelt). M021
+   - [0..1]
+   -
+   - string
+ * - noekkelord
+   - Definisjon: Nøkkeord eller stikkord som beskriver innholdet i
+     enheten.  Kilde: Registreres vanligvis ved oppslag fra liste
+     (f.eks. en tesaurus). Kan også registreres automatisk på grunnlag
+     av dokumentinnhold eller integrering med fagsystem. Kommentarer:
+     Noekkelord kan brukes for å forbedre mulighetene for søking og
+     gjenfinning. Noekkelord skal ikke erstatte klassifikasjon.  M022
+   - [0..\*]
+   -
+   - string
+ * - avsluttetDato
+   - Definisjon: Dato og klokkeslett når arkivenheten ble
+     avsluttet/lukket.  Kilde: Registreres automatisk av systemet når
+     enheten avsluttes.  Kommentarer: (ingen). M602
+   - [0..1]
+   -
+   - datetime
+ * - avsluttetAv
+   - Definisjon: Navn på person som avsluttet/lukket
+     arkivenheten. Kilde: Registreres automatisk av systemet ved
+     opprettelse av enheten.  Kommentarer: (ingen). M603
+   - [0..1]
+   -
+   - string
+ * - referanseAvsluttetAv
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - skjerming
+   -
+   - [0..1]
+   -
+   - Skjerming
+ * - kassasjon
+   -
+   - [0..1]
+   -
+   - Kassasjon
+ * - gradering
+   -
+   - [0..1]
+   -
+   - Gradering
 
-.. table:: Restriksjoner
+.. list-table:: Restriksjoner
+   :header-rows: 1
 
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | **Navn**                                                                                           | **Merknad** |
-   +====================================================================================================+=============+
-   | Ny - Kan ha enten underklasse eller mappe eller registrering                                       |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | M002 klasseID: Skal ikke kunne endres                                                              |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | M602 avsluttetDato: Skal ikke kunne endres                                                         |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | M602 avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.                                   |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
+ * - **Navn**
+   - **Merknad**
+ * - Ny - Kan ha enten underklasse eller mappe eller registrering
+   -
+ * - M002 klasseID: Skal ikke kunne endres
+   -
+ * - M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert
+   -
+ * - M602 avsluttetDato: Skal ikke kunne endres
+   -
+ * - M602 avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.
+   -
 
 Klassifikasjonssystem
 ^^^^^^^^^^^^^^^^^^^^^
@@ -2460,91 +2468,107 @@ gjentar seg, tilhører den en prosess. Alle arkivdokumenter som
 produseres når en aktivitet utføres, skal normalt tilhøre samme
 (saks)mappe.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :widths: 4 3 3 1
+   :header-rows: 1
 
-   +-------------------------------------------+------------------------------------------------------------+--------------------------------------------------+-------------+
-   | **Relasjon**                              | **Kilde**                                                  | **Mål**                                          | **Merknad** |
-   +===========================================+============================================================+==================================================+=============+
-   | **Aggregation** (Bi-Directional)          | klassifikasjonssystem 0..1 Klassifikasjonssystem           | arkivdel 1..\* Arkivdel                          |             |
-   +-------------------------------------------+------------------------------------------------------------+--------------------------------------------------+-------------+
-   | **Generalization** (Source → Destination) | Klassifikasjonssystem                                      | Arkivenhet                                       |             |
-   +-------------------------------------------+------------------------------------------------------------+--------------------------------------------------+-------------+
-   | **Aggregation** (Destination → Source)    | sekundaerklassifikasjonssystem 0..\* Klassifikasjonssystem | Arkivdel                                         |             |
-   +-------------------------------------------+------------------------------------------------------------+--------------------------------------------------+-------------+
-   | **Aggregation** (Bi-Directional)          | klasse 0..\* Klasse                                        | klassifikasjonssystem 0..1 Klassifikasjonssystem |             |
-   +-------------------------------------------+------------------------------------------------------------+--------------------------------------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Aggregation** (Bi-Directional)
+   - klassifikasjonssystem 0..1 Klassifikasjonssystem
+   - arkivdel 1..\* Arkivdel
+   -
+ * - **Generalization** (Source → Destination)
+   - Klassifikasjonssystem
+   - Arkivenhet
+   -
+ * - **Aggregation** (Destination → Source)
+   - sekundaerklassifikasjonssystem 0..\* Klassifikasjonssystem
+   - Arkivdel
+   -
+ * - **Aggregation** (Bi-Directional)
+   - klasse 0..\* Klasse
+   - klassifikasjonssystem 0..1 Klassifikasjonssystem
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +-------------------------------------------------------------------------------------------+
-   | **Verdi**                                                                                 |
-   +===========================================================================================+
-   | self                                                                                      |
-   +-------------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivdel/                          |
-   +-------------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/                            |
-   +-------------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivdel/                       |
-   +-------------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-klasse/                         |
-   +-------------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-sekundaerklassifikasjonssystem/ |
-   +-------------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/sekundaerklassifikasjonssystem/    |
-   +-------------------------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/klassifikasjonstype/                    |
-   +-------------------------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivdel/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivdel/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-klasse/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-sekundaerklassifikasjonssystem/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/sekundaerklassifikasjonssystem/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/klassifikasjonstype/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | klassifikasjonstype             | Definisjon: Type klassifikasjonssystem .     | [0..1]                                       |                                 | Klassifikasjonstype             |
-   |                                 | Kilde: Registreres manuelt ved opprettelse   |                                              |                                 |                                 |
-   |                                 | av klassifikasjonssystem Kommentarer:        |                                              |                                 |                                 |
-   |                                 | (ingen) M086                                 |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | tittel                          | Definisjon: Tittel eller navn på             | [1..1]                                       |                                 | string                          |
-   |                                 | arkivenheten. Kilde: Registreres manuelt     |                                              |                                 |                                 |
-   |                                 | eller hentes automatisk fra innholdet i      |                                              |                                 |                                 |
-   |                                 | arkivdokumentet. Ja fra klassetittel dersom  |                                              |                                 |                                 |
-   |                                 | alle mapper skal ha samme tittel som         |                                              |                                 |                                 |
-   |                                 | klassen. Kan også hentes automatisk fra et   |                                              |                                 |                                 |
-   |                                 | fagsystem. Kommentarer: For saksmappe og     |                                              |                                 |                                 |
-   |                                 | journalpost vil dette tilsvare "Sakstittel"  |                                              |                                 |                                 |
-   |                                 | og "Dokumentbeskrivelse". Disse navnene kan  |                                              |                                 |                                 |
-   |                                 | beholdes i grensesnittet. M020               |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | beskrivelse                     | Definisjon: Tekstlig beskrivelse av          | [0..1]                                       |                                 | string                          |
-   |                                 | arkivenheten. Kilde: Registreres manuelt.    |                                              |                                 |                                 |
-   |                                 | Kommentarer: Tilsvarende attributt finnes    |                                              |                                 |                                 |
-   |                                 | ikke i Noark 4 (men noen tabeller hadde egne |                                              |                                 |                                 |
-   |                                 | attributter for merknad som kunne brukes som |                                              |                                 |                                 |
-   |                                 | et beskrivelsesfelt). M021                   |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | avsluttetDato                   | Definisjon: Dato og klokkeslett når          | [0..1]                                       |                                 | datetime                        |
-   |                                 | arkivenheten ble avsluttet/lukket . Kilde:   |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet når       |                                              |                                 |                                 |
-   |                                 | enheten avsluttes. Kommentarer: (ingen) M602 |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | avsluttetAv                     | Definisjon: Navn på person som               | [0..1]                                       |                                 | string                          |
-   |                                 | avsluttet/lukket arkivenheten. Kilde:        |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet ved       |                                              |                                 |                                 |
-   |                                 | opprettelse av enheten. Kommentarer:         |                                              |                                 |                                 |
-   |                                 | (ingen). M603                                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseAvsluttetAv            |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - klassifikasjonstype
+   - Definisjon: Type klassifikasjonssystem .  Kilde: Registreres
+     manuelt ved opprettelse av klassifikasjonssystem Kommentarer:
+     (ingen) M086
+   - [0..1]
+   -
+   - Klassifikasjonstype
+ * - tittel
+   - Definisjon: Tittel eller navn på arkivenheten. Kilde: Registreres
+     manuelt eller hentes automatisk fra innholdet i
+     arkivdokumentet. Ja fra klassetittel dersom alle mapper skal ha
+     samme tittel som klassen. Kan også hentes automatisk fra et
+     fagsystem. Kommentarer: For saksmappe og journalpost vil dette
+     tilsvare "Sakstittel" og "Dokumentbeskrivelse". Disse navnene kan
+     beholdes i grensesnittet. M020
+   - [1..1]
+   -
+   - string
+ * - beskrivelse
+   - Definisjon: Tekstlig beskrivelse av arkivenheten. Kilde:
+     Registreres manuelt.  Kommentarer: Tilsvarende attributt finnes
+     ikke i Noark 4 (men noen tabeller hadde egne attributter for
+     merknad som kunne brukes som et beskrivelsesfelt). M021
+   - [0..1]
+   -
+   - string
+ * - avsluttetDato
+   - Definisjon: Dato og klokkeslett når arkivenheten ble
+     avsluttet/lukket . Kilde: Registreres automatisk av systemet når
+     enheten avsluttes. Kommentarer: (ingen) M602
+   - [0..1]
+   -
+   - datetime
+ * - avsluttetAv
+   - Definisjon: Navn på person som avsluttet/lukket
+     arkivenheten. Kilde: Registreres automatisk av systemet ved
+     opprettelse av enheten. Kommentarer: (ingen). M603
+   - [0..1]
+   -
+   - string
+ * - referanseAvsluttetAv
+   -
+   - [0..1]
+   -
+   - SystemID
 
-.. table:: Restriksjoner
+.. list-table:: Restriksjoner
+   :header-rows: 1
 
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | **Navn**                                                                                           | **Merknad** |
-   +====================================================================================================+=============+
-   | M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
+ * - **Navn**
+   - **Merknad**
+ * - M020 tittel: Skal normalt ikke kunne endres etter at enheten er
+     lukket, eller dokumentene arkivert
+   -
 
 Kontaktinformasjon
 ^^^^^^^^^^^^^^^^^^
@@ -2553,29 +2577,38 @@ Kontaktinformasjon
 
 *Arver:*
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +--------------------------------------------------------------------------+
-   | **Verdi**                                                                |
-   +==========================================================================+
-   | self                                                                     |
-   +--------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/kontaktinformasjon/    |
-   +--------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-kontaktinformasjon/ |
-   +--------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/kontaktinformasjon/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-kontaktinformasjon/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
 
-   +--------------+-------------+------------+----------+----------+
-   | **Navn**     | **Merknad** | **Forek.** | **Kode** | **Type** |
-   +==============+=============+============+==========+==========+
-   | epostadresse |             | [0..1]     |          | string   |
-   +--------------+-------------+------------+----------+----------+
-   | mobiltelefon |             | [0..1]     |          | string   |
-   +--------------+-------------+------------+----------+----------+
-   | telefon      |             | [0..1]     |          | string   |
-   +--------------+-------------+------------+----------+----------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - epostadresse
+   -
+   - [0..1]
+   -
+   - string
+ * - mobiltelefon
+   -
+   - [0..1]
+   -
+   - string
+ * - telefon
+   -
+   - [0..1]
+   -
+   - string
 
 Konvertering
 ^^^^^^^^^^^^
