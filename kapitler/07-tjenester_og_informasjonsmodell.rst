@@ -7133,13 +7133,12 @@ liste over relasjonsnøkler til de ulike entitetene som er
 tilgjengelig. Følgende relasjonsnøkler skal listes opp fra en
 implementasjon som støtter LoggingOgSporing-pakken:
 
-+--------------------------------------------------------------------------+
-| **Relasjonsnøkkel**                                                      |
-+==========================================================================+
-| https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/  |
-+--------------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/hendelseslogg/ |
-+--------------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - **Relasjonsnøkkel**
+ * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/
+ * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/hendelseslogg/
 
 Skjema for logging og sporing
 
