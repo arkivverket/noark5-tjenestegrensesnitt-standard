@@ -6101,7 +6101,7 @@ brukes på et dokument som er under produksjon.
    - string
 
 
- .. list-table:: Restriksjoner
+.. list-table:: Restriksjoner
    :header-rows: 1
 
  * - **Navn**
@@ -6112,10 +6112,11 @@ brukes på et dokument som er under produksjon.
    - Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
  * - M661 flytMottattDato
    - Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
- * - M662 flytSendtDato 
+ * - M662 flytSendtDato
    - Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
- * - M665 flytFra 
+ * - M665 flytFra
    - Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
+
 
 Arkivnotat
 ^^^^^^^^^^
@@ -6152,7 +6153,7 @@ Arkivnotat
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/dokumentflyt/
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-dokumentflyt/
 
-.. list-table::
+.. list-table:: Restriksjoner
    :header-rows: 1
 
  * - **Navn**
@@ -6470,8 +6471,6 @@ i MoReq2 som heter Record.)
    -
    - ElektroniskSignatur
 
-
-
 .. list-table:: Restriksjoner
    :header-rows: 1
 
@@ -6510,8 +6509,6 @@ i MoReq2 som heter Record.)
    -
  * - M309 utlaantTil: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller at dokumentene i en journalpost ble arkivert.
    -
-
-
 
 Presedens
 ^^^^^^^^^
@@ -6809,8 +6806,6 @@ bruke en saksmappe.
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/saksstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-presedens/
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-journalpost/
-
-
 
 .. list-table:: Attributter
    :header-rows: 1
@@ -7493,7 +7488,6 @@ Endringslogg
  * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/
  * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-endringslogg/
 
-.. table:: 
 .. list-table:: Attributter
    :header-rows: 1
 
