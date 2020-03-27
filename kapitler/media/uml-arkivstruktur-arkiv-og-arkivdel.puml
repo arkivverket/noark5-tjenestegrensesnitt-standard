@@ -9,10 +9,10 @@ class Arkivstruktur.Arkivskaper <Arkivenhet> {
 
   -- Arkivenhet --
   +systemID : SystemID [0..1]
-  +oppdatertDato : datetime [0..1]
+  +endretDato : datetime [0..1]
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
-  +oppdatertAv : string [0..1]
+  +endretAv : string [0..1]
   +referanseOppdatertAv : SystemID [0..1]
   +referanseOpprettetAv : SystemID [0..1]
 }
@@ -28,10 +28,10 @@ class Arkivstruktur.Arkiv <Arkivenhet> {
 
   -- Arkivenhet --
   +systemID : SystemID [0..1]
-  +oppdatertDato : datetime [0..1]
+  +endretDato : datetime [0..1]
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
-  +oppdatertAv : string [0..1]
+  +endretAv : string [0..1]
   +referanseOppdatertAv : SystemID [0..1]
   +referanseOpprettetAv : SystemID [0..1]
 }
@@ -56,10 +56,10 @@ class Arkivstruktur.Arkivdel <Arkivenhet> {
 
   -- Arkivenhet --
   +systemID : SystemID [0..1]
-  +oppdatertDato : datetime [0..1]
+  +endretDato : datetime [0..1]
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
-  +oppdatertAv : string [0..1]
+  +endretAv : string [0..1]
   +referanseOppdatertAv : SystemID [0..1]
   +referanseOpprettetAv : SystemID [0..1]
 }
