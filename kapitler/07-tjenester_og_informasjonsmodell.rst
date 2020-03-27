@@ -6965,112 +6965,136 @@ arkivkjernen. Fungerer som brukerregister til valg av saksbehandler i
 kjernen og bevarer alle brukere for ettertiden. Opprettes nye av kjernen
 når pålogget bruker ikke finnes fra før.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :header-rows: 1
 
-   +----------------------------------+---------------------+---------------------------------------------+-------------+
-   | **Relasjon**                     | **Kilde**           | **Mål**                                     | **Merknad** |
-   +==================================+=====================+=============================================+=============+
-   | **Association** (Bi-Directional) | bruker 0..\* Bruker | administrativenhet 0..\* AdministrativEnhet |             |
-   +----------------------------------+---------------------+---------------------------------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Association** (Bi-Directional)
+   - bruker 0..\* Bruker
+   - administrativenhet 0..\* AdministrativEnhet
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +-----------------------------------------------------------------------+
-   | **Verdi**                                                             |
-   +=======================================================================+
-   | self                                                                  |
-   +-----------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/admin/administrativenhet/    |
-   +-----------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/admin/bruker/                |
-   +-----------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/admin/ny-administrativenhet/ |
-   +-----------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/admin/ny-bruker/             |
-   +-----------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/administrativenhet/
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/bruker/
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/ny-administrativenhet/
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/ny-bruker/
 
-.. table:: Attributter
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | systemID                        | Definisjon: Entydig identifikasjon av        | [0..1]                                       |                                 | SystemID                        |
-   |                                 | arkivenheten innenfor det arkivskapende      |                                              |                                 |                                 |
-   |                                 | organet. Dersom organet har flere            |                                              |                                 |                                 |
-   |                                 | arkivsystemer, skal altså systemID være      |                                              |                                 |                                 |
-   |                                 | gjennomgående entydig.                       |                                              |                                 |                                 |
-   |                                 | Systemidentifikasjonen vil som oftest være   |                                              |                                 |                                 |
-   |                                 | en numerisk kode uten noe logisk             |                                              |                                 |                                 |
-   |                                 | meningsinnhold. Identifikasjonen trenger     |                                              |                                 |                                 |
-   |                                 | ikke å være synlig for brukerne. Kilde:      |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet           |                                              |                                 |                                 |
-   |                                 | Kommentarer: Alle referanser fra en          |                                              |                                 |                                 |
-   |                                 | arkivenhet til en annen skal peke til        |                                              |                                 |                                 |
-   |                                 | arkivenhetens systemidentifikasjon. Dette    |                                              |                                 |                                 |
-   |                                 | gjelder også referanser fra en arkivdel til  |                                              |                                 |                                 |
-   |                                 | en annen, f.eks. mellom to arkivperioder som |                                              |                                 |                                 |
-   |                                 | avleveres på forskjellig tidspunkt. I et     |                                              |                                 |                                 |
-   |                                 | arkivuttrekk skal systemID være entydig      |                                              |                                 |                                 |
-   |                                 | (unik). Dokumentobjekt har ingen             |                                              |                                 |                                 |
-   |                                 | systemidentifikasjon fordi enheten kan være  |                                              |                                 |                                 |
-   |                                 | duplisert i et arkivuttrekk dersom samme     |                                              |                                 |                                 |
-   |                                 | dokumentfil er knyttet til flere             |                                              |                                 |                                 |
-   |                                 | forskjellige registreringer. M001 systemID   |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | brukerNavn                      | Definisjon: Navn på bruker av en Noark       | [1..1]                                       |                                 | string                          |
-   |                                 | 5-løsning . Kilde: Registreres manuelt av    |                                              |                                 |                                 |
-   |                                 | administrator. Kommentar: Navn på bruker vil |                                              |                                 |                                 |
-   |                                 | registreres mange steder i arkivstrukturen,  |                                              |                                 |                                 |
-   |                                 | f.eks. som saksansvarlig eller               |                                              |                                 |                                 |
-   |                                 | saksbehandler, og ved forskjellige typer     |                                              |                                 |                                 |
-   |                                 | logging. Brukeradministrasjon inngår ikke i  |                                              |                                 |                                 |
-   |                                 | arkivstrukturen. M580 brukerNavn             |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | opprettetDato                   | Definisjon: Dato og klokkeslett når          | [1..1]                                       |                                 | datetime                        |
-   |                                 | arkivenheten ble opprettet/registrert.       |                                              |                                 |                                 |
-   |                                 | Kilde: Registreres automatisk av systemet    |                                              |                                 |                                 |
-   |                                 | ved opprettelse av enheten. Kommentarer:     |                                              |                                 |                                 |
-   |                                 | (ingen). M600 opprettetDato                  |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | opprettetAv                     | Definisjon: Navn på person som               | [0..1]                                       |                                 | string                          |
-   |                                 | opprettet/registrerte arkivenheten. Kilde:   |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet ved       |                                              |                                 |                                 |
-   |                                 | opprettelse av enheten. Kommentarer:         |                                              |                                 |                                 |
-   |                                 | (ingen). M601 opprettetAv                    |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | avsluttetDato                   | Definisjon: Dato og klokkeslett når          | [0..1]                                       |                                 | datetime                        |
-   |                                 | arkivenheten ble avsluttet/lukket . Kilde:   |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet når       |                                              |                                 |                                 |
-   |                                 | enheten avsluttes. Kommentarer: (ingen).     |                                              |                                 |                                 |
-   |                                 | M602 avsluttetDato                           |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | virksomhetsspesifikkeMetadata   | Definisjon: Et overordnet metadataelement    | [0..1]                                       |                                 | any                             |
-   |                                 | som kan inneholde egendefinerte metadata.    |                                              |                                 |                                 |
-   |                                 | Disse metadataene må da være spesifisert i   |                                              |                                 |                                 |
-   |                                 | et eller flere XML-skjema. Kilde: (ingen)    |                                              |                                 |                                 |
-   |                                 | Kommentar: (ingen).M711                      |                                              |                                 |                                 |
-   |                                 | virksomhetsspesifikkeMetadata                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | kortnavn                        |                                              | [0..1]                                       |                                 | string                          |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
+
+.. list-table:: Attributter
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   - Definisjon: Entydig identifikasjon av
+     arkivenheten innenfor det arkivskapende
+     organet. Dersom organet har flere
+     arkivsystemer, skal altså systemID være
+     gjennomgående entydig.
+     Systemidentifikasjonen vil som oftest være
+     en numerisk kode uten noe logisk
+     meningsinnhold. Identifikasjonen trenger
+     ikke å være synlig for brukerne. Kilde:
+     Registreres automatisk av systemet
+     Kommentarer: Alle referanser fra en
+     arkivenhet til en annen skal peke til
+     arkivenhetens systemidentifikasjon. Dette
+     gjelder også referanser fra en arkivdel til
+     en annen, f.eks. mellom to arkivperioder som
+     avleveres på forskjellig tidspunkt. I et
+     arkivuttrekk skal systemID være entydig
+     (unik). Dokumentobjekt har ingen
+     systemidentifikasjon fordi enheten kan være
+     duplisert i et arkivuttrekk dersom samme
+     dokumentfil er knyttet til flere
+     forskjellige registreringer. M001 systemID
+   - [0..1]
+   -
+   - SystemID
+ * - brukerNavn
+   - Definisjon: Navn på bruker av en Noark
+     5-løsning . Kilde: Registreres manuelt av
+     administrator. Kommentar: Navn på bruker vil
+     registreres mange steder i arkivstrukturen,
+     f.eks. som saksansvarlig eller
+     saksbehandler, og ved forskjellige typer
+     logging. Brukeradministrasjon inngår ikke i
+     arkivstrukturen. M580 brukerNavn
+   - [1..1]
+   -
+   - string
+ * - opprettetDato
+   - Definisjon: Dato og klokkeslett når
+     arkivenheten ble opprettet/registrert.
+     Kilde: Registreres automatisk av systemet
+     ved opprettelse av enheten. Kommentarer:
+     (ingen). M600 opprettetDato
+   - [1..1]
+   -
+   - datetime
+ * - opprettetAv
+   - Definisjon: Navn på person som
+     opprettet/registrerte arkivenheten. Kilde:
+     Registreres automatisk av systemet ved
+     opprettelse av enheten. Kommentarer:
+     (ingen). M601 opprettetAv
+   - [0..1]
+   -
+   - string
+ * - avsluttetDato
+   - Definisjon: Dato og klokkeslett når
+     arkivenheten ble avsluttet/lukket . Kilde:
+     Registreres automatisk av systemet når
+     enheten avsluttes. Kommentarer: (ingen).
+     M602 avsluttetDato
+   - [0..1]
+   -
+   - datetime
+ * - virksomhetsspesifikkeMetadata
+   - Definisjon: Et overordnet metadataelement
+     som kan inneholde egendefinerte metadata.
+     Disse metadataene må da være spesifisert i
+     et eller flere XML-skjema. Kilde: (ingen)
+     Kommentar: (ingen).M711
+     virksomhetsspesifikkeMetadata
+   - [0..1]
+   -
+   - any
+ * - kortnavn
+   -
+   - [0..1]
+   -
+   - string
 
 .. list-table:: Restriksjoner
    :header-rows: 1
 
  * - **Navn**
    - **Merknad**
- * - M001 systemID: Skal ikke kunne endres
-   -
- * - M600 opprettetDato: Skal ikke kunne endres
-   -
- * - M601 opprettetAv: Skal ikke kunne endres
-   -
- * - M602a avsluttetDato: Skal ikke kunne endres
-   -
- * - M602b avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.
-   -
- * - Ny - navn skal ikke endres. Hvis person får nytt navn så opprettes ny bruker med ny systemID
-   -
+ * - M001 systemID
+   - Skal ikke kunne endres
+ * - M600 opprettetDato
+   - Skal ikke kunne endres
+ * - M601 opprettetAv
+   - Skal ikke kunne endres
+ * - M602a avsluttetDato
+   - Skal ikke kunne endres
+ * - M602b avsluttetDato 
+   - Obligatorisk dersom arkivdelen er avsluttet.
+ * - Ny - navn
+   - Skal ikke endres. Hvis person får nytt navn så opprettes ny bruker med ny systemID
 
 Tilgang
 ^^^^^^^
