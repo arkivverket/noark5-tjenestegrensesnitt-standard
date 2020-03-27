@@ -6157,218 +6157,279 @@ betegnelse på arkivenheter som dokumenter transaksjoner. (Registrering
 er dessuten en dekkende norsk oversettelse av det tilsvarende begrepet
 i MoReq2 som heter Record.)
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :header-rows: 1
 
-   +-------------------------------------------+-------------------------------+---------------------------------+-------------+
-   | **Relasjon**                              | **Kilde**                     | **Mål**                         | **Merknad** |
-   +===========================================+===============================+=================================+=============+
-   | **Association** (Bi-Directional)          | journalpost 0..\* Journalpost | presedens 0..\* Presedens       |             |
-   +-------------------------------------------+-------------------------------+---------------------------------+-------------+
-   | **Association** (Source → Destination)    | Journalpost                   | dokumentflyt 0..\* Dokumentflyt |             |
-   +-------------------------------------------+-------------------------------+---------------------------------+-------------+
-   | **Association** (Source → Destination)    | Journalpost                   | avskrivning 0..\* Avskrivning   |             |
-   +-------------------------------------------+-------------------------------+---------------------------------+-------------+
-   | **Generalization** (Source → Destination) | Journalpost                   | Registrering                    |             |
-   +-------------------------------------------+-------------------------------+---------------------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Association** (Bi-Directional)
+   - journalpost 0..\* Journalpost
+   - presedens 0..\* Presedens
+   -
+ * - **Association** (Source → Destination)
+   - Journalpost
+   - dokumentflyt 0..\* Dokumentflyt
+   -
+ * - **Association** (Source → Destination)
+   - Journalpost
+   - avskrivning 0..\* Avskrivning
+   -
+ * - **Generalization** (Source → Destination)
+   - Journalpost
+   - Registrering
+   -
 
-.. table:: Relasjonsnøkler
 
-   +--------------------------------------------------------------------+
-   | **Verdi**                                                          |
-   +====================================================================+
-   | self                                                               |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/journalposttype/ |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/journalstatus/   |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/avskrivning/     |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/dokumentflyt/    |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/journalpost/     |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-avskrivning/  |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-dokumentflyt/ |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-presedens/    |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/presedens/       |
-   +--------------------------------------------------------------------+
 
-.. table:: Attributter
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | journalaar                      | Definisjon: Viser året journalposten ble     | [0..1]                                       |                                 | integer                         |
-   |                                 | opprettet . Kilde: Registreres automatisk    |                                              |                                 |                                 |
-   |                                 | når journalposten opprettes. Kommentar:      |                                              |                                 |                                 |
-   |                                 | (ingen). M013 journalaar                     |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | journalsekvensnummer            | Definisjon: Viser rekkefølgen når            | [0..1]                                       |                                 | integer                         |
-   |                                 | journalposten ble opprettet under året .     |                                              |                                 |                                 |
-   |                                 | Kilde: Registreres automatisk når            |                                              |                                 |                                 |
-   |                                 | journalposten opprettes. Kommentar:          |                                              |                                 |                                 |
-   |                                 | Kombinasjonen journalaar og sekvensnummer er |                                              |                                 |                                 |
-   |                                 | ikke obligatorisk, men anbefales brukt i     |                                              |                                 |                                 |
-   |                                 | sakarkiver. Noen rapporter er sortert på     |                                              |                                 |                                 |
-   |                                 | denne kombinasjonen, f.eks. løpende- og      |                                              |                                 |                                 |
-   |                                 | offentlig journal. Dersom journalaar og      |                                              |                                 |                                 |
-   |                                 | sekvensnummer ikke brukes, må kronologiske   |                                              |                                 |                                 |
-   |                                 | utskrifter sorteres etter andre kriterier    |                                              |                                 |                                 |
-   |                                 | (f.eks. journalpostens opprettetDato). I     |                                              |                                 |                                 |
-   |                                 | Noark 4 skal sekvensnummeret vises før       |                                              |                                 |                                 |
-   |                                 | journalaar (f.eks. 25367/2011) for at det    |                                              |                                 |                                 |
-   |                                 | ikke skal blandes sammen med saksnummeret    |                                              |                                 |                                 |
-   |                                 | som har året først. M014                     |                                              |                                 |                                 |
-   |                                 | journalsekvensnummer                         |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | journalpostnummer               | Definisjon: Inngår i M004 journalpostID.     | [1..1]                                       |                                 | integer                         |
-   |                                 | Viser rekkefølgen journalpostene ble         |                                              |                                 |                                 |
-   |                                 | opprettet innenfor saksmappen, f.eks.        |                                              |                                 |                                 |
-   |                                 | 2011/3869-8 (dokument nr. 8 i sak            |                                              |                                 |                                 |
-   |                                 | 2011/3869). Kilde: Registreres automatisk    |                                              |                                 |                                 |
-   |                                 | når journalposten opprettes. Kommentar: Er   |                                              |                                 |                                 |
-   |                                 | ikke obligatorisk, men anbefales brukt i     |                                              |                                 |                                 |
-   |                                 | sakarkiver. Dersom journalpostnummer ikke    |                                              |                                 |                                 |
-   |                                 | brukes, må andre kriterier kunne             |                                              |                                 |                                 |
-   |                                 | identifisere journalpostenes rekkefølge      |                                              |                                 |                                 |
-   |                                 | innenfor saksmappen. M015 journalpostnummer  |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | journalposttype                 | Definisjon: Navn på type journalpost .       | [1..1]                                       |                                 | Journalposttype                 |
-   |                                 | Kilde: Registreres automatisk av systemet    |                                              |                                 |                                 |
-   |                                 | eller manuelt Kommentar: Tilsvarer "Noark    |                                              |                                 |                                 |
-   |                                 | dokumenttype" i Noark 4. M082                |                                              |                                 |                                 |
-   |                                 | journalposttype                              |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | journalstatus                   | Definisjon: Status til journalposten, dvs.   | [1..1]                                       |                                 | Journalstatus                   |
-   |                                 | om dokumentet er registrert, under           |                                              |                                 |                                 |
-   |                                 | behandling eller endelig arkivert. Kilde:    |                                              |                                 |                                 |
-   |                                 | Registreres automatisk gjennom forskjellig   |                                              |                                 |                                 |
-   |                                 | saksbehandlings-funksjonalitet, eller        |                                              |                                 |                                 |
-   |                                 | overstyres manuelt. Kommentar: Journalposter |                                              |                                 |                                 |
-   |                                 | som avleveres skal ha status "Arkivert"      |                                              |                                 |                                 |
-   |                                 | eller "Utgår". M053 journalstatus            |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | journaldato                     | Definisjon: Datoen journalposten er          | [1..1]                                       |                                 | date                            |
-   |                                 | opprettet/arkivert . Kilde: Settes           |                                              |                                 |                                 |
-   |                                 | automatisk til samme dato som M600           |                                              |                                 |                                 |
-   |                                 | opprettetDato. Oppdateres til M604           |                                              |                                 |                                 |
-   |                                 | arkivertDato når dokumentene som tilhørere   |                                              |                                 |                                 |
-   |                                 | journalposten arkiveres. Kommentar: (ingen). |                                              |                                 |                                 |
-   |                                 | M101 journaldato                             |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | dokumentetsDato                 | Definisjon: Dato som er påført selve         | [0..1]                                       |                                 | date                            |
-   |                                 | dokumentet . Kilde: Datoen hentes automatisk |                                              |                                 |                                 |
-   |                                 | fra dokumentet, eller registreres manuelt.   |                                              |                                 |                                 |
-   |                                 | Kommentar: Kan brukes både for inngående,    |                                              |                                 |                                 |
-   |                                 | utgående og organinterne dokumenter. M103    |                                              |                                 |                                 |
-   |                                 | dokumentetsDato                              |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | mottattDato                     | Definisjon: Dato et eksternt dokument ble    | [0..1]                                       |                                 | datetime                        |
-   |                                 | mottatt . Kilde: Registreres manuelt eller   |                                              |                                 |                                 |
-   |                                 | automatisk av systemet ved elektronisk       |                                              |                                 |                                 |
-   |                                 | kommunikasjon. Kommentar: Merk at            |                                              |                                 |                                 |
-   |                                 | mottattDato ikke behøver å være identisk med |                                              |                                 |                                 |
-   |                                 | M600 opprettetDato. M104 mottattDato         |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | sendtDato                       | Definisjon: Dato et internt produsert        | [0..1]                                       |                                 | date                            |
-   |                                 | dokument ble sendt/ekspedert . Kilde:        |                                              |                                 |                                 |
-   |                                 | Registreres manuelt eller automatisk av      |                                              |                                 |                                 |
-   |                                 | systemet ved elektronisk kommunikasjon.      |                                              |                                 |                                 |
-   |                                 | Kommentar: (ingen). M105 sendtDato           |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | forfallsdato                    | Definisjon: Dato som angir fristen for når   | [0..1]                                       |                                 | date                            |
-   |                                 | et inngående dokument må være besvart .      |                                              |                                 |                                 |
-   |                                 | Kilde: Registreres manuelt. Kommentar:       |                                              |                                 |                                 |
-   |                                 | Forfallsdato kan være angitt som en          |                                              |                                 |                                 |
-   |                                 | betingelse i det inngående dokumentet. M109  |                                              |                                 |                                 |
-   |                                 | forfallsdato                                 |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | offentlighetsvurdertDato        | Definisjon: Datoen da offentlighetsvurdering | [0..1]                                       |                                 | date                            |
-   |                                 | ble foretatt . Kilde: Registreres automatisk |                                              |                                 |                                 |
-   |                                 | knyttet til funksjonalitet for skjerming.    |                                              |                                 |                                 |
-   |                                 | Kommentar: Dato for offentlighetsvurdering   |                                              |                                 |                                 |
-   |                                 | kan brukes dersom inngående dokumenter       |                                              |                                 |                                 |
-   |                                 | automatisk blir midlertidig skjermet ved     |                                              |                                 |                                 |
-   |                                 | mottak, og offentlighetsvurderingen skjer på |                                              |                                 |                                 |
-   |                                 | et litt senere tidspunkt. M110               |                                              |                                 |                                 |
-   |                                 | offentlighetsvurdertDato                     |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | antallVedlegg                   | Definisjon: Antall fysiske vedlegg til et    | [0..1]                                       |                                 | integer                         |
-   |                                 | fysisk hoveddokument . Kilde: Registreres    |                                              |                                 |                                 |
-   |                                 | manuelt. Kommentar: (ingen). M304            |                                              |                                 |                                 |
-   |                                 | antallVedlegg                                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | utlaantDato                     | Definisjon: Dato når en fysisk saksmappe     | [0..1]                                       |                                 | date                            |
-   |                                 | eller journalpost ble utlånt. Kilde:         |                                              |                                 |                                 |
-   |                                 | Registreres manuelt ved utlån. Kommentar:    |                                              |                                 |                                 |
-   |                                 | Det er ikke spesifisert noen dato for        |                                              |                                 |                                 |
-   |                                 | tilbakelevering. Tilbakelevering kan         |                                              |                                 |                                 |
-   |                                 | markeres ved at M106 utlaantDato slettes.    |                                              |                                 |                                 |
-   |                                 | Det er ingen krav om obligatorisk logging av |                                              |                                 |                                 |
-   |                                 | utlån av fysiske dokumenter. M106            |                                              |                                 |                                 |
-   |                                 | utlaantDato                                  |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | utlaantTil                      | Definisjon: Navnet på person som har lånt en | [0..1]                                       |                                 | string                          |
-   |                                 | fysisk saksmappe . Kilde: Registreres        |                                              |                                 |                                 |
-   |                                 | manuelt ved utlån. Kommentar: (ingen). M309  |                                              |                                 |                                 |
-   |                                 | utlaantTil                                   |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseUtlaantTil             |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | journalenhet                    | Definisjon: Navn på enhet som har det        | [0..1]                                       |                                 | string                          |
-   |                                 | arkivmessige ansvaret for kvalitetssikring   |                                              |                                 |                                 |
-   |                                 | av arkivdanningen, og eventuelt registrering |                                              |                                 |                                 |
-   |                                 | (journalføring) og arkivering av fysiske     |                                              |                                 |                                 |
-   |                                 | dokumenter. Kilde: Registreres automatisk på |                                              |                                 |                                 |
-   |                                 | grunnlag av innlogget bruker, kan overstyres |                                              |                                 |                                 |
-   |                                 | manuelt. Kommentar: (ingen). M308            |                                              |                                 |                                 |
-   |                                 | journalenhet                                 |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | elektroniskSignatur             |                                              | [0..1]                                       |                                 | ElektroniskSignatur             |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-.. table:: Restriksjoner
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/journalposttype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/journalstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/avskrivning/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/dokumentflyt/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/journalpost/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-avskrivning/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-dokumentflyt/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-presedens/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/presedens/
 
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | **Navn**                                                                                                                                                               | **Merknad**                 |
-   +========================================================================================================================================================================+=============================+
-   | 5.5.8 En journalpost skal kunne defineres til å være av forskjellig type, se M082journalposttype.                                                                      |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | 5.5.10 En Journalpost skal ha registrert en Saksansvar (dvs. administrativ enhet, Saksbehandler og eventuelt journalenhet) og en Saksansvar skal kunne inngå i ingen,  |                             |
-   | en eller flere Journalposter.                                                                                                                                          |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | 5.5.12 Det bør finnes en tjeneste/funksjon for å ajourholde Journalenhet på en Registrering (Journalpost).                                                             |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | 5.5.13 Det skal finnes en tjeneste/funksjon for å ajourholde Administrativ enhet og Saksbehandler på en Registrering (Journalpost).                                    |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | 5.5.14 Det skal finnes en tjeneste/funksjon for å ajourholde Korrespondansepart på en Journalpost.                                                                     |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | M013 journalaar: Skal ikke kunne endres.                                                                                                                               |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | M014 journalsekvensnummer: Skal ikke kunne endres.                                                                                                                     |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | M015 journalpostnummer: Skal normalt ikke endres, men ved flytting til en annen saksmappe kan journalposten få et nytt nummer (fordi det inngår i en annen             |                             |
-   | nummerrekkefølge i denne mappen).                                                                                                                                      |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | M101 journaldato: Skal kunne endres manuelt inntil arkivering.                                                                                                         |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | M103 dokumentetsDato: Skal kunne endres manuelt inntil arkivering.                                                                                                     |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | M104 mottattDato: Skal ikke kunne endres ved automatisk registrering, dato for mottak av fysiske dokumenter skal kunne endres inntil arkivering.                       |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | M105 sendtDato: Skal ikke kunne endres ved automatisk registrering, dato for forsendelse av fysiske dokumenter skal kunne endres inntil arkivering.                    |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert.                      |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | M308 journalenhet: Er ikke lenger obligatorisk i Noark 5. Journalenhet er helt uavhengig av administrativ enhet. Kan f.eks. brukes som seleksjonskriterium ved         |                             |
-   | produksjon av rapporter. Det anbefales ikke å knytte tilgangsrettigheter til journalenhet.                                                                             |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
-   | M309 utlaantTil: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller at dokumentene i en journalpost ble arkivert.                             |                             |
-   +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+
+.. list-table:: Attributter
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - journalaar
+   - Definisjon: Viser året journalposten ble
+     opprettet . Kilde: Registreres automatisk
+     når journalposten opprettes. Kommentar:
+     (ingen). M013 journalaar
+   - [0..1]
+   -
+   - integer
+ * - journalsekvensnummer
+   - Definisjon: Viser rekkefølgen når
+     journalposten ble opprettet under året .
+     Kilde: Registreres automatisk når
+     journalposten opprettes. Kommentar:
+     Kombinasjonen journalaar og sekvensnummer er
+     ikke obligatorisk, men anbefales brukt i
+     sakarkiver. Noen rapporter er sortert på
+     denne kombinasjonen, f.eks. løpende- og
+     offentlig journal. Dersom journalaar og
+     sekvensnummer ikke brukes, må kronologiske
+     utskrifter sorteres etter andre kriterier
+     (f.eks. journalpostens opprettetDato). I
+     Noark 4 skal sekvensnummeret vises før
+     journalaar (f.eks. 25367/2011) for at det
+     ikke skal blandes sammen med saksnummeret
+     som har året først. M014
+     journalsekvensnummer
+   - [0..1]
+   -
+   - integer
+ * - journalpostnummer
+   - Definisjon: Inngår i M004 journalpostID.
+     Viser rekkefølgen journalpostene ble
+     opprettet innenfor saksmappen, f.eks.
+     2011/3869-8 (dokument nr. 8 i sak
+     2011/3869). Kilde: Registreres automatisk
+     når journalposten opprettes. Kommentar: Er
+     ikke obligatorisk, men anbefales brukt i
+     sakarkiver. Dersom journalpostnummer ikke
+     brukes, må andre kriterier kunne
+     identifisere journalpostenes rekkefølge
+     innenfor saksmappen. M015 journalpostnummer
+   - [1..1]
+   -
+   - integer
+ * - journalposttype
+   - Definisjon: Navn på type journalpost .
+     Kilde: Registreres automatisk av systemet
+     eller manuelt Kommentar: Tilsvarer "Noark
+     dokumenttype" i Noark 4. M082
+     journalposttype
+   - [1..1]
+   -
+   - Journalposttype
+ * - journalstatus
+   - Definisjon: Status til journalposten, dvs.
+     om dokumentet er registrert, under
+     behandling eller endelig arkivert. Kilde:
+     Registreres automatisk gjennom forskjellig
+     saksbehandlings-funksjonalitet, eller
+     overstyres manuelt. Kommentar: Journalposter
+     som avleveres skal ha status "Arkivert"
+     eller "Utgår". M053 journalstatus
+   - [1..1]
+   -
+   - Journalstatus
+ * - journaldato
+   - Definisjon: Datoen journalposten er
+     opprettet/arkivert . Kilde: Settes
+     automatisk til samme dato som M600
+     opprettetDato. Oppdateres til M604
+     arkivertDato når dokumentene som tilhørere
+     journalposten arkiveres. Kommentar: (ingen).
+     M101 journaldato
+   - [1..1]
+   -
+   - date
+ * - dokumentetsDato
+   - Definisjon: Dato som er påført selve
+     dokumentet . Kilde: Datoen hentes automatisk
+     fra dokumentet, eller registreres manuelt.
+     Kommentar: Kan brukes både for inngående,
+     utgående og organinterne dokumenter. M103
+     dokumentetsDato
+   - [0..1]
+   -
+   - date
+ * - mottattDato
+   - Definisjon: Dato et eksternt dokument ble
+     mottatt . Kilde: Registreres manuelt eller
+     automatisk av systemet ved elektronisk
+     kommunikasjon. Kommentar: Merk at
+     mottattDato ikke behøver å være identisk med
+     M600 opprettetDato. M104 mottattDato
+   - [0..1]
+   -
+   - datetime
+ * - sendtDato
+   - Definisjon: Dato et internt produsert
+     dokument ble sendt/ekspedert . Kilde:
+     Registreres manuelt eller automatisk av
+     systemet ved elektronisk kommunikasjon.
+     Kommentar: (ingen). M105 sendtDato
+   - [0..1]
+   -
+   - date
+ * - forfallsdato
+   - Definisjon: Dato som angir fristen for når
+     et inngående dokument må være besvart .
+     Kilde: Registreres manuelt. Kommentar:
+     Forfallsdato kan være angitt som en
+     betingelse i det inngående dokumentet. M109
+     forfallsdato
+   - [0..1]
+   -
+   - date
+ * - offentlighetsvurdertDato
+   - Definisjon: Datoen da offentlighetsvurdering
+     ble foretatt . Kilde: Registreres automatisk
+     knyttet til funksjonalitet for skjerming.
+     Kommentar: Dato for offentlighetsvurdering
+     kan brukes dersom inngående dokumenter
+     automatisk blir midlertidig skjermet ved
+     mottak, og offentlighetsvurderingen skjer på
+     et litt senere tidspunkt. M110
+     offentlighetsvurdertDato
+   - [0..1]
+   -
+   - date
+ * - antallVedlegg
+   - Definisjon: Antall fysiske vedlegg til et
+     fysisk hoveddokument . Kilde: Registreres
+     manuelt. Kommentar: (ingen). M304
+     antallVedlegg
+   - [0..1]
+   -
+   - integer
+ * - utlaantDato
+   - Definisjon: Dato når en fysisk saksmappe
+     eller journalpost ble utlånt. Kilde:
+     Registreres manuelt ved utlån. Kommentar:
+     Det er ikke spesifisert noen dato for
+     tilbakelevering. Tilbakelevering kan
+     markeres ved at M106 utlaantDato slettes.
+     Det er ingen krav om obligatorisk logging av
+     utlån av fysiske dokumenter. M106
+     utlaantDato
+   - [0..1]
+   -
+   - date
+ * - utlaantTil
+   - Definisjon: Navnet på person som har lånt en
+     fysisk saksmappe . Kilde: Registreres
+     manuelt ved utlån. Kommentar: (ingen). M309
+     utlaantTil
+   - [0..1]
+   -
+   - string
+ * - referanseUtlaantTil
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - journalenhet
+   - Definisjon: Navn på enhet som har det
+     arkivmessige ansvaret for kvalitetssikring
+     av arkivdanningen, og eventuelt registrering
+     (journalføring) og arkivering av fysiske
+     dokumenter. Kilde: Registreres automatisk på
+     grunnlag av innlogget bruker, kan overstyres
+     manuelt. Kommentar: (ingen). M308
+     journalenhet
+   - [0..1]
+   -
+   - string
+ * - elektroniskSignatur
+   -
+   - [0..1]
+   -
+   - ElektroniskSignatur
+
+
+
+.. list-table:: Restriksjoner
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+ * - 5.5.8 En journalpost skal kunne defineres til å være av forskjellig type, se M082journalposttype.
+   -
+ * - 5.5.10 En Journalpost skal ha registrert en Saksansvar (dvs. administrativ enhet, Saksbehandler og eventuelt journalenhet) og en Saksansvar skal kunne inngå i ingen,
+     en eller flere Journalposter.
+   -
+ * - 5.5.12 Det bør finnes en tjeneste/funksjon for å ajourholde Journalenhet på en Registrering (Journalpost).
+   -
+ * - 5.5.13 Det skal finnes en tjeneste/funksjon for å ajourholde Administrativ enhet og Saksbehandler på en Registrering (Journalpost).
+   -
+ * - 5.5.14 Det skal finnes en tjeneste/funksjon for å ajourholde Korrespondansepart på en Journalpost.
+   -
+ * - M013 journalaar: Skal ikke kunne endres.
+   -
+ * - M014 journalsekvensnummer: Skal ikke kunne endres.
+   -
+ * - M015 journalpostnummer: Skal normalt ikke endres, men ved flytting til en annen saksmappe kan journalposten få et nytt nummer (fordi det inngår i en annen
+     nummerrekkefølge i denne mappen).
+   -
+ * - M101 journaldato: Skal kunne endres manuelt inntil arkivering.
+   -
+ * - M103 dokumentetsDato: Skal kunne endres manuelt inntil arkivering.
+   -
+ * - M104 mottattDato: Skal ikke kunne endres ved automatisk registrering, dato for mottak av fysiske dokumenter skal kunne endres inntil arkivering.
+   -
+ * - M105 sendtDato: Skal ikke kunne endres ved automatisk registrering, dato for forsendelse av fysiske dokumenter skal kunne endres inntil arkivering.
+   -
+ * - M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller etter at dokumentene i en journalpost ble arkivert.
+   -
+ * - M308 journalenhet: Er ikke lenger obligatorisk i Noark 5. Journalenhet er helt uavhengig av administrativ enhet. Kan f.eks. brukes som seleksjonskriterium ved
+     produksjon av rapporter. Det anbefales ikke å knytte tilgangsrettigheter til journalenhet.
+   -
+ * - M309 utlaantTil: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller at dokumentene i en journalpost ble arkivert.
+   -
+
+
 
 Presedens
 ^^^^^^^^^
