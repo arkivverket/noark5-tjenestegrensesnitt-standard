@@ -6396,175 +6396,227 @@ inneholder presedensavgjørelser kunne identifiseres. Hvis
 opplysninger om presedens er registrert, er presedens obligatorisk for
 avlevering.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :header-rows: 1
 
-   +----------------------------------+-------------------------------+---------------------------+-------------+
-   | **Relasjon**                     | **Kilde**                     | **Mål**                   | **Merknad** |
-   +==================================+===============================+===========================+=============+
-   | **Association** (Bi-Directional) | journalpost 0..\* Journalpost | presedens 0..\* Presedens |             |
-   +----------------------------------+-------------------------------+---------------------------+-------------+
-   | **Association** (Bi-Directional) | saksmappe 0..\* Saksmappe     | presedens 0..\* Presedens |             |
-   +----------------------------------+-------------------------------+---------------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Association** (Bi-Directional)
+   - journalpost 0..\* Journalpost
+   - presedens 0..\* Presedens
+   -
+ * - **Association** (Bi-Directional)
+   - saksmappe 0..\* Saksmappe
+   - presedens 0..\* Presedens
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +--------------------------------------------------------------------+
-   | **Verdi**                                                          |
-   +====================================================================+
-   | self                                                               |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/presedensstatus/ |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/journalpost/     |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-journalpost/  |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-presedens/    |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-saksmappe/    |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/presedens/       |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/saksmappe/       |
-   +--------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/presedensstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/journalpost/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-journalpost/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-presedens/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-saksmappe/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/presedens/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/saksmappe/
 
-.. table:: Attributter
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | systemID                        | Definisjon: Entydig identifikasjon av        | [0..1]                                       |                                 | SystemID                        |
-   |                                 | arkivenheten innenfor det arkivskapende      |                                              |                                 |                                 |
-   |                                 | organet. Dersom organet har flere            |                                              |                                 |                                 |
-   |                                 | arkivsystemer, skal altså systemID være      |                                              |                                 |                                 |
-   |                                 | gjennomgående entydig.                       |                                              |                                 |                                 |
-   |                                 | Systemidentifikasjonen vil som oftest være   |                                              |                                 |                                 |
-   |                                 | en numerisk kode uten noe logisk             |                                              |                                 |                                 |
-   |                                 | meningsinnhold. Identifikasjonen trenger     |                                              |                                 |                                 |
-   |                                 | ikke å være synlig for brukerne. Kilde:      |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet           |                                              |                                 |                                 |
-   |                                 | Kommentarer: Alle referanser fra en          |                                              |                                 |                                 |
-   |                                 | arkivenhet til en annen skal peke til        |                                              |                                 |                                 |
-   |                                 | arkivenhetens systemidentifikasjon. Dette    |                                              |                                 |                                 |
-   |                                 | gjelder også referanser fra en arkivdel til  |                                              |                                 |                                 |
-   |                                 | en annen, f.eks. mellom to arkivperioder som |                                              |                                 |                                 |
-   |                                 | avleveres på forskjellig tidspunkt. I et     |                                              |                                 |                                 |
-   |                                 | arkivuttrekk skal systemID være entydig      |                                              |                                 |                                 |
-   |                                 | (unik). Dokumentobjekt har ingen             |                                              |                                 |                                 |
-   |                                 | systemidentifikasjon fordi enheten kan være  |                                              |                                 |                                 |
-   |                                 | duplisert i et arkivuttrekk dersom samme     |                                              |                                 |                                 |
-   |                                 | dokumentfil er knyttet til flere             |                                              |                                 |                                 |
-   |                                 | forskjellige registreringer. M001 systemID   |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | presedensDato                   | Definisjon: Datoen på presedensen . Kilde:   | [1..1]                                       |                                 | date                            |
-   |                                 | Registreres manuelt ved opprettelse av       |                                              |                                 |                                 |
-   |                                 | presedens, men bør også kunne hentes         |                                              |                                 |                                 |
-   |                                 | automatisk fra M103 dokumentetsDato på       |                                              |                                 |                                 |
-   |                                 | journalposten presedensen opprettes på.      |                                              |                                 |                                 |
-   |                                 | Kommentar: (ingen). M111 presedensDato       |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | opprettetDato                   | Definisjon: Dato og klokkeslett når          | [0..1]                                       |                                 | datetime                        |
-   |                                 | arkivenheten ble opprettet/registrert.       |                                              |                                 |                                 |
-   |                                 | Kilde: Registreres automatisk av systemet    |                                              |                                 |                                 |
-   |                                 | ved opprettelse av enheten. Kommentarer:     |                                              |                                 |                                 |
-   |                                 | (ingen). M600 opprettetDato                  |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | opprettetAv                     | Definisjon: Navn på person som               | [0..1]                                       |                                 | string                          |
-   |                                 | opprettet/registrerte arkivenheten. Kilde:   |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet ved       |                                              |                                 |                                 |
-   |                                 | opprettelse av enheten. Kommentarer:         |                                              |                                 |                                 |
-   |                                 | (ingen). M601 opprettetAv                    |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseOpprettetAv            |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | tittel                          | Definisjon: Tittel eller navn på             | [1..1]                                       |                                 | string                          |
-   |                                 | arkivenheten. Kilde: Registreres manuelt     |                                              |                                 |                                 |
-   |                                 | eller hentes automatisk fra innholdet i      |                                              |                                 |                                 |
-   |                                 | arkivdokumentet. Ja fra klassetittel dersom  |                                              |                                 |                                 |
-   |                                 | alle mapper skal ha samme tittel som         |                                              |                                 |                                 |
-   |                                 | klassen. Kan også hentes automatisk fra et   |                                              |                                 |                                 |
-   |                                 | fagsystem. Kommentarer: For saksmappe og     |                                              |                                 |                                 |
-   |                                 | journalpost vil dette tilsvare "Sakstittel"  |                                              |                                 |                                 |
-   |                                 | og "Dokumentbeskrivelse". Disse navnene kan  |                                              |                                 |                                 |
-   |                                 | beholdes i grensesnittet. M020 tittel        |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | beskrivelse                     | Definisjon: Tekstlig beskrivelse av          | [0..1]                                       |                                 | string                          |
-   |                                 | arkivenheten. Kilde: Registreres manuelt.    |                                              |                                 |                                 |
-   |                                 | Kommentarer: Tilsvarende attributt finnes    |                                              |                                 |                                 |
-   |                                 | ikke i Noark 4 (men noen tabeller hadde egne |                                              |                                 |                                 |
-   |                                 | attributter for merknad som kunne brukes som |                                              |                                 |                                 |
-   |                                 | et beskrivelsesfelt). M021 beskrivelse       |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | presedensHjemmel                | Definisjon: Lovparagrafen som saken eller    | [0..1]                                       |                                 | string                          |
-   |                                 | journalposten danner presedens for . Kilde:  |                                              |                                 |                                 |
-   |                                 | Registreres manuelt ved opprettelse av       |                                              |                                 |                                 |
-   |                                 | presedens. Kommentar: (ingen). M311          |                                              |                                 |                                 |
-   |                                 | presedensHjemmel                             |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | rettskildefaktor                | Definisjon: En argumentkilde som brukes til  | [1..1]                                       |                                 | string                          |
-   |                                 | å løse rettslige problemer. En               |                                              |                                 |                                 |
-   |                                 | retts-anvender som skal ta stilling til et   |                                              |                                 |                                 |
-   |                                 | juridisk spørsmål, vil ta utgangspunkt i en  |                                              |                                 |                                 |
-   |                                 | rettskildefaktor. Kilde: Registreres manuelt |                                              |                                 |                                 |
-   |                                 | ved opprettelse av presedens Kommentar: En   |                                              |                                 |                                 |
-   |                                 | rettskildefaktor kan være en lov- eller      |                                              |                                 |                                 |
-   |                                 | forskriftstekst, lovforarbeider,             |                                              |                                 |                                 |
-   |                                 | domstolspraksis, andre myndigheters praksis, |                                              |                                 |                                 |
-   |                                 | privates praksis (kontraktspraksis),         |                                              |                                 |                                 |
-   |                                 | rettsoppfatninger, reelle hensyn, folkerett, |                                              |                                 |                                 |
-   |                                 | EU-/ EØS-rett mv. M312 rettskildefaktor      |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | presedensGodkjentDato           | Definisjon:Dato og klokkeslett for når       | [0..1]                                       |                                 | datetime                        |
-   |                                 | presedensen er godkjent . Kilde: Registreres |                                              |                                 |                                 |
-   |                                 | automatisk dersom det finnes funksjonalitet  |                                              |                                 |                                 |
-   |                                 | for å godkjenne presedenser .Kommentar:      |                                              |                                 |                                 |
-   |                                 | (ingen). M628 presedensGodkjentDato          |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | presedensGodkjentAv             | Definisjon: Navn på person som har godkjent  | [0..1]                                       |                                 | string                          |
-   |                                 | presedensen . Kilde: Registreres automatisk  |                                              |                                 |                                 |
-   |                                 | dersom det finnes funksjonalitet for å       |                                              |                                 |                                 |
-   |                                 | godkjenne presedenser. Kommentar: (ingen).   |                                              |                                 |                                 |
-   |                                 | M629 presedensGodkjentAv                     |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referansePresedensGodkjentAv    |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | avsluttetDato                   | Definisjon: Dato og klokkeslett når          | [0..1]                                       |                                 | datetime                        |
-   |                                 | arkivenheten ble avsluttet/lukket . Kilde:   |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet når       |                                              |                                 |                                 |
-   |                                 | enheten avsluttes. Kommentarer: (ingen).     |                                              |                                 |                                 |
-   |                                 | M602 avsluttetDato                           |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | avsluttetAv                     | Definisjon: Navn på person som               | [0..1]                                       |                                 | string                          |
-   |                                 | avsluttet/lukket arkivenheten. Kilde:        |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet ved       |                                              |                                 |                                 |
-   |                                 | opprettelse av enheten Kommentarer: (ingen). |                                              |                                 |                                 |
-   |                                 | M603 avsluttetAv                             |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseAvsluttetAv            |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | presedensStatus                 | Definisjon: Informasjon om presedensen er    | [0..1]                                       |                                 | PresedensStatus                 |
-   |                                 | gjeldende eller foreldet . Kilde:            |                                              |                                 |                                 |
-   |                                 | Registreres manuelt ved foreldelse.          |                                              |                                 |                                 |
-   |                                 | Kommentar: (ingen) M056 presedensStatus      |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
+.. list-table:: Attributter
+   :header-rows: 1
 
-.. table:: Restriksjoner
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   - Definisjon: Entydig identifikasjon av
+     arkivenheten innenfor det arkivskapende
+     organet. Dersom organet har flere
+     arkivsystemer, skal altså systemID være
+     gjennomgående entydig.
+     Systemidentifikasjonen vil som oftest være
+     en numerisk kode uten noe logisk
+     meningsinnhold. Identifikasjonen trenger
+     ikke å være synlig for brukerne. Kilde:
+     Registreres automatisk av systemet
+     Kommentarer: Alle referanser fra en
+     arkivenhet til en annen skal peke til
+     arkivenhetens systemidentifikasjon. Dette
+     gjelder også referanser fra en arkivdel til
+     en annen, f.eks. mellom to arkivperioder som
+     avleveres på forskjellig tidspunkt. I et
+     arkivuttrekk skal systemID være entydig
+     (unik). Dokumentobjekt har ingen
+     systemidentifikasjon fordi enheten kan være
+     duplisert i et arkivuttrekk dersom samme
+     dokumentfil er knyttet til flere
+     forskjellige registreringer. M001 systemID
+   - [0..1]
+   -
+   - SystemID
+ * - presedensDato
+   - Definisjon: Datoen på presedensen . Kilde:
+     Registreres manuelt ved opprettelse av
+     presedens, men bør også kunne hentes
+     automatisk fra M103 dokumentetsDato på
+     journalposten presedensen opprettes på.
+     Kommentar: (ingen). M111 presedensDato
+   - [1..1]
+   -
+   - date
+ * - opprettetDato
+   - Definisjon: Dato og klokkeslett når
+     arkivenheten ble opprettet/registrert.
+     Kilde: Registreres automatisk av systemet
+     ved opprettelse av enheten. Kommentarer:
+     (ingen). M600 opprettetDato
+   - [0..1]
+   -
+   - datetime
+ * - opprettetAv
+   - Definisjon: Navn på person som
+     opprettet/registrerte arkivenheten. Kilde:
+     Registreres automatisk av systemet ved
+     opprettelse av enheten. Kommentarer:
+     (ingen). M601 opprettetAv
+   - [0..1]
+   -
+   - string
+ * - referanseOpprettetAv
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - tittel
+   - Definisjon: Tittel eller navn på
+     arkivenheten. Kilde: Registreres manuelt
+     eller hentes automatisk fra innholdet i
+     arkivdokumentet. Ja fra klassetittel dersom
+     alle mapper skal ha samme tittel som
+     klassen. Kan også hentes automatisk fra et
+     fagsystem. Kommentarer: For saksmappe og
+     journalpost vil dette tilsvare "Sakstittel"
+     og "Dokumentbeskrivelse". Disse navnene kan
+     beholdes i grensesnittet. M020 tittel
+   - [1..1]
+   -
+   - string
+ * - beskrivelse
+   - Definisjon: Tekstlig beskrivelse av
+     arkivenheten. Kilde: Registreres manuelt.
+     Kommentarer: Tilsvarende attributt finnes
+     ikke i Noark 4 (men noen tabeller hadde egne
+     attributter for merknad som kunne brukes som
+     et beskrivelsesfelt). M021 beskrivelse
+   - [0..1]
+   -
+   - string
+ * - presedensHjemmel
+   - Definisjon: Lovparagrafen som saken eller
+     journalposten danner presedens for . Kilde:
+     Registreres manuelt ved opprettelse av
+     presedens. Kommentar: (ingen). M311
+     presedensHjemmel
+   - [0..1]
+   -
+   - string
+ * - rettskildefaktor
+   - Definisjon: En argumentkilde som brukes til
+     å løse rettslige problemer. En
+     retts-anvender som skal ta stilling til et
+     juridisk spørsmål, vil ta utgangspunkt i en
+     rettskildefaktor. Kilde: Registreres manuelt
+     ved opprettelse av presedens Kommentar: En
+     rettskildefaktor kan være en lov- eller
+     forskriftstekst, lovforarbeider,
+     domstolspraksis, andre myndigheters praksis,
+     privates praksis (kontraktspraksis),
+     rettsoppfatninger, reelle hensyn, folkerett,
+     EU-/ EØS-rett mv. M312 rettskildefaktor
+   - [1..1]
+   -
+   - string
+ * - presedensGodkjentDato
+   - Definisjon:Dato og klokkeslett for når
+     presedensen er godkjent . Kilde: Registreres
+     automatisk dersom det finnes funksjonalitet
+     for å godkjenne presedenser .Kommentar:
+     (ingen). M628 presedensGodkjentDato
+   - [0..1]
+   -
+   - datetime
+ * - presedensGodkjentAv
+   - Definisjon: Navn på person som har godkjent
+     presedensen . Kilde: Registreres automatisk
+     dersom det finnes funksjonalitet for å
+     godkjenne presedenser. Kommentar: (ingen).
+     M629 presedensGodkjentAv
+   - [0..1]
+   -
+   - string
+ * - referansePresedensGodkjentAv
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - avsluttetDato
+   - Definisjon: Dato og klokkeslett når
+     arkivenheten ble avsluttet/lukket . Kilde:
+     Registreres automatisk av systemet når
+     enheten avsluttes. Kommentarer: (ingen).
+     M602 avsluttetDato
+   - [0..1]
+   -
+   - datetime
+ * - avsluttetAv
+   - Definisjon: Navn på person som
+     avsluttet/lukket arkivenheten. Kilde:
+     Registreres automatisk av systemet ved
+     opprettelse av enheten Kommentarer: (ingen).
+     M603 avsluttetAv
+   - [0..1]
+   -
+   - string
+ * - referanseAvsluttetAv
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - presedensStatus
+   - Definisjon: Informasjon om presedensen er
+     gjeldende eller foreldet . Kilde:
+     Registreres manuelt ved foreldelse.
+     Kommentar: (ingen) M056 presedensStatus
+   - [0..1]
+   -
+   - PresedensStatus
 
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | **Navn**                                                                                           | **Merknad** |
-   +====================================================================================================+=============+
-   | M001 systemID: Skal ikke kunne endres                                                              |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | M020 tittel: Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | M600 opprettetDato: Skal ikke kunne endres                                                         |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | M601 opprettetAv: Skal ikke kunne endres                                                           |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | M602 avsluttetDato: Skal ikke kunne endres. Obligatorisk dersom arkivdelen er avsluttet.           |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
-   | M603 avsluttetAv: Skal ikke kunne endres. Obligatorisk dersom arkivenheten er avsluttet.           |             |
-   +----------------------------------------------------------------------------------------------------+-------------+
+
+
+.. list-table:: Restriksjoner
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+ * - M001 systemID
+   - Skal ikke kunne endres.
+ * - M020 tittel
+   - Skal normalt ikke kunne endres etter at enheten er lukket, eller dokumentene arkivert.
+ * - M600 opprettetDato
+   - Skal ikke kunne endres.
+ * - M601 opprettetAv
+   - Skal ikke kunne endres.
+ * - M602 avsluttetDato: 
+   - Skal ikke kunne endres. Obligatorisk dersom arkivenheten er avsluttet.
+ * - M603 avsluttetAv: 
+   - Skal ikke kunne endres. Obligatorisk dersom arkivenheten er avsluttet.
+
 
 Saksmappe
 ^^^^^^^^^
@@ -6582,186 +6634,227 @@ egne metadata. En saksmappe er bakoverkompatibel med en sak i Noark-4,
 men har en del nye metadata. For sakarkiver er det obligatorisk å
 bruke en saksmappe.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :header-rows: 1
 
-   +-------------------------------------------+---------------------------+--------------------------------------+-------------+
-   | **Relasjon**                              | **Kilde**                 | **Mål**                              | **Merknad** |
-   +===========================================+===========================+======================================+=============+
-   | **Generalization** (Source → Destination) | Saksmappe                 | Mappe                                |             |
-   +-------------------------------------------+---------------------------+--------------------------------------+-------------+
-   | **Association** (Source → Destination)    | Saksmappe                 | sekundaerklassifikasjon 0..\* Klasse |             |
-   +-------------------------------------------+---------------------------+--------------------------------------+-------------+
-   | **Association** (Bi-Directional)          | saksmappe 0..\* Saksmappe | presedens 0..\* Presedens            |             |
-   +-------------------------------------------+---------------------------+--------------------------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Generalization** (Source → Destination)
+   - Saksmappe
+   - Mappe
+   -
+ * - **Association** (Source → Destination)
+   - Saksmappe
+   - sekundaerklassifikasjon 0..\* Klasse
+   -
+ * - **Association** (Bi-Directional)
+   - saksmappe 0..\* Saksmappe
+   - presedens 0..\* Presedens
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table::  Relasjonsnøkler
+   :header-rows: 1
 
-   +----------------------------------------------------------------------------+
-   | **Verdi**                                                                  |
-   +============================================================================+
-   | self                                                                       |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/saksmappe/               |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-klasse/          |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/presedens/               |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/sekundaerklassifikasjon/ |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/saksstatus/              |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-presedens/            |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-journalpost/          |
-   +----------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/saksmappe/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-klasse/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/presedens/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/sekundaerklassifikasjon/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/saksstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-presedens/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-journalpost/
 
-.. table:: Attributter
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | saksaar                         | Definisjon: Inngår i M003 mappeID. Viser     | [1..1]                                       |                                 | integer                         |
-   |                                 | året saksmappen ble opprettet. Kilde:        |                                              |                                 |                                 |
-   |                                 | Registreres automatisk når saksmappen        |                                              |                                 |                                 |
-   |                                 | opprettes. Kommentar: Se kommentar under     |                                              |                                 |                                 |
-   |                                 | M012 sakssekvensnummer. M011 saksaar         |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | sakssekvensnummer               | Definisjon: Inngår i M003 mappeID. Viser     | [1..1]                                       |                                 | integer                         |
-   |                                 | rekkefølgen når saksmappen ble opprettet     |                                              |                                 |                                 |
-   |                                 | innenfor året. Kilde: Registreres automatisk |                                              |                                 |                                 |
-   |                                 | når saksmappen opprettes. Kommentar:         |                                              |                                 |                                 |
-   |                                 | Kombinasjonen saksaar og sakssekvensnummer   |                                              |                                 |                                 |
-   |                                 | er ikke obligatorisk, men anbefales brukt i  |                                              |                                 |                                 |
-   |                                 | sakarkiver. M012 sakssekvensnummer           |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | saksdato                        | Definisjon: Datoen saken er opprettet .      | [1..1]                                       |                                 | date                            |
-   |                                 | Kilde: Settes automatisk til samme dato som  |                                              |                                 |                                 |
-   |                                 | M600 opprettetDato. Kommentar: (ingen). M100 |                                              |                                 |                                 |
-   |                                 | saksdato                                     |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | administrativEnhet              | Definisjon: Navn på avdeling, kontor eller   | [0..1]                                       |                                 | string                          |
-   |                                 | annen administrativ enhet som har ansvaret   |                                              |                                 |                                 |
-   |                                 | for saksbehandlingen. Kilde: Registreres     |                                              |                                 |                                 |
-   |                                 | automatisk f.eks. på grunnlag av innlogget   |                                              |                                 |                                 |
-   |                                 | bruker, kan overstyres. Kommentar: Merk at   |                                              |                                 |                                 |
-   |                                 | på journalpostnivå grupperes                 |                                              |                                 |                                 |
-   |                                 | administrativEnhet sammen med M307           |                                              |                                 |                                 |
-   |                                 | saksbehandler inn i korrespondansepart.      |                                              |                                 |                                 |
-   |                                 | Dette muliggjør individuell behandling når   |                                              |                                 |                                 |
-   |                                 | det er flere mottakere, noe som er særlig    |                                              |                                 |                                 |
-   |                                 | aktuelt ved organinterne dokumenter som skal |                                              |                                 |                                 |
-   |                                 | følges opp. M305 administrativEnhet          |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseAdministrativEnhet     |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | saksansvarlig                   | Definisjon: Navn på person som er            | [1..1]                                       |                                 | string                          |
-   |                                 | saksansvarlig . Kilde: Registreres           |                                              |                                 |                                 |
-   |                                 | automatisk på grunnlag av innlogget bruker   |                                              |                                 |                                 |
-   |                                 | eller annen saksbehandlingsfunksjonalitet    |                                              |                                 |                                 |
-   |                                 | (f.eks. saksfordeling), kan overstyres       |                                              |                                 |                                 |
-   |                                 | manuelt. Kommentar: (ingen). M306            |                                              |                                 |                                 |
-   |                                 | saksansvarlig                                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseSaksansvarlig          |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | journalenhet                    | Definisjon: Navn på enhet som har det        | [0..1]                                       |                                 | string                          |
-   |                                 | arkivmessige ansvaret for kvalitetssikring   |                                              |                                 |                                 |
-   |                                 | av arkivdanningen, og eventuelt registrering |                                              |                                 |                                 |
-   |                                 | (journalføring) og arkivering av fysiske     |                                              |                                 |                                 |
-   |                                 | dokumenter. Kilde: Registreres automatisk på |                                              |                                 |                                 |
-   |                                 | grunnlag av innlogget bruker, kan overstyres |                                              |                                 |                                 |
-   |                                 | manuelt. Kommentar: (ingen). M308            |                                              |                                 |                                 |
-   |                                 | journalenhet                                 |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | saksstatus                      | Definisjon: Status til saksmappen, dvs. hvor | [1..1]                                       |                                 | Saksstatus                      |
-   |                                 | langt saksbehandlingen har kommet. Kilde:    |                                              |                                 |                                 |
-   |                                 | Registreres automatisk gjennom forskjellig   |                                              |                                 |                                 |
-   |                                 | saksbehandlings-funksjonalitet, eller        |                                              |                                 |                                 |
-   |                                 | overstyres manuelt. Kommentar: Saksmapper    |                                              |                                 |                                 |
-   |                                 | som avleveres skal ha status "Avsluttet"     |                                              |                                 |                                 |
-   |                                 | eller "Utgår". M052 saksstatus               |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | utlaantDato                     | Definisjon: Dato når en fysisk saksmappe     | [0..1]                                       |                                 | date                            |
-   |                                 | eller journalpost ble utlånt. Kilde:         |                                              |                                 |                                 |
-   |                                 | Registreres manuelt ved utlån. Kommentar:    |                                              |                                 |                                 |
-   |                                 | Det er ikke spesifisert noen dato for        |                                              |                                 |                                 |
-   |                                 | tilbakelevering. Tilbakelevering kan         |                                              |                                 |                                 |
-   |                                 | markeres ved at M106 utlaantDato slettes.    |                                              |                                 |                                 |
-   |                                 | Det er ingen krav om obligatorisk logging av |                                              |                                 |                                 |
-   |                                 | utlån av fysiske dokumenter. M106            |                                              |                                 |                                 |
-   |                                 | utlaantDato                                  |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | utlaantTil                      | Definisjon: Navnet på person som har lånt en | [0..1]                                       |                                 | string                          |
-   |                                 | fysisk saksmappe . Kilde: Registreres        |                                              |                                 |                                 |
-   |                                 | manuelt ved utlån. Kommentar: (ingen). M309  |                                              |                                 |                                 |
-   |                                 | utlaantTil                                   |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseUtlaantTil             |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
 
-.. table:: Restriksjoner
+.. list-table:: Attributter
+   :header-rows: 1
 
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | **Navn**                                                                                          | **Merknad**                                                                                       |
-   +===================================================================================================+===================================================================================================+
-   | 5.4.9 En Saksmappe skal kunne identifiseres entydig innenfor arkivet.                             | Det anbefales at denne identifikasjonen er en kombinasjon av saksaar og et forløpende             |
-   |                                                                                                   | sekvensnummer for saksmappene innenfor året.                                                      |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 5.4.10 En Saksmappe skal kunne ha registrert ingen, en eller flere Sekundaerklassering og en      |                                                                                                   |
-   | Sekundaerklassering tilhører kun en Saksmappe og kun en Klasse.                                   |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 5.4.11 En Saksmappe bør kunne ha registrert ingen eller en Journalenhet og en Journalenhet kan    |                                                                                                   |
-   | inngå i ingen, en eller flere Saksmapper.                                                         |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 5.4.12 En Saksmappe skal kunne ha registrert ingen eller en Administrativ enhet og en             |                                                                                                   |
-   | Administrativ enhet kan inngå i ingen, en eller flere Saksmapper.                                 |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.3 Det skal finnes en tjeneste/funksjon for å sette Status på en Saksmappe.                    |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.4 Følgende statusverdier er obligatorisk for Saksmappe: Under behandling, Avsluttet, Utgår    |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.5 Følgende statusverdier er anbefalt for Saksmappe: Opprettet av saksbehandler, Avsluttet av  |                                                                                                   |
-   | saksbehandler, Unntatt prosesstyring                                                              |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.6 Når status på Saksmappe settes til Avsluttet, skal avsluttetDato settes automatisk.         |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.7 Det skal ikke være mulig å avslutte en Saksmappe uten at det er angitt en primær            |                                                                                                   |
-   | klassifikasjon (Klasse).                                                                          |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.8 Det skal ikke være mulig å avslutte en Saksmappe som inneholder Registreringer som ikke er  |                                                                                                   |
-   | avsluttet                                                                                         |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.11 Det skal ikke være mulig å avslutte en Saksmappe uten at alle dokumenter på                |                                                                                                   |
-   | registreringene i mappen er lagret i arkivformat                                                  |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.12 Det skal ikke være mulig å avslutte en Saksmappe uten at alle restanser på Registreringer  |                                                                                                   |
-   | er avskrevet                                                                                      |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.13 Når statusen til en Saksmappe settes til avsluttet, skal det på mappenivå ikke være mulig  |                                                                                                   |
-   | å endre metadataene: saksdato, administrativEnhet , saksansvarlig                                 |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.14 Når statusen til en Saksmappe settes til avsluttet, bør det på Saksmappe fortsatt være     |                                                                                                   |
-   | mulig å endre de øvrige metadataene. Endringer skal logges                                        |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.15 En avsluttet Saksmappe bør kunne åpnes igjen av autoriserte roller og personer. Det skal   |                                                                                                   |
-   | være mulig å parameterstyre hvem som er autorisert for å åpne en mappe. Åpning av mappe skal      |                                                                                                   |
-   | logges.                                                                                           |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.1.18 Det skal ikke være mulig å slette en Saksmappe som inneholder eller har inneholdt          |                                                                                                   |
-   | Journalposter med status ekspedert, journalført eller arkivert                                    |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | 6.2.1 Det skal finnes en tjeneste/funksjon for å ajourholde utlån av en Saksmappe.                |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | M011 saksaar: Skal ikke kunne endres                                                              |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | M012 sakssekvensnummer: Skal ikke kunne endres                                                    |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | M100 saksdato: Skal kunne endres manuelt inntil saksmappen avsluttes                              |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-   | M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller     |                                                                                                   |
-   | etter at dokumentene i en journalpost ble arkivert.                                               |                                                                                                   |
-   +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - saksaar
+   - Definisjon: Inngår i M003 mappeID. Viser
+     året saksmappen ble opprettet. Kilde:
+     Registreres automatisk når saksmappen
+     opprettes. Kommentar: Se kommentar under
+     M012 sakssekvensnummer. M011 saksaar
+   - [1..1]
+   -
+   - integer
+ * - sakssekvensnummer
+   - Definisjon: Inngår i M003 mappeID. Viser
+     rekkefølgen når saksmappen ble opprettet
+     innenfor året. Kilde: Registreres automatisk
+     når saksmappen opprettes. Kommentar:
+     Kombinasjonen saksaar og sakssekvensnummer
+     er ikke obligatorisk, men anbefales brukt i
+     sakarkiver. M012 sakssekvensnummer
+   - [1..1]
+   -
+   - integer
+ * - saksdato
+   - Definisjon: Datoen saken er opprettet .
+     Kilde: Settes automatisk til samme dato som
+     M600 opprettetDato. Kommentar: (ingen). M100
+     saksdato
+   - [1..1]
+   -
+   - date
+ * - administrativEnhet
+   - Definisjon: Navn på avdeling, kontor eller
+     annen administrativ enhet som har ansvaret
+     for saksbehandlingen. Kilde: Registreres
+     automatisk f.eks. på grunnlag av innlogget
+     bruker, kan overstyres. Kommentar: Merk at
+     på journalpostnivå grupperes
+     administrativEnhet sammen med M307
+     saksbehandler inn i korrespondansepart.
+     Dette muliggjør individuell behandling når
+     det er flere mottakere, noe som er særlig
+     aktuelt ved organinterne dokumenter som skal
+     følges opp. M305 administrativEnhet
+   - [0..1]
+   -
+   - string
+ * - referanseAdministrativEnhet
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - saksansvarlig
+   - Definisjon: Navn på person som er
+     saksansvarlig . Kilde: Registreres
+     automatisk på grunnlag av innlogget bruker
+     eller annen saksbehandlingsfunksjonalitet
+     (f.eks. saksfordeling), kan overstyres
+     manuelt. Kommentar: (ingen). M306
+     saksansvarlig
+   - [1..1]
+   -
+   - string
+ * - referanseSaksansvarlig
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - journalenhet
+   - Definisjon: Navn på enhet som har det
+     arkivmessige ansvaret for kvalitetssikring
+     av arkivdanningen, og eventuelt registrering
+     (journalføring) og arkivering av fysiske
+     dokumenter. Kilde: Registreres automatisk på
+     grunnlag av innlogget bruker, kan overstyres
+     manuelt. Kommentar: (ingen). M308
+     journalenhet
+   - [0..1]
+   -
+   - string
+ * - saksstatus
+   - Definisjon: Status til saksmappen, dvs. hvor
+     langt saksbehandlingen har kommet. Kilde:
+     Registreres automatisk gjennom forskjellig
+     saksbehandlings-funksjonalitet, eller
+     overstyres manuelt. Kommentar: Saksmapper
+     som avleveres skal ha status "Avsluttet"
+     eller "Utgår". M052 saksstatus
+   - [1..1]
+   -
+   - Saksstatus
+ * - utlaantDato
+   - Definisjon: Dato når en fysisk saksmappe
+     eller journalpost ble utlånt. Kilde:
+     Registreres manuelt ved utlån. Kommentar:
+     Det er ikke spesifisert noen dato for
+     tilbakelevering. Tilbakelevering kan
+     markeres ved at M106 utlaantDato slettes.
+     Det er ingen krav om obligatorisk logging av
+     utlån av fysiske dokumenter. M106
+     utlaantDato
+   - [0..1]
+   -
+   - date
+ * - utlaantTil
+   - Definisjon: Navnet på person som har lånt en
+     fysisk saksmappe . Kilde: Registreres
+     manuelt ved utlån. Kommentar: (ingen). M309
+     utlaantTil
+   - [0..1]
+   -
+   - string
+ * - referanseUtlaantTil
+   -
+   - [0..1]
+   -
+   - SystemID
+
+.. list-table:: Restriksjoner
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+ * - 5.4.9 En Saksmappe skal kunne identifiseres entydig innenfor arkivet.
+   - Det anbefales at denne identifikasjonen er en kombinasjon av saksaar og et forløpende
+     sekvensnummer for saksmappene innenfor året.
+ * - 5.4.10 En Saksmappe skal kunne ha registrert ingen, en eller flere Sekundaerklassering og en
+     Sekundaerklassering tilhører kun en Saksmappe og kun en Klasse.
+   -
+ * - 5.4.11 En Saksmappe bør kunne ha registrert ingen eller en Journalenhet og en Journalenhet kan
+     inngå i ingen, en eller flere Saksmapper.
+   -
+ * - 5.4.12 En Saksmappe skal kunne ha registrert ingen eller en Administrativ enhet og en
+     Administrativ enhet kan inngå i ingen, en eller flere Saksmapper.
+   -
+ * - 6.1.3 Det skal finnes en tjeneste/funksjon for å sette Status på en Saksmappe.
+   -
+ * - 6.1.4 Følgende statusverdier er obligatorisk for Saksmappe: Under behandling, Avsluttet, Utgår
+   -
+ * - 6.1.5 Følgende statusverdier er anbefalt for Saksmappe: Opprettet av saksbehandler, Avsluttet av
+     saksbehandler, Unntatt prosesstyring
+   -
+ * - 6.1.6 Når status på Saksmappe settes til Avsluttet, skal avsluttetDato settes automatisk.
+   -
+ * - 6.1.7 Det skal ikke være mulig å avslutte en Saksmappe uten at det er angitt en primær
+     klassifikasjon (Klasse).
+   -
+ * - 6.1.8 Det skal ikke være mulig å avslutte en Saksmappe som inneholder Registreringer som ikke er
+     avsluttet
+   -
+ * - 6.1.11 Det skal ikke være mulig å avslutte en Saksmappe uten at alle dokumenter på
+     registreringene i mappen er lagret i arkivformat
+   -
+ * - 6.1.12 Det skal ikke være mulig å avslutte en Saksmappe uten at alle restanser på Registreringer
+     er avskrevet
+   -
+ * - 6.1.13 Når statusen til en Saksmappe settes til avsluttet, skal det på mappenivå ikke være mulig
+     å endre metadataene: saksdato, administrativEnhet , saksansvarlig
+   -
+ * - 6.1.14 Når statusen til en Saksmappe settes til avsluttet, bør det på Saksmappe fortsatt være
+     mulig å endre de øvrige metadataene. Endringer skal logges
+   -
+ * - 6.1.15 En avsluttet Saksmappe bør kunne åpnes igjen av autoriserte roller og personer. Det skal
+     være mulig å parameterstyre hvem som er autorisert for å åpne en mappe. Åpning av mappe skal
+     logges.
+   -
+ * - 6.1.18 Det skal ikke være mulig å slette en Saksmappe som inneholder eller har inneholdt
+     Journalposter med status ekspedert, journalført eller arkivert
+   -
+ * - 6.2.1 Det skal finnes en tjeneste/funksjon for å ajourholde utlån av en Saksmappe.
+   -
+ * - M011 saksaar: Skal ikke kunne endres
+   -
+ * - M012 sakssekvensnummer: Skal ikke kunne endres
+   -
+ * - M100 saksdato: Skal kunne endres manuelt inntil saksmappen avsluttes
+   -
+ * - M106 utlaantDato: Utlån skal også kunne registreres etter at en saksmappe er avsluttet, eller
+     etter at dokumentene i en journalpost ble arkivert.
+   -
+
 
 Admin
 ~~~~~
@@ -6789,28 +6882,26 @@ relasjonsnøkler til de ulike entitetene som er tilgjengelig. Følgende
 relasjonsnøkler skal listes opp fra en implementasjon som støtter
 Admin-pakken:
 
-+--------------------------------------------------------------------+
-| **Relasjonsnøkkel**                                                |
-+====================================================================+
-| https://rel.arkivverket.no/noark5/v5/api/admin/administrativenhet/ |
-+--------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/admin/bruker/             |
-+--------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/admin/rettighet/          |
-+--------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - **Relasjonsnøkkel**
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/administrativenhet/
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/bruker/
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/rettighet/
+
 
 Følgende relasjonsnøkler skal tilsvarende listes opp for privilgerte
 brukere etter innlogging:
 
-+-----------------------------------------------------------------------+
-| **Relasjonsnøkkel**                                                   |
-+=======================================================================+
-| https://rel.arkivverket.no/noark5/v5/api/admin/ny-administrativenhet/ |
-+-----------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/admin/ny-bruker/             |
-+-----------------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/admin/ny-rettighet/          |
-+-----------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - **Relasjonsnøkkel**
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/ny-administrativenhet/
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/ny-bruker/
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/ny-rettighet/
+
 
 .. figure:: ./media/uml-administrasjon.png
    :alt: Admin - (diagram)
