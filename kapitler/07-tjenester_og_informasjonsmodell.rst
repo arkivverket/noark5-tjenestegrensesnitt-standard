@@ -999,7 +999,7 @@ identiske arkivenheter har ulik systemID.
    -
    - SystemID
  * - endretDato
-   -
+   - M682
    - [0..1]
    -
    - datetime
@@ -1021,12 +1021,12 @@ identiske arkivenheter har ulik systemID.
    - Definisjon: Navn på person som oppdaterte arkivenheten. Kilde:
      Registreres automatisk av systemet ved oppdatering av enheten
    - [0..1]
-   -
+   - M683
    - string
  * - referanseEndretAv
-   - Definisjon: SystemID til bruker som oppdaterte
-     arkivenheten. Kilde: Registreres automatisk av systemet ved
-     oppdatering av enheten
+   - Definisjon: SystemID på person som endret arkivenheten sist.
+     Kilde: Registreres automatisk av systemet ved oppdatering av
+     enheten.
    - [0..1]
    -
    - SystemID

@@ -12,10 +12,10 @@ class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
   +referanseAvsluttetAv : SystemID [0..1]
   -- Arkivenhet --
   +systemID : SystemID [0..1]
-  +oppdatertDato : datetime [0..1]
+  +endretDato : datetime [0..1]
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
-  +oppdatertAv : string [0..1]
+  +endretAv : string [0..1]
   +referanseOppdatertAv : SystemID [0..1]
   +referanseOpprettetAv : SystemID [0..1]
 }
@@ -31,10 +31,10 @@ class Arkivstruktur.Klasse <Arkivenhet> {
   +kassasjon : Kassasjon [0..1]
   -- Arkivenhet --
   +systemID : SystemID [0..1]
-  +oppdatertDato : datetime [0..1]
+  +endretDato : datetime [0..1]
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
-  +oppdatertAv : string [0..1]
+  +endretAv : string [0..1]
   +referanseOppdatertAv : SystemID [0..1]
   +referanseOpprettetAv : SystemID [0..1]
 }

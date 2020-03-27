@@ -279,7 +279,7 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 
 **Eksempel:**
 
-   /api/arkivstruktur/registrering/?$filter=year(oppdatertDato) gt 2012
+   /api/arkivstruktur/registrering/?$filter=year(endretDato) gt 2012
 
 ..
 
@@ -349,9 +349,9 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
    - Mapper med merknader som har merknadstype B
    - utvidet
  * - ../arkivdel/1235/mappe?$top=2&$filter=contains(‘testmappe’,
-     tittel) eq true $orderby=oppdatertDato desc
+     tittel) eq true $orderby=endretDato desc
    - De to første mapper hvor testmappe er en del av tittel sortert
-     synkende på oppdatertDato
+     synkende på endretDato
    - basis
  * - ../api/arkivstruktur/Mappe?$filter=klasse/klasseID eq '12/2' and
      klasse/klassifikasjonssystem/klassifikasjonstype/kode eq 'GBNR'
@@ -781,11 +781,11 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
            "graderingsdato": "2016-05-03T16:05:48.4966742+02:00"
        },
        "systemID": "515c45b5-e903-4320-a085-2a98813878ba",
-       "oppdatertDato": "2016-05-03T16:10:01.9386215+02:00",
+       "endretDato": "2016-05-03T16:10:01.9386215+02:00",
        "opprettetDato": "2016-04-03T15:45:28.4985538+02:00",
        "opprettetAv": "pålogget bruker",
-       "oppdatertAv": "pålogget bruker",
-       "referanseOppdatertAv": "8f58d80c-9b5c-4ddf-af5a-764f08a7661e",
+       "endretAv": "pålogget bruker",
+       "referanseEndretAv": "8f58d80c-9b5c-4ddf-af5a-764f08a7661e",
        "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
        "_links": {
            "self": {
@@ -856,11 +856,11 @@ https://n5.example.com/api/arkivstruktur/Mappe/a043d07b-9641-44ad-85d8-056730bc8
            "graderingsdato": "2016-05-03T16:05:48.4966742+02:00"
        },
        "systemID": "515c45b5-e903-4320-a085-2a98813878ba",
-       "oppdatertDato": "2016-05-03T16:10:01.9386215+02:00",
+       "endretDato": "2016-05-03T16:10:01.9386215+02:00",
        "opprettetDato": "2016-04-03T15:45:28.4985538+02:00",
        "opprettetAv": "pålogget bruker",
-       "oppdatertAv": "pålogget bruker",
-       "referanseOppdatertAv": "8f58d80c-9b5c-4ddf-af5a-764f08a7661e",
+       "endretAv": "pålogget bruker",
+       "referanseEndretAv": "8f58d80c-9b5c-4ddf-af5a-764f08a7661e",
        "referanseOpprettetAv": "4ff78c87-6e41-40cb-bc6b-edff1ce685b9",
        "_links": {
            "self": {
