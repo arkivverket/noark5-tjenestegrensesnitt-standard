@@ -7067,7 +7067,7 @@ AdministrativEnhet
  * - M602a avsluttetDato
    - Skal ikke kunne endres
  * - M602b avsluttetDato
-   - Obligatorisk dersom arkivdelen er avsluttet
+   - Obligatorisk dersom arkivenheten er avsluttet
  * - Ny - navn skal ikke endres. Hvis enhet får nytt navn så opprettes ny enhet med ny systemID. Den gamle kan da settes avsluttet dato på.
    -
 
@@ -7212,7 +7212,7 @@ når pålogget bruker ikke finnes fra før.
  * - M602a avsluttetDato
    - Skal ikke kunne endres.
  * - M602b avsluttetDato 
-   - Obligatorisk dersom arkivdelen er avsluttet.
+   - Obligatorisk dersom arkivenheten er avsluttet.
  * - Ny - navn
    - Skal ikke endres. Hvis person får nytt navn så opprettes ny bruker med ny systemID.
 
