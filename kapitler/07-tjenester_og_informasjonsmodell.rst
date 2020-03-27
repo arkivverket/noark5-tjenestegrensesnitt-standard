@@ -4817,35 +4817,25 @@ M051
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivdelstatus/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Aktiv periode
    -
-   -
    - A
-   -
  * - Overlappingsperiode
    -
-   -
    - O
-   -
  * - Avsluttet periode
    -
-   -
    - P
-   -
  * - Uaktuelle mapper
    -
-   -
    - U
-   -
 
 Arkivstatus
 ^^^^^^^^^^^
@@ -4866,25 +4856,19 @@ M050
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivstatus/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Opprettet
    -
-   -
    - O
-   -
  * - Avsluttet
    -
-   -
    - A
-   -
 
 Avskrivningsmaate
 ^^^^^^^^^^^^^^^^^
@@ -4905,50 +4889,34 @@ M619
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/avskrivningsmaate/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Besvart med brev
    -
-   -
    - BU
-   -
  * - Besvart med e-post
    -
-   -
    - BE
-   -
  * - Besvart på telefon
    -
-   -
    - TLF
-   -
  * - Tatt til etterretning
    -
-   -
    - TE
-   -
  * - Tatt til orientering
    -
-   -
    - TO
-   -
  * - Besvart med notat
    -
-   -
    - BN
-   -
  * - Saken ble avsluttet
    -
-   -
    - SA
-   -
 
 Dokumentmedium
 ^^^^^^^^^^^^^^
@@ -4971,30 +4939,22 @@ M300
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Fysisk medium
    -
-   -
    - F
-   -
  * - Elektronisk arkiv
    -
-   -
    - E
-   -
  * - Blandet fysisk og elektronisk arkiv
    -
-   -
    - B
-   -
 
 Dokumentstatus
 ^^^^^^^^^^^^^^
@@ -5015,25 +4975,19 @@ M054
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentstatus/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Dokumentet er under redigering
    -
-   -
    - B
-   -
  * - Dokumentet er ferdigstilt
    -
-   -
    - F
-   -
 
 Dokumenttype
 ^^^^^^^^^^^^
@@ -5054,35 +5008,25 @@ M083
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumenttype/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Brev
    - Valgfri
-   -
    - B
-   -
  * - Rundskriv
    - Valgfri
-   -
    - R
-   -
  * - Faktura
    - Valgfri
-   -
    - F
-   -
  * - Ordrebekreftelse
    - Valgfri
-   -
    - O
-   -
 
 ElektroniskSignaturSikkerhetsnivaa
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5108,35 +5052,25 @@ elektroniskSignaturSikkerhetsnivaa
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/elektronisksignatursikkerhetsnivaa/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Symmetrisk kryptert
    - Valgfri
-   -
    - SK
-   -
  * - Sendt med PKI/virksomhetssertifikat
    - Valgfri
-   -
    - V
-   -
  * - Sendt med PKI/"person standard"-sertifikat
    - Valgfri
-   -
    - PS
-   -
  * - Sendt med PKI/"person høy"-sertifikat
    - Valgfri
-   -
    - PH
-   -
 
 ElektroniskSignaturVerifisert
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5159,25 +5093,19 @@ M508
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/elektronisksignaturverifisert/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Signatur påført, ikke verifisert
    -
-   -
    - I
-   -
  * - Signatur påført og verifisert
    -
-   -
    - V
-   -
 
 FlytStatus
 ^^^^^^^^^^
@@ -5194,30 +5122,22 @@ FlytStatus
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/flytstatus/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Godkjent
    - Valgfri
-   -
    - G
-   -
  * - Ikke godkjent
    - Valgfri
-   -
    - I
-   -
  * - Sendt tilbake til saksbehandler med kommentarer
    - Valgfri
-   -
    - S
-   -
 
 Format
 ^^^^^^
@@ -5262,81 +5182,57 @@ eksempler.
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/format/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Ukjent format
    - Formatet er ikke gjenkjent eller mangler i listen over kjente
      formater.
-   -
    - av/0
-   -
  * - Ren tekst
    - Som ren tekst: UTF-8 (ISO/IEC 10646-1:2000 Annex D) eller ISO
      8859-1:1998, Latin 1. ISO 8859-1:1998, Latin 1 kan erstattes med
      ISO 8859-4:1998, Latin 4 for samiske tegn
-   -
    - `x-fmt/111 <http://www.nationalarchives.gov.uk/PRONOM/x-fmt/111>`_
-   -
  * - TIFF versjon 6
    - TIFF - Tag Image File Format versjon 6, med de presiseringer som
      fremgår av forskriftens § 8-18
-   -
    - `fmt/353 <http://www.nationalarchives.gov.uk/PRONOM/fmt/353>`_
-   -
  * - PDF/A 1a - ISO 19005-1:2005
    - PDF/A - ISO 19005-1:2005, versjon 1a («Conformance Level»
      A). PDF/A erstatter Adobe PDF, jf. forskriftens § 8-20 tredje
      ledd.
-   -
    - `fmt/95 <http://www.nationalarchives.gov.uk/PRONOM/fmt/95>`_
-   -
  * - PDF/A 1b - ISO 19005-1:2005
    - PDF/A - ISO 19005-1:2005, versjon 1b («Conformance Level»
      B). PDF/A erstatter Adobe PDF, jf. forskriftens § 8-20 tredje
      ledd.
-   -
    - `fmt/354 <http://www.nationalarchives.gov.uk/PRONOM/fmt/354>`_
-   -
  * - XML
    - XML - Extensible Markup Language versjon 1.0, med de
      presiseringer som fremgår av forskriftens § 8-19
-   -
    - `fmt/101 <http://www.nationalarchives.gov.uk/PRONOM/fmt/101>`_
-   -
  * - JPEG
    - JPEG 1.00 som beskrevet i ISO 10918-1:1994
-   -
    - `fmt/42 <http://www.nationalarchives.gov.uk/PRONOM/fmt/42>`_
-   -
  * - SOSI
    - SOSI versjon 2.2 (1995) eller nyere
-   -
    - av/1
-   -
  * - MPEG-2
    - MPEG-2 (ISO 13818-2.)
-   -
    - `x-fmt/386 <http://www.nationalarchives.gov.uk/PRONOM/x-fmt/386>`_
-   -
  * - MP3
    - lyd: MP3 (ISO 11172-3), PCM eller PCM-basert Wave. Valget mellom
      disse lydformatene skal i hvert tilfelle være avtalt med
      Arkivverket før deponering eller avlevering
-   -
    - `fmt/134 <http://www.nationalarchives.gov.uk/PRONOM/fmt/134>`_
-   -
  * - PNG
    - PNG 1.2 som beskrevet i ISO / IEC 15948
-   -
    - `fmt/11 <http://www.nationalarchives.gov.uk/PRONOM/fmt/13>`_
-   -
 
 Graderingskode
 ^^^^^^^^^^^^^^
@@ -5353,45 +5249,31 @@ Graderingskode
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/graderingskode/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Strengt hemmelig (sikkerhetsgrad)
    -
-   -
    - SH
-   -
  * - Hemmelig (sikkerhetsgrad)
    -
-   -
    - H
-   -
  * - Konfidensielt (sikkerhetsgrad)
    -
-   -
    - K
-   -
  * - Begrenset (sikkerhetsgrad)
    -
-   -
    - B
-   -
  * - Fortrolig (beskyttelsesgrad)
    -
-   -
    - F
-   -
  * - Strengt fortrolig (beskyttelsesgrad)
    -
-   -
    - SF
-   -
 
 Hendelsetype
 ^^^^^^^^^^^^
@@ -5410,35 +5292,25 @@ Definisjon: Hva slags type hendelse som er logget.
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/hendelsetype/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Opprettet
    -
-   -
    - C
-   -
  * - Lest
    -
-   -
    - R
-   -
  * - Endret
    -
-   -
    - U
-   -
  * - Slettet
    -
-   -
    - D
-   -
 
 Journalposttype
 ^^^^^^^^^^^^^^^
@@ -5460,40 +5332,28 @@ M082
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/journalposttype/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Inngående dokument
    -
-   -
    - I
-   -
  * - Utgående dokument
    -
-   -
    - U
-   -
  * - Organinternt dokument for oppfølging
    -
-   -
    - N
-   -
  * - Organinternt dokument uten oppfølging
    -
-   -
    - X
-   -
  * - Saksframlegg
    -
-   -
    - S
-   -
 
 Journalstatus
 ^^^^^^^^^^^^^
@@ -5513,60 +5373,40 @@ M053
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/journalstatus/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Journalført
    -
-   -
    - J
-   -
  * - Ferdigstilt fra saksbehandler
    -
-   -
    - F
-   -
  * - Godkjent av leder
    -
-   -
    - G
-   -
  * - Ekspedert
    -
-   -
    - E
-   -
  * - Arkivert
    -
-   -
    - A
-   -
  * - Utgår
    -
-   -
    - U
-   -
  * - Midlertidig registrering av innkommet dokument
    - Anbefalt
-   -
    - M
-   -
  * - Saksbehandler har registrert innkommet dokument
    - Anbefalt. Dette gjelder hovedsakelig e-post
-   -
    - S
-   -
  * - Reservert dokument
    - Reservert dokument, dvs. egenprodusert dokument er under arbeid.
-   -
    - R
-   -
 
 Kassasjonsvedtak
 ^^^^^^^^^^^^^^^^
@@ -5588,30 +5428,22 @@ M450
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/kassasjonsvedtak/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Bevares
    -
-   -
    - B
-   -
  * - Kasseres
    -
-   -
    - K
-   -
  * - Vurderes senere
    -
-   -
    - G
-   -
 
 Klassifikasjonstype
 ^^^^^^^^^^^^^^^^^^^
@@ -5633,55 +5465,37 @@ M086
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/klassifikasjonstype/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Gårds- og bruksnummer
    - Valgfri
-   -
    - GBN
-   -
  * - Funksjonsbasert, hierarkisk
    - Valgfri
-   -
    - FH
-   -
  * - Emnebasert, hierarkisk arkivnøkkel
    - Valgfri
-   -
    - EH
-   -
  * - Emnebasert, ett nivå
    - Valgfri
-   -
    - E1
-   -
  * - K-koder
    - Valgfri
-   -
    - KK
-   -
  * - Mangefasettert, ikke hierarki
    - Valgfri
-   -
    - MF
-   -
  * - Objektbasert
    - Valgfri
-   -
    - UO
-   -
  * - Fødselsnummer
    - Valgfri
-   -
    - PNR
-   -
 
 
 Korrespondanseparttype
@@ -5705,55 +5519,37 @@ M087
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/korrespondanseparttype/
 
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Avsender
    -
-   -
    - EA
-   -
  * - Mottaker
    -
-   -
    - EM
-   -
  * - Kopimottaker
    -
-   -
    - EK
-   -
  * - Gruppemottaker
    -
-   -
    - GM
-   -
  * - Intern avsender
    -
-   -
    - IA
-   -
  * - Intern mottaker
    -
-   -
    - IM
-   -
  * - Intern kopimottaker
    -
-   -
    - IK
-   -
  * - Medavsender
    -
-   -
    - IS
-   -
 
 
 Land
@@ -5806,30 +5602,22 @@ M084
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/merknadstype/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Merknad fra saksbehandler
    - Valgfri
-   -
    - MS
-   -
  * - Merknad fra leder
    - Valgfri
-   -
    - ML
-   -
  * - Merknad fra arkivansvarlig
    - Valgfri
-   -
    - MA
-   -
 
 Postnummer
 ^^^^^^^^^^
@@ -5875,25 +5663,19 @@ M056
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/presedensstatus/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Gjeldende
    -
-   -
    - G
-   -
  * - Foreldet
    -
-   -
    - F
-   -
 
 PartRolle
 ^^^^^^^^^
@@ -5910,35 +5692,25 @@ PartRolle
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/partrolle/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Klient
    - Valgfri
-   -
    - KLI
-   -
  * - Pårørende
    - Valgfri
-   -
    - PAA
-   -
  * - Formynder
    - Valgfri
-   -
    - FORM
-   -
  * - Advokat
    - Valgfri
-   -
    - ADV
-   -
 
 Saksstatus
 ^^^^^^^^^^
@@ -5960,50 +5732,34 @@ M052
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/saksstatus/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Under behandling
    -
-   -
    - B
-   -
  * - Avsluttet
    -
-   -
    - A
-   -
  * - Utgår
    -
-   -
    - U
-   -
  * - Opprettet av saksbehandler
    - anbefalt
-   -
    - R
-   -
  * - Avsluttet av saksbehandler
    - anbefalt
-   -
    - S
-   -
  * - Unntatt prosesstyring
    - anbefalt
-   -
    - P
-   -
  * - Ferdig fra saksbehandler
    -
-   -
    - F
-   -
 
 SkjermingDokument
 ^^^^^^^^^^^^^^^^^
@@ -6025,25 +5781,19 @@ M503
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/skjermingdokument/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Skjerming av hele dokumentet
    -
-   -
    - H
-   -
  * - Skjerming av deler av dokumentet
    -
-   -
    - D
-   -
 
 SkjermingMetadata
 ^^^^^^^^^^^^^^^^^
@@ -6065,75 +5815,49 @@ M502
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/skjermingmetadata/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Skjerming klasseID
    -
-   -
    - KID
-   -
  * - Skjerming tittel klasse
    -
-   -
    - TKL
-   -
  * - Skjerming tittel mappe - unntatt første linje
    -
-   -
    - TM1
-   -
  * - Skjerming tittel mappe - utvalgte ord
    -
-   -
    - TMO
-   -
  * - Skjerming navn part i sak
    -
-   -
    - NPS
-   -
  * - Skjerming tittel registrering - unntatt første linje
    -
-   -
    - TR1
-   -
  * - Skjerming tittel registrering - utvalgte ord
    -
-   -
    - TRO
-   -
  * - Skjerming navn avsender
    -
-   -
    - NA
-   -
  * - Skjerming navn mottaker
    -
-   -
    - NM
-   -
  * - Skjerming tittel dokumentbeskrivelse
    -
-   -
    - TD
-   -
  * - Skjerming merknadstekst
    -
-   -
    - MT
-   -
  * - Midlertidig skjerming
    -
-   -
    - M
-   -
 
 Slettingstype
 ^^^^^^^^^^^^^
@@ -6154,35 +5878,25 @@ M089
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/slettingstype/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Sletting av produksjonsformat
    -
-   -
    - SP
-   -
  * - Sletting av tidligere versjon
    -
-   -
    - SV
-   -
  * - Sletting av variant med sladdet informasjon
    -
-   -
    - SS
-   -
  * - Sletting av hele innholdet i arkivdelen
    -
-   -
    - SA
-   -
 
 SystemID
 ^^^^^^^^
@@ -6239,40 +5953,28 @@ Tilgangskategori
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/tilgangskategori/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - arkivdel
    -
-   -
    - A
-   -
  * - klasse
    -
-   -
    - K
-   -
  * - mappe
    -
-   -
    - M
-   -
  * - registrering
    -
-   -
    - R
-   -
  * - dokumentbeskrivelse
    -
-   -
    - D
-   -
 
 Tilgangsrestriksjon
 ^^^^^^^^^^^^^^^^^^^
@@ -6289,75 +5991,49 @@ Tilgangsrestriksjon
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/tilgangsrestriksjon/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Begrenset etter sikkerhetsinstruksen
    -
-   -
    - B
-   -
  * - Konfidensielt etter sikkerhetsinstruksen
    -
-   -
    - K
-   -
  * - Hemmelig etter sikkerhetsinstruksen
    -
-   -
    - H
-   -
  * - Fortrolig etter beskyttelsesinstruksen
    -
-   -
    - F
-   -
  * - Strengt fortrolig etter beskyttelsesinstruksen
    -
-   -
    - SF
-   -
  * - Unntatt etter offentlighetsloven § 5
    -
-   -
    - 5
-   -
  * - Unntatt etter offentlighetsloven § 5a
    -
-   -
    - 5a
-   -
  * - Unntatt etter offentlighetsloven § 6
    -
-   -
    - 6
-   -
  * - Unntatt etter offentlighetsloven § 11
    -
-   -
    - 11
-   -
  * - Midlertidig sperret
    -
-   -
    - XX
-   -
  * - Personalsaker
    -
-   -
    - P
-   -
  * - Klientsaker
    -
-   -
    - KL
-   -
 
 TilknyttetRegistreringSom
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6374,25 +6050,19 @@ TilknyttetRegistreringSom
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/tilknyttetregistreringsom/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Hoveddokument
    -
-   -
    - H
-   -
  * - Vedlegg
    -
-   -
    - V
-   -
 
 Variantformat
 ^^^^^^^^^^^^^
@@ -6413,30 +6083,22 @@ M700
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/variantformat/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Kodenavn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - Produksjonsformat
    -
-   -
    - P
-   -
  * - Arkivformat
    -
-   -
    - A
-   -
  * - Dokument hvor deler av innholdet er skjermet
    -
-   -
    - O
-   -
 
 Sakarkiv
 ~~~~~~~~
