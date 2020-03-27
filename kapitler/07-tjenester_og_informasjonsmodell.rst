@@ -7214,39 +7214,51 @@ Hendelseslogg
 
 *Arver:* **Endringslogg**
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :header-rows: 1
 
-   +-------------------------------------------+---------------+--------------+-------------+
-   | **Relasjon**                              | **Kilde**     | **Mål**      | **Merknad** |
-   +===========================================+===============+==============+=============+
-   | **Generalization** (Source → Destination) | Hendelseslogg | Endringslogg |             |
-   +-------------------------------------------+---------------+--------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Generalization** (Source → Destination)
+   - Hendelseslogg
+   - Endringslogg
+   -
 
-.. table:: Relasjonsnøkler
 
-   +-----------------------------------------------------------------------------+
-   | **Verdi**                                                                   |
-   +=============================================================================+
-   | self                                                                        |
-   +-----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/hendelseslogg/    |
-   +-----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-hendelseslogg/ |
-   +-----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/hendelsetype/             |
-   +-----------------------------------------------------------------------------+
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-.. table:: Attributter
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/hendelseslogg/
+ * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-hendelseslogg/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/hendelsetype/
 
-   +--------------+-------------+------------+----------+--------------+
-   | **Navn**     | **Merknad** | **Forek.** | **Kode** | **Type**     |
-   +==============+=============+============+==========+==============+
-   | hendelsetype |             | [1..1]     |          | Hendelsetype |
-   +--------------+-------------+------------+----------+--------------+
-   | beskrivelse  |             | [0..1]     |          | string       |
-   +--------------+-------------+------------+----------+--------------+
-   | hendelseDato |             | [1..1]     |          | datetime     |
-   +--------------+-------------+------------+----------+--------------+
+.. list-table:: Attributter
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - hendelsetype
+   -
+   - [1..1]
+   -
+   - Hendelsetype
+ * - beskrivelse
+   -
+   - [0..1]
+   -
+   - string
+ * - hendelseDato
+   -
+   - [1..1]
+   -
+   - datetime
 
 .. |image0| image:: ./media/uml-forklaring-om-notasjon-som-er-brukt.png
    :width: 90.0%
