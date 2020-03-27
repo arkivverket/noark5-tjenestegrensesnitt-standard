@@ -5771,17 +5771,14 @@ relasjonsnøkler til de ulike entitetene som er tilgjengelig. Følgende
 relasjonsnøkler skal listes opp fra en implementasjon som støtter
 Sakarkiv-pakken:
 
-+----------------------------------------------------------------+
-| **Relasjonsnøkkel**                                            |
-+================================================================+
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/arkivnotat/  |
-+----------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/journalpost/ |
-+----------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/presedens/   |
-+----------------------------------------------------------------+
-| https://rel.arkivverket.no/noark5/v5/api/sakarkiv/saksmappe/   |
-+----------------------------------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+ * - **Relasjonsnøkkel**
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/arkivnotat/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/journalpost/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/presedens/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/saksmappe/
 
 Utvidelse for sakarkiv metadata
 
@@ -5849,94 +5846,119 @@ journalpost. Avskrivning er obligatorisk for inngående dokumenter og
 organinterne dokumenter som skal følges opp, og kan forekomme en eller
 flere ganger i en journalpost.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :header-rows: 1
 
-   +----------------------------------------+-------------+-------------------------------+-------------+
-   | **Relasjon**                           | **Kilde**   | **Mål**                       | **Merknad** |
-   +========================================+=============+===============================+=============+
-   | **Association** (Source → Destination) | Journalpost | avskrivning 0..\* Avskrivning |             |
-   +----------------------------------------+-------------+-------------------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Association** (Source → Destination)
+   - Journalpost
+   - avskrivning 0..\* Avskrivning
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +----------------------------------------------------------------------+
-   | **Verdi**                                                            |
-   +======================================================================+
-   | self                                                                 |
-   +----------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/avskrivningsmaate/ |
-   +----------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/avskrivning/       |
-   +----------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-avskrivning/    |
-   +----------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/avskrivningsmaate/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/avskrivning/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-avskrivning/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :header-rows: 1
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | systemID                        | Definisjon: Entydig identifikasjon av        | [0..1]                                       |                                 | SystemID                        |
-   |                                 | arkivenheten innenfor det arkivskapende      |                                              |                                 |                                 |
-   |                                 | organet. Dersom organet har flere            |                                              |                                 |                                 |
-   |                                 | arkivsystemer, skal altså systemID være      |                                              |                                 |                                 |
-   |                                 | gjennomgående entydig.                       |                                              |                                 |                                 |
-   |                                 | Systemidentifikasjonen vil som oftest være   |                                              |                                 |                                 |
-   |                                 | en numerisk kode uten noe logisk             |                                              |                                 |                                 |
-   |                                 | meningsinnhold. Identifikasjonen trenger     |                                              |                                 |                                 |
-   |                                 | ikke å være synlig for brukerne. Kilde:      |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet.          |                                              |                                 |                                 |
-   |                                 | Kommentarer: Alle referanser fra en          |                                              |                                 |                                 |
-   |                                 | arkivenhet til en annen skal peke til        |                                              |                                 |                                 |
-   |                                 | arkivenhetens systemidentifikasjon. Dette    |                                              |                                 |                                 |
-   |                                 | gjelder også referanser fra en arkivdel til  |                                              |                                 |                                 |
-   |                                 | en annen, f.eks. mellom to arkivperioder som |                                              |                                 |                                 |
-   |                                 | avleveres på forskjellig tidspunkt. I et     |                                              |                                 |                                 |
-   |                                 | arkivuttrekk skal systemID være entydig      |                                              |                                 |                                 |
-   |                                 | (unik). Dokumentobjekt har ingen             |                                              |                                 |                                 |
-   |                                 | systemidentifikasjon fordi enheten kan være  |                                              |                                 |                                 |
-   |                                 | duplisert i et arkivuttrekk dersom samme     |                                              |                                 |                                 |
-   |                                 | dokumentfil er knyttet til flere             |                                              |                                 |                                 |
-   |                                 | forskjellige registreringer. M001            |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | avskrivningsdato                | Definisjon: Dato et dokument ble avskrevet . | [1..1]                                       |                                 | date                            |
-   |                                 | Kilde: Registreres automatisk nå avskrivning |                                              |                                 |                                 |
-   |                                 | foretas. Kommentar: (ingen). M617            |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | avskrevetAv                     | Definisjon: Navn på person som har foretatt  | [1..1]                                       |                                 | string                          |
-   |                                 | avskrivning . Kilde: Registreres automatisk  |                                              |                                 |                                 |
-   |                                 | nå avskrivning foretas. Kommentar: (ingen).  |                                              |                                 |                                 |
-   |                                 | M618                                         |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseAvskrevetAv            |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | avskrivningsmaate               | Definisjon: Måten en journalpost har blitt   | [1..1]                                       |                                 | Avskrivningsmaate               |
-   |                                 | avskrevet på . Kilde: Registreres automatisk |                                              |                                 |                                 |
-   |                                 | når konvertering utføres. Kommentar:         |                                              |                                 |                                 |
-   |                                 | (ingen). M619 avskrivningsmaate              |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseAvskrivesAvJournalpost | Definisjon: Referanse til en eller flere     | [0..1]                                       |                                 | SystemID                        |
-   |                                 | journalposter som avskriver denne            |                                              |                                 |                                 |
-   |                                 | journalposten . Kilde: Registreres manuelt   |                                              |                                 |                                 |
-   |                                 | eller automatisk ved avskrivning. Kommentar: |                                              |                                 |                                 |
-   |                                 | (ingen). M215                                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseAvskrivesAvKorresponda | angir referanse til hvilken                  | [0..1]                                       |                                 | SystemID                        |
-   | nsepart                         | korrespondansepart som har avskrevet         |                                              |                                 |                                 |
-   |                                 | journalposten                                |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   - Definisjon: Entydig identifikasjon av
+     arkivenheten innenfor det arkivskapende
+     organet. Dersom organet har flere
+     arkivsystemer, skal altså systemID være
+     gjennomgående entydig.
+     Systemidentifikasjonen vil som oftest være
+     en numerisk kode uten noe logisk
+     meningsinnhold. Identifikasjonen trenger
+     ikke å være synlig for brukerne. Kilde:
+     Registreres automatisk av systemet.
+     Kommentarer: Alle referanser fra en
+     arkivenhet til en annen skal peke til
+     arkivenhetens systemidentifikasjon. Dette
+     gjelder også referanser fra en arkivdel til
+     en annen, f.eks. mellom to arkivperioder som
+     avleveres på forskjellig tidspunkt. I et
+     arkivuttrekk skal systemID være entydig
+     (unik). Dokumentobjekt har ingen
+     systemidentifikasjon fordi enheten kan være
+     duplisert i et arkivuttrekk dersom samme
+     dokumentfil er knyttet til flere
+     forskjellige registreringer. M001
+   - [0..1]
+   -
+   - SystemID
+ * - avskrivningsdato
+   - Definisjon: Dato et dokument ble avskrevet .
+     Kilde: Registreres automatisk nå avskrivning
+     foretas. Kommentar: (ingen). M617
+   - [1..1]
+   -
+   - date
+ * - avskrevetAv
+   - Definisjon: Navn på person som har foretatt
+     avskrivning . Kilde: Registreres automatisk
+     nå avskrivning foretas. Kommentar: (ingen).
+     M618
+   - [1..1]
+   -
+   - string
+ * - referanseAvskrevetAv
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - avskrivningsmaate
+   - Definisjon: Måten en journalpost har blitt
+     avskrevet på . Kilde: Registreres automatisk
+     når konvertering utføres. Kommentar:
+     (ingen). M619 avskrivningsmaate
+   - [1..1]
+   -
+   - Avskrivningsmaate
+ * - referanseAvskrivesAvJournalpost
+   - Definisjon: Referanse til en eller flere
+     journalposter som avskriver denne
+     journalposten . Kilde: Registreres manuelt
+     eller automatisk ved avskrivning. Kommentar:
+     (ingen). M215
+   - [0..1]
+   -
+   - SystemID
+ * - referanseAvskrivesAvKorresponda
+     nsepart
+   - angir referanse til hvilken
+     korrespondansepart som har avskrevet
+     journalposten
+   - [0..1]
+   -
+   - SystemID
 
-.. table:: Restriksjoner
 
-   +----------------------------------------+-------------+
-   | **Navn**                               | **Merknad** |
-   +========================================+=============+
-   | M001 systemID: Skal ikke kunne endres  |             |
-   +----------------------------------------+-------------+
-   | M617 avskrivningsdato: Kan ikke endres |             |
-   +----------------------------------------+-------------+
-   | M618 avskrevetAv: Kan ikke endres      |             |
-   +----------------------------------------+-------------+
+.. list-table:: Restriksjoner
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+ * - M001 systemID
+   - Skal ikke kunne endres
+ * - M617 avskrivningsdato
+   - Kan ikke endres
+ * - M618 avskrevetAv
+   - Kan ikke endres
 
 Dokumentflyt
 ^^^^^^^^^^^^
@@ -5956,112 +5978,144 @@ ny versjon ved hver (videre)forsendelse. All funksjonalitet for
 korrektur og merknader i tilknyttet tekstbehandlingssystem skal kunne
 brukes på et dokument som er under produksjon.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :header-rows: 1
 
-   +----------------------------------------+-------------+---------------------------------+-------------+
-   | **Relasjon**                           | **Kilde**   | **Mål**                         | **Merknad** |
-   +========================================+=============+=================================+=============+
-   | **Association** (Source → Destination) | Journalpost | dokumentflyt 0..\* Dokumentflyt |             |
-   +----------------------------------------+-------------+---------------------------------+-------------+
-   | **Association** (Source → Destination) | Arkivnotat  | dokumentflyt 0..\* Dokumentflyt |             |
-   +----------------------------------------+-------------+---------------------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Association** (Source → Destination)
+   - Journalpost
+   - dokumentflyt 0..\* Dokumentflyt
+   -
+ * - **Association** (Source → Destination)
+   - Arkivnotat
+   - dokumentflyt 0..\* Dokumentflyt
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +--------------------------------------------------------------------+
-   | **Verdi**                                                          |
-   +====================================================================+
-   | self                                                               |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/flytstatus/      |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/dokumentflyt/    |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-dokumentflyt/ |
-   +--------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/flytstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/dokumentflyt/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-dokumentflyt/
 
-.. table:: Attributter
+.. list-table:: Attributter
+   :header-rows: 1
 
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | **Navn**                        | **Merknad**                                  | **Forek.**                                   | **Kode**                        | **Type**                        |
-   +=================================+==============================================+==============================================+=================================+=================================+
-   | systemID                        | Definisjon: Entydig identifikasjon av        | [0..1]                                       |                                 | SystemID                        |
-   |                                 | arkivenheten innenfor det arkivskapende      |                                              |                                 |                                 |
-   |                                 | organet. Dersom organet har flere            |                                              |                                 |                                 |
-   |                                 | arkivsystemer, skal altså systemID være      |                                              |                                 |                                 |
-   |                                 | gjennomgående entydig.                       |                                              |                                 |                                 |
-   |                                 | Systemidentifikasjonen vil som oftest være   |                                              |                                 |                                 |
-   |                                 | en numerisk kode uten noe logisk             |                                              |                                 |                                 |
-   |                                 | meningsinnhold. Identifikasjonen trenger     |                                              |                                 |                                 |
-   |                                 | ikke å være synlig for brukerne. Kilde:      |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av systemet.          |                                              |                                 |                                 |
-   |                                 | Kommentarer: Alle referanser fra en          |                                              |                                 |                                 |
-   |                                 | arkivenhet til en annen skal peke til        |                                              |                                 |                                 |
-   |                                 | arkivenhetens systemidentifikasjon. Dette    |                                              |                                 |                                 |
-   |                                 | gjelder også referanser fra en arkivdel til  |                                              |                                 |                                 |
-   |                                 | en annen, f.eks. mellom to arkivperioder som |                                              |                                 |                                 |
-   |                                 | avleveres på forskjellig tidspunkt. I et     |                                              |                                 |                                 |
-   |                                 | arkivuttrekk skal systemID være entydig      |                                              |                                 |                                 |
-   |                                 | (unik). Dokumentobjekt har ingen             |                                              |                                 |                                 |
-   |                                 | systemidentifikasjon fordi enheten kan være  |                                              |                                 |                                 |
-   |                                 | duplisert i et arkivuttrekk dersom samme     |                                              |                                 |                                 |
-   |                                 | dokumentfil er knyttet til flere             |                                              |                                 |                                 |
-   |                                 | forskjellige registreringer. M001            |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | flytTil                         | Definisjon: Person som har mottatt for       | [1..1]                                       |                                 | string                          |
-   |                                 | godkjennelse et dokument som har vært sendt  |                                              |                                 |                                 |
-   |                                 | på flyt . Kilde: Registreres automatisk av   |                                              |                                 |                                 |
-   |                                 | funksjonalitet knyttet til arbeidsflyt.      |                                              |                                 |                                 |
-   |                                 | Kommentar: (ingen). M660 flytTil             |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseFlytTil                |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | flytFra                         | Definisjon: Person som har sendt et dokument | [1..1]                                       |                                 | string                          |
-   |                                 | på flyt . Kilde: Registreres automatisk av   |                                              |                                 |                                 |
-   |                                 | funksjonalitet knyttet til arbeidsflyt.      |                                              |                                 |                                 |
-   |                                 | Kommentar: (ingen). M665 flytFra             |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | referanseFlytFra                |                                              | [0..1]                                       |                                 | SystemID                        |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | flytMottattDato                 | Definisjon: Dato og klokkeslett et dokument  |                                              | [1..1]                          | datetime                        |
-   |                                 | på flyt ble mottatt . Kilde: Registreres     |                                              |                                 |                                 |
-   |                                 | automatisk av funksjonalitet knyttet til     |                                              |                                 |                                 |
-   |                                 | arbeidsflyt. Kommentar: (ingen). M661        |                                              |                                 |                                 |
-   |                                 | flytMottattDato                              |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | flytSendtDato                   | Definisjon: Dato og klokkeslett et dokument  | [1..1]                                       |                                 | datetime                        |
-   |                                 | på flyt ble sendt videre . Kilde:            |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av funksjonalitet     |                                              |                                 |                                 |
-   |                                 | knyttet til arbeidsflyt. Kommentar: (ingen). |                                              |                                 |                                 |
-   |                                 | M662 flytSendtDato                           |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | flytStatus                      | Definisjon: Godkjennelse/ikke godkjennelse   | [1..1]                                       |                                 | FlytStatus                      |
-   |                                 | av dokumentet som er sendt på flyt . Kilde:  |                                              |                                 |                                 |
-   |                                 | Registreres automatisk av funksjonalitet     |                                              |                                 |                                 |
-   |                                 | knyttet til arbeidsflyt. Kommentar: (ingen). |                                              |                                 |                                 |
-   |                                 | M663 flytStatus                              |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
-   | flytMerknad                     | Definisjon: Merknad eller kommentar til et   | [0..1]                                       |                                 | string                          |
-   |                                 | dokument som er sendt på flyt . Kilde:       |                                              |                                 |                                 |
-   |                                 | Registreres manuelt. Kommentar: (ingen).     |                                              |                                 |                                 |
-   |                                 | M664 flytMerknad                             |                                              |                                 |                                 |
-   +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   - Definisjon: Entydig identifikasjon av
+     arkivenheten innenfor det arkivskapende
+     organet. Dersom organet har flere
+     arkivsystemer, skal altså systemID være
+     gjennomgående entydig.
+     Systemidentifikasjonen vil som oftest være
+     en numerisk kode uten noe logisk
+     meningsinnhold. Identifikasjonen trenger
+     ikke å være synlig for brukerne. Kilde:
+     Registreres automatisk av systemet.
+     Kommentarer: Alle referanser fra en
+     arkivenhet til en annen skal peke til
+     arkivenhetens systemidentifikasjon. Dette
+     gjelder også referanser fra en arkivdel til
+     en annen, f.eks. mellom to arkivperioder som
+     avleveres på forskjellig tidspunkt. I et
+     arkivuttrekk skal systemID være entydig
+     (unik). Dokumentobjekt har ingen
+     systemidentifikasjon fordi enheten kan være
+     duplisert i et arkivuttrekk dersom samme
+     dokumentfil er knyttet til flere
+     forskjellige registreringer. M001
+   - [0..1]
+   -
+   - SystemID
+ * - flytTil
+   - Definisjon: Person som har mottatt for
+     godkjennelse et dokument som har vært sendt
+     på flyt . Kilde: Registreres automatisk av
+     funksjonalitet knyttet til arbeidsflyt.
+     Kommentar: (ingen). M660 flytTil
+   - [1..1]
+   -
+   - string
+ * - referanseFlytTil
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - flytFra
+   - Definisjon: Person som har sendt et dokument
+     på flyt . Kilde: Registreres automatisk av
+     funksjonalitet knyttet til arbeidsflyt.
+     Kommentar: (ingen). M665 flytFra
+   - [1..1]
+   -
+   - string
+ * - referanseFlytFra
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - flytMottattDato
+   - Definisjon: Dato og klokkeslett et dokument
+     på flyt ble mottatt . Kilde: Registreres
+     automatisk av funksjonalitet knyttet til
+     arbeidsflyt. Kommentar: (ingen). M661
+     flytMottattDato
+   -
+   - [1..1]
+   - datetime
+ * - flytSendtDato
+   - Definisjon: Dato og klokkeslett et dokument
+     på flyt ble sendt videre . Kilde:
+     Registreres automatisk av funksjonalitet
+     knyttet til arbeidsflyt. Kommentar: (ingen).
+     M662 flytSendtDato
+   - [1..1]
+   -
+   - datetime
+ * - flytStatus
+   - Definisjon: Godkjennelse/ikke godkjennelse
+     av dokumentet som er sendt på flyt . Kilde:
+     Registreres automatisk av funksjonalitet
+     knyttet til arbeidsflyt. Kommentar: (ingen).
+     M663 flytStatus
+   - [1..1]
+   -
+   - FlytStatus
+ * - flytMerknad
+   - Definisjon: Merknad eller kommentar til et
+     dokument som er sendt på flyt . Kilde:
+     Registreres manuelt. Kommentar: (ingen).
+     M664 flytMerknad
+   - [0..1]
+   -
+   - string
 
-.. table:: Restriksjoner
 
-   +-------------------------------------------------------------------------------------------------------+-------------+
-   | **Navn**                                                                                              | **Merknad** |
-   +=======================================================================================================+=============+
-   | M001 systemID: Skal ikke kunne endres                                                                 |             |
-   +-------------------------------------------------------------------------------------------------------+-------------+
-   | M660 flytTil: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres          |             |
-   +-------------------------------------------------------------------------------------------------------+-------------+
-   | M661 flytMottattDato: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres. |             |
-   +-------------------------------------------------------------------------------------------------------+-------------+
-   | M662 flytSendtDato: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.   |             |
-   +-------------------------------------------------------------------------------------------------------+-------------+
-   | M665 flytFra: Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.         |             |
-   +-------------------------------------------------------------------------------------------------------+-------------+
+ .. list-table:: Restriksjoner
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+ * - M001 systemID
+   - Skal ikke kunne endres.
+ * - M660 flytTil
+   - Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
+ * - M661 flytMottattDato
+   - Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
+ * - M662 flytSendtDato 
+   - Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
+ * - M665 flytFra 
+   - Obligatorisk dersom dokumentet har blitt sendt på flyt. Skal ikke kunne endres.
 
 Arkivnotat
 ^^^^^^^^^^
@@ -6072,55 +6126,86 @@ Arkivnotat
 
 *Arver:* **Registrering**
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :header-rows: 1
 
-   +-------------------------------------------+------------+---------------------------------+-------------+
-   | **Relasjon**                              | **Kilde**  | **Mål**                         | **Merknad** |
-   +===========================================+============+=================================+=============+
-   | **Generalization** (Source → Destination) | Arkivnotat | Registrering                    |             |
-   +-------------------------------------------+------------+---------------------------------+-------------+
-   | **Association** (Source → Destination)    | Arkivnotat | dokumentflyt 0..\* Dokumentflyt |             |
-   +-------------------------------------------+------------+---------------------------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Generalization** (Source → Destination)
+   - Arkivnotat
+   - Registrering
+   -
+ * - **Association** (Source → Destination)
+   - Arkivnotat
+   - dokumentflyt 0..\* Dokumentflyt
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +--------------------------------------------------------------------+
-   | **Verdi**                                                          |
-   +====================================================================+
-   | self                                                               |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/arkivnotat/      |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-arkivnotat/   |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/dokumentflyt/    |
-   +--------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-dokumentflyt/ |
-   +--------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/arkivnotat/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-arkivnotat/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/dokumentflyt/
+ * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-dokumentflyt/
 
-.. table:: Attributter
+.. list-table::
+   :header-rows: 1
 
-   +--------------------------+-------------+------------+----------+----------+
-   | **Navn**                 | **Merknad** | **Forek.** | **Kode** | **Type** |
-   +==========================+=============+============+==========+==========+
-   | dokumentetsDato          | M103        | [0..1]     |          | date     |
-   +--------------------------+-------------+------------+----------+----------+
-   | mottattDato              | M104        | [0..1]     |          | datetime |
-   +--------------------------+-------------+------------+----------+----------+
-   | sendtDato                | M105        | [0..1]     |          | datetime |
-   +--------------------------+-------------+------------+----------+----------+
-   | forfallsdato             | M109        | [0..1]     |          | date     |
-   +--------------------------+-------------+------------+----------+----------+
-   | offentlighetsvurdertDato | M110        | [0..1]     |          | date     |
-   +--------------------------+-------------+------------+----------+----------+
-   | antallVedlegg            | M304        | [0..1]     |          | integer  |
-   +--------------------------+-------------+------------+----------+----------+
-   | utlaantDato              | M106        | [0..1]     |          | date     |
-   +--------------------------+-------------+------------+----------+----------+
-   | utlaantTil               | M309        | [0..1]     |          | string   |
-   +--------------------------+-------------+------------+----------+----------+
-   | referanseUtlaantTil      | M309        | [0..1]     |          | SystemID |
-   +--------------------------+-------------+------------+----------+----------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - dokumentetsDato
+   - M103
+   - [0..1]
+   -
+   - date
+ * - mottattDato
+   - M104
+   - [0..1]
+   -
+   - datetime
+ * - sendtDato
+   - M105
+   - [0..1]
+   -
+   - datetime
+ * - forfallsdato
+   - M109
+   - [0..1]
+   -
+   - date
+ * - offentlighetsvurdertDato
+   - M110
+   - [0..1]
+   -
+   - date
+ * - antallVedlegg
+   - M304
+   - [0..1]
+   -
+   - integer
+ * - utlaantDato
+   - M106
+   - [0..1]
+   -
+   - date
+ * - utlaantTil
+   - M309
+   - [0..1]
+   -
+   - string
+ * - referanseUtlaantTil
+   - M309
+   - [0..1]
+   -
+   - SystemID
+
 
 Journalpost
 ^^^^^^^^^^^
@@ -6180,9 +6265,6 @@ i MoReq2 som heter Record.)
    - Journalpost
    - Registrering
    -
-
-
-
 
 .. list-table:: Relasjonsnøkler
    :header-rows: 1
