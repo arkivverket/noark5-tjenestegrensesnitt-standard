@@ -56,6 +56,10 @@ spesifikasjon.html: docbook images
 clean:
 	$(RM) $(IMG_PNG)
 
+XMLLINTOPTS = --nonet --noout  --xinclude --postvalid
+lint: docbook
+	xmllint $(XMLLINTOPTS) docbook/spesifikasjon.xml
+
 md-to-rst:
 	cd kapitler; for f in [01]*.md; do \
 		pandoc --columns=200 --wrap=preserve -f $(PANDOC_TYPE) $$f -o $${f%.md}-new.rst; \
