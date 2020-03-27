@@ -7054,23 +7054,23 @@ når pålogget bruker ikke finnes fra før.
    | kortnavn                        |                                              | [0..1]                                       |                                 | string                          |
    +---------------------------------+----------------------------------------------+----------------------------------------------+---------------------------------+---------------------------------+
 
-.. table:: Restriksjoner
+.. list-table:: Restriksjoner
+   :header-rows: 1
 
-   +----------------------------------------------------------------------------------------------+-------------+
-   | **Navn**                                                                                     | **Merknad** |
-   +==============================================================================================+=============+
-   | M001 systemID: Skal ikke kunne endres                                                        |             |
-   +----------------------------------------------------------------------------------------------+-------------+
-   | M600 opprettetDato: Skal ikke kunne endres                                                   |             |
-   +----------------------------------------------------------------------------------------------+-------------+
-   | M601 opprettetAv: Skal ikke kunne endres                                                     |             |
-   +----------------------------------------------------------------------------------------------+-------------+
-   | M602a avsluttetDato: Skal ikke kunne endres                                                  |             |
-   +----------------------------------------------------------------------------------------------+-------------+
-   | M602b avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.                            |             |
-   +----------------------------------------------------------------------------------------------+-------------+
-   | Ny - navn skal ikke endres. Hvis person får nytt navn så opprettes ny bruker med ny systemID |             |
-   +----------------------------------------------------------------------------------------------+-------------+
+ * - **Navn**
+   - **Merknad**
+ * - M001 systemID: Skal ikke kunne endres
+   -
+ * - M600 opprettetDato: Skal ikke kunne endres
+   -
+ * - M601 opprettetAv: Skal ikke kunne endres
+   -
+ * - M602a avsluttetDato: Skal ikke kunne endres
+   -
+ * - M602b avsluttetDato: Obligatorisk dersom arkivdelen er avsluttet.
+   -
+ * - Ny - navn skal ikke endres. Hvis person får nytt navn så opprettes ny bruker med ny systemID
+   -
 
 Tilgang
 ^^^^^^^
@@ -7084,45 +7084,71 @@ Tilgang
 Styrer tilgang til data i kjernen basert på brukers
 rolletilknytning
 
-.. table:: Relasjonsnøkler
 
-   +------------------------------------------------------------------------+
-   | **Verdi**                                                              |
-   +========================================================================+
-   | self                                                                   |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/admin/ny-tilgang/             |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/admin/tilgang/                |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/tilgangskategori/    |
-   +------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/metadata/tilgangsrestriksjon/ |
-   +------------------------------------------------------------------------+
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-.. table:: Attributter
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/ny-tilgang/
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/tilgang/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/tilgangskategori/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/tilgangsrestriksjon/
 
-   +---------------------+-------------------------------------------------------+------------+----------+---------------------+
-   | **Navn**            | **Merknad**                                           | **Forek.** | **Kode** | **Type**            |
-   +=====================+=======================================================+============+==========+=====================+
-   | systemID            |                                                       | [0..1]     |          | SystemID            |
-   +---------------------+-------------------------------------------------------+------------+----------+---------------------+
-   | rolle               | Sammenlignes feks med rolle gitt i AD eller lignende. | [1..1]     |          | string              |
-   +---------------------+-------------------------------------------------------+------------+----------+---------------------+
-   | tilgangskategori    |                                                       | [1..1]     |          | Tilgangskategori    |
-   +---------------------+-------------------------------------------------------+------------+----------+---------------------+
-   | referanseArkivenhet |                                                       | [0..1]     |          | SystemID            |
-   +---------------------+-------------------------------------------------------+------------+----------+---------------------+
-   | tilgangsrestriksjon |                                                       | [0..1]     |          | Tilgangsrestriksjon |
-   +---------------------+-------------------------------------------------------+------------+----------+---------------------+
-   | les                 |                                                       | [1..1]     |          | boolean             |
-   +---------------------+-------------------------------------------------------+------------+----------+---------------------+
-   | ny                  |                                                       | [1..1]     |          | boolean             |
-   +---------------------+-------------------------------------------------------+------------+----------+---------------------+
-   | endre               |                                                       | [1..1]     |          | boolean             |
-   +---------------------+-------------------------------------------------------+------------+----------+---------------------+
-   | slett               |                                                       | [1..1]     |          | boolean             |
-   +---------------------+-------------------------------------------------------+------------+----------+---------------------+
+.. list-table:: Attributter
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - rolle
+   - Sammenlignes feks med rolle gitt i AD eller lignende.
+   - [1..1]
+   -
+   - string
+ * - tilgangskategori
+   -
+   - [1..1]
+   -
+   - Tilgangskategori
+ * - referanseArkivenhet
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - tilgangsrestriksjon
+   -
+   - [0..1]
+   -
+   - Tilgangsrestriksjon
+ * - les
+   -
+   - [1..1]
+   -
+   - boolean
+ * - ny
+   -
+   - [1..1]
+   -
+   - boolean
+ * - endre
+   -
+   - [1..1]
+   -
+   - boolean
+ * - slett
+   -
+   - [1..1]
+   -
+   - boolean
+
 
 LoggingOgSporing
 ~~~~~~~~~~~~~~~~
@@ -7155,10 +7181,6 @@ Endringslogg
 *Type:* **Class**
 
 *Arver:*
-
-Relasjonen tilbake aktuell Arkivenhet bruker relasjonsnøkkel for
-relevant under-entitet, og det er derfor ikke egen relasjonsnøkkel for
-denne relasjonen.
 
 .. list-table:: Relasjoner
    :header-rows: 1
