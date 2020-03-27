@@ -7161,49 +7161,79 @@ Relasjonen tilbake aktuell Arkivenhet bruker relasjonsnøkkel for
 relevant under-entitet, og det er derfor ikke egen relasjonsnøkkel for
 denne relasjonen.
 
-.. table:: Relasjoner
+.. list-table:: Relasjoner
+   :header-rows: 1
 
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Relasjon**                              | **Kilde**                       | **Mål**         | **Merknad** |
-   +===========================================+=================================+=================+=============+
-   | **Aggregation** (Destination → Source)    | endringslogg 0..\* Endringslogg | 0..1 Arkivenhet |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
-   | **Generalization** (Source → Destination) | Hendelseslogg                   | Endringslogg    |             |
-   +-------------------------------------------+---------------------------------+-----------------+-------------+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Aggregation** (Destination → Source)
+   - endringslogg 0..\* Endringslogg
+   - 0..1 Arkivenhet
+   -
+ * - **Generalization** (Source → Destination)
+   - Hendelseslogg
+   - Endringslogg
+   -
 
-.. table:: Relasjonsnøkler
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
 
-   +----------------------------------------------------------------------------+
-   | **Verdi**                                                                  |
-   +============================================================================+
-   | self                                                                       |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/    |
-   +----------------------------------------------------------------------------+
-   | https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-endringslogg/ |
-   +----------------------------------------------------------------------------+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/
+ * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-endringslogg/
 
-.. table:: Attributter
+.. table:: 
+.. list-table:: Attributter
+   :header-rows: 1
 
-   +---------------------+-----------------------------------+------------+----------+----------+
-   | **Navn**            | **Merknad**                       | **Forek.** | **Kode** | **Type** |
-   +=====================+===================================+============+==========+==========+
-   | systemID            |                                   | [0..1]     |          | SystemID |
-   +---------------------+-----------------------------------+------------+----------+----------+
-   | referanseArkivenhet | M680                              | [0..1]     |          | SystemID |
-   +---------------------+-----------------------------------+------------+----------+----------+
-   | referanseMetadata   | M681                              | [0..1]     |          | string   |
-   +---------------------+-----------------------------------+------------+----------+----------+
-   | endretDato          | M682                              | [1..1]     |          | datetime |
-   +---------------------+-----------------------------------+------------+----------+----------+
-   | endretAv            | M683                              | [1..1]     |          | string   |
-   +---------------------+-----------------------------------+------------+----------+----------+
-   | referanseEndretAv   | referanse til Bruker sin systemID | [1..1]     |          | SystemID |
-   +---------------------+-----------------------------------+------------+----------+----------+
-   | tidligereVerdi      | M684                              | [0..1]     |          | string   |
-   +---------------------+-----------------------------------+------------+----------+----------+
-   | nyVerdi             | M685                              | [0..1]     |          | string   |
-   +---------------------+-----------------------------------+------------+----------+----------+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   -
+   - [0..1]
+   -
+   - SystemID
+ * - referanseArkivenhet
+   - M680
+   - [0..1]
+   -
+   - SystemID
+ * - referanseMetadata
+   - M681
+   - [0..1]
+   -
+   - string
+ * - endretDato
+   - M682
+   - [1..1]
+   -
+   - datetime
+ * - endretAv
+   - M683
+   - [1..1]
+   -
+   - string
+ * - referanseEndretAv
+   - referanse til Bruker sin systemID
+   - [1..1]
+   -
+   - SystemID
+ * - tidligereVerdi
+   - M684
+   - [0..1]
+   -
+   - string
+ * - nyVerdi
+   - M685
+   - [0..1]
+   -
+   - string
 
 Hendelseslogg
 ^^^^^^^^^^^^^
