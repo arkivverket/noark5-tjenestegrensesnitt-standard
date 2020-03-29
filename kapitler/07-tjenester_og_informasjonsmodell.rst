@@ -4626,25 +4626,19 @@ tilgjengelig fra [https://register.geonorge.no/epsg-koder].
  * - **Verdi**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/koordinatsystem/
 
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
+.. list-table:: Kodeliste
+   :widths: 5 5 1
    :header-rows: 1
 
  * - **Navn**
    - **Merknad**
-   - **Forek.**
    - **Kode**
-   - **Type**
  * - UTM32N
    -
-   -
    - EPSG:32632
-   -
  * - WGS84
    -
-   -
    - EPSG:4326
-   -
 
 Posisjon
 ''''''''
