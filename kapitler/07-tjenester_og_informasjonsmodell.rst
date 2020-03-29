@@ -584,8 +584,7 @@ men arv herfra blir overstyrt.
    - SystemID for forrige/neste Arkivdel avleveres som
      referanseForloeper (M202) / referanseArvtaker (M203).
  * - **Aggregation** (Bi-Directional)
-   - klassifikasjonssystem 0..1
-     Klassifikasjonssystem
+   - klassifikasjonssystem 0..1 Klassifikasjonssystem
    - arkivdel 1..\* Arkivdel
    -
  * - **Aggregation** (Bi-Directional)
@@ -597,8 +596,7 @@ men arv herfra blir overstyrt.
    - arkivdel 0..1 Arkivdel
    -
  * - **Aggregation** (Destination → Source)
-   - sekundaerklassifikasjonssystem 0..\*
-     Klassifikasjonssystem
+   - sekundaerklassifikasjonssystem 0..\* Klassifikasjonssystem
    - Arkivdel
    -
 
