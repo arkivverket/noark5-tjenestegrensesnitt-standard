@@ -86,3 +86,7 @@
 % line of the paragraph.
 \setlength{\parindent}{0cm} \hangindent=\parindent
 \setlength{\parskip}{2ex}
+
+% Add more space at the top of each table cell, between the row line
+% and the text.
+\def\mainmatter{\orgmainmatter\linenumbers\setlength\extrarowheight{2pt}}
