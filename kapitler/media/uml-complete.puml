@@ -365,7 +365,7 @@ class Arkivstruktur.Sletting <<dataType>> {
 class Arkivstruktur.UtfoertKassasjon <<dataType>> {
   +kassertDato : datetime
   +kassertAv : string
-  +referanseKassertAv : SystemID [1..1 1
+  +referanseKassertAv : SystemID
 }
 
 class Kodelister.Arkivdelstatus <<codelist>> {

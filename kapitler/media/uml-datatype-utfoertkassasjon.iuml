@@ -2,6 +2,6 @@
 class Arkivstruktur.UtfoertKassasjon <<dataType>> {
   +kassertDato : datetime
   +kassertAv : string
-  +referanseKassertAv : SystemID [1..1 1
+  +referanseKassertAv : SystemID
 }
 @enduml
