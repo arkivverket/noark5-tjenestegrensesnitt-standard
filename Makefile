@@ -10,8 +10,8 @@ pdf: spesifikasjon.pdf
 
 images: $(IMG_PNG)
 
-#kapitler/media/uml-complete.puml: bin/text2uml kapitler/07-tjenester_og_informasjonsmodell.rst
-#	bin/text2uml > $@.new && mv $@.new $@
+kapitler/media/uml-complete.puml: bin/text2uml kapitler/07-tjenester_og_informasjonsmodell.rst
+	bin/text2uml > $@.new && mv $@.new $@
 
 .puml.png:
 	plantuml -p < $^ > $@.new && mv $@.new $@

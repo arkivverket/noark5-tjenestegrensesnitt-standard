@@ -18,9 +18,177 @@ import re
 from collections import OrderedDict
 from lxml import etree
 
+import docutils.nodes
+import docutils.parsers.rst
+import docutils.utils
+import docutils.frontend
+
 classes = {}
 links = {}
 
+
+class RstVisitor(docutils.nodes.NodeVisitor):
+    classes = {}
+    package = None
+    entityname = None
+    intable = False
+    sectionlevel = 0
+
+    def visit_section(self, node: docutils.nodes.reference) -> None:
+        self.sectionlevel += 1
+        #print("section:", node)
+
+    def depart_section(self, node: docutils.nodes.reference) -> None:
+        self.sectionlevel -= 1
+
+    def visit_table(self, node: docutils.nodes.reference) -> None:
+        """Called for "table" nodes."""
+        self.entry = {}
+        self.header = {}
+        self.tabletitle = None
+        self.intable = True
+
+    def visit_title(self, node: docutils.nodes.reference) -> None:
+        #print(node)
+        t = node.astext()
+        if self.intable:
+            t = re.sub(r'\s*:header-rows:[^\n]*(\n|$)', '', t)
+            t = re.sub(r'\s*:widths:[^\n]*(\n|$)', '', t)
+            #print("title:", t)
+            self.tabletitle = t
+        else:
+            #print("sectionlevel %s title %s" % (self.sectionlevel, t))
+            if 3 == self.sectionlevel:
+                self.package = [t]
+            elif 3 < self.sectionlevel:
+                self.package.append(t)
+            else:
+                pass
+
+
+    def visit_paragraph(self, node: docutils.nodes.reference) -> None:
+        #print("Para:", node)
+        line = node.astext()
+        m = re.match('^Type: (\S+)( «(.+)»)?$', line)
+        if m:
+            fullname = ".".join(self.package)
+            package = ".".join(self.package[:-1])
+            self.entityname = self.package[-1]
+            self.package = self.package[:-1]
+            if self.entityname not in self.classes:
+                self.classes[self.entityname] = {}
+                self.classes[self.entityname]['package'] = package
+                self.classes[self.entityname]['fullname'] = fullname
+            classtype = m.group(1)
+            stereotype = m.group(3)
+            if stereotype:
+                self.classes[self.entityname]['stereotype'] = stereotype
+        m = re.match('^Arver: (.+)$', line)
+        if m:
+            inherit = m.group(1)
+            self.classes[self.entityname]['inherit'] = inherit
+
+
+    @staticmethod
+    def relation(f):
+        if -1 != f.find(" "):
+            s = re.split(r" +", f)
+            c = s[-1]
+            return (c, "\"" + " ".join(s[:-1]) + "\"")
+        else:
+            return (f, None)
+
+    @staticmethod
+    def process(link, f):
+        (c0,f0) = RstVisitor.relation(f[0])
+        (c1,f1) = RstVisitor.relation(f[1])
+        if f0 is not None and f1 is not None:
+            links[(c1, f1, link, f0, c0)] = True
+        elif f0 is None and f1 is not None:
+            links[(c1, f1, link, c0)] = True
+        elif f0 is not None and f1 is None:
+            links[(c1, link, f0, c0)] = True
+        else:
+            links[(c1, link, c0)] = True
+
+    def visit_row(self, node: docutils.nodes.reference) -> None:
+        """Called for "table row" nodes."""
+        #print(node)
+        if self.tabletitle not in ('Relasjoner', 'Attributter',
+                                   'Kodeliste'):
+            return
+        if not self.header:
+            col = 0
+            while node.children:
+                field = node.children.pop(0).astext()
+                self.header[col] = field
+                col += 1
+            return
+
+        f = []
+        while node.children:
+            f.append(node.children.pop(0).astext())
+
+        if  'Relasjoner' == self.tabletitle:
+            if 'Generalization (Source → Destination)' == f[0] :
+                self.process('<|--', f[1:])
+            elif 'Aggregation (Bi-Directional)' == f[0] :
+                self.process('o-->', f[1:])
+            elif 'Aggregation (Destination → Source)' == f[0] :
+                self.process('o--', f[1:])
+            elif 'Association (Source → Destination)' == f[0] :
+                self.process('*--', f[1:])
+            elif 'Association (Destination → Source)' == f[0] :
+                # Swap order to normalise relations and avoid
+                # duplicate links
+                self.process('*--', f[2:0:-1])
+            # FIXME check if this one are correct
+            elif 'Association (Bi-Directional)' == f[0] :
+                self.process('*-->', f[1:])
+            else:
+                print("' error: unknown relation %s" % (f[0]))
+        elif 'Attributter' == self.tabletitle:
+            #print("Attributter for %s" % self.entityname)
+            if self.entityname not in self.classes:
+                self.classes[self.entityname] = {}
+            if 'attributes' not in self.classes[self.entityname]:
+                self.classes[self.entityname]['attributes'] = {}
+            self.classes[self.entityname]['attributes'][f[0]] = {
+                'merknad' : f[1].strip(),
+                'multip' : f[2].replace('[1..1]', '').strip(),
+                'code' : f[3].strip(),
+                'type' : f[4].strip(),
+            }
+            #print("Klasse %s:" % self.entityname, self.classes[self.entityname])
+        elif 'Kodeliste' == self.tabletitle:
+            if 'codes' not in self.classes[self.entityname]:
+                self.classes[self.entityname]['codes'] = {}
+            self.classes[self.entityname]['codes'][f[0]] = {
+                'merknad' : f[1].strip(),
+                'code' : f[2].strip(),
+            }
+            #print("Kodeliste %s:" % self.entityname, self.classes[self.entityname])
+
+    def depart_table(self, node: docutils.nodes.Node) -> None:
+        """Called when leaving a table."""
+        self.intable = False
+
+    def unknown_visit(self, node: docutils.nodes.Node) -> None:
+        """Called for all other node types."""
+        #print("unknown:", node)
+        pass
+
+    def unknown_departure(self, node: docutils.nodes.Node) -> None:
+        """Called for all other node types."""
+        pass
+
+def parse_rst(text: str) -> docutils.nodes.document:
+    parser = docutils.parsers.rst.Parser()
+    components = (docutils.parsers.rst.Parser,)
+    settings = docutils.frontend.OptionParser(components=components).get_default_values()
+    document = docutils.utils.new_document('<rst-doc>', settings=settings)
+    parser.parse(text, document)
+    return document
 
 def load2fieldmetadata(filepath):
     fieldnames = {}
@@ -39,109 +207,13 @@ def load2fieldmetadata(filepath):
             fieldnames[sub.get('name')] = True
     return fieldnames
 
-def relation(f):
-    if -1 != f.find(" "):
-        s = re.split(r" +", f)
-        c = s[-1]
-        return (c, "\"" + " ".join(s[:-1]) + "\"")
-    else:
-        return (f, None)
-
-def process(link, f):
-    (c0,f0) = relation(f[0])
-    (c1,f1) = relation(f[1])
-    if f0 is not None and f1 is not None:
-        links[(c1, f1, link, f0, c0)] = True
-    elif f0 is None and f1 is not None:
-        links[(c1, f1, link, c0)] = True
-    elif f0 is not None and f1 is None:
-        links[(c1, link, f0, c0)] = True
-    else:
-        links[(c1, link, c0)] = True
-
-with open('kapitler/07-tjenester_og_informasjonsmodell.md') as f:
-    tablename = None
-    linenum = 0
-    for line in f:
-        linenum += 1
-        line = line.strip()
-        m = re.match('^### (.*)$', line)
-        if m:
-            package = m.group(1)
-            heading = None
-            prevheading = None
-        m = re.match('^####+ (.*)$', line)
-        if m:
-            if not prevheading and 0 == line.find('##### '): # subpackage member
-                package = "%s.%s" % (package, heading)
-                prevheading = heading
-            heading = m.group(1)
-            tablename = None
-            inherit = None
-            fullname = "%s.%s" % (package, heading)
-        m = re.match('^Table: (.*)$', line)
-        if m:
-            tablename = m.group(1)
-        m = re.match('^\*Type:\* \*+([^\* ]*)( «(.+)»)?\*+$', line)
-        if m:
-            if heading not in classes:
-                classes[heading] = {}
-                classes[heading]['package'] = package
-                classes[heading]['fullname'] = fullname
-            classtype = m.group(1)
-            stereotype = m.group(3)
-            if stereotype:
-                classes[heading]['stereotype'] = stereotype
-        m = re.match('^\*Arver:\* \*+([^\*]*)\*+$', line)
-        if m:
-            inherit = m.group(1)
-            classes[heading]['inherit'] = inherit
-        if 'Attributter' == tablename and re.match('\| .* \| ', line):
-#            print("'", heading, inherit, tablename)
-            f = re.split(' *\| *', line)[1:-1]
-#            print("'", f)
-#            print(len(f))
-            if 5 != len(f):
-                msg = "' error: number of columns in line %s is %d, not 5" % (
-                    linenum, len(f),
-                )
-                print(msg)
-                raise ValueError(msg)
-            if -1 == f[0].find('**Navn**') \
-               and -1 == f[0].find('**Kodenavn**') \
-               and -1 == f[0].find('--'):
-                if 'attributes' not in classes[heading]:
-                    classes[heading]['attributes'] = OrderedDict()
-                classes[heading]['attributes'][f[0]] = {
-                    'merknad' : f[1].strip(),
-                    'multip' : f[2].replace('\\','').replace('[1..1]', '').strip(),
-                    'code' : f[3].strip(),
-                    'type' : f[4].strip(),
-                }
-        if 'Relasjoner' == tablename and re.match('\| .* \| ', line):
-            f = re.split(' *\| *', line)[1:]
-#            print(f)
-            if '**Relasjon**' == f[0]:
-                pass # header
-            elif re.match('-----*', f[0]):
-                pass # header
-            elif '**Generalization** (Source → Destination)' == f[0] :
-                process('<|--', f[1:])
-            elif '**Aggregation** (Bi-Directional)' == f[0] :
-                process('o-->', f[1:])
-            elif '**Aggregation** (Destination → Source)' == f[0] :
-                process('o--', f[1:])
-            elif '**Association** (Source → Destination)' == f[0] :
-                process('*--', f[1:])
-            elif '**Association** (Destination → Source)' == f[0] :
-                # Swap order to normalise relations and avoid
-                # duplicate links
-                process('*--', f[2:0:-1])
-            # FIXME check if this one are correct
-            elif '**Association** (Bi-Directional)' == f[0] :
-                process('*-->', f[1:])
-            else:
-                print("' error: unknown relation %s in line %d" % (f[0], linenum))
+with open('kapitler/07-tjenester_og_informasjonsmodell.rst') as f:
+    content = f.read()
+    doc = parse_rst(content)
+    visitor = RstVisitor(doc)
+    visitor.classes = classes
+    doc.walkabout(visitor)
+    classes = visitor.classes
 
 def c2full(c):
     if c in classes:
@@ -168,28 +240,27 @@ for c in sorted(classes.keys(), key=lambda x: classes[x]['fullname']):
         entry += " <<%s>>" % stereotype
     entry += " {\n"
 
-    if 'attributes' in classes[c]:
-        for f in classes[c]['attributes'].keys():
-            # FIXME Treat codelist and codeList the same
-            # https://github.com/arkivverket/noark5-tjenestegrensesnitt-standard/pull/85
-            # is fixed.
-            if stereotype in ('codelist','codeList'):
+    if 'codes' in classes[c]:
+        for f in classes[c]['codes'].keys():
+            if stereotype in ('codelist'):
                 if -1 != f.find('('):
-                    entry += "  {field} +%s = %s\n" % (f, classes[c]['attributes'][f]['code'])
-                elif '' != classes[c]['attributes'][f]['code']:
-                    kodename = classes[c]['attributes'][f]['code']
+                    entry += "  {field} +%s = %s\n" % (f, classes[c]['codes'][f]['code'])
+                elif '' != classes[c]['codes'][f]['code']:
+                    kodename = classes[c]['codes'][f]['code']
                     m = re.match("^\[(.+)\]\(.+\)$", kodename)
                     if m:
                         kodename = m.group(1)
                     entry += "  +%s = %s\n" % (f, kodename)
                 else:
                     entry += "  +%s\n" % f
-            else: # stereotype dataType and class/default
-                if fieldnames and f not in fieldnames:
-                    entry += "' warning: unknown field %s.%s\n" % (classes[c]['fullname'], f)
-                astr = "  +%s : %s %s" % (f, classes[c]['attributes'][f]['type'],
-                                          classes[c]['attributes'][f]['multip'])
-                entry += astr.rstrip() + "\n"
+    if 'attributes' in classes[c]:
+        # stereotype dataType and class/default
+        for f in classes[c]['attributes'].keys():
+            if fieldnames and f not in fieldnames:
+                entry += "' warning: unknown field %s.%s\n" % (classes[c]['fullname'], f)
+            astr = "  +%s : %s %s" % (f, classes[c]['attributes'][f]['type'],
+                                      classes[c]['attributes'][f]['multip'])
+            entry += astr.rstrip() + "\n"
     entry += "}\n"
 
     filename = 'kapitler/media/uml-%s-%s.iuml' % (stereotype.lower(), c.lower())
