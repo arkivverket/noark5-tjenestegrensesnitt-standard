@@ -245,6 +245,7 @@ print("@startuml")
 print("scale max 4096 width")
 print("skinparam nodesep 100")
 print("hide members")
+print("hide circle")
 
 for c in sorted(classes.keys(), key=lambda x: classes[x]['fullname']):
     stereotype = "class"
@@ -290,6 +291,7 @@ for c in sorted(classes.keys(), key=lambda x: classes[x]['fullname']):
     with open(filename, "w") as puml:
         puml.write("@startuml\n")
         puml.write("skinparam nodesep 100\n")
+        puml.write("hide circle\n")
         puml.write(entry)
         for link in sorted(links.keys()):
             rel = list(link)
