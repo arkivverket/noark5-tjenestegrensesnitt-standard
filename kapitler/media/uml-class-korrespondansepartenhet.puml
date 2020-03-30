@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.KorrespondansepartEnhet <Korrespondansepart> {
   +enhetsidentifikator : Enhetsidentifikator [0..1]
   +navn : string
@@ -8,8 +9,16 @@ class Arkivstruktur.KorrespondansepartEnhet <Korrespondansepart> {
   +kontaktinformasjon : Kontaktinformasjon [0..1]
   +kontaktperson : string [0..1]
 }
+class Arkivstruktur.Korrespondansepart {
+}
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartEnhet
+class Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator <Nasjonalidentifikator> {
+}
 Arkivstruktur.KorrespondansepartEnhet *-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
+class Arkivstruktur.EnkelAdresse <<dataType>> {
+}
 Arkivstruktur.KorrespondansepartEnhet *-- Arkivstruktur.EnkelAdresse
+class Arkivstruktur.Kontaktinformasjon <<dataType>> {
+}
 Arkivstruktur.KorrespondansepartEnhet *-- Arkivstruktur.Kontaktinformasjon
 @enduml

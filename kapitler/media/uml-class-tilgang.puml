@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Admin.Tilgang {
   +systemID : SystemID [0..1]
   +rolle : string

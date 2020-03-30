@@ -1,10 +1,15 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.Arkivskaper <Arkivenhet> {
   +arkivskaperID : string
   +arkivskaperNavn : string
   +beskrivelse : string [0..1]
 }
+class Arkivstruktur.Arkiv <Arkivenhet> {
+}
 Arkivstruktur.Arkiv "arkiv 0..*" o--> "arkivskaper 1..*" Arkivstruktur.Arkivskaper
+class Arkivstruktur.Arkivenhet {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivskaper
 @enduml

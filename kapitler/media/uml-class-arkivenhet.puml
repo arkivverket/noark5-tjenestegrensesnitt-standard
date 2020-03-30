@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.Arkivenhet {
   +systemID : SystemID [0..1]
   +oppdatertDato : datetime [0..1]
@@ -9,13 +10,31 @@ class Arkivstruktur.Arkivenhet {
   +referanseOppdatertAv : SystemID [0..1]
   +referanseOpprettetAv : SystemID [0..1]
 }
+class LoggingOgSporing.Endringslogg {
+}
 Arkivstruktur.Arkivenhet "0..1" o-- "endringslogg 0..*" LoggingOgSporing.Endringslogg
+class Arkivstruktur.Arkiv <Arkivenhet> {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkiv
+class Arkivstruktur.Arkivdel <Arkivenhet> {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivdel
+class Arkivstruktur.Arkivskaper <Arkivenhet> {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivskaper
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Dokumentbeskrivelse
+class Arkivstruktur.Klasse <Arkivenhet> {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klasse
+class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
+class Arkivstruktur.Mappe <Arkivenhet> {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
 @enduml

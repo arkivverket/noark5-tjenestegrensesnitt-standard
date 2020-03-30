@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.Registrering <Arkivenhet> {
   +arkivertDato : datetime [0..1]
   +arkivertAv : string [0..1]
@@ -18,19 +19,49 @@ class Arkivstruktur.Registrering <Arkivenhet> {
   +oppbevaringssted : string [0..*]
   +virksomhetsspesifikkeMetadata : any [0..1]
 }
+class Arkivstruktur.Arkivdel <Arkivenhet> {
+}
 Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+class Arkivstruktur.Arkivenhet {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
+class Arkivstruktur.Klasse <Arkivenhet> {
+}
 Arkivstruktur.Klasse "klasse 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+class Arkivstruktur.Korrespondansepart {
+}
 Arkivstruktur.Korrespondansepart "korrespondansepart 0..*" *-- Arkivstruktur.Registrering
+class Arkivstruktur.Mappe <Arkivenhet> {
+}
 Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+class Arkivstruktur.Merknad {
+}
 Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Registrering
+class Arkivstruktur.Part {
+}
 Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Registrering
+class Arkivstruktur.Kryssreferanse <Arkivenhet> {
+}
 Arkivstruktur.Registrering "registrering 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
+}
 Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+class Arkivstruktur.Gradering <<dataType>> {
+}
 Arkivstruktur.Registrering *-- Arkivstruktur.Gradering
+class Arkivstruktur.Kassasjon <<dataType>> {
+}
 Arkivstruktur.Registrering *-- Arkivstruktur.Kassasjon
+class Arkivstruktur.Skjerming <<dataType>> {
+}
 Arkivstruktur.Registrering *-- Arkivstruktur.Skjerming
+class Sakarkiv.Arkivnotat <Registrering> {
+}
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
+class Sakarkiv.Journalpost <Registrering> {
+}
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
+class Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator {
+}
 Arkivstruktur.Registrering o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
 @enduml

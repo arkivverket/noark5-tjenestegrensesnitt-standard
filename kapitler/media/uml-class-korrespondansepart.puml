@@ -1,12 +1,21 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.Korrespondansepart {
   +systemID : SystemID [0..1]
   +korrespondanseparttype : Korrespondanseparttype
   +virksomhetsspesifikkeMetadata : any [0..1]
 }
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
 Arkivstruktur.Korrespondansepart "korrespondansepart 0..*" *-- Arkivstruktur.Registrering
+class Arkivstruktur.KorrespondansepartEnhet <Korrespondansepart> {
+}
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartEnhet
+class Arkivstruktur.KorrespondansepartIntern <Korrespondansepart> {
+}
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartIntern
+class Arkivstruktur.KorrespondansepartPerson <Korrespondansepart> {
+}
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartPerson
 @enduml

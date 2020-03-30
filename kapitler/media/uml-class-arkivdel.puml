@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.Arkivdel <Arkivenhet> {
   +tittel : string
   +beskrivelse : string [0..1]
@@ -19,16 +20,36 @@ class Arkivstruktur.Arkivdel <Arkivenhet> {
   +skjerming : Skjerming [0..1]
   +gradering : Gradering [0..1]
 }
+class Arkivstruktur.Arkiv <Arkivenhet> {
+}
 Arkivstruktur.Arkiv "arkiv 1" o--> "arkivdel 0..*" Arkivstruktur.Arkivdel
+class Arkivstruktur.Mappe <Arkivenhet> {
+}
 Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
 Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
+class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
+}
 Arkivstruktur.Arkivdel "arkivdel 1..*" o--> "klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Arkivdel "nestearkivdel 0..1" o--> "forrigearkivdel 0..1" Arkivstruktur.Arkivdel
+class Arkivstruktur.Gradering <<dataType>> {
+}
 Arkivstruktur.Arkivdel *-- Arkivstruktur.Gradering
+class Arkivstruktur.Kassasjon <<dataType>> {
+}
 Arkivstruktur.Arkivdel *-- Arkivstruktur.Kassasjon
+class Arkivstruktur.Skjerming <<dataType>> {
+}
 Arkivstruktur.Arkivdel *-- Arkivstruktur.Skjerming
+class Arkivstruktur.Sletting <<dataType>> {
+}
 Arkivstruktur.Arkivdel *-- Arkivstruktur.Sletting
+class Arkivstruktur.UtfoertKassasjon <<dataType>> {
+}
 Arkivstruktur.Arkivdel *-- Arkivstruktur.UtfoertKassasjon
 Arkivstruktur.Arkivdel o-- "sekundaerklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
+class Arkivstruktur.Arkivenhet {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivdel
 @enduml

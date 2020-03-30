@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Sakarkiv.Saksmappe <Mappe> {
   +saksaar : integer
   +sakssekvensnummer : integer
@@ -14,7 +15,13 @@ class Sakarkiv.Saksmappe <Mappe> {
   +utlaantTil : string [0..1]
   +referanseUtlaantTil : SystemID [0..1]
 }
+class Arkivstruktur.Klasse <Arkivenhet> {
+}
 Arkivstruktur.Klasse "sekundaerklassifikasjon 0..*" *-- Sakarkiv.Saksmappe
+class Arkivstruktur.Mappe <Arkivenhet> {
+}
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
+class Sakarkiv.Presedens {
+}
 Sakarkiv.Presedens "presedens 0..*" *--> "saksmappe 0..*" Sakarkiv.Saksmappe
 @enduml

@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Admin.AdministrativEnhet {
   +systemID : SystemID [0..1]
   +administrativEnhetNavn : string
@@ -10,6 +11,8 @@ class Admin.AdministrativEnhet {
   +administrativEnhetsstatus : string
   +referanseOverordnetEnhet : SystemID [0..1]
   +virksomhetsspesifikkeMetadata : any [0..1]
+}
+class Admin.Bruker {
 }
 Admin.AdministrativEnhet "administrativenhet 0..*" *--> "bruker 0..*" Admin.Bruker
 @enduml

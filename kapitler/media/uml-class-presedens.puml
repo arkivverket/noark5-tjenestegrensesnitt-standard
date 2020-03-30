@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Sakarkiv.Presedens {
   +systemID : SystemID [0..1]
   +presedensDato : date
@@ -18,6 +19,10 @@ class Sakarkiv.Presedens {
   +referanseAvsluttetAv : SystemID [0..1]
   +presedensStatus : PresedensStatus [0..1]
 }
+class Sakarkiv.Journalpost <Registrering> {
+}
 Sakarkiv.Presedens "presedens 0..*" *--> "journalpost 0..*" Sakarkiv.Journalpost
+class Sakarkiv.Saksmappe <Mappe> {
+}
 Sakarkiv.Presedens "presedens 0..*" *--> "saksmappe 0..*" Sakarkiv.Saksmappe
 @enduml

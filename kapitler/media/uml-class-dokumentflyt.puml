@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Sakarkiv.Dokumentflyt {
   +systemID : SystemID [0..1]
   +flytTil : string
@@ -11,6 +12,10 @@ class Sakarkiv.Dokumentflyt {
   +flytStatus : FlytStatus
   +flytMerknad : string [0..1]
 }
+class Sakarkiv.Arkivnotat <Registrering> {
+}
 Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Arkivnotat
+class Sakarkiv.Journalpost <Registrering> {
+}
 Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Journalpost
 @enduml

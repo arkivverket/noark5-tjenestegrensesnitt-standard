@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Sakarkiv.Journalpost <Registrering> {
   +journalaar : integer [0..1]
   +journalsekvensnummer : integer [0..1]
@@ -19,9 +20,19 @@ class Sakarkiv.Journalpost <Registrering> {
   +journalenhet : string [0..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 }
+class Sakarkiv.Avskrivning {
+}
 Sakarkiv.Avskrivning "avskrivning 0..*" *-- Sakarkiv.Journalpost
+class Sakarkiv.Dokumentflyt {
+}
 Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Journalpost
+class Arkivstruktur.ElektroniskSignatur <<dataType>> {
+}
 Sakarkiv.Journalpost *-- Arkivstruktur.ElektroniskSignatur
+class Sakarkiv.Presedens {
+}
 Sakarkiv.Presedens "presedens 0..*" *--> "journalpost 0..*" Sakarkiv.Journalpost
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 @enduml

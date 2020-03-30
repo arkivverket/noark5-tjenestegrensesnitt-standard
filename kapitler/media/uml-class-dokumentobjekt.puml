@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.Dokumentobjekt <Arkivenhet> {
   +versjonsnummer : integer
   +variantformat : Variantformat
@@ -13,7 +14,13 @@ class Arkivstruktur.Dokumentobjekt <Arkivenhet> {
   +filstoerrelse : integer [0..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 }
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
+}
 Arkivstruktur.Dokumentbeskrivelse "dokumentbeskrivelse 1" o--> "dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
+class Arkivstruktur.ElektroniskSignatur <<dataType>> {
+}
 Arkivstruktur.Dokumentobjekt *-- Arkivstruktur.ElektroniskSignatur
+class Arkivstruktur.Konvertering {
+}
 Arkivstruktur.Dokumentobjekt o-- "konvertering 0..*" Arkivstruktur.Konvertering
 @enduml

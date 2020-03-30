@@ -1,10 +1,13 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.KorrespondansepartIntern <Korrespondansepart> {
   +administrativEnhet : string [0..1]
   +referanseAdministrativEnhet : SystemID [0..1]
   +saksbehandler : string [0..1]
   +referanseSaksbehandler : SystemID [0..1]
+}
+class Arkivstruktur.Korrespondansepart {
 }
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartIntern
 @enduml

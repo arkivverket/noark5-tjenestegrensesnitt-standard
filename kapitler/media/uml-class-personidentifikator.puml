@@ -1,8 +1,15 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <Nasjonalidentifikator> {
 }
+class Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator {
+}
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator
+class Arkivstruktur.NasjonaleIdentifikatorer.DNummer <Personidentifikator> {
+}
 Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.DNummer
+class Arkivstruktur.NasjonaleIdentifikatorer.Foedselsnummer <Personidentifikator> {
+}
 Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Foedselsnummer
 @enduml

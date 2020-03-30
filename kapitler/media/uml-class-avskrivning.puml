@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Sakarkiv.Avskrivning {
   +systemID : SystemID [0..1]
   +avskrivningsdato : date
@@ -8,6 +9,8 @@ class Sakarkiv.Avskrivning {
   +avskrivningsmaate : Avskrivningsmaate
   +referanseAvskrivesAvJournalpost : SystemID [0..1]
   +referanseAvskrivesAvKorrespondansepart : SystemID [0..1]
+}
+class Sakarkiv.Journalpost <Registrering> {
 }
 Sakarkiv.Avskrivning "avskrivning 0..*" *-- Sakarkiv.Journalpost
 @enduml

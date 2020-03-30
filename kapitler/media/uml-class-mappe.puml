@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.Mappe <Arkivenhet> {
   +mappeID : string [0..1]
   +mappetype : Mappetype [0..1]
@@ -18,17 +19,41 @@ class Arkivstruktur.Mappe <Arkivenhet> {
   +referanseForelderMappe : SystemID [0..1]
   +virksomhetsspesifikkeMetadata : any [0..1]
 }
+class Arkivstruktur.Arkivdel <Arkivenhet> {
+}
 Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
+class Arkivstruktur.Arkivenhet {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
+class Arkivstruktur.Klasse <Arkivenhet> {
+}
 Arkivstruktur.Klasse "klasse 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
+class Arkivstruktur.Kryssreferanse <Arkivenhet> {
+}
 Arkivstruktur.Mappe "mappe 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
 Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "overmappe 0..1" o-- "undermappe 0..*" Arkivstruktur.Mappe
+class Arkivstruktur.Gradering <<dataType>> {
+}
 Arkivstruktur.Mappe *-- Arkivstruktur.Gradering
+class Arkivstruktur.Kassasjon <<dataType>> {
+}
 Arkivstruktur.Mappe *-- Arkivstruktur.Kassasjon
+class Arkivstruktur.Skjerming <<dataType>> {
+}
 Arkivstruktur.Mappe *-- Arkivstruktur.Skjerming
+class Sakarkiv.Saksmappe <Mappe> {
+}
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
+class Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator {
+}
 Arkivstruktur.Mappe o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
+class Arkivstruktur.Merknad {
+}
 Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Mappe
+class Arkivstruktur.Part {
+}
 Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Mappe
 @enduml

@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.PartPerson <Part> {
   +personidentifikator : Personidentifikator [0..*]
   +navn : string
@@ -7,7 +8,13 @@ class Arkivstruktur.PartPerson <Part> {
   +bostedsadresse : EnkelAdresse [0..1]
   +kontaktinformasjon : Kontaktinformasjon [0..1]
 }
+class Arkivstruktur.Part {
+}
 Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
+class Arkivstruktur.EnkelAdresse <<dataType>> {
+}
 Arkivstruktur.PartPerson *-- Arkivstruktur.EnkelAdresse
+class Arkivstruktur.Kontaktinformasjon <<dataType>> {
+}
 Arkivstruktur.PartPerson *-- Arkivstruktur.Kontaktinformasjon
 @enduml

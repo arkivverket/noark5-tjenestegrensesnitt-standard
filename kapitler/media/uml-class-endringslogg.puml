@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class LoggingOgSporing.Endringslogg {
   +systemID : SystemID [0..1]
   +referanseArkivenhet : SystemID [0..1]
@@ -10,6 +11,10 @@ class LoggingOgSporing.Endringslogg {
   +tidligereVerdi : string [0..1]
   +nyVerdi : string [0..1]
 }
+class Arkivstruktur.Arkivenhet {
+}
 Arkivstruktur.Arkivenhet "0..1" o-- "endringslogg 0..*" LoggingOgSporing.Endringslogg
+class LoggingOgSporing.Hendelseslogg <Endringslogg> {
+}
 LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
 @enduml

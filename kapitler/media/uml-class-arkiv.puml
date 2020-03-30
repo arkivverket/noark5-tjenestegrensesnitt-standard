@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.Arkiv <Arkivenhet> {
   +tittel : string
   +beskrivelse : string [0..1]
@@ -10,8 +11,14 @@ class Arkivstruktur.Arkiv <Arkivenhet> {
   +avsluttetAv : string [0..1]
   +referanseAvsluttetAv : SystemID [0..1]
 }
+class Arkivstruktur.Arkivskaper <Arkivenhet> {
+}
 Arkivstruktur.Arkiv "arkiv 0..*" o--> "arkivskaper 1..*" Arkivstruktur.Arkivskaper
+class Arkivstruktur.Arkivdel <Arkivenhet> {
+}
 Arkivstruktur.Arkiv "arkiv 1" o--> "arkivdel 0..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkiv "overarkiv 0..1" o-- "underarkiv 0..*" Arkivstruktur.Arkiv
+class Arkivstruktur.Arkivenhet {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkiv
 @enduml

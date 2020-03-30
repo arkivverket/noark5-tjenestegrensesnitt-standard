@@ -1,8 +1,15 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.Kryssreferanse <Arkivenhet> {
 }
+class Arkivstruktur.Klasse <Arkivenhet> {
+}
 Arkivstruktur.Klasse "klasse 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+class Arkivstruktur.Mappe <Arkivenhet> {
+}
 Arkivstruktur.Mappe "mappe 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
 Arkivstruktur.Registrering "registrering 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 @enduml

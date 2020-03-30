@@ -1,5 +1,6 @@
 @startuml
 skinparam nodesep 100
+hide circle
 class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
   +klassifikasjonstype : Klassifikasjonstype [0..1]
   +tittel : string
@@ -8,8 +9,14 @@ class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
   +avsluttetAv : string [0..1]
   +referanseAvsluttetAv : SystemID [0..1]
 }
+class Arkivstruktur.Arkivdel <Arkivenhet> {
+}
 Arkivstruktur.Arkivdel "arkivdel 1..*" o--> "klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Arkivdel o-- "sekundaerklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
+class Arkivstruktur.Arkivenhet {
+}
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
+class Arkivstruktur.Klasse <Arkivenhet> {
+}
 Arkivstruktur.Klassifikasjonssystem "klassifikasjonssystem 0..1" o--> "klasse 0..*" Arkivstruktur.Klasse
 @enduml
