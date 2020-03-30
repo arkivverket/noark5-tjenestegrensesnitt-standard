@@ -224,6 +224,23 @@ def c2full(c):
 # Enable to compare with meta data directory
 fieldnames = None # load2fieldmetadata("../noark5-tester/noark5-schema/v4.0/")
 
+# Automatically add relations to data types and metadata, after all
+# classes are loaded.  Need to do it now, to know if a class is a data
+# type or code list.
+for c in classes.keys():
+    if 'attributes' in classes[c]:
+        for a in classes[c]['attributes'].keys():
+            attrtype = classes[c]['attributes'][a]['type']
+            # Composition to embedded datatype, ignore base types
+            if attrtype not in ('any', 'boolean', 'date', 'datetime',
+                                'decimal', 'integer', 'string', 'SystemID'):
+                if 'attributes' in classes[attrtype]:
+                    RstVisitor.process('*--', (attrtype, c))
+                else:
+                    # FIXME ignore code lists for now
+                    #RstVisitor.process('--', (c, attrtype))
+                    pass
+
 print("@startuml")
 print("scale max 4096 width")
 print("skinparam nodesep 100")
