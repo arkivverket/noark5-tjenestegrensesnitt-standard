@@ -7861,7 +7861,7 @@ Hendelseslogg
 .. |image10| image:: ./media/uml-class-arkivskaper.png
    :width: 50.0%
 .. |image11| image:: ./media/uml-class-registrering.png
-   :width: 50.0%
+   :width: 100.0%
 .. |image12| image:: ./media/uml-class-dokumentbeskrivelse.png
    :width: 50.0%
 .. |image13| image:: ./media/uml-class-dokumentobjekt.png
@@ -7883,7 +7883,7 @@ Hendelseslogg
 .. |image21| image:: ./media/uml-class-kryssreferanse.png
    :width: 50.0%
 .. |image22| image:: ./media/uml-class-mappe.png
-   :width: 50.0%
+   :width: 100.0%
 .. |image23| image:: ./media/uml-class-merknad.png
    :width: 50.0%
 .. |image24| image:: ./media/uml-class-part.png
