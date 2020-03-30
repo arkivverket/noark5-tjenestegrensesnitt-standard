@@ -293,10 +293,26 @@ for c in sorted(classes.keys(), key=lambda x: classes[x]['fullname']):
         puml.write("skinparam nodesep 100\n")
         puml.write("hide circle\n")
         puml.write(entry)
+        printed = {c: True}
         for link in sorted(links.keys()):
             rel = list(link)
             if c != rel[0] and c != rel[-1]:
                 continue
+            if c == rel[0]:
+                other = rel[-1]
+            elif c == rel[-1]:
+                other = rel[0]
+            if other not in printed and other not in ('string'):
+                print("O:", other)
+                oentry = "class %s" % c2full(other)
+                if 'inherit' in classes[other]:
+                    oentry += " <%s>" % classes[other]['inherit']
+                if 'stereotype' in classes[other]:
+                    stereotype = classes[other]['stereotype']
+                    oentry += " <<%s>>" % stereotype
+                oentry += " {\n}\n"
+                puml.write(oentry)
+                printed[other] = True
             rel[0] = c2full(rel[0])
             rel[-1] = c2full(rel[-1])
             print
