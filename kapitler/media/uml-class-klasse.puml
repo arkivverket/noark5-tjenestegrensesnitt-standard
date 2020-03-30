@@ -18,5 +18,8 @@ Arkivstruktur.Klasse "klasse 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Klasse "klasse 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Klasse "overklasse 0..1" o-- "underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "sekundaerklassifikasjon 0..*" *-- Sakarkiv.Saksmappe
+Arkivstruktur.Klasse *-- Arkivstruktur.Gradering
+Arkivstruktur.Klasse *-- Arkivstruktur.Kassasjon
+Arkivstruktur.Klasse *-- Arkivstruktur.Skjerming
 Arkivstruktur.Klassifikasjonssystem "klassifikasjonssystem 0..1" o--> "klasse 0..*" Arkivstruktur.Klasse
 @enduml

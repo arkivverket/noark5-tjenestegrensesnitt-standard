@@ -8,4 +8,6 @@ class Arkivstruktur.KorrespondansepartPerson <Korrespondansepart> {
   +kontaktinformasjon : Kontaktinformasjon [0..1]
 }
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartPerson
+Arkivstruktur.KorrespondansepartPerson *-- Arkivstruktur.EnkelAdresse
+Arkivstruktur.KorrespondansepartPerson *-- Arkivstruktur.Kontaktinformasjon
 @enduml

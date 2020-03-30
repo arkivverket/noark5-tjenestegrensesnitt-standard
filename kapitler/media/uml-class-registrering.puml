@@ -27,6 +27,9 @@ Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Registrering
 Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Registrering
 Arkivstruktur.Registrering "registrering 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Registrering *-- Arkivstruktur.Gradering
+Arkivstruktur.Registrering *-- Arkivstruktur.Kassasjon
+Arkivstruktur.Registrering *-- Arkivstruktur.Skjerming
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 Arkivstruktur.Registrering o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator

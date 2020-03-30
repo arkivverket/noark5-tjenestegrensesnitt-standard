@@ -8,4 +8,6 @@ class Arkivstruktur.PartPerson <Part> {
   +kontaktinformasjon : Kontaktinformasjon [0..1]
 }
 Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
+Arkivstruktur.PartPerson *-- Arkivstruktur.EnkelAdresse
+Arkivstruktur.PartPerson *-- Arkivstruktur.Kontaktinformasjon
 @enduml

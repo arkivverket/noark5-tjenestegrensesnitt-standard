@@ -14,5 +14,6 @@ class Arkivstruktur.Dokumentobjekt <Arkivenhet> {
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 }
 Arkivstruktur.Dokumentbeskrivelse "dokumentbeskrivelse 1" o--> "dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
+Arkivstruktur.Dokumentobjekt *-- Arkivstruktur.ElektroniskSignatur
 Arkivstruktur.Dokumentobjekt o-- "konvertering 0..*" Arkivstruktur.Konvertering
 @enduml

@@ -3,5 +3,7 @@ skinparam nodesep 100
 class Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator <Nasjonalidentifikator> {
   +organisasjonsnummer : string
 }
+Arkivstruktur.KorrespondansepartEnhet *-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
+Arkivstruktur.PartEnhet *-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
 @enduml

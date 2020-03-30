@@ -24,6 +24,9 @@ Arkivstruktur.Klasse "klasse 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Mappe "mappe 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "overmappe 0..1" o-- "undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe *-- Arkivstruktur.Gradering
+Arkivstruktur.Mappe *-- Arkivstruktur.Kassasjon
+Arkivstruktur.Mappe *-- Arkivstruktur.Skjerming
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Mappe o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
 Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Mappe

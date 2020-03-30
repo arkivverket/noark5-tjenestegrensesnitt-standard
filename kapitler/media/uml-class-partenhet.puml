@@ -9,4 +9,7 @@ class Arkivstruktur.PartEnhet <Part> {
   +kontaktperson : string [0..1]
 }
 Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
+Arkivstruktur.PartEnhet *-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
+Arkivstruktur.PartEnhet *-- Arkivstruktur.EnkelAdresse
+Arkivstruktur.PartEnhet *-- Arkivstruktur.Kontaktinformasjon
 @enduml

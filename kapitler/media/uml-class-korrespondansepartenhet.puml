@@ -9,4 +9,7 @@ class Arkivstruktur.KorrespondansepartEnhet <Korrespondansepart> {
   +kontaktperson : string [0..1]
 }
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartEnhet
+Arkivstruktur.KorrespondansepartEnhet *-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
+Arkivstruktur.KorrespondansepartEnhet *-- Arkivstruktur.EnkelAdresse
+Arkivstruktur.KorrespondansepartEnhet *-- Arkivstruktur.Kontaktinformasjon
 @enduml

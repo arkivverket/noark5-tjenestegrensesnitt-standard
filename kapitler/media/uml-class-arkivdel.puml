@@ -24,6 +24,11 @@ Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Arkivdel "arkivdel 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Arkivdel "arkivdel 1..*" o--> "klassifikasjonssystem 0..1" Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Arkivdel "nestearkivdel 0..1" o--> "forrigearkivdel 0..1" Arkivstruktur.Arkivdel
+Arkivstruktur.Arkivdel *-- Arkivstruktur.Gradering
+Arkivstruktur.Arkivdel *-- Arkivstruktur.Kassasjon
+Arkivstruktur.Arkivdel *-- Arkivstruktur.Skjerming
+Arkivstruktur.Arkivdel *-- Arkivstruktur.Sletting
+Arkivstruktur.Arkivdel *-- Arkivstruktur.UtfoertKassasjon
 Arkivstruktur.Arkivdel o-- "sekundaerklassifikasjonssystem 0..*" Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Arkivdel
 @enduml

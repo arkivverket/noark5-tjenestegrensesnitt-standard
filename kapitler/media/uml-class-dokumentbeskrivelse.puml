@@ -24,6 +24,12 @@ class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
 }
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Dokumentbeskrivelse "dokumentbeskrivelse 1" o--> "dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
+Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.ElektroniskSignatur
+Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Gradering
+Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Kassasjon
+Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Skjerming
+Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Sletting
+Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.UtfoertKassasjon
 Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
 Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse

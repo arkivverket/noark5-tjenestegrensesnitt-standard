@@ -21,6 +21,7 @@ class Sakarkiv.Journalpost <Registrering> {
 }
 Sakarkiv.Avskrivning "avskrivning 0..*" *-- Sakarkiv.Journalpost
 Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Journalpost
+Sakarkiv.Journalpost *-- Arkivstruktur.ElektroniskSignatur
 Sakarkiv.Presedens "presedens 0..*" *--> "journalpost 0..*" Sakarkiv.Journalpost
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 @enduml
