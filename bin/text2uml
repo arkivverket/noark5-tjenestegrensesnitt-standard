@@ -303,7 +303,6 @@ for c in sorted(classes.keys(), key=lambda x: classes[x]['fullname']):
             elif c == rel[-1]:
                 other = rel[0]
             if other not in printed and other not in ('string'):
-                print("O:", other)
                 oentry = "class %s" % c2full(other)
                 if 'inherit' in classes[other]:
                     oentry += " <%s>" % classes[other]['inherit']
