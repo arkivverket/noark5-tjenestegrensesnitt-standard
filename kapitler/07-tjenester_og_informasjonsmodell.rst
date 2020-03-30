@@ -5936,8 +5936,7 @@ Tilgangskategori
 
 Åpen kodeliste
 
-| ny kodeliste jfr Noark 5 v3.1 krav
-| 6.6.32
+Relatert til krav 5.2.14 i Noark 5.5.0.
 
 .. list-table:: Relasjonsnøkler
    :header-rows: 1
