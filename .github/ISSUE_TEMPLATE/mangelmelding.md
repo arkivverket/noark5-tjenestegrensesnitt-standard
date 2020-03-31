@@ -6,7 +6,7 @@ about: Rapporter problemer eller forslag til forbedring av teksten
 
  ------------------  ---------------------------------
            Prosjekt  NOARK 5 Tjenestegresesnitt
-           Kategori  Versjon 1.0 beta
+           Kategori  Noark 5.5.0 TG versjon 1.0
         Alvorlighet  kommentar / protest
        Meldingstype  utelatt / trenger klargjøring
     Brukerreferanse  user@example.com
