@@ -22,10 +22,10 @@ class Sakarkiv.Journalpost <Registrering> {
 }
 class Sakarkiv.Avskrivning {
 }
-Sakarkiv.Avskrivning "avskrivning 0..*" *-- Sakarkiv.Journalpost
+Sakarkiv.Journalpost *-- "avskrivning 0..*" Sakarkiv.Avskrivning
 class Sakarkiv.Dokumentflyt {
 }
-Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Journalpost
+Sakarkiv.Journalpost *-- "dokumentflyt 0..*" Sakarkiv.Dokumentflyt
 class Arkivstruktur.ElektroniskSignatur <<dataType>> {
 }
 Sakarkiv.Journalpost *-- Arkivstruktur.ElektroniskSignatur

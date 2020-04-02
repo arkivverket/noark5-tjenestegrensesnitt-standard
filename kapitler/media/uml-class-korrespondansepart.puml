@@ -6,9 +6,6 @@ class Arkivstruktur.Korrespondansepart {
   +korrespondanseparttype : Korrespondanseparttype
   +virksomhetsspesifikkeMetadata : any [0..1]
 }
-class Arkivstruktur.Registrering <Arkivenhet> {
-}
-Arkivstruktur.Korrespondansepart "korrespondansepart 0..*" *-- Arkivstruktur.Registrering
 class Arkivstruktur.KorrespondansepartEnhet <Korrespondansepart> {
 }
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartEnhet
@@ -18,4 +15,7 @@ Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartIntern
 class Arkivstruktur.KorrespondansepartPerson <Korrespondansepart> {
 }
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartPerson
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
+Arkivstruktur.Registrering *-- "korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
 @enduml

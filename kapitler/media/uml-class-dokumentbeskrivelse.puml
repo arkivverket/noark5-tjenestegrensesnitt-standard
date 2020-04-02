@@ -29,6 +29,12 @@ Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Dokumentbeskrivelse
 class Arkivstruktur.Dokumentobjekt <Arkivenhet> {
 }
 Arkivstruktur.Dokumentbeskrivelse "dokumentbeskrivelse 1" o--> "dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
+class Arkivstruktur.Merknad {
+}
+Arkivstruktur.Dokumentbeskrivelse *-- "merknad 0..*" Arkivstruktur.Merknad
+class Arkivstruktur.Part {
+}
+Arkivstruktur.Dokumentbeskrivelse *-- "part 0..*" Arkivstruktur.Part
 class Arkivstruktur.ElektroniskSignatur <<dataType>> {
 }
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.ElektroniskSignatur
@@ -47,12 +53,6 @@ Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Sletting
 class Arkivstruktur.UtfoertKassasjon <<dataType>> {
 }
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.UtfoertKassasjon
-class Arkivstruktur.Merknad {
-}
-Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
-class Arkivstruktur.Part {
-}
-Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
 class Arkivstruktur.Registrering <Arkivenhet> {
 }
 Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse

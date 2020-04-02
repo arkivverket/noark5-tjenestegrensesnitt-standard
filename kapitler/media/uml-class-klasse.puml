@@ -26,9 +26,6 @@ class Arkivstruktur.Registrering <Arkivenhet> {
 }
 Arkivstruktur.Klasse "klasse 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Klasse "overklasse 0..1" o-- "underklasse 0..*" Arkivstruktur.Klasse
-class Sakarkiv.Saksmappe <Mappe> {
-}
-Arkivstruktur.Klasse "sekundaerklassifikasjon 0..*" *-- Sakarkiv.Saksmappe
 class Arkivstruktur.Gradering <<dataType>> {
 }
 Arkivstruktur.Klasse *-- Arkivstruktur.Gradering
@@ -41,4 +38,7 @@ Arkivstruktur.Klasse *-- Arkivstruktur.Skjerming
 class Arkivstruktur.Klassifikasjonssystem <Arkivenhet> {
 }
 Arkivstruktur.Klassifikasjonssystem "klassifikasjonssystem 0..1" o--> "klasse 0..*" Arkivstruktur.Klasse
+class Sakarkiv.Saksmappe <Mappe> {
+}
+Sakarkiv.Saksmappe *-- "sekundaerklassifikasjon 0..*" Arkivstruktur.Klasse
 @enduml

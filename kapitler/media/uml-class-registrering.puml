@@ -28,24 +28,24 @@ Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
 class Arkivstruktur.Klasse <Arkivenhet> {
 }
 Arkivstruktur.Klasse "klasse 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
-class Arkivstruktur.Korrespondansepart {
-}
-Arkivstruktur.Korrespondansepart "korrespondansepart 0..*" *-- Arkivstruktur.Registrering
 class Arkivstruktur.Mappe <Arkivenhet> {
 }
 Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
-class Arkivstruktur.Merknad {
-}
-Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Registrering
-class Arkivstruktur.Part {
-}
-Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Registrering
 class Arkivstruktur.Kryssreferanse <Arkivenhet> {
 }
 Arkivstruktur.Registrering "registrering 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
 }
 Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+class Arkivstruktur.Korrespondansepart {
+}
+Arkivstruktur.Registrering *-- "korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
+class Arkivstruktur.Merknad {
+}
+Arkivstruktur.Registrering *-- "merknad 0..*" Arkivstruktur.Merknad
+class Arkivstruktur.Part {
+}
+Arkivstruktur.Registrering *-- "part 0..*" Arkivstruktur.Part
 class Arkivstruktur.Gradering <<dataType>> {
 }
 Arkivstruktur.Registrering *-- Arkivstruktur.Gradering

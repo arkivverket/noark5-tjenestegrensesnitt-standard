@@ -734,30 +734,30 @@ Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klasse
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
-Sakarkiv.Avskrivning "avskrivning 0..*" *-- Sakarkiv.Journalpost
+Sakarkiv.Arkivnotat *-- "dokumentflyt 0..*" Sakarkiv.Dokumentflyt
 Arkivstruktur.Dokumentbeskrivelse "dokumentbeskrivelse 1" o--> "dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
+Arkivstruktur.Dokumentbeskrivelse *-- "merknad 0..*" Arkivstruktur.Merknad
+Arkivstruktur.Dokumentbeskrivelse *-- "part 0..*" Arkivstruktur.Part
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.ElektroniskSignatur
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Gradering
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Kassasjon
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Skjerming
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Sletting
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.UtfoertKassasjon
-Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Arkivnotat
-Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Journalpost
 Arkivstruktur.Dokumentobjekt *-- Arkivstruktur.ElektroniskSignatur
 Arkivstruktur.Dokumentobjekt o-- "konvertering 0..*" Arkivstruktur.Konvertering
 LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
+Sakarkiv.Journalpost *-- "avskrivning 0..*" Sakarkiv.Avskrivning
+Sakarkiv.Journalpost *-- "dokumentflyt 0..*" Sakarkiv.Dokumentflyt
 Sakarkiv.Journalpost *-- Arkivstruktur.ElektroniskSignatur
 Arkivstruktur.Klasse "klasse 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 Arkivstruktur.Klasse "klasse 0..1" o--> "mappe 0..*" Arkivstruktur.Mappe
 Arkivstruktur.Klasse "klasse 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Klasse "overklasse 0..1" o-- "underklasse 0..*" Arkivstruktur.Klasse
-Arkivstruktur.Klasse "sekundaerklassifikasjon 0..*" *-- Sakarkiv.Saksmappe
 Arkivstruktur.Klasse *-- Arkivstruktur.Gradering
 Arkivstruktur.Klasse *-- Arkivstruktur.Kassasjon
 Arkivstruktur.Klasse *-- Arkivstruktur.Skjerming
 Arkivstruktur.Klassifikasjonssystem "klassifikasjonssystem 0..1" o--> "klasse 0..*" Arkivstruktur.Klasse
-Arkivstruktur.Korrespondansepart "korrespondansepart 0..*" *-- Arkivstruktur.Registrering
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartEnhet
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartIntern
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartPerson
@@ -769,23 +769,19 @@ Arkivstruktur.KorrespondansepartPerson *-- Arkivstruktur.Kontaktinformasjon
 Arkivstruktur.Mappe "mappe 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "overmappe 0..1" o-- "undermappe 0..*" Arkivstruktur.Mappe
+Arkivstruktur.Mappe *-- "merknad 0..*" Arkivstruktur.Merknad
+Arkivstruktur.Mappe *-- "part 0..*" Arkivstruktur.Part
 Arkivstruktur.Mappe *-- Arkivstruktur.Gradering
 Arkivstruktur.Mappe *-- Arkivstruktur.Kassasjon
 Arkivstruktur.Mappe *-- Arkivstruktur.Skjerming
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Mappe o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
-Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
-Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Mappe
-Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Registrering
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Bygning
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Plan
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Posisjon
-Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
-Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Mappe
-Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Registrering
 Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
 Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
 Arkivstruktur.PartEnhet *-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
@@ -799,11 +795,15 @@ Sakarkiv.Presedens "presedens 0..*" *--> "journalpost 0..*" Sakarkiv.Journalpost
 Sakarkiv.Presedens "presedens 0..*" *--> "saksmappe 0..*" Sakarkiv.Saksmappe
 Arkivstruktur.Registrering "registrering 0..1" *--> "kryssreferanse 0..*" Arkivstruktur.Kryssreferanse
 Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Registrering *-- "korrespondansepart 0..*" Arkivstruktur.Korrespondansepart
+Arkivstruktur.Registrering *-- "merknad 0..*" Arkivstruktur.Merknad
+Arkivstruktur.Registrering *-- "part 0..*" Arkivstruktur.Part
 Arkivstruktur.Registrering *-- Arkivstruktur.Gradering
 Arkivstruktur.Registrering *-- Arkivstruktur.Kassasjon
 Arkivstruktur.Registrering *-- Arkivstruktur.Skjerming
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 Arkivstruktur.Registrering o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
+Sakarkiv.Saksmappe *-- "sekundaerklassifikasjon 0..*" Arkivstruktur.Klasse
 string <|-- Kodelister.SystemID
 @enduml

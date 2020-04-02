@@ -14,7 +14,7 @@ class Sakarkiv.Arkivnotat <Registrering> {
 }
 class Sakarkiv.Dokumentflyt {
 }
-Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Arkivnotat
+Sakarkiv.Arkivnotat *-- "dokumentflyt 0..*" Sakarkiv.Dokumentflyt
 class Arkivstruktur.Registrering <Arkivenhet> {
 }
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat

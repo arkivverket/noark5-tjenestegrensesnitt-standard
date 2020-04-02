@@ -12,5 +12,5 @@ class Sakarkiv.Avskrivning {
 }
 class Sakarkiv.Journalpost <Registrering> {
 }
-Sakarkiv.Avskrivning "avskrivning 0..*" *-- Sakarkiv.Journalpost
+Sakarkiv.Journalpost *-- "avskrivning 0..*" Sakarkiv.Avskrivning
 @enduml

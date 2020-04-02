@@ -11,11 +11,11 @@ class Arkivstruktur.Merknad {
 }
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
 }
-Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Dokumentbeskrivelse *-- "merknad 0..*" Arkivstruktur.Merknad
 class Arkivstruktur.Mappe <Arkivenhet> {
 }
-Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Mappe
+Arkivstruktur.Mappe *-- "merknad 0..*" Arkivstruktur.Merknad
 class Arkivstruktur.Registrering <Arkivenhet> {
 }
-Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Registrering
+Arkivstruktur.Registrering *-- "merknad 0..*" Arkivstruktur.Merknad
 @enduml

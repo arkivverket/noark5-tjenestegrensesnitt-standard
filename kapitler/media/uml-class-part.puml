@@ -8,17 +8,17 @@ class Arkivstruktur.Part {
 }
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
 }
-Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Dokumentbeskrivelse
+Arkivstruktur.Dokumentbeskrivelse *-- "part 0..*" Arkivstruktur.Part
 class Arkivstruktur.Mappe <Arkivenhet> {
 }
-Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Mappe
-class Arkivstruktur.Registrering <Arkivenhet> {
-}
-Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Registrering
+Arkivstruktur.Mappe *-- "part 0..*" Arkivstruktur.Part
 class Arkivstruktur.PartEnhet <Part> {
 }
 Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
 class Arkivstruktur.PartPerson <Part> {
 }
 Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
+Arkivstruktur.Registrering *-- "part 0..*" Arkivstruktur.Part
 @enduml

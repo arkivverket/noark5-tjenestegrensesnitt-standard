@@ -35,6 +35,12 @@ class Arkivstruktur.Registrering <Arkivenhet> {
 }
 Arkivstruktur.Mappe "mappe 0..1" o--> "registrering 0..*" Arkivstruktur.Registrering
 Arkivstruktur.Mappe "overmappe 0..1" o-- "undermappe 0..*" Arkivstruktur.Mappe
+class Arkivstruktur.Merknad {
+}
+Arkivstruktur.Mappe *-- "merknad 0..*" Arkivstruktur.Merknad
+class Arkivstruktur.Part {
+}
+Arkivstruktur.Mappe *-- "part 0..*" Arkivstruktur.Part
 class Arkivstruktur.Gradering <<dataType>> {
 }
 Arkivstruktur.Mappe *-- Arkivstruktur.Gradering
@@ -50,10 +56,4 @@ Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 class Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator {
 }
 Arkivstruktur.Mappe o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
-class Arkivstruktur.Merknad {
-}
-Arkivstruktur.Merknad "merknad 0..*" *-- Arkivstruktur.Mappe
-class Arkivstruktur.Part {
-}
-Arkivstruktur.Part "part 0..*" *-- Arkivstruktur.Mappe
 @enduml

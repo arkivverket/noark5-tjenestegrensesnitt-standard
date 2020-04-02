@@ -14,8 +14,8 @@ class Sakarkiv.Dokumentflyt {
 }
 class Sakarkiv.Arkivnotat <Registrering> {
 }
-Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Arkivnotat
+Sakarkiv.Arkivnotat *-- "dokumentflyt 0..*" Sakarkiv.Dokumentflyt
 class Sakarkiv.Journalpost <Registrering> {
 }
-Sakarkiv.Dokumentflyt "dokumentflyt 0..*" *-- Sakarkiv.Journalpost
+Sakarkiv.Journalpost *-- "dokumentflyt 0..*" Sakarkiv.Dokumentflyt
 @enduml
