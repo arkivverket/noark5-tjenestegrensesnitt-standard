@@ -1969,6 +1969,11 @@ Disse ikke har korresponderende felt i avleveringsformatet.
 ElektroniskSignatur
 ^^^^^^^^^^^^^^^^^^^
 
+|umlelektronisksignatur|
+
+.. |umlelektronisksignatur| image:: ./media/uml-datatype-elektronisksignatur.png
+   :width: 80.0%
+
 *Type:* **Class «dataType»**
 
 *Arver:*
@@ -2040,6 +2045,11 @@ ElektroniskSignatur
 EnkelAdresse
 ^^^^^^^^^^^^
 
+|umlenkeladresse|
+
+.. |umlenkeladresse| image:: ./media/uml-datatype-enkeladresse.png
+   :width: 80.0%
+
 *Type:* **Class «dataType»**
 
 *Arver:*
@@ -2096,6 +2106,11 @@ EnkelAdresse
 
 Gradering
 ^^^^^^^^^
+
+|umlgradering|
+
+.. |umlgradering| image:: ./media/uml-datatype-gradering.png
+   :width: 80.0%
 
 *Type:* **Class «dataType»**
 
@@ -2164,6 +2179,11 @@ forekomme en gang
 
 Kassasjon
 ^^^^^^^^^
+
+|umlkassasjon|
+
+.. |umlkassasjon| image:: ./media/uml-datatype-kassasjon.png
+   :width: 80.0%
 
 *Type:* **Class «dataType»**
 
@@ -2570,6 +2590,11 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
 
 Kontaktinformasjon
 ^^^^^^^^^^^^^^^^^^
+
+|umlkontaktinformasjon|
+
+.. |umlkontaktinformasjon| image:: ./media/uml-datatype-kontaktinformasjon.png
+   :width: 80.0%
 
 *Type:* **Class «dataType»**
 
@@ -3905,6 +3930,11 @@ PartPerson
 Skjerming
 ^^^^^^^^^
 
+|umlskjerming|
+
+.. |umlskjerming| image:: ./media/uml-datatype-skjerming.png
+   :width: 80.0%
+
 *Type:* **Class «dataType»**
 
 *Arver:*
@@ -3986,6 +4016,11 @@ den enkelte mappe, registrering eller det enkelte dokument. (Se Noark
 
 Sletting
 ^^^^^^^^
+
+|umlsletting|
+
+.. |umlsletting| image:: ./media/uml-datatype-sletting.png
+   :width: 80.0%
 
 *Type:* **Class «dataType»**
 
@@ -4095,6 +4130,11 @@ skje før det produseres et arkivuttrekk.
 
 UtfoertKassasjon
 ^^^^^^^^^^^^^^^^
+
+|umlutfoertkassasjon|
+
+.. |umlutfoertkassasjon| image:: ./media/uml-datatype-utfoertkassasjon.png
+   :width: 80.0%
 
 *Type:* **Class «dataType»**
 

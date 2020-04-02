@@ -1,0 +1,28 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Arkivstruktur.Gradering <<dataType>> {
+  +graderingskode : Graderingskode
+  +graderingsdato : datetime
+  +gradertAv : string
+  +referanseGradertAv : SystemID
+  +nedgraderingsdato : datetime [0..1]
+  +nedgradertAv : string [0..1]
+  +referanseNedgradertAv : SystemID [0..1]
+}
+class Arkivstruktur.Arkivdel <Arkivenhet> {
+}
+Arkivstruktur.Arkivdel *-- Arkivstruktur.Gradering
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
+}
+Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Gradering
+class Arkivstruktur.Klasse <Arkivenhet> {
+}
+Arkivstruktur.Klasse *-- Arkivstruktur.Gradering
+class Arkivstruktur.Mappe <Arkivenhet> {
+}
+Arkivstruktur.Mappe *-- Arkivstruktur.Gradering
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
+Arkivstruktur.Registrering *-- Arkivstruktur.Gradering
+@enduml

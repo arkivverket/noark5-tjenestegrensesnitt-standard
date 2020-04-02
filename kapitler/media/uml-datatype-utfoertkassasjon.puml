@@ -1,0 +1,15 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Arkivstruktur.UtfoertKassasjon <<dataType>> {
+  +kassertDato : datetime
+  +kassertAv : string
+  +referanseKassertAv : SystemID
+}
+class Arkivstruktur.Arkivdel <Arkivenhet> {
+}
+Arkivstruktur.Arkivdel *-- Arkivstruktur.UtfoertKassasjon
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
+}
+Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.UtfoertKassasjon
+@enduml

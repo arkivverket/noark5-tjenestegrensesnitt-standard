@@ -1,0 +1,16 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Arkivstruktur.Sletting <<dataType>> {
+  +slettingstype : Slettingstype
+  +slettetDato : datetime
+  +slettetAv : string
+  +referanseSlettetAv : SystemID
+}
+class Arkivstruktur.Arkivdel <Arkivenhet> {
+}
+Arkivstruktur.Arkivdel *-- Arkivstruktur.Sletting
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
+}
+Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Sletting
+@enduml

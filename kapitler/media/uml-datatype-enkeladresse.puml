@@ -1,0 +1,24 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Arkivstruktur.EnkelAdresse <<dataType>> {
+  +adresselinje1 : string [0..1]
+  +adresselinje2 : string [0..1]
+  +adresselinje3 : string [0..1]
+  +postnr : Postnummer [0..1]
+  +poststed : string
+  +landkode : Land [0..1]
+}
+class Arkivstruktur.KorrespondansepartEnhet <Korrespondansepart> {
+}
+Arkivstruktur.KorrespondansepartEnhet *-- Arkivstruktur.EnkelAdresse
+class Arkivstruktur.KorrespondansepartPerson <Korrespondansepart> {
+}
+Arkivstruktur.KorrespondansepartPerson *-- Arkivstruktur.EnkelAdresse
+class Arkivstruktur.PartEnhet <Part> {
+}
+Arkivstruktur.PartEnhet *-- Arkivstruktur.EnkelAdresse
+class Arkivstruktur.PartPerson <Part> {
+}
+Arkivstruktur.PartPerson *-- Arkivstruktur.EnkelAdresse
+@enduml
