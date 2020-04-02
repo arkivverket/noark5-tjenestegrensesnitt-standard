@@ -137,11 +137,11 @@ class RstVisitor(docutils.nodes.NodeVisitor):
             elif 'Aggregation (Destination → Source)' == f[0] :
                 self.process('o--', f[1:])
             elif 'Association (Source → Destination)' == f[0] :
-                self.process('*--', f[1:])
-            elif 'Association (Destination → Source)' == f[0] :
                 # Swap order to normalise relations and avoid
                 # duplicate links
                 self.process('*--', f[2:0:-1])
+            elif 'Association (Destination → Source)' == f[0] :
+                self.process('*--', f[1:])
             # FIXME check if this one are correct
             elif 'Association (Bi-Directional)' == f[0] :
                 self.process('*-->', f[1:])
