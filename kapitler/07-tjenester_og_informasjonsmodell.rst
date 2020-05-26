@@ -998,7 +998,7 @@ identiske arkivenheter har ulik systemID.
    - [0..1]
    -
    - SystemID
- * - oppdatertDato
+ * - endretDato
    -
    - [0..1]
    -
@@ -1017,14 +1017,14 @@ identiske arkivenheter har ulik systemID.
    - [0..1]
    -
    - string
- * - oppdatertAv
+ * - endretAv
    - Definisjon: Navn på person som oppdaterte arkivenheten. Kilde:
      Registreres automatisk av systemet ved oppdatering av enheten
    - [0..1]
    -
    - string
- * - referanseOppdatertAv
-   - Definisjon: SystemID på person som oppdaterte
+ * - referanseEndretAv
+   - Definisjon: SystemID til bruker som oppdaterte
      arkivenheten. Kilde: Registreres automatisk av systemet ved
      oppdatering av enheten
    - [0..1]
