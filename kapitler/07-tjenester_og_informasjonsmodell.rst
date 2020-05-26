@@ -1784,8 +1784,8 @@ tekniske metadata enn de andre arkivenhetene, bl.a. sjekksummen til
 bytesekvensen som representerer dokumentet.
 
 Ved avlevering i tråd med XML-skjema for Noark 5 versjon 4 og versjon
-5 så droppes følgende felt arvet fra Arkivenhet: «oppdatertDato»,
-«oppdatertAv», «referanseOppdatertAv» og «referanseOpprettetAv».
+5 så droppes følgende felt arvet fra Arkivenhet: «endretDato»,
+«endretAv», «referanseEndretAv» og «referanseOpprettetAv».
 Disse ikke har korresponderende felt i avleveringsformatet.
 
 .. list-table:: Relasjoner
@@ -3130,8 +3130,8 @@ HTTP status 201 med følgende nyttelast:
      "systemID": "852989ee-293d-41fe-b46a-fa3cdf607d74",
      "opprettetDato": "2019-06-30T22:11:35.797+02:00",
      "opprettetAv": "bruker@n5.example.com",
-     "oppdatertDato": "2019-06-30T22:11:35.797+02:00",
-     "oppdatertAv": "bruker@n5.example.com",
+     "endretDato": "2019-06-30T22:11:35.797+02:00",
+     "endretAv": "bruker@n5.example.com",
      "_links": {
          "self": {
            "href": "https://n5.example.com/api/arkivstruktur/kryssreferanse/852989ee-293d-41fe-b46a-fa3cdf607d74/"
@@ -3158,8 +3158,8 @@ henter mappen som har kryssreferansen. Dette vises i eksempelet under:
      "dokumentmedium": "Elektronisk arkiv",
      "opprettetDato": "2019-06-30T22:11:35.797+02:00",
      "opprettetAv": "bruker@n5.example.com",
-     "oppdatertDato": "2019-06-30T22:11:35.797+02:00",
-     "oppdatertAv": "bruker@n5.example.com",
+     "endretDato": "2019-06-30T22:11:35.797+02:00",
+     "endretAv": "bruker@n5.example.com",
      "kryssreferanser": [
         {
           "systemID": "852989ee-293d-41fe-b46a-fa3cdf607d74",
