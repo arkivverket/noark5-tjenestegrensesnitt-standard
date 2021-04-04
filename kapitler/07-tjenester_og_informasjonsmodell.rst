@@ -1253,6 +1253,7 @@ XML ved avlevering som Noark 5 versjon 4.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/posisjon/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
 også være tilgjengelig via Registrering-instanser som har en
@@ -1530,6 +1531,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumenttype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/tilknyttetregistreringsom/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 .. list-table:: Attributter
    :widths: 6 10 1 1 4
@@ -2801,6 +2803,7 @@ mottaker(e) registreres.
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepart/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/korrespondanseparttype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 .. list-table:: Attributter
    :widths: 6 10 1 1 4
@@ -3356,6 +3359,7 @@ innenfor året, f.eks. 2011/3869.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/undermappe/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
 også være tilgjengelig via Mappe-instanser.
@@ -3742,6 +3746,7 @@ utveksling.
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/part/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/partrolle/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 .. list-table:: Attributter
    :widths: 6 10 1 1 4
@@ -4769,6 +4774,8 @@ Arkivstruktur-pakken:
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/slettingstype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/tilknyttetregistreringsom/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/variantformat/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-virksomhetsspesifikkeMetadata/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 Følgende relasjonsnøkler skal listes opp fra en implementasjon som
 støtter Sakarkiv-pakken:
@@ -7387,6 +7394,7 @@ AdministrativEnhet
  * - https://rel.arkivverket.no/noark5/v5/api/admin/bruker/
  * - https://rel.arkivverket.no/noark5/v5/api/admin/ny-administrativenhet/
  * - https://rel.arkivverket.no/noark5/v5/api/admin/ny-bruker/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 
 .. list-table:: Attributter
@@ -7536,6 +7544,7 @@ når pålogget bruker ikke finnes fra før.
  * - https://rel.arkivverket.no/noark5/v5/api/admin/bruker/
  * - https://rel.arkivverket.no/noark5/v5/api/admin/ny-administrativenhet/
  * - https://rel.arkivverket.no/noark5/v5/api/admin/ny-bruker/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 
 
