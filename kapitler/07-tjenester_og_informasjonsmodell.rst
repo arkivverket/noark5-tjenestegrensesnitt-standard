@@ -4759,21 +4759,37 @@ Arkivstruktur-pakken:
 
  * - **Relasjonsnøkkel**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivdelstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-arkivdelstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-arkivstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-dokumentmedium/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-dokumentstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumenttype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-dokumenttype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/format/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-format/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/graderingskode/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-graderingskode/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/kassasjonsvedtak/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-kassasjonsvedtak/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/klassifikasjonstype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-klassifikasjonstype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-mappetype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/merknadstype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-merknadstype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/skjermingdokument/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-skjermingdokument/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/skjermingmetadata/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-skjermingmetadata/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/slettingstype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-slettingstype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/tilknyttetregistreringsom/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-tilknyttetregistreringsom/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/variantformat/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-variantformat/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-virksomhetsspesifikkeMetadata/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
@@ -4785,17 +4801,29 @@ støtter Sakarkiv-pakken:
 
  * - **Relasjonsnøkkel**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/avskrivningsmaate/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-avskrivningsmaate/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/elektronisksignatursikkerhetsnivaa/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-elektronisksignatursikkerhetsnivaa/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/elektronisksignaturverifisert/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-elektronisksignaturverifisert/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/flytstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-flytstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/journalposttype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-journalposttype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/journalstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-journalstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/korrespondanseparttype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-korrespondanseparttype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/land/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-land/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/postnummer/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-postnummer/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/presedensstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-presedensstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/partrolle/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-partrolle/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/saksstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-saksstatus/
 
 Følgende relasjonsnøkler skal listes opp fra en implementasjon som
 støtter LoggingOgSporing-pakken:
@@ -4805,6 +4833,7 @@ støtter LoggingOgSporing-pakken:
 
  * - **Relasjonsnøkkel**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/hendelsetype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-hendelsetype/
 
 Følgende relasjonsnøkler skal listes opp fra en implementasjon som
 støtter Admin-pakken:
@@ -4814,7 +4843,9 @@ støtter Admin-pakken:
 
  * - **Relasjonsnøkkel**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/tilgangskategori/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-tilgangskategori/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/tilgangsrestriksjon/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-tilgangsrestriksjon/
 
 Felles skjema for alle kodelister og felles typer.
 
