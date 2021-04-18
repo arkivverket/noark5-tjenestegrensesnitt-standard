@@ -57,8 +57,8 @@ class Arkivstruktur.Arkivdel <Arkivenhet> {
   +avsluttetDato : datetime [0..1]
   +avsluttetAv : string [0..1]
   +referanseAvsluttetAv : SystemID [0..1]
-  +arkivperiodeStartDato : date [0..1]
-  +arkivperiodeSluttDato : date [0..1]
+  +arkivperiodeStartDato : datetime [0..1]
+  +arkivperiodeSluttDato : datetime [0..1]
   +referanseForloeper : SystemID [0..1]
   +referanseArvtaker : SystemID [0..1]
   +kassasjon : Kassasjon [0..1]
@@ -74,7 +74,7 @@ class Arkivstruktur.Arkivenhet {
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
   +endretAv : string [0..1]
-  +referanseOppdatertAv : SystemID [0..1]
+  +referanseEndretAv : SystemID [0..1]
   +referanseOpprettetAv : SystemID [0..1]
 }
 
@@ -124,7 +124,7 @@ class Arkivstruktur.Dokumentobjekt <Arkivenhet> {
 class Arkivstruktur.ElektroniskSignatur <<dataType>> {
   +elektroniskSignaturSikkerhetsnivaa : ElektroniskSignaturSikkerhetsnivaa
   +elektroniskSignaturVerifisert : ElektroniskSignaturVerifisert
-  +verifisertDato : date
+  +verifisertDato : datetime
   +verifisertAv : string
   +referanseVerifisertAv : SystemID [0..1]
 }
@@ -152,7 +152,7 @@ class Arkivstruktur.Kassasjon <<dataType>> {
   +kassasjonsvedtak : Kassasjonsvedtak
   +kassasjonshjemmel : string [0..1]
   +bevaringstid : integer
-  +kassasjonsdato : date
+  +kassasjonsdato : datetime
 }
 
 class Arkivstruktur.Klasse <Arkivenhet> {
@@ -353,7 +353,7 @@ class Arkivstruktur.Skjerming <<dataType>> {
   +skjermingMetadata : SkjermingMetadata [0..*]
   +skjermingDokument : SkjermingDokument [0..1]
   +skjermingsvarighet : integer [0..1]
-  +skjermingOpphoererDato : date [0..1]
+  +skjermingOpphoererDato : datetime [0..1]
 }
 
 class Arkivstruktur.Sletting <<dataType>> {
@@ -624,20 +624,20 @@ class LoggingOgSporing.Hendelseslogg <Endringslogg> {
 }
 
 class Sakarkiv.Arkivnotat <Registrering> {
-  +dokumentetsDato : date [0..1]
+  +dokumentetsDato : datetime [0..1]
   +mottattDato : datetime [0..1]
   +sendtDato : datetime [0..1]
-  +forfallsdato : date [0..1]
-  +offentlighetsvurdertDato : date [0..1]
+  +forfallsdato : datetime [0..1]
+  +offentlighetsvurdertDato : datetime [0..1]
   +antallVedlegg : integer [0..1]
-  +utlaantDato : date [0..1]
+  +utlaantDato : datetime [0..1]
   +utlaantTil : string [0..1]
   +referanseUtlaantTil : SystemID [0..1]
 }
 
 class Sakarkiv.Avskrivning {
   +systemID : SystemID [0..1]
-  +avskrivningsdato : date
+  +avskrivningsdato : datetime
   +avskrevetAv : string
   +referanseAvskrevetAv : SystemID [0..1]
   +avskrivningsmaate : Avskrivningsmaate
@@ -663,14 +663,14 @@ class Sakarkiv.Journalpost <Registrering> {
   +journalpostnummer : integer
   +journalposttype : Journalposttype
   +journalstatus : Journalstatus
-  +journaldato : date
-  +dokumentetsDato : date [0..1]
+  +journaldato : datetime
+  +dokumentetsDato : datetime [0..1]
   +mottattDato : datetime [0..1]
-  +sendtDato : date [0..1]
-  +forfallsdato : date [0..1]
-  +offentlighetsvurdertDato : date [0..1]
+  +sendtDato : datetime [0..1]
+  +forfallsdato : datetime [0..1]
+  +offentlighetsvurdertDato : datetime [0..1]
   +antallVedlegg : integer [0..1]
-  +utlaantDato : date [0..1]
+  +utlaantDato : datetime [0..1]
   +utlaantTil : string [0..1]
   +referanseUtlaantTil : SystemID [0..1]
   +journalenhet : string [0..1]
@@ -679,7 +679,7 @@ class Sakarkiv.Journalpost <Registrering> {
 
 class Sakarkiv.Presedens {
   +systemID : SystemID [0..1]
-  +presedensDato : date
+  +presedensDato : datetime
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
   +referanseOpprettetAv : SystemID [0..1]
@@ -699,14 +699,14 @@ class Sakarkiv.Presedens {
 class Sakarkiv.Saksmappe <Mappe> {
   +saksaar : integer
   +sakssekvensnummer : integer
-  +saksdato : date
+  +saksdato : datetime
   +administrativEnhet : string [0..1]
   +referanseAdministrativEnhet : SystemID [0..1]
   +saksansvarlig : string
   +referanseSaksansvarlig : SystemID [0..1]
   +journalenhet : string [0..1]
   +saksstatus : Saksstatus
-  +utlaantDato : date [0..1]
+  +utlaantDato : datetime [0..1]
   +utlaantTil : string [0..1]
   +referanseUtlaantTil : SystemID [0..1]
 }
