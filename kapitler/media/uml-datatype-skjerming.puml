@@ -7,7 +7,7 @@ class Arkivstruktur.Skjerming <<dataType>> {
   +skjermingMetadata : SkjermingMetadata [0..*]
   +skjermingDokument : SkjermingDokument [0..1]
   +skjermingsvarighet : integer [0..1]
-  +skjermingOpphoererDato : date [0..1]
+  +skjermingOpphoererDato : datetime [0..1]
 }
 class Arkivstruktur.Arkivdel <Arkivenhet> {
 }

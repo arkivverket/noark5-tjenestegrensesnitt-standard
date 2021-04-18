@@ -4,7 +4,7 @@ hide circle
 class Arkivstruktur.ElektroniskSignatur <<dataType>> {
   +elektroniskSignaturSikkerhetsnivaa : ElektroniskSignaturSikkerhetsnivaa
   +elektroniskSignaturVerifisert : ElektroniskSignaturVerifisert
-  +verifisertDato : date
+  +verifisertDato : datetime
   +verifisertAv : string
   +referanseVerifisertAv : SystemID [0..1]
 }

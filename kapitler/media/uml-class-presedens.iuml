@@ -1,7 +1,7 @@
 @startuml
 class Sakarkiv.Presedens {
   +systemID : SystemID [0..1]
-  +presedensDato : date
+  +presedensDato : datetime
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
   +referanseOpprettetAv : SystemID [0..1]

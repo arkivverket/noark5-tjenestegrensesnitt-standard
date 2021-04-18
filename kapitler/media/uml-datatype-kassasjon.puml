@@ -5,7 +5,7 @@ class Arkivstruktur.Kassasjon <<dataType>> {
   +kassasjonsvedtak : Kassasjonsvedtak
   +kassasjonshjemmel : string [0..1]
   +bevaringstid : integer
-  +kassasjonsdato : date
+  +kassasjonsdato : datetime
 }
 class Arkivstruktur.Arkivdel <Arkivenhet> {
 }

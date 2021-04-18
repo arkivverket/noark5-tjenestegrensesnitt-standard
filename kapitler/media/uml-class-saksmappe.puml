@@ -4,14 +4,14 @@ hide circle
 class Sakarkiv.Saksmappe <Mappe> {
   +saksaar : integer
   +sakssekvensnummer : integer
-  +saksdato : date
+  +saksdato : datetime
   +administrativEnhet : string [0..1]
   +referanseAdministrativEnhet : SystemID [0..1]
   +saksansvarlig : string
   +referanseSaksansvarlig : SystemID [0..1]
   +journalenhet : string [0..1]
   +saksstatus : Saksstatus
-  +utlaantDato : date [0..1]
+  +utlaantDato : datetime [0..1]
   +utlaantTil : string [0..1]
   +referanseUtlaantTil : SystemID [0..1]
 }

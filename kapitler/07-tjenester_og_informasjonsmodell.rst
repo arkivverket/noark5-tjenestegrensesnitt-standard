@@ -729,7 +729,7 @@ spesifikke under-entitetene.
      datoen arkivdelen ble opprettet M107
    - [0..1]
    -
-   - date
+   - datetime
  * - arkivperiodeSluttDato
    - Definisjon: Dato for slutten av en arkivperiode. Kilde: Settes
      automatisk til samme dato som M602 avsluttetDato. Kommentarer:
@@ -737,7 +737,7 @@ spesifikke under-entitetene.
      datoen arkivdelen ble avsluttet. M108
    - [0..1]
    -
-   - date
+   - datetime
  * - referanseForloeper
    - M202
    - [0..1]
@@ -2020,7 +2020,7 @@ ElektroniskSignatur
      (ingen). M622
    - [1..1]
    -
-   - date
+   - datetime
  * - verifisertAv
    - Definisjon: Navn på person som har verifisert en elektronisk
      signatur. Kilde: Registreres automatisk når verifisering
@@ -2261,7 +2261,7 @@ klasse, mappe, registrering og dokumentbeskrivelse.
      (ingen). M452
    - [1..1]
    -
-   - date
+   - datetime
 
 Klasse
 ^^^^^^
@@ -4017,7 +4017,7 @@ den enkelte mappe, registrering eller det enkelte dokument. (Se Noark
      skjermingsvarighet. Kommentarer: (ingen). M505
    - [0..1]
    -
-   - date
+   - datetime
 
 Sletting
 ^^^^^^^^
@@ -6308,7 +6308,7 @@ flere ganger i en journalpost.
      foretas. Kommentar: (ingen). M617
    - [1..1]
    -
-   - date
+   - datetime
  * - avskrevetAv
    - Definisjon: Navn på person som har foretatt avskrivning. Kilde:
      Registreres automatisk nå avskrivning foretas. Kommentar:
@@ -6551,7 +6551,7 @@ Arkivnotat
    - M103
    - [0..1]
    -
-   - date
+   - datetime
  * - mottattDato
    - M104
    - [0..1]
@@ -6566,12 +6566,12 @@ Arkivnotat
    - M109
    - [0..1]
    -
-   - date
+   - datetime
  * - offentlighetsvurdertDato
    - M110
    - [0..1]
    -
-   - date
+   - datetime
  * - antallVedlegg
    - M304
    - [0..1]
@@ -6581,7 +6581,7 @@ Arkivnotat
    - M106
    - [0..1]
    -
-   - date
+   - datetime
  * - utlaantTil
    - M309
    - [0..1]
@@ -6738,7 +6738,7 @@ i MoReq2 som heter Record.)
      journaldato
    - [1..1]
    -
-   - date
+   - datetime
  * - dokumentetsDato
    - Definisjon: Dato som er påført selve dokumentet. Kilde: Datoen
      hentes automatisk fra dokumentet, eller registreres manuelt.
@@ -6746,7 +6746,7 @@ i MoReq2 som heter Record.)
      organinterne dokumenter. M103 dokumentetsDato
    - [0..1]
    -
-   - date
+   - datetime
  * - mottattDato
    - Definisjon: Dato et eksternt dokument ble mottatt. Kilde:
      Registreres manuelt eller automatisk av systemet ved elektronisk
@@ -6762,7 +6762,7 @@ i MoReq2 som heter Record.)
      sendtDato
    - [0..1]
    -
-   - date
+   - datetime
  * - forfallsdato
    - Definisjon: Dato som angir fristen for når et inngående dokument
      må være besvart.  Kilde: Registreres manuelt. Kommentar:
@@ -6770,7 +6770,7 @@ i MoReq2 som heter Record.)
      dokumentet. M109 forfallsdato
    - [0..1]
    -
-   - date
+   - datetime
  * - offentlighetsvurdertDato
    - Definisjon: Datoen da offentlighetsvurdering ble foretatt. Kilde:
      Registreres automatisk knyttet til funksjonalitet for skjerming.
@@ -6780,7 +6780,7 @@ i MoReq2 som heter Record.)
      tidspunkt. M110 offentlighetsvurdertDato
    - [0..1]
    -
-   - date
+   - datetime
  * - antallVedlegg
    - Definisjon: Antall fysiske vedlegg til et fysisk
      hoveddokument. Kilde: Registreres manuelt. Kommentar:
@@ -6797,7 +6797,7 @@ i MoReq2 som heter Record.)
      utlaantDato
    - [0..1]
    -
-   - date
+   - datetime
  * - utlaantTil
    - Definisjon: Navnet på person som har lånt en fysisk saksmappe.
      Kilde: Registreres manuelt ved utlån. Kommentar: (ingen). M309
@@ -6976,7 +6976,7 @@ avlevering.
      opprettes på.  Kommentar: (ingen). M111 presedensDato
    - [1..1]
    -
-   - date
+   - datetime
  * - opprettetDato
    - Definisjon: Dato og klokkeslett når arkivenheten ble
      opprettet/registrert.  Kilde: Registreres automatisk av systemet
@@ -7190,7 +7190,7 @@ bruke en saksmappe.
      saksdato
    - [1..1]
    -
-   - date
+   - datetime
  * - administrativEnhet
    - Definisjon: Navn på avdeling, kontor eller annen administrativ
      enhet som har ansvaret for saksbehandlingen. Kilde: Registreres
@@ -7249,7 +7249,7 @@ bruke en saksmappe.
      utlaantDato
    - [0..1]
    -
-   - date
+   - datetime
  * - utlaantTil
    - Definisjon: Navnet på person som har lånt en fysisk
      saksmappe. Kilde: Registreres manuelt ved utlån. Kommentar:

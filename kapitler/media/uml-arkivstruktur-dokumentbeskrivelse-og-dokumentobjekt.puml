@@ -17,7 +17,7 @@ class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
   +oppbevaringssted : string [0..1]
   +tilknyttetRegistreringSom : TilknyttetRegistreringSom
   +dokumentnummer : integer
-  +tilknyttetDato : date
+  +tilknyttetDato : datetime
   +tilknyttetAv : string [0..1]
   +referanseTilknyttetAv : SystemID [0..1]
   +kassasjon : Kassasjon [0..1]

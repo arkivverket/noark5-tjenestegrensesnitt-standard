@@ -7,7 +7,7 @@ class Arkivstruktur.Arkivenhet {
   +opprettetDato : datetime [0..1]
   +opprettetAv : string [0..1]
   +endretAv : string [0..1]
-  +referanseOppdatertAv : SystemID [0..1]
+  +referanseEndretAv : SystemID [0..1]
   +referanseOpprettetAv : SystemID [0..1]
 }
 class LoggingOgSporing.Endringslogg {
