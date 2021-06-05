@@ -2,10 +2,11 @@ Usynlige tegn
 =============
 
 I denne versjonen av tjenestegrensesnitt-spesifikasjonen anses
-følgende tegn hentet fra Unicode i kategoriene «Space Separator» og
-«Control» som usynlige tegn. Fremtidige versjoner av spesifikasjonen
-vil oppdatere listen med tegn hvis Unicode legger til flere tegn i
-disse kategoriene.
+følgende tegn hentet fra Unicode i kategoriene
+«`Space Separator <https://codepoints.net/search?gc=Zs>`__» og
+«`Control <https://codepoints.net/search?gc=Cc>`__» som usynlige
+tegn. Fremtidige versjoner av spesifikasjonen vil oppdatere listen med
+tegn hvis Unicode legger til flere tegn i disse kategoriene.
 
 .. list-table:: Usynlige tegn
    :widths: 1 3
