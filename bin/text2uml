@@ -149,13 +149,21 @@ class RstVisitor(docutils.nodes.NodeVisitor):
                 print("' error: unknown relation %s" % (f[0]))
         elif 'Attributter' == self.tabletitle:
             #print("Attributter for %s" % self.entityname)
+            # Handle in/out attribute multiplicity
+            multip = f[2].strip()
+            if -1 != multip.find(' '):
+                create, exist = multip.split(' ')
+                if create == exist:
+                    multip = create
+            if multip == '[1..1]':
+                multip = ''
             if self.entityname not in self.classes:
                 self.classes[self.entityname] = {}
             if 'attributes' not in self.classes[self.entityname]:
                 self.classes[self.entityname]['attributes'] = {}
             self.classes[self.entityname]['attributes'][f[0]] = {
                 'merknad' : f[1].strip(),
-                'multip' : f[2].replace('[1..1]', '').strip(),
+                'multip' : multip,
                 'code' : f[3].strip(),
                 'type' : f[4].strip(),
             }

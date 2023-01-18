@@ -78,7 +78,11 @@ Om UML og notasjon som er benyttet
      tekststreng som kun inneholder usynlige tegn (definert som
      beskrevet i vedlegg 5) er likestilt med en manglende verdi, slik
      at ved forekomst [1..1] betyr det at klasseID også må ha en verdi
-     forskjellig fra tom streng.
+     forskjellig fra tom streng.  For attributter med to
+     forekomst-verdier gjelder den første forekomsten for kall inn i
+     tjenestegrensesnittet for å opprette en instans, og den andre
+     forekomstverdien for svar fra tjenestegrensesnittet og videre
+     oppdateringer av instansen.
  * - |image6|
    - Datatypene kan også være **simple datatyper** eller
      **primitiver**. Disse brukes for å gi mulighet for restriksjoner
@@ -373,7 +377,7 @@ laveste nivået av disse.
    - Definisjon: Status til arkivet.  Kilde: Registreres manuelt når
      arkivet opprettes eller ved skifte av status.  Kommentarer:
      (ingen) M050
-   - [0..1]
+   - [0..1] [1..1]
    -
    - Arkivstatus
  * - dokumentmedium
@@ -388,7 +392,7 @@ laveste nivået av disse.
      inneholder både fysiske og elektroniske dokumenter, må
      informasjon om dette arves nedover i hierarkiet. Se også
      kommentar til M208 referanseArkivdel.  M300
-   - [0..1]
+   - [0..1] [1..1]
    -
    - Dokumentmedium
  * - oppbevaringssted
@@ -668,7 +672,7 @@ spesifikke under-entitetene.
      omfatter. Kilde: Registreres manuelt når arkivdelen opprettes
      eller ved skifte av status. Kommentarer: Arkivdeler som avleveres
      skal ha status 'Avsluttet periode'. M051
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Arkivdelstatus
  * - dokumentmedium
@@ -683,7 +687,7 @@ spesifikke under-entitetene.
      inneholder både fysiske og elektroniske dokumenter, må
      informasjon om dette arves nedover i hierarkiet. Se også
      kommentar til M208 referanseArkivdel.  M300
-   - [0..1]
+   - [0..1] [1..1]
    -
    - Dokumentmedium
  * - oppbevaringssted
@@ -727,7 +731,7 @@ spesifikke under-entitetene.
      automatisk til samme dato som M600 opprettetDato. Kommentarer:
      Det kan tenkes tilfeller hvor startdatoen ikke er identisk med
      datoen arkivdelen ble opprettet M107
-   - [0..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - arkivperiodeSluttDato
@@ -995,7 +999,7 @@ identiske arkivenheter har ulik systemID.
      systemidentifikasjon fordi enheten kan være duplisert i et
      arkivuttrekk dersom samme dokumentfil er knyttet til flere
      forskjellige registreringer.
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - endretDato
@@ -1007,34 +1011,34 @@ identiske arkivenheter har ulik systemID.
    - Definisjon: Dato og klokkeslett når arkivenheten ble
      opprettet/registrert. Kilde: Registreres automatisk av systemet
      ved opprettelse av enheten.  Kommentarer: (ingen). M600
-   - [0..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - opprettetAv
    - Definisjon: Navn på person som opprettet/registrerte
      arkivenheten.  Kilde: Registreres automatisk av systemet ved
      opprettelse av enheten.  Kommentarer: (ingen). M601
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - endretAv
    - Definisjon: Navn på person som oppdaterte arkivenheten. Kilde:
      Registreres automatisk av systemet ved oppdatering av enheten
-   - [0..1]
+   - [0..1] [1..1]
    - M683
    - string
  * - referanseEndretAv
    - Definisjon: SystemID på person som endret arkivenheten sist.
      Kilde: Registreres automatisk av systemet ved oppdatering av
      enheten.
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - referanseOpprettetAv
    - Definisjon: SystemID på person som opprettet/registrerte
      arkivenheten.  Kilde: Registreres automatisk av systemet ved
      opprettelse av enheten
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
 
@@ -1282,7 +1286,7 @@ Saksmappe som foreldre.
      endring av journalstatus.  Kommentarer: Arkivering innebærer at
      dokumentene blir "frosset", dvs. sperret for all videre
      redigering/endring M604
-   - [0..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - arkivertAv
@@ -1291,12 +1295,12 @@ Saksmappe som foreldre.
      utførelse av en funksjon som markerer at dokumentene er
      arkivert. For journalposter kan dette knyttes til endring av
      journalstatus. Kommentarer: (ingen) M605
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseArkivertAv
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - kassasjon
@@ -1316,7 +1320,7 @@ Saksmappe som foreldre.
    - Gradering
  * - referanseArkivdel
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - registreringsID
@@ -1330,7 +1334,7 @@ Saksmappe som foreldre.
      (f.eks. 2011/3869-8, dvs.  dokument nummer 8 i saksnummer
      2011/3869), men trenger ikke ha denne formen for andre deler av
      arkivet. M004
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - tittel
@@ -1400,7 +1404,7 @@ Saksmappe som foreldre.
      inneholder både fysiske og elektroniske dokumenter, må
      informasjon om dette arves nedover i hierarkiet. Se også
      kommentar til M208 referanseArkivdel. M300
-   - [0..1]
+   - [0..1] [1..1]
    -
    - Dokumentmedium
  * - oppbevaringssted
@@ -1545,7 +1549,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
  * - dokumenttype
    - Definisjon: Navn på type dokument. Kilde: Registreres automatisk
      av systemet eller manuelt. Kommentarer: (ingen). M083
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Dokumenttype
  * - dokumentstatus
@@ -1553,7 +1557,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
      ved endring i saksstatus eller journalstatus. Kommentarer:
      Dokumentbeskrivelser som avleveres skal ha status "Dokumentet er
      ferdigstilt". M054
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Dokumentstatus
  * - tittel
@@ -1603,7 +1607,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
      inneholder både fysiske og elektroniske dokumenter, må
      informasjon om dette arves nedover i hierarkiet. Se også
      kommentar til M208 referanseArkivdel. M300
-   - [0..1]
+   - [0..1] [1..1]
    -
    - Dokumentmedium
  * - oppbevaringssted
@@ -1628,7 +1632,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
      til registreringen. Kilde: Registreres automatisk eller manuelt
      når et dokument blir tilknyttet en registrering Kommentarer:
      (ingen). M217
-   - [1..1]
+   - [0..1] [1..1]
    -
    - TilknyttetRegistreringSom
  * - dokumentnummer
@@ -1637,26 +1641,26 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
      Kommentarer: Dokumentnummeret avgjør i hvilken rekkefølge
      dokumentene vises i brukergrensesnittet. Normalt skal
      hoveddokument vises før vedleggene. M007
-   - [1..1]
+   - [0..1] [1..1]
    -
    - integer
  * - tilknyttetDato
    - Definisjon: Datoen et dokument ble knyttet til en registrering.
      Kilde: Registreres automatisk nå tilknytning foretas.
      Kommentarer: (ingen). M620
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - tilknyttetAv
    - Definisjon: Navn på person som knyttet et dokument til en
      registrering. Kilde: Registreres automatisk når tilknytning
      foretas. Kommentarer: (ingen). M621
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseTilknyttetAv
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - kassasjon
@@ -1841,21 +1845,21 @@ Disse ikke har korresponderende felt i avleveringsformatet.
      Versjonsnummer gjelder bare arkiverte versjoner. Annen
      versjons-håndtering ligger i komplett Noark, og genererer ikke
      metadata skal følge med i et arkivuttrekk. M005
-   - [1..1]
+   - [0..1] [1..1]
    -
    - integer
  * - variantformat
    - Definisjon: Angivelse av hvilken variant et dokument
      forekommer i.  Kilde: Registreres automatisk når dokumentet
      arkiveres. Kommentarer: (ingen). M700
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Variantformat
  * - format
    - Definisjon: Dokumentets format.  Kilde: Registreres automatisk
      når dokumentet arkiveres. Kommentarer: Faste verdier bestemmes
      senere. M701
-   - [0..1]
+   - [0..1] [1..1]
    -
    - Format
  * - formatDetaljer
@@ -1874,7 +1878,7 @@ Disse ikke har korresponderende felt i avleveringsformatet.
      formater.  Kommentarer: Referansen skal være en "sti" (dvs. også
      inneholde katalogstrukturen) til filnavnet som gjør det mulig å
      identifisere riktig fil i et arkivuttrekk. M218
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - filnavn
@@ -1887,26 +1891,26 @@ Disse ikke har korresponderende felt i avleveringsformatet.
      og som dermed gir integritetssikring til dokumentets
      innhold. Kilde: Påføres automatisk i forbindelse med eksport for
      avlevering. Kommentarer: (ingen).  M705
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - mimeType
    - veMimeType i n4
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - sjekksumAlgoritme
    - Definisjon: Algoritmen som er brukt for å beregne
      sjekksummen. Kilde: Registreres automatisk i forbindelse med
      eksport for avlevering.  Kommentarer: (ingen). M706
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - filstoerrelse
    - Definisjon: Størrelsen i bytes på fila oppgitt som et heltall
      større enn 0. Kilde: Registreres automatisk i forbindelse med
      eksport for avlevering. Kommentarer: (ingen).  M707
-   - [0..1]
+   - [0..1] [1..1]
    -
    - integer
  * - elektroniskSignatur
@@ -2025,12 +2029,12 @@ ElektroniskSignatur
    - Definisjon: Navn på person som har verifisert en elektronisk
      signatur. Kilde: Registreres automatisk når verifisering
      utføres. Kommentarer: (ingen). M623
-   - [1..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseVerifisertAv
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
 
@@ -2102,7 +2106,7 @@ EnkelAdresse
    - string
  * - landkode
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - Land
 
@@ -2138,25 +2142,25 @@ forekomme en gang
      Kommentarer: Dokumenter gradert "Strengt hemmelig", "Hemmelig",
      "Konfidensielt" og "Strengt fortrolig" skal føres i en egen
      journal som i sin helhet er unntatt fra innsyn. M506 gradering
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Graderingskode
  * - graderingsdato
    - Definisjon: Dato og klokkeslett når et dokument ble
      gradert. Kilde: Registreres automatisk ved
      gradering. Kommentarer: (ingen). M624
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - gradertAv
    - Definisjon: Navn på person som foretok graderingen. Kilde:
      Registreres automatisk ved gradering. Kommentarer: (ingen). M625
-   - [1..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseGradertAv
    -
-   - [1..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - nedgraderingsdato
@@ -2695,21 +2699,21 @@ deponering/avlevering.
      har ingen systemidentifikasjon fordi enheten kan være duplisert i
      et arkivuttrekk dersom samme dokumentfil er knyttet til flere
      forskjellige registreringer. M001
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - konvertertDato
    - Definisjon: Dato og klokkeslett for når et dokument ble
      konvertert fra et format til et annet. Kilde: Registreres
      automatisk ved konvertering. Kommentarer: (ingen).  M615
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - konvertertAv
    - Definisjon: Person eller system som har foretatt
      konverteringen. Kilde: Registreres automatisk ved
      konvertering. Kommentarer: (ingen).  M616
-   - [1..1]
+   - [0..1] [1..1]
    -
    - string
  * - konvertertFraFormat
@@ -2717,14 +2721,14 @@ deponering/avlevering.
      Kilde: Registreres automatisk ved konvertering. Kommentarer:
      Dette vil vanligvis være produksjonsformatet, men kan også være
      et annet arkivformat. Faste verdier bestemmes senere. M712
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Format
  * - konvertertTilFormat
    - Definisjon: Formatet dokumentet fikk etter konvertering. Kilde:
      Registreres automatisk ved konvertering. Kommentarer: Faste
      verdier bestemmes senere. M713
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Format
  * - konverteringsverktoey
@@ -2829,7 +2833,7 @@ mottaker(e) registreres.
      har ingen systemidentifikasjon fordi enheten kan være duplisert i
      et arkivuttrekk dersom samme dokumentfil er knyttet til flere
      forskjellige registreringer. M001
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - korrespondanseparttype
@@ -2839,7 +2843,7 @@ mottaker(e) registreres.
      manuelt. Kommentarer: Korrespondansetype forekommer én gang
      innenfor objektet korrespondansepart, men denne kan forekomme
      flere ganger innenfor en journalpost. M087
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Korrespondanseparttype
  * - virksomhetsspesifikkeMetadata
@@ -3393,7 +3397,7 @@ også være tilgjengelig via Mappe-instanser.
      tilfeller skal verdien i mappeID også kopieres til de to
      metadataelementene M011 saksaar og M012 sakssekvensnummer i
      saksmappen. M003
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - mappetype
@@ -3452,7 +3456,7 @@ også være tilgjengelig via Mappe-instanser.
      inneholder både fysiske og elektroniske dokumenter, må
      informasjon om dette arves nedover i hierarkiet. Se også
      kommentar til M208 referanseArkivdel. M300
-   - [0..1]
+   - [0..1] [1..1]
    -
    - Dokumentmedium
  * - oppbevaringssted
@@ -3644,7 +3648,7 @@ arkivuttrekket.
      Dokumentobjekt har ingen systemidentifikasjon fordi enheten kan
      være duplisert i et arkivuttrekk dersom samme dokumentfil er
      knyttet til flere forskjellige registreringer. M001
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - merknadstekst
@@ -3665,18 +3669,18 @@ arkivuttrekket.
    - Definisjon: Dato og klokkeslett når merknaden ble registrert .
      Kilde: Registreres automatisk av systemet. Kommentarer: (ingen).
      M611
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - merknadRegistrertAv
    - Definisjon: Navn på person som har registrert merknaden. Kilde:
      Registreres automatisk av systemet. Kommentarer: (ingen).  M612
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseMerknadRegistrertAv
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
 
@@ -3772,7 +3776,7 @@ utveksling.
      har ingen systemidentifikasjon fordi enheten kan være duplisert i
      et arkivuttrekk dersom samme dokumentfil er knyttet til flere
      forskjellige registreringer. M001
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - partRolle
@@ -3780,7 +3784,7 @@ utveksling.
      manuelt eller automatisk fra fagsystem. Kommentarer: (ingen).
      Betingelser: Her er det mange tenkelige roller avhengig av type
      sak, f.eks. Klient, Pårørende, Formynder, Advokat. M303
-   - [1..1]
+   - [0..1] [1..1]
    -
    - PartRolle
  * - virksomhetsspesifikkeMetadata
@@ -3998,7 +4002,7 @@ den enkelte mappe, registrering eller det enkelte dokument. (Se Noark
      automatisk. Kommentarer: Dersom deler av dokumentet skal
      skjermes, må dokumentet også finnes i en variant.  Her må all
      informasjon som skal skjermes, være "sladdet". M503
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SkjermingDokument
  * - skjermingsvarighet
@@ -4008,14 +4012,14 @@ den enkelte mappe, registrering eller det enkelte dokument. (Se Noark
      skjermingsvarigheten starter å løpe, vil vanligvis være når
      journalposten ble registrert, men det skal være mulig med andre
      regler.  M504
-   - [0..1]
+   - [0..1] [1..1]
    -
    - integer
  * - skjermingOpphoererDato
    - Definisjon: Datoen skjermingen skal oppheves. Kilde: Datoen
      beregnes automatisk på grunnlag av M504
      skjermingsvarighet. Kommentarer: (ingen). M505
-   - [0..1]
+   - [0..1] [1..1]
    -
    - datetime
 
@@ -4105,7 +4109,7 @@ skje før det produseres et arkivuttrekk.
      eller en variant av et dokument slettes. Kommentarer: Informasjon
      om sletting av dokumenter i produksjonsformat skal ikke
      avleveres. Sletting må ikke blandes sammen med kassasjon. M613
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - slettetAv
@@ -4114,12 +4118,12 @@ skje før det produseres et arkivuttrekk.
      varianter.  Kilde: Registreres automatisk når et dokument blir
      slettet. Kommentarer: Sletting må ikke blandes sammen med
      kassasjon. M614
-   - [1..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseSlettetAv
    -
-   - [1..1]
+   - [0..1] [1..1]
    -
    - SystemID
 
@@ -4163,19 +4167,19 @@ grupperes inn i arkivdel.
    - Definisjon: Dato og klokkeslett når kassasjonen ble
      utført. Kilde: Registreres automatisk når kassasjon
      utføres. Kommentarer: (ingen). M630
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - kassertAv
    - Definisjon: Navn på person som har utført kassasjonen. Kilde:
      Registreres automatisk når kassasjon utføres. Kommentarer:
      (ingen). M631
-   - [1..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseKassertAv
    -
-   - [1..1]
+   - [0..1] [1..1]
    -
    - SystemID
 
@@ -4273,7 +4277,7 @@ fra Nasjonalidentifikator, og trenger ikke følge med ved opprettelse.
    - **Type**
  * - systemID
    -
-   - [1..1]
+   - [0..1] [1..1]
    -
    - SystemID
 
@@ -4714,6 +4718,7 @@ Tilsvarer GeoIntegrasjon.Geometri.Punkt.
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/posisjon/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-posisjon/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/koordinatsystem/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -6299,33 +6304,33 @@ flere ganger i en journalpost.
      har ingen systemidentifikasjon fordi enheten kan være duplisert i
      et arkivuttrekk dersom samme dokumentfil er knyttet til flere
      forskjellige registreringer. M001
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - avskrivningsdato
    - Definisjon: Dato et dokument ble avskrevet .
      Kilde: Registreres automatisk nå avskrivning
      foretas. Kommentar: (ingen). M617
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - avskrevetAv
    - Definisjon: Navn på person som har foretatt avskrivning. Kilde:
      Registreres automatisk nå avskrivning foretas. Kommentar:
      (ingen).  M618
-   - [1..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseAvskrevetAv
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - avskrivningsmaate
    - Definisjon: Måten en journalpost har blitt avskrevet på. Kilde:
      Registreres automatisk når konvertering utføres. Kommentar:
      (ingen). M619 avskrivningsmaate
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Avskrivningsmaate
  * - referanseAvskrivesAvJournalpost
@@ -6423,7 +6428,7 @@ brukes på et dokument som er under produksjon.
      har ingen systemidentifikasjon fordi enheten kan være duplisert i
      et arkivuttrekk dersom samme dokumentfil er knyttet til flere
      forskjellige registreringer. M001
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - flytTil
@@ -6431,24 +6436,24 @@ brukes på et dokument som er under produksjon.
      som har vært sendt på flyt. Kilde: Registreres automatisk av
      funksjonalitet knyttet til arbeidsflyt.  Kommentar: (ingen). M660
      flytTil
-   - [1..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseFlytTil
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - flytFra
    - Definisjon: Person som har sendt et dokument på flyt. Kilde:
      Registreres automatisk av funksjonalitet knyttet til arbeidsflyt.
      Kommentar: (ingen). M665 flytFra
-   - [1..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseFlytFra
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - flytMottattDato
@@ -6456,20 +6461,20 @@ brukes på et dokument som er under produksjon.
      mottatt. Kilde: Registreres automatisk av funksjonalitet knyttet
      til arbeidsflyt. Kommentar: (ingen). M661 flytMottattDato
    -
-   - [1..1]
+   - [0..1] [1..1]
    - datetime
  * - flytSendtDato
    - Definisjon: Dato og klokkeslett et dokument på flyt ble sendt
      videre. Kilde: Registreres automatisk av funksjonalitet knyttet
      til arbeidsflyt. Kommentar: (ingen).  M662 flytSendtDato
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - flytStatus
    - Definisjon: Godkjennelse/ikke godkjennelse av dokumentet som er
      sendt på flyt. Kilde: Registreres automatisk av funksjonalitet
      knyttet til arbeidsflyt. Kommentar: (ingen).  M663 flytStatus
-   - [1..1]
+   - [0..1] [1..1]
    -
    - FlytStatus
  * - flytMerknad
@@ -6549,17 +6554,17 @@ Arkivnotat
    - **Type**
  * - dokumentetsDato
    - M103
-   - [0..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - mottattDato
    - M104
-   - [0..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - sendtDato
    - M105
-   - [0..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - forfallsdato
@@ -6683,7 +6688,7 @@ i MoReq2 som heter Record.)
    - Definisjon: Viser året journalposten ble opprettet. Kilde:
      Registreres automatisk når journalposten opprettes. Kommentar:
      (ingen). M013 journalaar
-   - [0..1]
+   - [0..1] [1..1]
    -
    - integer
  * - journalsekvensnummer
@@ -6698,7 +6703,7 @@ i MoReq2 som heter Record.)
      sekvensnummeret vises før journalaar (f.eks. 25367/2011) for at
      det ikke skal blandes sammen med saksnummeret som har året
      først. M014 journalsekvensnummer
-   - [0..1]
+   - [0..1] [1..1]
    -
    - integer
  * - journalpostnummer
@@ -6710,14 +6715,14 @@ i MoReq2 som heter Record.)
      journalpostnummer ikke brukes, må andre kriterier kunne
      identifisere journalpostenes rekkefølge innenfor saksmappen. M015
      journalpostnummer
-   - [1..1]
+   - [0..1] [1..1]
    -
    - integer
  * - journalposttype
    - Definisjon: Navn på type journalpost.  Kilde: Registreres
      automatisk av systemet eller manuelt Kommentar: Tilsvarer "Noark
      dokumenttype" i Noark 4. M082 journalposttype
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Journalposttype
  * - journalstatus
@@ -6727,7 +6732,7 @@ i MoReq2 som heter Record.)
      saksbehandlings-funksjonalitet, eller overstyres
      manuelt. Kommentar: Journalposter som avleveres skal ha status
      "Arkivert" eller "Utgår". M053 journalstatus
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Journalstatus
  * - journaldato
@@ -6736,7 +6741,7 @@ i MoReq2 som heter Record.)
      opprettetDato. Oppdateres til M604 arkivertDato når dokumentene
      som tilhørere journalposten arkiveres. Kommentar: (ingen).  M101
      journaldato
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - dokumentetsDato
@@ -6744,7 +6749,7 @@ i MoReq2 som heter Record.)
      hentes automatisk fra dokumentet, eller registreres manuelt.
      Kommentar: Kan brukes både for inngående, utgående og
      organinterne dokumenter. M103 dokumentetsDato
-   - [0..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - mottattDato
@@ -6752,7 +6757,7 @@ i MoReq2 som heter Record.)
      Registreres manuelt eller automatisk av systemet ved elektronisk
      kommunikasjon. Kommentar: Merk at mottattDato ikke behøver å være
      identisk med M600 opprettetDato. M104 mottattDato
-   - [0..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - sendtDato
@@ -6816,7 +6821,7 @@ i MoReq2 som heter Record.)
      (journalføring) og arkivering av fysiske dokumenter. Kilde:
      Registreres automatisk på grunnlag av innlogget bruker, kan
      overstyres manuelt. Kommentar: (ingen). M308 journalenhet
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - elektroniskSignatur
@@ -6966,7 +6971,7 @@ avlevering.
      har ingen systemidentifikasjon fordi enheten kan være duplisert i
      et arkivuttrekk dersom samme dokumentfil er knyttet til flere
      forskjellige registreringer. M001 systemID
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - presedensDato
@@ -6974,7 +6979,7 @@ avlevering.
      ved opprettelse av presedens, men bør også kunne hentes
      automatisk fra M103 dokumentetsDato på journalposten presedensen
      opprettes på.  Kommentar: (ingen). M111 presedensDato
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - opprettetDato
@@ -6982,19 +6987,19 @@ avlevering.
      opprettet/registrert.  Kilde: Registreres automatisk av systemet
      ved opprettelse av enheten. Kommentarer: (ingen). M600
      opprettetDato
-   - [0..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - opprettetAv
    - Definisjon: Navn på person som opprettet/registrerte
      arkivenheten. Kilde: Registreres automatisk av systemet ved
      opprettelse av enheten. Kommentarer: (ingen). M601 opprettetAv
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseOpprettetAv
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - tittel
@@ -7172,7 +7177,7 @@ bruke en saksmappe.
      opprettet. Kilde: Registreres automatisk når saksmappen
      opprettes. Kommentar: Se kommentar under M012
      sakssekvensnummer. M011 saksaar
-   - [1..1]
+   - [0..1] [1..1]
    -
    - integer
  * - sakssekvensnummer
@@ -7181,14 +7186,14 @@ bruke en saksmappe.
      automatisk når saksmappen opprettes. Kommentar: Kombinasjonen
      saksaar og sakssekvensnummer er ikke obligatorisk, men anbefales
      brukt i sakarkiver. M012 sakssekvensnummer
-   - [1..1]
+   - [0..1] [1..1]
    -
    - integer
  * - saksdato
    - Definisjon: Datoen saken er opprettet.  Kilde: Settes automatisk
      til samme dato som M600 opprettetDato. Kommentar: (ingen). M100
      saksdato
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - administrativEnhet
@@ -7201,12 +7206,12 @@ bruke en saksmappe.
      det er flere mottakere, noe som er særlig aktuelt ved
      organinterne dokumenter som skal følges opp. M305
      administrativEnhet
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseAdministrativEnhet
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - saksansvarlig
@@ -7214,12 +7219,12 @@ bruke en saksmappe.
      Registreres automatisk på grunnlag av innlogget bruker eller
      annen saksbehandlingsfunksjonalitet (f.eks. saksfordeling), kan
      overstyres manuelt. Kommentar: (ingen). M306 saksansvarlig
-   - [1..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseSaksansvarlig
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - journalenhet
@@ -7228,7 +7233,7 @@ bruke en saksmappe.
      (journalføring) og arkivering av fysiske dokumenter. Kilde:
      Registreres automatisk på grunnlag av innlogget bruker, kan
      overstyres manuelt. Kommentar: (ingen). M308 journalenhet
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - saksstatus
@@ -7237,7 +7242,7 @@ bruke en saksmappe.
      gjennom forskjellig saksbehandlings-funksjonalitet, eller
      overstyres manuelt. Kommentar: Saksmapper som avleveres skal ha
      status "Avsluttet" eller "Utgår". M052 saksstatus
-   - [1..1]
+   - [0..1] [1..1]
    -
    - Saksstatus
  * - utlaantDato
@@ -7452,7 +7457,7 @@ AdministrativEnhet
      har ingen systemidentifikasjon fordi enheten kan være duplisert i
      et arkivuttrekk dersom samme dokumentfil er knyttet til flere
      forskjellige registreringer. M001 systemID
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - administrativEnhetNavn
@@ -7475,14 +7480,14 @@ AdministrativEnhet
      opprettet/registrert.  Kilde: Registreres automatisk av systemet
      ved opprettelse av enheten. Kommentarer: (ingen). M600
      opprettetDato
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - opprettetAv
    - Definisjon: Navn på person som opprettet/registrerte
      arkivenheten. Kilde: Registreres automatisk av systemet ved
      opprettelse av enheten. Kommentarer: (ingen). M601 opprettetAv
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - avsluttetDato
@@ -7603,7 +7608,7 @@ når pålogget bruker ikke finnes fra før.
      har ingen systemidentifikasjon fordi enheten kan være duplisert i
      et arkivuttrekk dersom samme dokumentfil er knyttet til flere
      forskjellige registreringer. M001 systemID
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - brukerNavn
@@ -7621,14 +7626,14 @@ når pålogget bruker ikke finnes fra før.
      opprettet/registrert.  Kilde: Registreres automatisk av systemet
      ved opprettelse av enheten. Kommentarer: (ingen). M600
      opprettetDato
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - opprettetAv
    - Definisjon: Navn på person som opprettet/registrerte
      arkivenheten. Kilde: Registreres automatisk av systemet ved
      opprettelse av enheten. Kommentarer: (ingen). M601 opprettetAv
-   - [0..1]
+   - [0..1] [1..1]
    -
    - string
  * - avsluttetDato
@@ -7704,7 +7709,7 @@ rolletilknytning
    - **Type**
  * - systemID
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - rolle
@@ -7821,7 +7826,7 @@ denne relasjonen.
    - **Type**
  * - systemID
    -
-   - [0..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - referanseArkivenhet
@@ -7836,17 +7841,17 @@ denne relasjonen.
    - string
  * - endretDato
    - M682
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
  * - endretAv
    - M683
-   - [1..1]
+   - [0..1] [1..1]
    -
    - string
  * - referanseEndretAv
    - referanse til Bruker sin systemID
-   - [1..1]
+   - [0..1] [1..1]
    -
    - SystemID
  * - tidligereVerdi
@@ -7913,7 +7918,7 @@ Hendelseslogg
    - string
  * - hendelseDato
    -
-   - [1..1]
+   - [0..1] [1..1]
    -
    - datetime
 
