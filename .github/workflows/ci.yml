@@ -1,0 +1,77 @@
+# vim: sw=2
+
+name: Build CI
+
+on:
+  push:
+  pull_request:
+  release:
+    types: [published]
+  check_suite:
+    types: [rerequested]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image: [
+        "debian:bullseye",
+#       "debian:bookworm",
+#       "debian:sid"
+	]
+    container:
+      image: ${{ matrix.image }}
+      options: --cpus=2
+    steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+
+    - name: Install pre-dependencies
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        set -e
+        set -x
+        apt --quiet update
+        # Install stuff needed to check out the repo
+        apt --yes --quiet install --no-install-suggests eatmydata
+        eatmydata apt --yes --quiet install --no-install-suggests git
+
+    - uses: actions/checkout@v3
+      with:
+        # "fetch-depth: 0" fetches all of history, this is needed by
+        # our build system to determine the version from tags
+        fetch-depth: 0
+
+    - name: Install build dependencies
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        set -e
+        set -x
+        eatmydata apt --yes --quiet install make plantuml pandoc dblatex xmlto po4a dbtoepub python3-yaml texlive-xetex texlive-lang-european python3-docutils inkscape texlive lmodern
+
+    - name: Build HTML
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        set -e
+        set -x
+        eatmydata make html
+    - name: Build PDF
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        set -e
+        set -x
+        eatmydata make pdf
+    - name: Archive generated documents
+      uses: actions/upload-artifact@v3
+      with:
+        name: documents.zip
+        retention-days: 7
+        path: avledet/*
