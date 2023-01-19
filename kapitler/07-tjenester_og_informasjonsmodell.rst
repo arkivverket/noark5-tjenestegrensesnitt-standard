@@ -4712,6 +4712,7 @@ Tilsvarer GeoIntegrasjon.Geometri.Punkt.
 
  * - **Verdi**
  * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/koordinatsystem/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/posisjon/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-posisjon/
 
@@ -4776,6 +4777,8 @@ Arkivstruktur-pakken:
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-kassasjonsvedtak/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/klassifikasjonstype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-klassifikasjonstype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/koordinatsystem/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-koordinatsystem/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/mappetype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-mappetype/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/merknadstype/
