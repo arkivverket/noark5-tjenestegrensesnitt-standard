@@ -64,6 +64,9 @@ Content-Type: application/vnd.noark5+json
            "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/": {
                "href": "https://n5.example.com/api/arkivstruktur"
            },
+           "https://rel.arkivverket.no/noark5/v5/api/metadata/": {
+               "href": "https://n5.example.com/api/metadata"
+           },
            "https://rel.arkivverket.no/noark5/v5/api/sakarkiv/": {
                "href": "https://n5.example.com/api/sakarkiv"
            },
@@ -110,6 +113,8 @@ relevant for denne relasjonsnøkkelen.
 
  * - Relasjonsnøkkel (rel)
    - Beskrivelse
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/
+   - Tilgjengelige kodelister.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/
    - Arkivkjerne støtter konformitetsnivå 1 arkivstruktur
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/
