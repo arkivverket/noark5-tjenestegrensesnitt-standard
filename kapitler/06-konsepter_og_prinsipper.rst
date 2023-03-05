@@ -31,7 +31,7 @@ statuskoder. Alle slike ressurslenker og relasjonslenker har
 avsluttende skråstrek.
 
 Det skilles mellom små og store tegn i alle JSON-attributter
-og HATEOS-relasjoner, slik at disse har entydig definerte navn som
+og HATEOAS-relasjoner, slik at disse har entydig definerte navn som
 ikke er avhengig av språkspesifikke regler for konvertering mellom
 små og store tegn.
 
