@@ -1488,6 +1488,13 @@ begrepet enkeltdokument. En registrering som dokumenterer en
 transaksjon, vil vanligvis bestå av bare ett enkeltdokument.
 Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
 
+Ved opplasting av fil ved bruk av relasjonen
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/ , så vil
+det automatisk opprettes et dokumentobjekt med forvalgte verdier
+avledet fra den opplastede filen, se kapittel 6.  JSON for dette
+objektet returneres som resultat av opplastingen, på eneste
+forespørslen for små filer og på siste forespørsel for store filer.
+
 .. list-table:: Relasjoner
    :widths: 4 5 4 4
    :header-rows: 1
@@ -1524,6 +1531,7 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentobjekt/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/merknad/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-dokumentbeskrivelse/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-dokumentobjekt/

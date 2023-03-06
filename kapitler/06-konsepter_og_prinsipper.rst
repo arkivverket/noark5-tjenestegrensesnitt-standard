@@ -1333,7 +1333,7 @@ GET https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-8
 Returnerer med Content-type=filens MIME-type, for eksempel
 «application/pdf», og filen streames til klient. Hodefeltet
 Content-type settes til filens MIME-type hentet fra
-dokumentobjekt-entiteten. Merk, GET-forespørselen bør ikke inneholde
+dokumentobjekt-instansen. Merk, GET-forespørselen bør ikke inneholde
 HTTPs Accept-hodefelt, alternativt bør akseptere enhver MIME-type.
 HTTP-hodefeltet Accept brukes til å gi beskjed hvilket helst format
 som ønskes lastet ned, og klienten har ikke noe valg av format og bør
@@ -1342,14 +1342,58 @@ satt, og ikke inneholder enten «\ */*\ » eller er stemmer med verdien i
 mimeType-feltet til tilhørende dokumentobjekt, så returneres
 resultatkoden 406, ikke resultatkode 200.
 
-**Overføre små filer**
+**Opplasting**
 
-For å overføre en ny fil brukes POST til href til
-rel="https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/" med headere for
-content-type og content-length. Når overføringen er fullført og
-filopplastingen vellykket, så returneres statuskode 201.
+Opplasting av dokumentfiler kan enten gjøres fra dokumentbeskrivelse
+eller dokumentobjekt.  Resultatet fra en vellykket opplasting
+returnerer JSON for det nyopprettede eller oppdaterte
+dokumentobjektet.
 
-Et dokumentobjekt opprettes før opplasting. Hvis noen av feltene
+Eksempel på oppretting fra dokumentbeskrivelse::
+
+   POST https://n5.example.com/api/arkivstruktur/Dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/fil
+   Content-Type: image/jpeg
+   Content-Length: 2000000
+
+   JPEG data
+
+   Respons: 201 Created
+
+    {
+        "systemID": "e37be679-f87b-4485-a680-4c3e3c529bdf",
+        "versjonsnummer": "1",
+        "variantformat": {
+            "kode": "A",
+            "kodenavn": "Arkivformat"
+        },
+        "format": {
+            "kode": "RA-JPEG",
+            "kodenavn": "JPEG (ISO 10918-1:1994)"
+        },
+        "filnavn": "portrait.jpeg",
+        "filstoerrelse": 2000000,
+        "mimeType": "image/jpeg",
+        "sjekksum": "40cbd5b88175e268ef3a1c286ad7d46ff69c22787d368e8635cae7edca4b5625",
+        "sjekksumAlgoritme": "SHA-256",
+        "referanseDokumentfil": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf/referanseFil",
+        "_links": {
+            "self": {
+                "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf"
+            },
+            "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentobjekt/": {
+                "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf"
+            },
+            "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/": {
+                "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf/referanseFil"
+            },
+            "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/":{
+                "href":"https://n5.example.com/api/arkivstruktur/Dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/"
+            }
+        }
+    }
+
+Et dokumentobjekt også kan opprettes før opplasting når en laster opp
+fil via dokumentobjekcts opplastingsrelasjon.  Hvis noen av feltene
 «format», «mimeType», «filnavn», «sjekksum», «sjekksumAlgoritme» og
 «filstoerrelse» er fylt inn ved opprettelsen skal tjeneren verifisere
 at verdiene i de angitte feltene stemmer når den komplette filen er
@@ -1359,14 +1403,22 @@ filstoerrelse er identisk med Content-Length (for komplett POST) eller
 X-Upload-Content-Length (for overføring i bolker med PUT) og at
 sjekksum stemmer overens med den overførte filen. Hvis tjeneren etter
 opplasting ser at noen av verdiene avledet fra opplastet fil ikke
-stemmer overens med verdiene i dokumentobjekt-entiteten, så returneres
+stemmer overens med verdiene i dokumentobjekt-instansen, så returneres
 statuskode 400 Bad Request. Hvis den opplastede filen har et format
 tjeneren ikke kjenner igjen, så settes formatkoden til 'av/0'. Når
 filopplasting er fullført setter tjeneren de feltene i dokumentobjekt
-som ikke var satt ved oppretting av dokumentobjekt-entiteten, det vil
+som ikke var satt ved oppretting av dokumentobjekt-instansen, det vil
 si utleder «format», «mimeType», «filnavn», «sjekksum», og
 «filstoerrelse» basert på filens innhold samt, samt gir
 «sjekksumAlgoritme» aktuell verdi.
+
+**Overføre små filer**
+
+For å overføre en ny fil brukes POST til href til
+rel="https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/" med headere for
+content-type og content-length. Når overføringen er fullført og
+filopplastingen vellykket, så returneres statuskode 201.
+
 
 ::
 
@@ -1412,19 +1464,18 @@ For å starte en opplastingssesjon:
 #. Når siste overføring er gjort så returneres statuskode 201 Created.
 
 Det er ikke mulig å overskrive filen tilhørende en eksisterende
-dokumentobjekt-entitet med en POST eller en PUT-forespørsel. Hvis en
+dokumentobjekt-instans med en POST eller en PUT-forespørsel. Hvis en
 fil må erstattes etter fullført opplasting så skal
 dokumentobjekt-entieten slettes og en ny POST/PUT utføres mot href til
 rel=\ https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/.
 
-Når en filopplasting er vellykket, så returneres tilhørende
-dokumentobjekt som respons på avsluttende 200 OK / 201 Created.
+Når en filopplasting er vellykket, så returneres tilhørende instanser
+som respons på avsluttende 200 OK / 201 Created.
 
 Dersom det skjer en feil under opplasting eller lagringsprosessen skal
 tjeneren returnere 422 Unprocessable Entity som svar. Det er da
-klientens ansvar å slette relaterte dokumentbeskrivelse- og
-dokumentobjekt-entiteter ved hjelp av DELETE på entitetenes
-self-relasjon.
+klientens ansvar å slette relaterte ikke lenger relevante instanser
+ved hjelp av DELETE på instansenes self-relasjon.
 
 Komplett eksempel
 
@@ -1492,6 +1543,9 @@ Last opp siste del:
            },
            "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/": {
                "href": "https://n5.example.com/api/arkivstruktur/Dokumentobjekt/e37be679-f87b-4485-a680-4c3e3c529bdf/referanseFil"
+           },
+           "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/":{
+               "href":"https://n5.example.com/api/arkivstruktur/Dokumentbeskrivelse/9ee41886-bc55-11ed-9ca7-e7af3ac784aa/"
            }
        }
    }
