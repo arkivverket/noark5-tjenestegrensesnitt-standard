@@ -2538,8 +2538,8 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
    - **Kode**
    - **Type**
  * - klassifikasjonstype
-   - Definisjon: Type klassifikasjonssystem.  Kilde: Registreres
-     manuelt ved opprettelse av klassifikasjonssystem Kommentarer:
+   - Definisjon: Type klassifikasjonssystem.  Kilde: Kan registreres
+     manuelt ved opprettelse av klassifikasjonssystem.  Kommentarer:
      (ingen) M086
    - [0..1]
    -
