@@ -1345,13 +1345,20 @@ resultatkoden 406, ikke resultatkode 200.
 
 **Opplasting**
 
-Opplasting av dokumentfiler skal støttes fra både dokumentbeskrivelse
-og dokumentobjekt.  Resultatet fra en vellykket opplasting returnerer
-JSON for det nyopprettede eller oppdaterte dokumentobjektet.
+Opplasting av dokumentfiler skal støttes fra både mappe, registrering,
+dokumentbeskrivelse og dokumentobjekt.  Resultatet fra en vellykket
+opplasting returnerer JSON for det nyopprettede eller oppdaterte
+dokumentobjektet med HATEOAS "_embedded"-informasjon om de
+nyopprettede foreldreentietene som beskrevet i *JSON Hypertext
+Application Language*.  De nyopprettede instansene er ferdig utfylt
+med verdier hentet fra den opplastede filen der det er mulig, eller
+gis verdien 'UNKNOWN'.  Etter opplasting og eventuell nyoppretting av
+instanser så må metadata i de opprettende instansene sjekkes og
+eventuelle 'UNKNOWN'-verdier endres.
 
-Eksempel på oppretting fra dokumentbeskrivelse::
+Eksempel på oppretting fra registrering::
 
-   POST https://n5.example.com/api/arkivstruktur/Dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/fil
+   POST https://n5.example.com/api/arkivstruktur/Registrering/f22d76b2-bc51-11ed-96a7-0737240e5910/fil
    Content-Type: image/jpeg
    Content-Length: 2000000
 
@@ -1388,6 +1395,90 @@ Eksempel på oppretting fra dokumentbeskrivelse::
             },
             "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/":{
                 "href":"https://n5.example.com/api/arkivstruktur/Dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/"
+            }
+        },
+        "_embedded": {
+            "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/":{
+                "systemID":"0003f272-918a-444d-9db0-f76f8b2cb4a7",
+                "dokumenttype":{
+                    "kode":"NQ",
+                    "kodenavn":"Bilde"
+                },
+                "dokumentstatus":{
+                    "kode":"F",
+                    "kodenavn":"Dokumentet er ferdigstilt"
+                },
+                "tittel":"1629",
+                "dokumentnummer":1,
+                "tilknyttetDato":"2021-06-09T11:13:33+02:00",
+                "tilknyttetAv": "pålogget bruker",
+                "referanseTilknyttetAv": "8f58d80c-9b5c-4ddf-af5a-764f08a7661e",
+                "tilknyttetRegistreringSom":{
+                       "kode":"H",
+                       "kodenavn":"Hoveddokument"
+                   },
+                "opprettetDato":"2021-06-09T11:13:33+02:00",
+                "opprettetAv":"bilde@example.com",
+                "endretDato":"2021-06-09T11:13:33+02:00",
+                "endretAv": "pålogget bruker",
+                "referanseEndretAv": "8f58d80c-9b5c-4ddf-af5a-764f08a7661e",
+                "_links":{
+                    "self":{
+                        "href":"https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/":{
+                        "href":"https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/":{
+                        "href":"https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/registrering"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentobjekt/":{
+                        "href":"https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/dokumentobjekt/"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-dokumentobjekt/":{
+                        "href":"https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/ny-dokumentobjekt/"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/part/":{
+                        "href":"https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/part/",
+                        "templated":true
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-partperson/":{
+                        "href":"https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/ny-partperson/"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-partenhet/":{
+                           "href":"https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/ny-partenhet/"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/merknad/":{
+                           "href":"https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/merknad/"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-merknad/":{
+                           "href":"https://n5.example.com/api/arkivstruktur/dokumentbeskrivelse/0003f272-918a-444d-9db0-f76f8b2cb4a7/ny-merknad/"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/metadata/graderingskode/":{
+                           "href":"https://n5.example.com/api/metadata/graderingskode"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/metadata/slettingstype/":{
+                           "href":"https://n5.example.com/api/metadata/slettingstype"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/":{
+                           "href":"https://n5.example.com/api/metadata/dokumentmedium"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentstatus/":{
+                           "href":"https://n5.example.com/api/metadata/dokumentstatus"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/metadata/dokumenttype/":{
+                           "href":"https://n5.example.com/api/metadata/dokumenttype"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/metadata/tilgangsrestriksjon/":{
+                           "href":"https://n5.example.com/api/metadata/tilgangsrestriksjon"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/metadata/skjermingdokument/":{
+                           "href":"https://n5.example.com/api/metadata/skjermingdokument"
+                    },
+                    "https://rel.arkivverket.no/noark5/v5/api/metadata/skjermingmetadata/":{
+                           "href":"https://n5.example.com/api/metadata/skjermingmetadata"
+                    }
+                }
             }
         }
     }

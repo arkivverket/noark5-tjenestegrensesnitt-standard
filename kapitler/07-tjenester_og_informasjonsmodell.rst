@@ -1167,6 +1167,14 @@ brukes for instanser som kun har det forenklede attributtsett. Hvis
 flere attributter er brukt, så må en benytte basisregistrering i slik
 XML ved avlevering som Noark 5 versjon 4.
 
+Ved opplasting av fil ved bruk av relasjonen
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/ , så vil
+det automatisk opprettes både en dokumentbeskrivelse og et
+dokumentobjekt med forvalgte verdier avledet fra den opplastede filen.
+JSON for disse objektene returneres som en JSON-liste som resultat av
+opplastingen, på eneste forespørslen for små filer og på siste
+forespørsel for store filer.
+
 .. list-table:: Relasjoner
    :widths: 4 5 4 4
    :header-rows: 1
@@ -1229,6 +1237,7 @@ XML ved avlevering som Noark 5 versjon 4.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/bygning/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dnummer/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dokumentbeskrivelse/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/foedselsnummer/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepart/
@@ -3288,6 +3297,14 @@ mal som i tidligere versjoner av Noark-standarden - dvs. en kombinasjon
 av årstallet da mappen ble opprettet og et fortløpende seksjonsnummer
 innenfor året, f.eks. 2011/3869.
 
+Ved opplasting av fil ved bruk av relasjonen
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/ , så vil
+det automatisk opprettes både en dokumentbeskrivelse og et
+dokumentobjekt med forvalgte verdier avledet fra den opplastede filen.
+JSON for disse objektene returneres som en JSON-liste som resultat av
+opplastingen, på eneste forespørslen for små filer og på siste
+forespørsel for store filer.
+
 .. list-table:: Relasjoner
    :widths: 4 3 3 1
    :header-rows: 1
@@ -3345,6 +3362,7 @@ innenfor året, f.eks. 2011/3869.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivdel/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/bygning/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dnummer/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/foedselsnummer/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/klasse/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/kryssreferanse/
