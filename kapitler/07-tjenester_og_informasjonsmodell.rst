@@ -1103,7 +1103,6 @@ obligatorisk i arkivuttrekk.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkiv/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivskaper/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkiv/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-arkivskaper/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -2068,7 +2067,6 @@ EnkelAdresse
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/land/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/postnummer/
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/enkeladresse/
- * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-enkeladresse/
 
 .. list-table:: Attributter
    :widths: 6 10 1 1 4
@@ -2612,7 +2610,6 @@ Kontaktinformasjon
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/kontaktinformasjon/
- * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-kontaktinformasjon/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -2673,7 +2670,6 @@ deponering/avlevering.
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/konvertering/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-konvertering/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -2891,7 +2887,6 @@ KorrespondansepartEnhet
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartenhet/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartenhet/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -2961,7 +2956,6 @@ KorrespondansepartIntern
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartintern/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartintern/
 
 
 .. list-table:: Attributter
@@ -3022,7 +3016,6 @@ KorrespondansepartPerson
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/korrespondansepartperson/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-korrespondansepartperson/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -3621,7 +3614,6 @@ arkivuttrekket.
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/merknad/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-merknad/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/merknadstype/
 
 .. list-table:: Attributter
@@ -3828,7 +3820,6 @@ PartEnhet
 
  * - **Verdi**
  * - self
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-partenhet/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/partenhet/
 
 .. list-table:: Attributter
@@ -3898,7 +3889,6 @@ PartPerson
 
  * - **Verdi**
  * - self
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-partperson/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/partperson/
 
 .. list-table:: Attributter
@@ -4309,7 +4299,6 @@ Bygning
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/bygning/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-bygning/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -4399,7 +4388,6 @@ som brukes i matrikkelen.
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/matrikkel/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-matrikkel/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -4508,7 +4496,6 @@ Foedselsnummer
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/foedselsnummer/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-foedselsnummer/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -4558,7 +4545,6 @@ i Folkeregisteret.
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/dnummer/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-dnummer/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -4607,7 +4593,6 @@ arealplan-ID <https://www.kartverket.no/geodataarbeid/Arealplan-og-planregister/
 
  * - **Verdi**
  * - self
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-plan/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/plan/
 
 .. list-table:: Attributter
@@ -4718,8 +4703,6 @@ Tilsvarer GeoIntegrasjon.Geometri.Punkt.
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/koordinatsystem/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/posisjon/
- * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-posisjon/
- * - https://rel.arkivverket.no/noark5/v5/api/metadata/koordinatsystem/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -6542,7 +6525,6 @@ Arkivnotat
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/arkivnotat/
- * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-arkivnotat/
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/dokumentflyt/
  * - https://rel.arkivverket.no/noark5/v5/api/sakarkiv/ny-dokumentflyt/
 
@@ -7816,7 +7798,6 @@ denne relasjonen.
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/
- * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-endringslogg/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -7897,7 +7878,6 @@ Hendelseslogg
  * - **Verdi**
  * - self
  * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/hendelseslogg/
- * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/ny-hendelseslogg/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/hendelsetype/
 
 .. list-table:: Attributter
