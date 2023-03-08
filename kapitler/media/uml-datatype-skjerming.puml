@@ -4,7 +4,7 @@ hide circle
 class Arkivstruktur.Skjerming <<dataType>> {
   +tilgangsrestriksjon : Tilgangsrestriksjon
   +skjermingshjemmel : string
-  +skjermingMetadata : SkjermingMetadata [0..*]
+  +skjermingMetadata : SkjermingMetadata [1..*]
   +skjermingDokument : SkjermingDokument [0..1]
   +skjermingsvarighet : integer [0..1]
   +skjermingOpphoererDato : datetime [0..1]
