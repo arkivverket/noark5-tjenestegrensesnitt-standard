@@ -3992,7 +3992,7 @@ den enkelte mappe, registrering eller det enkelte dokument. (Se Noark
      og journalpost.  Ved midlertidig skjerming skal alle metadata
      ovenfor skjermes, må bare brukes inntil skjermingsbehovet er
      vurdert. M502
-   - [0..\*]
+   - [1..\*]
    -
    - SkjermingMetadata
  * - skjermingDokument
