@@ -283,7 +283,7 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 
 ..
 
-   /api/sakarkiv/saksmappe?$filter=saksdato gt DateTime'2017-02-15'
+   /api/sakarkiv/saksmappe?$filter=saksdato gt 2017-02-15
 
 *Mindre enn*
 
@@ -291,7 +291,7 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 
 **Eksempel:**
 
-   /api/sakarkiv/saksmappe?$filter=saksdato lt DateTime'2017-02-15'
+   /api/sakarkiv/saksmappe?$filter=saksdato lt 2017-02-15
 
 *Større enn eller lik*
 
@@ -299,7 +299,7 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 
 **Eksempel:**
 
-   /api/sakarkiv/saksmappe?$filter=saksdato ge DateTime'2017-02-15'
+   /api/sakarkiv/saksmappe?$filter=saksdato ge 2017-02-15
 
 *Mindre enn eller lik*
 
@@ -307,7 +307,7 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 
 **Eksempel:**
 
-   /api/sakarkiv/saksmappe?$filter=saksdato le DateTime'2017-02-15'
+   /api/sakarkiv/saksmappe?$filter=saksdato le 2017-02-15
 
 *Og*
 
@@ -315,7 +315,7 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 
 **Eksempel:**
 
-   /api/sakarkiv/saksmappe/?$filter=saksdato gt DateTime'2017-02-10' and saksdato lt DateTime'2017-02-12'
+   /api/sakarkiv/saksmappe/?$filter=saksdato gt 2017-02-10 and saksdato lt 2017-02-12
 
 *Eller*
 
