@@ -272,11 +272,11 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 
 *Inneholder*
 
-**Syntaks:** substringof(‘tekst’, feltnavn)
+**Syntaks:** substring(feltnavn, 1, 5) eq 'tekst'
 
 **Eksempel:**
 
-   /api/arkivstruktur/mappe/?$filter=substringof('test', tittel)
+   /api/arkivstruktur/mappe/?$filter=substring(tittel, 3, 4) eq 'test'
 
 *Større enn*
 
@@ -334,7 +334,7 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
 
 *De to første mappene med test i tittelen*
 
-   /api/arkivstruktur/mappe/?$top=2&$filter=substringof('test',tittel)
+   /api/arkivstruktur/mappe/?$top=2&$filter=substring(tittel, 3, 4) eq 'test'
 
 *Mapper med graderingskode B*
 
