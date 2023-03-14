@@ -353,8 +353,8 @@ Flere filtre kan kombineres med operatorene **and** og **or**.
      m/merknadstype/kode eq 'B')
    - Mapper med merknader som har merknadstype B
    - utvidet
- * - ../arkivdel/1235/mappe?$top=2&$filter=contains(‘testmappe’,
-     tittel) eq true $orderby=endretDato desc
+ * - ../arkivdel/1235/mappe?$top=2&$filter=contains(tittel,
+     ‘testmappe’)&$orderby=endretDato desc
    - De to første mapper hvor testmappe er en del av tittel sortert
      synkende på endretDato
    - basis
