@@ -177,7 +177,7 @@ om API-tjenersystemet. Responsen inneholder følgende felter:
    / programmet ble sist oppdatert.
 -  ``protokollversjon`` - tekststreng med versjon av
    tjenestegrensesnittspesifikasjonen som støttes.
-   For dagens utgave vil verdien være '1.0 beta'.
+   For dagens utgave vil verdien være '1.0'.
 
 Responsen kan for eksempel se slik ut:
 
@@ -188,13 +188,25 @@ Responsen kan for eksempel se slik ut:
      "produkt": "Arkivsystemet Noark 5 kjerne",
      "versjon": "0.1",
      "versjonsdato": "2019-03-22",
-     "protokollversjon": "1.0 Beta"
+     "protokollversjon": "1.0"
    }
 
 Det kan være en sikkerhetsmessig fordel å unngå å fortelle
 potensielle angripere hvilken versjon som kjører på maskinen. Det
 kan derfor være lurt å kun gjøre dette endepunktet tilgjengelig for
 innloggede brukere.
+
+.. list-table:: Kjente protokollversjoner
+   :widths: 1 1
+   :header-rows: 1
+
+ * - Spesifikasjonsdato
+   - Versjonstekst
+ * - 2019
+   - "1.0"
+ * - 2016
+   - "1.0 Beta"
+
 
 Finne objekter (Read)
 ^^^^^^^^^^^^^^^^^^^^^
