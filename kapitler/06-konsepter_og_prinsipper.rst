@@ -205,7 +205,7 @@ Finne objekter (Read)
 ^^^^^^^^^^^^^^^^^^^^^
 
 For filter skal syntaks fra oData standarden
-(http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
+(https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
 benyttes. De ressurser som støtter filter skal annonserer dette under
 **\_links** med **templated=true** og parametre som kan brukes til dette i
 **href**. Feltet «templated» er valgfritt og verdien skal antas å være «false»
