@@ -133,7 +133,7 @@ kapittel 7 sammen med beskrivelse av klasser.
  * - self
    - Brukes for å identifisere en ressurs, og kan brukes til oppdatering og sletting.
  * - next
-   - Brukes for å angi neste side ved serverstyrt resultatoppdeling
+   - Brukes for å angi neste side ved serverstyrt resultatoppdeling.
 
 Ressurser bør kun gjøres tilgjengelig i API når pålogget bruker har
 tilgang til disse. Hvis en bruker ikke har tilgang til å avslutte en
