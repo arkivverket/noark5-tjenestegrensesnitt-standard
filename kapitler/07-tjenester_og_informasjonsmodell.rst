@@ -6994,7 +6994,7 @@ avlevering.
    - Definisjon: En argumentkilde som brukes til å løse rettslige
      problemer. En retts-anvender som skal ta stilling til et juridisk
      spørsmål, vil ta utgangspunkt i en rettskildefaktor. Kilde:
-     Registreres manuelt ved opprettelse av presedens Kommentar: En
+     Registreres manuelt ved opprettelse av presedens.  Kommentar: En
      rettskildefaktor kan være en lov- eller forskriftstekst,
      lovforarbeider, domstolspraksis, andre myndigheters praksis,
      privates praksis (kontraktspraksis), rettsoppfatninger, reelle
