@@ -3078,7 +3078,7 @@ Ved avlevering i tråd med XML-skjema for Noark 5 versjon 5.0 så droppes
 samtlige felt arvet fra Arkivenhet, da disse ikke har korresponderende
 felt i dette avleveringsformatet.
 
-Kryssreferanser opprettes med en POST-forespørsel og bruker ODATA $ref
+Kryssreferanser opprettes med en POST-forespørsel og bruker OData $ref
 tilnærmingen. Hvis det er mulig å lage en kryssreferanse fra en
 arkivenhet vil relasjonsnøkkelen
 ``https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/``

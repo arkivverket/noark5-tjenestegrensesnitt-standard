@@ -9,7 +9,7 @@ REST – Representational State Transfer
 
 SAML – Security Assertion Markup Language
 
-oData - Open Data Protocol
+OData - Open Data Protocol
 
 CRUD – forkortelse for Create, Read, Update, Delete
 

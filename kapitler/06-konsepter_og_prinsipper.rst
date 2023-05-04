@@ -216,7 +216,7 @@ innloggede brukere.
 Finne objekter (Read)
 ^^^^^^^^^^^^^^^^^^^^^
 
-For filter skal syntaks fra oData standarden
+For filter skal syntaks fra OData standarden
 (https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
 benyttes. De ressurser som støtter filter skal annonserer dette under
 **\_links** med **templated=true** og parametre som kan brukes til dette i
@@ -256,14 +256,14 @@ Filter parametre som skal støttes er:
 
 -  Nivå utvidet:
 
-   -  Filter på en-til-mange relasjoner (vha. 'any' og 'all' odata
+   -  Filter på en-til-mange relasjoner (vha. 'any' og 'all' OData
       funksjonene)
 
 Filtrering
 ''''''''''
 
 Filtrering støttes med $filter parameter. Nedenfor følger en del
-eksempler på ulike filtreringer med de innebygde oData-operatorene.
+eksempler på ulike filtreringer med de innebygde OData-operatorene.
 Flere filtre kan kombineres med operatorene **and** og **or**.
 
 *Begynner med*
