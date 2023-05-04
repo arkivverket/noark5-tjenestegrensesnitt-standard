@@ -6,7 +6,7 @@ Noark kjernen. Tidlig i prosjektet ble det ytret ønske fra
 arbeidsgruppen om å støtte nyere type tjenestegrensesnitt, og etter en
 vurdering i KommIT ble REST (Representational State Transfer) valgt med
 et tilnærmet HATEOAS (Hypermedia as the Engine og Application State)
-format og oData for filtrering. Det ble innhentet informasjon om beste
+format og OData for filtrering. Det ble innhentet informasjon om beste
 praksis og kommentarer fra Statens Vegvesen, Difi og Brønnøysund/Altinn
 i forbindelse med REST.
 
