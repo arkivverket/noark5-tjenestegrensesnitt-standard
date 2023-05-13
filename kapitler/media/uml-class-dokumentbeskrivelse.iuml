@@ -1,17 +1,17 @@
 @startuml
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
-  +dokumenttype : Dokumenttype
-  +dokumentstatus : Dokumentstatus
+  +dokumenttype : Dokumenttype [0..1] [1..1]
+  +dokumentstatus : Dokumentstatus [0..1] [1..1]
   +tittel : string
   +beskrivelse : string [0..1]
   +forfatter : string [0..*]
-  +dokumentmedium : Dokumentmedium [0..1]
+  +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..1]
-  +tilknyttetRegistreringSom : TilknyttetRegistreringSom
-  +dokumentnummer : integer
-  +tilknyttetDato : datetime
-  +tilknyttetAv : string [0..1]
-  +referanseTilknyttetAv : SystemID [0..1]
+  +tilknyttetRegistreringSom : TilknyttetRegistreringSom [0..1] [1..1]
+  +dokumentnummer : integer [0..1] [1..1]
+  +tilknyttetDato : datetime [0..1] [1..1]
+  +tilknyttetAv : string [0..1] [1..1]
+  +referanseTilknyttetAv : SystemID [0..1] [1..1]
   +kassasjon : Kassasjon [0..1]
   +utfoertKassasjon : UtfoertKassasjon [0..1]
   +sletting : Sletting [0..1]

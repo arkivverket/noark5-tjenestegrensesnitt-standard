@@ -1,0 +1,12 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Graderingskode <<codelist>> {
+  {field} +Strengt hemmelig (sikkerhetsgrad) = SH
+  {field} +Hemmelig (sikkerhetsgrad) = H
+  {field} +Konfidensielt (sikkerhetsgrad) = K
+  {field} +Begrenset (sikkerhetsgrad) = B
+  {field} +Fortrolig (beskyttelsesgrad) = F
+  {field} +Strengt fortrolig (beskyttelsesgrad) = SF
+}
+@enduml

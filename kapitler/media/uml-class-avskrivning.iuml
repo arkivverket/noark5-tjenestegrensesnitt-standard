@@ -1,10 +1,10 @@
 @startuml
 class Sakarkiv.Avskrivning {
-  +systemID : SystemID [0..1]
-  +avskrivningsdato : datetime
-  +avskrevetAv : string
-  +referanseAvskrevetAv : SystemID [0..1]
-  +avskrivningsmaate : Avskrivningsmaate
+  +systemID : SystemID [0..1] [1..1]
+  +avskrivningsdato : datetime [0..1] [1..1]
+  +avskrevetAv : string [0..1] [1..1]
+  +referanseAvskrevetAv : SystemID [0..1] [1..1]
+  +avskrivningsmaate : Avskrivningsmaate [0..1] [1..1]
   +referanseAvskrivesAvJournalpost : SystemID [0..1]
   +referanseAvskrivesAvKorrespondansepart : SystemID [0..1]
 }

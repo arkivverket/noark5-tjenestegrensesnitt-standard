@@ -5,8 +5,8 @@ class Arkivstruktur.ElektroniskSignatur <<dataType>> {
   +elektroniskSignaturSikkerhetsnivaa : ElektroniskSignaturSikkerhetsnivaa
   +elektroniskSignaturVerifisert : ElektroniskSignaturVerifisert
   +verifisertDato : datetime
-  +verifisertAv : string
-  +referanseVerifisertAv : SystemID [0..1]
+  +verifisertAv : string [0..1] [1..1]
+  +referanseVerifisertAv : SystemID [0..1] [1..1]
 }
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
 }

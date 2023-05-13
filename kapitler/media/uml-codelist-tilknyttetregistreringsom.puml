@@ -1,0 +1,8 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.TilknyttetRegistreringSom <<codelist>> {
+  +Hoveddokument = H
+  +Vedlegg = V
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.PartRolle <<codelist>> {
+  +Klient = KLI
+  +Pårørende = PAA
+  +Formynder = FORM
+  +Advokat = ADV
+}
+@enduml

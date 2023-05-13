@@ -1,12 +1,11 @@
 @startuml
 class Arkivstruktur.Mappe <Arkivenhet> {
-  +mappeID : string [0..1]
-  +mappetype : Mappetype [0..1]
+  +mappeID : string [0..1] [1..1]
   +tittel : string
   +offentligTittel : string [0..1]
   +beskrivelse : string [0..1]
   +noekkelord : string [0..*]
-  +dokumentmedium : Dokumentmedium [0..1]
+  +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..*]
   +avsluttetDato : datetime [0..1]
   +avsluttetAv : string [0..1]

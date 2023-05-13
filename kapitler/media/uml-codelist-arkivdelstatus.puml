@@ -1,0 +1,10 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Arkivdelstatus <<codelist>> {
+  +Aktiv periode = A
+  +Overlappingsperiode = O
+  +Avsluttet periode = P
+  +Uaktuelle mapper = U
+}
+@enduml

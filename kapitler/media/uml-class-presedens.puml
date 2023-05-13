@@ -2,11 +2,11 @@
 skinparam nodesep 100
 hide circle
 class Sakarkiv.Presedens {
-  +systemID : SystemID [0..1]
-  +presedensDato : datetime
-  +opprettetDato : datetime [0..1]
-  +opprettetAv : string [0..1]
-  +referanseOpprettetAv : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
+  +presedensDato : datetime [0..1] [1..1]
+  +opprettetDato : datetime [0..1] [1..1]
+  +opprettetAv : string [0..1] [1..1]
+  +referanseOpprettetAv : SystemID [0..1] [1..1]
   +tittel : string
   +beskrivelse : string [0..1]
   +presedensHjemmel : string [0..1]

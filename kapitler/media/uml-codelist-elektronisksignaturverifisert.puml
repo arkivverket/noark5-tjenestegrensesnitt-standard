@@ -1,0 +1,8 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.ElektroniskSignaturVerifisert <<codelist>> {
+  +Signatur påført, ikke verifisert = I
+  +Signatur påført og verifisert = V
+}
+@enduml

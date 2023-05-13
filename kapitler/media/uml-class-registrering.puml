@@ -2,20 +2,20 @@
 skinparam nodesep 100
 hide circle
 class Arkivstruktur.Registrering <Arkivenhet> {
-  +arkivertDato : datetime [0..1]
-  +arkivertAv : string [0..1]
-  +referanseArkivertAv : SystemID [0..1]
+  +arkivertDato : datetime [0..1] [1..1]
+  +arkivertAv : string [0..1] [1..1]
+  +referanseArkivertAv : SystemID [0..1] [1..1]
   +kassasjon : Kassasjon [0..1]
   +skjerming : Skjerming [0..1]
   +gradering : Gradering [0..1]
-  +referanseArkivdel : SystemID [0..1]
-  +registreringsID : string [0..1]
+  +referanseArkivdel : SystemID [0..1] [1..1]
+  +registreringsID : string [0..1] [1..1]
   +tittel : string
   +offentligTittel : string [0..1]
   +beskrivelse : string [0..1]
   +noekkelord : string [0..*]
   +forfatter : string [0..*]
-  +dokumentmedium : Dokumentmedium [0..1]
+  +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..*]
   +virksomhetsspesifikkeMetadata : any [0..1]
 }

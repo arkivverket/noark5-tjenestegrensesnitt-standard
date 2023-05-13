@@ -1,10 +1,10 @@
 @startuml
 class Arkivstruktur.Merknad {
-  +systemID : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
   +merknadstekst : string
   +merknadstype : Merknadstype [0..1]
-  +merknadsdato : datetime
-  +merknadRegistrertAv : string [0..1]
-  +referanseMerknadRegistrertAv : SystemID [0..1]
+  +merknadsdato : datetime [0..1] [1..1]
+  +merknadRegistrertAv : string [0..1] [1..1]
+  +referanseMerknadRegistrertAv : SystemID [0..1] [1..1]
 }
 @enduml

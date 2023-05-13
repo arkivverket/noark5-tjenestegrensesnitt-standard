@@ -1,0 +1,10 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.ElektroniskSignaturSikkerhetsnivaa <<codelist>> {
+  +Symmetrisk kryptert = SK
+  +Sendt med PKI/virksomhetssertifikat = V
+  +Sendt med PKI/"person standard"-sertifikat = PS
+  +Sendt med PKI/"person høy"-sertifikat = PH
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Dokumentstatus <<codelist>> {
+  +Dokumentet er under redigering = B
+  +Dokumentet er ferdigstilt = F
+}
+@enduml

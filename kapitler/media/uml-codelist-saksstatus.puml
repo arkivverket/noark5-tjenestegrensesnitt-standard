@@ -1,0 +1,13 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Saksstatus <<codelist>> {
+  +Under behandling = B
+  +Avsluttet = A
+  +Utgår = U
+  +Opprettet av saksbehandler = R
+  +Avsluttet av saksbehandler = S
+  +Unntatt prosesstyring = P
+  +Ferdig fra saksbehandler = F
+}
+@enduml

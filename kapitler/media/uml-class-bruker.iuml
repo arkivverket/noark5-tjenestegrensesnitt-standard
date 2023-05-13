@@ -1,9 +1,9 @@
 @startuml
 class Admin.Bruker {
-  +systemID : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
   +brukerNavn : string
-  +opprettetDato : datetime
-  +opprettetAv : string [0..1]
+  +opprettetDato : datetime [0..1] [1..1]
+  +opprettetAv : string [0..1] [1..1]
   +avsluttetDato : datetime [0..1]
   +virksomhetsspesifikkeMetadata : any [0..1]
   +kortnavn : string [0..1]

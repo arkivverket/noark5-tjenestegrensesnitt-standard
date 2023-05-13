@@ -2,16 +2,16 @@
 skinparam nodesep 100
 hide circle
 class Arkivstruktur.Dokumentobjekt <Arkivenhet> {
-  +versjonsnummer : integer
-  +variantformat : Variantformat
-  +format : Format [0..1]
+  +versjonsnummer : integer [0..1] [1..1]
+  +variantformat : Variantformat [0..1] [1..1]
+  +format : Format [0..1] [1..1]
   +formatDetaljer : string [0..1]
-  +referanseDokumentfil : string [0..1]
+  +referanseDokumentfil : string [0..1] [1..1]
   +filnavn : string [0..1]
-  +sjekksum : string [0..1]
-  +mimeType : string [0..1]
-  +sjekksumAlgoritme : string [0..1]
-  +filstoerrelse : integer [0..1]
+  +sjekksum : string [0..1] [1..1]
+  +mimeType : string [0..1] [1..1]
+  +sjekksumAlgoritme : string [0..1] [1..1]
+  +filstoerrelse : integer [0..1] [1..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 }
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {

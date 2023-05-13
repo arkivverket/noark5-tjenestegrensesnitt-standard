@@ -1,0 +1,6 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Land <<codelist>> {
+}
+@enduml

@@ -1,10 +1,10 @@
 @startuml
 class Admin.AdministrativEnhet {
-  +systemID : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
   +administrativEnhetNavn : string
   +kortnavn : string [0..1]
-  +opprettetDato : datetime
-  +opprettetAv : string [0..1]
+  +opprettetDato : datetime [0..1] [1..1]
+  +opprettetAv : string [0..1] [1..1]
   +avsluttetDato : datetime [0..1]
   +administrativEnhetsstatus : string
   +referanseOverordnetEnhet : SystemID [0..1]

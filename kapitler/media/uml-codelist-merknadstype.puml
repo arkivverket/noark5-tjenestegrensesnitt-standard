@@ -1,0 +1,9 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Merknadstype <<codelist>> {
+  +Merknad fra saksbehandler = MS
+  +Merknad fra leder = ML
+  +Merknad fra arkivansvarlig = MA
+}
+@enduml

@@ -1,7 +1,7 @@
 @startuml
 class Arkivstruktur.UtfoertKassasjon <<dataType>> {
-  +kassertDato : datetime
-  +kassertAv : string
-  +referanseKassertAv : SystemID
+  +kassertDato : datetime [0..1] [1..1]
+  +kassertAv : string [0..1] [1..1]
+  +referanseKassertAv : SystemID [0..1] [1..1]
 }
 @enduml

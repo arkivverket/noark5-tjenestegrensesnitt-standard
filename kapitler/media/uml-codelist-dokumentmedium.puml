@@ -1,0 +1,9 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Dokumentmedium <<codelist>> {
+  +Fysisk medium = F
+  +Elektronisk arkiv = E
+  +Blandet fysisk og elektronisk arkiv = B
+}
+@enduml

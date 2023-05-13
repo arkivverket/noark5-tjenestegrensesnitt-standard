@@ -4,13 +4,13 @@ hide circle
 class Arkivstruktur.Arkivdel <Arkivenhet> {
   +tittel : string
   +beskrivelse : string [0..1]
-  +arkivdelstatus : Arkivdelstatus
-  +dokumentmedium : Dokumentmedium [0..1]
+  +arkivdelstatus : Arkivdelstatus [0..1] [1..1]
+  +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..*]
   +avsluttetDato : datetime [0..1]
   +avsluttetAv : string [0..1]
   +referanseAvsluttetAv : SystemID [0..1]
-  +arkivperiodeStartDato : datetime [0..1]
+  +arkivperiodeStartDato : datetime [0..1] [1..1]
   +arkivperiodeSluttDato : datetime [0..1]
   +referanseForloeper : SystemID [0..1]
   +referanseArvtaker : SystemID [0..1]

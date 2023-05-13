@@ -1,0 +1,18 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Tilgangsrestriksjon <<codelist>> {
+  +Begrenset etter sikkerhetsinstruksen = B
+  +Konfidensielt etter sikkerhetsinstruksen = K
+  +Hemmelig etter sikkerhetsinstruksen = H
+  +Fortrolig etter beskyttelsesinstruksen = F
+  +Strengt fortrolig etter beskyttelsesinstruksen = SF
+  +Unntatt etter offentlighetsloven § 5 = 5
+  +Unntatt etter offentlighetsloven § 5a = 5a
+  +Unntatt etter offentlighetsloven § 6 = 6
+  +Unntatt etter offentlighetsloven § 11 = 11
+  +Midlertidig sperret = XX
+  +Personalsaker = P
+  +Klientsaker = KL
+}
+@enduml

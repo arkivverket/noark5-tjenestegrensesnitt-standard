@@ -1,0 +1,13 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Avskrivningsmaate <<codelist>> {
+  +Besvart med brev = BU
+  +Besvart med e-post = BE
+  +Besvart på telefon = TLF
+  +Tatt til etterretning = TE
+  +Tatt til orientering = TO
+  +Besvart med notat = BN
+  +Saken ble avsluttet = SA
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Hendelsetype <<codelist>> {
+  +Opprettet = C
+  +Lest = R
+  +Endret = U
+  +Slettet = D
+}
+@enduml

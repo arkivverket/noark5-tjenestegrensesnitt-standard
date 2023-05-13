@@ -1,0 +1,8 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Arkivstruktur.NasjonaleIdentifikatorer.Koordinatsystem <<codelist>> {
+  +UTM32N = EPSG:32632
+  +WGS84 = EPSG:4326
+}
+@enduml

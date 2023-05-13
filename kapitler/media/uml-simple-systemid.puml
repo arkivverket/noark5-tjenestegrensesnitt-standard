@@ -1,0 +1,7 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.SystemID <string> <<simple>> {
+}
+string <|-- Kodelister.SystemID
+@enduml

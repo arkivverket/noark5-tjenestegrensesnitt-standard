@@ -2,9 +2,9 @@
 skinparam nodesep 100
 hide circle
 class Sakarkiv.Arkivnotat <Registrering> {
-  +dokumentetsDato : datetime [0..1]
-  +mottattDato : datetime [0..1]
-  +sendtDato : datetime [0..1]
+  +dokumentetsDato : datetime [0..1] [1..1]
+  +mottattDato : datetime [0..1] [1..1]
+  +sendtDato : datetime [0..1] [1..1]
   +forfallsdato : datetime [0..1]
   +offentlighetsvurdertDato : datetime [0..1]
   +antallVedlegg : integer [0..1]

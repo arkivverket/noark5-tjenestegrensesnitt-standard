@@ -1,13 +1,13 @@
 @startuml
 class Sakarkiv.Journalpost <Registrering> {
-  +journalaar : integer [0..1]
-  +journalsekvensnummer : integer [0..1]
-  +journalpostnummer : integer
-  +journalposttype : Journalposttype
-  +journalstatus : Journalstatus
-  +journaldato : datetime
-  +dokumentetsDato : datetime [0..1]
-  +mottattDato : datetime [0..1]
+  +journalaar : integer [0..1] [1..1]
+  +journalsekvensnummer : integer [0..1] [1..1]
+  +journalpostnummer : integer [0..1] [1..1]
+  +journalposttype : Journalposttype [0..1] [1..1]
+  +journalstatus : Journalstatus [0..1] [1..1]
+  +journaldato : datetime [0..1] [1..1]
+  +dokumentetsDato : datetime [0..1] [1..1]
+  +mottattDato : datetime [0..1] [1..1]
   +sendtDato : datetime [0..1]
   +forfallsdato : datetime [0..1]
   +offentlighetsvurdertDato : datetime [0..1]
@@ -15,7 +15,7 @@ class Sakarkiv.Journalpost <Registrering> {
   +utlaantDato : datetime [0..1]
   +utlaantTil : string [0..1]
   +referanseUtlaantTil : SystemID [0..1]
-  +journalenhet : string [0..1]
+  +journalenhet : string [0..1] [1..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 }
 @enduml

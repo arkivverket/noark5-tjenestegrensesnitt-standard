@@ -2,13 +2,13 @@
 skinparam nodesep 100
 hide circle
 class Arkivstruktur.Arkivenhet {
-  +systemID : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
   +endretDato : datetime [0..1]
-  +opprettetDato : datetime [0..1]
-  +opprettetAv : string [0..1]
-  +endretAv : string [0..1]
-  +referanseEndretAv : SystemID [0..1]
-  +referanseOpprettetAv : SystemID [0..1]
+  +opprettetDato : datetime [0..1] [1..1]
+  +opprettetAv : string [0..1] [1..1]
+  +endretAv : string [0..1] [1..1]
+  +referanseEndretAv : SystemID [0..1] [1..1]
+  +referanseOpprettetAv : SystemID [0..1] [1..1]
 }
 class LoggingOgSporing.Endringslogg {
 }

@@ -1,0 +1,8 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Arkivstatus <<codelist>> {
+  +Opprettet = O
+  +Avsluttet = A
+}
+@enduml

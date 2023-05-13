@@ -1,0 +1,14 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Klassifikasjonstype <<codelist>> {
+  +Gårds- og bruksnummer = GBN
+  +Funksjonsbasert, hierarkisk = FH
+  +Emnebasert, hierarkisk arkivnøkkel = EH
+  +Emnebasert, ett nivå = E1
+  +K-koder = KK
+  +Mangefasettert, ikke hierarki = MF
+  +Objektbasert = UO
+  +Fødselsnummer = PNR
+}
+@enduml

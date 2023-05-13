@@ -3,8 +3,8 @@ class Arkivstruktur.Skjerming <<dataType>> {
   +tilgangsrestriksjon : Tilgangsrestriksjon
   +skjermingshjemmel : string
   +skjermingMetadata : SkjermingMetadata [1..*]
-  +skjermingDokument : SkjermingDokument [0..1]
-  +skjermingsvarighet : integer [0..1]
-  +skjermingOpphoererDato : datetime [0..1]
+  +skjermingDokument : SkjermingDokument [0..1] [1..1]
+  +skjermingsvarighet : integer [0..1] [1..1]
+  +skjermingOpphoererDato : datetime [0..1] [1..1]
 }
 @enduml

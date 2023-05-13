@@ -1,0 +1,10 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Dokumenttype <<codelist>> {
+  +Brev = B
+  +Rundskriv = R
+  +Faktura = F
+  +Ordrebekreftelse = O
+}
+@enduml

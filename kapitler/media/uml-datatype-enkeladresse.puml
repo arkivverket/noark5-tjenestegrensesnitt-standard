@@ -7,7 +7,7 @@ class Arkivstruktur.EnkelAdresse <<dataType>> {
   +adresselinje3 : string [0..1]
   +postnr : Postnummer [0..1]
   +poststed : string
-  +landkode : Land [0..1]
+  +landkode : Land [0..1] [1..1]
 }
 class Arkivstruktur.KorrespondansepartEnhet <Korrespondansepart> {
 }

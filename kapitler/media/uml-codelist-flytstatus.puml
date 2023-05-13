@@ -1,0 +1,9 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.FlytStatus <<codelist>> {
+  +Godkjent = G
+  +Ikke godkjent = I
+  +Sendt tilbake til saksbehandler med kommentarer = S
+}
+@enduml

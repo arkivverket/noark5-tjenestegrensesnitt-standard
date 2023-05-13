@@ -1,0 +1,14 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class Kodelister.Korrespondanseparttype <<codelist>> {
+  +Avsender = EA
+  +Mottaker = EM
+  +Kopimottaker = EK
+  +Gruppemottaker = GM
+  +Intern avsender = IA
+  +Intern mottaker = IM
+  +Intern kopimottaker = IK
+  +Medavsender = IS
+}
+@enduml

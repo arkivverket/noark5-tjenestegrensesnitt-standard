@@ -1,0 +1,4 @@
+@startuml
+class Kodelister.SystemID <string> <<simple>> {
+}
+@enduml

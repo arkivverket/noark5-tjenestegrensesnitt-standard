@@ -4,11 +4,11 @@ skinparam nodesep 100
 hide members
 hide circle
 class Admin.AdministrativEnhet {
-  +systemID : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
   +administrativEnhetNavn : string
   +kortnavn : string [0..1]
-  +opprettetDato : datetime
-  +opprettetAv : string [0..1]
+  +opprettetDato : datetime [0..1] [1..1]
+  +opprettetAv : string [0..1] [1..1]
   +avsluttetDato : datetime [0..1]
   +administrativEnhetsstatus : string
   +referanseOverordnetEnhet : SystemID [0..1]
@@ -16,17 +16,17 @@ class Admin.AdministrativEnhet {
 }
 
 class Admin.Bruker {
-  +systemID : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
   +brukerNavn : string
-  +opprettetDato : datetime
-  +opprettetAv : string [0..1]
+  +opprettetDato : datetime [0..1] [1..1]
+  +opprettetAv : string [0..1] [1..1]
   +avsluttetDato : datetime [0..1]
   +virksomhetsspesifikkeMetadata : any [0..1]
   +kortnavn : string [0..1]
 }
 
 class Admin.Tilgang {
-  +systemID : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
   +rolle : string
   +tilgangskategori : Tilgangskategori
   +referanseArkivenhet : SystemID [0..1]
@@ -40,8 +40,8 @@ class Admin.Tilgang {
 class Arkivstruktur.Arkiv <Arkivenhet> {
   +tittel : string
   +beskrivelse : string [0..1]
-  +arkivstatus : Arkivstatus [0..1]
-  +dokumentmedium : Dokumentmedium [0..1]
+  +arkivstatus : Arkivstatus [0..1] [1..1]
+  +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..*]
   +avsluttetDato : datetime [0..1]
   +avsluttetAv : string [0..1]
@@ -51,13 +51,13 @@ class Arkivstruktur.Arkiv <Arkivenhet> {
 class Arkivstruktur.Arkivdel <Arkivenhet> {
   +tittel : string
   +beskrivelse : string [0..1]
-  +arkivdelstatus : Arkivdelstatus
-  +dokumentmedium : Dokumentmedium [0..1]
+  +arkivdelstatus : Arkivdelstatus [0..1] [1..1]
+  +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..*]
   +avsluttetDato : datetime [0..1]
   +avsluttetAv : string [0..1]
   +referanseAvsluttetAv : SystemID [0..1]
-  +arkivperiodeStartDato : datetime [0..1]
+  +arkivperiodeStartDato : datetime [0..1] [1..1]
   +arkivperiodeSluttDato : datetime [0..1]
   +referanseForloeper : SystemID [0..1]
   +referanseArvtaker : SystemID [0..1]
@@ -69,13 +69,13 @@ class Arkivstruktur.Arkivdel <Arkivenhet> {
 }
 
 class Arkivstruktur.Arkivenhet {
-  +systemID : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
   +endretDato : datetime [0..1]
-  +opprettetDato : datetime [0..1]
-  +opprettetAv : string [0..1]
-  +endretAv : string [0..1]
-  +referanseEndretAv : SystemID [0..1]
-  +referanseOpprettetAv : SystemID [0..1]
+  +opprettetDato : datetime [0..1] [1..1]
+  +opprettetAv : string [0..1] [1..1]
+  +endretAv : string [0..1] [1..1]
+  +referanseEndretAv : SystemID [0..1] [1..1]
+  +referanseOpprettetAv : SystemID [0..1] [1..1]
 }
 
 class Arkivstruktur.Arkivskaper <Arkivenhet> {
@@ -85,18 +85,18 @@ class Arkivstruktur.Arkivskaper <Arkivenhet> {
 }
 
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
-  +dokumenttype : Dokumenttype
-  +dokumentstatus : Dokumentstatus
+  +dokumenttype : Dokumenttype [0..1] [1..1]
+  +dokumentstatus : Dokumentstatus [0..1] [1..1]
   +tittel : string
   +beskrivelse : string [0..1]
   +forfatter : string [0..*]
-  +dokumentmedium : Dokumentmedium [0..1]
+  +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..1]
-  +tilknyttetRegistreringSom : TilknyttetRegistreringSom
-  +dokumentnummer : integer
-  +tilknyttetDato : datetime
-  +tilknyttetAv : string [0..1]
-  +referanseTilknyttetAv : SystemID [0..1]
+  +tilknyttetRegistreringSom : TilknyttetRegistreringSom [0..1] [1..1]
+  +dokumentnummer : integer [0..1] [1..1]
+  +tilknyttetDato : datetime [0..1] [1..1]
+  +tilknyttetAv : string [0..1] [1..1]
+  +referanseTilknyttetAv : SystemID [0..1] [1..1]
   +kassasjon : Kassasjon [0..1]
   +utfoertKassasjon : UtfoertKassasjon [0..1]
   +sletting : Sletting [0..1]
@@ -108,16 +108,16 @@ class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
 }
 
 class Arkivstruktur.Dokumentobjekt <Arkivenhet> {
-  +versjonsnummer : integer
-  +variantformat : Variantformat
-  +format : Format [0..1]
+  +versjonsnummer : integer [0..1] [1..1]
+  +variantformat : Variantformat [0..1] [1..1]
+  +format : Format [0..1] [1..1]
   +formatDetaljer : string [0..1]
-  +referanseDokumentfil : string [0..1]
+  +referanseDokumentfil : string [0..1] [1..1]
   +filnavn : string [0..1]
-  +sjekksum : string [0..1]
-  +mimeType : string [0..1]
-  +sjekksumAlgoritme : string [0..1]
-  +filstoerrelse : integer [0..1]
+  +sjekksum : string [0..1] [1..1]
+  +mimeType : string [0..1] [1..1]
+  +sjekksumAlgoritme : string [0..1] [1..1]
+  +filstoerrelse : integer [0..1] [1..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 }
 
@@ -125,8 +125,8 @@ class Arkivstruktur.ElektroniskSignatur <<dataType>> {
   +elektroniskSignaturSikkerhetsnivaa : ElektroniskSignaturSikkerhetsnivaa
   +elektroniskSignaturVerifisert : ElektroniskSignaturVerifisert
   +verifisertDato : datetime
-  +verifisertAv : string
-  +referanseVerifisertAv : SystemID [0..1]
+  +verifisertAv : string [0..1] [1..1]
+  +referanseVerifisertAv : SystemID [0..1] [1..1]
 }
 
 class Arkivstruktur.EnkelAdresse <<dataType>> {
@@ -135,14 +135,14 @@ class Arkivstruktur.EnkelAdresse <<dataType>> {
   +adresselinje3 : string [0..1]
   +postnr : Postnummer [0..1]
   +poststed : string
-  +landkode : Land [0..1]
+  +landkode : Land [0..1] [1..1]
 }
 
 class Arkivstruktur.Gradering <<dataType>> {
-  +graderingskode : Graderingskode
-  +graderingsdato : datetime
-  +gradertAv : string
-  +referanseGradertAv : SystemID
+  +graderingskode : Graderingskode [0..1] [1..1]
+  +graderingsdato : datetime [0..1] [1..1]
+  +gradertAv : string [0..1] [1..1]
+  +referanseGradertAv : SystemID [0..1] [1..1]
   +nedgraderingsdato : datetime [0..1]
   +nedgradertAv : string [0..1]
   +referanseNedgradertAv : SystemID [0..1]
@@ -184,18 +184,18 @@ class Arkivstruktur.Kontaktinformasjon <<dataType>> {
 }
 
 class Arkivstruktur.Konvertering {
-  +systemID : SystemID [0..1]
-  +konvertertDato : datetime
-  +konvertertAv : string
-  +konvertertFraFormat : Format
-  +konvertertTilFormat : Format
+  +systemID : SystemID [0..1] [1..1]
+  +konvertertDato : datetime [0..1] [1..1]
+  +konvertertAv : string [0..1] [1..1]
+  +konvertertFraFormat : Format [0..1] [1..1]
+  +konvertertTilFormat : Format [0..1] [1..1]
   +konverteringsverktoey : string [0..1]
   +konverteringskommentar : string [0..1]
 }
 
 class Arkivstruktur.Korrespondansepart {
-  +systemID : SystemID [0..1]
-  +korrespondanseparttype : Korrespondanseparttype
+  +systemID : SystemID [0..1] [1..1]
+  +korrespondanseparttype : Korrespondanseparttype [0..1] [1..1]
   +virksomhetsspesifikkeMetadata : any [0..1]
 }
 
@@ -227,13 +227,12 @@ class Arkivstruktur.Kryssreferanse <Arkivenhet> {
 }
 
 class Arkivstruktur.Mappe <Arkivenhet> {
-  +mappeID : string [0..1]
-  +mappetype : Mappetype [0..1]
+  +mappeID : string [0..1] [1..1]
   +tittel : string
   +offentligTittel : string [0..1]
   +beskrivelse : string [0..1]
   +noekkelord : string [0..*]
-  +dokumentmedium : Dokumentmedium [0..1]
+  +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..*]
   +avsluttetDato : datetime [0..1]
   +avsluttetAv : string [0..1]
@@ -246,12 +245,12 @@ class Arkivstruktur.Mappe <Arkivenhet> {
 }
 
 class Arkivstruktur.Merknad {
-  +systemID : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
   +merknadstekst : string
   +merknadstype : Merknadstype [0..1]
-  +merknadsdato : datetime
-  +merknadRegistrertAv : string [0..1]
-  +referanseMerknadRegistrertAv : SystemID [0..1]
+  +merknadsdato : datetime [0..1] [1..1]
+  +merknadRegistrertAv : string [0..1] [1..1]
+  +referanseMerknadRegistrertAv : SystemID [0..1] [1..1]
 }
 
 class Arkivstruktur.NasjonaleIdentifikatorer.Bygning <Nasjonalidentifikator> {
@@ -285,7 +284,7 @@ class Arkivstruktur.NasjonaleIdentifikatorer.Matrikkel <Nasjonalidentifikator> {
 }
 
 class Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator {
-  +systemID : SystemID
+  +systemID : SystemID [0..1] [1..1]
 }
 
 class Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator <Nasjonalidentifikator> {
@@ -306,8 +305,8 @@ class Arkivstruktur.NasjonaleIdentifikatorer.Posisjon <Nasjonalidentifikator> {
 }
 
 class Arkivstruktur.Part {
-  +systemID : SystemID [0..1]
-  +partRolle : PartRolle
+  +systemID : SystemID [0..1] [1..1]
+  +partRolle : PartRolle [0..1] [1..1]
   +virksomhetsspesifikkeMetadata : any [0..1]
 }
 
@@ -329,20 +328,20 @@ class Arkivstruktur.PartPerson <Part> {
 }
 
 class Arkivstruktur.Registrering <Arkivenhet> {
-  +arkivertDato : datetime [0..1]
-  +arkivertAv : string [0..1]
-  +referanseArkivertAv : SystemID [0..1]
+  +arkivertDato : datetime [0..1] [1..1]
+  +arkivertAv : string [0..1] [1..1]
+  +referanseArkivertAv : SystemID [0..1] [1..1]
   +kassasjon : Kassasjon [0..1]
   +skjerming : Skjerming [0..1]
   +gradering : Gradering [0..1]
-  +referanseArkivdel : SystemID [0..1]
-  +registreringsID : string [0..1]
+  +referanseArkivdel : SystemID [0..1] [1..1]
+  +registreringsID : string [0..1] [1..1]
   +tittel : string
   +offentligTittel : string [0..1]
   +beskrivelse : string [0..1]
   +noekkelord : string [0..*]
   +forfatter : string [0..*]
-  +dokumentmedium : Dokumentmedium [0..1]
+  +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..*]
   +virksomhetsspesifikkeMetadata : any [0..1]
 }
@@ -351,22 +350,22 @@ class Arkivstruktur.Skjerming <<dataType>> {
   +tilgangsrestriksjon : Tilgangsrestriksjon
   +skjermingshjemmel : string
   +skjermingMetadata : SkjermingMetadata [1..*]
-  +skjermingDokument : SkjermingDokument [0..1]
-  +skjermingsvarighet : integer [0..1]
-  +skjermingOpphoererDato : datetime [0..1]
+  +skjermingDokument : SkjermingDokument [0..1] [1..1]
+  +skjermingsvarighet : integer [0..1] [1..1]
+  +skjermingOpphoererDato : datetime [0..1] [1..1]
 }
 
 class Arkivstruktur.Sletting <<dataType>> {
   +slettingstype : Slettingstype
-  +slettetDato : datetime
-  +slettetAv : string
-  +referanseSlettetAv : SystemID
+  +slettetDato : datetime [0..1] [1..1]
+  +slettetAv : string [0..1] [1..1]
+  +referanseSlettetAv : SystemID [0..1] [1..1]
 }
 
 class Arkivstruktur.UtfoertKassasjon <<dataType>> {
-  +kassertDato : datetime
-  +kassertAv : string
-  +referanseKassertAv : SystemID
+  +kassertDato : datetime [0..1] [1..1]
+  +kassertAv : string [0..1] [1..1]
+  +referanseKassertAv : SystemID [0..1] [1..1]
 }
 
 class Kodelister.Arkivdelstatus <<codelist>> {
@@ -508,9 +507,6 @@ class Kodelister.Korrespondanseparttype <<codelist>> {
 class Kodelister.Land <<codelist>> {
 }
 
-class Kodelister.Mappetype <<codelist>> {
-}
-
 class Kodelister.Merknadstype <<codelist>> {
   +Merknad fra saksbehandler = MS
   +Merknad fra leder = ML
@@ -607,12 +603,12 @@ class Kodelister.Variantformat <<codelist>> {
 }
 
 class LoggingOgSporing.Endringslogg {
-  +systemID : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
   +referanseArkivenhet : SystemID [0..1]
   +referanseMetadata : string [0..1]
-  +endretDato : datetime
-  +endretAv : string
-  +referanseEndretAv : SystemID
+  +endretDato : datetime [0..1] [1..1]
+  +endretAv : string [0..1] [1..1]
+  +referanseEndretAv : SystemID [0..1] [1..1]
   +tidligereVerdi : string [0..1]
   +nyVerdi : string [0..1]
 }
@@ -620,13 +616,13 @@ class LoggingOgSporing.Endringslogg {
 class LoggingOgSporing.Hendelseslogg <Endringslogg> {
   +hendelsetype : Hendelsetype
   +beskrivelse : string [0..1]
-  +hendelseDato : datetime
+  +hendelseDato : datetime [0..1] [1..1]
 }
 
 class Sakarkiv.Arkivnotat <Registrering> {
-  +dokumentetsDato : datetime [0..1]
-  +mottattDato : datetime [0..1]
-  +sendtDato : datetime [0..1]
+  +dokumentetsDato : datetime [0..1] [1..1]
+  +mottattDato : datetime [0..1] [1..1]
+  +sendtDato : datetime [0..1] [1..1]
   +forfallsdato : datetime [0..1]
   +offentlighetsvurdertDato : datetime [0..1]
   +antallVedlegg : integer [0..1]
@@ -636,36 +632,36 @@ class Sakarkiv.Arkivnotat <Registrering> {
 }
 
 class Sakarkiv.Avskrivning {
-  +systemID : SystemID [0..1]
-  +avskrivningsdato : datetime
-  +avskrevetAv : string
-  +referanseAvskrevetAv : SystemID [0..1]
-  +avskrivningsmaate : Avskrivningsmaate
+  +systemID : SystemID [0..1] [1..1]
+  +avskrivningsdato : datetime [0..1] [1..1]
+  +avskrevetAv : string [0..1] [1..1]
+  +referanseAvskrevetAv : SystemID [0..1] [1..1]
+  +avskrivningsmaate : Avskrivningsmaate [0..1] [1..1]
   +referanseAvskrivesAvJournalpost : SystemID [0..1]
   +referanseAvskrivesAvKorrespondansepart : SystemID [0..1]
 }
 
 class Sakarkiv.Dokumentflyt {
-  +systemID : SystemID [0..1]
-  +flytTil : string
-  +referanseFlytTil : SystemID [0..1]
-  +flytFra : string
-  +referanseFlytFra : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
+  +flytTil : string [0..1] [1..1]
+  +referanseFlytTil : SystemID [0..1] [1..1]
+  +flytFra : string [0..1] [1..1]
+  +referanseFlytFra : SystemID [0..1] [1..1]
   +flytMottattDato : datetime
-  +flytSendtDato : datetime
-  +flytStatus : FlytStatus
+  +flytSendtDato : datetime [0..1] [1..1]
+  +flytStatus : FlytStatus [0..1] [1..1]
   +flytMerknad : string [0..1]
 }
 
 class Sakarkiv.Journalpost <Registrering> {
-  +journalaar : integer [0..1]
-  +journalsekvensnummer : integer [0..1]
-  +journalpostnummer : integer
-  +journalposttype : Journalposttype
-  +journalstatus : Journalstatus
-  +journaldato : datetime
-  +dokumentetsDato : datetime [0..1]
-  +mottattDato : datetime [0..1]
+  +journalaar : integer [0..1] [1..1]
+  +journalsekvensnummer : integer [0..1] [1..1]
+  +journalpostnummer : integer [0..1] [1..1]
+  +journalposttype : Journalposttype [0..1] [1..1]
+  +journalstatus : Journalstatus [0..1] [1..1]
+  +journaldato : datetime [0..1] [1..1]
+  +dokumentetsDato : datetime [0..1] [1..1]
+  +mottattDato : datetime [0..1] [1..1]
   +sendtDato : datetime [0..1]
   +forfallsdato : datetime [0..1]
   +offentlighetsvurdertDato : datetime [0..1]
@@ -673,16 +669,16 @@ class Sakarkiv.Journalpost <Registrering> {
   +utlaantDato : datetime [0..1]
   +utlaantTil : string [0..1]
   +referanseUtlaantTil : SystemID [0..1]
-  +journalenhet : string [0..1]
+  +journalenhet : string [0..1] [1..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
 }
 
 class Sakarkiv.Presedens {
-  +systemID : SystemID [0..1]
-  +presedensDato : datetime
-  +opprettetDato : datetime [0..1]
-  +opprettetAv : string [0..1]
-  +referanseOpprettetAv : SystemID [0..1]
+  +systemID : SystemID [0..1] [1..1]
+  +presedensDato : datetime [0..1] [1..1]
+  +opprettetDato : datetime [0..1] [1..1]
+  +opprettetAv : string [0..1] [1..1]
+  +referanseOpprettetAv : SystemID [0..1] [1..1]
   +tittel : string
   +beskrivelse : string [0..1]
   +presedensHjemmel : string [0..1]
@@ -697,15 +693,15 @@ class Sakarkiv.Presedens {
 }
 
 class Sakarkiv.Saksmappe <Mappe> {
-  +saksaar : integer
-  +sakssekvensnummer : integer
-  +saksdato : datetime
-  +administrativEnhet : string [0..1]
-  +referanseAdministrativEnhet : SystemID [0..1]
-  +saksansvarlig : string
-  +referanseSaksansvarlig : SystemID [0..1]
-  +journalenhet : string [0..1]
-  +saksstatus : Saksstatus
+  +saksaar : integer [0..1] [1..1]
+  +sakssekvensnummer : integer [0..1] [1..1]
+  +saksdato : datetime [0..1] [1..1]
+  +administrativEnhet : string [0..1] [1..1]
+  +referanseAdministrativEnhet : SystemID [0..1] [1..1]
+  +saksansvarlig : string [0..1] [1..1]
+  +referanseSaksansvarlig : SystemID [0..1] [1..1]
+  +journalenhet : string [0..1] [1..1]
+  +saksstatus : Saksstatus [0..1] [1..1]
   +utlaantDato : datetime [0..1]
   +utlaantTil : string [0..1]
   +referanseUtlaantTil : SystemID [0..1]

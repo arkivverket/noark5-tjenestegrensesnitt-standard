@@ -1,7 +1,7 @@
 @startuml
 class Arkivstruktur.Korrespondansepart {
-  +systemID : SystemID [0..1]
-  +korrespondanseparttype : Korrespondanseparttype
+  +systemID : SystemID [0..1] [1..1]
+  +korrespondanseparttype : Korrespondanseparttype [0..1] [1..1]
   +virksomhetsspesifikkeMetadata : any [0..1]
 }
 @enduml

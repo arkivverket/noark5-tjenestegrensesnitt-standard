@@ -2,6 +2,6 @@
 class LoggingOgSporing.Hendelseslogg <Endringslogg> {
   +hendelsetype : Hendelsetype
   +beskrivelse : string [0..1]
-  +hendelseDato : datetime
+  +hendelseDato : datetime [0..1] [1..1]
 }
 @enduml
