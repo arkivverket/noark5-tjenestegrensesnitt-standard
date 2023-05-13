@@ -1747,67 +1747,7 @@ er kjent for API-implementasjonen. Den kan for eksempel se slik ut:
        ]
    }
 
-En slik metadataoppføring består av følgende felt:
-
-.. list-table::
-   :widths: 1 4
-   :header-rows: 1
-
- * - **Navn**
-   - **Beskrivelse**
- * - systemID
-   - en UUID som identifiserer metadatafeltet. Denne UUID-verdien er
-     unik internt i hver API-instans, men trenger ikke være lik for
-     samme feltnavn på tvers av API-instanser.
- * - navn
-   - navn på formen «<type>-<versjon>:<feltnavn>» eller «vnd-<enhet /
-     leverandør>-<versjon>:<feltnavn>». Navnet skal kun forekomme en
-     gang i metadatalisten.
- * - type
-   - feltets type, se liste over tilgjengelige typer i tabellen under.
- * - beskrivelse (valgfri)
-   - beskrivelse / definisjon av feltets innhold.
- * - kilde (valgfri)
-   - en URL med nærmere beskrivelse av feltets innhold.
- * - utdatert (valgfri)
-   - en boolsk verdi som sier om feltet kan brukes på nye
-     oppføringer. Feltet skal kun vises hvis verdien er «true». Hvis
-     verdien er «true», så skal POST til for eksempel *ny-entitet*
-     avvise forsøk på å sette feltet.
-
-Følgende typer er tilgjengelige for virksomhetsspesifikke metadata.
-Alle typene er kompatible med datatyper tilgjengelig i `XML Skjema /
-XSD <https://www.w3.org/TR/xmlschema-2/#built-in-datatypes>`__:
-
-.. list-table::
-   :widths: 1 13
-   :header-rows: 1
-
- * - **Type**
-   - **Beskrivelse**
- * - boolean
-   - En boolsk verdi, sann eller usann. Gyldige verdier er true og
-     false, dvs. lik JSON-notasjon for samme felttype.
- * - date
-   - En datoverdi. Syntaksen er beskrevet i del 6.1.1.8 (Overføringsformat).
- * - datetime
-   - En dato og tidspunkt-verdi. Syntaksen er beskrevet i del 6.1.1.8
-     (Overføringsformat).
- * - integer
-   - En heltallsverdi. Syntaksen er i tråd med JSON-typen «number»
-     uten desimalpunktum og fraksjoner.
- * - decimal
-   - En desimaltallsverdi. Syntaksen er i tråd med JSON-typen
-     «number».
- * - string
-   - UTF-8-sekvens med tegn.
- * - uri
-   - Verdien samsvarer med syntaksen til en URI definert i IETF RFC
-     2396 og endret av IETF RFC 2732. Dette er en undertype av string.
-
-Det er ingen begresning på hvilke verdier som kan lages i integer og
-decimal, dvs. de har ingen fast bitlengde og oppløsning. Det er
-heller ingen begrensning på lengden på streng og uri.
+Se entitetsdefinisjonen i kapittel 7 for informasjon om hvert enkelt felt.
 
 For mapper som støtter virksomhetsspesifikke metadata, så skal GET på
 ny-mappe returnere feltet virksomhetsspesifikkeMetadata, der verdien
