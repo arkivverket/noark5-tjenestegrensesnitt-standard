@@ -705,7 +705,6 @@ hentes fra slik som mappetype og dokumentmedium.
            "kode": "BYGG",
            "kodenavn": "Byggesak"
        },
-       "tittel": "angi tittel på mappe",
        "dokumentmedium": {
            "kode": "E",
            "kodenavn": "Elektronisk arkiv"
