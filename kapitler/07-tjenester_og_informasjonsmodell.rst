@@ -1427,7 +1427,7 @@ Saksmappe som foreldre.
    -
    - [0..1]
    -
-   - any
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
@@ -1701,13 +1701,11 @@ Dokumentbeskrivelsen inneholder altså metadata for enkeltdokumenter.
    -
    - string
  * - virksomhetsspesifikkeMetadata
-   - Definisjon: Et overordnet metadataelement som kan inneholde
-     egendefinerte metadata.  Disse metadataene må da være spesifisert
-     i et eller flere XML-skjema. Kilde: (ingen).Kommentar:
-     (ingen). M711 virksomhetsspesifikkeMetadata
+   - Definisjon: Et metadataelement som kan inneholde egendefinerte
+     metadata.
    - [0..1]
    -
-   - any
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
@@ -2843,13 +2841,11 @@ mottaker(e) registreres.
    -
    - Korrespondanseparttype
  * - virksomhetsspesifikkeMetadata
-   - Definisjon: Et overordnet metadataelement som kan inneholde
-     egendefinerte metadata.  Disse metadataene må da være spesifisert
-     i et eller flere XML-skjema. Kilde: (ingen).  Kommentar:
-     (ingen). M711 virksomhetsspesifikkeMetadata
+   - Definisjon: Et metadataelement som kan inneholde egendefinerte
+     metadata.
    - [0..1]
    -
-   - any
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
@@ -3502,13 +3498,11 @@ også være tilgjengelig via Mappe-instanser.
    -
    - SystemID
  * - virksomhetsspesifikkeMetadata
-   - Definisjon: Et overordnet metadataelement som kan inneholde
-     egendefinerte metadata.  Disse metadataene må da være spesifisert
-     i et eller flere XML-skjema. Kilde: (ingen).  Kommentar: (ingen)
-     M711 virksomhetsspesifikkeMetadata
+   - Definisjon: Et metadataelement som kan inneholde egendefinerte
+     metadata.
    - [0..1]
    -
-   - any
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
@@ -3776,7 +3770,7 @@ utveksling.
    -
    - [0..1]
    -
-   - any
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
@@ -6136,6 +6130,111 @@ M700
    -
    - O
 
+VirksomhetsspesifikkeMetadata
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+VirksomhetsspesifikkeMetadata
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Type:* **Class «VirksomhetsspesifikkeMetadata»**
+
+*Arver:*
+
+Åpen kodeliste
+
+Et metadataelement som kan inneholde egendefinerte metadata.  Disse
+metadataene må da være spesifisert i et XML-skjema ved uttrekk.  Se
+kapittel 6 for mer informasjon om VirksomhetsspesifikkeMetadata.
+
+M711
+
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
+
+ * - **Verdi**
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkemetadata/
+
+.. list-table:: Attributter
+   :widths: 8 8 1 1 4
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   - en UUID som identifiserer metadatafeltet. Denne UUID-verdien er
+     unik internt i hver API-instans, men trenger ikke være lik for
+     samme feltnavn på tvers av API-instanser.
+   - [0..1] [1..1]
+   -
+   - SystemID
+ * - navn
+   - navn på formen «<type>-<versjon>:<feltnavn>» eller «vnd-<enhet /
+     leverandør>-<versjon>:<feltnavn>». Navnet skal kun forekomme en
+     gang i metadatalisten.
+   - [1..1]
+   -
+   - string
+ * - type
+   - feltets type, se liste over tilgjengelige typer i tabellen under.
+   - [1..1]
+   -
+   - string
+ * - beskrivelse
+   - beskrivelse / definisjon av feltets innhold.
+   - [0..1]
+   -
+   - string
+ * - kilde
+   - en URL med nærmere beskrivelse av feltets innhold.
+   - [0..1]
+   -
+   - string
+ * - utdatert
+   - en boolsk verdi som sier om feltet kan brukes på nye
+     oppføringer. Feltet skal kun vises hvis verdien er «true». Hvis
+     verdien er «true», så skal POST til for eksempel *ny-entitet*
+     avvise forsøk på å sette feltet.
+   - [0..1]
+   -
+   - boolean
+
+Følgende typer er tilgjengelige for virksomhetsspesifikke metadata.
+Alle typene er kompatible med datatyper tilgjengelig i `XML Skjema /
+XSD <https://www.w3.org/TR/xmlschema-2/#built-in-datatypes>`__:
+
+.. list-table::
+   :widths: 1 13
+   :header-rows: 1
+
+ * - **Type**
+   - **Beskrivelse**
+ * - boolean
+   - En boolsk verdi, sann eller usann. Gyldige verdier er true og
+     false, dvs. lik JSON-notasjon for samme felttype.
+ * - date
+   - En datoverdi. Syntaksen er beskrevet i del 6.1.1.8 (Overføringsformat).
+ * - datetime
+   - En dato og tidspunkt-verdi. Syntaksen er beskrevet i del 6.1.1.8
+     (Overføringsformat).
+ * - integer
+   - En heltallsverdi. Syntaksen er i tråd med JSON-typen «number»
+     uten desimalpunktum og fraksjoner.
+ * - decimal
+   - En desimaltallsverdi. Syntaksen er i tråd med JSON-typen
+     «number».
+ * - string
+   - UTF-8-sekvens med tegn.
+ * - uri
+   - Verdien samsvarer med syntaksen til en URI definert i IETF RFC
+     2396 og endret av IETF RFC 2732. Dette er en undertype av string.
+
+Det er ingen begresning på hvilke verdier som kan lages i integer og
+decimal, dvs. de har ingen fast bitlengde og oppløsning. Det er
+heller ingen begrensning på lengden på streng og uri.
+
 Sakarkiv
 ~~~~~~~~
 
@@ -7477,13 +7576,11 @@ AdministrativEnhet
    -
    - SystemID
  * - virksomhetsspesifikkeMetadata
-   - Definisjon: Et overordnet metadataelement som kan inneholde
-     egendefinerte metadata.  Disse metadataene må da være spesifisert
-     i et eller flere XML-skjema. Kilde: (ingen).  Kommentar:
-     (ingen). M711 virksomhetsspesifikkeMetadata
+   - Definisjon: Et metadataelement som kan inneholde egendefinerte
+     metadata.
    - [0..1]
    -
-   - any
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
@@ -7605,13 +7702,11 @@ når pålogget bruker ikke finnes fra før.
    -
    - datetime
  * - virksomhetsspesifikkeMetadata
-   - Definisjon: Et overordnet metadataelement som kan inneholde
-     egendefinerte metadata.  Disse metadataene må da være spesifisert
-     i et eller flere XML-skjema. Kilde: (ingen) Kommentar:
-     (ingen).M711 virksomhetsspesifikkeMetadata
+   - Definisjon: Et metadataelement som kan inneholde egendefinerte
+     metadata.
    - [0..1]
    -
-   - any
+   - VirksomhetsspesifikkeMetadata
  * - kortnavn
    -
    - [0..1]
