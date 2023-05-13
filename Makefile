@@ -5,8 +5,8 @@ IMG_PNG := $(IMG_PUML:.puml=.png)
 
 PANDOC_TYPE = rst
 
-all: spesifikasjon.pdf spesifikasjon.html
-pdf: spesifikasjon.pdf
+all: avledet/spesifikasjon.pdf avledet/spesifikasjon.html
+pdf: avledet/spesifikasjon.pdf
 
 images: $(IMG_PNG)
 
@@ -34,14 +34,14 @@ docbook: kapitler/*.rst
 DBLATEX_OPTS = \
 	-T simple \
 	-p docbook/pdf.xsl
-spesifikasjon: spesifikasjon.pdf
-spesifikasjon.pdf: docbook images
+spesifikasjon: avledet/spesifikasjon.pdf
+avledet/spesifikasjon.pdf: docbook images
 	#xmlto --with-fop pdf docbook/spesifikasjon.xml
 	#xmlto --with-dblatex pdf docbook/spesifikasjon.xml
-	dblatex $(DBLATEX_OPTS) -o spesifikasjon.pdf docbook/spesifikasjon.xml
-html: spesifikasjon.html
-spesifikasjon.html: docbook images
-	xmlto html-nochunks docbook/spesifikasjon.xml
+	dblatex $(DBLATEX_OPTS) -o avledet/spesifikasjon.pdf docbook/spesifikasjon.xml
+html: avledet/spesifikasjon.html
+avledet/spesifikasjon.html: docbook images
+	xmlto -o avledet/ html-nochunks docbook/spesifikasjon.xml
 
 # Rules useful for checking out the docx based documents
 .docx.pdf:
