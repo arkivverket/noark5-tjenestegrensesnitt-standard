@@ -1344,10 +1344,9 @@ resultatkoden 406, ikke resultatkode 200.
 
 **Opplasting**
 
-Opplasting av dokumentfiler kan enten gjøres fra dokumentbeskrivelse
-eller dokumentobjekt.  Resultatet fra en vellykket opplasting
-returnerer JSON for det nyopprettede eller oppdaterte
-dokumentobjektet.
+Opplasting av dokumentfiler skal støttes fra både dokumentbeskrivelse
+og dokumentobjekt.  Resultatet fra en vellykket opplasting returnerer
+JSON for det nyopprettede eller oppdaterte dokumentobjektet.
 
 Eksempel på oppretting fra dokumentbeskrivelse::
 
@@ -1397,25 +1396,25 @@ dokumentobjekt-instansen opprettes automatisk ved filopplasting, med
 mindre API-tjenesten kjenner igjen filinnholdet som et av de godkjente
 arkivformatene.
 
-Et dokumentobjekt også kan opprettes før opplasting når en laster opp
-fil via dokumentobjekcts opplastingsrelasjon.  Hvis noen av feltene
-«format», «mimeType», «filnavn», «sjekksum», «sjekksumAlgoritme» og
-«filstoerrelse» er fylt inn ved opprettelsen skal tjeneren verifisere
-at verdiene i de angitte feltene stemmer når den komplette filen er
-lastet opp. Tjeneren sjekker ved opplasting for felt som er
-forhåndsutfylt også at mimeType er identisk med Content-Type,
-filstoerrelse er identisk med Content-Length (for komplett POST) eller
-X-Upload-Content-Length (for overføring i bolker med PUT) og at
-sjekksum stemmer overens med den overførte filen. Hvis tjeneren etter
-opplasting ser at noen av verdiene avledet fra opplastet fil ikke
-stemmer overens med verdiene i dokumentobjekt-instansen, så returneres
-statuskode 400 Bad Request. Hvis den opplastede filen har et format
-tjeneren ikke kjenner igjen, så settes formatkoden til 'av/0'. Når
-filopplasting er fullført setter tjeneren de feltene i dokumentobjekt
-som ikke var satt ved oppretting av dokumentobjekt-instansen, det vil
-si utleder «format», «mimeType», «filnavn», «sjekksum», og
-«filstoerrelse» basert på filens innhold samt, samt gir
-«sjekksumAlgoritme» aktuell verdi.
+Ved opplasting fra dokumentobjekt må dokumentobjektet opprettes før en
+laster opp fil via dokumentobjekcts opplastingsrelasjon.  Hvis noen av
+feltene «format», «mimeType», «filnavn», «sjekksum»,
+«sjekksumAlgoritme» og «filstoerrelse» er fylt inn ved opprettelsen
+skal tjeneren verifisere at verdiene i de angitte feltene stemmer når
+den komplette filen er lastet opp. Tjeneren sjekker ved opplasting for
+felt som er forhåndsutfylt også at mimeType er identisk med
+Content-Type, filstoerrelse er identisk med Content-Length (for
+komplett POST) eller X-Upload-Content-Length (for overføring i bolker
+med PUT) og at sjekksum stemmer overens med den overførte filen. Hvis
+tjeneren etter opplasting ser at noen av verdiene avledet fra
+opplastet fil ikke stemmer overens med verdiene i
+dokumentobjekt-instansen, så returneres statuskode 400 Bad
+Request. Hvis den opplastede filen har et format tjeneren ikke kjenner
+igjen, så settes formatkoden til 'av/0'. Når filopplasting er fullført
+setter tjeneren de feltene i dokumentobjekt som ikke var satt ved
+oppretting av dokumentobjekt-instansen, det vil si utleder «format»,
+«mimeType», «filnavn», «sjekksum», og «filstoerrelse» basert på filens
+innhold samt, samt gir «sjekksumAlgoritme» aktuell verdi.
 
 **Overføre små filer**
 
