@@ -192,8 +192,8 @@ Responsen kan for eksempel se slik ut:
      "leverandoer": "Hoffleverandøren",
      "produkt": "Arkivsystemet Noark 5 kjerne",
      "versjon": "0.1",
-     "versjonsdato": "2019-03-22",
-     "protokollversjon": "1.0"
+     "versjonsdato": "2023-08-01",
+     "protokollversjon": "1.1"
    }
 
 Det kan være en sikkerhetsmessig fordel å unngå å fortelle
@@ -207,6 +207,8 @@ innloggede brukere.
 
  * - Spesifikasjonsdato
    - Versjonstekst
+ * - 2023
+   - "1.1"
  * - 2019
    - "1.0"
  * - 2016
