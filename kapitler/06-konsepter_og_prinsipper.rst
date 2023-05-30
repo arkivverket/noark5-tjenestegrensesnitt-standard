@@ -1392,6 +1392,11 @@ Eksempel på oppretting fra dokumentbeskrivelse::
         }
     }
 
+Verdien for «variantformat» settes til «Produksjonsformat» når
+dokumentobjekt-instansen opprettes automatisk ved filopplasting, med
+mindre API-tjenesten kjenner igjen filinnholdet som et av de godkjente
+arkivformatene.
+
 Et dokumentobjekt også kan opprettes før opplasting når en laster opp
 fil via dokumentobjekcts opplastingsrelasjon.  Hvis noen av feltene
 «format», «mimeType», «filnavn», «sjekksum», «sjekksumAlgoritme» og
