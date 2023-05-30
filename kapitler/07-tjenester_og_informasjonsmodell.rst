@@ -4829,10 +4829,10 @@ Verdier fra kodelister henvises til både ved sin **kode** og ved sitt
 **kodenavn**, slik at alle verdier i en bestemt kodeliste må være
 unike.
 
-Alle kodelister har en bolsk attributt «inaktiv» som settes til «true»
-for historiske verdier som ikke lenger skal brukes. Hvis «inaktiv»
-ikke er satt så er den «false». Når verdien av «inaktiv» er «false»
-så skal den ikke sendes over i JSON til API-klient.
+Alle kodelister har en datetime attributt «utdatert» som settes til
+tidspunktet for når den ikke lenger skal brukes ved opprettelse og
+endring av aktuell kodeverdi.  Hvis «utdatert» ikke er satt så anses
+verdien å ikke være utdatert.
 
 .. figure:: ./media/uml-kodelister-entiter.png
    :alt: Kodelister - (diagram)
@@ -6193,13 +6193,14 @@ M711
    -
    - string
  * - utdatert
-   - en boolsk verdi som sier om feltet kan brukes på nye
-     oppføringer. Feltet skal kun vises hvis verdien er «true». Hvis
-     verdien er «true», så skal POST til for eksempel *ny-entitet*
+   - et tidspunkt som sier om feltet kan brukes på nye
+     oppføringer. Feltet skal kun vises hvis verdien ikke er satt
+     eller hvis tidspunktet er etter dagens dato. Hvis verdien er før
+     nåværende tidspunkt, så skal POST til for eksempel *ny-entitet*
      avvise forsøk på å sette feltet.
    - [0..1]
    -
-   - boolean
+   - datetime
 
 Følgende typer er tilgjengelige for virksomhetsspesifikke metadata.
 Alle typene er kompatible med datatyper tilgjengelig i `XML Skjema /
