@@ -120,6 +120,12 @@ Endringslogg for dette dokumentet
    - Dato
    - Utført av
    - Endring
+ * - 5.5v1.1
+   - 10.06.2023
+   - Anne S Knutsen, Mona Danielsen, Petter Reinholdtsen, Thomas Sødring.
+   - Tj.gr. 5.5v1.1 ble stemplet og publisert, detaljert historikk
+     over endringer i spesifikasjonen kan hentes ut av git-depotet (se
+     kapittel 2).
  * - 5.5v1.0
    - 04.07.2019
    - Anne S Knutsen og Mona Danielsen
