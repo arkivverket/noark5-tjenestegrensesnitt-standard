@@ -5,7 +5,7 @@ class Admin.Bruker {
   +opprettetDato : datetime [0..1] [1..1]
   +opprettetAv : string [0..1] [1..1]
   +avsluttetDato : datetime [0..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
   +kortnavn : string [0..1]
 }
 @enduml

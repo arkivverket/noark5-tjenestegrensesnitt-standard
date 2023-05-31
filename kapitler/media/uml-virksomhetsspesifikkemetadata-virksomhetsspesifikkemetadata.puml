@@ -1,0 +1,33 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<VirksomhetsspesifikkeMetadata>> {
+  +systemID : SystemID [0..1] [1..1]
+  +navn : string
+  +type : string
+  +beskrivelse : string [0..1]
+  +kilde : string [0..1]
+  +utdatert : datetime [0..1]
+}
+class Admin.AdministrativEnhet {
+}
+Admin.AdministrativEnhet *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
+class Admin.Bruker {
+}
+Admin.Bruker *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
+class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
+}
+Arkivstruktur.Dokumentbeskrivelse *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
+class Arkivstruktur.Korrespondansepart {
+}
+Arkivstruktur.Korrespondansepart *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
+class Arkivstruktur.Mappe <Arkivenhet> {
+}
+Arkivstruktur.Mappe *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
+class Arkivstruktur.Part {
+}
+Arkivstruktur.Part *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
+Arkivstruktur.Registrering *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
+@enduml

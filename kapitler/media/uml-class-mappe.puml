@@ -16,7 +16,7 @@ class Arkivstruktur.Mappe <Arkivenhet> {
   +skjerming : Skjerming [0..1]
   +gradering : Gradering [0..1]
   +referanseForelderMappe : SystemID [0..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 class Arkivstruktur.Arkivdel <Arkivenhet> {
 }
@@ -49,6 +49,9 @@ Arkivstruktur.Mappe *-- Arkivstruktur.Kassasjon
 class Arkivstruktur.Skjerming <<dataType>> {
 }
 Arkivstruktur.Mappe *-- Arkivstruktur.Skjerming
+class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<VirksomhetsspesifikkeMetadata>> {
+}
+Arkivstruktur.Mappe *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 class Sakarkiv.Saksmappe <Mappe> {
 }
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe

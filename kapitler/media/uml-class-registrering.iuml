@@ -15,6 +15,6 @@ class Arkivstruktur.Registrering <Arkivenhet> {
   +forfatter : string [0..*]
   +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..*]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 @enduml

@@ -2,6 +2,6 @@
 class Arkivstruktur.Korrespondansepart {
   +systemID : SystemID [0..1] [1..1]
   +korrespondanseparttype : Korrespondanseparttype [0..1] [1..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 @enduml

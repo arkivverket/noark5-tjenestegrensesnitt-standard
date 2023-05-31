@@ -21,7 +21,7 @@ class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
   +gradering : Gradering [0..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
   +eksternReferanse : string [0..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 class Arkivstruktur.Arkivenhet {
 }
@@ -53,6 +53,9 @@ Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Sletting
 class Arkivstruktur.UtfoertKassasjon <<dataType>> {
 }
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.UtfoertKassasjon
+class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<VirksomhetsspesifikkeMetadata>> {
+}
+Arkivstruktur.Dokumentbeskrivelse *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 class Arkivstruktur.Registrering <Arkivenhet> {
 }
 Arkivstruktur.Registrering "registrering 1..*" o--> "dokumentbeskrivelse 0..*" Arkivstruktur.Dokumentbeskrivelse

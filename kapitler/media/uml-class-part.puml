@@ -4,7 +4,7 @@ hide circle
 class Arkivstruktur.Part {
   +systemID : SystemID [0..1] [1..1]
   +partRolle : PartRolle [0..1] [1..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
 }
@@ -12,6 +12,9 @@ Arkivstruktur.Dokumentbeskrivelse *-- "part 0..*" Arkivstruktur.Part
 class Arkivstruktur.Mappe <Arkivenhet> {
 }
 Arkivstruktur.Mappe *-- "part 0..*" Arkivstruktur.Part
+class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<VirksomhetsspesifikkeMetadata>> {
+}
+Arkivstruktur.Part *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 class Arkivstruktur.PartEnhet <Part> {
 }
 Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet

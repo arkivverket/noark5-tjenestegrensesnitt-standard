@@ -12,7 +12,7 @@ class Admin.AdministrativEnhet {
   +avsluttetDato : datetime [0..1]
   +administrativEnhetsstatus : string
   +referanseOverordnetEnhet : SystemID [0..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 
 class Admin.Bruker {
@@ -21,7 +21,7 @@ class Admin.Bruker {
   +opprettetDato : datetime [0..1] [1..1]
   +opprettetAv : string [0..1] [1..1]
   +avsluttetDato : datetime [0..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
   +kortnavn : string [0..1]
 }
 
@@ -104,7 +104,7 @@ class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet> {
   +gradering : Gradering [0..1]
   +elektroniskSignatur : ElektroniskSignatur [0..1]
   +eksternReferanse : string [0..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 
 class Arkivstruktur.Dokumentobjekt <Arkivenhet> {
@@ -196,7 +196,7 @@ class Arkivstruktur.Konvertering {
 class Arkivstruktur.Korrespondansepart {
   +systemID : SystemID [0..1] [1..1]
   +korrespondanseparttype : Korrespondanseparttype [0..1] [1..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 
 class Arkivstruktur.KorrespondansepartEnhet <Korrespondansepart> {
@@ -241,7 +241,7 @@ class Arkivstruktur.Mappe <Arkivenhet> {
   +skjerming : Skjerming [0..1]
   +gradering : Gradering [0..1]
   +referanseForelderMappe : SystemID [0..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 
 class Arkivstruktur.Merknad {
@@ -307,7 +307,7 @@ class Arkivstruktur.NasjonaleIdentifikatorer.Posisjon <Nasjonalidentifikator> {
 class Arkivstruktur.Part {
   +systemID : SystemID [0..1] [1..1]
   +partRolle : PartRolle [0..1] [1..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 
 class Arkivstruktur.PartEnhet <Part> {
@@ -343,7 +343,7 @@ class Arkivstruktur.Registrering <Arkivenhet> {
   +forfatter : string [0..*]
   +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..*]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 
 class Arkivstruktur.Skjerming <<dataType>> {
@@ -707,7 +707,17 @@ class Sakarkiv.Saksmappe <Mappe> {
   +referanseUtlaantTil : SystemID [0..1]
 }
 
+class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<VirksomhetsspesifikkeMetadata>> {
+  +systemID : SystemID [0..1] [1..1]
+  +navn : string
+  +type : string
+  +beskrivelse : string [0..1]
+  +kilde : string [0..1]
+  +utdatert : datetime [0..1]
+}
+
 Admin.AdministrativEnhet "administrativenhet 0..*" *--> "bruker 0..*" Admin.Bruker
+Admin.AdministrativEnhet *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Arkiv "arkiv 0..*" o--> "arkivskaper 1..*" Arkivstruktur.Arkivskaper
 Arkivstruktur.Arkiv "arkiv 1" o--> "arkivdel 0..*" Arkivstruktur.Arkivdel
 Arkivstruktur.Arkiv "overarkiv 0..1" o-- "underarkiv 0..*" Arkivstruktur.Arkiv
@@ -731,6 +741,7 @@ Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Klassifikasjonssystem
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Mappe
 Arkivstruktur.Arkivenhet <|-- Arkivstruktur.Registrering
 Sakarkiv.Arkivnotat *-- "dokumentflyt 0..*" Sakarkiv.Dokumentflyt
+Admin.Bruker *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Dokumentbeskrivelse "dokumentbeskrivelse 1" o--> "dokumentobjekt 0..*" Arkivstruktur.Dokumentobjekt
 Arkivstruktur.Dokumentbeskrivelse *-- "merknad 0..*" Arkivstruktur.Merknad
 Arkivstruktur.Dokumentbeskrivelse *-- "part 0..*" Arkivstruktur.Part
@@ -740,6 +751,7 @@ Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Kassasjon
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Skjerming
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.Sletting
 Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.UtfoertKassasjon
+Arkivstruktur.Dokumentbeskrivelse *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Dokumentobjekt *-- Arkivstruktur.ElektroniskSignatur
 Arkivstruktur.Dokumentobjekt o-- "konvertering 0..*" Arkivstruktur.Konvertering
 LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
@@ -754,6 +766,7 @@ Arkivstruktur.Klasse *-- Arkivstruktur.Gradering
 Arkivstruktur.Klasse *-- Arkivstruktur.Kassasjon
 Arkivstruktur.Klasse *-- Arkivstruktur.Skjerming
 Arkivstruktur.Klassifikasjonssystem "klassifikasjonssystem 0..1" o--> "klasse 0..*" Arkivstruktur.Klasse
+Arkivstruktur.Korrespondansepart *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartEnhet
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartIntern
 Arkivstruktur.Korrespondansepart <|-- Arkivstruktur.KorrespondansepartPerson
@@ -770,6 +783,7 @@ Arkivstruktur.Mappe *-- "part 0..*" Arkivstruktur.Part
 Arkivstruktur.Mappe *-- Arkivstruktur.Gradering
 Arkivstruktur.Mappe *-- Arkivstruktur.Kassasjon
 Arkivstruktur.Mappe *-- Arkivstruktur.Skjerming
+Arkivstruktur.Mappe *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Mappe <|-- Sakarkiv.Saksmappe
 Arkivstruktur.Mappe o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Bygning
@@ -778,6 +792,7 @@ Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Personidentifikator
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Plan
 Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator <|-- Arkivstruktur.NasjonaleIdentifikatorer.Posisjon
+Arkivstruktur.Part *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Part <|-- Arkivstruktur.PartEnhet
 Arkivstruktur.Part <|-- Arkivstruktur.PartPerson
 Arkivstruktur.PartEnhet *-- Arkivstruktur.NasjonaleIdentifikatorer.Enhetsidentifikator
@@ -797,6 +812,7 @@ Arkivstruktur.Registrering *-- "part 0..*" Arkivstruktur.Part
 Arkivstruktur.Registrering *-- Arkivstruktur.Gradering
 Arkivstruktur.Registrering *-- Arkivstruktur.Kassasjon
 Arkivstruktur.Registrering *-- Arkivstruktur.Skjerming
+Arkivstruktur.Registrering *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 Arkivstruktur.Registrering o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator

@@ -17,7 +17,7 @@ class Arkivstruktur.Registrering <Arkivenhet> {
   +forfatter : string [0..*]
   +dokumentmedium : Dokumentmedium [0..1] [1..1]
   +oppbevaringssted : string [0..*]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 class Arkivstruktur.Arkivdel <Arkivenhet> {
 }
@@ -55,6 +55,9 @@ Arkivstruktur.Registrering *-- Arkivstruktur.Kassasjon
 class Arkivstruktur.Skjerming <<dataType>> {
 }
 Arkivstruktur.Registrering *-- Arkivstruktur.Skjerming
+class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<VirksomhetsspesifikkeMetadata>> {
+}
+Arkivstruktur.Registrering *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 class Sakarkiv.Arkivnotat <Registrering> {
 }
 Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat

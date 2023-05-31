@@ -2,6 +2,6 @@
 class Arkivstruktur.Part {
   +systemID : SystemID [0..1] [1..1]
   +partRolle : PartRolle [0..1] [1..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 @enduml

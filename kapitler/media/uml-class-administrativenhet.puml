@@ -10,9 +10,12 @@ class Admin.AdministrativEnhet {
   +avsluttetDato : datetime [0..1]
   +administrativEnhetsstatus : string
   +referanseOverordnetEnhet : SystemID [0..1]
-  +virksomhetsspesifikkeMetadata : any [0..1]
+  +virksomhetsspesifikkeMetadata : VirksomhetsspesifikkeMetadata [0..1]
 }
 class Admin.Bruker {
 }
 Admin.AdministrativEnhet "administrativenhet 0..*" *--> "bruker 0..*" Admin.Bruker
+class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<VirksomhetsspesifikkeMetadata>> {
+}
+Admin.AdministrativEnhet *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 @enduml

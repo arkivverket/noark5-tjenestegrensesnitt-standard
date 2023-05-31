@@ -1,0 +1,10 @@
+@startuml
+class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<VirksomhetsspesifikkeMetadata>> {
+  +systemID : SystemID [0..1] [1..1]
+  +navn : string
+  +type : string
+  +beskrivelse : string [0..1]
+  +kilde : string [0..1]
+  +utdatert : datetime [0..1]
+}
+@enduml
