@@ -112,22 +112,82 @@ Denne spesifikasjonen faller inn under unntakene i den norske åndsverkslovens �
 Endringslogg for dette dokumentet
 ---------------------------------
 
-.. list-table::
-   :widths: 2 3 10 14
-   :header-rows: 1
 
- * - Versjon
-   - Dato
-   - Utført av
-   - Endring
- * - 5.5v1.1
-   - 10.06.2023
-   - Anne S Knutsen, Mona Danielsen, Petter Reinholdtsen, Thomas Sødring.
-   - Tj.gr. 5.5v1.1 ble stemplet og publisert, detaljert historikk
-     over endringer i spesifikasjonen kan hentes ut av git-depotet (se
-     kapittel 2).
- * - 5.5v1.0
-   - 04.07.2019
-   - Anne S Knutsen og Mona Danielsen
-   - Release av Tj.gr. 5.5v1.0, detaljert historikk over endringer i
-     spesifikasjonen kan hentes ut av git-depotet (se kapittel 2).
+Version 1.1 10.6.2023
+~~~~~~~~~~~~~~~~~~~~~
+
+Utført av Anne S Knutsen, Mona Danielsen, Petter Reinholdtsen, Thomas
+Sødring.
+
+Funksjonelle endringer:
+
+ * Korrigert beskrevet relasjon mellom Registrering og
+   Korrespondansepart til å samsvare med N5 [0..\*].
+ * Korrigert til konsistent bruk av https i alle relasjonsnøkler.
+ * Lagt inn relasjon mellom Dokumentbeskrivelse og Part, avglemt i
+   overgang til Noark 5.5.
+ * Korrigert feil relasjonsnøkkel til ny-journalpost for mappe.
+ * Korrigerte relasjonsnøkler for Korrespondansepart og Part som
+   resultat av tidligere overføring til Registrering og Mappe.
+ * Korrigert skrivefeil i relasjonsnøkkellisten for Klasse.
+ * Korrigert all bruk av date til datetime for samkjøring med
+   oppdatering i Noark 5.
+ * Korrigerte Matrikkel-typer fra 'string' til 'integer', for å
+   være i tråd med Kartverkets SOSI-standard.
+ * Fjernet redundant relasjonstype NoteLink fra Dokumentbeskrivelse.
+ * La inn attributt gradering til Klasse, avglemt ved overgang til
+   Noark 5.5.
+ * Endret kode for PartRolle-oppføring Pårørende fra PÅ til PAA
+   for å la alle kodeverdier være ASCII.
+ * Klargjorde at attributtene format, konvertertFraFormat og
+   konvertertTilFormat bruker samme vokabular fra
+   Format-kodelisten.
+ * Klargjorde hvilken formatkode som skal brukes for ukjente
+   formater.
+ * Korrigerte PRONOM-koder brukt i eksempler.
+ * Fastsatte HTTP-returkode 200 for søk uten resultat.
+ * Definerte kodeverdier og justerte kodenavn for den åpne
+   kodelisten Hendelsetype.
+ * Korrigerte relasjoner for Endringslogg og Hendelseslogg.
+ * Endret atributt oppdatertDato og oppdatertAv til endretDato
+   endretAv for konsistens med Noark 5 endringslogg.xsd.
+ * Korrigerte manglende relasjonsnøkler til
+   virksomhetsspesifikkeMetadata-kodelisten.
+ * Korrigerte gjenglemte relasjonsnøkler for å opprette
+   kodelisteverdier.
+ * La til nytt tillegg med beskrivelse hva som menes med blanke tegn.
+ * Introduserte notasjon for forkomstkrav ved oppretting og
+   uthenting, der dette er forskjellig.
+ * Korrigerte manglende relasjosnnøkkel til Koordinatsystem i
+   kodelisteoversikten.
+ * Korrigerte forekomst for Skjerming.SkjermingMetadata fra [0..\*]
+   til [1..\*] for samkjøring med Noark 5 og XSD.
+ * Fjernet feilplasserte ny-\*-relasjonsnøkler på instanser som
+   ikke kan være foreldre til instans av samme type.
+ * Korrigerte flere OData-eksempler.
+ * Fastsatte standardiserte protokollversjonsnummer for
+   system-endepunktet.
+ * Fjernet mappetype-attributt fra Mappe, som ikke har tilsvarende
+   felt i Noark 5.
+ * Samkjørte attributtnavn inaktiv og utdatert samt endret type
+   til dato for samkjøring med metadatabeskrivelser i N5-gitdepot.
+ * Utvidet filopplastingsprosess til å tillate opplasting direkte
+   fra dokumentbeskrivelse uten forutgående oppretting av
+   dokumentobjekt-instans.
+ * Oppdaterte UML-diagrammer til å inkludere flere relevante
+   relasjoner.
+ * Forbedret tekstlige beskrivelser og eksempler samt korrigerte
+   skrivefeil i tekst og tabeller.
+ * Reformulerte 'åpen kodeliste' til å forklare hva det betyr.
+ * Gjorde det klart at journalstatus er en åpen kodeliste.
+
+Detaljert historikk over endringer i spesifikasjonen kan hentes
+ut av git-depotet (se kapittel 2).
+
+Versjon 1.0 4.7.2019
+~~~~~~~~~~~~~~~~~~~~~~
+
+Utført av Anne S Knutsen og Mona Danielsen
+
+Detaljert historikk over endringer i spesifikasjonen kan hentes ut av
+git-depotet (se kapittel 2).
