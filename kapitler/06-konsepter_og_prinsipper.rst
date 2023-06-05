@@ -1814,9 +1814,9 @@ For mapper som støtter virksomhetsspesifikke metadata, så skal GET på
 ny-mappe returnere feltet virksomhetsspesifikkeMetadata, der verdien
 enten skal være ``null`` for å markere at ingen slike felter er
 satt, eller inneholde forvalgte felter med verdier som API-kjernen
-foreslår å sette på alle / de fleste slike objekter.
+foreslår å sette på alle / de fleste slike objekter.  Her er et eksempel.
 
-Her er et eksempel for ``GET /api/arkivstruktur/klasse/7c9246ff-effe-4edd-ad8a-8cab317229df/ny-mappe``:
+**GET /api/arkivstruktur/klasse/7c9246ff-effe-4edd-ad8a-8cab317229df/ny-mappe**
 
 ::
 
