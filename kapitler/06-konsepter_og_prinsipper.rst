@@ -182,7 +182,7 @@ om API-tjenersystemet. Responsen inneholder følgende felter:
    / programmet ble sist oppdatert.
 -  ``protokollversjon`` - tekststreng med versjon av
    tjenestegrensesnittspesifikasjonen som støttes.
-   For dagens utgave vil verdien være '1.0'.
+   For dagens utgave vil verdien være '1.1'.
 
 Responsen kan for eksempel se slik ut:
 
