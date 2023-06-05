@@ -4637,7 +4637,10 @@ Koordinatsystem
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Identifikator for referansekoordinatsystem som definert av
 `EPSG <http://www.epsg.org/>`__. Formatet på kodeverdiene er
@@ -4859,7 +4862,10 @@ Arkivdelstatus
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Status til den arkivperioden som arkivdelen omfatter
 
@@ -4898,7 +4904,10 @@ Arkivstatus
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Status til arkivet
 
@@ -4931,7 +4940,10 @@ Avskrivningsmaate
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Måten en journalpost har blitt avskrevet på
 
@@ -4979,7 +4991,10 @@ Dokumentmedium
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Angivelse av om arkivenheten inneholder fysiske dokumenter,
 elektroniske dokumenter eller en blanding av fysiske og elektroniske
@@ -5017,7 +5032,10 @@ Dokumentstatus
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Status til dokumentet
 
@@ -5050,7 +5068,10 @@ Dokumenttype
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Navn på type dokument
 
@@ -5089,7 +5110,10 @@ ElektroniskSignaturSikkerhetsnivaa
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Angivelse av hvilket sikkerhetsnivå som ble brukt ved
 forsendelse og mottak av elektroniske dokumenter. Kilde: Registreres
@@ -5133,7 +5157,10 @@ ElektroniskSignaturVerifisert
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Angivelse av om et dokument er mottatt med elektronisk
 signatur, og om signaturen er
@@ -5168,7 +5195,10 @@ FlytStatus
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 .. list-table:: Relasjonsnøkler
    :header-rows: 1
@@ -5200,7 +5230,10 @@ Format
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Kodeverdier for formater hentes fra PRONOM-registeret over formater fra
 det britiske nasjonalarkivet. Informasjon om PRONOM er tilgjengelig
@@ -5295,7 +5328,10 @@ Graderingskode
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 .. list-table:: Relasjonsnøkler
    :header-rows: 1
@@ -5336,7 +5372,10 @@ Hendelsetype
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Hva slags type hendelse som er logget.
 
@@ -5373,7 +5412,10 @@ Journalposttype
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Navn på type
 journalpost
@@ -5415,6 +5457,11 @@ Journalstatus
 *Type:* **Class «codelist»**
 
 *Arver:*
+
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Status til journalposten, dvs. om dokumentet er registrert,
 under behandling eller endelig arkivert.
@@ -5469,7 +5516,10 @@ Kassasjonsvedtak
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon:Handling som skal utføres ved bevaringstidens
 slutt.
@@ -5506,7 +5556,10 @@ Klassifikasjonstype
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Type
 klassifikasjonssystem
@@ -5559,7 +5612,10 @@ Korrespondanseparttype
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Type
 korrespondansepart
@@ -5629,7 +5685,10 @@ Merknadstype
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Navn på type merknad
 
@@ -5689,7 +5748,10 @@ PresedensStatus
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Informasjon om presedensen er gjeldende eller
 foreldet
@@ -5723,7 +5785,10 @@ PartRolle
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 .. list-table:: Relasjonsnøkler
    :header-rows: 1
@@ -5758,7 +5823,10 @@ Saksstatus
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Status til saksmappen, dvs. hvor langt saksbehandlingen har
 kommet.
@@ -5807,7 +5875,10 @@ SkjermingDokument
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Angivelse av at hele dokumentet eller deler av det må
 skjermes.
@@ -5841,7 +5912,10 @@ SkjermingMetadata
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Angivelse av hvilke metadataelementer som skal
 skjermes.
@@ -5905,7 +5979,10 @@ Slettingstype
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Navn på hvilket objekt som er slettet
 
@@ -5981,7 +6058,10 @@ Tilgangskategori
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Relatert til krav 5.2.14 i Noark 5.5.0.
 
@@ -6021,7 +6101,10 @@ Tilgangsrestriksjon
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 .. list-table:: Relasjonsnøkler
    :header-rows: 1
@@ -6080,7 +6163,10 @@ TilknyttetRegistreringSom
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 .. list-table:: Relasjonsnøkler
    :header-rows: 1
@@ -6109,7 +6195,10 @@ Variantformat
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Definisjon: Angivelse av hvilken variant et dokument forekommer i
 
@@ -6148,7 +6237,10 @@ VirksomhetsspesifikkeMetadata
 
 *Arver:*
 
-Åpen kodeliste
+Ikke-valgfrie kodelisteverdiene listet i tabellen med
+kodelisteverdier må kunne benyttes ved oppretting og endring av
+instanser.  I tillegg skal det være støtte for å legge inn flere
+verdier ved bruk av ny-relasjonslenke.
 
 Et metadataelement som kan inneholde egendefinerte metadata.  Disse
 metadataene må da være spesifisert i et XML-skjema ved uttrekk.  Se
