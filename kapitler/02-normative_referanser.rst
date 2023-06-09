@@ -22,6 +22,9 @@ http://csrc.nist.gov/publications/fips/fips180-3/fips180-3_final.pdf .
 Bruken av PATCH for å oppdatere JSON er beskrevet i `IETF RFC
 7396 - JSON Merge Patch <https://tools.ietf.org/html/rfc7396>`__.
 
+OData versjon 4.01 er beskrevet i
+https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html .
+
 OpenID Connect er definert i https://openid.net/connect/.
 
 Spørsmål, innspill til videre utvikling og/eller feilretting kan

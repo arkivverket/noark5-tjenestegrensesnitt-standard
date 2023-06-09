@@ -218,9 +218,8 @@ innloggede brukere.
 Finne objekter (Read)
 ^^^^^^^^^^^^^^^^^^^^^
 
-For filter skal syntaks fra OData standarden
-(https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
-benyttes. De ressurser som støtter filter skal annonserer dette under
+For filter skal syntaks fra OData standarden benyttes.
+De ressurser som støtter filter skal annonserer dette under
 **\_links** med **templated=true** og parametre som kan brukes til
 dette i **href**.  Støtte for filtrering annonseres med feltet
 «templated».  De endepunkter som ikke støtter filtering trenger ikke
