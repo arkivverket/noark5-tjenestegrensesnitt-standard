@@ -9,11 +9,11 @@ class Arkivstruktur.Klasse <Arkivenhet>
 class Arkivstruktur.Mappe <Arkivenhet>
 class Arkivstruktur.Registrering <Arkivenhet>
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>
-class Sakarkiv.Saksmappe #pink
-class Sakarkiv.Presedens #pink
-class Sakarkiv.Journalpost #pink
-class Sakarkiv.Avskrivning #pink
-class Sakarkiv.Dokumentflyt #pink
+class Sakarkiv.Saksmappe
+class Sakarkiv.Presedens
+class Sakarkiv.Journalpost
+class Sakarkiv.Avskrivning
+class Sakarkiv.Dokumentflyt
 
 Arkivstruktur.Arkiv "+overarkiv 0..1" o-> "+underarkiv 0..*" Arkivstruktur.Arkiv
 Arkivstruktur.Arkiv "+arkiv 1" o--> "+arkivdel 0..*" Arkivstruktur.Arkivdel

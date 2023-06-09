@@ -6,12 +6,12 @@ class Arkivstruktur.Klasse <Arkivenhet>
 class Arkivstruktur.Mappe <Arkivenhet>
 class Arkivstruktur.Registrering <Arkivenhet>
 class Arkivstruktur.Dokumentbeskrivelse <Arkivenhet>
-class Sakarkiv.Saksmappe <Mappe> #pink
-class Sakarkiv.Presedens #pink
-class Sakarkiv.Journalpost <Registrering> #pink
-class Sakarkiv.Avskrivning #pink
-class Sakarkiv.Arkivnotat #pink
-class Sakarkiv.Dokumentflyt #pink
+class Sakarkiv.Saksmappe <Mappe>
+class Sakarkiv.Presedens
+class Sakarkiv.Journalpost <Registrering>
+class Sakarkiv.Avskrivning
+class Sakarkiv.Arkivnotat
+class Sakarkiv.Dokumentflyt
 
 Arkivstruktur.Klasse "+overklasse 0..1" o--> "+underklasse 0..*" Arkivstruktur.Klasse
 Arkivstruktur.Klasse "+klasse 0..1" o--> "+mappe 0..*" Arkivstruktur.Mappe
