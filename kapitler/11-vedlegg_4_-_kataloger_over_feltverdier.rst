@@ -26,4 +26,4 @@ til de som forvalter listen over offisielle midlertidige koder. For å
 få registert en PRONOM-kode på et format som mangler det bør en også
 ta kontakt med PRONOM-gruppen. I skrivende stund gjøres dette ved å
 fylle inn nettskjema på
-``https://www.nationalarchives.gov.uk/contact-us/submit-information-for-pronom/``.
+https://www.nationalarchives.gov.uk/contact-us/submit-information-for-pronom/.
