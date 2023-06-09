@@ -170,7 +170,7 @@ Systeminformasjon
 ^^^^^^^^^^^^^^^^^
 
 Når en tar GET mot href for relasjonsnøkkelen
-``https://rel.arkivverket.no/noark5/v5/api/admin/system/``, så får en informasjon
+https://rel.arkivverket.no/noark5/v5/api/admin/system/, så får en informasjon
 om API-tjenersystemet. Responsen inneholder følgende felter:
 
 -  ``leverandoer`` - tekststreng med navn på leverandør av
@@ -182,7 +182,7 @@ om API-tjenersystemet. Responsen inneholder følgende felter:
    / programmet ble sist oppdatert.
 -  ``protokollversjon`` - tekststreng med versjon av
    tjenestegrensesnittspesifikasjonen som støttes.
-   For dagens utgave vil verdien være '1.1'.
+   For dagens utgave vil verdien være «1.1».
 
 Responsen kan for eksempel se slik ut:
 
@@ -554,7 +554,7 @@ For mappe og klasse som kan ha undermapper og underklasser så vil det være res
 
 For eksempel kan en opprette mapper på arkivdel, og da vil \_links under
 en arkivdel inneholde relasjonsnøkkelen
-rel="https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/"
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-mappe/
 om bruker har lov til å opprette mapper på denne arkivdelen. Den
 aktuelle ressurslenke kan være
 https://n5.example.com/api/arkivstruktur/Arkivdel/12345/ny-mappe .
@@ -726,7 +726,7 @@ hentes fra slik som mappetype og dokumentmedium.
 Oppdatere objekter (Update)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Alle ressurser kan med sin relasjonslenke rel="self" og ressurslenke
+Alle ressurser kan med sin relasjonslenke «self» og ressurslenke
 (href) benytte denne til oppdatering.
 
 For oppdatering sender klienten enten en PUT forespørsel med alle data
@@ -1072,9 +1072,9 @@ mappe også inneholder hvilken arkivdel denne skal opprettes på. Egne
 attributter kan for eksempel være referanseForeldremappe for å lage
 undermapper.
 
-Mer generelt kan klienter benytte href for rel="self" for aktuelle
-objekter sammen med $ref parameter for å slette, endre eller opprette
-referanser mellom objekter.
+Mer generelt kan klienter benytte href for relasjonsnøkkel «self» for
+aktuelle objekter sammen med $ref parameter for å slette, endre eller
+opprette referanser mellom objekter.
 
 Når en oppdaterer en toveis relasjon mellom to instanser med
 relasjonsnavn på begge sider, så blir relasjonen også synlig på den
@@ -1183,8 +1183,8 @@ nødvendige rettigheter. Respons har statuskode 204 hvis ressursen ble
 slettet.
 
 Klienten sender en DELETE forespørsel på aktuell ressurs(url). Alle
-ressurslenker med rel="self" kan potensielt slettes om bruker har
-nødvendige rettigheter. Respons gir statuskode 204 om ressursen er
+ressurslenker med relasjonen «self» kan potensielt slettes om bruker
+har nødvendige rettigheter. Respons gir statuskode 204 om ressursen er
 korrekt slettet.
 
 .. code:: python
@@ -1420,10 +1420,10 @@ innhold samt, samt gir «sjekksumAlgoritme» aktuell verdi.
 
 **Overføre små filer**
 
-For å overføre en ny fil brukes POST til href til
-rel="https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/" med headere for
-content-type og content-length. Når overføringen er fullført og
-filopplastingen vellykket, så returneres statuskode 201.
+For å overføre en ny fil brukes POST til href til relasjonsnøkkel
+«https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/» med
+headere for content-type og content-length. Når overføringen er
+fullført og filopplastingen vellykket, så returneres statuskode 201.
 
 
 ::
@@ -1447,8 +1447,8 @@ overføringen er fullført der det returneres statuskode 201.
 
 For å starte en opplastingssesjon:
 
-#. Send en POST til href til
-   rel="https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/"
+#. Send en POST til href til relasjonsnøkkel
+   «https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/».
 
    Headeren Content-Length settes til 0
 
@@ -1473,7 +1473,7 @@ Det er ikke mulig å overskrive filen tilhørende en eksisterende
 dokumentobjekt-instans med en POST eller en PUT-forespørsel. Hvis en
 fil må erstattes etter fullført opplasting så skal
 dokumentobjekt-entieten slettes og en ny POST/PUT utføres mot href til
-rel=\ https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/.
+relasjonsnøkkel https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/.
 
 Når en filopplasting er vellykket, så returneres tilhørende instanser
 som respons på avsluttende 200 OK / 201 Created.
@@ -1814,7 +1814,7 @@ Se entitetsdefinisjonen i kapittel 7 for informasjon om hvert enkelt felt.
 
 For mapper som støtter virksomhetsspesifikke metadata, så skal GET på
 ny-mappe returnere feltet virksomhetsspesifikkeMetadata, der verdien
-enten skal være ``null`` for å markere at ingen slike felter er
+enten skal være «null» for å markere at ingen slike felter er
 satt, eller inneholde forvalgte felter med verdier som API-kjernen
 foreslår å sette på alle / de fleste slike objekter.  Her er et eksempel.
 

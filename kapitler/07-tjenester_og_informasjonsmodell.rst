@@ -635,7 +635,7 @@ også være tilgjengelig via Arkivdel-instanser.
 
 Merk at underliggende lister med Saksmappe og andre underentiteter er
 tilgjengelig via relasjonsnøkkel
-``https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/``,
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/mappe/,
 dermed er det ikke egne relasjonsnøkler for å hente ut lister med de
 spesifikke under-entitetene.
 
@@ -908,7 +908,10 @@ spesifikke under-entitetene.
 Arkivenhet
 ^^^^^^^^^^
 
-|image9|
+|umlarkivenhet|
+
+.. |umlarkivenhet| image:: ./media/uml-class-arkivenhet.png
+   :width: 100.0%
 
 *Type:* **Class**
 
@@ -1476,7 +1479,10 @@ Saksmappe som foreldre.
 Dokumentbeskrivelse
 ^^^^^^^^^^^^^^^^^^^
 
-|image12|
+|umldokumentbeskrivelse|
+
+.. |umldokumentbeskrivelse| image:: ./media/uml-class-dokumentbeskrivelse.png
+   :width: 100.0%
 
 *Type:* **Class**
 
@@ -2274,7 +2280,10 @@ klasse, mappe, registrering og dokumentbeskrivelse.
 Klasse
 ^^^^^^
 
-|image14|
+|umlklasse|
+
+.. |umlklasse| image:: ./media/uml-class-klasse.png
+   :width: 100.0%
 
 *Type:* **Class**
 
@@ -2765,7 +2774,10 @@ deponering/avlevering.
 Korrespondansepart
 ^^^^^^^^^^^^^^^^^^
 
-|image17|
+|umlkorrespondansepart|
+
+.. |umlkorrespondansepart| image:: ./media/uml-class-korrespondansepart.png
+   :width: 100.0%
 
 *Type:* **Class**
 
@@ -3085,10 +3097,10 @@ felt i dette avleveringsformatet.
 Kryssreferanser opprettes med en POST-forespørsel og bruker OData $ref
 tilnærmingen. Hvis det er mulig å lage en kryssreferanse fra en
 arkivenhet vil relasjonsnøkkelen
-``https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/``
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/
 være en del av \_links. En klient kan sende en GET forespørsel til
 href-en assosiert med relasjonsnøkkelen
-``https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/``
+https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-kryssreferanse/
 og skal da få tilbake en URL der klienten trenger bare å legge til
 self-URLen til arkivenheten det ønskes en kryssreferanse til.
 
@@ -3109,7 +3121,7 @@ systemID (42ba4ead-75f5-4a7d-93f9-a9d66471adce).
    - https://n5.example.com/api/arkivstruktur/mappe/051b40e3-a0fe-4c02-acec-828d60c3a4ea/ny-kryssreferanse/
 
 Klienten sender en GET forespørsel til
-``https://n5.example.com/api/arkivstruktur/mappe/051b40e3-a0fe-4c02-acec-828d60c3a4ea/ny-kryssreferanse/``
+https://n5.example.com/api/arkivstruktur/mappe/051b40e3-a0fe-4c02-acec-828d60c3a4ea/ny-kryssreferanse/
 og får tilbake en URL
 
 .. code:: python
@@ -3194,7 +3206,7 @@ skal avvises med 400 (Bad Request).
 En kryssreferanse kan slettes med en DELETE-forespørsel til self URLen
 til kryssreferansen. Fra eksempelet over betyr det at kryssreferansen
 slettes med en DELETE mot
-``https://n5.example.com/api/arkivstruktur/kryssreferanse/852989ee-293d-41fe-b46a-fa3cdf607d74/``
+https://n5.example.com/api/arkivstruktur/kryssreferanse/852989ee-293d-41fe-b46a-fa3cdf607d74/
 
 En kryssreferanse kan endres. En endringsforespørsel kan kun ende *til
 entiteten*. Det er ikke mulig å endre *fra entiteten*. Klienten må
@@ -3686,7 +3698,10 @@ arkivuttrekket.
 Part
 ^^^^
 
-|image24|
+|umlpart|
+
+.. |umlpart| image:: ./media/uml-class-part.png
+   :width: 80.0%
 
 *Type:* **Class**
 
@@ -3927,7 +3942,7 @@ Skjerming
 |umlskjerming|
 
 .. |umlskjerming| image:: ./media/uml-datatype-skjerming.png
-   :width: 80.0%
+   :width: 100.0%
 
 *Type:* **Class «dataType»**
 
@@ -4014,7 +4029,7 @@ Sletting
 |umlsletting|
 
 .. |umlsletting| image:: ./media/uml-datatype-sletting.png
-   :width: 80.0%
+   :width: 50.0%
 
 *Type:* **Class «dataType»**
 
@@ -4181,7 +4196,9 @@ grupperes inn i arkivdel.
 NasjonaleIdentifikatorer
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|image27|
+|umlni|
+
+.. |umlni| image:: ./media/uml-class-nasjonalidentifikator.png
 
 .. figure:: ./media/uml-bruken-av-nasjonalidentifikator.png
    :alt: Nasjonale identifikatorer - (diagram)
@@ -4269,7 +4286,10 @@ fra Nasjonalidentifikator, og trenger ikke følge med ved opprettelse.
 Bygning
 '''''''
 
-|image28|
+|umlbygning|
+
+.. |umlbygning| image:: ./media/uml-class-bygning.png
+   :width: 50.0%
 
 *Type:* **Class**
 
@@ -5237,7 +5257,7 @@ verdier ved bruk av ny-relasjonslenke.
 
 Kodeverdier for formater hentes fra PRONOM-registeret over formater fra
 det britiske nasjonalarkivet. Informasjon om PRONOM er tilgjengelig
-fra deres nettsider, ``https://www.nationalarchives.gov.uk/PRONOM/``.
+fra deres nettsider, https://www.nationalarchives.gov.uk/PRONOM/.
 Slike formatkoder består at et prefiks "fmt" eller "x-fmt", en
 skråstrek og et heltall, for eksempel "fmt/13" (PNG) og
 "x-fmt/18" (CSV).
@@ -8095,23 +8115,15 @@ Hendelseslogg
    :width: 50.0%
 .. |image8| image:: ./media/uml-class-arkivdel.png
    :width: 50.0%
-.. |image9| image:: ./media/uml-class-arkivenhet.png
-   :width: 50.0%
 .. |image10| image:: ./media/uml-class-arkivskaper.png
    :width: 50.0%
 .. |image11| image:: ./media/uml-class-registrering.png
    :width: 100.0%
-.. |image12| image:: ./media/uml-class-dokumentbeskrivelse.png
-   :width: 50.0%
 .. |image13| image:: ./media/uml-class-dokumentobjekt.png
-   :width: 50.0%
-.. |image14| image:: ./media/uml-class-klasse.png
    :width: 50.0%
 .. |image15| image:: ./media/uml-class-klassifikasjonssystem.png
    :width: 50.0%
 .. |image16| image:: ./media/uml-class-konvertering.png
-   :width: 50.0%
-.. |image17| image:: ./media/uml-class-korrespondansepart.png
    :width: 50.0%
 .. |image18| image:: ./media/uml-class-korrespondansepartenhet.png
    :width: 50.0%
@@ -8125,14 +8137,9 @@ Hendelseslogg
    :width: 100.0%
 .. |image23| image:: ./media/uml-class-merknad.png
    :width: 50.0%
-.. |image24| image:: ./media/uml-class-part.png
-   :width: 50.0%
 .. |image25| image:: ./media/uml-class-partenhet.png
    :width: 50.0%
 .. |image26| image:: ./media/uml-class-partperson.png
-   :width: 50.0%
-.. |image27| image:: ./media/uml-class-nasjonalidentifikator.png
-.. |image28| image:: ./media/uml-class-bygning.png
    :width: 50.0%
 .. |image29| image:: ./media/uml-class-enhetsidentifikator.png
    :width: 50.0%
