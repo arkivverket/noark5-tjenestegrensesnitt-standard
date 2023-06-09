@@ -47,5 +47,5 @@ Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
 
 Arkivstruktur.Arkivenhet "0..1" o-- "+logg 0..*" LoggingOgSporing.Hendelseslogg
 LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
-LoggingOgSporing.Hendelseslogg -[hidden]> Kodelister.Hendelsetype
+LoggingOgSporing.Hendelseslogg -[hidden]-> Kodelister.Hendelsetype
 @enduml
