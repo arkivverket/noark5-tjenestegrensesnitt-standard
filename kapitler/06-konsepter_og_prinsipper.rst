@@ -18,7 +18,7 @@ følger under, og ytterligere detaljer kan en finne i vedlegg 3.
 
 Dette er videreført i det videre arbeidet med tjenestegrensesnittet.
 
-REST tjenestene
+REST-tjenestene
 ~~~~~~~~~~~~~~~
 
 For REST er HATEOAS prinsipper fulgt slik at en klient skal fra en
