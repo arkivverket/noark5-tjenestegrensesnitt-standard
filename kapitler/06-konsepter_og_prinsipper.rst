@@ -1383,8 +1383,8 @@ For å starte en opplastingssesjon:
    filen i bolker.
 
 #. Deretter overføres filen med en PUT-forespørsel. Responsen fra
-   serveren inneholder en Range-header, hvor øvre verdi benyttes som
-   start verdi i Content-Range i neste oversending.
+   serveren inneholder en Range-header, hvor øvre verdi pluss en
+   benyttes som start verdi i Content-Range i neste oversending.
 
    Headeren Content-Range settes for å angi hvor mye av filen som
    blir oversendt.
@@ -1442,7 +1442,7 @@ Last opp siste del:
    PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
    Content-Length: 427136
    Content-Type: image/jpeg
-   Content-Range: bytes 1572864-2000000/2000000
+   Content-Range: bytes 1572864-1999999/2000000
 
    Respons: 201 Created
 
