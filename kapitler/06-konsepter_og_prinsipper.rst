@@ -173,6 +173,10 @@ Når en tar GET mot href for relasjonsnøkkelen
 https://rel.arkivverket.no/noark5/v5/api/admin/system/, så får en informasjon
 om API-tjenersystemet. Responsen inneholder følgende felter:
 
+-  ``bulkgrense`` - positivt heltall med øvre grense for hva som anses
+   som små opplastinger i bytes.  Hvis feltet mangler skal det antas å
+   være 157286400 (150 MiB).  Hvis verdien er 0 er det ingen øvre
+   grense.
 -  ``leverandoer`` - tekststreng med navn på leverandør av
    tjenestegrensesnittimplementasjonen.
 -  ``produkt`` - tekststreng med navn på produktet som leverer
@@ -189,6 +193,7 @@ Responsen kan for eksempel se slik ut:
 .. code:: python
 
    {
+     "bulkgrense": 1073741824,
      "leverandoer": "Hoffleverandøren",
      "produkt": "Arkivsystemet Noark 5 kjerne",
      "versjon": "0.1",
@@ -1435,16 +1440,21 @@ fullført og filopplastingen vellykket, så returneres statuskode 201.
 
 Respons: 201 Created
 
+Hvis tjeneren anser filstørrelsen som for stor til å overføræs som en
+liten fil, så skal den returnere statuskode 403 (Forbidden) for å
+signalere at klienten må bruke metoden for overføring av store filer.
+Grensen for hva som anses som små filer kan hentes fra endepunktet bak
+relasjonsnøkkelen
+https://rel.arkivverket.no/noark5/v5/api/admin/system/ i verdien
+``bulkgrense``.
+
 **Overføre store filer**
 
-For store filer (over 150MB) så kan filen overføres i
-bolker. Prosessen for å overføre store filer er inspirert av APIet til
-Google Drive,
-https://developers.google.com/drive/v3/web/resumable-upload . For
-hver bolk returneres statuskode 200, unntatt den siste når
-overføringen er fullført der det returneres statuskode 201.
+For store filer så kan filen overføres i bolker. For hver bolk
+returneres statuskode 200, unntatt den siste når overføringen er
+fullført der det returneres statuskode 201.
 
-For å starte en opplastingssesjon:
+For å starte en opplastingsøkten:
 
 #. Send en POST til href til relasjonsnøkkel
    «https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/fil/».
@@ -1455,16 +1465,22 @@ For å starte en opplastingssesjon:
 
    Headeren X-Upload-Content-Length settes til filens totalstørrelse
 
-#. Responsen du mottar vil inneholde en Location-Header som inneholder
-   en sesjons-URI som skal benyttes i en PUT-forespørsel for å overføre
-   filen i bolker.
+#. Responsen du mottar vil inneholde et Location-hodefelt som
+   inneholder en økt-URI som skal benyttes i neste PUT-forespørsel for
+   å overføre neste bolk av filen.  På samme måte som med href kan
+   Location-hodefeltet returnert fra tjeneren inneholde hva som helst.
 
 #. Deretter overføres filen med en PUT-forespørsel. Responsen fra
-   serveren inneholder en Range-header, hvor øvre verdi pluss en
-   benyttes som start verdi i Content-Range i neste oversending.
+   serveren inneholder en Range-header på formen "Range:
+   <nedre>-<øvre>", hvor øvre verdi pluss en benyttes som nedre verdi
+   i Content-Range i overføring av neste bulk.  Responsen inneholder
+   et Location-hodefelt som brukes i neste PUT-forespørsel.
 
-   Headeren Content-Range settes for å angi hvor mye av filen som
-   blir oversendt.
+   Headeren Content-Range settes for å angi hvor mye av filen som blir
+   oversendt, på formen "Content-Range:
+   <nedre>-<øvre>/<totalstørrelse>".  Headeren Content-Length skal
+   inneholde antall bytes som overføres, dvs.  <øvre> minus <nedre>
+   pluss 1.
 
 #. Når siste overføring er gjort så returneres statuskode 201 Created.
 
@@ -1482,9 +1498,10 @@ tjeneren returnere 422 Unprocessable Entity som svar. Det er da
 klientens ansvar å slette relaterte ikke lenger relevante instanser
 ved hjelp av DELETE på instansenes self-relasjon.
 
-Komplett eksempel
+Her er et komplett eksempel, med opplasting av 200000 byte i 512
+KiB-bulker.
 
-Opprett sesjon:
+Opprett økten:
 
 ::
 
@@ -1495,27 +1512,55 @@ Opprett sesjon:
 
    Respons: 200 OK
 
-   Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+   Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-1
 
 Last opp første del:
 
 ::
 
-   PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+   PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-1
    Content-Length: 524288
    Content-Type: image/jpeg
    Content-Range: bytes 0-524287/2000000
 
    Respons: 200 OK
 
-   Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+   Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-2
    Range: bytes 0-524287
+
+Last opp andre del:
+
+::
+
+   PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-2
+   Content-Length: 524288
+   Content-Type: image/jpeg
+   Content-Range: bytes 524288-1048575/2000000
+
+   Respons: 200 OK
+
+   Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-3
+   Range: bytes 0-1048575
+
+Last opp tredje del:
+
+::
+
+   PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-3
+   Content-Length: 524288
+   Content-Type: image/jpeg
+   Content-Range: bytes 1048576-1572863/2000000
+
+   Respons: 200 OK
+
+   Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-4
+   Range: bytes 0-1572863
 
 Last opp siste del:
 
 ::
 
-   PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?filsesjon=abc1234567
+   PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-4
    Content-Length: 427136
    Content-Type: image/jpeg
    Content-Range: bytes 1572864-1999999/2000000
