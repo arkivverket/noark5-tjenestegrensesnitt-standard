@@ -107,8 +107,16 @@ av tjenestegrensesnittet.
 Fra 2020-02-03 består redaksjon for spesifikasjonen av Mona Danielsen,
 Anne Sofie Knutsen, Thomas Sødring og Petter Reinholdtsen.
 
-Denne spesifikasjonen faller inn under unntakene i den norske åndsverkslovens §
-9, og er ikke opphavsrettslig vernet.
+Denne spesifikasjonen faller inn under unntakene i den norske
+åndsverkslovens § 14[1]_, og er ikke opphavsrettslig vernet.
+
+.. [1] «Lover, forskrifter, rettsavgjørelser og andre vedtak av
+       offentlig myndighet er uten vern etter denne loven. Det samme
+       gjelder forslag, utredninger, uttalelser og lignende som
+       gjelder offentlig myndighetsutøvelse, og er avgitt av
+       offentlig myndighet, offentlig oppnevnt råd eller utvalg,
+       eller utgitt av det offentlige. Tilsvarende er offisielle
+       oversettelser av slike tekster uten vern etter denne loven.»
 
 Endringslogg for dette dokumentet
 ---------------------------------
