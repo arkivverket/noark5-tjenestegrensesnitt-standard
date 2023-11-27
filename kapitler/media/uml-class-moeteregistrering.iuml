@@ -1,0 +1,9 @@
+@startuml
+class MoeteOgUtvalgsbehandling.Moeteregistrering <Registrering> {
+  +moeteregistreringstype : Moeteregistreringstype
+  +moetesakstype : Moetesakstype [0..1]
+  +moeteregistreringsstatus : Moeteregistreringsstatus [0..1]
+  +administrativEnhet : string [0..1]
+  +saksbehandler : string
+}
+@enduml

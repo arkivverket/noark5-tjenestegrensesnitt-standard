@@ -64,6 +64,9 @@ Arkivstruktur.Registrering <|-- Sakarkiv.Arkivnotat
 class Sakarkiv.Journalpost <Registrering> {
 }
 Arkivstruktur.Registrering <|-- Sakarkiv.Journalpost
+class MoeteOgUtvalgsbehandling.Moeteregistrering <Registrering> {
+}
+Arkivstruktur.Registrering <|-- MoeteOgUtvalgsbehandling.Moeteregistrering
 class Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator {
 }
 Arkivstruktur.Registrering o-- "nasjonalidentifikator 0..*" Arkivstruktur.NasjonaleIdentifikatorer.Nasjonalidentifikator
