@@ -1414,8 +1414,14 @@ komplett POST) eller X-Upload-Content-Length (for overføring i bolker
 med PUT) og at sjekksum stemmer overens med den overførte filen. Hvis
 tjeneren etter opplasting ser at noen av verdiene avledet fra
 opplastet fil ikke stemmer overens med verdiene i
-dokumentobjekt-instansen, så returneres statuskode 400 Bad
-Request. Hvis den opplastede filen har et format tjeneren ikke kjenner
+dokumentobjekt-instansen, så returneres statuskode 400 Bad Request.
+En nyopprettet dokumentobjekt-instans returneres ikke via
+foreldre-dokumentbeskrivelse-instansens relasjonslenke til
+dokumentobjekt før en har lykkes med å laste inn en fil, for å sikre
+at API-et ikke deler ut dokumentobjekt-instanser uten tilkoblet fil
+til andre enn den som opprettet dokumentobjektet.
+
+Hvis den opplastede filen har et format tjeneren ikke kjenner
 igjen, så settes formatkoden til 'av/0'. Når filopplasting er fullført
 setter tjeneren de feltene i dokumentobjekt som ikke var satt ved
 oppretting av dokumentobjekt-instansen, det vil si utleder «format»,
