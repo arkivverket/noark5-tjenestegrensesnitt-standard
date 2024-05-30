@@ -166,6 +166,28 @@ samme href som «self» representerer entitetsrelasjonsnøkkelen til
      } ]
    }
 
+I de tilfellene der en entitet arver fra en forelderentitet for eksempel registrering
+og journalpost så skal «href» verdien til «self» og entitetsrelasjonsnøkkelen
+peke til det arvet objektet. Dette skal se slik ut 
+
+.. code:: python
+
+   { "results": [
+     { ...
+       "_links": {
+         "self": {
+           "href": "https://n5.example.com/api/sakarkiv/journalpost/7f000101-8fc4-12d2-818f-c424e4b4003e"
+         },
+         "https://rel.arkivverket.no/noark5/v5/api/sakarkiv/journalpost/": {
+           "href": "https://n5.example.com/api/sakarkiv/journalpost/7f000101-8fc4-12d2-818f-c424e4b4003e"
+         },
+         ...
+       }
+     } ]
+   }
+
+der oppslaget var til `https://n5.example.com/api/arkivstruktur/registrering/7f000101-8fc4-12d2-818f-c424e4b4003e`
+
 Systeminformasjon
 ^^^^^^^^^^^^^^^^^
 
