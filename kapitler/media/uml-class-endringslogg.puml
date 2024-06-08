@@ -5,7 +5,6 @@ class LoggingOgSporing.Endringslogg {
   +systemID : SystemID [0..1] [1..1]
   +referanseArkivenhet : SystemID [0..1]
   +referanseMetadata : string [0..1]
-  +endretDato : datetime [0..1] [1..1]
   +endretAv : string [0..1] [1..1]
   +referanseEndretAv : SystemID [0..1] [1..1]
   +tidligereVerdi : string [0..1]
@@ -14,7 +13,7 @@ class LoggingOgSporing.Endringslogg {
 class Arkivstruktur.Arkivenhet {
 }
 Arkivstruktur.Arkivenhet "0..1" o-- "endringslogg 0..*" LoggingOgSporing.Endringslogg
-class LoggingOgSporing.Hendelseslogg <Endringslogg> {
+class LoggingOgSporing.Hendelseslogg {
 }
-LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
+LoggingOgSporing.Hendelseslogg <|-- LoggingOgSporing.Endringslogg
 @enduml

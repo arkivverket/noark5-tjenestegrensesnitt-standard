@@ -1,12 +1,12 @@
 @startuml
 skinparam nodesep 100
 hide circle
-class LoggingOgSporing.Hendelseslogg <Endringslogg> {
+class LoggingOgSporing.Hendelseslogg {
   +hendelsetype : Hendelsetype
   +beskrivelse : string [0..1]
-  +hendelseDato : datetime [0..1] [1..1]
+  +endretDato : datetime [0..1] [1..1]
 }
 class LoggingOgSporing.Endringslogg {
 }
-LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
+LoggingOgSporing.Hendelseslogg <|-- LoggingOgSporing.Endringslogg
 @enduml

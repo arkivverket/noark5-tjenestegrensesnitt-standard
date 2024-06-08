@@ -7954,93 +7954,6 @@ Skjema for logging og sporing
 
    LoggingOgSporing - (diagram)
 
-Endringslogg
-^^^^^^^^^^^^
-
-|image45|
-
-*Type:* **Class**
-
-*Arver:*
-
-Relasjonen tilbake til aktuell Arkivenhet bruker relasjonsnøkkel for
-relevant under-entitet, og det er derfor ikke egen relasjonsnøkkel for
-denne relasjonen.
-
-.. list-table:: Relasjoner
-   :widths: 4 3 3 1
-   :header-rows: 1
-
- * - **Relasjon**
-   - **Kilde**
-   - **Mål**
-   - **Merknad**
- * - **Aggregation** (Destination → Source)
-   - endringslogg 0..\* Endringslogg
-   - 0..1 Arkivenhet
-   -
- * - **Generalization** (Source → Destination)
-   - Hendelseslogg
-   - Endringslogg
-   -
-
-.. list-table:: Relasjonsnøkler
-   :header-rows: 1
-
- * - **Verdi**
- * - self
- * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/
-
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
-   :header-rows: 1
-
- * - **Navn**
-   - **Merknad**
-   - **Forek.**
-   - **Kode**
-   - **Type**
- * - systemID
-   -
-   - [0..1] [1..1]
-   -
-   - SystemID
- * - referanseArkivenhet
-   - M680
-   - [0..1]
-   -
-   - SystemID
- * - referanseMetadata
-   - M681
-   - [0..1]
-   -
-   - string
- * - endretDato
-   - M682
-   - [0..1] [1..1]
-   -
-   - datetime
- * - endretAv
-   - M683
-   - [0..1] [1..1]
-   -
-   - string
- * - referanseEndretAv
-   - referanse til Bruker sin systemID
-   - [0..1] [1..1]
-   -
-   - SystemID
- * - tidligereVerdi
-   - M684
-   - [0..1]
-   -
-   - string
- * - nyVerdi
-   - M685
-   - [0..1]
-   -
-   - string
-
 Hendelseslogg
 ^^^^^^^^^^^^^
 
@@ -8048,7 +7961,7 @@ Hendelseslogg
 
 *Type:* **Class**
 
-*Arver:* **Endringslogg**
+*Arver:*
 
 .. list-table:: Relasjoner
    :widths: 4 3 3 1
@@ -8059,8 +7972,8 @@ Hendelseslogg
    - **Mål**
    - **Merknad**
  * - **Generalization** (Source → Destination)
-   - Hendelseslogg
    - Endringslogg
+   - Hendelseslogg
    -
 
 
@@ -8091,11 +8004,96 @@ Hendelseslogg
    - [0..1]
    -
    - string
- * - hendelseDato
-   -
+ * - endretDato
+   - M682
    - [0..1] [1..1]
    -
    - datetime
+
+Endringslogg
+^^^^^^^^^^^^
+
+|image45|
+
+*Type:* **Class**
+
+*Arver:*
+*Arver:* **Hendelseslogg**
+
+Relasjonen tilbake til aktuell Arkivenhet bruker ikke relasjonsnøkkel
+for relevant under-entitet, da det vil gi konflikt for relasjon koblet
+til referanseEndretAv ved endring av brukerentiteter.
+
+.. list-table:: Relasjoner
+   :widths: 4 3 3 1
+   :header-rows: 1
+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Aggregation** (Destination → Source)
+   - endringslogg 0..\* Endringslogg
+   - 0..1 Arkivenhet
+   -
+ * - **Generalization** (Source → Destination)
+   - Endringslogg
+   - Hendelseslogg
+   -
+
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivenhet/
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/bruker/
+
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - systemID
+   -
+   - [0..1] [1..1]
+   -
+   - SystemID
+ * - referanseArkivenhet
+   - M680
+   - [0..1]
+   -
+   - SystemID
+ * - referanseMetadata
+   - M681
+   - [0..1]
+   -
+   - string
+ * - endretAv
+   - M683
+   - [0..1] [1..1]
+   -
+   - string
+ * - referanseEndretAv
+   - referanse til Bruker sin systemID
+   - [0..1] [1..1]
+   -
+   - SystemID
+ * - tidligereVerdi
+   - M684
+   - [0..1]
+   -
+   - string
+ * - nyVerdi
+   - M685
+   - [0..1]
+   -
+   - string
 
 .. |image0| image:: ./media/uml-forklaring-om-notasjon-som-er-brukt.png
    :width: 90.0%
