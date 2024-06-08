@@ -7954,101 +7954,20 @@ Skjema for logging og sporing
 
    LoggingOgSporing - (diagram)
 
-Endringslogg
-^^^^^^^^^^^^
+Hendelseslogg
+^^^^^^^^^^^^^
 
-|image45|
+|uml-hendelseslogg|
+
+.. |uml-hendelseslogg| image:: ./media/uml-class-hendelseslogg.png
+   :width: 50.0%
 
 *Type:* **Class**
 
 *Arver:*
 
-Relasjonen tilbake til aktuell Arkivenhet bruker relasjonsnøkkel for
-relevant under-entitet, og det er derfor ikke egen relasjonsnøkkel for
-denne relasjonen.
-
-.. list-table:: Relasjoner
-   :widths: 4 3 3 1
-   :header-rows: 1
-
- * - **Relasjon**
-   - **Kilde**
-   - **Mål**
-   - **Merknad**
- * - **Aggregation** (Destination → Source)
-   - endringslogg 0..\* Endringslogg
-   - 0..1 Arkivenhet
-   -
- * - **Generalization** (Source → Destination)
-   - Hendelseslogg
-   - Endringslogg
-   -
-
-.. list-table:: Relasjonsnøkler
-   :header-rows: 1
-
- * - **Verdi**
- * - self
- * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/
-
-.. list-table:: Attributter
-   :widths: 4 10 1 1 4
-   :header-rows: 1
-
- * - **Navn**
-   - **Merknad**
-   - **Forek.**
-   - **Kode**
-   - **Type**
- * - systemID
-   -
-   - [0..1] [1..1]
-   -
-   - SystemID
- * - referanseArkivenhet
-   - M680
-   - [0..1]
-   -
-   - SystemID
- * - referanseMetadata
-   - M681
-   - [0..1]
-   -
-   - string
- * - endretDato
-   - M682
-   - [0..1] [1..1]
-   -
-   - datetime
- * - endretAv
-   - M683
-   - [0..1] [1..1]
-   -
-   - string
- * - referanseEndretAv
-   - referanse til Bruker sin systemID
-   - [0..1] [1..1]
-   -
-   - SystemID
- * - tidligereVerdi
-   - M684
-   - [0..1]
-   -
-   - string
- * - nyVerdi
-   - M685
-   - [0..1]
-   -
-   - string
-
-Hendelseslogg
-^^^^^^^^^^^^^
-
-|image46|
-
-*Type:* **Class**
-
-*Arver:* **Endringslogg**
+Hendelsesloggoppføringer kan kun legges inn og slettes, men aldri
+endres.
 
 .. list-table:: Relasjoner
    :widths: 4 3 3 1
@@ -8059,8 +7978,8 @@ Hendelseslogg
    - **Mål**
    - **Merknad**
  * - **Generalization** (Source → Destination)
-   - Hendelseslogg
    - Endringslogg
+   - Hendelseslogg
    -
 
 
@@ -8081,6 +8000,11 @@ Hendelseslogg
    - **Forek.**
    - **Kode**
    - **Type**
+ * - systemID
+   -
+   - [0..1] [1..1]
+   -
+   - SystemID
  * - hendelsetype
    -
    - [1..1]
@@ -8091,11 +8015,101 @@ Hendelseslogg
    - [0..1]
    -
    - string
- * - hendelseDato
-   -
+ * - opprettetDato
+   - Attributten opprettetDato settes normalt av
+     arkivkjernen. Unntaket er import av eksisterende arkiv fra
+     ekstern kilde. Avleveres som M682 i endringslogg.xml. M600
    - [0..1] [1..1]
    -
    - datetime
+
+Endringslogg
+^^^^^^^^^^^^
+
+|uml-endringslogg|
+
+.. |uml-endringslogg| image:: ./media/uml-class-endringslogg.png
+   :width: 50.0%
+
+*Type:* **Class**
+
+*Arver:*
+*Arver:* **Hendelseslogg**
+
+Relasjonen tilbake til Arkivenhet oppgitt i referanseArkivenhet bruker
+relasjonsnøkkel arkivenhet, da klassespesifikk relasjonsnøkkel ville
+gitt konflikt i relasjonslisten ved endring av brukerentiteter.
+
+Hvis arkivenheten omtalt i referanseArkivenhet (med tilhørende
+relasjonsnøkkel) blir slettet, så fjernes relasjonsnøkkelen mens
+SystemID i referanseArkivenhet beholder sin verdi.  Tilsvarende ved
+sletting av bruker omtalt i referanseEndretAv.
+
+.. list-table:: Relasjoner
+   :widths: 4 3 3 1
+   :header-rows: 1
+
+ * - **Relasjon**
+   - **Kilde**
+   - **Mål**
+   - **Merknad**
+ * - **Aggregation** (Destination → Source)
+   - endringslogg 0..\* Endringslogg
+   - 0..1 Arkivenhet
+   -
+ * - **Generalization** (Source → Destination)
+   - Endringslogg
+   - Hendelseslogg
+   -
+
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
+
+ * - **Verdi**
+ * - self
+ * - https://rel.arkivverket.no/noark5/v5/api/loggingogsporing/endringslogg/
+ * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/arkivenhet/
+ * - https://rel.arkivverket.no/noark5/v5/api/admin/bruker/
+
+.. list-table:: Attributter
+   :widths: 4 10 1 1 4
+   :header-rows: 1
+
+ * - **Navn**
+   - **Merknad**
+   - **Forek.**
+   - **Kode**
+   - **Type**
+ * - referanseArkivenhet
+   - M680
+   - [0..1]
+   -
+   - SystemID
+ * - referanseMetadata
+   - M681
+   - [0..1]
+   -
+   - string
+ * - endretAv
+   - M683
+   - [0..1] [1..1]
+   -
+   - string
+ * - referanseEndretAv
+   - referanse til Bruker sin systemID
+   - [0..1] [1..1]
+   -
+   - SystemID
+ * - tidligereVerdi
+   - M684
+   - [0..1]
+   -
+   - string
+ * - nyVerdi
+   - M685
+   - [0..1]
+   -
+   - string
 
 .. |image0| image:: ./media/uml-forklaring-om-notasjon-som-er-brukt.png
    :width: 90.0%
@@ -8172,8 +8186,4 @@ Hendelseslogg
 .. |image43| image:: ./media/uml-class-bruker.png
    :width: 50.0%
 .. |image44| image:: ./media/uml-class-tilgang.png
-   :width: 50.0%
-.. |image45| image:: ./media/uml-class-endringslogg.png
-   :width: 50.0%
-.. |image46| image:: ./media/uml-class-hendelseslogg.png
    :width: 50.0%

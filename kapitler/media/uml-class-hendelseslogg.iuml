@@ -1,7 +1,8 @@
 @startuml
-class LoggingOgSporing.Hendelseslogg <Endringslogg> {
+class LoggingOgSporing.Hendelseslogg {
+  +systemID : SystemID [0..1] [1..1]
   +hendelsetype : Hendelsetype
   +beskrivelse : string [0..1]
-  +hendelseDato : datetime [0..1] [1..1]
+  +opprettetDato : datetime [0..1] [1..1]
 }
 @enduml

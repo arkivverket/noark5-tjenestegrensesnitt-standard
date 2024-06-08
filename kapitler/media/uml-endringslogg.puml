@@ -4,7 +4,7 @@ skinparam classAttributeIconSize 0
 !include kapitler/media/uml-class-endringslogg.iuml
 !include kapitler/media/uml-class-hendelseslogg.iuml
 !include kapitler/media/uml-codelist-hendelsetype.iuml
-LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
+LoggingOgSporing.Hendelseslogg <|-- LoggingOgSporing.Endringslogg
 Arkivstruktur.Arkivenhet "0..1" o- "logg 0..*" LoggingOgSporing.Hendelseslogg
 LoggingOgSporing.Hendelseslogg -[hidden]- Kodelister.Hendelsetype
 @enduml
