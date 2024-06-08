@@ -7957,11 +7957,17 @@ Skjema for logging og sporing
 Hendelseslogg
 ^^^^^^^^^^^^^
 
-|image46|
+|uml-hendelseslogg|
+
+.. |uml-hendelseslogg| image:: ./media/uml-class-hendelseslogg.png
+   :width: 50.0%
 
 *Type:* **Class**
 
 *Arver:*
+
+Hendelsesloggoppføringer kan kun legges inn og slettes, men aldri
+endres.
 
 .. list-table:: Relasjoner
    :widths: 4 3 3 1
@@ -7994,6 +8000,11 @@ Hendelseslogg
    - **Forek.**
    - **Kode**
    - **Type**
+ * - systemID
+   -
+   - [0..1] [1..1]
+   -
+   - SystemID
  * - hendelsetype
    -
    - [1..1]
@@ -8004,8 +8015,10 @@ Hendelseslogg
    - [0..1]
    -
    - string
- * - endretDato
-   - M682
+ * - opprettetDato
+   - Attributten opprettetDato settes normalt av
+     arkivkjernen. Unntaket er import av eksisterende arkiv fra
+     ekstern kilde. Avleveres som M682 i endringslogg.xml. M600
    - [0..1] [1..1]
    -
    - datetime
@@ -8013,7 +8026,10 @@ Hendelseslogg
 Endringslogg
 ^^^^^^^^^^^^
 
-|image45|
+|uml-endringslogg|
+
+.. |uml-endringslogg| image:: ./media/uml-class-endringslogg.png
+   :width: 50.0%
 
 *Type:* **Class**
 
@@ -8059,11 +8075,6 @@ til referanseEndretAv ved endring av brukerentiteter.
    - **Forek.**
    - **Kode**
    - **Type**
- * - systemID
-   -
-   - [0..1] [1..1]
-   -
-   - SystemID
  * - referanseArkivenhet
    - M680
    - [0..1]
@@ -8170,8 +8181,4 @@ til referanseEndretAv ved endring av brukerentiteter.
 .. |image43| image:: ./media/uml-class-bruker.png
    :width: 50.0%
 .. |image44| image:: ./media/uml-class-tilgang.png
-   :width: 50.0%
-.. |image45| image:: ./media/uml-class-endringslogg.png
-   :width: 50.0%
-.. |image46| image:: ./media/uml-class-hendelseslogg.png
    :width: 50.0%
