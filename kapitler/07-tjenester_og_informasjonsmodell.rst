@@ -8036,9 +8036,14 @@ Endringslogg
 *Arver:*
 *Arver:* **Hendelseslogg**
 
-Relasjonen tilbake til aktuell Arkivenhet bruker ikke relasjonsnøkkel
-for relevant under-entitet, da det vil gi konflikt for relasjon koblet
-til referanseEndretAv ved endring av brukerentiteter.
+Relasjonen tilbake til Arkivenhet oppgitt i referanseArkivenhet bruker
+relasjonsnøkkel arkivenhet, da klassespesifikk relasjonsnøkkel ville
+gitt konflikt i relasjonslisten ved endring av brukerentiteter.
+
+Hvis arkivenheten omtalt i referanseArkivenhet (med tilhørende
+relasjonsnøkkel) blir slettet, så fjernes relasjonsnøkkelen mens
+SystemID i referanseArkivenhet beholder sin verdi.  Tilsvarende ved
+sletting av bruker omtalt i referanseEndretAv.
 
 .. list-table:: Relasjoner
    :widths: 4 3 3 1
