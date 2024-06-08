@@ -603,7 +603,6 @@ class Kodelister.Variantformat <<codelist>> {
 }
 
 class LoggingOgSporing.Endringslogg {
-  +systemID : SystemID [0..1] [1..1]
   +referanseArkivenhet : SystemID [0..1]
   +referanseMetadata : string [0..1]
   +endretAv : string [0..1] [1..1]
@@ -613,9 +612,10 @@ class LoggingOgSporing.Endringslogg {
 }
 
 class LoggingOgSporing.Hendelseslogg {
+  +systemID : SystemID [0..1] [1..1]
   +hendelsetype : Hendelsetype
   +beskrivelse : string [0..1]
-  +endretDato : datetime [0..1] [1..1]
+  +opprettetDato : datetime [0..1] [1..1]
 }
 
 class Sakarkiv.Arkivnotat <Registrering> {

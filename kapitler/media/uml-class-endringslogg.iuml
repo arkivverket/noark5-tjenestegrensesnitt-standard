@@ -1,6 +1,5 @@
 @startuml
 class LoggingOgSporing.Endringslogg {
-  +systemID : SystemID [0..1] [1..1]
   +referanseArkivenhet : SystemID [0..1]
   +referanseMetadata : string [0..1]
   +endretAv : string [0..1] [1..1]
