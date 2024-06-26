@@ -4767,6 +4767,8 @@ Arkivstruktur-pakken:
  * - **Relasjonsnøkkel**
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivdelstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-arkivdelstatus/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivformat/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-arkivformat/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/ny-arkivstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/
@@ -5340,6 +5342,33 @@ eksempler.
  * - PNG
    - PNG 1.2 som beskrevet i ISO / IEC 15948
    - `fmt/11 <http://www.nationalarchives.gov.uk/PRONOM/fmt/13>`_
+
+Arkivformat
+^^^^^^^^^^^
+
+*Type:* **Class «codelist»**
+
+*Arver:*
+
+Åpen kodeliste
+
+Arkivformat er en delmengde av formatene listet opp i kodeliste
+Format.  Verdiene for kode og kodenavn skal være identiske med
+innholdet i tilsvarende oppføring i kodeliste Format.  Kodeliste
+Arkivformat angir hvilke av dokumentformatene som er arkivformater,
+jamfør Noark 5 krav 2.7.9 («Det skal finnes en tjeneste/funksjon som
+gjør det mulig for arkivadministrator å angi hvilke dokumentformater
+som er definert som arkivformater.») og 2.7.10 («Det skal finnes en
+tjeneste/funksjon som gjør at arkivadministrator kan sette opp regler
+for når (hvilke statuser) arkivdokumenter skal konverteres til
+arkivformat.»).
+
+.. list-table:: Relasjonsnøkler
+   :header-rows: 1
+
+ * - **Verdi**
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivformat/
+
 
 Graderingskode
 ^^^^^^^^^^^^^^
