@@ -344,6 +344,7 @@ laveste nivået av disse.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/underarkiv/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -431,6 +432,11 @@ laveste nivået av disse.
    - [0..1]
    -
    - SystemID
+ * - virksomhetsspesifikkeMetadata
+   -
+   - [0..1]
+   -
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
@@ -623,6 +629,7 @@ men arv herfra blir overstyrt.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/arkivdelstatus/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/dokumentmedium/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkkel
 også være tilgjengelig via Arkivdel-instanser.
@@ -777,6 +784,11 @@ spesifikke under-entitetene.
    - [0..1]
    -
    - Gradering
+ * - virksomhetsspesifikkeMetadata
+   -
+   - [0..1]
+   -
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
@@ -1836,6 +1848,7 @@ Disse ikke har korresponderende felt i avleveringsformatet.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-konvertering/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/format/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/variantformat/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 .. list-table:: Attributter
    :widths: 6 10 1 1 4
@@ -1929,6 +1942,11 @@ Disse ikke har korresponderende felt i avleveringsformatet.
    - [0..1]
    -
    - ElektroniskSignatur
+ * - virksomhetsspesifikkeMetadata
+   -
+   - [0..1]
+   -
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
@@ -2360,6 +2378,7 @@ befinner seg på.
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/overklasse/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/registrering/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/underklasse/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 Hvis pakken Sakarkiv er tilgjengelig, så skal følgende relasjonsnøkler
 også være tilgjengelig via Klasse-instanser.
@@ -2463,6 +2482,11 @@ også være tilgjengelig via Klasse-instanser.
    - [0..1]
    -
    - Gradering
+ * - virksomhetsspesifikkeMetadata
+   -
+   - [0..1]
+   -
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
@@ -2542,6 +2566,7 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/ny-sekundaerklassifikasjonssystem/
  * - https://rel.arkivverket.no/noark5/v5/api/arkivstruktur/sekundaerklassifikasjonssystem/
  * - https://rel.arkivverket.no/noark5/v5/api/metadata/klassifikasjonstype/
+ * - https://rel.arkivverket.no/noark5/v5/api/metadata/virksomhetsspesifikkeMetadata/
 
 .. list-table:: Attributter
    :widths: 4 10 1 1 4
@@ -2597,6 +2622,11 @@ produseres når en aktivitet utføres, skal normalt tilhøre samme
    - [0..1]
    -
    - SystemID
+ * - virksomhetsspesifikkeMetadata
+   -
+   - [0..1]
+   -
+   - VirksomhetsspesifikkeMetadata
 
 .. list-table:: Restriksjoner
    :header-rows: 1
