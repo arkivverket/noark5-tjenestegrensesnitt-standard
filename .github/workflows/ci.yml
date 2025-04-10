@@ -41,7 +41,7 @@ jobs:
         apt --yes --quiet install --no-install-suggests eatmydata
         eatmydata apt --yes --quiet install --no-install-suggests git
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         # "fetch-depth: 0" fetches all of history, this is needed by
         # our build system to determine the version from tags
@@ -70,7 +70,7 @@ jobs:
         set -x
         eatmydata make pdf
     - name: Archive generated documents
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: documents.zip
         retention-days: 7
