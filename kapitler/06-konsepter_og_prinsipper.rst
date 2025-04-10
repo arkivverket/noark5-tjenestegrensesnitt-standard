@@ -1521,12 +1521,12 @@ Last opp første del:
    PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-1
    Content-Length: 524288
    Content-Type: image/jpeg
-   Content-Range: bytes 0-524287/2000000
+   Content-Range: 0-524287/2000000
 
    Respons: 200 OK
 
    Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-2
-   Range: bytes 0-524287
+   Range: 0-524287
 
 Last opp andre del:
 
@@ -1535,12 +1535,12 @@ Last opp andre del:
    PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-2
    Content-Length: 524288
    Content-Type: image/jpeg
-   Content-Range: bytes 524288-1048575/2000000
+   Content-Range: 524288-1048575/2000000
 
    Respons: 200 OK
 
    Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-3
-   Range: bytes 0-1048575
+   Range: 0-1048575
 
 Last opp tredje del:
 
@@ -1549,12 +1549,12 @@ Last opp tredje del:
    PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-3
    Content-Length: 524288
    Content-Type: image/jpeg
-   Content-Range: bytes 1048576-1572863/2000000
+   Content-Range: 1048576-1572863/2000000
 
    Respons: 200 OK
 
    Location: https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-4
-   Range: bytes 0-1572863
+   Range: 0-1572863
 
 Last opp siste del:
 
@@ -1563,7 +1563,7 @@ Last opp siste del:
    PUT https://n5.example.com/api/arkivstruktur/Dokumentobjekt/a895c8ed-c15a-43f6-86de-86a626433785/referanseFil?ref=abc1234567-4
    Content-Length: 427136
    Content-Type: image/jpeg
-   Content-Range: bytes 1572864-1999999/2000000
+   Content-Range: 1572864-1999999/2000000
 
    Respons: 201 Created
 
