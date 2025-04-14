@@ -603,20 +603,19 @@ class Kodelister.Variantformat <<codelist>> {
 }
 
 class LoggingOgSporing.Endringslogg {
-  +systemID : SystemID [0..1] [1..1]
   +referanseArkivenhet : SystemID [0..1]
   +referanseMetadata : string [0..1]
-  +endretDato : datetime [0..1] [1..1]
   +endretAv : string [0..1] [1..1]
   +referanseEndretAv : SystemID [0..1] [1..1]
   +tidligereVerdi : string [0..1]
   +nyVerdi : string [0..1]
 }
 
-class LoggingOgSporing.Hendelseslogg <Endringslogg> {
+class LoggingOgSporing.Hendelseslogg {
+  +systemID : SystemID [0..1] [1..1]
   +hendelsetype : Hendelsetype
   +beskrivelse : string [0..1]
-  +hendelseDato : datetime [0..1] [1..1]
+  +opprettetDato : datetime [0..1] [1..1]
 }
 
 class Sakarkiv.Arkivnotat <Registrering> {
@@ -754,7 +753,7 @@ Arkivstruktur.Dokumentbeskrivelse *-- Arkivstruktur.UtfoertKassasjon
 Arkivstruktur.Dokumentbeskrivelse *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata
 Arkivstruktur.Dokumentobjekt *-- Arkivstruktur.ElektroniskSignatur
 Arkivstruktur.Dokumentobjekt o-- "konvertering 0..*" Arkivstruktur.Konvertering
-LoggingOgSporing.Endringslogg <|-- LoggingOgSporing.Hendelseslogg
+LoggingOgSporing.Hendelseslogg <|-- LoggingOgSporing.Endringslogg
 Sakarkiv.Journalpost *-- "avskrivning 0..*" Sakarkiv.Avskrivning
 Sakarkiv.Journalpost *-- "dokumentflyt 0..*" Sakarkiv.Dokumentflyt
 Sakarkiv.Journalpost *-- Arkivstruktur.ElektroniskSignatur
