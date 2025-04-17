@@ -13,6 +13,9 @@ class Admin.Bruker {
 class Admin.AdministrativEnhet {
 }
 Admin.AdministrativEnhet "administrativenhet 0..*" *--> "bruker 0..*" Admin.Bruker
+class MoeteOgUtvalgsbehandling.Moeteregistrering <Registrering> {
+}
+Admin.Bruker "referanseSaksbehandler 1" o-- MoeteOgUtvalgsbehandling.Moeteregistrering
 class VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata <<VirksomhetsspesifikkeMetadata>> {
 }
 Admin.Bruker *-- VirksomhetsspesifikkeMetadata.VirksomhetsspesifikkeMetadata

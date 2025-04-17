@@ -1,4 +1,6 @@
 @startuml
+skinparam nodesep 100
+hide circle
 class MoeteOgUtvalgsbehandling.Moeteregistreringstype <<codelist>> {
   +Møteinnkalling = MI
   +Saksframlegg = SF
@@ -8,4 +10,7 @@ class MoeteOgUtvalgsbehandling.Moeteregistreringstype <<codelist>> {
   +Offentlig saksliste = OL
   +Vedlegg til møtesak = VL
 }
+class MoeteOgUtvalgsbehandling.Moeteregistrering <Registrering> {
+}
+MoeteOgUtvalgsbehandling.Moeteregistrering *-- "moeteregistreringstype 0..1" MoeteOgUtvalgsbehandling.Moeteregistreringstype
 @enduml

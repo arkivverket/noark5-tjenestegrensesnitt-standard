@@ -1,0 +1,30 @@
+@startuml
+skinparam nodesep 100
+hide circle
+class MoeteOgUtvalgsbehandling.Moeteregistrering <Registrering> {
+  +moeteregistreringstype : Moeteregistreringstype
+  +moetesakstype : Moetesakstype [0..1]
+  +moeteregistreringsstatus : Moeteregistreringsstatus [0..1]
+  +administrativEnhet : string [0..1]
+  +saksbehandler : string
+}
+class Admin.AdministrativEnhet {
+}
+Admin.AdministrativEnhet "referanseAdministrativEnhet 1" o-- MoeteOgUtvalgsbehandling.Moeteregistrering
+class Admin.Bruker {
+}
+Admin.Bruker "referanseSaksbehandler 1" o-- MoeteOgUtvalgsbehandling.Moeteregistrering
+MoeteOgUtvalgsbehandling.Moeteregistrering "framoeteregistrering 0..*" o--> "tilmoeteregistrering 0..*" MoeteOgUtvalgsbehandling.Moeteregistrering
+class MoeteOgUtvalgsbehandling.Moeteregistreringsstatus <<codelist>> {
+}
+MoeteOgUtvalgsbehandling.Moeteregistrering *-- "moeteregistreringsstatus 0..1" MoeteOgUtvalgsbehandling.Moeteregistreringsstatus
+class MoeteOgUtvalgsbehandling.Moeteregistreringstype <<codelist>> {
+}
+MoeteOgUtvalgsbehandling.Moeteregistrering *-- "moeteregistreringstype 0..1" MoeteOgUtvalgsbehandling.Moeteregistreringstype
+class MoeteOgUtvalgsbehandling.Moetesakstype <<codelist>> {
+}
+MoeteOgUtvalgsbehandling.Moeteregistrering *-- "moetesakstype 0..1" MoeteOgUtvalgsbehandling.Moetesakstype
+class Arkivstruktur.Registrering <Arkivenhet> {
+}
+Arkivstruktur.Registrering <|-- MoeteOgUtvalgsbehandling.Moeteregistrering
+@enduml

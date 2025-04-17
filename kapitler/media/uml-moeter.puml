@@ -1,0 +1,28 @@
+@startuml
+!include kapitler/media/uml-class-moetemappe.iuml
+!include kapitler/media/uml-class-moeteregistrering.iuml
+!include kapitler/media/uml-codelist-moetedeltakerfunksjon.iuml
+!include kapitler/media/uml-codelist-moeteregistreringsstatus.iuml
+!include kapitler/media/uml-codelist-moeteregistreringstype.iuml
+!include kapitler/media/uml-codelist-moetesakstype.iuml
+!include kapitler/media/uml-datatype-moetedeltaker.iuml
+
+Arkivstruktur.Mappe <|- MoeteOgUtvalgsbehandling.Moetemappe
+Arkivstruktur.Mappe "+mappe 0..1" o--> "+registrering 0..*" Arkivstruktur.Registrering
+Arkivstruktur.Registrering <|-- Arkivstruktur.Basisregistrering
+Arkivstruktur.Basisregistrering <|- MoeteOgUtvalgsbehandling.Moeteregistrering
+
+Admin.Bruker "referanseSaksbehandler" o- MoeteOgUtvalgsbehandling.Moeteregistrering
+Admin.AdministrativEnhet "\nreferanseAdministrativEnhet" o- MoeteOgUtvalgsbehandling.Moeteregistrering
+
+MoeteOgUtvalgsbehandling.Moeteregistrering "framoeteregistrering 0..*" o-> "tilmoeteregistrering 0..*" MoeteOgUtvalgsbehandling.Moeteregistrering
+
+MoeteOgUtvalgsbehandling.Moetemappe "forrigemoetemappe 0..1" o-> "nestemoetemappe 0..1" MoeteOgUtvalgsbehandling.Moetemappe
+
+MoeteOgUtvalgsbehandling.Moetemappe --* "moetedeltaker 1..*" MoeteOgUtvalgsbehandling.Moetedeltaker
+MoeteOgUtvalgsbehandling.Moetedeltaker -* "moetedeltakerFunksjon" MoeteOgUtvalgsbehandling.MoetedeltakerFunksjon
+
+MoeteOgUtvalgsbehandling.Moeteregistrering --* "moeteregistreringsstatus 0..1" MoeteOgUtvalgsbehandling.Moeteregistreringsstatus
+MoeteOgUtvalgsbehandling.Moeteregistrering --* "moeteregistreringstype 0..1" MoeteOgUtvalgsbehandling.Moeteregistreringstype
+MoeteOgUtvalgsbehandling.Moeteregistrering --* "moetesakstype 0..1" MoeteOgUtvalgsbehandling.Moetesakstype
+@enduml
